@@ -16,6 +16,8 @@
 		1818D83E174D146F00136FD2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1818D83D174D146F00136FD2 /* Default.png */; };
 		1818D840174D146F00136FD2 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1818D83F174D146F00136FD2 /* Default@2x.png */; };
 		1818D842174D146F00136FD2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1818D841174D146F00136FD2 /* Default-568h@2x.png */; };
+		1818D854174D14DB00136FD2 /* PPRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1818D852174D14DB00136FD2 /* PPRootViewController.m */; };
+		1818D855174D14DB00136FD2 /* PPRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1818D853174D14DB00136FD2 /* PPRootViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,9 @@
 		1818D83D174D146F00136FD2 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		1818D83F174D146F00136FD2 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		1818D841174D146F00136FD2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		1818D851174D14DB00136FD2 /* PPRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPRootViewController.h; sourceTree = "<group>"; };
+		1818D852174D14DB00136FD2 /* PPRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPRootViewController.m; sourceTree = "<group>"; };
+		1818D853174D14DB00136FD2 /* PPRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPRootViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +85,9 @@
 			children = (
 				1818D83A174D146F00136FD2 /* PPAppDelegate.h */,
 				1818D83B174D146F00136FD2 /* PPAppDelegate.m */,
+				1818D851174D14DB00136FD2 /* PPRootViewController.h */,
+				1818D852174D14DB00136FD2 /* PPRootViewController.m */,
+				1818D853174D14DB00136FD2 /* PPRootViewController.xib */,
 				1818D832174D146F00136FD2 /* Supporting Files */,
 			);
 			path = "pdf417-sample";
@@ -155,6 +163,7 @@
 				1818D83E174D146F00136FD2 /* Default.png in Resources */,
 				1818D840174D146F00136FD2 /* Default@2x.png in Resources */,
 				1818D842174D146F00136FD2 /* Default-568h@2x.png in Resources */,
+				1818D855174D14DB00136FD2 /* PPRootViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +176,7 @@
 			files = (
 				1818D838174D146F00136FD2 /* main.m in Sources */,
 				1818D83C174D146F00136FD2 /* PPAppDelegate.m in Sources */,
+				1818D854174D14DB00136FD2 /* PPRootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

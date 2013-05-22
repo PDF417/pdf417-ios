@@ -8,20 +8,17 @@
 
 #import "PPAppDelegate.h"
 
-#import "PPViewController.h"
+#import "PPRootViewController.h"
 
 @implementation PPAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        self.viewController = [[PPViewController alloc] initWithNibName:@"PPViewController_iPhone" bundle:nil];
-    } else {
-        self.viewController = [[PPViewController alloc] initWithNibName:@"PPViewController_iPad" bundle:nil];
-    }
-    self.window.rootViewController = self.viewController;
+    PPRootViewController *rootView = [[PPRootViewController alloc] initWithNibName:@"PPRootViewController" bundle:nil];
+
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = rootView;
     [self.window makeKeyAndVisible];
     return YES;
 }

@@ -132,15 +132,6 @@
     // You can set orientation mask for allowed orientations, default is UIInterfaceOrientationMaskAll
     [coordinatorSettings setValue:[NSNumber numberWithInt:UIInterfaceOrientationMaskAll] forKey:kPPHudOrientation];
     
-
-    // The appearance and behaviour of viewfinder (the red/green border on the camera screen) can be customized.
-    // You can force the viewfinder move along with the detected payslip if you set YES to this property
-    // NO means viewfinder will be fixed. Not setting this propery will leave default behaviour.
-//    [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPViewfinderMoveable];
-    // You can change the color of the viewfinder which denotes detected payslip
-    // Red color cannot be changed since it denotes no payslip is detected.
-//    [coordinatorSettings setValue:[UIColor yellowColor] forKey:kPPViewfinderColor];
-    
     // Define the sound filename played on successful recognition
     NSString* soundPath = [[NSBundle mainBundle] pathForResource:@"beep" ofType:@"mp3"];
     [coordinatorSettings setValue:soundPath forKey:kPPSoundFile];

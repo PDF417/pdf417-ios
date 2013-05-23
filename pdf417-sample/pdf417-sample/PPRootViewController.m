@@ -16,6 +16,7 @@
 - (void)dismissCameraViewControllerModal:(BOOL)isModal;
 
 @property (nonatomic, assign) BOOL useModalCameraView;
+@property (nonatomic, retain) PPScanningResult* scanResult;
 
 @end
 
@@ -37,13 +38,12 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
-//    [self setTitle:_(@"Demo")];
 }
 
 - (void)viewDidUnload
 {
     [self setStartButton:nil];
+    [self setScanResult:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -51,6 +51,32 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    
+    if ([self scanResult] != nil) {
+        
+        NSString *message = [[NSString alloc] initWithData:[[self scanResult] data] encoding:NSUTF8StringEncoding];
+        
+        if (message == nil) {
+            message = [[NSString alloc] initWithData:[[self scanResult] data] encoding:NSASCIIStringEncoding];
+        }
+        
+        NSLog(@"Barcode text:\n%@", message);
+        
+        NSString* type = @"Result:";
+        if ([[self scanResult] type] == PPScanningResultPdf417) {
+            type = @"PDF417:";
+        } else if ([[self scanResult] type] == PPScanningResultQrCode) {
+            type = @"QR Code:";
+        }
+        
+        NSLog(@"Barcode type:\n%@", type);
+        
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:type message:message delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+        
+        [alertView show];
+        
+        [self setScanResult:nil];
+    }
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -79,7 +105,7 @@
 
 - (IBAction)startPhotoPay:(id)sender {
     
-    // Check if photopay is supported
+    // Check if barcode scanning is supported
     NSError *error;
     if ([PPBarcodeCoordinator isScanningUnsupported:&error]) {
         NSString *messageString = [error localizedDescription];
@@ -88,32 +114,22 @@
         return;
     }
     
-    // Define the OCR patterns filename
-    static NSString* patternsFileName       = @"European";
-    static NSString* patternsFileExtension  = @"rom";
-    NSString* patternsPath = [[NSBundle mainBundle] pathForResource:patternsFileName ofType:patternsFileExtension];
-    assert(patternsPath != nil);
-    
-    // define license filename
-    static NSString* licenseFilename        = @"iOS";
-    static NSString* licenseFileExtension   = @"License";
-    NSString* licensePath = [[NSBundle mainBundle] pathForResource:licenseFilename ofType:licenseFileExtension];
-    assert(licensePath != nil);
-    
     // Create object which stores photopay settings
     NSMutableDictionary* coordinatorSettings = [[NSMutableDictionary alloc] init];
     
     // present modal (recommended and default) - make sure you dismiss the view controller when done
     // you also can set this to NO and push camera view controller to navigation view controller
-    [coordinatorSettings setValue:[NSNumber numberWithBool:useModalCameraView] forKey:kPPPresentModal];
+    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPPresentModal];
     // Use High camera video preset (recommended)
     [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPUseVideoPresetHigh];
-    
+    // You can display status messages about recognition
+    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPPresentToastMessages];
     // You can set orientation mask for allowed orientations, default is UIInterfaceOrientationMaskAll
-    [coordinatorSettings setValue:[NSNumber numberWithInt:UIInterfaceOrientationMaskLandscape] forKey:kPPHudOrientation];
-    // Set the language. You can use "en", "de", "hr", if not specified, phone default will be used.
-    // Use this according to your app localization strategy
-    [coordinatorSettings setValue:@"en" forKey:kPPLanguage];
+    [coordinatorSettings setValue:[NSNumber numberWithInt:UIInterfaceOrientationMaskAll] forKey:kPPHudOrientation];
+    
+    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizePdf417Key];
+    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeQrCodeKey];
+    
 
     // The appearance and behaviour of viewfinder (the red/green border on the camera screen) can be customized.
     // You can force the viewfinder move along with the detected payslip if you set YES to this property
@@ -177,91 +193,26 @@
 }
 
 - (void)cameraViewController:(UIViewController *)cameraViewController obtainedResult:(PPScanningResult *)result {
-    CameraViewController* cameraView = (CameraViewController*)cameraViewController;
-    [cameraView pauseScanning];
     
     NSString *message = [[NSString alloc] initWithData:[result data] encoding:NSUTF8StringEncoding];
+    
     if (message == nil) {
         message = [[NSString alloc] initWithData:[result data] encoding:NSASCIIStringEncoding];
     }
-    NSLog(@"Result is:\n%@", message);
     
-    NSString* title = @"Result:";
+    NSLog(@"Barcode text:\n%@", message);
+    
+    NSString* type = @"Result:";
     if ([result type] == PPScanningResultPdf417) {
-        title = @"PDF417:";
+        type = @"PDF417:";
     } else if ([result type] == PPScanningResultQrCode) {
-        title = @"QR Code:";
+        type = @"QR Code:";
     }
-//    
-//    BlockAlertView *alert = [BlockAlertView alertWithTitle:title message:message];
-//    
-//    [alert setCancelButtonWithTitle:@"Cancel" block:^{
-//        [cameraView resumeScanning];
-//        //        [self dismissCameraViewControllerModal:YES];
-//    }];
-//    
-//    [alert addButtonWithTitle:@"Copy text" block:^{
-//        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-//        pasteboard.string = message;
-//        [self dismissCameraViewControllerModal:YES];
-//    }];
-//    
-//    NSError *error = NULL;
-//    NSDataDetector *detector = [NSDataDetector dataDetectorWithTypes:(NSTextCheckingTypes)NSTextCheckingTypeLink error:&error];
-//    
-//    int numberOfMatches = 0;
-//    NSArray *matches = [detector matchesInString:message
-//                                         options:0
-//                                           range:NSMakeRange(0, [message length])];
-//    NSURL *linkUrl;
-//    for (NSTextCheckingResult *match in matches) {
-//        NSURL *url = [match URL];
-//        NSLog(@"URL %@", [url description]);
-//        if ([[url scheme] isEqual:@"tel"]) {
-//            NSLog(@"found telephone url: %@", url);
-//        } else {
-//            linkUrl = url;
-//            numberOfMatches++;
-//        }
-//    }
-//    if (numberOfMatches == 1 && linkUrl != nil) {
-//        [alert addButtonWithTitle:@"Open URL in Safari" block:^{
-//            if (![[UIApplication sharedApplication] openURL:linkUrl]) {
-//                NSLog(@"%@%@",@"Failed to open url:",[linkUrl description]);
-//            }
-//            [self dismissCameraViewControllerModal:YES];
-//        }];
-//    }
-//    
-//    //
-//    //    NSURL *url = [NSURL URLWithString:@"anasdad"];
-//    //
-//    //    [alert addButtonWithTitle:@"Open URL in Safari" block:^{
-//    //        if (![[UIApplication sharedApplication] openURL:url]) {
-//    //            NSLog(@"%@%@",@"Failed to open url:",[url description]);
-//    //        }
-//    //        [self dismissCameraViewControllerModal:YES];
-//    //    }];
-//    
-//    //    detector = [NSDataDetector dataDetectorWithTypes:(NSTextCheckingTypes)NSTextCheckingTypePhoneNumber error:&error];
-//    //
-//    //    numberOfMatches = [detector numberOfMatchesInString:message
-//    //                                                options:0
-//    //                                                  range:NSMakeRange(0, [message length])];
-//    //
-//    //    if (numberOfMatches == 1) {
-//    //        NSTextCheckingResult * match = [detector firstMatchInString:message options:0 range:NSMakeRange(0, [message length])];
-//    //        NSLog(@"Phone: %@", [match phoneNumber]);
-//    //        NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", [match phoneNumber]]];
-//    //        [alert addButtonWithTitle:@"Call phone" block:^{
-//    //            if (![[UIApplication sharedApplication] openURL:url]) {
-//    //                NSLog(@"%@%@",@"Failed to open url:",[url description]);
-//    //            }
-//    //            [self dismissCameraViewControllerModal:YES];
-//    //        }];
-//    //    }
-//    
-//    [alert show];
+    
+    NSLog(@"Barcode type:\n%@", type);
+    
+    [self setScanResult:result];
+    [self dismissCameraViewControllerModal:[self useModalCameraView]];
 }
 
 @end

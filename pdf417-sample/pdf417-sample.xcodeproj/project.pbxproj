@@ -22,6 +22,14 @@
 		1818D85D174E133200136FD2 /* de.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1818D859174E133200136FD2 /* de.strings */; };
 		1818D85E174E133200136FD2 /* en.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1818D85A174E133200136FD2 /* en.strings */; };
 		1818D85F174E133200136FD2 /* hr.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1818D85B174E133200136FD2 /* hr.strings */; };
+		1818D862174E17A500136FD2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1818D860174E179E00136FD2 /* AVFoundation.framework */; };
+		1818D865174E17B800136FD2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1818D863174E17AA00136FD2 /* AudioToolbox.framework */; };
+		1818D868174E1B8800136FD2 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1818D866174E1B7E00136FD2 /* CoreMedia.framework */; };
+		1818D86B174E208300136FD2 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1818D869174E1B8F00136FD2 /* CoreVideo.framework */; };
+		1818D86D174E209400136FD2 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1818D86C174E209400136FD2 /* libstdc++.dylib */; };
+		1818D870174E20B000136FD2 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1818D86E174E20A800136FD2 /* libiconv.dylib */; };
+		1818D873174E213D00136FD2 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1818D871174E213500136FD2 /* OpenGLES.framework */; };
+		1818D876174E218F00136FD2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1818D874174E218300136FD2 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +53,14 @@
 		1818D859174E133200136FD2 /* de.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = de.strings; sourceTree = "<group>"; };
 		1818D85A174E133200136FD2 /* en.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = en.strings; sourceTree = "<group>"; };
 		1818D85B174E133200136FD2 /* hr.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = hr.strings; sourceTree = "<group>"; };
+		1818D860174E179E00136FD2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		1818D863174E17AA00136FD2 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		1818D866174E1B7E00136FD2 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		1818D869174E1B8F00136FD2 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		1818D86C174E209400136FD2 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		1818D86E174E20A800136FD2 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		1818D871174E213500136FD2 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		1818D874174E218300136FD2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +68,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1818D876174E218F00136FD2 /* QuartzCore.framework in Frameworks */,
+				1818D870174E20B000136FD2 /* libiconv.dylib in Frameworks */,
+				1818D86D174E209400136FD2 /* libstdc++.dylib in Frameworks */,
+				1818D86B174E208300136FD2 /* CoreVideo.framework in Frameworks */,
+				1818D868174E1B8800136FD2 /* CoreMedia.framework in Frameworks */,
+				1818D873174E213D00136FD2 /* OpenGLES.framework in Frameworks */,
+				1818D865174E17B800136FD2 /* AudioToolbox.framework in Frameworks */,
+				1818D862174E17A500136FD2 /* AVFoundation.framework in Frameworks */,
 				1818D82C174D146F00136FD2 /* UIKit.framework in Frameworks */,
 				1818D82E174D146F00136FD2 /* Foundation.framework in Frameworks */,
 				1818D830174D146F00136FD2 /* CoreGraphics.framework in Frameworks */,
@@ -83,7 +107,15 @@
 			isa = PBXGroup;
 			children = (
 				1818D856174E133200136FD2 /* pdf417.embeddedframework */,
+				1818D86C174E209400136FD2 /* libstdc++.dylib */,
+				1818D86E174E20A800136FD2 /* libiconv.dylib */,
+				1818D863174E17AA00136FD2 /* AudioToolbox.framework */,
+				1818D860174E179E00136FD2 /* AVFoundation.framework */,
+				1818D869174E1B8F00136FD2 /* CoreVideo.framework */,
 				1818D82B174D146F00136FD2 /* UIKit.framework */,
+				1818D874174E218300136FD2 /* QuartzCore.framework */,
+				1818D866174E1B7E00136FD2 /* CoreMedia.framework */,
+				1818D871174E213500136FD2 /* OpenGLES.framework */,
 				1818D82D174D146F00136FD2 /* Foundation.framework */,
 				1818D82F174D146F00136FD2 /* CoreGraphics.framework */,
 			);
@@ -296,6 +328,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "pdf417-sample/pdf417-sample-Prefix.pch";
 				INFOPLIST_FILE = "pdf417-sample/pdf417-sample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -312,6 +345,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "pdf417-sample/pdf417-sample-Prefix.pch";
 				INFOPLIST_FILE = "pdf417-sample/pdf417-sample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

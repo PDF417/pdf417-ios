@@ -109,26 +109,28 @@
     NSError *error;
     if ([PPBarcodeCoordinator isScanningUnsupported:&error]) {
         NSString *messageString = [error localizedDescription];
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:messageString delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning"
+                                                        message:messageString
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil, nil];
         [alert show];
         return;
     }
     
-    // Create object which stores photopay settings
+    // Create object which stores pdf417 framework settings
     NSMutableDictionary* coordinatorSettings = [[NSMutableDictionary alloc] init];
     
+    // Set YES/NO for scanning pdf417 barcode standard (default YES)
+    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizePdf417Key];
+    // Set YES/NO for scanning qr code barcode standard (default NO)
+    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeQrCodeKey];
+    
     // present modal (recommended and default) - make sure you dismiss the view controller when done
-    // you also can set this to NO and push camera view controller to navigation view controller
+    // you also can set this to NO and push camera view controller to navigation view controller 
     [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPPresentModal];
-    // Use High camera video preset (recommended)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPUseVideoPresetHigh];
-    // You can display status messages about recognition
-    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPPresentToastMessages];
     // You can set orientation mask for allowed orientations, default is UIInterfaceOrientationMaskAll
     [coordinatorSettings setValue:[NSNumber numberWithInt:UIInterfaceOrientationMaskAll] forKey:kPPHudOrientation];
-    
-    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizePdf417Key];
-    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeQrCodeKey];
     
 
     // The appearance and behaviour of viewfinder (the red/green border on the camera screen) can be customized.

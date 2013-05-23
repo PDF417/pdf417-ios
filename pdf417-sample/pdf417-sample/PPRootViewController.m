@@ -7,26 +7,28 @@
 //
 
 #import "PPRootViewController.h"
+#import <pdf417/PPBarcode.h>
 
-static const BOOL useModalCameraView = YES;
-
-@interface PPRootViewController ()
+@interface PPRootViewController () <PPBarcodeDelegate>
 
 - (void)presentCameraViewController:(UIViewController*)cameraViewController isModal:(BOOL)isModal;
 
 - (void)dismissCameraViewControllerModal:(BOOL)isModal;
+
+@property (nonatomic, assign) BOOL useModalCameraView;
 
 @end
 
 @implementation PPRootViewController
 
 @synthesize startButton;
+@synthesize useModalCameraView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        useModalCameraView = YES;
     }
     return self;
 }
@@ -77,77 +79,63 @@ static const BOOL useModalCameraView = YES;
 
 - (IBAction)startPhotoPay:(id)sender {
     
-//    // Check if photopay is supported
-//    NSError *error;
-//    if ([PPCoordinator isPhotoPayUnsupported:&error]) {
-//        NSString *messageString = [error localizedDescription];
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:messageString delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-//        [alert show];
-//        [alert release];
-//        return;
-//    }
-//    
-//    // Define the OCR patterns filename
-//    static NSString* patternsFileName       = @"European";
-//    static NSString* patternsFileExtension  = @"rom";
-//    NSString* patternsPath = [[NSBundle mainBundle] pathForResource:patternsFileName ofType:patternsFileExtension];
-//    assert(patternsPath != nil);
-//    
-//    // define license filename
-//    static NSString* licenseFilename        = @"iOS";
-//    static NSString* licenseFileExtension   = @"License";
-//    NSString* licensePath = [[NSBundle mainBundle] pathForResource:licenseFilename ofType:licenseFileExtension];
-//    assert(licensePath != nil);
-//    
-//    // Create object which stores photopay settings
-//    NSMutableDictionary* coordinatorSettings = [[NSMutableDictionary alloc] init];
-//    
-//    // Set the patterns file (required)
-//    [coordinatorSettings setValue:patternsPath forKey:kPPOcrPatternsFile];
-//    // Set the license file (required)
-//    [coordinatorSettings setValue:licensePath forKey:kPPOcrLicenseFile];
-//    // present modal (recommended and default) - make sure you dismiss the view controller when done
-//    // you also can set this to NO and push camera view controller to navigation view controller
-//    [coordinatorSettings setValue:[NSNumber numberWithBool:useModalCameraView] forKey:kPPPresentModal];
-//    // Use High camera video preset (recommended)
-//    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPUseVideoPresetHigh];
-//    // It's good idea to show instruction on first run, this is default
-//    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPPresentHelpOnFirstRun];
-//    // You can display status messages about recognition
-//    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPPresentToastMessages];
-//    // This integer value defines after how many seconds photopay times out
-//    // Default is 6
-//    [coordinatorSettings setValue:[NSNumber numberWithInt:12] forKey:kPPPartialRecognitionTimeoutInterval];
-//    // You can set orientation mask for allowed orientations, default is UIInterfaceOrientationMaskAll
-//    [coordinatorSettings setValue:[NSNumber numberWithInt:UIInterfaceOrientationMaskLandscape] forKey:kPPHudOrientation];
-//    // Set the language. You can use "en", "de", "hr", if not specified, phone default will be used.
-//    // Use this according to your app localization strategy
-//    [coordinatorSettings setValue:@"de" forKey:kPPLanguage];
-//
-//    // The appearance and behaviour of viewfinder (the red/green border on the camera screen) can be customized.
-//    // You can force the viewfinder move along with the detected payslip if you set YES to this property
-//    // NO means viewfinder will be fixed. Not setting this propery will leave default behaviour.
-////    [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPViewfinderMoveable];
-//    // You can change the color of the viewfinder which denotes detected payslip
-//    // Red color cannot be changed since it denotes no payslip is detected.
-////    [coordinatorSettings setValue:[UIColor yellowColor] forKey:kPPViewfinderColor];
-//    
-//    // Define the sound filename played on successful recognition
-//    NSString* soundPath = [[NSBundle mainBundle] pathForResource:@"beep" ofType:@"mp3"];
-//    [coordinatorSettings setValue:soundPath forKey:kPPSoundFile];
-//    
-//    // Allocate the recognition coordinator object
-//    PPCoordinator *coordinator = [[PPCoordinator alloc] initWithSettings:coordinatorSettings];
-//    [coordinatorSettings release];
-//    
-//    // Create camera view controller
-//    UIViewController *cameraViewController = [coordinator cameraViewControllerWithDelegate:self];
-//    
-//    // present it modally
-//    cameraViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-//    [self presentCameraViewController:cameraViewController isModal:useModalCameraView];
-//    
-//    [coordinator release];
+    // Check if photopay is supported
+    NSError *error;
+    if ([PPBarcodeCoordinator isScanningUnsupported:&error]) {
+        NSString *messageString = [error localizedDescription];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:messageString delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+        return;
+    }
+    
+    // Define the OCR patterns filename
+    static NSString* patternsFileName       = @"European";
+    static NSString* patternsFileExtension  = @"rom";
+    NSString* patternsPath = [[NSBundle mainBundle] pathForResource:patternsFileName ofType:patternsFileExtension];
+    assert(patternsPath != nil);
+    
+    // define license filename
+    static NSString* licenseFilename        = @"iOS";
+    static NSString* licenseFileExtension   = @"License";
+    NSString* licensePath = [[NSBundle mainBundle] pathForResource:licenseFilename ofType:licenseFileExtension];
+    assert(licensePath != nil);
+    
+    // Create object which stores photopay settings
+    NSMutableDictionary* coordinatorSettings = [[NSMutableDictionary alloc] init];
+    
+    // present modal (recommended and default) - make sure you dismiss the view controller when done
+    // you also can set this to NO and push camera view controller to navigation view controller
+    [coordinatorSettings setValue:[NSNumber numberWithBool:useModalCameraView] forKey:kPPPresentModal];
+    // Use High camera video preset (recommended)
+    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPUseVideoPresetHigh];
+    
+    // You can set orientation mask for allowed orientations, default is UIInterfaceOrientationMaskAll
+    [coordinatorSettings setValue:[NSNumber numberWithInt:UIInterfaceOrientationMaskLandscape] forKey:kPPHudOrientation];
+    // Set the language. You can use "en", "de", "hr", if not specified, phone default will be used.
+    // Use this according to your app localization strategy
+    [coordinatorSettings setValue:@"en" forKey:kPPLanguage];
+
+    // The appearance and behaviour of viewfinder (the red/green border on the camera screen) can be customized.
+    // You can force the viewfinder move along with the detected payslip if you set YES to this property
+    // NO means viewfinder will be fixed. Not setting this propery will leave default behaviour.
+//    [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPViewfinderMoveable];
+    // You can change the color of the viewfinder which denotes detected payslip
+    // Red color cannot be changed since it denotes no payslip is detected.
+//    [coordinatorSettings setValue:[UIColor yellowColor] forKey:kPPViewfinderColor];
+    
+    // Define the sound filename played on successful recognition
+    NSString* soundPath = [[NSBundle mainBundle] pathForResource:@"beep" ofType:@"mp3"];
+    [coordinatorSettings setValue:soundPath forKey:kPPSoundFile];
+    
+    // Allocate the recognition coordinator object
+    PPBarcodeCoordinator *coordinator = [[PPBarcodeCoordinator alloc] initWithSettings:coordinatorSettings];
+    
+    // Create camera view controller
+    UIViewController *cameraViewController = [coordinator cameraViewControllerWithDelegate:self];
+    
+    // present it modally
+    cameraViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentCameraViewController:cameraViewController isModal:[self useModalCameraView]];
     
     NSLog(@"Starting");
 }
@@ -182,37 +170,98 @@ static const BOOL useModalCameraView = YES;
 }
 
 #pragma mark -
-#pragma mark PhotoPay delegate methods
-//
-//- (void)cameraViewController:(UIViewController*)cameraViewController
-//          didFinishWithError:(NSError*)error {
-//    [self dismissCameraViewControllerModal:useModalCameraView];
-//}
-//
-//- (void)cameraViewController:(UIViewController*)cameraViewController
-//         didFinishWithResult:(PPRecognitionResult*)result {
+#pragma mark PPBarcode delegate methods
+
+- (void)cameraViewControllerWasClosed:(UIViewController *)cameraViewController {
+    [self dismissCameraViewControllerModal:[self useModalCameraView]];
+}
+
+- (void)cameraViewController:(UIViewController *)cameraViewController obtainedResult:(PPScanningResult *)result {
+    CameraViewController* cameraView = (CameraViewController*)cameraViewController;
+    [cameraView pauseScanning];
+    
+    NSString *message = [[NSString alloc] initWithData:[result data] encoding:NSUTF8StringEncoding];
+    if (message == nil) {
+        message = [[NSString alloc] initWithData:[result data] encoding:NSASCIIStringEncoding];
+    }
+    NSLog(@"Result is:\n%@", message);
+    
+    NSString* title = @"Result:";
+    if ([result type] == PPScanningResultPdf417) {
+        title = @"PDF417:";
+    } else if ([result type] == PPScanningResultQrCode) {
+        title = @"QR Code:";
+    }
 //    
-//    // Display it
-//    if (result != nil) {
+//    BlockAlertView *alert = [BlockAlertView alertWithTitle:title message:message];
 //    
-//        // Process the result. Here we populate the table with recognition 
-//        // results and show it in the next screen
-//        PPPaymentDataTableSource* dataSource = [[PPPaymentDataTableSource alloc] initWithPaymentData:result];
-//        
-//        // Allocate PaymentViewController - responsible for presenting results
-//        PPPaymentDataViewController *paymentView = [[PPPaymentDataViewController alloc] initWithDataSource:dataSource];
-//        [dataSource release];
-//        
-//        // We animate payment view only if camera view was not displayed modally
-//        BOOL useAnimatedPaymentView = !useModalCameraView;
-//        
-//        [self.navigationController pushViewController:paymentView animated:useAnimatedPaymentView];
-//        
-//        [paymentView release];
+//    [alert setCancelButtonWithTitle:@"Cancel" block:^{
+//        [cameraView resumeScanning];
+//        //        [self dismissCameraViewControllerModal:YES];
+//    }];
+//    
+//    [alert addButtonWithTitle:@"Copy text" block:^{
+//        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+//        pasteboard.string = message;
+//        [self dismissCameraViewControllerModal:YES];
+//    }];
+//    
+//    NSError *error = NULL;
+//    NSDataDetector *detector = [NSDataDetector dataDetectorWithTypes:(NSTextCheckingTypes)NSTextCheckingTypeLink error:&error];
+//    
+//    int numberOfMatches = 0;
+//    NSArray *matches = [detector matchesInString:message
+//                                         options:0
+//                                           range:NSMakeRange(0, [message length])];
+//    NSURL *linkUrl;
+//    for (NSTextCheckingResult *match in matches) {
+//        NSURL *url = [match URL];
+//        NSLog(@"URL %@", [url description]);
+//        if ([[url scheme] isEqual:@"tel"]) {
+//            NSLog(@"found telephone url: %@", url);
+//        } else {
+//            linkUrl = url;
+//            numberOfMatches++;
+//        }
+//    }
+//    if (numberOfMatches == 1 && linkUrl != nil) {
+//        [alert addButtonWithTitle:@"Open URL in Safari" block:^{
+//            if (![[UIApplication sharedApplication] openURL:linkUrl]) {
+//                NSLog(@"%@%@",@"Failed to open url:",[linkUrl description]);
+//            }
+//            [self dismissCameraViewControllerModal:YES];
+//        }];
 //    }
 //    
-//    [self dismissCameraViewControllerModal:useModalCameraView];
-//}
-
+//    //
+//    //    NSURL *url = [NSURL URLWithString:@"anasdad"];
+//    //
+//    //    [alert addButtonWithTitle:@"Open URL in Safari" block:^{
+//    //        if (![[UIApplication sharedApplication] openURL:url]) {
+//    //            NSLog(@"%@%@",@"Failed to open url:",[url description]);
+//    //        }
+//    //        [self dismissCameraViewControllerModal:YES];
+//    //    }];
+//    
+//    //    detector = [NSDataDetector dataDetectorWithTypes:(NSTextCheckingTypes)NSTextCheckingTypePhoneNumber error:&error];
+//    //
+//    //    numberOfMatches = [detector numberOfMatchesInString:message
+//    //                                                options:0
+//    //                                                  range:NSMakeRange(0, [message length])];
+//    //
+//    //    if (numberOfMatches == 1) {
+//    //        NSTextCheckingResult * match = [detector firstMatchInString:message options:0 range:NSMakeRange(0, [message length])];
+//    //        NSLog(@"Phone: %@", [match phoneNumber]);
+//    //        NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", [match phoneNumber]]];
+//    //        [alert addButtonWithTitle:@"Call phone" block:^{
+//    //            if (![[UIApplication sharedApplication] openURL:url]) {
+//    //                NSLog(@"%@%@",@"Failed to open url:",[url description]);
+//    //            }
+//    //            [self dismissCameraViewControllerModal:YES];
+//    //        }];
+//    //    }
+//    
+//    [alert show];
+}
 
 @end

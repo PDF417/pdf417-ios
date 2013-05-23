@@ -16,3 +16,8 @@ profile
 *.moved-aside
 DerivedData
 .idea/
+
+
+# Help
+Readme.html
+Release notes.html

@@ -21,7 +21,7 @@ consists of code, headers, resources, strings, images and everything it needs to
 	
 3. Find the build settings for your target. Set the architectures (ARCHS) setting to armv7. This is needed because pdf417.embeddedframework currently supports only armv7 architectures. This means your app app will be a few MBs smaller (since armv7s build will not be included), but will still work with iPhone 3GS and newer.
 	
-4. In files in which you want to use PhotoPay, place import directive
+4. In files in which you want to use barcode scanning, place import directive
 
 		#import <pdf417/PPBarcode.h>
 
@@ -67,13 +67,13 @@ consists of code, headers, resources, strings, images and everything it needs to
 		NSString* soundPath = [[NSBundle mainBundle] pathForResource:@"beep" ofType:@"mp3"];
 		[coordinatorSettings setValue:soundPath forKey:kPPSoundFile];
     	
-    Also, this is where you can set language used in PhotoPay, this can currently be only `en` (English), `de` (German) and `hr` (Croatian). Other languages can be supported on demand. If you don't specify the language, default user language will be used, so use this feature according to your application's localization strategy.
+    Also, this is where you can set language used in pdf417 framework, this can currently be only `en` (English), `de` (German) and `hr` (Croatian). Other languages can be supported on demand. If you don't specify the language, default user language will be used, so use this feature according to your application's localization strategy.
     	
     	// Set the language. You can use "en", "de", "hr", if not specified, phone default will be used.
     	// Use this according to your app localization strategy
     	[coordinatorSettings setValue:@"en" forKey:kPPLanguage];
 		
-	Now you can initialize `PPCoordinator` object and use it to create `PPCameraViewController` which controls PhotoPay UI. You can present it on navigation view controller, but we recommend presenting it modally with these methods:
+	Now you can initialize `PPBarcodeCoordinator` object and use it to create `PPCameraViewController` which controls scanning UI. You can present it on navigation view controller, but we recommend presenting it modally with these methods:
 	
 		/**
  		 * Method presents a modal view controller and uses non deprecated method in iOS 6
@@ -180,16 +180,16 @@ pdf417 Framework is ARC agnostic which means you can safely use it in your ARC p
 
 ## Replacing resource files and localization
 
-All resource files in PhotoPayFramework can be changed. For example, you can change or add new localisation resource files. Localisation resource files are named {country-code}.strings. (e.g. en.strings, de.strings..). These files contain strings in format "key" = "value";. In code PhotoPay uses only "key" values, which are in runtime translated to correct "value".
+All resource files in pdf417 framework can be changed. For example, you can change or add new localisation resource files. Localisation resource files are named {country-code}.strings. (e.g. en.strings, de.strings..). These files contain strings in format "key" = "value";. In code pdf417 framework uses only "key" values, which are in runtime translated to correct "value".
 
 Modifying strings files is the same as modifying any other resource file.
 
-1. Find the strings file file in the Xcode (by expanding Frameworks group, PhotoPay.embeddedframework subgroup under Resources)
+1. Find the strings file file in the Xcode (by expanding Frameworks group, pdf417.embeddedframework subgroup under Resources)
 2. Right click it and select delete option. When asked, choose Remove reference option.
 3. Add a new strings file with the same name. You can use the en.strings, de.strings and hr.strings files from the development packages as a template.
 4. Test to see that everything works as it should!
 
-PhotoPay at runtime decides which language it should use by observing the flag you set while initializing the Coordinator object. For the reminder, the flag is:
+pdf417 framework at runtime decides which language it should use by observing the flag you set while initializing the Coordinator object. For the reminder, the flag is:
 
 		// Set the language. You can use "en", "de", "hr", if not specified, phone default will be used.
     	// Use this according to your app localization strategy

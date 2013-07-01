@@ -197,4 +197,4 @@ pdf417 framework at runtime decides which language it should use by observing th
 		
 ## Additional info
  
- For any inquiries, additional information or instructions please contact us at <jurica.cerovec@photopay.net>
+ For any inquiries, additional information or instructions please contact us at <pdf417@photopay.net>

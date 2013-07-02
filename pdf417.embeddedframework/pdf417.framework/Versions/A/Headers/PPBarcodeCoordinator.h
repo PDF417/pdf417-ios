@@ -13,6 +13,8 @@
 @protocol PPCameraViewDelegate;
 @protocol PPBarcodeDelegate;
 @class PPCameraManager;
+@class PPOverlayViewController;
+@class PPAccelerometerManager;
 
 /**
  * This object is the mastermind of the scanning process.
@@ -33,8 +35,11 @@
 /** Object which will take care of the camera */
 @property (nonatomic, retain) PPCameraManager *cameraManager;
 
-/** Plist file with help content */
-@property (nonatomic, retain) NSString* helpContentFile;
+/** We need an acceleration manager object because we're interested in events regarding device movement */
+@property (nonatomic, retain) PPAccelerometerManager *accelerometerManager;
+
+/** Orientation of toast messages */
+@property (nonatomic, assign) UIInterfaceOrientationMask hudOrientation;
 
 /**
  * Initializes the object in proper state
@@ -53,6 +58,12 @@
 - (UIViewController*)cameraViewControllerWithDelegate:(id<PPBarcodeDelegate>)delegate;
 
 /**
+ * Helper method for initializing with overlay view
+ */
+- (UIViewController*)cameraViewControllerWithDelegate:(id<PPBarcodeDelegate>)delegate
+                                overlayViewController:(PPOverlayViewController*)overlayViewController;
+
+/**
  * Starts the camera session, flash, torch and frame saving process. Also makes the camera do the autofocus
  * IMPORTANT: must be called only after initWithSettings...
  */
@@ -64,8 +75,8 @@
  */
 - (BOOL)stop;
 
-/** responds to tap events */
-- (void)handleTapWithLocation:(CGPoint)tapPoint;
+/** Camera did load preview */
+- (void)cameraDidLoad;
 
 /** Torch mode is set to on or off */
 - (void)setTorchEnabled:(BOOL)isEnabled;
@@ -76,17 +87,14 @@
 /** stops the frame retreiving process */
 - (void)stopReceivingFrames;
 
-/** returns the video preview layer which will be shown on screen */
-- (AVCaptureVideoPreviewLayer *) getVideoPreviewLayer;
-
-/** returns the video input device which controls the frame taking */
-- (AVCaptureDeviceInput *) getVideoInput;
-
 /** Returns the size of video frames in pixels (eg 640, 480) */
 - (CGSize)getApertureSize;
 
 /** Plays sound which marks scan success */
 - (void)playScanSuccesSound;
+
+/** Obtains user-specified license key */
+- (id)getLicenseKey;
 
 /**
  * This method is called when barcode scannning is unsupported 

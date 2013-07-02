@@ -1,6 +1,10 @@
-# pdf417.mobi integration instructions
+# pdf417.mobi instructions
 
 The package contains the pdf417 framework and a sample app to demonstrate its integration. Framework can be deployed on iOS 4.3 or later and iPhone 3GS or newer. This README accompanies the sample app and shows how to setup basic functionality as well as perform some customization.
+
+## How to license pdf417.mobi framework for your commercial project
+
+We want pdf417.mobi framework to be your first choice for scanning barcodes in your iOS or Android apps. That's why we enable you to use pdf417.mobi completely free of charge in your development phase or in non commercial projects, for as many developers as you need. To obtain commercial license, follow the simple steps defined on our website [www.pdf417.mobi](www.pdf417.mobi).
 
 ## How to integrate the pdf417.mobi framework in your project
 
@@ -53,6 +57,13 @@ consists of code, headers, resources, strings, images and everything it needs to
     	
     	// Set YES/NO for scanning qr code barcode standard (default NO)
     	[coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeQrCodeKey];
+    	
+    You can use pdf417.mobi free of change and without license key for development and non-commercial projects. Once you obtain a commercial license key from [www.pdf417.mobi](www.pdf417.mobi), you can set it like this:
+    
+   		// Set the license key
+    	[coordinatorSettings setValue:@"Enter_License_Key_Here" forKey:kPPLicenseKey];
+    	
+    If the license key is valid for your application, this will automatically unlock the pdf417.mobi framework, remove the watermark from the camera view and enable all features to be used in your app.
 		
 	There are more, optional settings values. For example:
 		

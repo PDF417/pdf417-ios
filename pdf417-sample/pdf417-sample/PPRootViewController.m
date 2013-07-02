@@ -126,6 +126,9 @@
     // Set YES/NO for scanning qr code barcode standard (default NO)
     [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeQrCodeKey];
     
+    /** Set the license key */
+//    [coordinatorSettings setValue:@"Enter_License_Key_Here" forKey:kPPLicenseKey];
+    
     // present modal (recommended and default) - make sure you dismiss the view controller when done
     // you also can set this to NO and push camera view controller to navigation view controller 
     [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPPresentModal];
@@ -145,8 +148,6 @@
     // present it modally
     cameraViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self presentCameraViewController:cameraViewController isModal:[self useModalCameraView]];
-    
-    NSLog(@"Starting");
 }
 
 /**

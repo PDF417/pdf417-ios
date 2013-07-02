@@ -11,6 +11,7 @@
 typedef NS_ENUM(NSInteger, PPScanningResultType) {
     PPScanningResultPdf417,
     PPScanningResultQrCode,
+    PPScanningResultLicenseInfo,
     PPScanningResultNone
 };
 

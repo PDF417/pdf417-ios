@@ -10,7 +10,6 @@
 #import "PPApp.h"
 #import "PPBarcodeCoordinator.h"
 #import "PPSettings.h"
-#import "CameraViewController.h"
 #import "PPScanningResult.h"
 
 /**

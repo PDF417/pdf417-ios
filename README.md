@@ -1,12 +1,18 @@
-# pdf417.mobi instructions
+# PPpdf417 integration instructions
 
 The package contains the pdf417 framework and a sample app to demonstrate its integration. Framework can be deployed on iOS 4.3 or later and iPhone 3GS or newer. This README accompanies the sample app and shows how to setup basic functionality as well as perform some customization.
 
-## How to license pdf417.mobi framework for your commercial project
-
-We want pdf417.mobi framework to be your first choice for scanning barcodes in your iOS or Android apps. That's why we enable you to use pdf417.mobi completely free of charge in your development phase or in non commercial projects, for as many developers as you need. To obtain commercial license, follow the simple steps defined on our website [www.pdf417.mobi](www.pdf417.mobi).
-
 ## How to integrate the pdf417.mobi framework in your project
+
+### Cocoapods
+
+CocoaPods is the recommended way to add PPpdf417 framework to your project.
+
+1. Add a pod entry for PPpdf417 to your Podfile `pod 'PPpdf417',  '~> 1.0.0'`
+2. Install the pod(s) by running `pod install`.
+3. Go to classic integration step 3.
+
+### Classic integration 
 
 1. Drag the pdf417.embeddedframework into the Frameworks Group in your Xcode project. The framework
 consists of code, headers, resources, strings, images and everything it needs to function properly.
@@ -205,6 +211,10 @@ pdf417 framework at runtime decides which language it should use by observing th
 		// Set the language. You can use "en", "de", "hr", if not specified, phone default will be used.
     	// Use this according to your app localization strategy
     	[coordinatorSettings setValue:@"en" forKey:kPPLanguage];
+    	
+## How to license pdf417.mobi framework for your commercial project
+
+We want pdf417.mobi framework to be your first choice for scanning barcodes in your iOS or Android apps. That's why we enable you to use pdf417.mobi completely free of charge in your development phase or in non commercial projects, for as many developers as you need. To obtain commercial license, follow the simple steps defined on our website [www.pdf417.mobi](www.pdf417.mobi).
 		
 ## Additional info
  

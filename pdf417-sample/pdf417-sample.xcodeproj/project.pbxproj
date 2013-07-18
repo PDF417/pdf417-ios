@@ -320,7 +320,6 @@
 		1818D84F174D146F00136FD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = armv7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../pdf417.embeddedframework\"",
@@ -337,7 +336,6 @@
 		1818D850174D146F00136FD2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = armv7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../pdf417.embeddedframework\"",

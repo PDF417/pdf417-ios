@@ -1,13 +1,4 @@
 language: objective-c
 
-before_script::
-	- brew update
-	- brew install xctool
-	
-script:
-	- xctool \
-  		-project YourProject.xcodeproj \
-  		-scheme YourScheme \
-  		-configuration Debug
-  		-sdk iphoneos
-  		build
+before_script: travis/before_script.sh
+script: travis/script.sh

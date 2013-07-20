@@ -43,10 +43,10 @@ consists of code, headers, resources, strings, images and everything it needs to
 	if ([PPBarcodeCoordinator isScanningUnsupported:&error]) {
 		NSString *messageString = [error localizedDescription];
 		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning"
-                                                       		message:messageString
-                                                       	       delegate:nil
-                                                      cancelButtonTitle:@"OK"
-                                                      otherButtonTitles:nil, nil];
+                                                       	message:messageString
+                                                       delegate:nil
+                                        	  cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil, nil];
 		[alert show];
 		return;
 	}
@@ -232,7 +232,11 @@ pdf417 framework at runtime decides which language it should use by observing th
 ## How to license pdf417.mobi framework for your commercial project
 
 We want pdf417.mobi framework to be your first choice for scanning barcodes in your iOS or Android apps. That's why we enable you to use pdf417.mobi completely free of charge in your development phase or in non commercial projects, for as many developers as you need. To obtain commercial license, follow the simple steps defined on our website [www.pdf417.mobi](www.pdf417.mobi).
-		
-## Additional info
- 
- For any inquiries, additional information or instructions please contact us at <pdf417@photopay.net>
+
+## Credits
+
+AFNetworking was created for PhotoPay project by [PhotoPay Ltd.](http://photopay.net).
+
+## Contact
+
+For any inquiries, additional information or instructions please contact us at <pdf417@photopay.net> our follow our page on Twitter ([@417pdf](https://twitter.com/417pdf)).

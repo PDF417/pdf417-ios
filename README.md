@@ -1,12 +1,14 @@
-# PPpdf417
+<p align="center" >
+  <img src="https://raw.github.com/PDF417/pdf417-ios/assets/pdf417-git-logo.png" alt="pdf417 SDK for iOS" title="pdf417 SDK for iOS">
+</p>
 
-The package contains the pdf417 framework and a sample app to demonstrate its integration. Framework can be deployed on iOS 4.3 or later and iPhone 3GS or newer. This README accompanies the sample app and shows how to setup basic functionality as well as perform some customization.
+pdf417 SDK for iOS is small and powerful tool for enabling barcode scanning in your apps. It's reliable, fast, and customizable. It's distributed as both framework and CococaPod so it's very easy to integrate. pdf417 SDK works on both iPhones and iPads on iOS 4.3 or later.
 
-## How to integrate the pdf417.mobi framework in your project
+## Integration
 
 ### Cocoapods
 
-CocoaPods is the recommended way to add PPpdf417 framework to your project.
+CocoaPods is the recommended way to add pdf417 SDK to your project.
 
 1. Add a pod entry for PPpdf417 to your Podfile `pod 'PPpdf417',  '~> 1.0.0'`
 2. Install the pod(s) by running `pod install`.
@@ -66,14 +68,14 @@ consists of code, headers, resources, strings, images and everything it needs to
 	[coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeQrCodeKey];
 	```
 
-	You can use pdf417.mobi free of change and without license key for development and non-commercial projects. Once you obtain a commercial license key from [www.pdf417.mobi](www.pdf417.mobi), you can set it like this:
+	You can use pdf417 SDK free of change and without license key for development and non-commercial projects. Once you obtain a commercial license key from [www.pdf417.mobi](www.pdf417.mobi), you can set it like this:
    
 	```objective-c
 	// Set the license key
 	[coordinatorSettings setValue:@"Enter_License_Key_Here" forKey:kPPLicenseKey];
 	```
     	
-	If the license key is valid for your application, this will automatically unlock the pdf417.mobi framework, remove the watermark from the camera view and enable all features to be used in your app.
+	If the license key is valid for your application, this will automatically unlock the pdf417 SDK, remove the watermark from the camera view and enable all features to be used in your app.
 		
 	There are more, optional settings values. For example:
 
@@ -90,7 +92,7 @@ consists of code, headers, resources, strings, images and everything it needs to
 	[coordinatorSettings setValue:soundPath forKey:kPPSoundFile];
 	```
     	
-	Also, this is where you can set language used in pdf417 framework, this can currently be only `en` (English), `de` (German) and `hr` (Croatian). Other languages can be supported on demand. If you don't specify the language, default user language will be used, so use this feature according to your application's localization strategy.
+	Also, this is where you can set language used in pdf417 SDK, this can currently be only `en` (English), `de` (German) and `hr` (Croatian). Other languages can be supported on demand. If you don't specify the language, default user language will be used, so use this feature according to your application's localization strategy.
     
 	```objective-c
 	// Set the language. You can use "en", "de", "hr", if not specified, phone default will be used.
@@ -98,34 +100,7 @@ consists of code, headers, resources, strings, images and everything it needs to
 	[coordinatorSettings setValue:@"en" forKey:kPPLanguage];
 	```
 		
-	Now you can initialize `PPBarcodeCoordinator` object and use it to create `PPCameraViewController` which controls scanning UI. You can present it on navigation view controller, but we recommend presenting it modally with these methods:
-
-	```objective-c
-	/**
- 	 * Method presents a modal view controller and uses non deprecated method in iOS 6
- 	 */
-	- (void)presentCameraViewController:(UIViewController*)cameraViewController {
- 		cameraViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-		if ([self respondsToSelector:@selector(presentViewController:animated:completion:)]) {
-			[self presentViewController:cameraViewController animated:YES completion:nil];
-		} else {
-			[self presentModalViewController:cameraViewController animated:YES];
-		}
-	}
-
-	/**
- 	 * Method dismisses a modal view controller and uses non deprecated method in iOS 6
- 	 */
-	- (void)dismissCameraViewController {
-		if ([self respondsToSelector:@selector(dismissViewControllerAnimated:completion:)]) {
-			[self dismissViewControllerAnimated:YES completion:nil];
-		} else {
-			[self dismissModalViewControllerAnimated:YES];
-		}
-	}
-	```
-		
-	With these methods you can present camera view controller like this (this code doesn't use ARC, but with ARC you just follow the conventions as usual):
+	Now you can initialize `PPBarcodeCoordinator` object and use it to create `PPCameraViewController` which controls scanning UI. You can present it on navigation view controller or modally, whichever suits you best.
 
 	```objective-c
 	// Allocate the recognition coordinator object
@@ -137,7 +112,7 @@ consists of code, headers, resources, strings, images and everything it needs to
     
 	// present it modally
 	cameraViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-	[self presentCameraViewController:cameraViewController];
+	[self presentViewController:cameraViewController animated:YES completion:nil];
     	
 	[coordinator release];
 	```
@@ -167,7 +142,7 @@ consists of code, headers, resources, strings, images and everything it needs to
 
 	```objective-c
 	- (void)cameraViewControllerWasClosed:(UIViewController *)cameraViewController {
-		[self dismissCameraViewControllerModal:[self useModalCameraView]];
+		[self dismissViewControllerAnimated:YES completion:nil];
 	}
 
 	- (void)cameraViewController:(UIViewController *)cameraViewController obtainedResult:(PPScanningResult *)result {
@@ -192,7 +167,7 @@ consists of code, headers, resources, strings, images and everything it needs to
 		NSLog(@"Barcode type:\n%@", type);
     
 		[self setScanResult:result];
-		[self dismissCameraViewControllerModal:[self useModalCameraView]];
+		[self dismissViewControllerAnimated:YES completion:nil];
 	}
 	```
 		
@@ -235,7 +210,11 @@ We want pdf417.mobi framework to be your first choice for scanning barcodes in y
 
 ## Credits
 
-AFNetworking was created for PhotoPay project by [PhotoPay Ltd.](http://photopay.net).
+pdf417 SDK was created for PhotoPay project by [PhotoPay Ltd.](http://photopay.net). It powers several mobile banking apps like:
+
+- [Erste Bank netbanking app for Erste Bank Austria](https://itunes.apple.com/at/app/erste-bank-sparkasse-osterreich/id437840915?mt=8)
+- [Erste mBanking app for Erste Bank Croatia](https://itunes.apple.com/us/app/erste-mbanking/id477066660?mt=8)
+- [m-Hypo:-) app for Hypo Alpe-Adria-Bank Croatia](https://itunes.apple.com/us/app/m-hypo/id529756500?mt=8).
 
 ## Contact
 

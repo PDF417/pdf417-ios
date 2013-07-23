@@ -2,7 +2,7 @@
   <img src="https://raw.github.com/PDF417/pdf417-ios/assets/pdf417-git-logo.png" alt="pdf417 SDK for iOS" title="pdf417 SDK for iOS">
 </p>
 
-pdf417 SDK for iOS is small and powerful tool for enabling barcode scanning in your apps. It's reliable, fast, and customizable. It's distributed as both framework and CococaPod so it's very easy to integrate. pdf417 SDK works on both iPhones and iPads on iOS 4.3 or later.
+pdf417 SDK for iOS is small and powerful tool for enabling barcode scanning in your apps. It's reliable, fast, and customizable. It's distributed as both framework and CococaPod so it's very easy to integrate. pdf417 SDK works on both iPhones and iPads on iOS 4.3 or later. Besides PDF417 format, SDK supports QR codes and all 1D barcodes.
 
 ## Integration
 
@@ -55,7 +55,7 @@ consists of code, headers, resources, strings, images and everything it needs to
 	```
 
 	Then you need to setup pdf417 initialization parameters. Parameters are placed in a `NSMutableDictionary` object. 
-	This is where you set which barcode formats are scanned (currently QR code and pdf417) and where you can set language used in pdf417 framework.  
+	This is where you set which barcode formats are scanned (currently PDF417, QR code and 1D barcode types) and where you can set language used in pdf417 framework.  
 
 	```objective-c
 	// Create object which stores pdf417 framework settings
@@ -66,6 +66,33 @@ consists of code, headers, resources, strings, images and everything it needs to
     	
 	// Set YES/NO for scanning qr code barcode standard (default NO)
 	[coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeQrCodeKey];
+	
+	// Set YES/NO for scanning all 1D barcode standards (default NO). Use this if you're not sure
+	// which barcode type you need to scan. Specific values for each barcode type (listed below)
+	// overrides this value. This means that you can say YES for all 1D barcodes and set NO for
+	// Code 128 and Code 39 to disable them.
+    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognize1DBarcodesKey];
+    
+    // Set YES/NO for scanning code 128 barcode standard (default NO)
+    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeCode128Key];
+    
+    // Set YES/NO for scanning code 39 barcode standard (default NO)
+    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeCode39Key];
+    
+    // Set YES/NO for scanning EAN 8 barcode standard (default NO)
+    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeEAN8Key];
+    
+    // Set YES/NO for scanning EAN 13 barcode standard (default NO)
+    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeEAN13Key];
+    
+    // Set YES/NO for scanning ITF barcode standard (default NO)
+    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeITFKey];
+    
+    // Set YES/NO for scanning UPCA barcode standard (default NO)
+    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeUPCAKey];
+    
+    // Set YES/NO for scanning UPCE barcode standard (default NO)
+    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeUPCEKey];
 	```
 
 	You can use pdf417 SDK free of change and without license key for development and non-commercial projects. Once you obtain a commercial license key from [www.pdf417.mobi](www.pdf417.mobi), you can set it like this:

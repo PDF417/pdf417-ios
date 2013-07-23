@@ -12,6 +12,13 @@ typedef NS_ENUM(NSInteger, PPScanningResultType) {
     PPScanningResultPdf417,
     PPScanningResultQrCode,
     PPScanningResultLicenseInfo,
+    PPScanningResultCode128,
+    PPScanningResultCode39,
+    PPScanningResultEAN13,
+    PPScanningResultEAN8,
+    PPScanningResultITF,
+    PPScanningResultUPCA,
+    PPScanningResultUPCE,
     PPScanningResultNone
 };
 
@@ -22,5 +29,7 @@ typedef NS_ENUM(NSInteger, PPScanningResultType) {
 @property (nonatomic, retain, readonly) NSData* data;
 
 - (id)initWithData:(NSData*)data type:(PPScanningResultType)type;
+
++ (NSString*)getTypeName:(PPScanningResultType)type;
 
 @end

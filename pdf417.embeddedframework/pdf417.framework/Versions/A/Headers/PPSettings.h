@@ -54,6 +54,22 @@ extern NSString* const kPPLicenseKey;
 extern NSString* const kPPRecognizePdf417Key;
 /** When an object under this key is boolean true, Qr code is scanned */
 extern NSString* const kPPRecognizeQrCodeKey;
+/** When an object under this key is boolean true, All 1D barcodes are enabled */
+extern NSString* const kPPRecognize1DBarcodesKey;
+/** When an object under this key is boolean true, Code128 barcode is scanned */
+extern NSString* const kPPRecognizeCode128Key;
+/** When an object under this key is boolean true, Code39 barcode is scanned */
+extern NSString* const kPPRecognizeCode39Key;
+/** When an object under this key is boolean true, EAN13 barcode is scanned */
+extern NSString* const kPPRecognizeEAN13Key;
+/** When an object under this key is boolean true, EAN8 barcode is scanned */
+extern NSString* const kPPRecognizeEAN8Key;
+/** When an object under this key is boolean true, ITF barcode is scanned */
+extern NSString* const kPPRecognizeITFKey;
+/** When an object under this key is boolean true, UPCA barcode is scanned */
+extern NSString* const kPPRecognizeUPCAKey;
+/** When an object under this key is boolean true, UPCE barcode is scanned */
+extern NSString* const kPPRecognizeUPCEKey;
 
 /** Keys for camera setup */
 

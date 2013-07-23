@@ -62,12 +62,7 @@
         
         NSLog(@"Barcode text:\n%@", message);
         
-        NSString* type = @"Result:";
-        if ([[self scanResult] type] == PPScanningResultPdf417) {
-            type = @"PDF417:";
-        } else if ([[self scanResult] type] == PPScanningResultQrCode) {
-            type = @"QR Code:";
-        }
+        NSString* type = [PPScanningResult getTypeName:[[self scanResult] type]];
         
         NSLog(@"Barcode type:\n%@", type);
         
@@ -125,6 +120,22 @@
     [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizePdf417Key];
     // Set YES/NO for scanning qr code barcode standard (default NO)
     [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeQrCodeKey];
+    // Set YES/NO for scanning all 1D barcode standards (default NO)
+    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognize1DBarcodesKey];
+    // Set YES/NO for scanning code 128 barcode standard (default NO)
+    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeCode128Key];
+    // Set YES/NO for scanning code 39 barcode standard (default NO)
+    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeCode39Key];
+    // Set YES/NO for scanning EAN 8 barcode standard (default NO)
+    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeEAN8Key];
+    // Set YES/NO for scanning EAN 13 barcode standard (default NO)
+    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeEAN13Key];
+    // Set YES/NO for scanning ITF barcode standard (default NO)
+    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeITFKey];
+    // Set YES/NO for scanning UPCA barcode standard (default NO)
+    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeUPCAKey];
+    // Set YES/NO for scanning UPCE barcode standard (default NO)
+    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeUPCEKey];
     
     /** Set the license key */
 //    [coordinatorSettings setValue:@"Enter_License_Key_Here" forKey:kPPLicenseKey];
@@ -196,12 +207,7 @@
     
     NSLog(@"Barcode text:\n%@", message);
     
-    NSString* type = @"Result:";
-    if ([result type] == PPScanningResultPdf417) {
-        type = @"PDF417:";
-    } else if ([result type] == PPScanningResultQrCode) {
-        type = @"QR Code:";
-    }
+    NSString* type = [PPScanningResult getTypeName:[result type]];
     
     NSLog(@"Barcode type:\n%@", type);
     

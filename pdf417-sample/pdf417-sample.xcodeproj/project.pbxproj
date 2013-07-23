@@ -26,10 +26,10 @@
 		1818D870174E20B000136FD2 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1818D86E174E20A800136FD2 /* libiconv.dylib */; };
 		1818D873174E213D00136FD2 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1818D871174E213500136FD2 /* OpenGLES.framework */; };
 		1818D876174E218F00136FD2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1818D874174E218300136FD2 /* QuartzCore.framework */; };
-		18A51597179E96CA00D59831 /* pdf417.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A51592179E96CA00D59831 /* pdf417.framework */; };
-		18A51598179E96CA00D59831 /* de.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18A51594179E96CA00D59831 /* de.strings */; };
-		18A51599179E96CA00D59831 /* en.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18A51595179E96CA00D59831 /* en.strings */; };
-		18A5159A179E96CA00D59831 /* hr.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18A51596179E96CA00D59831 /* hr.strings */; };
+		18A515A1179EC3F000D59831 /* pdf417.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A5159C179EC3F000D59831 /* pdf417.framework */; };
+		18A515A2179EC3F000D59831 /* de.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18A5159E179EC3F000D59831 /* de.strings */; };
+		18A515A3179EC3F000D59831 /* en.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18A5159F179EC3F000D59831 /* en.strings */; };
+		18A515A4179EC3F000D59831 /* hr.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18A515A0179EC3F000D59831 /* hr.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,10 +57,10 @@
 		1818D86E174E20A800136FD2 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		1818D871174E213500136FD2 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		1818D874174E218300136FD2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		18A51592179E96CA00D59831 /* pdf417.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = pdf417.framework; sourceTree = "<group>"; };
-		18A51594179E96CA00D59831 /* de.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = de.strings; sourceTree = "<group>"; };
-		18A51595179E96CA00D59831 /* en.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = en.strings; sourceTree = "<group>"; };
-		18A51596179E96CA00D59831 /* hr.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = hr.strings; sourceTree = "<group>"; };
+		18A5159C179EC3F000D59831 /* pdf417.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = pdf417.framework; sourceTree = "<group>"; };
+		18A5159E179EC3F000D59831 /* de.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = de.strings; sourceTree = "<group>"; };
+		18A5159F179EC3F000D59831 /* en.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = en.strings; sourceTree = "<group>"; };
+		18A515A0179EC3F000D59831 /* hr.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = hr.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +79,7 @@
 				1818D82C174D146F00136FD2 /* UIKit.framework in Frameworks */,
 				1818D82E174D146F00136FD2 /* Foundation.framework in Frameworks */,
 				1818D830174D146F00136FD2 /* CoreGraphics.framework in Frameworks */,
-				18A51597179E96CA00D59831 /* pdf417.framework in Frameworks */,
+				18A515A1179EC3F000D59831 /* pdf417.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,9 +106,9 @@
 		1818D82A174D146F00136FD2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				18A51591179E96CA00D59831 /* pdf417.embeddedframework */,
 				1818D86C174E209400136FD2 /* libstdc++.dylib */,
 				1818D86E174E20A800136FD2 /* libiconv.dylib */,
+				18A5159B179EC3F000D59831 /* pdf417.embeddedframework */,
 				1818D863174E17AA00136FD2 /* AudioToolbox.framework */,
 				1818D860174E179E00136FD2 /* AVFoundation.framework */,
 				1818D869174E1B8F00136FD2 /* CoreVideo.framework */,
@@ -149,22 +149,22 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		18A51591179E96CA00D59831 /* pdf417.embeddedframework */ = {
+		18A5159B179EC3F000D59831 /* pdf417.embeddedframework */ = {
 			isa = PBXGroup;
 			children = (
-				18A51592179E96CA00D59831 /* pdf417.framework */,
-				18A51593179E96CA00D59831 /* Resources */,
+				18A5159C179EC3F000D59831 /* pdf417.framework */,
+				18A5159D179EC3F000D59831 /* Resources */,
 			);
 			name = pdf417.embeddedframework;
 			path = ../pdf417.embeddedframework;
 			sourceTree = "<group>";
 		};
-		18A51593179E96CA00D59831 /* Resources */ = {
+		18A5159D179EC3F000D59831 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				18A51594179E96CA00D59831 /* de.strings */,
-				18A51595179E96CA00D59831 /* en.strings */,
-				18A51596179E96CA00D59831 /* hr.strings */,
+				18A5159E179EC3F000D59831 /* de.strings */,
+				18A5159F179EC3F000D59831 /* en.strings */,
+				18A515A0179EC3F000D59831 /* hr.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -226,9 +226,9 @@
 				1818D840174D146F00136FD2 /* Default@2x.png in Resources */,
 				1818D842174D146F00136FD2 /* Default-568h@2x.png in Resources */,
 				1818D855174D14DB00136FD2 /* PPRootViewController.xib in Resources */,
-				18A51598179E96CA00D59831 /* de.strings in Resources */,
-				18A51599179E96CA00D59831 /* en.strings in Resources */,
-				18A5159A179E96CA00D59831 /* hr.strings in Resources */,
+				18A515A2179EC3F000D59831 /* de.strings in Resources */,
+				18A515A3179EC3F000D59831 /* en.strings in Resources */,
+				18A515A4179EC3F000D59831 /* hr.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

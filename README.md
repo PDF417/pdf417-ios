@@ -10,7 +10,7 @@ pdf417 SDK for iOS is small and powerful tool for enabling barcode scanning in y
 
 CocoaPods is the recommended way to add pdf417 SDK to your project.
 
-1. Add a pod entry for PPpdf417 to your Podfile `pod 'PPpdf417',  '~> 1.0.0'`
+1. Add a pod entry for PPpdf417 to your Podfile `pod 'PPpdf417',  '~> 1.1.0'`
 2. Install the pod(s) by running `pod install`.
 3. Go to classic integration step 3.
 

@@ -1,0 +1,13 @@
+/* Library strings */
+
+// Title of the camera view when camera is presented on a navigation view controller
+"photo_pay" = "Barcode scannen";
+
+"photopay_close" = "Abbrechen";
+"photopay_light_on" = "Licht an";
+"photopay_light_off" = "Licht aus";
+
+"photopay_error_autofocus" = "Diese Funktion ist für Geräte ohne Autofokus-Option nicht verfügbar.";
+"photopay_error_old" = "Diese Option ist für Ihr Gerät nicht verfügbar.";
+"photopay_error_old_os" = "Diese Funktion ist verfügbar für iOS 4 und neuere Betriebssysteme.";
+"photopay_error_simulator" = "Diese Funktion ist nicht verfügbar für den iPhone-Simulator.";

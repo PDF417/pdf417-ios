@@ -1,0 +1,13 @@
+/* Library strings */
+
+// Title of the camera view when camera is presented on a navigation view controller
+"photo_pay" = "Skeniranje";
+
+"photopay_close" = "Zatvori";
+"photopay_light_on" = "Svjetlo";
+"photopay_light_off" = "Svjetlo";
+
+"photopay_error_autofocus" = "Ova funkcija nije dostupna na uređajima bez autofocus opcije.";
+"photopay_error_old" = "Ova funkcija nije dostupna za starije verzije iPhone i iPad uređaja.";
+"photopay_error_old_os" = "Ova funkcija je dostupna za operacijski sustav iOS 4 i noviji.";
+"photopay_error_simulator" = "Ova funkcija nije dostupna za iPhone simulator.";

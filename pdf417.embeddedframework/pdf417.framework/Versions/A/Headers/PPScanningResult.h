@@ -23,16 +23,42 @@ typedef NS_ENUM(NSInteger, PPScanningResultType) {
 };
 
 typedef NS_ENUM(NSInteger, PPBarcodeElementType) {
+    /** barcode element is of type text and can be interpreted as string*/
     PPTextElement,
+    /** barcode element is arbitrary byte array */
     PPByteElement
 };
 
+/**
+ * represents one raw element in barcode
+ */
 @interface PPBarcodeElement : NSObject
 
+/** byte array contained in this barcode element */
 @property (nonatomic, retain, readonly) NSData* elementBytes;
+/** type of this element */
 @property (nonatomic, assign, readonly) PPBarcodeElementType elementType;
 
 - (id)initWithBytes:(NSData*)bytes andType:(PPBarcodeElementType)type;
+
+@end
+
+/**
+ * represents the collection of barcode raw elements
+ */
+@interface PPBarcodeDetailedData : NSObject
+
+/** array of barcode elements (PPBarcodeElement*) contained in barcode */
+@property (nonatomic, retain, readonly) NSArray* barcodeElements;
+
+-(id) initWithElements:(NSArray*)barcodeElements;
+
+/**
+ * Use this method to get all barcode data in one byte array.
+ * This is useful if you know how to interpret barcode data
+ * and don't want to bother with all barcode elements.
+ */
+-(NSData*) getAllData;
 
 @end
 
@@ -42,9 +68,9 @@ typedef NS_ENUM(NSInteger, PPBarcodeElementType) {
 
 @property (nonatomic, retain, readonly) NSData* data;
 
-@property (nonatomic, retain, readonly) NSArray* barcodeElements;
+@property (nonatomic, retain, readonly) PPBarcodeDetailedData* rawData;
 
-- (id)initWithData:(NSData*)data type:(PPScanningResultType)type barcodeElements:(NSArray*)barcodeElements;
+- (id)initWithData:(NSData*)data type:(PPScanningResultType)type rawData:(PPBarcodeDetailedData*)rawData;
 
 + (NSString*)getTypeName:(PPScanningResultType)type;
 

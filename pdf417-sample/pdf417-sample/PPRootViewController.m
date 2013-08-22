@@ -67,11 +67,13 @@
         NSLog(@"Barcode type:\n%@", type);
         
         // obtain raw data
-        NSArray* rawData = self.scanResult.barcodeElements;
-        NSMutableString* rawInfo = [NSMutableString stringWithFormat:@"Total elements: %d\n", [rawData count]];
-        for(int i=0; i<[rawData count]; ++i) {
-            // each element in rawData array is of type PPBarcodeElement*
-            PPBarcodeElement* bel = [rawData objectAtIndex:i];
+        PPBarcodeDetailedData* rawData = self.scanResult.rawData;
+        // obtain barcode elements array
+        NSArray* elementsArr = [rawData barcodeElements];
+        NSMutableString* rawInfo = [NSMutableString stringWithFormat:@"Total elements: %d\n", [elementsArr count]];
+        for(int i=0; i<[elementsArr count]; ++i) {
+            // each element in elementsArr array is of type PPBarcodeElement*
+            PPBarcodeElement* bel = [[rawData barcodeElements] objectAtIndex:i];
             // you can determine element type with [bel elementType]
             [rawInfo appendFormat:@"Element #%d is of type %@\n", (i+1), [bel elementType]==PPTextElement ? @"text" : @"byte"];
             // obtain raw bytes of the barcode element
@@ -86,6 +88,19 @@
             }
             [rawInfo appendString:@"}\n"];
         }
+        [rawInfo appendString:@"\n\n Raw data merged:\n{"];
+        // if you don't like bothering with barcode elements
+        // you can get all barcode bytes in one byte array with
+        // getAllData message
+        NSData* allData = [rawData getAllData];
+        const unsigned char* allBytes = [allData bytes];
+        for(int i=0; i<[allData length]; ++i) {
+            [rawInfo appendFormat:@"%d", allBytes[i]];
+            if(i!=[allData length]-1) {
+                [rawInfo appendString:@", "];
+            }
+        }
+        [rawInfo appendString:@"}"];
         
         NSString* uiMsg = [NSString stringWithFormat:@"%@\n\nRaw data:\n\n%@", message, rawInfo];
         

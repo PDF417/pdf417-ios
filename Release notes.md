@@ -1,5 +1,9 @@
 # Release notes
 
+## 1.2
+- support for obtaining raw barcode result
+- support for damaged and non-standard PDF417 barcodes
+
 ## 1.1.1
 - support for case insensitive bundle name matching when checking license key
 

@@ -208,7 +208,9 @@ Recognition results are returned via `PPScanningResult` object. You use this obj
 
 `PPScanningResult` has a field named `type` which is enum (identification) of the type of the barcode which was scanned. This can currently be only `PPScanningResultPdf417` (for pdf417) and `PPScanningResultQrCode` (for QR code).
 
-The field named `data` contains the bytes scanned from the actual barcode. These are raw bytes which are written in the barcode. No encoding for this is assumed, since this is a responsibility of the user of the library.
+The field named `data` contains the bytes scanned from the actual barcode. These are raw bytes which are written in the barcode. No encoding for this is assumed, since this is a responsibility of the user of the library. This byte array is guaranteed to terminate with `\0` character, so you can safely convert it to string.
+
+The field `rawData` contains the actual raw data scanned from barcode. This raw data can contain images and arbitrary binary data. Field is a `NSArray` that contains elements of type `PPBarcodeElement`. Each `PPBarcodeElement` contains two fields: `elementType`, which is enum (identification) of the type of that element and `elementBytes`, which contains raw byte data. This can currently be either `PPTextElement` or `PPByteElement`. If the type is `PPTextElement`, this means that data in field `elementBytes` can be safely understood as string. If the type is `PPByteElement`, the data in field `elementBytes` is arbitrary binary data. Of course, you can always interpret both element types as string, if you like so. In such case, you would get string represented with bytes in `data` field.
 
 ## Using ARC
 

@@ -22,13 +22,29 @@ typedef NS_ENUM(NSInteger, PPScanningResultType) {
     PPScanningResultNone
 };
 
+typedef NS_ENUM(NSInteger, PPBarcodeElementType) {
+    PPTextElement,
+    PPByteElement
+};
+
+@interface PPBarcodeElement : NSObject
+
+@property (nonatomic, retain, readonly) NSData* elementBytes;
+@property (nonatomic, assign, readonly) PPBarcodeElementType elementType;
+
+- (id)initWithBytes:(NSData*)bytes andType:(PPBarcodeElementType)type;
+
+@end
+
 @interface PPScanningResult : NSObject
 
 @property (nonatomic, assign, readonly) PPScanningResultType type;
 
 @property (nonatomic, retain, readonly) NSData* data;
 
-- (id)initWithData:(NSData*)data type:(PPScanningResultType)type;
+@property (nonatomic, retain, readonly) NSArray* barcodeElements;
+
+- (id)initWithData:(NSData*)data type:(PPScanningResultType)type barcodeElements:(NSArray*)barcodeElements;
 
 + (NSString*)getTypeName:(PPScanningResultType)type;
 

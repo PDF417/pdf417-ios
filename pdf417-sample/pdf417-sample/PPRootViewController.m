@@ -66,7 +66,30 @@
         
         NSLog(@"Barcode type:\n%@", type);
         
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:type message:message delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+        // obtain raw data
+        NSArray* rawData = self.scanResult.barcodeElements;
+        NSMutableString* rawInfo = [NSMutableString stringWithFormat:@"Total elements: %d\n", [rawData count]];
+        for(int i=0; i<[rawData count]; ++i) {
+            // each element in rawData array is of type PPBarcodeElement*
+            PPBarcodeElement* bel = [rawData objectAtIndex:i];
+            // you can determine element type with [bel elementType]
+            [rawInfo appendFormat:@"Element #%d is of type %@\n", (i+1), [bel elementType]==PPTextElement ? @"text" : @"byte"];
+            // obtain raw bytes of the barcode element
+            NSData* bytes = [bel elementBytes];
+            [rawInfo appendFormat:@"Length=%d {", [bytes length]];
+            const unsigned char* nBytes = [bytes bytes];
+            for(int j=0; j<[bytes length]; ++j) {
+                [rawInfo appendFormat:@"%d", nBytes[j]];
+                if(j!=[bytes length] - 1) {
+                    [rawInfo appendString:@", "];
+                }
+            }
+            [rawInfo appendString:@"}\n"];
+        }
+        
+        NSString* uiMsg = [NSString stringWithFormat:@"%@\n\nRaw data:\n\n%@", message, rawInfo];
+        
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:type message:uiMsg delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
         
         [alertView show];
         
@@ -121,21 +144,21 @@
     // Set YES/NO for scanning qr code barcode standard (default NO)
     [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeQrCodeKey];
     // Set YES/NO for scanning all 1D barcode standards (default NO)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognize1DBarcodesKey];
+    [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPRecognize1DBarcodesKey];
     // Set YES/NO for scanning code 128 barcode standard (default NO)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeCode128Key];
+    [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPRecognizeCode128Key];
     // Set YES/NO for scanning code 39 barcode standard (default NO)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeCode39Key];
+    [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPRecognizeCode39Key];
     // Set YES/NO for scanning EAN 8 barcode standard (default NO)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeEAN8Key];
+    [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPRecognizeEAN8Key];
     // Set YES/NO for scanning EAN 13 barcode standard (default NO)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeEAN13Key];
+    [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPRecognizeEAN13Key];
     // Set YES/NO for scanning ITF barcode standard (default NO)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeITFKey];
+    [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPRecognizeITFKey];
     // Set YES/NO for scanning UPCA barcode standard (default NO)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeUPCAKey];
+    [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPRecognizeUPCAKey];
     // Set YES/NO for scanning UPCE barcode standard (default NO)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeUPCEKey];
+    [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPRecognizeUPCEKey];
     
     /** Set the license key */
 //    [coordinatorSettings setValue:@"Enter_License_Key_Here" forKey:kPPLicenseKey];

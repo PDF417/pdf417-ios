@@ -1,6 +1,6 @@
 # Release notes
 
-## 1.2
+## 1.2.0
 - support for obtaining raw barcode result
 - support for damaged and non-standard PDF417 barcodes
 

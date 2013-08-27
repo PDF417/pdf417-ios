@@ -96,14 +96,30 @@ consists of code, headers, resources, strings, images and everything it needs to
     // Set YES/NO for scanning UPCE barcode standard (default NO)
     [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeUPCEKey];
 	```
-
+	
 	You can use pdf417 SDK free of change and without license key for development and non-commercial projects. Once you obtain a commercial license key from [www.pdf417.mobi](www.pdf417.mobi), you can set it like this:
    
 	```objective-c
 	// Set the license key
 	[coordinatorSettings setValue:@"Enter_License_Key_Here" forKey:kPPLicenseKey];
 	```
-    	
+    
+    You can also set the resolution which you would like to use for barcode scanning. There are four different options, but you should set only one:
+    
+    ```objective-c
+    // Set only one resolution mode
+    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPUseVideoPreset640x480];
+    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPUseVideoPresetMedium];
+    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPUseVideoPresetHigh];
+    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPUseVideoPresetHighest];	
+    ```
+    
+    As a rule of thumb, use the following values:
+    
+    - For PDF417 barcodes with 15 or more columns, use `kPPUseVideoPresetHighest`. If you support iPhone 4, use this value also for barodes with 10 or more columns.
+    - For PDF417 with 5 or less columns, use `kPPUseVideoPreset640x480`
+    - Otherwise, it's recommended to use `kPPUseVideoPresetHigh`. This is also value the default value.
+    
 	If the license key is valid for your application, this will automatically unlock the pdf417 SDK, remove the watermark from the camera view and enable all features to be used in your app.
 		
 	There are more, optional settings values. For example:
@@ -206,13 +222,28 @@ consists of code, headers, resources, strings, images and everything it needs to
 		
 Recognition results are returned via `PPScanningResult` object. You use this object to read barcode type and barcode data.
 
-`PPScanningResult` has a field named `type` which is enum (identification) of the type of the barcode which was scanned. This can currently be only `PPScanningResultPdf417` (for pdf417) and `PPScanningResultQrCode` (for QR code).
+`PPScanningResult` has a field named `type` which is enum (identification) of the type of the barcode which was scanned. This can currently be one of the following values:
+
+   - PPScanningResultPdf417,
+   - PPScanningResultQrCode,
+   - PPScanningResultLicenseInfo,
+   - PPScanningResultCode128,
+   - PPScanningResultCode39,
+   - PPScanningResultEAN13,
+   - PPScanningResultEAN8,
+   - PPScanningResultITF,
+   - PPScanningResultUPCA,
+   - PPScanningResultUPCE,
 
 The field named `data` contains the bytes scanned from the actual barcode. These are raw bytes which are written in the barcode. No encoding for this is assumed, since this is a responsibility of the user of the library. This byte array is guaranteed to terminate with `\0` character, so you can safely convert it to string.
 
-The field `rawData` contains the actual raw data scanned from barcode. This raw data can contain images and arbitrary binary data. Field is a `PPBarcodeDetailedData` that contains field `barcodeElements`, which is a `NSArray` that contains elements of type `PPBarcodeElement`. Each `PPBarcodeElement` contains two fields: `elementType`, which is enum (identification) of the type of that element and `elementBytes`, which contains raw byte data. This can currently be either `PPTextElement` or `PPByteElement`. If the type is `PPTextElement`, this means that data in field `elementBytes` can be safely understood as string. If the type is `PPByteElement`, the data in field `elementBytes` is arbitrary binary data. Of course, you can always interpret both element types as string, if you like so. In such case, you would get string represented with bytes in `data` field.
+Since barcode can contain various data types besides strings, you can use the field `rawData` to obtain more detailed information from the barcode. This field is used to obtain images and other raw binary information encoded in the barcode.
 
-If you find this complicated, but you still need raw barcode data and you are able to decode that data without the need of structure information, then you can send message `getAllData` to object of type `PPBarcodeDetailedData` which will return `NSData` that will contain raw bytes of whole barcode.
+`rawData` field is of a type `PPBarcodeDetailedData` which contains field `barcodeElements`. This is a `NSArray` that contains elements of type `PPBarcodeElement`. Each `PPBarcodeElement` contains two fields: `elementType`, which is enum (identification) of the type of that element and `elementBytes`, which contains raw byte data. Identification of the type can be `PPTextElement` or `PPByteElement`. 
+
+If the type is `PPTextElement`, this means that data in field `elementBytes` can be safely understood as string. If the type is `PPByteElement`, the data in field `elementBytes` is arbitrary binary data. Of course, you can always interpret both element types as string, if you like so. In such case, you would get the same information as with the `data` field of the `PPScanningResult`  object
+
+If you are able to decode raw data without the need of elaborate structure information, then you can send message `getAllData` to object of type `PPBarcodeDetailedData`. Twhis will return `NSData` that will contain raw bytes of whole barcode.
 
 ## Using ARC
 

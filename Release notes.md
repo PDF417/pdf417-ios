@@ -1,8 +1,10 @@
 # Release notes
 
 ## 1.2.0
-- support for obtaining raw barcode result
+- support for micro PDF417 standard
 - support for damaged and non-standard PDF417 barcodes
+- support for obtaining raw barcode result
+- high resolution support (1080p)
 
 ## 1.1.1
 - support for case insensitive bundle name matching when checking license key

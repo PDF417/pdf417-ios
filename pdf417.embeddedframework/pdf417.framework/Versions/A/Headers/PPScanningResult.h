@@ -39,7 +39,7 @@ typedef NS_ENUM(NSInteger, PPBarcodeElementType) {
 /** type of this element */
 @property (nonatomic, assign, readonly) PPBarcodeElementType elementType;
 
-- (id)initWithBytes:(NSData*)bytes andType:(PPBarcodeElementType)type;
+- (id)initWithBytes:(NSData*)bytes type:(PPBarcodeElementType)type;
 
 @end
 
@@ -51,14 +51,14 @@ typedef NS_ENUM(NSInteger, PPBarcodeElementType) {
 /** array of barcode elements (PPBarcodeElement*) contained in barcode */
 @property (nonatomic, retain, readonly) NSArray* barcodeElements;
 
--(id) initWithElements:(NSArray*)barcodeElements;
+- (id)initWithElements:(NSArray*)barcodeElements;
 
 /**
  * Use this method to get all barcode data in one byte array.
  * This is useful if you know how to interpret barcode data
  * and don't want to bother with all barcode elements.
  */
--(NSData*) getAllData;
+- (NSData*)getAllData;
 
 @end
 

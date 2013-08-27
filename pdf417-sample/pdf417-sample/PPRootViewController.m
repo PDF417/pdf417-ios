@@ -15,6 +15,10 @@
 
 - (void)dismissCameraViewControllerModal:(BOOL)isModal;
 
+- (NSString*)barcodeDetailedDataString:(PPBarcodeDetailedData*)barcodeDetailedData;
+
+- (NSString*)simplifiedDetailedDataString:(PPBarcodeDetailedData*)barcodeDetailedData;
+
 @property (nonatomic, assign) BOOL useModalCameraView;
 @property (nonatomic, retain) PPScanningResult* scanResult;
 
@@ -54,62 +58,91 @@
     
     if ([self scanResult] != nil) {
         
+        // get string value from scanning result
         NSString *message = [[NSString alloc] initWithData:[[self scanResult] data] encoding:NSUTF8StringEncoding];
-        
         if (message == nil) {
             message = [[NSString alloc] initWithData:[[self scanResult] data] encoding:NSASCIIStringEncoding];
         }
         
-        NSLog(@"Barcode text:\n%@", message);
-        
+        // get barcode type
         NSString* type = [PPScanningResult getTypeName:[[self scanResult] type]];
         
-        NSLog(@"Barcode type:\n%@", type);
+        // obtain raw data from barcode
+        PPBarcodeDetailedData* barcodeDetailedData = self.scanResult.rawData;
+        NSString *rawInfo = [self barcodeDetailedDataString:barcodeDetailedData]; // raw data
+        NSString *simplifiedRawInfo = [self simplifiedDetailedDataString:barcodeDetailedData]; // simplified method for raw data
+        NSString *rawResult = [NSString stringWithFormat:@"%@\n\n%@\n", rawInfo, simplifiedRawInfo];
         
-        // obtain raw data
-        PPBarcodeDetailedData* rawData = self.scanResult.rawData;
-        // obtain barcode elements array
-        NSArray* elementsArr = [rawData barcodeElements];
-        NSMutableString* rawInfo = [NSMutableString stringWithFormat:@"Total elements: %d\n", [elementsArr count]];
-        for(int i=0; i<[elementsArr count]; ++i) {
-            // each element in elementsArr array is of type PPBarcodeElement*
-            PPBarcodeElement* bel = [[rawData barcodeElements] objectAtIndex:i];
-            // you can determine element type with [bel elementType]
-            [rawInfo appendFormat:@"Element #%d is of type %@\n", (i+1), [bel elementType]==PPTextElement ? @"text" : @"byte"];
-            // obtain raw bytes of the barcode element
-            NSData* bytes = [bel elementBytes];
-            [rawInfo appendFormat:@"Length=%d {", [bytes length]];
-            const unsigned char* nBytes = [bytes bytes];
-            for(int j=0; j<[bytes length]; ++j) {
-                [rawInfo appendFormat:@"%d", nBytes[j]];
-                if(j!=[bytes length] - 1) {
-                    [rawInfo appendString:@", "];
-                }
-            }
-            [rawInfo appendString:@"}\n"];
-        }
-        [rawInfo appendString:@"\n\n Raw data merged:\n{"];
-        // if you don't like bothering with barcode elements
-        // you can get all barcode bytes in one byte array with
-        // getAllData message
-        NSData* allData = [rawData getAllData];
-        const unsigned char* allBytes = [allData bytes];
-        for(int i=0; i<[allData length]; ++i) {
-            [rawInfo appendFormat:@"%d", allBytes[i]];
-            if(i!=[allData length]-1) {
-                [rawInfo appendString:@", "];
-            }
-        }
-        [rawInfo appendString:@"}"];
-        
-        NSString* uiMsg = [NSString stringWithFormat:@"%@\n\nRaw data:\n\n%@", message, rawInfo];
-        
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:type message:uiMsg delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
-        
+        // prepare and show alert view with result
+        NSString* uiMessage = [NSString stringWithFormat:@"%@\n\nRaw data:\n\n%@", message, rawResult];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:type
+                                                            message:uiMessage
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Cancel"
+                                                  otherButtonTitles:nil];
         [alertView show];
         
         [self setScanResult:nil];
     }
+}
+
+- (NSString*)barcodeDetailedDataString:(PPBarcodeDetailedData*)barcodeDetailedData {
+    // obtain barcode elements array
+    NSArray* barcodeElements = [barcodeDetailedData barcodeElements];
+    NSMutableString* barcodeDetailedDataString = [NSMutableString stringWithFormat:@"Total elements: %d\n", [barcodeElements count]];
+    
+    for (int i = 0; i < [barcodeElements count]; ++i) {
+        
+        // each element in barcodeElements array is of type PPBarcodeElement*
+        PPBarcodeElement* barcodeElement = [[barcodeDetailedData barcodeElements] objectAtIndex:i];
+        
+        // you can determine element type with [barcodeElement elementType]
+        [barcodeDetailedDataString appendFormat:@"Element #%d is of type %@\n", (i + 1), [barcodeElement elementType] == PPTextElement ? @"text" : @"byte"];
+        
+        // obtain raw bytes of the barcode element
+        NSData* bytes = [barcodeElement elementBytes];
+        [barcodeDetailedDataString appendFormat:@"Length=%d {", [bytes length]];
+        
+        const unsigned char* nBytes = [bytes bytes];
+        for (int j = 0; j < [bytes length]; ++j) {
+            // append each byte to raw result
+            [barcodeDetailedDataString appendFormat:@"%d", nBytes[j]];
+            
+            // delimit bytes with comma
+            if (j != [bytes length] - 1) {
+                [barcodeDetailedDataString appendString:@", "];
+            }
+        }
+        
+        [barcodeDetailedDataString appendString:@"}\n"];
+    }
+    
+    return barcodeDetailedDataString;
+}
+
+- (NSString*)simplifiedDetailedDataString:(PPBarcodeDetailedData*)barcodeDetailedData {
+    
+    NSMutableString* simplifiedRawInfo = [NSMutableString stringWithString:@"Raw data merged:\n{"];
+    
+    // if you don't like bothering with barcode elements
+    // you can get all barcode bytes in one byte array with
+    // getAllData method
+    NSData* allData = [barcodeDetailedData getAllData];
+    const unsigned char* allBytes = [allData bytes];
+    
+    for (int i = 0; i < [allData length]; ++i) {
+        // append each byte to raw result
+        [simplifiedRawInfo appendFormat:@"%d", allBytes[i]];
+        
+        // delimit bytes with comma
+        if (i != [allData length] - 1) {
+            [simplifiedRawInfo appendString:@", "];
+        }
+    }
+    
+    [simplifiedRawInfo appendString:@"}\n"];
+    
+    return simplifiedRawInfo;
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -174,6 +207,12 @@
     [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPRecognizeUPCAKey];
     // Set YES/NO for scanning UPCE barcode standard (default NO)
     [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPRecognizeUPCEKey];
+    
+    // Set only one resolution mode
+    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPUseVideoPreset640x480];
+    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPUseVideoPresetMedium];
+    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPUseVideoPresetHigh];
+    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPUseVideoPresetHighest];
     
     /** Set the license key */
 //    [coordinatorSettings setValue:@"Enter_License_Key_Here" forKey:kPPLicenseKey];

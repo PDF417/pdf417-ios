@@ -47,10 +47,10 @@ consists of code, headers, resources, strings, images and everything it needs to
 	if ([PPBarcodeCoordinator isScanningUnsupported:&error]) {
 		NSString *messageString = [error localizedDescription];
 		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning"
-                                                       	message:messageString
-                                                       delegate:nil
-                                        	  cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil, nil];
+                                               		message:messageString
+                                               	delegate:nil
+                                	  	cancelButtonTitle:@"OK"
+                                      	otherButtonTitles:nil, nil];
 		[alert show];
 		return;
 	}
@@ -62,39 +62,39 @@ consists of code, headers, resources, strings, images and everything it needs to
 	```objective-c
 	// Create object which stores pdf417 framework settings
 	NSMutableDictionary* coordinatorSettings = [[NSMutableDictionary alloc] init];
-    
+
 	// Set YES/NO for scanning pdf417 barcode standard (default YES)
 	[coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizePdf417Key];
-    	
+    
 	// Set YES/NO for scanning qr code barcode standard (default NO)
 	[coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeQrCodeKey];
-	
+
 	// Set YES/NO for scanning all 1D barcode standards (default NO). Use this if you're not sure
 	// which barcode type you need to scan. Specific values for each barcode type (listed below)
 	// overrides this value. This means that you can say YES for all 1D barcodes and set NO for
 	// Code 128 and Code 39 to disable them.
-    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognize1DBarcodesKey];
+	[coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognize1DBarcodesKey];
     
-    // Set YES/NO for scanning code 128 barcode standard (default NO)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeCode128Key];
-    
-    // Set YES/NO for scanning code 39 barcode standard (default NO)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeCode39Key];
-    
-    // Set YES/NO for scanning EAN 8 barcode standard (default NO)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeEAN8Key];
-    
-    // Set YES/NO for scanning EAN 13 barcode standard (default NO)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeEAN13Key];
-    
-    // Set YES/NO for scanning ITF barcode standard (default NO)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeITFKey];
-    
-    // Set YES/NO for scanning UPCA barcode standard (default NO)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeUPCAKey];
-    
-    // Set YES/NO for scanning UPCE barcode standard (default NO)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeUPCEKey];
+	// Set YES/NO for scanning code 128 barcode standard (default NO)
+	[coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeCode128Key];
+	
+	// Set YES/NO for scanning code 39 barcode standard (default NO)
+	[coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeCode39Key];
+	
+	// Set YES/NO for scanning EAN 8 barcode standard (default NO)
+	[coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeEAN8Key];
+	
+	// Set YES/NO for scanning EAN 13 barcode standard (default NO)
+	[coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeEAN13Key];
+	
+	// Set YES/NO for scanning ITF barcode standard (default NO)
+	[coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeITFKey];
+	
+	// Set YES/NO for scanning UPCA barcode standard (default NO)
+	[coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeUPCAKey];
+	
+	// Set YES/NO for scanning UPCE barcode standard (default NO)
+	[coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeUPCEKey];
 	```
 	
 	You can use pdf417 SDK free of change and without license key for development and non-commercial projects. Once you obtain a commercial license key from [www.pdf417.mobi](www.pdf417.mobi), you can set it like this:
@@ -106,38 +106,38 @@ consists of code, headers, resources, strings, images and everything it needs to
     
     You can also set the resolution which you would like to use for barcode scanning. There are four different options, but you should set only one:
     
-    ```objective-c
-    // Set only one resolution mode
-    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPUseVideoPreset640x480];
-    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPUseVideoPresetMedium];
-    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPUseVideoPresetHigh];
-    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPUseVideoPresetHighest];	
-    ```
+	```objective-c
+	// Set only one resolution mode
+	[coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPUseVideoPreset640x480];
+	[coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPUseVideoPresetMedium];
+	[coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPUseVideoPresetHigh];
+	[coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPUseVideoPresetHighest];	
+	```
     
     As a rule of thumb, use the following values:
     
-    - For PDF417 barcodes with 15 or more columns, use `kPPUseVideoPresetHighest`. If you support iPhone 4, use this value also for barodes with 10 or more columns.
-    - For PDF417 with 5 or less columns, use `kPPUseVideoPreset640x480`
-    - Otherwise, it's recommended to use `kPPUseVideoPresetHigh`. This is also value the default value.
+    1. For PDF417 barcodes with 15 or more columns, use `kPPUseVideoPresetHighest`. If you support iPhone 4, use this value also for barodes with 10 or more columns.
+    2. For PDF417 with 5 or less columns, use `kPPUseVideoPreset640x480`
+    3. Otherwise, it's recommended to use `kPPUseVideoPresetHigh`. This is also value the default value.
     
-	If the license key is valid for your application, this will automatically unlock the pdf417 SDK, remove the watermark from the camera view and enable all features to be used in your app.
+    If the license key is valid for your application, this will automatically unlock the pdf417 SDK, remove the watermark from the camera view and enable all features to be used in your app.
 		
-	There are more, optional settings values. For example:
+    There are more, optional settings values. For example:
 
 	```objective-c
 	// present modal (recommended and default) - make sure you dismiss the view controller when done
 	// you also can set this to NO and push camera view controller to navigation view controller 
 	[coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPPresentModal];
-    	
+    
 	// You can set orientation mask for allowed orientations, default is UIInterfaceOrientationMaskAll
 	[coordinatorSettings setValue:[NSNumber numberWithInt:UIInterfaceOrientationMaskAll] forKey:kPPHudOrientation];
-		
+	
 	// Define the sound filename played on successful recognition
 	NSString* soundPath = [[NSBundle mainBundle] pathForResource:@"beep" ofType:@"mp3"];
 	[coordinatorSettings setValue:soundPath forKey:kPPSoundFile];
 	```
     	
-	Also, this is where you can set language used in pdf417 SDK, this can currently be only `en` (English), `de` (German) and `hr` (Croatian). Other languages can be supported on demand. If you don't specify the language, default user language will be used, so use this feature according to your application's localization strategy.
+    Also, this is where you can set language used in pdf417 SDK, this can currently be only `en` (English), `de` (German) and `hr` (Croatian). Other languages can be supported on demand. If you don't specify the language, default user language will be used, so use this feature according to your application's localization strategy.
     
 	```objective-c
 	// Set the language. You can use "en", "de", "hr", if not specified, phone default will be used.
@@ -145,20 +145,20 @@ consists of code, headers, resources, strings, images and everything it needs to
 	[coordinatorSettings setValue:@"en" forKey:kPPLanguage];
 	```
 		
-	Now you can initialize `PPBarcodeCoordinator` object and use it to create `PPCameraViewController` which controls scanning UI. You can present it on navigation view controller or modally, whichever suits you best.
+    Now you can initialize `PPBarcodeCoordinator` object and use it to create `PPCameraViewController` which controls scanning UI. You can present it on navigation view controller or modally, whichever suits you best.
 
 	```objective-c
 	// Allocate the recognition coordinator object
 	PPBarcodeCoordinator *coordinator = [[PPBarcodeCoordinator alloc] initWithSettings:coordinatorSettings];
 	[coordinatorSettings release];
-    
+
 	// Create camera view controller
 	UIViewController *cameraViewController = [coordinator cameraViewControllerWithDelegate:self];
-    
+
 	// present it modally
 	cameraViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
 	[self presentViewController:cameraViewController animated:YES completion:nil];
-    	
+    
 	[coordinator release];
 	```
 
@@ -166,21 +166,21 @@ consists of code, headers, resources, strings, images and everything it needs to
 		
 	```objective-c
 	/**
-	 * Barcode library was closed. 
-	 *
-	 * This is where the Barcode library's UIViewController should be dismissed
-	 * if it's presented modally.
-	 */
-	 - (void)cameraViewControllerWasClosed:(UIViewController*)cameraViewController;
+ 	 * Barcode library was closed. 
+ 	 *
+ 	 * This is where the Barcode library's UIViewController should be dismissed
+ 	 * if it's presented modally.
+ 	 */
+ 	- (void)cameraViewControllerWasClosed:(UIViewController*)cameraViewController;
 
 	/**
-	 * Barcode library obtained a valid result. Do your next steps here.
-	 *
-	 * Depending on how you want to treat the result, you might want to
- 	 * dismiss the Barcode library's UIViewController here.
-	 */
-	 - (void)cameraViewController:(UIViewController*)cameraViewController
-	 	      obtainedResult:(PPScanningResult*)result;
+ 	 * Barcode library obtained a valid result. Do your next steps here.
+ 	 *
+ 	 * Depending on how you want to treat the result, you might want to
+  	 * dismiss the Barcode library's UIViewController here.
+ 	 */
+ 	- (void)cameraViewController:(UIViewController*)cameraViewController
+ 	              obtainedResult:(PPScanningResult*)result;
 	```
 				 
 	For example, your implementation of these methods can be (if you presented camera view controller modally):
@@ -190,27 +190,28 @@ consists of code, headers, resources, strings, images and everything it needs to
 		[self dismissViewControllerAnimated:YES completion:nil];
 	}
 
-	- (void)cameraViewController:(UIViewController *)cameraViewController obtainedResult:(PPScanningResult *)result {
-    
+	- (void)cameraViewController:(UIViewController *)cameraViewController 
+			      obtainedResult:(PPScanningResult *)result {
+
 		NSString *message = [[NSString alloc] initWithData:[result data] encoding:NSUTF8StringEncoding];
-    
+
 		if (message == nil) {
 			message = [[NSString alloc] initWithData:[result data] encoding:NSASCIIStringEncoding];
 		}
-    
+
 		// log the result
 		NSLog(@"Barcode text:\n%@", message);
-    
+
 		NSString* type = @"Result:";
 		if ([result type] == PPScanningResultPdf417) {
 			type = @"PDF417:";
 		} else if ([result type] == PPScanningResultQrCode) {
 			type = @"QR Code:";
 		}
-    
+
 		// log the barcode type
 		NSLog(@"Barcode type:\n%@", type);
-    
+
 		[self setScanResult:result];
 		[self dismissViewControllerAnimated:YES completion:nil];
 	}

@@ -1,5 +1,8 @@
 # Release notes
 
+## 1.2.1
+- bugfix for high resolution scanning on iPad mini.
+
 ## 1.2.0
 - support for micro PDF417 standard
 - support for damaged and non-standard PDF417 barcodes

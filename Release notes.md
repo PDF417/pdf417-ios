@@ -1,5 +1,9 @@
 # Release notes
 
+## 1.2.2
+- UI adjustments for iOS 7
+- fixed name clashing with PayPal SDK
+
 ## 1.2.1
 - bugfix for high resolution scanning on iPad mini.
 

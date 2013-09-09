@@ -12,3 +12,9 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 #endif
+
+// iOS7 Shortcut
+#ifdef __IPHONE_7_0
+#define IS_IOS7_SDK
+#endif
+#define IS_IOS7_DEVICE (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))

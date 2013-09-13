@@ -1,5 +1,8 @@
 # Release notes
 
+## 1.2.4
+- iPad 1 and other devices without camera now properly disabled.
+
 ## 1.2.3
 - Fixed an issue which completely disabled pdf417 scanning on iPad2
 

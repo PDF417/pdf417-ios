@@ -1,5 +1,8 @@
 # Release notes
 
+## 1.2.3
+- Fixed an issue which completely disabled pdf417 scanning on iPad2
+
 ## 1.2.2
 - UI adjustments for iOS 7
 - fixed name clashing with PayPal SDK

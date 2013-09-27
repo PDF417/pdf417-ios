@@ -1,5 +1,8 @@
 # Release notes
 
+## 1.3.0
+- new, twice as fast method for scanning of pdf417 barcodes
+
 ## 1.2.4
 - iPad 1 and other devices without camera now properly disabled.
 

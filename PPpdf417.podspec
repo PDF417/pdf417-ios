@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
   
   s.name         = "PPpdf417"
   
-  s.version      = "1.3.0"
+  s.version      = "1.4.0"
   s.summary      = "A small and powerful PDF417 scanning library."
   
   s.description  = <<-DESC
@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
 					4. Working conditions: low and poor light conditions
 					5. Camera quality: low quality and low resolution mobile cameras
 					6. Perspective: can shoot at an angle
-					7. Speed: 100-900 ms - depends on device and barcode size 
+					7. Speed: 50-500 ms - depends on device and barcode size 
 					8. Full Unicode support
                   DESC
                   
@@ -42,7 +42,7 @@ Pod::Spec.new do |s|
 
   s.source       = { 
   	:git => 'https://github.com/PDF417/pdf417-ios.git', 
-  	:tag => '1.3.0'
+  	:tag => '1.4.0'
   }
   
   s.preserve_paths = 'pdf417.embeddedframework/*'
@@ -51,7 +51,7 @@ Pod::Spec.new do |s|
 
   # ――― MULTI-PLATFORM VALUES ――――――――――――――――――――――――――――――――――――――――――――――――― #
 
-  s.ios.deployment_target = '4.3'
+  s.ios.deployment_target = '5.0'
   s.ios.source_files = 'pdf417.embeddedframework/pdf417.framework/Versions/A/Headers/*.{h,m}'
   s.ios.header_dir = 'pdf417'
   s.ios.public_header_files = "pdf417.embeddedframework/pdf417.framework/Versions/A/Headers/*.h"
@@ -71,6 +71,6 @@ Pod::Spec.new do |s|
   				'QuartzCore',
   				'pdf417'
   				
-  s.ios.libraries = 'z', 'iconv', 'stdc++'
+  s.ios.libraries = 'z', 'iconv', 'c++'
 
 end

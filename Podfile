@@ -1,2 +1,2 @@
 platform :ios
-pod 'PPpdf417',  '~> 1.3.0'
+pod 'PPpdf417',  '~> 1.4.0'

@@ -4,7 +4,7 @@
 
 [![Build Status](https://travis-ci.org/PDF417/pdf417-ios.png)](https://travis-ci.org/PDF417/pdf417-ios)
 
-pdf417 SDK for iOS is small and powerful tool for enabling barcode scanning in your apps. It's reliable, fast, and customizable. It's distributed as both framework and CococaPod so it's very easy to integrate. pdf417 SDK works on both iPhones and iPads on iOS 4.3 or later. Besides PDF417 format, SDK supports QR codes and all 1D barcodes.
+pdf417 SDK for iOS is small and powerful tool for enabling barcode scanning in your apps. It's reliable, fast, and customizable. It's distributed as both framework and CococaPod so it's very easy to integrate. pdf417 SDK works on both iPhones and iPads on iOS 5.0 or later. Besides PDF417 format, SDK supports QR codes and all 1D barcodes.
 
 ## Integration
 
@@ -12,7 +12,7 @@ pdf417 SDK for iOS is small and powerful tool for enabling barcode scanning in y
 
 CocoaPods is the recommended way to add pdf417 SDK to your project.
 
-1. Add a pod entry for PPpdf417 to your Podfile `pod 'PPpdf417',  '~> 1.1.0'`
+1. Add a pod entry for PPpdf417 to your Podfile `pod 'PPpdf417',  '~> 1.4.0'`
 2. Install the pod(s) by running `pod install`.
 3. Go to classic integration step 3.
 
@@ -27,17 +27,15 @@ consists of code, headers, resources, strings, images and everything it needs to
 	- CoreMedia
 	- CoreVideo
 	- CoreGraphics
-	- libstdc++.dylib
+	- libc++.dylib
 	- libz.dylib
 	- libiconv.dylib
 	- OpenGLES
 	- QuartzCore
 	
-3. Find the build settings for your target. Set the architectures (ARCHS) setting to armv7. This is needed because pdf417.embeddedframework currently supports only armv7 architectures. This means your app app will be a few MBs smaller (since armv7s build will not be included), but will still work with iPhone 3GS and newer.
-	
-4. In files in which you want to use barcode scanning, place import directive `#import <pdf417/PPBarcode.h>`
+3. In files in which you want to use barcode scanning, place import directive `#import <pdf417/PPBarcode.h>`
 
-5. pdf417 framework uses it's own `CameraViewController` to present the UI. You should decide where you want to show this UI and write the following initialization code there. The initialization procedure consists of the following steps:
+4. pdf417 framework uses it's own `CameraViewController` to present the UI. You should decide where you want to show this UI and write the following initialization code there. The initialization procedure consists of the following steps:
 
 	First, it's appropriate to check if pdf417 scanning is supported and present some kind of message to the user if not (this can only happen in Simulator builds and on pre iPhone 3GS phones):
 	
@@ -162,7 +160,7 @@ consists of code, headers, resources, strings, images and everything it needs to
 	[coordinator release];
 	```
 
-6. In the last step, you had to create `CameraViewController` with a delegate object. This object gets notified on certain events in pdf417 scanning lifecycle. In this example we set it to `self`, but any object can be used. The protocol which the delegate has to implement is `PPBarcodeDelegate` protocol and it consists of 2 required methods:
+5. In the last step, you had to create `CameraViewController` with a delegate object. This object gets notified on certain events in pdf417 scanning lifecycle. In this example we set it to `self`, but any object can be used. The protocol which the delegate has to implement is `PPBarcodeDelegate` protocol and it consists of 2 required methods:
 		
 	```objective-c
 	/**
@@ -217,7 +215,7 @@ consists of code, headers, resources, strings, images and everything it needs to
 	}
 	```
 		
-7. The package contains the framework and a sample application you can easily run to see how integration works in practice.
+6. The package contains the framework and a sample application you can easily run to see how integration works in practice.
 
 ## Retrieving scanning results
 		
@@ -280,6 +278,7 @@ pdf417 SDK was created for PhotoPay project by [PhotoPay Ltd.](http://photopay.n
 - [Erste Bank netbanking app for Erste Bank Austria](https://itunes.apple.com/at/app/erste-bank-sparkasse-osterreich/id437840915?mt=8)
 - [Erste mBanking app for Erste Bank Croatia](https://itunes.apple.com/us/app/erste-mbanking/id477066660?mt=8)
 - [m-Hypo:-) app for Hypo Alpe-Adria-Bank Croatia](https://itunes.apple.com/us/app/m-hypo/id529756500?mt=8).
+- [RBA na dlanu app for Raiffeisenbank Austria d.d.](https://itunes.apple.com/us/app/rba-na-dlanu/id450788819).
 
 ## Contact
 

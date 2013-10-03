@@ -15,6 +15,13 @@
 
 - (void)didRetrieveBarcodeResult:(PPScanningResult*)result
 {
+    if (!result) {
+        self.titleView.text = @"nothing scanned";
+        self.labelView.text = nil;
+        
+        return;
+    }
+    
     self.titleView.text = [PPScanningResult toTypeName:result.type];
     
     // show the retrieved data as text in the ui

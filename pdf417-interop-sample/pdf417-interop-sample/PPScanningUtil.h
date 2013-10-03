@@ -10,7 +10,7 @@
 
 @interface PPScanningUtil : NSObject
 
-+ (BOOL)scanBarcodeTypes:(NSArray*)types withCallback:(NSString*)callback andLanguage:(NSString*)language;
++ (BOOL)scanBarcodeTypes:(NSArray*)types withCallback:(NSString*)callback andLanguage:(NSString*)language andBeep:(BOOL)beep;
 
 + (NSDictionary*)parseUrlParameters:(NSURL*)url;
 

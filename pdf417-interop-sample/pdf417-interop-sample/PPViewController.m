@@ -36,7 +36,7 @@
     [types addObject:PPScanningResultPdf417Name];
     [types addObject:PPScanningResultQrCodeName];
     
-    if (![PPScanningUtil scanBarcodeTypes:types withCallback:@"pdf417sample://callback" andLanguage:@"en"]) {
+    if (![PPScanningUtil scanBarcodeTypes:types withCallback:@"pdf417sample://callback" andLanguage:@"en" andBeep:YES]) {
         [[[UIAlertView alloc] initWithTitle:@"Not installed."
                                     message:@"You need to install the pdf417 scanner application for this feature to work."
                                    delegate:nil

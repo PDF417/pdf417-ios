@@ -1,5 +1,12 @@
 # Release notes
 
+## 1.4.1
+- Fixed build issues with iOS Simulator when deployment target is set to iOS 7
+
+## 1.4.0
+- pdf417 framework can now be built for armv7s architecture which means faster performance on iPhone 5, 5C and 5S, and iPad 4.
+- iOS 4.3 is no longer supported
+
 ## 1.3.0
 - new, twice as fast method for scanning of pdf417 barcodes
 

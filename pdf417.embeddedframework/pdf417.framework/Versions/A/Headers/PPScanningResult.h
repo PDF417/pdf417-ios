@@ -10,16 +10,27 @@
 
 typedef NS_ENUM(NSInteger, PPScanningResultType) {
     PPScanningResultPdf417,
+#define PPScanningResultPdf417Name @"PDF417"
     PPScanningResultQrCode,
+#define PPScanningResultQrCodeName @"QR Code"
     PPScanningResultLicenseInfo,
+#define PPScanningResultLicenseInfoName @"License"
     PPScanningResultCode128,
+#define PPScanningResultCode128Name @"Code 128"
     PPScanningResultCode39,
+#define PPScanningResultCode39Name @"Code 39"
     PPScanningResultEAN13,
+#define PPScanningResultEAN13Name @"EAN 13"
     PPScanningResultEAN8,
+#define PPScanningResultEAN8Name @"EAN 8"
     PPScanningResultITF,
+#define PPScanningResultITFName @"ITF"
     PPScanningResultUPCA,
+#define PPScanningResultUPCAName @"UPCA"
     PPScanningResultUPCE,
+#define PPScanningResultUPCEName @"UPCE"
     PPScanningResultNone
+#define PPScanningResultNoneName @"Barcode"
 };
 
 typedef NS_ENUM(NSInteger, PPBarcodeElementType) {
@@ -72,6 +83,11 @@ typedef NS_ENUM(NSInteger, PPBarcodeElementType) {
 
 - (id)initWithData:(NSData*)data type:(PPScanningResultType)type rawData:(PPBarcodeDetailedData*)rawData;
 
-+ (NSString*)getTypeName:(PPScanningResultType)type;
+- (id)initWithString:(NSString*)urlDataString type:(PPScanningResultType)type;
+
+- (NSString*)toUrlDataString;
+
++ (NSString*)toTypeName:(PPScanningResultType)type;
++ (NSInteger)fromTypeName:(NSString*)typeName;
 
 @end

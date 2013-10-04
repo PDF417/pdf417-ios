@@ -31,13 +31,16 @@
 }
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    // parse the url into parameters
     NSDictionary* parameters = [PPScanningUtil parseUrlParameters:url];
     
     if (!parameters[@"data"]) {
+        // no data was received, show empty screen
         [self.viewController didRetrieveBarcodeResult:nil];
         return YES;
     }
     
+    // parse the result into a PPScanningResult structure
     PPScanningResult *result = [[PPScanningResult alloc] initWithString:parameters[@"data"] type:[PPScanningResult fromTypeName:parameters[@"type"]]];
     
     [self.viewController didRetrieveBarcodeResult:result];

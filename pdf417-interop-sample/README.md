@@ -77,7 +77,7 @@ Barcode datastructure is contained in the class defined in `PPScanningResult.h`.
 
 To initiate scanning call the `scanBarcodeTypes` wrapper function with your parameters:
 
-    ```objective-c
+    ``` objective-c
     NSMutableArray *types = [[NSMutableArray alloc] init];
     
     // add all the barcode types that we want to support in the scan
@@ -95,7 +95,7 @@ To initiate scanning call the `scanBarcodeTypes` wrapper function with your para
 
 To receive the resulting URL request you need to setup a URL scheme in your application settings (in our case `pdf417sample`) and implement the `handleOpenURL` method in your app delegate:
 
-    ```objective-c
+    ``` objective-c
     - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
         // parse the url into parameters
         NSDictionary* parameters = [PPScanningUtil parseUrlParameters:url];

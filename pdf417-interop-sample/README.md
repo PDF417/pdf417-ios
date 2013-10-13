@@ -77,40 +77,42 @@ Barcode datastructure is contained in the class defined in `PPScanningResult.h`.
 
 To initiate scanning call the `scanBarcodeTypes` wrapper function with your parameters:
 
-    ``` objective-c
-    NSMutableArray *types = [[NSMutableArray alloc] init];
-    
-    // add all the barcode types that we want to support in the scan
-    [types addObject:PPScanningResultPdf417Name];
-    [types addObject:PPScanningResultQrCodeName];
-    
-    if (![PPScanningUtil scanBarcodeTypes:types
-    	withCallback:@"pdf417sample://callback" andLanguage:@"en" andBeep:YES]) {
-    	// Here you can show an alert view telling the user that he needs to install
-    	// the pdf417 scanner application to enable barcode scanning
-    }
-    ```
+``` objective-c
+NSMutableArray *types = [[NSMutableArray alloc] init];
+
+// add all the barcode types that we want to support in the scan
+[types addObject:PPScanningResultPdf417Name];
+[types addObject:PPScanningResultQrCodeName];
+
+if (![PPScanningUtil scanBarcodeTypes:types
+	withCallback:@"pdf417sample://callback" andLanguage:@"en" andBeep:YES]) {
+	// Here you can show an alert view telling the user that he needs to install
+	// the pdf417 scanner application to enable barcode scanning
+}
+```
 
 ### Getting the result
 
 To receive the resulting URL request you need to setup a URL scheme in your application settings (in our case `pdf417sample`) and implement the `handleOpenURL` method in your app delegate:
 
-    ``` objective-c
-    - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
-        // parse the url into parameters
-        NSDictionary* parameters = [PPScanningUtil parseUrlParameters:url];
-    
-        if (!parameters[@"data"]) {
-            // no data was received, show empty screen
-            [self.viewController didRetrieveBarcodeResult:nil];
-            return YES;
-        }
-    
-        // parse the result into a PPScanningResult structure
-        PPScanningResult *result = [[PPScanningResult alloc] initWithString:parameters[@"data"] type:[PPScanningResult fromTypeName:parameters[@"type"]]];
-    
-        [self.viewController didRetrieveBarcodeResult:result];
-    
+```objective-c
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    // parse the url into parameters
+    NSDictionary* parameters = [PPScanningUtil parseUrlParameters:url];
+
+    if (!parameters[@"data"]) {
+        // no data was received, show empty screen
+        [self.viewController didRetrieveBarcodeResult:nil];
         return YES;
     }
-    ```
+
+    // parse the result into a PPScanningResult structure
+    PPScanningResult *result = [[PPScanningResult alloc] initWithString:parameters[@"data"] 
+                                                                   type:[PPScanningResult 
+                                                           fromTypeName:parameters[@"type"]]];
+
+    [self.viewController didRetrieveBarcodeResult:result];
+
+    return YES;
+}
+```

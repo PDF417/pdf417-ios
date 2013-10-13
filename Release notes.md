@@ -1,5 +1,9 @@
 # Release notes
 
+## 1.5.0
+- The framework now has an interop feature. Barcode data can be serialized and deserialized in URLs. This means your app can easily subscribe for URL scan requests from other apps and return them scan results.
+- Method name change fix in sample app.
+
 ## 1.4.1
 - Fixed build issues with iOS Simulator when deployment target is set to iOS 7
 

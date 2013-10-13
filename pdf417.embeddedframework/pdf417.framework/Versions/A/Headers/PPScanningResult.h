@@ -8,29 +8,33 @@
 
 #import <Foundation/Foundation.h>
 
+#define PPScanningResultPdf417Name @"PDF417"
+#define PPScanningResultQrCodeName @"QR Code"
+#define PPScanningResultLicenseInfoName @"License"
+#define PPScanningResultCode128Name @"Code 128"
+#define PPScanningResultCode39Name @"Code 39"
+#define PPScanningResultEAN13Name @"EAN 13"
+#define PPScanningResultEAN8Name @"EAN 8"
+#define PPScanningResultITFName @"ITF"
+#define PPScanningResultUPCAName @"UPCA"
+#define PPScanningResultUPCEName @"UPCE"
+#define PPScanningResultNoneName @"Barcode"
+
+/**
+ Enumeration of all scanning result types
+ */
 typedef NS_ENUM(NSInteger, PPScanningResultType) {
     PPScanningResultPdf417,
-#define PPScanningResultPdf417Name @"PDF417"
     PPScanningResultQrCode,
-#define PPScanningResultQrCodeName @"QR Code"
     PPScanningResultLicenseInfo,
-#define PPScanningResultLicenseInfoName @"License"
     PPScanningResultCode128,
-#define PPScanningResultCode128Name @"Code 128"
     PPScanningResultCode39,
-#define PPScanningResultCode39Name @"Code 39"
     PPScanningResultEAN13,
-#define PPScanningResultEAN13Name @"EAN 13"
     PPScanningResultEAN8,
-#define PPScanningResultEAN8Name @"EAN 8"
     PPScanningResultITF,
-#define PPScanningResultITFName @"ITF"
     PPScanningResultUPCA,
-#define PPScanningResultUPCAName @"UPCA"
     PPScanningResultUPCE,
-#define PPScanningResultUPCEName @"UPCE"
     PPScanningResultNone
-#define PPScanningResultNoneName @"Barcode"
 };
 
 typedef NS_ENUM(NSInteger, PPBarcodeElementType) {
@@ -50,7 +54,11 @@ typedef NS_ENUM(NSInteger, PPBarcodeElementType) {
 /** type of this element */
 @property (nonatomic, assign, readonly) PPBarcodeElementType elementType;
 
-- (id)initWithBytes:(NSData*)bytes type:(PPBarcodeElementType)type;
+/**
+ Designated initializer shich sets byte array for specific barcode element type
+ */
+- (id)initWithBytes:(NSData*)bytes
+               type:(PPBarcodeElementType)type;
 
 @end
 
@@ -62,6 +70,9 @@ typedef NS_ENUM(NSInteger, PPBarcodeElementType) {
 /** array of barcode elements (PPBarcodeElement*) contained in barcode */
 @property (nonatomic, retain, readonly) NSArray* barcodeElements;
 
+/**
+ Designated initializer which sets all barcode elements
+ */
 - (id)initWithElements:(NSArray*)barcodeElements;
 
 /**
@@ -73,21 +84,52 @@ typedef NS_ENUM(NSInteger, PPBarcodeElementType) {
 
 @end
 
+/**
+ Result of the scan
+ */
 @interface PPScanningResult : NSObject
 
+/**
+ Type of the result
+ */
 @property (nonatomic, assign, readonly) PPScanningResultType type;
 
+/**
+ Byte array with result of the scan
+ */
 @property (nonatomic, retain, readonly) NSData* data;
 
+/**
+ Raw barcode detailed result
+ */
 @property (nonatomic, retain, readonly) PPBarcodeDetailedData* rawData;
 
-- (id)initWithData:(NSData*)data type:(PPScanningResultType)type rawData:(PPBarcodeDetailedData*)rawData;
+/**
+ Designated initializer
+ */
+- (id)initWithData:(NSData*)data
+              type:(PPScanningResultType)type
+           rawData:(PPBarcodeDetailedData*)rawData;
 
-- (id)initWithString:(NSString*)urlDataString type:(PPScanningResultType)type;
+/**
+ Initializer which deserializes the scanning result from url data string
+ */
+- (id)initWithString:(NSString*)urlDataString
+                type:(PPScanningResultType)type;
 
+/**
+ Serializes the scanning result to url data string
+ */
 - (NSString*)toUrlDataString;
 
+/**
+ Returns the string specifying the type name for a given enum type value
+ */
 + (NSString*)toTypeName:(PPScanningResultType)type;
+
+/**
+ Returns the enum type value for a given type string
+ */
 + (NSInteger)fromTypeName:(NSString*)typeName;
 
 @end

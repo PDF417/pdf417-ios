@@ -18,13 +18,13 @@ To integrate your application you need to use the custom URL scheme recognized b
 
 ### Example
 
-    pdf417://scan?type=PDF417,&beep=true&callback=myscheme://myaction
+    pdf417://scan?type=PDF417,UPCA&beep=true&callback=myscheme://myaction
 
-The above example request reading of only PDF417 barcodes, when the scanner scans a barcode the following URL will be invoked to return the result
+The above example request reading of PDF417 and UPCA barcodes, when the scanner scans a barcode the following URL will be invoked to return the result
 
-    myscheme://myaction?data=<data>&type=PDF417
+    myscheme://myaction?data=<data>&type=<type>
 
-The above schema needs to be registered by your application to receive the result data.
+The above schema needs to be registered by your application to receive the result data. The `<data>` parameter will contain the barcode data while the `<type>` parameter will contain either `PDF417` or `UPCA` depending on which of the two barcodes was scanned.
 
 ## Reference
 

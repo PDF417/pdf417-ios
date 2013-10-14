@@ -15,6 +15,10 @@
 
 - (void)dismissCameraViewControllerModal:(BOOL)isModal;
 
+- (NSString*)barcodeDetailedDataString:(PPBarcodeDetailedData*)barcodeDetailedData;
+
+- (NSString*)simplifiedDetailedDataString:(PPBarcodeDetailedData*)barcodeDetailedData;
+
 @property (nonatomic, assign) BOOL useModalCameraView;
 @property (nonatomic, retain) PPScanningResult* scanResult;
 
@@ -38,6 +42,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    if (IS_IOS7_DEVICE) {
+        [[self startButton] setBackgroundColor:[UIColor whiteColor]];
+    }
 }
 
 - (void)viewDidUnload
@@ -54,24 +62,91 @@
     
     if ([self scanResult] != nil) {
         
+        // get string value from scanning result
         NSString *message = [[NSString alloc] initWithData:[[self scanResult] data] encoding:NSUTF8StringEncoding];
-        
         if (message == nil) {
             message = [[NSString alloc] initWithData:[[self scanResult] data] encoding:NSASCIIStringEncoding];
         }
         
-        NSLog(@"Barcode text:\n%@", message);
+        // get barcode type
+        NSString* type = [PPScanningResult toTypeName:[[self scanResult] type]];
         
-        NSString* type = [PPScanningResult getTypeName:[[self scanResult] type]];
+        // obtain raw data from barcode
+        PPBarcodeDetailedData* barcodeDetailedData = self.scanResult.rawData;
+        NSString *rawInfo = [self barcodeDetailedDataString:barcodeDetailedData]; // raw data
+        NSString *simplifiedRawInfo = [self simplifiedDetailedDataString:barcodeDetailedData]; // simplified method for raw data
+        NSString *rawResult = [NSString stringWithFormat:@"%@\n\n%@\n", rawInfo, simplifiedRawInfo];
         
-        NSLog(@"Barcode type:\n%@", type);
-        
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:type message:message delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
-        
+        // prepare and show alert view with result
+        NSString* uiMessage = [NSString stringWithFormat:@"%@\n\nRaw data:\n\n%@", message, rawResult];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:type
+                                                            message:uiMessage
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"Cancel"
+                                                  otherButtonTitles:nil];
         [alertView show];
         
         [self setScanResult:nil];
     }
+}
+
+- (NSString*)barcodeDetailedDataString:(PPBarcodeDetailedData*)barcodeDetailedData {
+    // obtain barcode elements array
+    NSArray* barcodeElements = [barcodeDetailedData barcodeElements];
+    NSMutableString* barcodeDetailedDataString = [NSMutableString stringWithFormat:@"Total elements: %d\n", [barcodeElements count]];
+    
+    for (int i = 0; i < [barcodeElements count]; ++i) {
+        
+        // each element in barcodeElements array is of type PPBarcodeElement*
+        PPBarcodeElement* barcodeElement = [[barcodeDetailedData barcodeElements] objectAtIndex:i];
+        
+        // you can determine element type with [barcodeElement elementType]
+        [barcodeDetailedDataString appendFormat:@"Element #%d is of type %@\n", (i + 1), [barcodeElement elementType] == PPTextElement ? @"text" : @"byte"];
+        
+        // obtain raw bytes of the barcode element
+        NSData* bytes = [barcodeElement elementBytes];
+        [barcodeDetailedDataString appendFormat:@"Length=%d {", [bytes length]];
+        
+        const unsigned char* nBytes = [bytes bytes];
+        for (int j = 0; j < [bytes length]; ++j) {
+            // append each byte to raw result
+            [barcodeDetailedDataString appendFormat:@"%d", nBytes[j]];
+            
+            // delimit bytes with comma
+            if (j != [bytes length] - 1) {
+                [barcodeDetailedDataString appendString:@", "];
+            }
+        }
+        
+        [barcodeDetailedDataString appendString:@"}\n"];
+    }
+    
+    return barcodeDetailedDataString;
+}
+
+- (NSString*)simplifiedDetailedDataString:(PPBarcodeDetailedData*)barcodeDetailedData {
+    
+    NSMutableString* simplifiedRawInfo = [NSMutableString stringWithString:@"Raw data merged:\n{"];
+    
+    // if you don't like bothering with barcode elements
+    // you can get all barcode bytes in one byte array with
+    // getAllData method
+    NSData* allData = [barcodeDetailedData getAllData];
+    const unsigned char* allBytes = [allData bytes];
+    
+    for (int i = 0; i < [allData length]; ++i) {
+        // append each byte to raw result
+        [simplifiedRawInfo appendFormat:@"%d", allBytes[i]];
+        
+        // delimit bytes with comma
+        if (i != [allData length] - 1) {
+            [simplifiedRawInfo appendString:@", "];
+        }
+    }
+    
+    [simplifiedRawInfo appendString:@"}\n"];
+    
+    return simplifiedRawInfo;
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -121,21 +196,27 @@
     // Set YES/NO for scanning qr code barcode standard (default NO)
     [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeQrCodeKey];
     // Set YES/NO for scanning all 1D barcode standards (default NO)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognize1DBarcodesKey];
+    [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPRecognize1DBarcodesKey];
     // Set YES/NO for scanning code 128 barcode standard (default NO)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeCode128Key];
+    [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPRecognizeCode128Key];
     // Set YES/NO for scanning code 39 barcode standard (default NO)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeCode39Key];
+    [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPRecognizeCode39Key];
     // Set YES/NO for scanning EAN 8 barcode standard (default NO)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeEAN8Key];
+    [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPRecognizeEAN8Key];
     // Set YES/NO for scanning EAN 13 barcode standard (default NO)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeEAN13Key];
+    [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPRecognizeEAN13Key];
     // Set YES/NO for scanning ITF barcode standard (default NO)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeITFKey];
+    [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPRecognizeITFKey];
     // Set YES/NO for scanning UPCA barcode standard (default NO)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeUPCAKey];
+    [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPRecognizeUPCAKey];
     // Set YES/NO for scanning UPCE barcode standard (default NO)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeUPCEKey];
+    [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPRecognizeUPCEKey];
+    
+    // Set only one resolution mode
+//    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPUseVideoPreset640x480];
+//    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPUseVideoPresetMedium];
+//    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPUseVideoPresetHigh];
+    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPUseVideoPresetHighest];
     
     /** Set the license key */
 //    [coordinatorSettings setValue:@"Enter_License_Key_Here" forKey:kPPLicenseKey];
@@ -207,7 +288,7 @@
     
     NSLog(@"Barcode text:\n%@", message);
     
-    NSString* type = [PPScanningResult getTypeName:[result type]];
+    NSString* type = [PPScanningResult toTypeName:[result type]];
     
     NSLog(@"Barcode type:\n%@", type);
     

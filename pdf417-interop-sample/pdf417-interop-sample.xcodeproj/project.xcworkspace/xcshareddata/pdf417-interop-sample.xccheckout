@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>77189B20-049E-4756-8741-9AAEDE8B16E1</string>
+	<key>IDESourceControlProjectName</key>
+	<string>pdf417-interop-sample</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>51C2C34E-5A85-43FF-B33E-CB686BBE34DB</key>
+		<string>ssh://github.com/PDF417/pdf417-ios.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>pdf417-interop-sample/pdf417-interop-sample.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>51C2C34E-5A85-43FF-B33E-CB686BBE34DB</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/PDF417/pdf417-ios.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>51C2C34E-5A85-43FF-B33E-CB686BBE34DB</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>51C2C34E-5A85-43FF-B33E-CB686BBE34DB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>pdf417-ios</string>
+		</dict>
+	</array>
+</dict>
+</plist>

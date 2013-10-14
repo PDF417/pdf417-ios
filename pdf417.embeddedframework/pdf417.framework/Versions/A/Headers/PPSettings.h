@@ -79,6 +79,8 @@ extern NSString* const kPPUseVideoPreset640x480;
 extern NSString* const kPPUseVideoPresetMedium;
 /** If YES, High quality video is used. */
 extern NSString* const kPPUseVideoPresetHigh;
+/** If YES, Highest video resolution is used. */
+extern NSString* const kPPUseVideoPresetHighest;
 
 /** Language setup */
 extern NSString* const kPPLanguage;

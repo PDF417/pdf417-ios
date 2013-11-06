@@ -116,7 +116,7 @@ consists of code, headers, resources, strings, images and everything it needs to
     
     1. For PDF417 barcodes with 15 or more columns, use `kPPUseVideoPresetHighest`. If you support iPhone 4, use this value also for barodes with 10 or more columns.
     2. For PDF417 with 5 or less columns, use `kPPUseVideoPreset640x480`
-    3. Otherwise, it's recommended to use `kPPUseVideoPresetHigh`. This is also value the default value.
+    3. Otherwise, it's recommended to use `kPPUseVideoPresetHigh`. This is also the default value.
     
     If the license key is valid for your application, this will automatically unlock the pdf417 SDK, remove the watermark from the camera view and enable all features to be used in your app.
 		

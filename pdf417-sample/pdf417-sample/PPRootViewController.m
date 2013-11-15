@@ -220,62 +220,63 @@
 
 - (void)cameraViewControllerWasClosed:(id<PPScanningViewController>)cameraViewController {
     [self setCurrentCameraViewController:nil];
+    
+    // this stops the scanning and dismisses the camera screen
     [self dismissCameraViewControllerModal:[self useModalCameraView]];
 }
 
 - (void)cameraViewController:(id<PPScanningViewController>)cameraViewController
               obtainedResult:(PPScanningResult*)result {
     
-    [cameraViewController pauseScanning];
-    
-    NSString *message = [[NSString alloc] initWithData:[result data] encoding:NSUTF8StringEncoding];
-    
-    if (message == nil) {
-        message = [[NSString alloc] initWithData:[result data] encoding:NSASCIIStringEncoding];
+    // continue scanning if nothing was returned
+    if (result == nil) {
+        return;
     }
     
+    // this pauses scanning without dismissing camera screen
+    [cameraViewController pauseScanning];
+    
+    // obtain UTF8 string from barcode data
+    NSString *message = [[NSString alloc] initWithData:[result data] encoding:NSUTF8StringEncoding];
+    if (message == nil) {
+        // if UTF8 wasn't correct encoding, try ASCII
+        message = [[NSString alloc] initWithData:[result data] encoding:NSASCIIStringEncoding];
+    }
     NSLog(@"Barcode text:\n%@", message);
     
     NSString* type = [PPScanningResult toTypeName:[result type]];
-    
     NSLog(@"Barcode type:\n%@", type);
     
+    // Check if barcode is uncertain
+    // This is guaranteed not to happen if you didn't set kPPScanUncertainBarcodes key value
     BOOL isUncertain = [result isUncertain];
-    
     if (isUncertain) {
         NSLog(@"Uncertain scanning data!");
-        NSLog(@"Perform some kind of validation logic if you wan't to be 100%% sure in contents of the result");
+        
+        // Perform some kind of integrity validation to see if the returned value is really complete
+        BOOL valid = YES;
+        if (!valid) {
+            // this resumes scanning, and tries agian to find valid barcode
+            [cameraViewController resumeScanning];
+            return;
+        }
     }
     
-    if (result != nil) {
-        
-        // get string value from scanning result
-        NSString *message = [[NSString alloc] initWithData:[result data]
-                                                  encoding:NSUTF8StringEncoding];
-        if (message == nil) {
-            message = [[NSString alloc] initWithData:[result data]
-                                            encoding:NSASCIIStringEncoding];
-        }
-        
-        // get barcode type
-        NSString* type = [PPScanningResult toTypeName:[result type]];
-        
-        // obtain raw data from barcode
-        PPBarcodeDetailedData* barcodeDetailedData = result.rawData;
-        NSString *rawInfo = [self barcodeDetailedDataString:barcodeDetailedData]; // raw data
-        NSString *simplifiedRawInfo = [self simplifiedDetailedDataString:barcodeDetailedData]; // simplified method for raw data
-        NSString *rawResult = [NSString stringWithFormat:@"%@\n\n%@\n", rawInfo, simplifiedRawInfo];
-        
-        // prepare and show alert view with result
-        NSString* uiMessage = [NSString stringWithFormat:@"%@\n\nRaw data:\n\n%@", message, rawResult];
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:type
-                                                            message:uiMessage
-                                                           delegate:self
-                                                  cancelButtonTitle:@"Again"
-                                                  otherButtonTitles:@"Done", nil];
-        
-        [alertView show];
-    }
+    // obtain raw data from barcode
+    PPBarcodeDetailedData* barcodeDetailedData = result.rawData;
+    NSString *rawInfo = [self barcodeDetailedDataString:barcodeDetailedData]; // raw data
+    NSString *simplifiedRawInfo = [self simplifiedDetailedDataString:barcodeDetailedData]; // simplified method for raw data
+    NSString *rawResult = [NSString stringWithFormat:@"%@\n\n%@\n", rawInfo, simplifiedRawInfo];
+    
+    // prepare and show alert view with result
+    NSString* uiMessage = [NSString stringWithFormat:@"%@\n\nRaw data:\n\n%@", message, rawResult];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:type
+                                                        message:uiMessage
+                                                       delegate:self
+                                              cancelButtonTitle:@"Again"
+                                              otherButtonTitles:@"Done", nil];
+    
+    [alertView show];
 }
 
 #pragma mark - Alert view delegate

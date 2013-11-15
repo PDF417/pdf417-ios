@@ -7,9 +7,10 @@
 //
 
 #import "PPRootViewController.h"
+#import "PPCameraOverlayViewController.h"
 #import <pdf417/PPBarcode.h>
 
-@interface PPRootViewController () <PPBarcodeDelegate>
+@interface PPRootViewController () <PPBarcodeDelegate, UIAlertViewDelegate>
 
 - (void)presentCameraViewController:(UIViewController*)cameraViewController isModal:(BOOL)isModal;
 
@@ -20,20 +21,18 @@
 - (NSString*)simplifiedDetailedDataString:(PPBarcodeDetailedData*)barcodeDetailedData;
 
 @property (nonatomic, assign) BOOL useModalCameraView;
-@property (nonatomic, retain) PPScanningResult* scanResult;
+
+@property (nonatomic, assign) UIViewController<PPScanningViewController>* currentCameraViewController;
 
 @end
 
 @implementation PPRootViewController
 
-@synthesize startButton;
-@synthesize useModalCameraView;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        useModalCameraView = YES;
+        [self setUseModalCameraView:YES];
     }
     return self;
 }
@@ -45,34 +44,224 @@
     
     if (IS_IOS7_DEVICE) {
         [[self startButton] setBackgroundColor:[UIColor whiteColor]];
+        [[self startCustomUIButtom] setBackgroundColor:[UIColor whiteColor]];
     }
 }
 
 - (void)viewDidUnload
 {
     [self setStartButton:nil];
-    [self setScanResult:nil];
+    [self setStartCustomUIButtom:nil];
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+- (BOOL)shouldAutorotate {
+    return NO;
+}
+
+- (NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    return UIInterfaceOrientationPortrait;
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+
+#pragma mark -
+#pragma mark Starting PhotoPay
+
+- (PPBarcodeCoordinator*)createBarcodeCoordinator {
+    // Check if barcode scanning is supported
+    NSError *error;
+    if ([PPBarcodeCoordinator isScanningUnsupported:&error]) {
+        NSString *messageString = [error localizedDescription];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning"
+                                                        message:messageString
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil, nil];
+        [alert show];
+        return nil;
+    }
     
-    if ([self scanResult] != nil) {
+    // Create object which stores pdf417 framework settings
+    NSMutableDictionary* coordinatorSettings = [[NSMutableDictionary alloc] init];
+    
+    // Set YES/NO for scanning pdf417 barcode standard (default YES)
+    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizePdf417Key];
+    // Set YES/NO for scanning qr code barcode standard (default NO)
+    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeQrCodeKey];
+    // Set YES/NO for scanning all 1D barcode standards (default NO)
+    [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPRecognize1DBarcodesKey];
+    // Set YES/NO for scanning code 128 barcode standard (default NO)
+    [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPRecognizeCode128Key];
+    // Set YES/NO for scanning code 39 barcode standard (default NO)
+    [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPRecognizeCode39Key];
+    // Set YES/NO for scanning EAN 8 barcode standard (default NO)
+    [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPRecognizeEAN8Key];
+    // Set YES/NO for scanning EAN 13 barcode standard (default NO)
+    [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPRecognizeEAN13Key];
+    // Set YES/NO for scanning ITF barcode standard (default NO)
+    [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPRecognizeITFKey];
+    // Set YES/NO for scanning UPCA barcode standard (default NO)
+    [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPRecognizeUPCAKey];
+    // Set YES/NO for scanning UPCE barcode standard (default NO)
+    [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPRecognizeUPCEKey];
+    
+    // There are 4 resolution modes:
+    //      kPPUseVideoPreset640x480
+    //      kPPUseVideoPresetMedium
+    //      kPPUseVideoPresetHigh
+    //      kPPUseVideoPresetHighest
+    // Set only one.
+    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPUseVideoPresetHigh];
+    
+    // Set this to true to scan even barcode not compliant with standards
+    // For example, malformed PDF417 barcodes which were incorrectly encoded
+    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPScanUncertainBarcodes];
+    
+    /** Set your license key here */
+    [coordinatorSettings setValue:@"1672a675bc3f3697c404a87aed640c8491b26a4522b9d4a2b61ad6b225e3b390d58d662131708451890b33"
+                           forKey:kPPLicenseKey];
+    
+    // present modal (recommended and default) - make sure you dismiss the view controller when done
+    // you also can set this to NO and push camera view controller to navigation view controller
+    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPPresentModal];
+    
+    // If you use default camera overlay, you can set orientation mask for allowed orientations
+    // default is UIInterfaceOrientationMaskAll
+    [coordinatorSettings setValue:[NSNumber numberWithInt:UIInterfaceOrientationMaskAll] forKey:kPPHudOrientation];
+    
+    // Define the sound filename played on successful recognition
+    NSString* soundPath = [[NSBundle mainBundle] pathForResource:@"beep" ofType:@"mp3"];
+    [coordinatorSettings setValue:soundPath forKey:kPPSoundFile];
+    
+    // Allocate and the recognition coordinator object
+    PPBarcodeCoordinator *coordinator = [[PPBarcodeCoordinator alloc] initWithSettings:coordinatorSettings];
+    return coordinator;
+}
+
+- (IBAction)startPhotoPay:(id)sender {
+    PPBarcodeCoordinator *coordinator = [self createBarcodeCoordinator];
+    if (coordinator == nil) {
+        return;
+    }
+    
+    // Create camera view controller
+    UIViewController<PPScanningViewController>* cameraViewController =
+        [coordinator cameraViewControllerWithDelegate:self];
+    [self setCurrentCameraViewController:cameraViewController];
+    
+    // present it modally
+    cameraViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentCameraViewController:cameraViewController isModal:[self useModalCameraView]];
+}
+
+- (IBAction)startCustomUIScan:(id)sender {
+    PPBarcodeCoordinator *coordinator = [self createBarcodeCoordinator];
+    if (coordinator == nil) {
+        return;
+    }
+    
+    PPCameraOverlayViewController *overlayViewController =
+        [[PPCameraOverlayViewController alloc] initWithNibName:@"PPCameraOverlayViewController"
+                                                        bundle:nil];
+    
+    // Create camera view controller
+    UIViewController<PPScanningViewController>* cameraViewController =
+        [coordinator cameraViewControllerWithDelegate:self
+                                overlayViewController:overlayViewController];
+    [self setCurrentCameraViewController:cameraViewController];
+    
+    // present it modally
+    cameraViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    cameraViewController.modalPresentationStyle = UIModalPresentationPageSheet;
+    
+    [self presentCameraViewController:cameraViewController
+                              isModal:[self useModalCameraView]];
+}
+
+/**
+ * Method presents a modal view controller and uses non deprecated method in iOS 6
+ */
+- (void)presentCameraViewController:(UIViewController*)cameraViewController isModal:(BOOL)isModal {
+    if (isModal) {
+        cameraViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        if ([self respondsToSelector:@selector(presentViewController:animated:completion:)]) {
+            [self presentViewController:cameraViewController animated:YES completion:nil];
+        } else {
+            [self presentModalViewController:cameraViewController animated:YES];
+        }
+    } else {
+        [[self navigationController] pushViewController:cameraViewController animated:YES];
+    }
+}
+
+/**
+ * Method dismisses a modal view controller and uses non deprecated method in iOS 6
+ */
+- (void)dismissCameraViewControllerModal:(BOOL)isModal {
+    if (isModal) {
+        if ([self respondsToSelector:@selector(dismissViewControllerAnimated:completion:)]) {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        } else {
+            [self dismissModalViewControllerAnimated:YES];
+        }
+    }
+}
+
+#pragma mark -
+#pragma mark PPBarcode delegate methods
+
+- (void)cameraViewControllerWasClosed:(id<PPScanningViewController>)cameraViewController {
+    [self setCurrentCameraViewController:nil];
+    [self dismissCameraViewControllerModal:[self useModalCameraView]];
+}
+
+- (void)cameraViewController:(id<PPScanningViewController>)cameraViewController
+              obtainedResult:(PPScanningResult*)result {
+    
+    [cameraViewController pauseScanning];
+    
+    NSString *message = [[NSString alloc] initWithData:[result data] encoding:NSUTF8StringEncoding];
+    
+    if (message == nil) {
+        message = [[NSString alloc] initWithData:[result data] encoding:NSASCIIStringEncoding];
+    }
+    
+    NSLog(@"Barcode text:\n%@", message);
+    
+    NSString* type = [PPScanningResult toTypeName:[result type]];
+    
+    NSLog(@"Barcode type:\n%@", type);
+    
+    BOOL isUncertain = [result isUncertain];
+    
+    if (isUncertain) {
+        NSLog(@"Uncertain scanning data!");
+        NSLog(@"Perform some kind of validation logic if you wan't to be 100%% sure in contents of the result");
+    }
+    
+    if (result != nil) {
         
         // get string value from scanning result
-        NSString *message = [[NSString alloc] initWithData:[[self scanResult] data] encoding:NSUTF8StringEncoding];
+        NSString *message = [[NSString alloc] initWithData:[result data]
+                                                  encoding:NSUTF8StringEncoding];
         if (message == nil) {
-            message = [[NSString alloc] initWithData:[[self scanResult] data] encoding:NSASCIIStringEncoding];
+            message = [[NSString alloc] initWithData:[result data]
+                                            encoding:NSASCIIStringEncoding];
         }
         
         // get barcode type
-        NSString* type = [PPScanningResult toTypeName:[[self scanResult] type]];
+        NSString* type = [PPScanningResult toTypeName:[result type]];
         
         // obtain raw data from barcode
-        PPBarcodeDetailedData* barcodeDetailedData = self.scanResult.rawData;
+        PPBarcodeDetailedData* barcodeDetailedData = result.rawData;
         NSString *rawInfo = [self barcodeDetailedDataString:barcodeDetailedData]; // raw data
         NSString *simplifiedRawInfo = [self simplifiedDetailedDataString:barcodeDetailedData]; // simplified method for raw data
         NSString *rawResult = [NSString stringWithFormat:@"%@\n\n%@\n", rawInfo, simplifiedRawInfo];
@@ -81,14 +270,26 @@
         NSString* uiMessage = [NSString stringWithFormat:@"%@\n\nRaw data:\n\n%@", message, rawResult];
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:type
                                                             message:uiMessage
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"Cancel"
-                                                  otherButtonTitles:nil];
-        [alertView show];
+                                                           delegate:self
+                                                  cancelButtonTitle:@"Again"
+                                                  otherButtonTitles:@"Done", nil];
         
-        [self setScanResult:nil];
+        [alertView show];
     }
 }
+
+#pragma mark - Alert view delegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    [[self currentCameraViewController] resumeScanning];
+    
+    if ([[alertView buttonTitleAtIndex:buttonIndex] isEqualToString:@"Done"]) {
+        [self setCurrentCameraViewController:nil];
+        [self dismissCameraViewControllerModal:[self useModalCameraView]];
+    }
+}
+
+#pragma mark - Helper methods for barcode decoding
 
 - (NSString*)barcodeDetailedDataString:(PPBarcodeDetailedData*)barcodeDetailedData {
     // obtain barcode elements array
@@ -147,153 +348,6 @@
     [simplifiedRawInfo appendString:@"}\n"];
     
     return simplifiedRawInfo;
-}
-
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-}
-
-- (BOOL)shouldAutorotate {
-    return NO;
-}
-
-- (NSUInteger)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskPortrait;
-}
-
-- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
-    return UIInterfaceOrientationPortrait;
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
-
-#pragma mark -
-#pragma mark Starting PhotoPay
-
-- (IBAction)startPhotoPay:(id)sender {
-    
-    // Check if barcode scanning is supported
-    NSError *error;
-    if ([PPBarcodeCoordinator isScanningUnsupported:&error]) {
-        NSString *messageString = [error localizedDescription];
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning"
-                                                        message:messageString
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil, nil];
-        [alert show];
-        return;
-    }
-    
-    // Create object which stores pdf417 framework settings
-    NSMutableDictionary* coordinatorSettings = [[NSMutableDictionary alloc] init];
-    
-    // Set YES/NO for scanning pdf417 barcode standard (default YES)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizePdf417Key];
-    // Set YES/NO for scanning qr code barcode standard (default NO)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeQrCodeKey];
-    // Set YES/NO for scanning all 1D barcode standards (default NO)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPRecognize1DBarcodesKey];
-    // Set YES/NO for scanning code 128 barcode standard (default NO)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPRecognizeCode128Key];
-    // Set YES/NO for scanning code 39 barcode standard (default NO)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPRecognizeCode39Key];
-    // Set YES/NO for scanning EAN 8 barcode standard (default NO)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPRecognizeEAN8Key];
-    // Set YES/NO for scanning EAN 13 barcode standard (default NO)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPRecognizeEAN13Key];
-    // Set YES/NO for scanning ITF barcode standard (default NO)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPRecognizeITFKey];
-    // Set YES/NO for scanning UPCA barcode standard (default NO)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPRecognizeUPCAKey];
-    // Set YES/NO for scanning UPCE barcode standard (default NO)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPRecognizeUPCEKey];
-    
-    // Set only one resolution mode
-//    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPUseVideoPreset640x480];
-//    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPUseVideoPresetMedium];
-//    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPUseVideoPresetHigh];
-    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPUseVideoPresetHighest];
-    
-    /** Set the license key */
-//    [coordinatorSettings setValue:@"Enter_License_Key_Here" forKey:kPPLicenseKey];
-    
-    // present modal (recommended and default) - make sure you dismiss the view controller when done
-    // you also can set this to NO and push camera view controller to navigation view controller 
-    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPPresentModal];
-    // You can set orientation mask for allowed orientations, default is UIInterfaceOrientationMaskAll
-    [coordinatorSettings setValue:[NSNumber numberWithInt:UIInterfaceOrientationMaskAll] forKey:kPPHudOrientation];
-    
-    // Define the sound filename played on successful recognition
-    NSString* soundPath = [[NSBundle mainBundle] pathForResource:@"beep" ofType:@"mp3"];
-    [coordinatorSettings setValue:soundPath forKey:kPPSoundFile];
-    
-    // Allocate the recognition coordinator object
-    PPBarcodeCoordinator *coordinator = [[PPBarcodeCoordinator alloc] initWithSettings:coordinatorSettings];
-    
-    // Create camera view controller
-    UIViewController *cameraViewController = [coordinator cameraViewControllerWithDelegate:self];
-    
-    // present it modally
-    cameraViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    [self presentCameraViewController:cameraViewController isModal:[self useModalCameraView]];
-}
-
-/**
- * Method presents a modal view controller and uses non deprecated method in iOS 6
- */
-- (void)presentCameraViewController:(UIViewController*)cameraViewController isModal:(BOOL)isModal {
-    if (isModal) {
-        cameraViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-        if ([self respondsToSelector:@selector(presentViewController:animated:completion:)]) {
-            [self presentViewController:cameraViewController animated:YES completion:nil];
-        } else {
-            [self presentModalViewController:cameraViewController animated:YES];
-        }
-    } else {
-        [[self navigationController] pushViewController:cameraViewController animated:YES];
-    }
-}
-
-/**
- * Method dismisses a modal view controller and uses non deprecated method in iOS 6
- */
-- (void)dismissCameraViewControllerModal:(BOOL)isModal {
-    if (isModal) {
-        if ([self respondsToSelector:@selector(dismissViewControllerAnimated:completion:)]) {
-            [self dismissViewControllerAnimated:YES completion:nil];
-        } else {
-            [self dismissModalViewControllerAnimated:YES];
-        }
-    }
-}
-
-#pragma mark -
-#pragma mark PPBarcode delegate methods
-
-- (void)cameraViewControllerWasClosed:(UIViewController *)cameraViewController {
-    [self dismissCameraViewControllerModal:[self useModalCameraView]];
-}
-
-- (void)cameraViewController:(UIViewController *)cameraViewController obtainedResult:(PPScanningResult *)result {
-    
-    NSString *message = [[NSString alloc] initWithData:[result data] encoding:NSUTF8StringEncoding];
-    
-    if (message == nil) {
-        message = [[NSString alloc] initWithData:[result data] encoding:NSASCIIStringEncoding];
-    }
-    
-    NSLog(@"Barcode text:\n%@", message);
-    
-    NSString* type = [PPScanningResult toTypeName:[result type]];
-    
-    NSLog(@"Barcode type:\n%@", type);
-    
-    [self setScanResult:result];
-    [self dismissCameraViewControllerModal:[self useModalCameraView]];
 }
 
 @end

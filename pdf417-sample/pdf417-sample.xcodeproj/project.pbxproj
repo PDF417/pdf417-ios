@@ -30,6 +30,9 @@
 		18508F3017CB9E4B00C6FA35 /* en.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18508F2C17CB9E4B00C6FA35 /* en.strings */; };
 		18508F3117CB9E4B00C6FA35 /* hr.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18508F2D17CB9E4B00C6FA35 /* hr.strings */; };
 		188175F217FC351F0077AC76 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 188175F117FC351F0077AC76 /* libc++.dylib */; };
+		18C1114818345DF80004CFFD /* beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 18C1114718345DF80004CFFD /* beep.mp3 */; };
+		18D58A001833017F008EC99C /* PPCameraOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D589FE1833017F008EC99C /* PPCameraOverlayViewController.m */; };
+		18D58A011833017F008EC99C /* PPCameraOverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D589FF1833017F008EC99C /* PPCameraOverlayViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +64,10 @@
 		18508F2C17CB9E4B00C6FA35 /* en.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = en.strings; sourceTree = "<group>"; };
 		18508F2D17CB9E4B00C6FA35 /* hr.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = hr.strings; sourceTree = "<group>"; };
 		188175F117FC351F0077AC76 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		18C1114718345DF80004CFFD /* beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = beep.mp3; path = ../../beep.mp3; sourceTree = "<group>"; };
+		18D589FD1833017F008EC99C /* PPCameraOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPCameraOverlayViewController.h; sourceTree = "<group>"; };
+		18D589FE1833017F008EC99C /* PPCameraOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPCameraOverlayViewController.m; sourceTree = "<group>"; };
+		18D589FF1833017F008EC99C /* PPCameraOverlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPCameraOverlayViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +137,9 @@
 				1818D851174D14DB00136FD2 /* PPRootViewController.h */,
 				1818D852174D14DB00136FD2 /* PPRootViewController.m */,
 				1818D853174D14DB00136FD2 /* PPRootViewController.xib */,
+				18D589FD1833017F008EC99C /* PPCameraOverlayViewController.h */,
+				18D589FE1833017F008EC99C /* PPCameraOverlayViewController.m */,
+				18D589FF1833017F008EC99C /* PPCameraOverlayViewController.xib */,
 				1818D832174D146F00136FD2 /* Supporting Files */,
 			);
 			path = "pdf417-sample";
@@ -138,6 +148,7 @@
 		1818D832174D146F00136FD2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				18C1114718345DF80004CFFD /* beep.mp3 */,
 				1818D833174D146F00136FD2 /* pdf417-sample-Info.plist */,
 				1818D834174D146F00136FD2 /* InfoPlist.strings */,
 				1818D837174D146F00136FD2 /* main.m */,
@@ -225,7 +236,9 @@
 				1818D83E174D146F00136FD2 /* Default.png in Resources */,
 				1818D840174D146F00136FD2 /* Default@2x.png in Resources */,
 				1818D842174D146F00136FD2 /* Default-568h@2x.png in Resources */,
+				18D58A011833017F008EC99C /* PPCameraOverlayViewController.xib in Resources */,
 				1818D855174D14DB00136FD2 /* PPRootViewController.xib in Resources */,
+				18C1114818345DF80004CFFD /* beep.mp3 in Resources */,
 				18508F2F17CB9E4B00C6FA35 /* de.strings in Resources */,
 				18508F3017CB9E4B00C6FA35 /* en.strings in Resources */,
 				18508F3117CB9E4B00C6FA35 /* hr.strings in Resources */,
@@ -239,6 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18D58A001833017F008EC99C /* PPCameraOverlayViewController.m in Sources */,
 				1818D838174D146F00136FD2 /* main.m in Sources */,
 				1818D83C174D146F00136FD2 /* PPAppDelegate.m in Sources */,
 				1818D854174D14DB00136FD2 /* PPRootViewController.m in Sources */,

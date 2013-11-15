@@ -10,8 +10,12 @@
 
 @interface PPRootViewController : UIViewController
 
-@property (retain, nonatomic) IBOutlet UIButton *startButton;
+@property (weak, nonatomic) IBOutlet UIButton *startButton;
+
+@property (weak, nonatomic) IBOutlet UIButton *startCustomUIButtom;
 
 - (IBAction)startPhotoPay:(id)sender;
+
+- (IBAction)startCustomUIScan:(id)sender;
 
 @end

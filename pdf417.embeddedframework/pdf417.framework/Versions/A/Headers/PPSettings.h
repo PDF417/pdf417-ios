@@ -71,6 +71,9 @@ extern NSString* const kPPRecognizeUPCAKey;
 /** When an object under this key is boolean true, UPCE barcode is scanned */
 extern NSString* const kPPRecognizeUPCEKey;
 
+/** Scanning control */
+extern NSString* const kPPScanUncertainBarcodes;
+
 /** Keys for camera setup */
 
 /** If YES, 640x480 quality video is used. This is the default */

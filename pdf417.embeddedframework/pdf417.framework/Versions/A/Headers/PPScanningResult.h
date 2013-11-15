@@ -105,11 +105,18 @@ typedef NS_ENUM(NSInteger, PPBarcodeElementType) {
 @property (nonatomic, retain, readonly) PPBarcodeDetailedData* rawData;
 
 /**
+ Flag indicating uncertain scanning data
+ E.g obtained from damaged barcode.
+ */
+@property (nonatomic, assign, readonly, getter = isUncertain) BOOL uncertain;
+
+/**
  Designated initializer
  */
 - (id)initWithData:(NSData*)data
               type:(PPScanningResultType)type
-           rawData:(PPBarcodeDetailedData*)rawData;
+           rawData:(PPBarcodeDetailedData*)rawData
+       isUncertain:(BOOL)isUncertain;
 
 /**
  Initializer which deserializes the scanning result from url data string

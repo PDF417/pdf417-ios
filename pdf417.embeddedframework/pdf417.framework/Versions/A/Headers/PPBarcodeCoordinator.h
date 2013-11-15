@@ -12,6 +12,7 @@
 
 @protocol PPCameraViewDelegate;
 @protocol PPBarcodeDelegate;
+@protocol PPScanningViewController;
 @class PPCameraManager;
 @class PPOverlayViewController;
 @class PPAccelerometerManager;
@@ -55,13 +56,13 @@
  *
  * Note the prefix create: the caller owns the returned object and is responsible for releasing it.
  */
-- (UIViewController*)cameraViewControllerWithDelegate:(id<PPBarcodeDelegate>)delegate;
+- (UIViewController<PPScanningViewController>*)cameraViewControllerWithDelegate:(id<PPBarcodeDelegate>)delegate;
 
 /**
  * Helper method for initializing with overlay view
  */
-- (UIViewController*)cameraViewControllerWithDelegate:(id<PPBarcodeDelegate>)delegate
-                                overlayViewController:(PPOverlayViewController*)overlayViewController;
+- (UIViewController<PPScanningViewController>*)cameraViewControllerWithDelegate:(id<PPBarcodeDelegate>)delegate
+                                                          overlayViewController:(PPOverlayViewController*)overlayViewController;
 
 /**
  * Starts the camera session, flash, torch and frame saving process. Also makes the camera do the autofocus

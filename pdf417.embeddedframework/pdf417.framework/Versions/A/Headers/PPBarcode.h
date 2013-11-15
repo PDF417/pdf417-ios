@@ -11,6 +11,9 @@
 #import "PPBarcodeCoordinator.h"
 #import "PPSettings.h"
 #import "PPScanningResult.h"
+#import "PPDetectionStatus.h"
+#import "PPOverlayViewController.h"
+#import "PPScanningViewController.h"
 
 /**
  * Protocol for retrieving results from barcode library
@@ -24,7 +27,7 @@
  * This is where the Barcode library's UIViewController should be dismissed
  * if it's presented modally.
  */
-- (void)cameraViewControllerWasClosed:(UIViewController*)cameraViewController;
+- (void)cameraViewControllerWasClosed:(id<PPScanningViewController>)cameraViewController;
 
 /**
  * Barcode library obtained a valid result. Do your next steps here.
@@ -32,7 +35,7 @@
  * Depending on how you want to treat the result, you might want to
  * dismiss the Barcode library's UIViewController here.
  */
-- (void)cameraViewController:(UIViewController*)cameraViewController
+- (void)cameraViewController:(id<PPScanningViewController>)cameraViewController
               obtainedResult:(PPScanningResult*)result;
 
 @end

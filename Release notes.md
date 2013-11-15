@@ -1,5 +1,12 @@
 # Release notes
 
+## 2.0.0
+- Some type and naming changes in our API. But everything is still backwards compatible!
+- Added very simple API for customizing camera overlay UI
+- Added option for scanning uncertain barcodes (barcodes which are not encoded according to a standard). 
+- API now supports pausing and resuming scanning without dismissing camera screen
+- More advanced scanning library - able to scan barcodes on "worn out" plastic id cards
+
 ## 1.5.0
 - The framework now has an interop feature. Barcode data can be serialized and deserialized in URLs. This means your app can easily subscribe for URL scan requests from other apps and return them scan results.
 - Method name change fix in sample app.

@@ -276,6 +276,11 @@
                                               cancelButtonTitle:@"Again"
                                               otherButtonTitles:@"Done", nil];
     
+    // We must not forget to call either
+    //  [cameraViewController resumeScanning];
+    // or
+    //  [self dismissCameraViewControllerModal:[self useModalCameraView]];
+    // in Alert View's callback
     [alertView show];
 }
 

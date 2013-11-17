@@ -21,6 +21,7 @@
 @protocol PPBarcodeDelegate <NSObject>
 
 @required
+
 /**
  * Barcode library was closed. 
  *

@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
   
   s.name         = "PPpdf417"
   
-  s.version      = "1.5.0"
+  s.version      = "2.0.0"
   s.summary      = "A small and powerful PDF417 scanning library."
   
   s.description  = <<-DESC
@@ -12,11 +12,12 @@ Pod::Spec.new do |s|
 					1. Platforms: Android and iOS
 					2. Barcode types: PDF417 (2D Barcode), QR code
 					3. Flexibility: easy to integrate API
-					4. Working conditions: low and poor light conditions
-					5. Camera quality: low quality and low resolution mobile cameras
-					6. Perspective: can shoot at an angle
-					7. Speed: 50-500 ms - depends on device and barcode size 
-					8. Full Unicode support
+					4. Fully customizable UI
+					5. Working conditions: low and poor light conditions
+					6. Camera quality: low quality and low resolution mobile cameras
+					7. Perspective: can shoot at an angle
+					8. Speed: 50-500 ms - depends on device and barcode size 
+					9. Full Unicode support
                   DESC
                   
   s.homepage     = "http://pdf417.mobi"
@@ -42,7 +43,7 @@ Pod::Spec.new do |s|
 
   s.source       = { 
   	:git => 'https://github.com/PDF417/pdf417-ios.git', 
-  	:tag => '1.5.0'
+  	:tag => '2.0.0'
   }
   
   s.preserve_paths = 'pdf417.embeddedframework/*'

@@ -125,6 +125,9 @@
     // For example, malformed PDF417 barcodes which were incorrectly encoded
     [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPScanUncertainBarcodes];
     
+    // Set this if you want to use front facing camera
+//    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPUseFrontFacingCamera];
+    
     /** Set your license key here */
     [coordinatorSettings setValue:@"1672a675bc3f3697c404a87aed640c8491b26a4522b9d4a2b61ad6b225e3b390d58d662131708451890b33"
                            forKey:kPPLicenseKey];

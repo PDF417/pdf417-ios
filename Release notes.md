@@ -1,5 +1,8 @@
 # Release notes
 
+## 2.0.1
+- Added support for front facing cameras
+
 ## 2.0.0
 - Some type and naming changes in our API. But everything is still backwards compatible!
 - Added very simple API for customizing camera overlay UI

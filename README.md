@@ -128,6 +128,9 @@ consists of code, headers, resources, strings, images and everything it needs to
 	// present modal (recommended and default) - make sure you dismiss the view controller when done
 	// you also can set this to NO and push camera view controller to navigation view controller 
 	[coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPPresentModal];
+	
+	// Set this if you want to use front facing camera
+	[coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPUseFrontFacingCamera];
     
 	// You can set orientation mask for allowed orientations, default is UIInterfaceOrientationMaskAll
 	[coordinatorSettings setValue:[NSNumber numberWithInt:UIInterfaceOrientationMaskAll] forKey:kPPHudOrientation];

@@ -190,15 +190,41 @@ didFinishRecognitionWithResult:(id)result;
 
 /** 
  Camera view controller will start the rotation to specific device orientation.
+ 
+ Deprecated. Use UIViewController's method 
+ - willRotateToInterfaceOrientation:duration:
  */
 - (void)cameraViewController:(id)cameraViewController
-     willRotateToOrientation:(UIDeviceOrientation)orientation;
+     willRotateToOrientation:(UIDeviceOrientation)orientation __deprecated;
+
+/**
+ UIViewController's method called when a rotation to a given 
+ interface orientation is about to happen
+ */
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+                                duration:(NSTimeInterval)duration;
 
 /** 
  Camera view controller did complete the rotation to specific device orientation. 
+ 
+ Deprecated. Use UIViewController's method
+ - didRotateFromInterfaceOrientation:
  */
 - (void)cameraViewController:(id)cameraViewController
-      didRotateToOrientation:(UIDeviceOrientation)orientation;
+      didRotateToOrientation:(UIDeviceOrientation)orientation __deprecated;
+
+/**
+ UIViewController's method called immediately after the rotation from a given
+ interface orientation happened
+ */
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation;
+
+/**
+ UIViewController's method called inside an animation block. Any changes you make
+ to your UIView's inside this method will be animated
+ */
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+                                         duration:(NSTimeInterval)duration;
 
 @end
 

@@ -22,6 +22,8 @@
     #define __(s,...) [NSString stringWithFormat:NSLocalizedStringFromTable(s,[PPApp instance].language,s),##__VA_ARGS__]
 #endif
 
+#define PP_IS_IPAD (([UIDevice currentDevice].userInterfaceIdiom==UIUserInterfaceIdiomPad))
+
 /*
  *  System Versioning Preprocessor Macros
  */

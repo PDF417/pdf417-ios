@@ -93,6 +93,9 @@ extern NSString* const kPPLanguage;
 /** If YES, PhotoPay's CameraViewController is presented modally. */
 extern NSString* const kPPPresentModal;
 
+/** If YES, Front facing camera of the device will be used */
+extern NSString* const kPPUseFrontFacingCamera;
+
 /** Work style */
 /** Determines the orientation of toast messages. Default is Portrait */
 extern NSString* const kPPHudOrientation;

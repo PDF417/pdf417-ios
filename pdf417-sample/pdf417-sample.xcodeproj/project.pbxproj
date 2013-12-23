@@ -25,10 +25,14 @@
 		1818D870174E20B000136FD2 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1818D86E174E20A800136FD2 /* libiconv.dylib */; };
 		1818D873174E213D00136FD2 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1818D871174E213500136FD2 /* OpenGLES.framework */; };
 		1818D876174E218F00136FD2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1818D874174E218300136FD2 /* QuartzCore.framework */; };
-		18508F2E17CB9E4B00C6FA35 /* pdf417.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18508F2917CB9E4B00C6FA35 /* pdf417.framework */; };
-		18508F2F17CB9E4B00C6FA35 /* de.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18508F2B17CB9E4B00C6FA35 /* de.strings */; };
-		18508F3017CB9E4B00C6FA35 /* en.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18508F2C17CB9E4B00C6FA35 /* en.strings */; };
-		18508F3117CB9E4B00C6FA35 /* hr.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18508F2D17CB9E4B00C6FA35 /* hr.strings */; };
+		18562B2118677EA200A0355B /* pdf417.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18562B1818677EA200A0355B /* pdf417.framework */; };
+		18562B2218677EA200A0355B /* de.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18562B1A18677EA200A0355B /* de.strings */; };
+		18562B2318677EA200A0355B /* en.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18562B1B18677EA200A0355B /* en.strings */; };
+		18562B2418677EA200A0355B /* hr.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18562B1C18677EA200A0355B /* hr.strings */; };
+		18562B2518677EA200A0355B /* light.png in Resources */ = {isa = PBXBuildFile; fileRef = 18562B1D18677EA200A0355B /* light.png */; };
+		18562B2618677EA200A0355B /* light@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18562B1E18677EA200A0355B /* light@2x.png */; };
+		18562B2718677EA200A0355B /* lighton.png in Resources */ = {isa = PBXBuildFile; fileRef = 18562B1F18677EA200A0355B /* lighton.png */; };
+		18562B2818677EA200A0355B /* lighton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18562B2018677EA200A0355B /* lighton@2x.png */; };
 		188175F217FC351F0077AC76 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 188175F117FC351F0077AC76 /* libc++.dylib */; };
 		18C1114818345DF80004CFFD /* beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 18C1114718345DF80004CFFD /* beep.mp3 */; };
 		18D58A001833017F008EC99C /* PPCameraOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D589FE1833017F008EC99C /* PPCameraOverlayViewController.m */; };
@@ -59,10 +63,14 @@
 		1818D86E174E20A800136FD2 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		1818D871174E213500136FD2 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		1818D874174E218300136FD2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		18508F2917CB9E4B00C6FA35 /* pdf417.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = pdf417.framework; sourceTree = "<group>"; };
-		18508F2B17CB9E4B00C6FA35 /* de.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = de.strings; sourceTree = "<group>"; };
-		18508F2C17CB9E4B00C6FA35 /* en.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = en.strings; sourceTree = "<group>"; };
-		18508F2D17CB9E4B00C6FA35 /* hr.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = hr.strings; sourceTree = "<group>"; };
+		18562B1818677EA200A0355B /* pdf417.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = pdf417.framework; sourceTree = "<group>"; };
+		18562B1A18677EA200A0355B /* de.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = de.strings; sourceTree = "<group>"; };
+		18562B1B18677EA200A0355B /* en.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = en.strings; sourceTree = "<group>"; };
+		18562B1C18677EA200A0355B /* hr.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = hr.strings; sourceTree = "<group>"; };
+		18562B1D18677EA200A0355B /* light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = light.png; sourceTree = "<group>"; };
+		18562B1E18677EA200A0355B /* light@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "light@2x.png"; sourceTree = "<group>"; };
+		18562B1F18677EA200A0355B /* lighton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lighton.png; sourceTree = "<group>"; };
+		18562B2018677EA200A0355B /* lighton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lighton@2x.png"; sourceTree = "<group>"; };
 		188175F117FC351F0077AC76 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		18C1114718345DF80004CFFD /* beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = beep.mp3; path = ../../beep.mp3; sourceTree = "<group>"; };
 		18D589FD1833017F008EC99C /* PPCameraOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPCameraOverlayViewController.h; sourceTree = "<group>"; };
@@ -82,11 +90,11 @@
 				1818D868174E1B8800136FD2 /* CoreMedia.framework in Frameworks */,
 				1818D873174E213D00136FD2 /* OpenGLES.framework in Frameworks */,
 				1818D865174E17B800136FD2 /* AudioToolbox.framework in Frameworks */,
+				18562B2118677EA200A0355B /* pdf417.framework in Frameworks */,
 				1818D862174E17A500136FD2 /* AVFoundation.framework in Frameworks */,
 				1818D82C174D146F00136FD2 /* UIKit.framework in Frameworks */,
 				1818D82E174D146F00136FD2 /* Foundation.framework in Frameworks */,
 				1818D830174D146F00136FD2 /* CoreGraphics.framework in Frameworks */,
-				18508F2E17CB9E4B00C6FA35 /* pdf417.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,9 +122,9 @@
 		1818D82A174D146F00136FD2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				18562B1718677EA200A0355B /* pdf417.embeddedframework */,
 				188175F117FC351F0077AC76 /* libc++.dylib */,
 				1818D86E174E20A800136FD2 /* libiconv.dylib */,
-				18508F2817CB9E4B00C6FA35 /* pdf417.embeddedframework */,
 				1818D863174E17AA00136FD2 /* AudioToolbox.framework */,
 				1818D860174E179E00136FD2 /* AVFoundation.framework */,
 				1818D869174E1B8F00136FD2 /* CoreVideo.framework */,
@@ -160,22 +168,26 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		18508F2817CB9E4B00C6FA35 /* pdf417.embeddedframework */ = {
+		18562B1718677EA200A0355B /* pdf417.embeddedframework */ = {
 			isa = PBXGroup;
 			children = (
-				18508F2917CB9E4B00C6FA35 /* pdf417.framework */,
-				18508F2A17CB9E4B00C6FA35 /* Resources */,
+				18562B1818677EA200A0355B /* pdf417.framework */,
+				18562B1918677EA200A0355B /* Resources */,
 			);
 			name = pdf417.embeddedframework;
 			path = ../pdf417.embeddedframework;
 			sourceTree = "<group>";
 		};
-		18508F2A17CB9E4B00C6FA35 /* Resources */ = {
+		18562B1918677EA200A0355B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				18508F2B17CB9E4B00C6FA35 /* de.strings */,
-				18508F2C17CB9E4B00C6FA35 /* en.strings */,
-				18508F2D17CB9E4B00C6FA35 /* hr.strings */,
+				18562B1A18677EA200A0355B /* de.strings */,
+				18562B1B18677EA200A0355B /* en.strings */,
+				18562B1C18677EA200A0355B /* hr.strings */,
+				18562B1D18677EA200A0355B /* light.png */,
+				18562B1E18677EA200A0355B /* light@2x.png */,
+				18562B1F18677EA200A0355B /* lighton.png */,
+				18562B2018677EA200A0355B /* lighton@2x.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -207,7 +219,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = PP;
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = PhotoPay;
 			};
 			buildConfigurationList = 1818D823174D146F00136FD2 /* Build configuration list for PBXProject "pdf417-sample" */;
@@ -232,16 +244,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18562B2518677EA200A0355B /* light.png in Resources */,
 				1818D836174D146F00136FD2 /* InfoPlist.strings in Resources */,
+				18562B2618677EA200A0355B /* light@2x.png in Resources */,
+				18562B2718677EA200A0355B /* lighton.png in Resources */,
 				1818D83E174D146F00136FD2 /* Default.png in Resources */,
 				1818D840174D146F00136FD2 /* Default@2x.png in Resources */,
 				1818D842174D146F00136FD2 /* Default-568h@2x.png in Resources */,
 				18D58A011833017F008EC99C /* PPCameraOverlayViewController.xib in Resources */,
+				18562B2418677EA200A0355B /* hr.strings in Resources */,
 				1818D855174D14DB00136FD2 /* PPRootViewController.xib in Resources */,
+				18562B2318677EA200A0355B /* en.strings in Resources */,
 				18C1114818345DF80004CFFD /* beep.mp3 in Resources */,
-				18508F2F17CB9E4B00C6FA35 /* de.strings in Resources */,
-				18508F3017CB9E4B00C6FA35 /* en.strings in Resources */,
-				18508F3117CB9E4B00C6FA35 /* hr.strings in Resources */,
+				18562B2818677EA200A0355B /* lighton@2x.png in Resources */,
+				18562B2218677EA200A0355B /* de.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,7 +313,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -323,7 +339,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -336,14 +352,14 @@
 		1818D84F174D146F00136FD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../pdf417.embeddedframework\"",
+					../pdf417.embeddedframework,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "pdf417-sample/pdf417-sample-Prefix.pch";
 				INFOPLIST_FILE = "pdf417-sample/pdf417-sample-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -352,14 +368,14 @@
 		1818D850174D146F00136FD2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../pdf417.embeddedframework\"",
+					../pdf417.embeddedframework,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "pdf417-sample/pdf417-sample-Prefix.pch";
 				INFOPLIST_FILE = "pdf417-sample/pdf417-sample-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

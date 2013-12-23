@@ -303,7 +303,7 @@
 - (NSString*)barcodeDetailedDataString:(PPBarcodeDetailedData*)barcodeDetailedData {
     // obtain barcode elements array
     NSArray* barcodeElements = [barcodeDetailedData barcodeElements];
-    NSMutableString* barcodeDetailedDataString = [NSMutableString stringWithFormat:@"Total elements: %d\n", [barcodeElements count]];
+    NSMutableString* barcodeDetailedDataString = [NSMutableString stringWithFormat:@"Total elements: %lu\n", (unsigned long)[barcodeElements count]];
     
     for (int i = 0; i < [barcodeElements count]; ++i) {
         
@@ -315,7 +315,7 @@
         
         // obtain raw bytes of the barcode element
         NSData* bytes = [barcodeElement elementBytes];
-        [barcodeDetailedDataString appendFormat:@"Length=%d {", [bytes length]];
+        [barcodeDetailedDataString appendFormat:@"Length=%lu {", (unsigned long)[bytes length]];
         
         const unsigned char* nBytes = [bytes bytes];
         for (int j = 0; j < [bytes length]; ++j) {

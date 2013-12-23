@@ -1,3 +1,3 @@
-platform :ios, '5.0'
+platform :ios, '5.1.1'
 
-pod 'PPpdf417',  '~> 2.0.0'
+pod 'PPpdf417',  '~> 2.1.0'

@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
   
   s.name         = "PPpdf417"
   
-  s.version      = "2.0.0"
+  s.version      = "2.1.0"
   s.summary      = "A small and powerful PDF417 scanning library."
   
   s.description  = <<-DESC
@@ -43,7 +43,7 @@ Pod::Spec.new do |s|
 
   s.source       = { 
   	:git => 'https://github.com/PDF417/pdf417-ios.git', 
-  	:tag => '2.0.0'
+  	:tag => '2.1.0'
   }
   
   s.preserve_paths = 'pdf417.embeddedframework/*'
@@ -52,7 +52,7 @@ Pod::Spec.new do |s|
 
   # ――― MULTI-PLATFORM VALUES ――――――――――――――――――――――――――――――――――――――――――――――――― #
 
-  s.ios.deployment_target = '5.0'
+  s.ios.deployment_target = '5.1.1'
   s.ios.source_files = 'pdf417.embeddedframework/pdf417.framework/Versions/A/Headers/*.{h,m}'
   s.ios.header_dir = 'pdf417'
   s.ios.public_header_files = "pdf417.embeddedframework/pdf417.framework/Versions/A/Headers/*.h"

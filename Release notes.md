@@ -1,5 +1,9 @@
 # Release notes
 
+## 2.1.0
+- Added support for arm64 platforms
+- Raised deployment target to iOS 5.1.1. Older versions (up to iOS 4.3) are available on demand.
+
 ## 2.0.1
 - Added support for front facing cameras
 

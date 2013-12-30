@@ -1,5 +1,10 @@
 # Release notes
 
+## 2.2.0
+- Added out of the box support for FormSheet/PageSheet presentation styles on iPads
+- Fixed UI issues when presenting CameraViewController on NavigationViewController
+- Refactored default OverlayViewController and provided in demo app. You can use it as a reference in creating your own custom overlays.
+
 ## 2.1.0
 - Added support for arm64 platforms
 - Raised deployment target to iOS 5.1.1. Older versions (up to iOS 4.3) are available on demand.

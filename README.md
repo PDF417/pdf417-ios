@@ -100,7 +100,11 @@ consists of code, headers, resources, strings, images and everything it needs to
 	You can use pdf417 SDK free of change and without license key for development and non-commercial projects. Once you obtain a commercial license key from [www.pdf417.mobi](www.pdf417.mobi), you can set it like this:
    
 	```objective-c
-	// Set the license key
+	/**
+     Set your license key here.
+     This license key allows setting overlay views for this application ID: net.photopay.barcode.pdf417-sample
+     To test your custom overlays, please use this demo app directly or visit our website www.pdf417.mobi for commercial license
+     */
 	[coordinatorSettings setValue:@"Enter_License_Key_Here" forKey:kPPLicenseKey];
 	```
     

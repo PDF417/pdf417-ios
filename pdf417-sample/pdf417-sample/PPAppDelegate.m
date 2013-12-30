@@ -17,8 +17,11 @@
     // Override point for customization after application launch.
     PPRootViewController *rootView = [[PPRootViewController alloc] initWithNibName:@"PPRootViewController" bundle:nil];
 
+    UINavigationController* navigationController = [[UINavigationController alloc] initWithRootViewController:rootView];
+    navigationController.navigationBar.translucent = NO;
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = rootView;
+    self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
     return YES;
 }

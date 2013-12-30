@@ -232,7 +232,7 @@ didFinishRecognitionWithResult:(id)result {
     
     // we have to do this trick to make it work in all orientations
     // we add drawing layer to view's superview, which isn't rotatable
-    CALayer *viewLayer = [[[self view] superview] layer];
+    CALayer *viewLayer = [[self view] layer];
     [viewLayer setMasksToBounds:YES];
     [viewLayer addSublayer:drawingLayer];
 }

@@ -8,6 +8,7 @@
 
 #import "PPRootViewController.h"
 #import "PPCameraOverlayViewController.h"
+#import "PPYBarcodeOverlayViewController.h"
 #import <pdf417/PPBarcode.h>
 
 @interface PPRootViewController () <PPBarcodeDelegate, UIAlertViewDelegate>
@@ -46,6 +47,8 @@
         [[self startButton] setBackgroundColor:[UIColor whiteColor]];
         [[self startCustomUIButtom] setBackgroundColor:[UIColor whiteColor]];
     }
+    
+    self.title = @"Scanning demo";
 }
 
 - (void)viewDidUnload
@@ -128,17 +131,37 @@
     // Set this if you want to use front facing camera
 //    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPUseFrontFacingCamera];
     
-    /** Set your license key here */
+    /**
+     Set your license key here.
+     This license key allows setting overlay views for this application ID: net.photopay.barcode.pdf417-sample
+     To test your custom overlays, please use this demo app directly or visit our website www.pdf417.mobi for commercial license
+     */
     [coordinatorSettings setValue:@"1672a675bc3f3697c404a87aed640c8491b26a4522b9d4a2b61ad6b225e3b390d58d662131708451890b33"
                            forKey:kPPLicenseKey];
     
     // present modal (recommended and default) - make sure you dismiss the view controller when done
     // you also can set this to NO and push camera view controller to navigation view controller
-    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPPresentModal];
+    [coordinatorSettings setValue:[NSNumber numberWithBool:[self useModalCameraView]] forKey:kPPPresentModal];
     
     // If you use default camera overlay, you can set orientation mask for allowed orientations
     // default is UIInterfaceOrientationMaskAll
-    [coordinatorSettings setValue:[NSNumber numberWithInt:UIInterfaceOrientationMaskAll] forKey:kPPHudOrientation];
+    UIInterfaceOrientationMask mask;
+    if ([self useModalCameraView]) {
+        if (PP_IS_IPAD) {
+            // since on iPad we use Form/Page sheet presentation styles,
+            // the parent view controller takes care of the orientation changes
+            mask = UIInterfaceOrientationMaskPortrait;
+        } else {
+            //when using FullScreen presentation style, Overlay is responsible for orientation changes
+            // the parent view controller takes care of the orientation changes
+            mask = UIInterfaceOrientationMaskAll;
+        }
+    } else {
+        // when not presenting modally, navigation view controller takes care of the orientation changes.
+        // but this depends on your implementation, so use this wisely.
+        mask = UIInterfaceOrientationMaskPortrait;
+    }
+    [coordinatorSettings setValue:[NSNumber numberWithInt:mask] forKey:kPPHudOrientation];
     
     // Define the sound filename played on successful recognition
     NSString* soundPath = [[NSBundle mainBundle] pathForResource:@"beep" ofType:@"mp3"];
@@ -171,14 +194,18 @@
         return;
     }
     
-    PPCameraOverlayViewController *overlayViewController =
+    // Simple example
+    PPCameraOverlayViewController *simpleOverlay =
         [[PPCameraOverlayViewController alloc] initWithNibName:@"PPCameraOverlayViewController"
                                                         bundle:nil];
     
+    // Complex overlay, initialize cameraViewController with this object to see how it works
+    PPYBarcodeOverlayViewController *complexOverlay = [[PPYBarcodeOverlayViewController alloc] init];
+    
     // Create camera view controller
     UIViewController<PPScanningViewController>* cameraViewController =
-        [coordinator cameraViewControllerWithDelegate:self
-                                overlayViewController:overlayViewController];
+        [coordinator cameraViewControllerWithDelegate:self overlayViewController:simpleOverlay];
+    
     [self setCurrentCameraViewController:cameraViewController];
     
     // present it modally
@@ -195,6 +222,11 @@
 - (void)presentCameraViewController:(UIViewController*)cameraViewController isModal:(BOOL)isModal {
     if (isModal) {
         cameraViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        if (PP_IS_IPAD) {
+            cameraViewController.modalPresentationStyle = UIModalPresentationFormSheet;
+        } else {
+            cameraViewController.modalPresentationStyle = UIModalPresentationFullScreen;
+        }
         if ([self respondsToSelector:@selector(presentViewController:animated:completion:)]) {
             [self presentViewController:cameraViewController animated:YES completion:nil];
         } else {
@@ -255,6 +287,7 @@
     BOOL isUncertain = [result isUncertain];
     if (isUncertain) {
         NSLog(@"Uncertain scanning data!");
+        type = [type stringByAppendingString:@" - uncertain"];
         
         // Perform some kind of integrity validation to see if the returned value is really complete
         BOOL valid = YES;

@@ -25,4 +25,41 @@ typedef enum _PPDetectionStatus {
     PPDetectionStatusPartialForm        = 1<<9  // Form detected, but only partially visible on screen
 } PPDetectionStatus;
 
+static NSString* stringFromDetectionStatus(PPDetectionStatus status) {
+    NSString* defaultString =  @"Detection status: ";
+    NSString* res = [NSString stringWithString:defaultString];
+    if (status & PPDetectionStatusSuccess) {
+        res = [res stringByAppendingString:@"Success\n"];
+    }
+    if (status & PPDetectionStatusFail) {
+        res = [res stringByAppendingString:@"Fail\n"];
+    }
+    if (status & PPDetectionStatusCameraTooHigh) {
+        res = [res stringByAppendingString:@"Camera too high\n"];
+    }
+    if (status & PPDetectionStatusCameraAtAngle) {
+        res = [res stringByAppendingString:@"Camera at angle\n"];
+    }
+    if (status & PPDetectionStatusCameraRotated) {
+        res = [res stringByAppendingString:@"Camera rotated\n"];
+    }
+    if (status & PPDetectionStatusQRSuccess) {
+        res = [res stringByAppendingString:@"QR success\n"];
+    }
+    if (status & PPDetectionStatusPdf417Success) {
+        res = [res stringByAppendingString:@"PDF417 success\n"];
+    }
+    if (status & PPDetectionStatusFallbackSuccess) {
+        res = [res stringByAppendingString:@"Fallback sucess\n"];
+    }
+    if (status & PPDetectionStatusPartialForm) {
+        res = [res stringByAppendingString:@"Partial form\n"];
+    }
+    if ([res length] == [defaultString length]) {
+        res = @"No value!";
+    }
+    
+    return res;
+}
+
 #endif

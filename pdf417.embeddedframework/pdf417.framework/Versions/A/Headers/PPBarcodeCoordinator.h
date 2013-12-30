@@ -97,6 +97,9 @@
 /** Obtains user-specified license key */
 - (id)getLicenseKey;
 
+/** Updates the aperture size to current camera view size */
+- (void)updateApertureSize;
+
 /**
  * This method is called when barcode scannning is unsupported 
  * on a specific device.

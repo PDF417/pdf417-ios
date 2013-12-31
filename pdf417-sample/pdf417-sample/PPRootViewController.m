@@ -126,7 +126,12 @@
     
     // Set this to true to scan even barcode not compliant with standards
     // For example, malformed PDF417 barcodes which were incorrectly encoded
+    // Use only if necessary because it slows down the recognition process
     [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPScanUncertainBarcodes];
+    
+    // Set this to true to scan barcodes which don't have quiet zone (white area) around it
+    // Use only if necessary because it slows down the recognition process
+    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPAllowNullQuietZone];
     
     // Set this if you want to use front facing camera
 //    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPUseFrontFacingCamera];

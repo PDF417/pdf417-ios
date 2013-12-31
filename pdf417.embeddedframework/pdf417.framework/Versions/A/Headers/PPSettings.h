@@ -71,8 +71,15 @@ extern NSString* const kPPRecognizeUPCAKey;
 /** When an object under this key is boolean true, UPCE barcode is scanned */
 extern NSString* const kPPRecognizeUPCEKey;
 
-/** Scanning control */
+/** 
+ Scanning control
+ Use these features only if you have to because they slow down the scanning process 
+ */
+
+/** Allow scanning uncertain barcodes - i.e. incomplete ones or not according to standard */
 extern NSString* const kPPScanUncertainBarcodes;
+/** Allow scanning barcodes which don't have quiet zone surrounding it */
+extern NSString* const kPPAllowNullQuietZone;
 
 /** Keys for camera setup */
 

@@ -137,6 +137,15 @@ consists of code, headers, resources, strings, images and everything it needs to
 	
 	// Set this if you want to use front facing camera
 	[coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPUseFrontFacingCamera];
+	
+	// Set this to true to scan even barcode not compliant with standards
+    // For example, malformed PDF417 barcodes which were incorrectly encoded
+    // Use only if necessary because it slows down the recognition process
+    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPScanUncertainBarcodes];
+    
+    // Set this to true to scan barcodes which don't have quiet zone (white area) around it
+    // Use only if necessary because it slows down the recognition process
+    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPAllowNullQuietZone];
     
 	// You can set orientation mask for allowed orientations, default is UIInterfaceOrientationMaskAll
 	[coordinatorSettings setValue:[NSNumber numberWithInt:UIInterfaceOrientationMaskAll] forKey:kPPHudOrientation];

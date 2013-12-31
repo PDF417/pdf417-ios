@@ -1,5 +1,9 @@
 # Release notes
 
+## 2.3.0
+- Added option to scan barcodes which don't have quite zone around them
+- Improved scanning algorithm
+
 ## 2.2.0
 - Added out of the box support for FormSheet/PageSheet presentation styles on iPads
 - Fixed UI issues when presenting CameraViewController on NavigationViewController

@@ -49,8 +49,12 @@
                              [NSValue valueWithCGPoint:CGPointMake([self viewfinderMargin], bounds.size.height - [self viewfinderMargin])],
                              [NSValue valueWithCGPoint:CGPointMake(bounds.size.width - [self viewfinderMargin], [self viewfinderMargin])],
                              nil];
-    [layerCorners autorelease];
     return layerCorners;
+}
+
++ (CGFloat)getStrokeWidth {
+    CGFloat strokeWidth = PP_IS_IPAD ? 6.0f : 4.0f;
+    return strokeWidth;
 }
 
 - (void)initTrackingLayerWithBounds:(CGRect)bounds {
@@ -73,6 +77,7 @@
     [PPYOverlayAnimationViewUtils createPath:newPath withCorners:layerCorners forSize:bounds];
     self.trackingLayer.path = newPath;
     CGPathRelease(newPath);
+    [layerCorners release];
 }
 
 - (void)initDotsLayerWithBounds:(CGRect)bounds {
@@ -104,6 +109,7 @@
     [self startAnimationToPath:newPath duration:0.4f]; // to match rotation duration
     [self startAnimationToColor:[[self initialColor] CGColor] duration:0.4f];
     CGPathRelease(newPath);
+    [layerCorners release];
 }
 
 - (void)dealloc {
@@ -116,18 +122,13 @@
     [super dealloc];
 }
 
-+ (CGFloat)getStrokeWidth {
-    CGFloat strokeWidth = PP_IS_IPAD ? 6.0f : 4.0f;
-    return strokeWidth;
-}
-
 #pragma mark - Event handler
 
 - (void)animateToLocation:(NSArray*)cornerPoints
                withStatus:(PPDetectionStatus)status {
     CGRect bounds = self.trackingLayer.bounds;
     
-//    LOGE([stringFromDetectionStatus(status) UTF8String]);
+    //    LOGE([stringFromDetectionStatus(status) UTF8String]);
     
     BOOL nothingDetected = cornerPoints == nil || [cornerPoints count] < 4;
     BOOL barcodeDetected = !nothingDetected && ((status & PPDetectionStatusQRSuccess) > 0 || (status & PPDetectionStatusPdf417Success) > 0);
@@ -168,7 +169,9 @@
     
     [self setDotsPosition:dotsPoints forBounds:bounds color:dotsColor];
     [self setCornersPosition:trackingPoints forBounds:bounds color:trackingColor];
-
+    
+    [dotsPoints release];
+    [trackingPoints release];
 }
 
 - (void)setDotsPosition:(NSArray*)dotsPoints forBounds:(CGRect)bounds color:(UIColor*)color {
@@ -177,7 +180,7 @@
     [PPYOverlayAnimationViewUtils createPath:dotsPath withDots:dotsPoints forSize:bounds];
     [self dotsLayer].path = dotsPath;
     [self startDotAnimation:[color CGColor] duration:[[PPApp instance] animationDuration]];
-
+    
     CGPathRelease(dotsPath);
 }
 

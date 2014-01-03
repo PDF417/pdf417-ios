@@ -114,5 +114,9 @@ extern NSString* const kPPViewfinderMoveable;
 /** Sound file which will be played on successful recognition */
 extern NSString* const kPPSoundFile;
 
+/** Saving of images */
+/** Debug image saving */
+extern NSString* const kPPSaveBgrImageKey;
+
 
 #endif

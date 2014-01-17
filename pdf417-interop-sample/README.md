@@ -71,7 +71,7 @@ The sample application is provided along with wrapper code which builds the scan
 
 The wrapper also parses the result data passed back to your application so you get the final barcode bytes without having to decode the hex encoded bytes.
 
-Barcode datastructure is contained in the class defined in `PPScanningResult.h`. Wrapper functions are defined in `PPScanningUtil.h`.
+The barcode datastructure is contained in the class defined in `PPScanningResult.h`. Wrapper functions are defined in `PPScanningUtil.h`.
 
 ### Initiate scanning
 

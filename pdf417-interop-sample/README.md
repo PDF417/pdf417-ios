@@ -93,7 +93,7 @@ if (![PPScanningUtil scanBarcodeTypes:types
 
 ### Getting the result
 
-To receive the resulting URL request you need to setup a URL scheme in your application settings (in our case `pdf417sample`) and implement the `handleOpenURL` method in your app delegate:
+To receive the resulting URL request you need to [setup a URL scheme in your application](https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/AdvancedAppTricks/AdvancedAppTricks.html#//apple_ref/doc/uid/TP40007072-CH7-SW50) (in our case `pdf417sample`) and implement the `handleOpenURL` method in your app delegate:
 
 ```objective-c
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {

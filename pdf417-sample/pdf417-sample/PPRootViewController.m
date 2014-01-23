@@ -49,6 +49,7 @@
     }
     
     self.title = @"Scanning demo";
+    self.versionLabel.text = [NSString stringWithFormat:@"library version: %@",[PPBarcodeCoordinator getBuildVersionString]];
 }
 
 - (void)viewDidUnload
@@ -132,6 +133,10 @@
     // Set this to true to scan barcodes which don't have quiet zone (white area) around it
     // Use only if necessary because it slows down the recognition process
     [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPAllowNullQuietZone];
+    
+    // Set this to true to allow scanning barcodes with inverted intensities (i.e. white barcodes on black background)
+    // NOTE: this options doubles the frame processing time
+//    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPAllowInverseBarcodes];
     
     // Set this if you want to use front facing camera
 //    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPUseFrontFacingCamera];

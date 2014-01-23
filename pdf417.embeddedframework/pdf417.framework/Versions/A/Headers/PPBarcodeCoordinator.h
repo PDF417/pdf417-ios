@@ -106,5 +106,11 @@
  * Error object contains description of the reason for that.
  */
 + (BOOL)isScanningUnsupported:(NSError **)error;
+    
+/**
+ * This method returns the string that contains the library build version
+ * information.
+ */
++ (NSString*)getBuildVersionString;
 
 @end

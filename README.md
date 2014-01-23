@@ -147,6 +147,10 @@ consists of code, headers, resources, strings, images and everything it needs to
     // Use only if necessary because it slows down the recognition process
     [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPAllowNullQuietZone];
     
+    // Set this to true to allow scanning barcodes with inverted intensities (i.e. white barcodes on black background)
+    // NOTE: this options doubles the frame processing time
+    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPAllowInverseBarcodes];
+    
 	// You can set orientation mask for allowed orientations, default is UIInterfaceOrientationMaskAll
 	[coordinatorSettings setValue:[NSNumber numberWithInt:UIInterfaceOrientationMaskAll] forKey:kPPHudOrientation];
 	

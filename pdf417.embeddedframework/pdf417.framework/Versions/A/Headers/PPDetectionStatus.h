@@ -25,6 +25,9 @@ typedef enum _PPDetectionStatus {
     PPDetectionStatusPartialForm        = 1<<9  // Form detected, but only partially visible on screen
 } PPDetectionStatus;
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wall"
+
 static NSString* stringFromDetectionStatus(PPDetectionStatus status) {
     NSString* defaultString =  @"Detection status: ";
     NSString* res = [NSString stringWithString:defaultString];
@@ -61,5 +64,7 @@ static NSString* stringFromDetectionStatus(PPDetectionStatus status) {
     
     return res;
 }
+
+#pragma clang diagnostic pop
 
 #endif

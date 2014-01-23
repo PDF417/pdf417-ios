@@ -1,5 +1,12 @@
 # Release notes
 
+## 2.4.0
+- Added option to scan barcodes which have inverted intensities
+- Added method `[PPBarcodeCoordinator getBuildVersionString]` that returns the internal library version string
+
+## 2.3.1
+- various bugfixes
+
 ## 2.3.0
 - Added option to scan barcodes which don't have quite zone around them
 - Improved scanning algorithm

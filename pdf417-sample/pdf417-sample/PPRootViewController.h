@@ -13,8 +13,11 @@
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 
 @property (weak, nonatomic) IBOutlet UIButton *startCustomUIButtom;
+    
+@property (weak, nonatomic) IBOutlet UILabel *versionLabel;
 
 - (IBAction)startPhotoPay:(id)sender;
+
 
 - (IBAction)startCustomUIScan:(id)sender;
 

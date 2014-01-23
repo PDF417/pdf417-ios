@@ -80,6 +80,9 @@ extern NSString* const kPPRecognizeUPCEKey;
 extern NSString* const kPPScanUncertainBarcodes;
 /** Allow scanning barcodes which don't have quiet zone surrounding it */
 extern NSString* const kPPAllowNullQuietZone;
+/** Allow scanning of barcodes with inverse intensity values
+ *      (e.g. white barcode on black background) */
+extern NSString* const kPPAllowInverseBarcodes;
 
 /** Keys for camera setup */
 

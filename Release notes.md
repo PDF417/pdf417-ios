@@ -1,5 +1,8 @@
 # Release notes
 
+## 2.4.1
+- iPod touch 5th gen now uses 720p video for scanning instead of 480p
+
 ## 2.4.0
 - Added option to scan barcodes which have inverted intensities
 - Added method `[PPBarcodeCoordinator getBuildVersionString]` that returns the internal library version string

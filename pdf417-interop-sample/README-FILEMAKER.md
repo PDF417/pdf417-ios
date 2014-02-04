@@ -12,7 +12,7 @@ For this example we will be using **Filemaker Pro 13** on **MacOS X**. The actio
 
 We will go through the following steps to create a complete integration example:
 
-+ Create a new template **Filemaker Pro** project
++ Create a new template **Filemaker Pro** project for a *Inventory* item
 + Modify a form in the project to include a *Scan* button for invoking the barcode scanner
 + Add the necesary button click event code to transfer control to the scan application
 + Implement the **Filemaker Pro** script which will parse the result barcode data and insert it into a field on the form

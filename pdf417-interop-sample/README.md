@@ -50,8 +50,10 @@ Supported parameters by the url scheme:
     + ITF
     + UPCA
     + UPCE
-+ **callback** - an url which will be called by **pdf417** to return controll back to your application
++ **callback** - an url which will be called by **pdf417** to return controll back to your application, must be specified
 + **beep** - optionally turns on or off the "beep" sound played when successfully scanning a barcode, can be set to `true` or `false` (default is `true`)
++ **text** - boolean value (default is `false`) that optionally allows requesting that the barcode data be interpreted as a UTF8 string and returned as a URL-Encoded UTF8 string instead of Hex-Encoded. To be used when the calling application cannot handle other types of data (like for example when integrating from **Filemaker Pro**)
++ **fmp** - boolean value (default is `false`) optionally telling the application to return result data in a parameter called `param` instead of the usual `data` parameter (to be used when integrating from **Filemaker Pro** which specifically expects the `param` parameter)
 
 If the user cancels a scan, your callback URL will be invoked but without the `data` and `type` parameters.
 
@@ -62,8 +64,10 @@ The format of the callback:
     <callback>?data=<data>&type=<type>
 
 + **callback** - the url you gave **pdf417** via the `callback` parameter above (for example `myschema://myaction`)
-+ **data** - hex encoded byte data retrieved from the scanned barcode
 + **type** - the barcode type that was scanned, if you specified multiple supported barcodes it will tell you which one of theme was actually scanned
++ **data** - Hex-Encoded byte data retrieved from the scanned barcode (or a URL-Encoded UTF8 string if the `text` parameter is set to `true`)
+
+> The result data is by default Hex-Encoded which means every two characters of the result string represent one byte of data. This is because the barcode data in its raw form does not have any universal notion of data format and it is up to the client aplication to interpret this data in the way it sees fit depending on its use-case. For your convenience, we provide an option to tell the **pdf417** scanner application to interpret the data as a UTF8 string for you, and return the interpreted string as a result. In this case you just need to make sure that the barcodes you'll be scanning contain actuall UTF8 encoded string data, otherwise you might run into problems with the (incorrect) decoded data. Keep this in mind.
 
 ## Wrapper
 

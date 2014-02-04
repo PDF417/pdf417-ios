@@ -1,12 +1,22 @@
 ## About
 
-This document explains step by step via an example the necessary work needed to integrate the **pdf417** scanner application with **Filemaker Pro** (and **Filemaker Go**) via URL schema interop.
+This document explains the exact steps necessary to integrate the **pdf417** scanner application with a example **Filemaker Pro** (and **Filemaker Go**) project via URL schema interop.
 
 > Note: URL schema interop only works with the *Pro* version of the **pdf417** scanner application. Please contact us if you are interested in obtaining the **Pro** version of the barcode scanning application.
 
+Using this approach you can easily integrate barcode scanning features into your **Filemaker Go** workflow on Apple's iPhone, iPod or iPad devices.
+
 ## Integration
 
-For this example we will be using **Filemaker Pro 13** on **MacOS X**. The actions shown should be analogus to other versions of **Filemaker Pro**. Contact us if you need help for your version.
+For this example we will be using **Filemaker Pro 13** on **MacOS X**. The actions shown should be analogus to other versions of **Filemaker Pro**. Contact us if you need help with your version of the application.
+
+We will go through the following steps to create a complete integration example:
+
++ Create a new template **Filemaker Pro** project
++ Modify a form in the project to include a *Scan* button for invoking the barcode scanner
++ Add the necesary button click event code to transfer control to the scan application
++ Implement the **Filemaker Pro** script which will parse the result barcode data and insert it into a field on the form
++ Share the created form on the network to be able to access and test it via **Filemaker Go** running on a iPad device
 
 ### Create a new project
 

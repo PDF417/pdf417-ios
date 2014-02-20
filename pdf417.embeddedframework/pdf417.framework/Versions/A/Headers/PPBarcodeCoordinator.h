@@ -91,6 +91,9 @@
 /** Returns the size of video frames in pixels (eg 640, 480) */
 - (CGSize)getApertureSize;
 
+/** Sets the scanning region. CGRect is given in coordinate system of the camera */
+- (void)setScanningRegion:(CGRect)scanningRegion;
+
 /** Plays sound which marks scan success */
 - (void)playScanSuccesSound;
 

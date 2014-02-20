@@ -11,6 +11,7 @@
 #import "PPDetectionStatus.h"
 
 @protocol PPOverlayViewControllerDelegate;
+@class PPOcrResult;
 
 /**
  Overlay View Controller is an abstract class for all overlay views placed on top PhotoPay's 
@@ -135,6 +136,11 @@
 @property (nonatomic, assign) id<PPOverlayViewControllerDelegate> delegate;
 
 /**
+ Scanning region used by pdf417.mobi
+ */
+@property (nonatomic, assign) CGRect scanningRegion;
+
+/**
  Camera view appears and the scanning resumes. This happens when the camera view
  is opened, or when the app enters foreground with camera view displayed.
  */
@@ -169,6 +175,16 @@
 - (void)cameraViewController:(id)cameraViewController
              didFindLocation:(NSArray*)cornerPoints
                   withStatus:(PPDetectionStatus)status;
+
+/**
+ Camera view resports obtained ocr result
+ 
+ Besides the ocr result itself, we get the ID of the result so we can 
+ distinguish consecutive results of the same area on the image
+ */
+- (void)cameraViewController:(id)cameraViewController
+          didObtainOcrResult:(PPOcrResult*)ocrResult
+                withResultName:(NSString*)resultName;
 
 /** 
  Camera view controller ended the recognition cycle with a certain Scanning result. 

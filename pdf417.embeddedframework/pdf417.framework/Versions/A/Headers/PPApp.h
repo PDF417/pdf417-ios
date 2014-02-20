@@ -58,4 +58,10 @@
 /** Returns true if the help was already shown */
 - (BOOL)isHelpShown;
 
+/** Push the status bar hidden value */
+- (void)pushStatusBarHidden:(BOOL)hidden;
+
+/** pops the status bar hidden value */
+- (void)popStatusBarHidden;
+
 @end

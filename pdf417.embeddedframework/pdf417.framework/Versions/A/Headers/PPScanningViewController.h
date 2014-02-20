@@ -19,4 +19,7 @@
 /** Resumes scanning instantaneously */
 - (void)resumeScanning;
 
+/** Sets the scanning region */
+- (void)setScanningRegion:(CGRect)region;
+
 @end

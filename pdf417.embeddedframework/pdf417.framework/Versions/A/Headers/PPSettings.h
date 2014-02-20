@@ -95,6 +95,9 @@ extern NSString* const kPPUseVideoPresetHigh;
 /** If YES, Highest video resolution is used. */
 extern NSString* const kPPUseVideoPresetHighest;
 
+/** Under this key you can specify rect used for scanning */
+extern NSString* const kPPScanningRoi;
+
 /** Language setup */
 extern NSString* const kPPLanguage;
 

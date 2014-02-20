@@ -1,11 +1,15 @@
 # Release notes
 
+## 2.5.0
+- Added feature for setting scanning region. See readme "Setting scanning region" for details on how to use it.
+
 ## 2.4.1
 - iPod touch 5th gen now uses 720p video for scanning instead of 480p
 
 ## 2.4.0
 - Added option to scan barcodes which have inverted intensities
 - Added method `[PPBarcodeCoordinator getBuildVersionString]` that returns the internal library version string
+- iOS7 deprecated methods are no longer used
 
 ## 2.3.1
 - various bugfixes

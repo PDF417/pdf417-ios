@@ -303,6 +303,32 @@ If you are able to decode raw data without the need of elaborate structure infor
 
 If this value is `YES`, we advise you to perform some kind of integrity check on the obtained value. If the value doesn't pass your integration test, you can present the user some kind of message, or simply continue scanning until the your integration test has passed.
 
+
+### Setting scanning region
+
+You have two options for setting scanning regions.
+
+1. If you use default camera overlay, i.e. you use:
+
+	```objective-c
+	// Create camera view controller
+	UIViewController<PPScanningViewController>* cameraViewController = [coordinator cameraViewControllerWithDelegate:self];
+	```
+for initializing cameraViewController, set the scanning region in coordinatorSettings dictionary, like this:
+
+	```objective-c
+	// Set the scanning region, if necessary
+	[coordinatorSettings setValue:[NSValue valueWithCGRect:CGRectMake(0.05, 0.05, 0.9, 0.9)] forKey:kPPScanningRoi];
+	```
+    
+2. If you use custom camera overlay, you can set it's scanningRegion property, for example in `viewWillAppear:`
+
+	```objective-c
+	[self setScanningRegion:CGRectMake(0.15, 0.4, 0.7, 0.2)];
+	```
+	
+You must specify CGRect object, where origin (0, 0), specifies upper left corner of the Overlay view. When Overlay view is in portrait, this corresponds to the upper left corner of the device screen.
+
 ## Using ARC
 
 pdf417 Framework is ARC agnostic which means you can safely use it in your ARC projects. Just follow the rules described in [ARC release notes](https://developer.apple.com/library/ios/#releasenotes/ObjectiveC/RN-TransitioningToARC/Introduction/Introduction.html)  and you'll be fine. This means you just need to remove retain/release calls from above code and use default strong ARC references.

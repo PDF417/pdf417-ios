@@ -62,6 +62,8 @@
         [[self torchButton] setHidden:YES];
     }
     
+    [self setScanningRegion:CGRectMake(0.15, 0.4, 0.7, 0.2)];
+    
     // add drawing layer to view
     [self initDrawingLayerWithBounds:[self view].bounds];
 }

@@ -141,6 +141,10 @@
     // Set this if you want to use front facing camera
 //    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPUseFrontFacingCamera];
     
+    // Set the scanning region, if necessary
+    // If you use custom overlay view controller, it's reccommended that you set scanning roi there
+    [coordinatorSettings setValue:[NSValue valueWithCGRect:CGRectMake(0.05, 0.05, 0.9, 0.9)] forKey:kPPScanningRoi];
+    
     /**
      Set your license key here.
      This license key allows setting overlay views for this application ID: net.photopay.barcode.pdf417-sample

@@ -157,15 +157,8 @@
     // default is UIInterfaceOrientationMaskAll
     UIInterfaceOrientationMask mask;
     if ([self useModalCameraView]) {
-        if (PP_IS_IPAD) {
-            // since on iPad we use Form/Page sheet presentation styles,
-            // the parent view controller takes care of the orientation changes
-            mask = UIInterfaceOrientationMaskPortrait;
-        } else {
-            //when using FullScreen presentation style, Overlay is responsible for orientation changes
-            // the parent view controller takes care of the orientation changes
-            mask = UIInterfaceOrientationMaskAll;
-        }
+        // when using FullScreen presentation style, Overlay is responsible for orientation changes
+        mask = UIInterfaceOrientationMaskAll;
     } else {
         // when not presenting modally, navigation view controller takes care of the orientation changes.
         // but this depends on your implementation, so use this wisely.
@@ -232,11 +225,8 @@
 - (void)presentCameraViewController:(UIViewController*)cameraViewController isModal:(BOOL)isModal {
     if (isModal) {
         cameraViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-        if (PP_IS_IPAD) {
-            cameraViewController.modalPresentationStyle = UIModalPresentationFormSheet;
-        } else {
-            cameraViewController.modalPresentationStyle = UIModalPresentationFullScreen;
-        }
+        cameraViewController.modalPresentationStyle = UIModalPresentationFullScreen;
+
         if ([self respondsToSelector:@selector(presentViewController:animated:completion:)]) {
             [self presentViewController:cameraViewController animated:YES completion:nil];
         } else {

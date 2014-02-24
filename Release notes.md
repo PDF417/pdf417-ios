@@ -1,5 +1,8 @@
 # Release notes
 
+## 2.5.1
+- Removed all redundant log outputs from iOS build
+
 ## 2.5.0
 - Added feature for setting scanning region. See readme "Setting scanning region" for details on how to use it.
 

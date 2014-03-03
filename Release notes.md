@@ -1,5 +1,8 @@
 # Release notes
 
+## 2.5.2
+- Various bugfixes and performance improvements, especially when scanning uncertain barcodes
+
 ## 2.5.1
 - Removed all redundant log outputs from iOS build
 

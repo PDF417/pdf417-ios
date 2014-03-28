@@ -8,9 +8,32 @@ pdf417 SDK for iOS is small and powerful tool for enabling barcode scanning in y
 
 Important: if you require deployment targets older than iOS 5.1.1 please contact us on <pdf417@photopay.net>. We can support iOS 4.3 and newer on demand.
 
-## Integration
+This document is structured as follows:
 
-### Cocoapods
+1. [Integration](#0100)
+	- [Cocoapods](#0101)
+	- [Classic integration](#0102)
+2. [Retrieving scanning results](#0200)
+	- [Result type](#0201)
+	- [Result bytes](#0202)
+	- [Raw barcode elements](#0203)
+	- [Uncertain barcodes](#0204)
+3. [Setting scanning region](#0300)
+4. [Using ARC](#0400)
+5. [Custom user interface](#0500)
+	- [Initialization](#0501)
+	- [Interaction with CameraViewController](#0502)
+	- [Notifications passed to CameraViewController](#0503)
+	- [Handling orientation changes](#0504)
+	- [Steps for providing custom Camera Overlay View](#0505)
+6. [Resource files and localization](#0600)
+7. [Licensing pdf417.mobi framework for commercial projects](#0700)
+8. [Credits](#0800)
+9. [Contact](#0900)
+
+## <a name="0100"></a> Integration
+
+### <a name="0101"></a> Cocoapods
 
 CocoaPods is the recommended way to add pdf417 SDK to your project.
 
@@ -18,7 +41,7 @@ CocoaPods is the recommended way to add pdf417 SDK to your project.
 2. Install the pod(s) by running `pod install`.
 3. Go to classic integration step 3.
 
-### Classic integration
+### <a name="0102"></a> Classic integration
 
 1. Drag the pdf417.embeddedframework into the Frameworks Group in your Xcode project. The framework
 consists of code, headers, resources, strings, images and everything it needs to function properly.
@@ -264,11 +287,11 @@ consists of code, headers, resources, strings, images and everything it needs to
 	}
 	```
 
-## Retrieving scanning results
+## <a name="0200"></a> Retrieving scanning results
 		
 Recognition results are returned via `PPScanningResult` object. You use this object to read barcode type and barcode data.
 
-### Type
+### <a name="0201"></a> Result type
 
 `PPScanningResult` has a field named `type` which is enum (identification) of the type of the barcode which was scanned. This can currently be one of the following values:
 
@@ -283,13 +306,13 @@ Recognition results are returned via `PPScanningResult` object. You use this obj
    - PPScanningResultUPCA,
    - PPScanningResultUPCE,
    
-### Byte array with result
+### <a name="0202"></a> Result bytes
 
 The field named `data` contains the bytes scanned from the actual barcode. These are raw bytes which are written in the barcode. No encoding for this is assumed, since this is a responsibility of the user of the library. This byte array is guaranteed to terminate with `\0` character, so you can safely convert it to string.
 
 Since barcode can contain various data types besides strings, you can use the field `rawData` to obtain more detailed information from the barcode. This field is used to obtain images and other raw binary information encoded in the barcode.
 
-### Raw result (for non-textual data, images, encrypted values etc.)
+### <a name="0203"></a> Raw barcode elements (for non-textual data, images, encrypted values etc.)
 
 `rawData` field is of a type `PPBarcodeDetailedData` which contains field `barcodeElements`. This is a `NSArray` that contains elements of type `PPBarcodeElement`. Each `PPBarcodeElement` contains two fields: `elementType`, which is enum (identification) of the type of that element and `elementBytes`, which contains raw byte data. Identification of the type can be `PPTextElement` or `PPByteElement`. 
 
@@ -297,14 +320,14 @@ If the type is `PPTextElement`, this means that data in field `elementBytes` can
 
 If you are able to decode raw data without the need of elaborate structure information, then you can send message `getAllData` to object of type `PPBarcodeDetailedData`. Twhis will return `NSData` that will contain raw bytes of whole barcode.
 
-### Uncertain barcodes
+### <a name="0204"></a> Uncertain barcodes
 
 `isUncertain` field is of a type BOOL. If this value is `YES`, this means that the scanning library found the result, but the scanned barcode is malformed, or not encoded according to a barcode standard.
 
 If this value is `YES`, we advise you to perform some kind of integrity check on the obtained value. If the value doesn't pass your integration test, you can present the user some kind of message, or simply continue scanning until the your integration test has passed.
 
 
-### Setting scanning region
+## <a name="0300"></a> Setting scanning region
 
 You have two options for setting scanning regions.
 
@@ -329,11 +352,11 @@ for initializing cameraViewController, set the scanning region in coordinatorSet
 	
 You must specify CGRect object, where origin (0, 0), specifies upper left corner of the Overlay view. When Overlay view is in portrait, this corresponds to the upper left corner of the device screen.
 
-## Using ARC
+## <a name="0400"></a> Using ARC
 
 pdf417 Framework is ARC agnostic which means you can safely use it in your ARC projects. Just follow the rules described in [ARC release notes](https://developer.apple.com/library/ios/#releasenotes/ObjectiveC/RN-TransitioningToARC/Introduction/Introduction.html)  and you'll be fine. This means you just need to remove retain/release calls from above code and use default strong ARC references.
 
-## Custom user interface
+## <a name="0500"></a> Custom user interface
 
 Overlay View Controller is an abstract class for all overlay views placed on top PhotoPay's Camera View Controller.
 
@@ -351,7 +374,7 @@ For example, the scanning technology usually gives results very fast after the u
 
 Both PhotoPay and PhotoPayArc demo projects in your development packages contain `PPCameraOverlayViewController` class, an example of custom overlay view implementation.
 
-### Initialization
+### <a name="0501"></a> Initialization
  
 To use your custom overlay with PhotoPay's camera view, you must subclass PPOverlayViewController and specify it when initializing CameraViewController:
  
@@ -370,7 +393,7 @@ Note: if you create camera view controller without specifying overlay view, the 
 	
 As with any view controller, you are responsible for specifying UI elements and handling their actions. Besides that, there are some requirements for interaction with Camera View Controller. 
 
-### Interaction with CameraViewController
+### <a name="0502"></a> Interaction with CameraViewController
 
 #### Events received from CameraViewController
 
@@ -420,7 +443,7 @@ PPCameraOverlayViewController gets notified by CameraViewController on various s
 		- (void)cameraViewController:(id)cameraViewController 
 			  didRotateToOrientation:(UIDeviceOrientation)orientation;
 
-### Notifications passed to CameraViewController
+### <a name="0503"></a> Notifications passed to CameraViewController
 
 Overlay View Controller also needs to notify CameraViewController on certain events. Those are events specified by `PPOverlayViewControllerDelegate` protocol. 
 
@@ -449,7 +472,7 @@ Overlay View Controller can get Video Capture Preview Layer object from it's del
 
 	- (AVCaptureVideoPreviewLayer*)getPreviewLayer;
 
-### Handling orientation changes
+### <a name="0504"></a> Handling orientation changes
 
 Camera view controller is always presented in Portrait mode, but nevertheless, your overlay view be presented in the current device orientation. There are two ways to handle orientation changes.
 
@@ -486,7 +509,7 @@ You can use those methods to fully replace your view hierarchy for the specific 
 	
 All of PhotoPay's default overlay views are implemented in this way and have custom rotation animations.
 
-### Steps for providing custom Camera Overlay View
+### <a name="0505"></a> Steps for providing custom Camera Overlay View
 
 1. Create a subclass of `PPOverlayViewController`. You can use XIB for user interface, or create UI from code.
 
@@ -500,7 +523,7 @@ All of PhotoPay's default overlay views are implemented in this way and have cus
 
 4. Handle orientation changes, either by implementing standard UIViewController autorotation metods, or by custom rotation management on rotation events.
 
-## Replacing resource files and localization
+## <a name="0600"></a> Resource files and localization
 
 All resource files in pdf417 framework can be changed. For example, you can change or add new localisation resource files. Localisation resource files are named {country-code}.strings. (e.g. en.strings, de.strings..). These files contain strings in format "key" = "value";. In code pdf417 framework uses only "key" values, which are in runtime translated to correct "value".
 
@@ -519,11 +542,11 @@ pdf417 framework at runtime decides which language it should use by observing th
 [coordinatorSettings setValue:@"en" forKey:kPPLanguage];
 ```
     	
-## How to license pdf417.mobi framework for your commercial project
+## <a name="0700"></a> Licensing pdf417.mobi framework for commercial projects
 
-We want pdf417.mobi framework to be your first choice for scanning barcodes in your iOS or Android apps. That's why we enable you to use pdf417.mobi completely free of charge in your development phase or in non commercial projects, for as many developers as you need. To obtain commercial license, follow the simple steps defined on our website [www.pdf417.mobi](www.pdf417.mobi).
+We want pdf417.mobi framework to be your first choice for scanning barcodes in your iOS or Android apps. That's why we enable you to use pdf417.mobi completely free of charge in your development phase or in non commercial projects, for as many developers as you need. To obtain commercial license, follow the simple steps defined on our website [www.pdf417.mobi](http://www.pdf417.mobi).
 
-## Credits
+## <a name="0800"></a> Credits
 
 pdf417 SDK was created for PhotoPay project by [PhotoPay Ltd.](http://photopay.net). It powers several mobile banking apps like:
 
@@ -532,6 +555,8 @@ pdf417 SDK was created for PhotoPay project by [PhotoPay Ltd.](http://photopay.n
 - [m-Hypo:-) app for Hypo Alpe-Adria-Bank Croatia](https://itunes.apple.com/us/app/m-hypo/id529756500?mt=8).
 - [RBA na dlanu app for Raiffeisenbank Austria d.d.](https://itunes.apple.com/us/app/rba-na-dlanu/id450788819).
 
-## Contact
+For more references, visit [www.pdf417.mobi](http://www.pdf417.mobi).
+
+## <a name="0900"></a> Contact
 
 For any inquiries, additional information or instructions please contact us at <pdf417@photopay.net> our follow our page on Twitter ([@417pdf](https://twitter.com/417pdf)).

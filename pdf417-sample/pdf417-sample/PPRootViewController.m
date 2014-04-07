@@ -264,8 +264,8 @@
     [self dismissCameraViewControllerModal:[self useModalCameraView]];
 }
 
-- (void)cameraViewController:(id<PPScanningViewController>)cameraViewController
-              obtainedResult:(PPScanningResult*)result {
+- (void)processScanningResult:(PPScanningResult*)result
+         cameraViewController:(id<PPScanningViewController>)cameraViewController {
     
     // continue scanning if nothing was returned
     if (result == nil) {
@@ -322,6 +322,18 @@
     //  [self dismissCameraViewControllerModal:[self useModalCameraView]];
     // in Alert View's callback
     [alertView show];
+}
+
+- (void)processUSDLResult:(PPScanningResult*)result
+         cameraViewController:(id<PPScanningViewController>)cameraViewController {
+
+}
+
+- (void)cameraViewController:(UIViewController<PPScanningViewController> *)cameraViewController obtainedBaseResult:(PPBaseResult *)result {
+    if ([result resultType] == PPBaseResultTypeBarcode && [result isKindOfClass:[PPScanningResult class]]) {
+        PPScanningResult* scanningResult = (PPScanningResult*)result;
+        [self processScanningResult:scanningResult cameraViewController:cameraViewController];
+    }
 }
 
 #pragma mark - Alert view delegate

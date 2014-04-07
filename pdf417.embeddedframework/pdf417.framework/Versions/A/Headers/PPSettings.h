@@ -70,6 +70,8 @@ extern NSString* const kPPRecognizeITFKey;
 extern NSString* const kPPRecognizeUPCAKey;
 /** When an object under this key is boolean true, UPCE barcode is scanned */
 extern NSString* const kPPRecognizeUPCEKey;
+/** When an object under this key is boolean true, US driver licenses are scanned */
+extern NSString* const kPPRecognizeUSDLKey;
 
 /** 
  Scanning control

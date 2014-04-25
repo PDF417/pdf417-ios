@@ -1,1 +1,1 @@
-Built from core repository commit v2.4.0-zicer-refactor-216-g5c50802d5dec1527a9dcaab4170d0645cfab4139
+Built from core repository commit v2.4.0-pdf417-ios-release

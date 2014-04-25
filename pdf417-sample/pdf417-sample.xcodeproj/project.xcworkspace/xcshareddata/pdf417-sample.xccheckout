@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>F3217782-FDAF-491C-AC6F-FCE23C063353</string>
+	<string>9EAB7FC6-95FC-40FB-937C-E1B1087E6A87</string>
 	<key>IDESourceControlProjectName</key>
 	<string>pdf417-sample</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -21,7 +21,7 @@
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/PhotoPay/PhotoPay.git</string>
+	<string>ssh://github.com/PhotoPay/PhotoPay.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>

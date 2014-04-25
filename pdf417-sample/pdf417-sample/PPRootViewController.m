@@ -97,25 +97,33 @@
     NSMutableDictionary* coordinatorSettings = [[NSMutableDictionary alloc] init];
     
     // Set YES/NO for scanning pdf417 barcode standard (default YES)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizePdf417Key];
+    [coordinatorSettings setValue:@(YES) forKey:kPPRecognizePdf417Key];
     // Set YES/NO for scanning qr code barcode standard (default NO)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPRecognizeQrCodeKey];
+    [coordinatorSettings setValue:@(YES) forKey:kPPRecognizeQrCodeKey];
     // Set YES/NO for scanning all 1D barcode standards (default NO)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPRecognize1DBarcodesKey];
+    [coordinatorSettings setValue:@(NO) forKey:kPPRecognize1DBarcodesKey];
     // Set YES/NO for scanning code 128 barcode standard (default NO)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPRecognizeCode128Key];
+    [coordinatorSettings setValue:@(NO) forKey:kPPRecognizeCode128Key];
     // Set YES/NO for scanning code 39 barcode standard (default NO)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPRecognizeCode39Key];
+    [coordinatorSettings setValue:@(NO) forKey:kPPRecognizeCode39Key];
     // Set YES/NO for scanning EAN 8 barcode standard (default NO)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPRecognizeEAN8Key];
+    [coordinatorSettings setValue:@(NO) forKey:kPPRecognizeEAN8Key];
     // Set YES/NO for scanning EAN 13 barcode standard (default NO)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPRecognizeEAN13Key];
+    [coordinatorSettings setValue:@(NO) forKey:kPPRecognizeEAN13Key];
     // Set YES/NO for scanning ITF barcode standard (default NO)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPRecognizeITFKey];
+    [coordinatorSettings setValue:@(NO) forKey:kPPRecognizeITFKey];
     // Set YES/NO for scanning UPCA barcode standard (default NO)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPRecognizeUPCAKey];
+    [coordinatorSettings setValue:@(NO) forKey:kPPRecognizeUPCAKey];
     // Set YES/NO for scanning UPCE barcode standard (default NO)
-    [coordinatorSettings setValue:[NSNumber numberWithBool:NO] forKey:kPPRecognizeUPCEKey];
+    [coordinatorSettings setValue:@(NO) forKey:kPPRecognizeUPCEKey];
+    // Set YES/NO for scanning UPCA barcode standard (default NO)
+    [coordinatorSettings setValue:@(NO) forKey:kPPRecognizeUPCAKey];
+    // Set YES/NO for scanning UPCE barcode standard (default NO)
+    [coordinatorSettings setValue:@(NO) forKey:kPPRecognizeUPCEKey];
+    // Set YES/NO for scanning Aztec barcode standard (default NO)
+    [coordinatorSettings setValue:@(NO) forKey:kPPRecognizeAztecKey];
+    // Set YES/NO for scanning DataMatrix barcode standard (default NO)
+    [coordinatorSettings setValue:@(NO) forKey:kPPRecognizeDataMatrixKey];
     
     // There are 4 resolution modes:
     //      kPPUseVideoPreset640x480
@@ -123,23 +131,23 @@
     //      kPPUseVideoPresetHigh
     //      kPPUseVideoPresetHighest
     // Set only one.
-    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPUseVideoPresetHigh];
+    [coordinatorSettings setValue:@(YES) forKey:kPPUseVideoPresetHigh];
     
     // Set this to true to scan even barcode not compliant with standards
     // For example, malformed PDF417 barcodes which were incorrectly encoded
     // Use only if necessary because it slows down the recognition process
-    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPScanUncertainBarcodes];
+    [coordinatorSettings setValue:@(YES) forKey:kPPScanUncertainBarcodes];
     
     // Set this to true to scan barcodes which don't have quiet zone (white area) around it
     // Use only if necessary because it slows down the recognition process
-    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPAllowNullQuietZone];
+    [coordinatorSettings setValue:@(YES) forKey:kPPAllowNullQuietZone];
     
     // Set this to true to allow scanning barcodes with inverted intensities (i.e. white barcodes on black background)
     // NOTE: this options doubles the frame processing time
-//    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPAllowInverseBarcodes];
+//    [coordinatorSettings setValue:@(YES) forKey:kPPAllowInverseBarcodes];
     
     // Set this if you want to use front facing camera
-//    [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPUseFrontFacingCamera];
+//    [coordinatorSettings setValue:@(YES) forKey:kPPUseFrontFacingCamera];
     
     // Set the scanning region, if necessary
     // If you use custom overlay view controller, it's reccommended that you set scanning roi there
@@ -155,7 +163,7 @@
     
     // present modal (recommended and default) - make sure you dismiss the view controller when done
     // you also can set this to NO and push camera view controller to navigation view controller
-    [coordinatorSettings setValue:[NSNumber numberWithBool:[self useModalCameraView]] forKey:kPPPresentModal];
+    [coordinatorSettings setValue:@([self useModalCameraView]) forKey:kPPPresentModal];
     
     // If you use default camera overlay, you can set orientation mask for allowed orientations
     // default is UIInterfaceOrientationMaskAll
@@ -168,7 +176,7 @@
         // but this depends on your implementation, so use this wisely.
         mask = UIInterfaceOrientationMaskPortrait;
     }
-    [coordinatorSettings setValue:[NSNumber numberWithInt:mask] forKey:kPPHudOrientation];
+    [coordinatorSettings setValue:@(mask) forKey:kPPHudOrientation];
     
     // Define the sound filename played on successful recognition
     NSString* soundPath = [[NSBundle mainBundle] pathForResource:@"beep" ofType:@"mp3"];

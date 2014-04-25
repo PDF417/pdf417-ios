@@ -1,5 +1,17 @@
 # Release notes
 
+## 2.6.0
+- Improved scanning of Code39 and Code128 barcodes
+- Added (basic) support for Aztec and DataMatrix barcodes
+- Fixed autofocus problem on iPod Touch 4th Gen
+- Package now contains additional file (buildCommit.txt) for easier point version bugfixes
+- Fully updated license key generation and verification formats
+- Improved scanning speed when using "allow null quiet zone" option
+- Updated API for obtaining results in preparation for future API updates: see README.md file, Classic integration step 5.
+
+## 2.5.3
+- transition to new license key format
+
 ## 2.5.2
 - Various bugfixes and performance improvements, especially when scanning uncertain barcodes
 

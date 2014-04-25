@@ -19,6 +19,8 @@
 #define PPScanningResultITFName @"ITF"
 #define PPScanningResultUPCAName @"UPCA"
 #define PPScanningResultUPCEName @"UPCE"
+#define PPScanningResultAztecName @"Aztec"
+#define PPScanningResultDataMatrixName @"Data Matrix"
 #define PPScanningResultUSDLName @"USDL"
 #define PPScanningResultNoneName @"Barcode"
 
@@ -36,6 +38,8 @@ typedef NS_ENUM(NSInteger, PPScanningResultType) {
     PPScanningResultITF,
     PPScanningResultUPCA,
     PPScanningResultUPCE,
+    PPScanningResultAztec,
+    PPScanningResultDataMatrix,
     PPScanningResultNone
 };
 

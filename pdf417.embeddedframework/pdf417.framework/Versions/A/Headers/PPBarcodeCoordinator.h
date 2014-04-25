@@ -99,6 +99,8 @@
 
 /** Obtains user-specified license key */
 - (id)getLicenseKey;
+/** Obtains license owner for key (in case of library mode license key */
+- (id)getLicenseOwner;
 
 /** Updates the aperture size to current camera view size */
 - (void)updateApertureSize;

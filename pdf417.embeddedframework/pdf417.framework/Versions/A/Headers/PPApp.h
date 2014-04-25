@@ -34,22 +34,28 @@
 #define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
 #define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
 
-
 @interface PPApp : NSObject
 
 @property (nonatomic, copy, setter=setLanguage:) NSString* language;
 @property (nonatomic, assign) double animationDuration;
+@property (nonatomic, assign) NSTimeInterval lastScanDuration;
 
+/** Obtain the shared instance */
 + (PPApp *)instance;
 
+/** Designated initializer */
 - (id)init;
 
+/** Sets the language used in PhotoPaySDK */
 - (void)setLanguage:(NSString *)inLanguage;
 
+/** Sets the language to default (i.e. language specified in the user's device settings */
 - (void)setDefaultLanguage;
 
+/** Pushes the UIApplication status bar style to a internally handled stack */
 - (void)pushStatusBarStyle:(UIStatusBarStyle)statusBarStyle;
 
+/** Returns the status bar style to the last saved value */
 - (void)popStatusBarStyle;
 
 /** Sets the key that the help was shown to true */

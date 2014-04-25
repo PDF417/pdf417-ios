@@ -47,6 +47,8 @@
 
 /** You should put a License key here to remove "noncommercial" message on camera view */
 extern NSString* const kPPLicenseKey;
+/** If you have got license key that supports multiple bundle IDs, then besides license key, you need to provide license key owner to which license key is bound */
+extern NSString* const kPPLicenseOwner;
 
 /** Scanner setup. What we recognize */
 
@@ -70,6 +72,10 @@ extern NSString* const kPPRecognizeITFKey;
 extern NSString* const kPPRecognizeUPCAKey;
 /** When an object under this key is boolean true, UPCE barcode is scanned */
 extern NSString* const kPPRecognizeUPCEKey;
+/** When an object under this key is boolean true, AZTEC barcodes are scanned */
+extern NSString* const kPPRecognizeAztecKey;
+/** When an object under this key is boolean true, DataMatrix barcodes are scanned */
+extern NSString* const kPPRecognizeDataMatrixKey;
 /** When an object under this key is boolean true, US driver licenses are scanned */
 extern NSString* const kPPRecognizeUSDLKey;
 

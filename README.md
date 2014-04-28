@@ -126,11 +126,17 @@ consists of code, headers, resources, strings, images and everything it needs to
 	You can use pdf417 SDK free of change and without license key for development and non-commercial projects. Once you obtain a commercial license key from [www.pdf417.mobi](www.pdf417.mobi), you can set it like this:
    
 		/**
-     	Set your license key here.
-     	This license key allows setting overlay views for this application ID: net.photopay.barcode.pdf417-sample
-     	To test your custom overlays, please use this demo app directly or visit our website www.pdf417.mobi for commercial license
+     	 Set your license key here.
+     	 This license key allows setting overlay views for this application ID: net.photopay.barcode.pdf417-sample
+     	 To test your custom overlays, please use this demo app directly or visit our website www.pdf417.mobi for commercial license
      	*/
 		[coordinatorSettings setValue:@"Enter_License_Key_Here" forKey:kPPLicenseKey];
+		
+		/**
+     	 If you use enterprise license, set the owner name of the licese.
+     	 If you use regular per app license, leave this line commented.
+     	 */
+    	// [coordinatorSettings setValue:@"Owner name" forKey:kPPLicenseOwner];
 	
     You can also set the resolution which you would like to use for barcode scanning. There are four different options, but you should set only one:
     

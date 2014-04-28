@@ -144,10 +144,10 @@
     
     // Set this to true to allow scanning barcodes with inverted intensities (i.e. white barcodes on black background)
     // NOTE: this options doubles the frame processing time
-//    [coordinatorSettings setValue:@(YES) forKey:kPPAllowInverseBarcodes];
+    // [coordinatorSettings setValue:@(YES) forKey:kPPAllowInverseBarcodes];
     
     // Set this if you want to use front facing camera
-//    [coordinatorSettings setValue:@(YES) forKey:kPPUseFrontFacingCamera];
+    // [coordinatorSettings setValue:@(YES) forKey:kPPUseFrontFacingCamera];
     
     // Set the scanning region, if necessary
     // If you use custom overlay view controller, it's reccommended that you set scanning roi there
@@ -160,7 +160,13 @@
      */
     [coordinatorSettings setValue:@"YWYH-RR5Z-TVMU-TIZM-LKAT-WHIM-XMPN-FIXD"
                            forKey:kPPLicenseKey];
-    
+
+    /**
+     If you use enterprise license, set the owner name of the licese.
+     If you use regular per app license, leave this line commented.
+     */
+    // [coordinatorSettings setValue:@"Owner name" forKey:kPPLicenseOwner];
+
     // present modal (recommended and default) - make sure you dismiss the view controller when done
     // you also can set this to NO and push camera view controller to navigation view controller
     [coordinatorSettings setValue:@([self useModalCameraView]) forKey:kPPPresentModal];

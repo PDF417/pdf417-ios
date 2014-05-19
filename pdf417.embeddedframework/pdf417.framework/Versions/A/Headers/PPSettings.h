@@ -91,6 +91,19 @@ extern NSString* const kPPAllowNullQuietZone;
 /** Allow scanning of barcodes with inverse intensity values
  *      (e.g. white barcode on black background) */
 extern NSString* const kPPAllowInverseBarcodes;
+/** 
+ Allow scanning of multiple barcode types on the same image
+ Use this feature if you expect different barcode types on the same image and
+ you want to obtain scanning results for all of them
+ */
+extern NSString* const kPPOutputMultipleResults;
+/** 
+ Use automatic scale detection feature.
+ This normally should not be used.
+ The only situation where this helps in getting better scanning results is when using kPPUseVideoPresetPhoto on iPad devices.
+ Video preview resoution of 2045x1536 in that case is very large and autoscale helps.
+ */
+extern NSString* const kPPUseAutoscaleDetection;
 
 /** Keys for camera setup */
 
@@ -102,6 +115,9 @@ extern NSString* const kPPUseVideoPresetMedium;
 extern NSString* const kPPUseVideoPresetHigh;
 /** If YES, Highest video resolution is used. */
 extern NSString* const kPPUseVideoPresetHighest;
+/** If YES, Photo Quality video is used: Note: use this only if you don't have other choice.
+ That's because camera resolution in Photo preset is equal to screen resolution. */
+extern NSString* const kPPUseVideoPresetPhoto;
 
 /** Under this key you can specify rect used for scanning */
 extern NSString* const kPPScanningRoi;

@@ -187,22 +187,36 @@
                 withResultName:(NSString*)resultName;
 
 /** 
- Camera view controller ended the recognition cycle with a certain Scanning result. 
- The scanning result might be considered as valid, meaning it can be presented to the user for inspection. 
- Use this method only if you need UI update on this event (although this is unnecessary in many cases). 
- The actual result will be passed to your PPPhotoPayDelegate object. 
+ Camera view controller ended the recognition cycle with a certain Scanning result.
+ The scanning result cannot be considered as valid, sometimes here are received objects which
+ contain only partial scanning information.
+
+ Use this method only if you need UI update on this event (although this is unnecessary in many cases).
+ 
+ If you're interested in valid data, use cameraViewController:didOutputResult: method
  */
 - (void)cameraViewController:(id)cameraViewController
 didFinishRecognitionWithResult:(id)result;
+
+/**
+ Camera view controller ended the recognition cycle with a certain Scanning result.
+ The scanning result can be considered as valid, meaning it can be presented to the user for inspection.
+ Use this method only if you need UI update on this event (although this is unnecessary in many cases).
+ The actual result will be passed to your PPPhotoPayDelegate object.
+ */
+- (void)cameraViewController:(id)cameraViewController
+            didOutputResults:(NSArray*)results;
 
 /**
  Camera view controller ended the recognition cycle with a certain Scanning result, but the 
  timeout occurred in the meantime. The scanning result cannot be considered as full and valid, 
  but it still might be useful to the user. Use this method only if you need UI update on 
  this event (although this is unnecessary in many cases).
+ 
+ Deprecated as it's never used.
  */
 - (void)cameraViewController:(id)cameraViewController
-        didTimeoutWithResult:(id)result;
+        didTimeoutWithResult:(id)result __deprecated;
 
 /** 
  Camera view controller will start the rotation to specific device orientation.

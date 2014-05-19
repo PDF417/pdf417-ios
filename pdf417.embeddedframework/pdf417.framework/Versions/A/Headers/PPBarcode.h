@@ -17,6 +17,8 @@
 #import "PPOverlayViewController.h"
 #import "PPScanningViewController.h"
 
+static NSString* debugDataFolderName = @"DebugData";
+
 /**
  * Protocol for retrieving results from barcode library
  */
@@ -33,18 +35,45 @@
 - (void)cameraViewControllerWasClosed:(UIViewController<PPScanningViewController>*)cameraViewController;
 
 /**
- * Barcode library obtained a valid result. Check the resultType of the result object so that you know
- * which exact value you recieved.
- *
- * Do your next steps in this method.
+ * Barcode library did output scanning results. Do your next steps here.
  *
  * Depending on how you want to treat the result, you might want to
  * dismiss the Barcode library's UIViewController here.
+ *
+ * This method is the default way for getting access to results of scanning.
+ *
+ * Note: 
+ * - there may be more 0, 1, or more than one scanning results.
+ * - each scanning result belongs to a common PPBaseResult type. Check it's property resultType to get the actual type
+ * - handle different types differently
+ * 
+ * @see PPBaseResult
+ * @see PPScanningResult
+ * @see PPUSDLResult
  */
 - (void)cameraViewController:(UIViewController<PPScanningViewController>*)cameraViewController
-          obtainedBaseResult:(PPBaseResult*)result;
+            didOutputResults:(NSArray*)results;
 
 @optional
+
+/**
+ * Barcode library obtained a valid result. Check the resultType of the result object so that you know
+ * which exact value you recieved. Do your next steps in this method.
+ *
+ * Depending on how you want to treat the result, you might want to
+ * dismiss the Barcode library's UIViewController here.
+ *
+ * Deprecated from version 2.6.1. Will be removed in 3.0. Use cameraViewController:obtainedResults
+ *
+ * This method was limited to obtaining just one result from the scanning process. In 2.6.1 an option
+ * for obtaining more than one results is added, and became default.
+ *
+ * @see PPBaseResult
+ * @see PPScanningResult
+ * @see PPUSDLResult
+ */
+- (void)cameraViewController:(UIViewController<PPScanningViewController>*)cameraViewController
+          obtainedBaseResult:(PPBaseResult*)result __deprecated;
 
 /**
  * Barcode library obtained a valid scanning (barcode) result. Do your next steps here.
@@ -52,30 +81,28 @@
  * Depending on how you want to treat the result, you might want to
  * dismiss the Barcode library's UIViewController here.
  *
- * Deprecated from version 2.6. Will be removed in 3.0. Use cameraViewController:obtainedBaseResult
+ * Deprecated from version 2.6. Will be removed in 3.0. Use cameraViewController:obtainedResults.
+ * This method was limited to obtaining results only of type PPScanningResult, which in 2.6 became 
+ * just one of multiple result types.
+ *
+ * @see PPScanningResult
  */
 - (void)cameraViewController:(UIViewController<PPScanningViewController>*)cameraViewController
-              obtainedResult:(PPScanningResult*)result;
+              obtainedResult:(PPScanningResult*)result __deprecated;
 
 /**
- Barcode library processed one video frame.
+ Barcode library processed a video frame with success.
  
- The last video frame obtained before cameraViewController:obtainedBaseResult: is the one
- on which the scanning succeeded.
+ Implement this callback if you're interested in the image which resulted with a successful scan.
  */
-- (void)cameraViewController:(UIViewController<PPScanningViewController>*)cameraViewController
-               obtainedImage:(UIImage *)image
-                    withName:(NSString *)name
-                        type:(NSString *)type;
+- (void)cameraViewController:(UIViewController<PPScanningViewController> *)cameraViewController
+didMakeSuccessfulScanOnImage:(UIImage*)image;
 
 /**
- Barcode library published intermediate debug/text results.
- 
- Intended for private PhotoPay use.
+ Barcode library output debug data with a given filename
  */
-- (void)cameraViewController:(UIViewController<PPScanningViewController>*)cameraViewController
-                obtainedText:(NSString*)text
-                    withName:(NSString*)name
-                        type:(NSString*)type;
+- (void)cameraViewController:(UIViewController<PPScanningViewController> *)cameraViewController
+          didOutputDebugData:(NSData*)data
+                    filename:(NSString*)filename;
 
 @end

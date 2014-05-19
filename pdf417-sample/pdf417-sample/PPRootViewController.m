@@ -49,7 +49,7 @@
     }
     
     self.title = @"Scanning demo";
-    self.versionLabel.text = [NSString stringWithFormat:@"library version: %@",[PPBarcodeCoordinator getBuildVersionString]];
+    self.versionLabel.text = [NSString stringWithFormat:@"Version: %@",[PPBarcodeCoordinator getBuildVersionString]];
 }
 
 - (void)viewDidUnload
@@ -99,11 +99,11 @@
     // Set YES/NO for scanning pdf417 barcode standard (default YES)
     [coordinatorSettings setValue:@(YES) forKey:kPPRecognizePdf417Key];
     // Set YES/NO for scanning qr code barcode standard (default NO)
-    [coordinatorSettings setValue:@(YES) forKey:kPPRecognizeQrCodeKey];
+    [coordinatorSettings setValue:@(NO) forKey:kPPRecognizeQrCodeKey];
     // Set YES/NO for scanning all 1D barcode standards (default NO)
     [coordinatorSettings setValue:@(NO) forKey:kPPRecognize1DBarcodesKey];
     // Set YES/NO for scanning code 128 barcode standard (default NO)
-    [coordinatorSettings setValue:@(NO) forKey:kPPRecognizeCode128Key];
+    [coordinatorSettings setValue:@(YES) forKey:kPPRecognizeCode128Key];
     // Set YES/NO for scanning code 39 barcode standard (default NO)
     [coordinatorSettings setValue:@(NO) forKey:kPPRecognizeCode39Key];
     // Set YES/NO for scanning EAN 8 barcode standard (default NO)
@@ -125,11 +125,12 @@
     // Set YES/NO for scanning DataMatrix barcode standard (default NO)
     [coordinatorSettings setValue:@(NO) forKey:kPPRecognizeDataMatrixKey];
     
-    // There are 4 resolution modes:
+    // There are 5 resolution modes:
     //      kPPUseVideoPreset640x480
     //      kPPUseVideoPresetMedium
     //      kPPUseVideoPresetHigh
     //      kPPUseVideoPresetHighest
+    //      kPPUseVideoPresetPhoto
     // Set only one.
     [coordinatorSettings setValue:@(YES) forKey:kPPUseVideoPresetHigh];
     
@@ -137,6 +138,12 @@
     // For example, malformed PDF417 barcodes which were incorrectly encoded
     // Use only if necessary because it slows down the recognition process
     [coordinatorSettings setValue:@(YES) forKey:kPPScanUncertainBarcodes];
+
+    // Use automatic scale detection feature. This normally should not be used.
+    // The only situation where this helps in getting better scanning results is
+    // when using kPPUseVideoPresetPhoto on iPad devices.
+    // Video preview resoution of 2045x1536 in that case is very large and autoscale helps.
+    [coordinatorSettings setValue:@(NO) forKey:kPPUseAutoscaleDetection];
     
     // Set this to true to scan barcodes which don't have quiet zone (white area) around it
     // Use only if necessary because it slows down the recognition process
@@ -338,16 +345,30 @@
     [alertView show];
 }
 
-- (void)processUSDLResult:(PPScanningResult*)result
+- (void)processUSDLResult:(PPUSDLResult*)result
          cameraViewController:(id<PPScanningViewController>)cameraViewController {
 
 }
 
-- (void)cameraViewController:(UIViewController<PPScanningViewController> *)cameraViewController obtainedBaseResult:(PPBaseResult *)result {
-    if ([result resultType] == PPBaseResultTypeBarcode && [result isKindOfClass:[PPScanningResult class]]) {
-        PPScanningResult* scanningResult = (PPScanningResult*)result;
-        [self processScanningResult:scanningResult cameraViewController:cameraViewController];
-    }
+- (void)cameraViewController:(UIViewController<PPScanningViewController> *)cameraViewController
+            didOutputResults:(NSArray *)results {
+    [results enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if ([obj isKindOfClass:[PPBaseResult class]]) {
+            PPBaseResult* result = (PPBaseResult*)obj;
+            if ([result resultType] == PPBaseResultTypeBarcode && [result isKindOfClass:[PPScanningResult class]]) {
+                PPScanningResult* scanningResult = (PPScanningResult*)result;
+                [self processScanningResult:scanningResult cameraViewController:cameraViewController];
+            }
+            if ([result resultType] == PPBaseResultTypeUSDL && [result isKindOfClass:[PPUSDLResult class]]) {
+                PPUSDLResult* usdlResult = (PPUSDLResult*)result;
+                [self processUSDLResult:usdlResult cameraViewController:cameraViewController];
+            }
+        }
+    }];
+}
+
+- (void)cameraViewController:(UIViewController<PPScanningViewController> *)cameraViewController didMakeSuccessfulScanOnImage:(UIImage *)image {
+    [[self imageView] setImage:image];
 }
 
 #pragma mark - Alert view delegate

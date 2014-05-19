@@ -16,6 +16,8 @@
     
 @property (weak, nonatomic) IBOutlet UILabel *versionLabel;
 
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
 - (IBAction)startPhotoPay:(id)sender;
 
 

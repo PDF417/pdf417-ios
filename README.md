@@ -34,7 +34,7 @@ This document is structured as follows:
 
 CocoaPods is the recommended way to add pdf417 SDK to your project.
 
-1. Add a pod entry for PPpdf417 to your Podfile `pod 'PPpdf417',  '~> 2.6.0'`
+1. Add a pod entry for PPpdf417 to your Podfile `pod 'PPpdf417',  '~> 2.6.1'`
 2. Install the pod(s) by running `pod install`.
 3. Go to classic integration step 3.
 
@@ -145,6 +145,7 @@ consists of code, headers, resources, strings, images and everything it needs to
     	//      kPPUseVideoPresetMedium
     	//      kPPUseVideoPresetHigh
     	//      kPPUseVideoPresetHighest
+    	// 		kPPUseVideoPresetPhoto
     	// Set only one.
     	[coordinatorSettings setValue:@(YES) forKey:kPPUseVideoPresetHigh];	
 	
@@ -153,6 +154,7 @@ consists of code, headers, resources, strings, images and everything it needs to
     1. For PDF417 barcodes with 15 or more columns, use `kPPUseVideoPresetHighest`.
     2. For PDF417 with 5 or less columns, use `kPPUseVideoPreset640x480`
     3. Otherwise, it's recommended to use `kPPUseVideoPresetHigh`. This is also the default value.
+    4. Only if that's your unavoidable requirement, use `kPPUseVideoPresetPhoto`
     
     If the license key is valid for your application, this will automatically unlock the pdf417 SDK, remove the watermark from the camera view and enable all features to be used in your app.
 		
@@ -169,6 +171,12 @@ consists of code, headers, resources, strings, images and everything it needs to
     	// For example, malformed PDF417 barcodes which were incorrectly encoded
     	// Use only if necessary because it slows down the recognition process
     	[coordinatorSettings setValue:@(YES) forKey:kPPScanUncertainBarcodes];
+    	
+    	// Use automatic scale detection feature. This normally should not be used.
+    	// The only situation where this helps in getting better scanning results is
+    	// when using kPPUseVideoPresetPhoto on iPad devices.
+    	// Video preview resoution of 2045x1536 in that case is very large and autoscale helps.
+    	[coordinatorSettings setValue:@(NO) forKey:kPPUseAutoscaleDetection];
     
     	// Set this to true to scan barcodes which don't have quiet zone (white area) around it
     	// Use only if necessary because it slows down the recognition process
@@ -210,46 +218,61 @@ consists of code, headers, resources, strings, images and everything it needs to
 		
 		/**
  		 * Barcode library was closed. 
- 	 	 *
- 	 	 * This is where the Barcode library's UIViewController should be dismissed
- 	 	 * if it's presented modally.
- 	 	 */
-		- (void)cameraViewControllerWasClosed:(id<PPScanningViewController>)cameraViewController;
+ 		 *
+ 		 * This is where the Barcode library's UIViewController should be dismissed
+ 		 * if it's presented modally.
+ 		 */
+		- (void)cameraViewControllerWasClosed:(UIViewController<PPScanningViewController>*)cameraViewController;
 
 		/**
- 		 * Barcode library obtained a valid result. Check the resultType of the result object so that you know
- 		 * which exact value you recieved.
- 		 *
- 		 * Do your next steps in this method.
+ 		 * Barcode library did output scanning results. Do your next steps here.
  		 *
  		 * Depending on how you want to treat the result, you might want to
  		 * dismiss the Barcode library's UIViewController here.
+ 		 *
+ 		 * This method is the default way for getting access to results of scanning.
+ 		 *
+ 		 * Note: 
+ 		 * - there may be more 0, 1, or more than one scanning results.
+ 		 * - each scanning result belongs to a common PPBaseResult type. Check it's property resultType to get the actual type
+ 		 * - handle different types differently
+ 		 * 
+ 		 * @see PPBaseResult
+ 		 * @see PPScanningResult
+ 		 * @see PPUSDLResult
  		 */
 		- (void)cameraViewController:(UIViewController<PPScanningViewController>*)cameraViewController
-          	   	  obtainedBaseResult:(PPBaseResult*)result;
+					didOutputResults:(NSArray*)results;
 				 
 	For example, your implementation of these methods can be (if you presented camera view controller modally):
-
 	
 		- (void)cameraViewControllerWasClosed:(id<PPScanningViewController>)cameraViewController {
 			// this stops the scanning and dismisses the camera screen
 			[self dismissViewControllerAnimated:YES completion:nil];
 		}
-
-		- (void)cameraViewController:(id<PPScanningViewController>)cameraViewController
-          		  obtainedBaseResult:(PPBaseResult *)result {
-
-			// we obtained Barcode result
-    		if ([result resultType] == PPBaseResultTypeBarcode && [result isKindOfClass:[PPScanningResult class]]) {
-        		PPScanningResult* scanResult = (PPScanningResult*)result;
-        		[self processScanningResult:scanResult cameraViewController:cameraViewController];
-    		}
-
-			// we obtained USDL result
-   			if ([result resultType] == PPBaseResultTypeUSDL && [result isKindOfClass:[PPUSDLResult class]]) {
-        		PPUSDLResult* usdlResult = (PPUSDLResult*)result;
-        		[self processUSDLResult:usdlResult cameraViewController:cameraViewController];
-    		}
+		
+		- (void)cameraViewController:(UIViewController<PPScanningViewController> *)cameraViewController
+					didOutputResults:(NSArray *)results {
+    		[results enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    			if ([obj isKindOfClass:[PPBaseResult class]]) {
+    				PPBaseResult* result = (PPBaseResult*)obj;
+    				if ([result resultType] == PPBaseResultTypeBarcode && [result isKindOfClass:[PPScanningResult class]]) {
+                		PPScanningResult* scanningResult = (PPScanningResult*)result;
+                		[self processScanningResult:scanningResult cameraViewController:cameraViewController];
+            		}
+            		if ([result resultType] == PPBaseResultTypeUSDL && [result isKindOfClass:[PPUSDLResult class]]) {
+                		PPUSDLResult* usdlResult = (PPUSDLResult*)result;
+                		[self processUSDLResult:usdlResult cameraViewController:cameraViewController];
+            		}
+        		}
+    		}];
+		}
+		
+	Optionally, you can implement a callback which gives you the image which resulted with a successfull scan. Sometimes it makes sense to present the image to the user, but that depends on the use case.
+	
+		- (void)cameraViewController:(UIViewController<PPScanningViewController> *)cameraViewController
+		didMakeSuccessfulScanOnImage:(UIImage *)image {
+    		[[self imageView] setImage:image];
 		}
 	
 ## <a name="0200"></a> Retrieving scanning results

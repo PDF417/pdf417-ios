@@ -1,5 +1,15 @@
 # Release notes
 
+## 2.6.1
+- Added a callback which supports returning multiple scanning results. This callback is now default.
+	`cameraViewController:didOutputResults`
+- Added support for Photo camera preset
+- Added option to automatically detect scale of the barcode on the image. This makes sense only when Photo preset is used.
+- Added option to customize the status bar on camera screen
+- Fixed "private selectors" issue which appears when publishing the app to app store
+- Added a callback for obtaining the image which resulted with successful scan:
+	`cameraViewController:didMakeSuccessfulScanOnImage:`
+
 ## 2.6.0
 - Improved scanning of Code39 and Code128 barcodes
 - Added (basic) support for Aztec and DataMatrix barcodes

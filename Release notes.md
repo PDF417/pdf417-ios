@@ -1,14 +1,59 @@
 # Release notes
 
+## 3.0.0
+- Removed status bar properties from PPScanningViewController protocol. Replaced with preferredStatusBarStyle and prefersStatusBarHidden in PPOverlayViewController
+- kPPHudOrientation replaced with kPPOverlayShouldAutorotate.
+  - HUD orientation is now determined optimally inside pdf417 library
+  - Autorotation can now be explicitly disallowed, e.g when presenting camera on NavigationController or when presenting as FormSheet or PageSheet 
+- Removed deprecated methods from PPOverlayViewController
+- Fixed crash when Overlay those orientations which are not supported by the app. Now overlay works in that situations.
+- Completely refactored "Complex Overlay" sample. Basically, it's open sourced implementation of internal pdf417 overlay.
+
 ## 2.6.1
-- Added a callback which supports returning multiple scanning results. This callback is now default.
-	`cameraViewController:didOutputResults`
 - Added support for Photo camera preset
 - Added option to automatically detect scale of the barcode on the image. This makes sense only when Photo preset is used.
 - Added option to customize the status bar on camera screen
 - Fixed "private selectors" issue which appears when publishing the app to app store
 - Added a callback for obtaining the image which resulted with successful scan:
 	`cameraViewController:didMakeSuccessfulScanOnImage:`
+- Changes to API method for retrieving scanning results:
+
+instead of using 
+
+	- (void)cameraViewController:(id<PPScanningViewController>)cameraViewController
+                  obtainedResult:(PPScanningResult*)result
+         
+Use:
+
+	- (void)cameraViewController:(UIViewController<PPScanningViewController>*)cameraViewController
+            	didOutputResults:(NSArray*)results;
+            
+New method adds an additional layers of abstraction to result obtaining. It makes possible several new features, most importantly, returning more than one recognition result, and returning results other than payslip scanning results (for example, pure OCR or barcode scanning results).
+
+Objects passed in NSArray* `results` are always of type `PPBaseResult`. `PPScanningResult` (object passed in the all callback method) is now a subclass of `PPBaseResult`.
+
+How to implement the new API?
+
+1. Rename `cameraViewController:didFinishWithResult` to, i.e. `processScanningResult`
+2. Implement `cameraViewController:didOutputResults`. Commonly, it can be implemented in the following way:
+
+		- (void)cameraViewController:(UIViewController<PPScanningViewController> *)cameraViewController
+            		didOutputResults:(NSArray *)results {
+    		[results enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        		if ([obj isKindOfClass:[PPBaseResult class]]) {
+            		PPBaseResult* result = (PPBaseResult*)obj;
+            		if ([result resultType] == PPBaseResultTypeBarcode && [result isKindOfClass:[PPScanningResult class]]) {
+                		PPScanningResult* scanningResult = (PPScanningResult*)result;
+                		[self processScanningResult:scanningResult cameraViewController:cameraViewController];
+            		}
+           			if ([result resultType] == PPBaseResultTypeUSDL && [result isKindOfClass:[PPUSDLResult class]]) {
+                		PPUSDLResult* usdlResult = (PPUSDLResult*)result;
+                		[self processUSDLResult:usdlResult cameraViewController:cameraViewController];
+            		}
+        		}
+    		}];
+		}
+3. Test to see if it works.
 
 ## 2.6.0
 - Improved scanning of Code39 and Code128 barcodes

@@ -36,7 +36,7 @@ This document is structured as follows:
 
 CocoaPods is the recommended way to add pdf417 SDK to your project.
 
-1. Add a pod entry for PPpdf417 to your Podfile `pod 'PPpdf417',  '~> 2.6.1'`
+1. Add a pod entry for PPpdf417 to your Podfile `pod 'PPpdf417',  '~> 3.0.0'`
 2. Install the pod(s) by running `pod install`.
 3. Go to classic integration step 3.
 
@@ -188,9 +188,13 @@ consists of code, headers, resources, strings, images and everything it needs to
     	// NOTE: this options doubles the frame processing time
     	[coordinatorSettings setValue:@(YES) forKey:kPPAllowInverseBarcodes];
     
-		// You can set orientation mask for allowed orientations, default is UIInterfaceOrientationMaskAll
-		[coordinatorSettings setValue:@(UIInterfaceOrientationMaskAll) forKey:kPPHudOrientation];
-	
+		// if for some reason overlay should not autorotate
+    	// for example, if Navigation View controller on which Camera is presented handles rotation by itself
+    	// of when FormSheet or PageSheet modal view is used on iPads
+    	// then, disable rotation for overlays. Use this carefully.
+    	// Autorotation is YES by defalt
+		[coordinatorSettings setValue:@(YES) forKey:kPPOverlayShouldAutorotate];
+			
 		// Define the sound filename played on successful recognition
 		NSString* soundPath = [[NSBundle mainBundle] pathForResource:@"beep" ofType:@"mp3"];
 		[coordinatorSettings setValue:soundPath forKey:kPPSoundFile];
@@ -363,7 +367,7 @@ PhotoPay always provides it's own default implementation of the Overlay View Con
 
 For example, the scanning technology usually gives results very fast after the user places the device's camera in the expected way above the scanned object. This means a progress bar for the scan is not particularly useful to the user. The majority of time the user spends on positioning the device's camera correctly. That's just an example which demonstrates careful decision making behind default camera overlay view.
 
-Both PhotoPay and PhotoPayArc demo projects in your development packages contain `PPCameraOverlayViewController` class, an example of custom overlay view implementation.
+PhotoPay demo project in your development package contain `PPCameraOverlayViewController` class, an example of custom overlay view implementation.
 
 ### <a name="0501"></a> Initialization
  
@@ -386,74 +390,96 @@ As with any view controller, you are responsible for specifying UI elements and 
 
 ### <a name="0502"></a> Interaction with CameraViewController
 
-#### Events received from CameraViewController
+CameraViewController is a Container view controller to the PPOverlayViewController instances. For more about Container View Controllers, read official Apple [View Controller Programming Guide].
+
+Also, each instance of PPOverlayViewController and it's subclasses has access to the Container View Controller.
+
+	/** 
+ 	 Overlay View's delegate object. Responsible for sending messages to PhotoPay's 
+	 Camera View Controller
+ 	 */
+	@property (nonatomic, assign) id<PPOverlayContainerViewController> containerViewController;
+
+#### Events received from Container CameraViewController
 
 PPCameraOverlayViewController gets notified by CameraViewController on various scanning events. Here is a list of all events and the methods which get called in turn:
 
 1. Camera view appears and the scanning resumes. This happens when the camera view is opened, or when the app enters foreground with camera view displayed. The method called on this event is
 
-		- (void)cameraViewControllerDidResumeScanning:(id)cameraViewController;
+		- (void)cameraViewControllerDidResumeScanning:(id<PPScanningViewController>)cameraViewController;
 
 2. Camera view disappears and the scanning pauses. This happens when the camera view is closed, or when the app enters background with camera view displayed. The method called on this event is
 	
-		- (void)cameraViewControllerDidStopScanning:(id)cameraViewController;
+		- (void)cameraViewControllerDidStopScanning:(id<PPScanningViewController>)cameraViewController;
 	
-3. Camera view controller started the new recognition cycle. Since recognition is done on video frames, there might be multiple recognition cycles before the scanning completes. Method which is called on this event is:
+3. Camera view reports the progress of the current OCR/barcode scanning recognition cycle. Note: this is not the actual progress from the moment camera appears. This might not be meaningful for the user in all cases.
 
-		- (void)cameraViewControllerDidStartRecognition:(id)cameraViewController;
-	
-4. Camera view reports the progress of the current OCR/barcode scanning recognition cycle. Note: this is not the actual progress from the moment camera appears. This might not be meaningful for the user in all cases.
-
-		- (void)cameraViewController:(id)cameraViewController
+		- (void)cameraViewController:(id<PPScanningViewController>)cameraViewController
           	  	  didPublishProgress:(float)progress;
 	
-5. Camera view reports the status of the object detection. Scanning status contain information about whether the scan was successful, whether the user holds the device too far from the object, whether the angles was too high, or the object isn't seen on the camera in it's entirety. If the object was found, the corner points of the object are returned.
+4. Camera view reports the status of the object detection. Scanning status contain information about whether the scan was successful, whether the user holds the device too far from the object, whether the angles was too high, or the object isn't seen on the camera in it's entirety. If the object was found, the corner points of the object are returned.
 
-		- (void)cameraViewController:(id)cameraViewController
-             	     didFindLocation:(NSArray*)cornerPoints
-                          withStatus:(PPDetectionStatus)status
-                       defaultPoints:(NSArray*)defaultPoints;
+		- (void)cameraViewController:(id<PPScanningViewController>)cameraViewController
+             		 didFindLocation:(NSArray*)cornerPoints
+                  		  withStatus:(PPDetectionStatus)status;
+                  		  
+5. Camera view reports obtained OCR result. Besides the OCR result itself, we get the ID of the result so we can 
+ distinguish consecutive results of the same area on the image
+ 
+		- (void)cameraViewController:(id<PPScanningViewController>)cameraViewController
+          		  didObtainOcrResult:(PPOcrResult*)ocrResult
+                	  withResultName:(NSString*)resultName;
+                       
+6. Camera view controller started the new recognition cycle. Since recognition is done on video frames, there might be multiple recognition cycles before the scanning completes. Method which is called on this event is:
+
+		- (void)cameraViewControllerDidStartRecognition:(id<PPScanningViewController>)cameraViewController;
                
-6. Camera view controller ended the recognition cycle with a certain Scanning result. The scanning result might be considered as valid, meaning it can be presented to the user for inspection. Use this method only if you need UI update on this event (although this is unnecessary in many cases). The actual result will be passed to your PPPhotoPayDelegate object.
+7. Camera view controller ended the recognition cycle with a certain Scanning result. The scanning result cannot be considered as valid, sometimes here are received objects which contain only partial scanning information. Use this method only if you need UI update on this event (although this is unnecessary in many cases). If you're interested in valid data, use cameraViewController:didOutputResult: method.
 
-		- (void)cameraViewController:(id)cameraViewController 
+		- (void)cameraViewController:(id<PPScanningViewController>)cameraViewController 
 		didFinishRecognitionWithResult:(id)result;
 
-7. Camera view controller ended the recognition cycle with a certain Scanning result, but the timeout occurred in the meantime. The scanning result cannot be considered as full and valid, but it still might be useful to the user. Use this method only if you need UI update on this event (although this is unnecessary in many cases).
-	
-		- (void)cameraViewController:(id)cameraViewController 
-			    didTimeoutWithResult:(id)result;
+8. Camera view controller ended the recognition cycle with a list of results. The scanning results can be considered as valid, meaning it can be presented to the user for inspection. Also, note that the actual result will be passed to your PPPhotoPayDelegate object.
 
-8. Camera view controller will start the rotation to specific device orientation.
+		- (void)cameraViewController:(id<PPScanningViewController>)cameraViewController
+            	    didOutputResults:(NSArray*)results;
 
-		- (void)cameraViewController:(id)cameraViewController 
-			 willRotateToOrientation:(UIDeviceOrientation)orientation;
+9. UIViewController's method called when a rotation to a given interface orientation is about to happen
 
-9. Camera view controller did complete the rotation to specific device orientation.
+		- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+                                		duration:(NSTimeInterval)duration;
 
-		- (void)cameraViewController:(id)cameraViewController 
-			  didRotateToOrientation:(UIDeviceOrientation)orientation;
+10. UIViewController's method called immediately after the rotation from a given interface orientation happened
 
-### <a name="0503"></a> Notifications passed to CameraViewController
+		- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation;
 
-Overlay View Controller also needs to notify CameraViewController on certain events. Those are events specified by `PPOverlayViewControllerDelegate` protocol. 
+11. UIViewController's method called inside an animation block. Any changes you make to your UIView's inside this method will be animated
+
+		- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+                                         		 duration:(NSTimeInterval)duration;
+
+### <a name="0503"></a> Notifications passed to Container CameraViewController
+
+Overlay View Controller also needs to notify CameraViewController on certain events. Those are events specified by `PPOverlayContainerViewController` protocol. 
 
 Notification sent when Overlay View Controller wants to close camera, for example, by pressing Cancel button.
 
-	- (void)overlayViewControllerWillCloseCamera:(id)overlayViewController;
-
-Overlay View Controller should ask it's delegete if it's necessary to display Cancel button. This might not always be necessary, for example, when Camera View Controller is presented on Navigation View Controller which has it's own Back button. 
-
-	- (BOOL)overlayViewControllerShouldDisplayCancel:(id)overlayViewController;
+	- (void)overlayViewControllerWillCloseCamera:(PPOverlayViewController*)overlayViewController;
 
 Overlay View Controller should ask it's delegete if it's necessary to display Torch (Light) button. Torch button is not necessary if the device doesn't support torch mode (e.g. iPad devices).
 
-	- (BOOL)overlayViewControllerShouldDisplayTorch:(id)overlayViewController;
+	- (BOOL)overlayViewControllerShouldDisplayTorch:(PPOverlayViewController*)overlayViewController;
 
 Overlay View Controller must notify it's delegete to set the torch mode to On or Off
 
 	- (void)overlayViewController:(id)overlayViewController
                  	 willSetTorch:(BOOL)isTorchOn;
+                 	 
+### Other information getters in `PPOverlayContainerViewController`
+                 	 
+Overlay View Controller should know if it's presented modally or on navigation view controller. Use this method to ask if it's necessary to display Cancel button. (When on navigation view controller, button back is presented by default). This method replaced old method overlayViewControllerShouldDisplayCancel.
+	
+	- (BOOL)isPresentedModally;
 
 Overlay View Controller can ask it's delegete about the status of Torch
 
@@ -469,10 +495,6 @@ Camera view controller is always presented in Portrait mode, but nevertheless, y
 
 The first, built in way is a simple way to achieve autorotation. Your Overlay View Controller only needs to implement standard UIViewController methods which specify which orientations are supported. For example, to support only landscape orientations, you need to add the following methods to your Overlay View Controller implementation.
 
-	- (BOOL)shouldAutorotate {
-   		return YES;
-	}
-
 	- (NSUInteger)supportedInterfaceOrientations {
     	return UIInterfaceOrientationMaskLandscape;
 	}
@@ -485,20 +507,11 @@ The first, built in way is a simple way to achieve autorotation. Your Overlay Vi
     	return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft || interfaceOrientation == UIInterfaceOrientationLandscapeRight);
 	}
 	
-If `shouldAutorotate` method returns YES, your Overlay View Controller will automatically rotate to support all orientations returned by `supportedInterfaceOrientations` method. You are responsible for standard iOS techniques (auto-layout or autoresizing masks) to adjust the UI to new device orientation.
+Your Overlay View Controller will automatically rotate to support all orientations returned by `supportedInterfaceOrientations` method. You are responsible for standard iOS techniques (auto-layout or autoresizing masks) to adjust the UI to new device orientation.
 
-The other method gives you full control over the orientation changes. We already mentioned that Camera View Controller passes orientation events to your Overlay View Controller
+You can manually disable autorotation by initializing `PPCoordinator` object with the following setting:
 
-	- (void)cameraViewController:(id)cameraViewController willRotateToOrientation:(UIDeviceOrientation)orientation;
-	- (void)cameraViewController:(id)cameraViewController didRotateToOrientation:(UIDeviceOrientation)orientation;
-	
-You can use those methods to fully replace your view hierarchy for the specific device orientation. With this approach you have full control over rotation of your views, but you'll need more work to get the desired effect. To use this approach, you only need to specify that your view controller doesn't want to autorotate (which is by default):
-
-	- (BOOL)shouldAutorotate {
-   		return NO;
-	}
-	
-All of PhotoPay's default overlay views are implemented in this way and have custom rotation animations.
+	[coordinatorSettings setValue:@(NO) forKey:kPPOverlayShouldAutorotate];
 
 ### <a name="0505"></a> Steps for providing custom Camera Overlay View
 

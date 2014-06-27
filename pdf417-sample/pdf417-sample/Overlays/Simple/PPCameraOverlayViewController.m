@@ -20,8 +20,7 @@
 
 @synthesize drawingLayer;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
@@ -58,7 +57,7 @@
     [super viewWillAppear:animated];
     
     // on devices which don't support torch, torch button should be disabled
-    if (![[self delegate] overlayViewControllerShouldDisplayTorch:self]) {
+    if (![[self containerViewController] overlayViewControllerShouldDisplayTorch:self]) {
         [[self torchButton] setHidden:YES];
     }
     
@@ -75,15 +74,15 @@
 #pragma mark user interaction methods
 
 - (IBAction)closePressed:(id)sender {
-    [[self delegate] overlayViewControllerWillCloseCamera:self];
+    [[self containerViewController] overlayViewControllerWillCloseCamera:self];
 }
 
 - (IBAction)torchPressed:(id)sender {
     static BOOL torchOn = NO;
-    torchOn = [[self delegate] isTorchOn];
+    torchOn = [[self containerViewController] isTorchOn];
     torchOn = !torchOn;
-    if ([[self delegate] overlayViewControllerShouldDisplayTorch:self]) {
-        [[self delegate] overlayViewController:self
+    if ([[self containerViewController] overlayViewControllerShouldDisplayTorch:self]) {
+        [[self containerViewController] overlayViewController:self
                                   willSetTorch:torchOn];
     }
 }
@@ -91,52 +90,37 @@
 #pragma mark -
 #pragma mark autorotation
 
-- (BOOL)shouldAutorotate {
-    return YES;
-}
-
 - (NSUInteger)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskAllButUpsideDown;
 }
 
-- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
-    return UIInterfaceOrientationPortrait;
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-}
-
 #pragma mark Controlling camera view
 
-- (void)cameraViewControllerDidResumeScanning:(id)cameraViewController {
+- (void)cameraViewControllerDidResumeScanning:(id<PPScanningViewController>)cameraViewController {
     NSLog(@"Barcode scanning process initialized");
 }
 
-- (void)cameraViewControllerDidStopScanning:(id)cameraViewController {
+- (void)cameraViewControllerDidStopScanning:(id<PPScanningViewController>)cameraViewController {
     NSLog(@"Barcode scanning process terminated");
 }
 
-- (void)cameraViewController:(id)cameraViewController
-          didPublishProgress:(float)progress {
+- (void)cameraViewController:(id<PPScanningViewController>)cameraViewController didPublishProgress:(float)progress {
     NSLog(@"Barcode scanning don't have progress reporting implemented yet");
 }
 
-- (void)cameraViewControllerDidStartRecognition:(id)cameraViewController {
+- (void)cameraViewControllerDidStartRecognition:(id<PPScanningViewController>)cameraViewController {
 }
 
-- (void)cameraViewController:(id)cameraViewController
-didFinishRecognitionWithResult:(id)result {
+- (void)cameraViewController:(id<PPScanningViewController>)cameraViewController didFinishRecognitionWithResult:(id)result {
     NSLog(@"Barcode scanning process finished with result %@", result);
 }
 
-- (void)cameraViewController:(id)cameraViewController
-        didTimeoutWithResult:(id)result {
-    NSLog(@"Barcode scanning process timed out with result %@", result);
+- (void)cameraViewController:(id<PPScanningViewController>)cameraViewController didOutputResults:(NSArray *)results {
+    NSLog(@"Barcode scanning process did output results %@", results);
 }
 
-- (void)cameraViewController:(id)cameraViewController
-             didFindLocation:(NSArray*)cornerPoints
+- (void)cameraViewController:(id<PPScanningViewController>)cameraViewController
+             didFindLocation:(NSArray *)cornerPoints
                   withStatus:(PPDetectionStatus)status {
     
     CGRect size = [[self view] bounds];
@@ -191,23 +175,26 @@ didFinishRecognitionWithResult:(id)result {
     }
 }
 
-- (void)cameraViewController:(id)cameraViewController
-     willRotateToOrientation:(UIDeviceOrientation)orientation {
-    
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+                                duration:(NSTimeInterval)duration {
+
 }
 
-/** Camera view did rotate */
-- (void)cameraViewController:(id)cameraViewController
-      didRotateToOrientation:(UIDeviceOrientation)orientation {
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
     NSString* orientationString = @"Portrait";
-    if (orientation == UIInterfaceOrientationPortraitUpsideDown) {
+    if (fromInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown) {
         orientationString = @"Upside Down";
-    } else if (orientation == UIInterfaceOrientationLandscapeLeft) {
+    } else if (fromInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) {
         orientationString = @"Landscape Left";
-    } else if (orientation == UIInterfaceOrientationLandscapeRight) {
+    } else if (fromInterfaceOrientation == UIInterfaceOrientationLandscapeRight) {
         orientationString = @"Landscape Right";
     }
-    NSLog(@"Orientation was changed to %@", orientationString);
+    NSLog(@"Orientation was changed from %@", orientationString);
+}
+
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+                                         duration:(NSTimeInterval)duration {
+
 }
 
 #pragma mark - Location drawing

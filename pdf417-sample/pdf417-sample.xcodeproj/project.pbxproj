@@ -36,11 +36,13 @@
 		188175F217FC351F0077AC76 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 188175F117FC351F0077AC76 /* libc++.dylib */; };
 		188ABB6C18719BEC00A51D43 /* PPCameraOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188ABB6A18719BEC00A51D43 /* PPCameraOverlayViewController.m */; };
 		188ABB6D18719BEC00A51D43 /* PPCameraOverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 188ABB6B18719BEC00A51D43 /* PPCameraOverlayViewController.xib */; };
-		188ABB7418719C5100A51D43 /* PPYBarcodeOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188ABB6F18719C5100A51D43 /* PPYBarcodeOverlayViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		188ABB7518719C5100A51D43 /* PPYOverlayAnimationViewLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 188ABB7118719C5100A51D43 /* PPYOverlayAnimationViewLayer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		188ABB7618719C5100A51D43 /* PPYOverlayAnimationViewUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 188ABB7318719C5100A51D43 /* PPYOverlayAnimationViewUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		188ABB7918719CCC00A51D43 /* PPYCameraButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 188ABB7818719CCC00A51D43 /* PPYCameraButton.m */; };
 		18C1114818345DF80004CFFD /* beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 18C1114718345DF80004CFFD /* beep.mp3 */; };
+		18FFFFAE195D85B20021FBC2 /* PPYBarcodeOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FFFFA2195D85B20021FBC2 /* PPYBarcodeOverlayViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		18FFFFAF195D85B20021FBC2 /* PPYBaseBarcodeOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FFFFA4195D85B20021FBC2 /* PPYBaseBarcodeOverlayViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		18FFFFB0195D85B20021FBC2 /* PPYBaseOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FFFFA6195D85B20021FBC2 /* PPYBaseOverlayViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		18FFFFB1195D85B20021FBC2 /* PPYCameraButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FFFFA8195D85B20021FBC2 /* PPYCameraButton.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		18FFFFB2195D85B20021FBC2 /* PPYDotsOverlaySubview.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FFFFAA195D85B20021FBC2 /* PPYDotsOverlaySubview.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		18FFFFB3195D85B20021FBC2 /* PPYViewfinderOverlaySubview.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FFFFAD195D85B20021FBC2 /* PPYViewfinderOverlaySubview.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,15 +81,20 @@
 		188ABB6918719BEC00A51D43 /* PPCameraOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPCameraOverlayViewController.h; sourceTree = "<group>"; };
 		188ABB6A18719BEC00A51D43 /* PPCameraOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPCameraOverlayViewController.m; sourceTree = "<group>"; };
 		188ABB6B18719BEC00A51D43 /* PPCameraOverlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPCameraOverlayViewController.xib; sourceTree = "<group>"; };
-		188ABB6E18719C5100A51D43 /* PPYBarcodeOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPYBarcodeOverlayViewController.h; sourceTree = "<group>"; };
-		188ABB6F18719C5100A51D43 /* PPYBarcodeOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPYBarcodeOverlayViewController.m; sourceTree = "<group>"; };
-		188ABB7018719C5100A51D43 /* PPYOverlayAnimationViewLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPYOverlayAnimationViewLayer.h; sourceTree = "<group>"; };
-		188ABB7118719C5100A51D43 /* PPYOverlayAnimationViewLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPYOverlayAnimationViewLayer.m; sourceTree = "<group>"; };
-		188ABB7218719C5100A51D43 /* PPYOverlayAnimationViewUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPYOverlayAnimationViewUtils.h; sourceTree = "<group>"; };
-		188ABB7318719C5100A51D43 /* PPYOverlayAnimationViewUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPYOverlayAnimationViewUtils.m; sourceTree = "<group>"; };
-		188ABB7718719CCC00A51D43 /* PPYCameraButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPYCameraButton.h; sourceTree = "<group>"; };
-		188ABB7818719CCC00A51D43 /* PPYCameraButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPYCameraButton.m; sourceTree = "<group>"; };
 		18C1114718345DF80004CFFD /* beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = beep.mp3; path = ../../beep.mp3; sourceTree = "<group>"; };
+		18FFFFA1195D85B20021FBC2 /* PPYBarcodeOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPYBarcodeOverlayViewController.h; sourceTree = "<group>"; };
+		18FFFFA2195D85B20021FBC2 /* PPYBarcodeOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPYBarcodeOverlayViewController.m; sourceTree = "<group>"; };
+		18FFFFA3195D85B20021FBC2 /* PPYBaseBarcodeOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPYBaseBarcodeOverlayViewController.h; sourceTree = "<group>"; };
+		18FFFFA4195D85B20021FBC2 /* PPYBaseBarcodeOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPYBaseBarcodeOverlayViewController.m; sourceTree = "<group>"; };
+		18FFFFA5195D85B20021FBC2 /* PPYBaseOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPYBaseOverlayViewController.h; sourceTree = "<group>"; };
+		18FFFFA6195D85B20021FBC2 /* PPYBaseOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPYBaseOverlayViewController.m; sourceTree = "<group>"; };
+		18FFFFA7195D85B20021FBC2 /* PPYCameraButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPYCameraButton.h; sourceTree = "<group>"; };
+		18FFFFA8195D85B20021FBC2 /* PPYCameraButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPYCameraButton.m; sourceTree = "<group>"; };
+		18FFFFA9195D85B20021FBC2 /* PPYDotsOverlaySubview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPYDotsOverlaySubview.h; sourceTree = "<group>"; };
+		18FFFFAA195D85B20021FBC2 /* PPYDotsOverlaySubview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPYDotsOverlaySubview.m; sourceTree = "<group>"; };
+		18FFFFAB195D85B20021FBC2 /* PPYOverlaySubview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPYOverlaySubview.h; sourceTree = "<group>"; };
+		18FFFFAC195D85B20021FBC2 /* PPYViewfinderOverlaySubview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPYViewfinderOverlaySubview.h; sourceTree = "<group>"; };
+		18FFFFAD195D85B20021FBC2 /* PPYViewfinderOverlaySubview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPYViewfinderOverlaySubview.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,14 +221,19 @@
 		188ABB6718719BEC00A51D43 /* Complex */ = {
 			isa = PBXGroup;
 			children = (
-				188ABB7718719CCC00A51D43 /* PPYCameraButton.h */,
-				188ABB7818719CCC00A51D43 /* PPYCameraButton.m */,
-				188ABB6E18719C5100A51D43 /* PPYBarcodeOverlayViewController.h */,
-				188ABB6F18719C5100A51D43 /* PPYBarcodeOverlayViewController.m */,
-				188ABB7018719C5100A51D43 /* PPYOverlayAnimationViewLayer.h */,
-				188ABB7118719C5100A51D43 /* PPYOverlayAnimationViewLayer.m */,
-				188ABB7218719C5100A51D43 /* PPYOverlayAnimationViewUtils.h */,
-				188ABB7318719C5100A51D43 /* PPYOverlayAnimationViewUtils.m */,
+				18FFFFA5195D85B20021FBC2 /* PPYBaseOverlayViewController.h */,
+				18FFFFA6195D85B20021FBC2 /* PPYBaseOverlayViewController.m */,
+				18FFFFA3195D85B20021FBC2 /* PPYBaseBarcodeOverlayViewController.h */,
+				18FFFFA4195D85B20021FBC2 /* PPYBaseBarcodeOverlayViewController.m */,
+				18FFFFA1195D85B20021FBC2 /* PPYBarcodeOverlayViewController.h */,
+				18FFFFA2195D85B20021FBC2 /* PPYBarcodeOverlayViewController.m */,
+				18FFFFAB195D85B20021FBC2 /* PPYOverlaySubview.h */,
+				18FFFFA9195D85B20021FBC2 /* PPYDotsOverlaySubview.h */,
+				18FFFFAA195D85B20021FBC2 /* PPYDotsOverlaySubview.m */,
+				18FFFFAC195D85B20021FBC2 /* PPYViewfinderOverlaySubview.h */,
+				18FFFFAD195D85B20021FBC2 /* PPYViewfinderOverlaySubview.m */,
+				18FFFFA7195D85B20021FBC2 /* PPYCameraButton.h */,
+				18FFFFA8195D85B20021FBC2 /* PPYCameraButton.m */,
 			);
 			path = Complex;
 			sourceTree = "<group>";
@@ -312,14 +324,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18FFFFB1195D85B20021FBC2 /* PPYCameraButton.m in Sources */,
+				18FFFFB0195D85B20021FBC2 /* PPYBaseOverlayViewController.m in Sources */,
 				188ABB6C18719BEC00A51D43 /* PPCameraOverlayViewController.m in Sources */,
+				18FFFFB3195D85B20021FBC2 /* PPYViewfinderOverlaySubview.m in Sources */,
 				1818D838174D146F00136FD2 /* main.m in Sources */,
 				1818D83C174D146F00136FD2 /* PPAppDelegate.m in Sources */,
 				1818D854174D14DB00136FD2 /* PPRootViewController.m in Sources */,
-				188ABB7918719CCC00A51D43 /* PPYCameraButton.m in Sources */,
-				188ABB7518719C5100A51D43 /* PPYOverlayAnimationViewLayer.m in Sources */,
-				188ABB7618719C5100A51D43 /* PPYOverlayAnimationViewUtils.m in Sources */,
-				188ABB7418719C5100A51D43 /* PPYBarcodeOverlayViewController.m in Sources */,
+				18FFFFAE195D85B20021FBC2 /* PPYBarcodeOverlayViewController.m in Sources */,
+				18FFFFAF195D85B20021FBC2 /* PPYBaseBarcodeOverlayViewController.m in Sources */,
+				18FFFFB2195D85B20021FBC2 /* PPYDotsOverlaySubview.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

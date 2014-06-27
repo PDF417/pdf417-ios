@@ -155,7 +155,14 @@
     
     // Set this if you want to use front facing camera
     // [coordinatorSettings setValue:@(YES) forKey:kPPUseFrontFacingCamera];
-    
+
+    // if for some reason overlay should not autorotate
+    // for example, if Navigation View controller on which Camera is presented handles rotation by itself
+    // of when FormSheet or PageSheet modal view is used on iPads
+    // then, disable rotation for overlays. Use this carefully.
+    // Autorotation is YES by defalt
+    [coordinatorSettings setValue:@(YES) forKey:kPPOverlayShouldAutorotate];
+
     // Set the scanning region, if necessary
     // If you use custom overlay view controller, it's reccommended that you set scanning roi there
     [coordinatorSettings setValue:[NSValue valueWithCGRect:CGRectMake(0.05, 0.05, 0.9, 0.9)] forKey:kPPScanningRoi];
@@ -177,19 +184,6 @@
     // present modal (recommended and default) - make sure you dismiss the view controller when done
     // you also can set this to NO and push camera view controller to navigation view controller
     [coordinatorSettings setValue:@([self useModalCameraView]) forKey:kPPPresentModal];
-    
-    // If you use default camera overlay, you can set orientation mask for allowed orientations
-    // default is UIInterfaceOrientationMaskAll
-    UIInterfaceOrientationMask mask;
-    if ([self useModalCameraView]) {
-        // when using FullScreen presentation style, Overlay is responsible for orientation changes
-        mask = UIInterfaceOrientationMaskAll;
-    } else {
-        // when not presenting modally, navigation view controller takes care of the orientation changes.
-        // but this depends on your implementation, so use this wisely.
-        mask = UIInterfaceOrientationMaskPortrait;
-    }
-    [coordinatorSettings setValue:@(mask) forKey:kPPHudOrientation];
     
     // Define the sound filename played on successful recognition
     NSString* soundPath = [[NSBundle mainBundle] pathForResource:@"beep" ofType:@"mp3"];
@@ -232,7 +226,7 @@
     
     // Create camera view controller
     UIViewController<PPScanningViewController>* cameraViewController =
-        [coordinator cameraViewControllerWithDelegate:self overlayViewController:simpleOverlay];
+        [coordinator cameraViewControllerWithDelegate:self overlayViewController:complexOverlay];
     
     [self setCurrentCameraViewController:cameraViewController];
     

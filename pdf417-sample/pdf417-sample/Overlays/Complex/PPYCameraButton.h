@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PPYCameraButton : UIButton
+@interface PPCameraButton : UIButton
 
 - (id)initWithFrame:(CGRect)frame;
 

@@ -2,12 +2,12 @@
 //  PPBarcodeOverlayViewController.h
 //  BarcodeFramework
 //
-//  Created by Jurica Cerovec on 22/12/13.
+//  Created by Jura on 22/12/13.
 //  Copyright (c) 2013 PhotoPay. All rights reserved.
 //
 
-#import <pdf417/PPBarcode.h>
+#import "PPYBaseBarcodeOverlayViewController.h"
 
-@interface PPYBarcodeOverlayViewController : PPOverlayViewController
+@interface PPYBarcodeOverlayViewController : PPYBaseBarcodeOverlayViewController
 
 @end

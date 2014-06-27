@@ -21,9 +21,6 @@
  // you also can set this to NO and push camera view controller to navigation view controller
  [coordinatorSettings setValue:[NSNumber numberWithBool:YES] forKey:kPPPresentModal];
  
- // You can set orientation mask for allowed orientations, default is UIInterfaceOrientationMaskAll
- [coordinatorSettings setValue:[NSNumber numberWithInt:UIInterfaceOrientationMaskAll] forKey:kPPHudOrientation];
- 
  // Define the sound filename played on successful recognition
  NSString* soundPath = [[NSBundle mainBundle] pathForResource:@"beep" ofType:@"mp3"];
  [coordinatorSettings setValue:soundPath forKey:kPPSoundFile];
@@ -134,8 +131,8 @@ extern NSString* const kPPPresentModal;
 extern NSString* const kPPUseFrontFacingCamera;
 
 /** Work style */
-/** Determines the orientation of toast messages. Default is Portrait */
-extern NSString* const kPPHudOrientation;
+/** Determines if overlay view should autorotate */
+extern NSString* const kPPOverlayShouldAutorotate;
 /** Under this key the Color of the viewfinder is stored */
 extern NSString* const kPPViewfinderColor;
 /** Under this key the is stored information whether viewfinder is moveable */

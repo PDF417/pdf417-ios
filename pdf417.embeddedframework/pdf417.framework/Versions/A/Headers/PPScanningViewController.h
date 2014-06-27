@@ -13,20 +13,6 @@
  */
 @protocol PPScanningViewController <NSObject>
 
-/**
- Status bar style which is used when UIViewControllerBasedStatusBarAppearance is set to NO. Default is 
- - on iOS 7 UIStatusBarStyleDefault
- - on pre iOS 7 UIStatusBarStyleBlackOpaque.
- */
-@property (nonatomic, assign) UIStatusBarStyle statusBarStyle;
-
-/**
- YES or NO depending whether status bar should be visible. By default it's
- - On iOS 7 when modal presentation style is used: YES
- - otherwise: NO
- */
-@property (nonatomic, assign) BOOL statusBarHidden;
-
 /** Pause scanning instantaneously without dismissing the camera view */
 - (void)pauseScanning;
 

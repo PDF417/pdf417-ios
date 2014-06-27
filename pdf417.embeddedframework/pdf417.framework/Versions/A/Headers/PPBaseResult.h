@@ -14,12 +14,14 @@
 typedef NS_ENUM(NSInteger, PPBaseResultType) {
     PPBaseResultTypeBarcode,
     PPBaseResultTypeUSDL,
+    PPBaseResultTypePhotoPay,
+    PPBaseResultTypeOCR
 };
 
 /**
  Abstract result of pdf417.mobi library
  */
-@interface PPBaseResult : NSObject
+@interface PPBaseResult : NSObject <NSCopying>
 
 /**
  Type of the result

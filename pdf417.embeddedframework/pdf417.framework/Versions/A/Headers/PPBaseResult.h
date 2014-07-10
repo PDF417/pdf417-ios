@@ -15,7 +15,8 @@ typedef NS_ENUM(NSInteger, PPBaseResultType) {
     PPBaseResultTypeBarcode,
     PPBaseResultTypeUSDL,
     PPBaseResultTypePhotoPay,
-    PPBaseResultTypeOCR
+    PPBaseResultTypeOCR,
+    PPBaseResultTypePhotoMath
 };
 
 /**
@@ -36,5 +37,10 @@ typedef NS_ENUM(NSInteger, PPBaseResultType) {
  Requires the type property
  */
 - (id)initWithResultType:(PPBaseResultType)resultType;
+
+/**
+ Returns the xml representation of this result
+ */
+- (NSString*)xml;
 
 @end

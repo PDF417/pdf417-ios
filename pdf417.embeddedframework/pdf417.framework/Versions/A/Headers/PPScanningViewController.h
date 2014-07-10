@@ -19,6 +19,9 @@
 /** Resumes scanning instantaneously */
 - (void)resumeScanning;
 
+/** Retrieve the current state of scanning */
+- (BOOL)isScanningPaused;
+
 /** Sets the scanning region */
 - (void)setScanningRegion:(CGRect)region;
 

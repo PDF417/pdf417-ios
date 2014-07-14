@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
   
   s.name         = "PPpdf417"
   
-  s.version      = "2.6.1"
+  s.version      = "3.0.0"
   s.summary      = "A small and powerful PDF417 scanning library."
   
   s.description  = <<-DESC
@@ -43,7 +43,7 @@ Pod::Spec.new do |s|
 
   s.source       = { 
   	:git => 'https://github.com/PDF417/pdf417-ios.git', 
-  	:tag => 'v2.6.1'
+  	:tag => 'v3.0.0'
   }
   
   s.preserve_paths = 'pdf417.embeddedframework/*'

@@ -1,11 +1,15 @@
 # Release notes
 
+## 3.0.1
+- Each `PPBaseResult` object now has attached information about it's location on processed video frame.
+- Demo app updated to draw result position on image which resulted with successful scan
+
 ## 3.0.0
-- Removed status bar properties from PPScanningViewController protocol. Replaced with preferredStatusBarStyle and prefersStatusBarHidden in PPOverlayViewController
-- kPPHudOrientation replaced with kPPOverlayShouldAutorotate.
+- Removed status bar properties from `PPScanningViewController` protocol. Replaced with `preferredStatusBarStyle` and `prefersStatusBarHidden` in `PPOverlayViewController`
+- `kPPHudOrientation` replaced with `kPPOverlayShouldAutorotate`.
   - HUD orientation is now determined optimally inside pdf417 library
-  - Autorotation can now be explicitly disallowed, e.g when presenting camera on NavigationController or when presenting as FormSheet or PageSheet 
-- Removed deprecated methods from PPOverlayViewController
+  - Autorotation can now be explicitly disallowed, e.g when presenting camera on `UINavigationController` or when presenting as FormSheet or PageSheet 
+- Removed deprecated methods from `PPOverlayViewController`
 - Fixed crash when Overlay those orientations which are not supported by the app. Now overlay works in that situations.
 - Completely refactored "Complex Overlay" sample. Basically, it's open sourced implementation of internal pdf417 overlay.
 

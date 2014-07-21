@@ -327,6 +327,22 @@ If you are able to decode raw data without the need of elaborate structure infor
 
 If this value is `YES`, we advise you to perform some kind of integrity check on the obtained value. If the value doesn't pass your integration test, you can present the user some kind of message, or simply continue scanning until the your integration test has passed.
 
+
+#### Exact barcode location on image
+
+Each `PPBaseResult` object has a property `locationOnImage` which gives the exact position of the result on a video frame used in the recognition process.
+
+	/**
+ 	 Corner points of detected result. Points are given in image coordinate system
+ 	 (0, 0) - top left point on the image, (width, height) bottom right point on the image
+ 	 */
+	@property (nonatomic, retain) NSArray* locationOnImage;
+	
+Due to performance implications of passing video frames back-and-forth in the public API, this property can currently be used only in combination with `cameraViewController:didMakeSuccessfulScanOnImage:` method of `PPBarcodeDelegate` object. So, if you need to get the exact part of the image which resulted with successful scan, do the following:
+
+1. Implement `cameraViewController:didMakeSuccessfulScanOnImage:` and store the UIimage object
+2. in the `cameraViewController:didOutputResults:` find out the exact positions of results using `locationOnImage` property. Implement your handling after that using the stored UIImage object.  
+
 ## <a name="0300"></a> Setting scanning region
 
 You have two options for setting scanning regions.

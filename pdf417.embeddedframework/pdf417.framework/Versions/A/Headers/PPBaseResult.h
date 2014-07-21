@@ -32,6 +32,12 @@ typedef NS_ENUM(NSInteger, PPBaseResultType) {
 @property (nonatomic, assign, readonly) PPBaseResultType resultType;
 
 /**
+ 4 corner points of detected result. Points are given in image coordinate system
+ (0, 0) - top left point on the image, (width, height) bottom right point on the image
+ */
+@property (nonatomic, retain) NSArray* locationOnImage;
+
+/**
  Designated initializer
  
  Requires the type property

@@ -9,6 +9,7 @@
 #import "PPRootViewController.h"
 #import "PPCameraOverlayViewController.h"
 #import "PPYBarcodeOverlayViewController.h"
+#import "PPImageViewController.h"
 #import <pdf417/PPBarcode.h>
 
 @interface PPRootViewController () <PPBarcodeDelegate, UIAlertViewDelegate>
@@ -99,11 +100,11 @@
     // Set YES/NO for scanning pdf417 barcode standard (default YES)
     [coordinatorSettings setValue:@(YES) forKey:kPPRecognizePdf417Key];
     // Set YES/NO for scanning qr code barcode standard (default NO)
-    [coordinatorSettings setValue:@(NO) forKey:kPPRecognizeQrCodeKey];
+    [coordinatorSettings setValue:@(YES) forKey:kPPRecognizeQrCodeKey];
     // Set YES/NO for scanning all 1D barcode standards (default NO)
     [coordinatorSettings setValue:@(NO) forKey:kPPRecognize1DBarcodesKey];
     // Set YES/NO for scanning code 128 barcode standard (default NO)
-    [coordinatorSettings setValue:@(YES) forKey:kPPRecognizeCode128Key];
+    [coordinatorSettings setValue:@(NO) forKey:kPPRecognizeCode128Key];
     // Set YES/NO for scanning code 39 barcode standard (default NO)
     [coordinatorSettings setValue:@(NO) forKey:kPPRecognizeCode39Key];
     // Set YES/NO for scanning EAN 8 barcode standard (default NO)
@@ -172,7 +173,7 @@
      This license key allows setting overlay views for this application ID: net.photopay.barcode.pdf417-sample
      To test your custom overlays, please use this demo app directly or visit our website www.pdf417.mobi for commercial license
      */
-    [coordinatorSettings setValue:@"YWYH-RR5Z-TVMU-TIZM-LKAT-WHIM-XMPN-FIXD"
+    [coordinatorSettings setValue:@"YW3B-R6SF-6NPE-TIZM-LKAT-WHIM-XMPN-FIXD"
                            forKey:kPPLicenseKey];
 
     /**
@@ -226,7 +227,7 @@
     
     // Create camera view controller
     UIViewController<PPScanningViewController>* cameraViewController =
-        [coordinator cameraViewControllerWithDelegate:self overlayViewController:complexOverlay];
+        [coordinator cameraViewControllerWithDelegate:self overlayViewController:simpleOverlay];
     
     [self setCurrentCameraViewController:cameraViewController];
     
@@ -344,8 +345,45 @@
 
 }
 
+- (UIImage*)drawResultLocations:(NSArray*)points onImage:(UIImage*)image {
+    // begin a graphics context of sufficient size
+	UIGraphicsBeginImageContext(image.size);
+
+	// draw original image into the context
+	[image drawAtPoint:CGPointZero];
+
+	// get the context for CoreGraphics
+	CGContextRef ctx = UIGraphicsGetCurrentContext();
+
+	// set stroking color and draw circle
+	[[UIColor greenColor] setStroke];
+
+    // Set the width of the pen mark
+    CGContextSetLineWidth(ctx, 3.0);
+
+    [points enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        CGPoint point = [obj CGPointValue];
+
+        // make circle rect 5 px from border
+        CGRect circleRect = CGRectMake(point.x - 5, point.y - 5,
+                                       11, 11);
+        // draw circle
+        CGContextStrokeEllipseInRect(ctx, circleRect);
+    }];
+
+	// make image out of bitmap context
+	UIImage *retImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+	// free the context
+	UIGraphicsEndImageContext();
+    
+	return retImage;
+}
+
 - (void)cameraViewController:(UIViewController<PPScanningViewController> *)cameraViewController
             didOutputResults:(NSArray *)results {
+    NSMutableArray* locations = [[NSMutableArray alloc] init];
+
     [results enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         if ([obj isKindOfClass:[PPBaseResult class]]) {
             PPBaseResult* result = (PPBaseResult*)obj;
@@ -353,12 +391,18 @@
                 PPScanningResult* scanningResult = (PPScanningResult*)result;
                 [self processScanningResult:scanningResult cameraViewController:cameraViewController];
             }
+
             if ([result resultType] == PPBaseResultTypeUSDL && [result isKindOfClass:[PPUSDLResult class]]) {
                 PPUSDLResult* usdlResult = (PPUSDLResult*)result;
                 [self processUSDLResult:usdlResult cameraViewController:cameraViewController];
             }
+
+            [locations addObjectsFromArray:[result locationOnImage]];
         }
     }];
+
+    UIImage* image = [self drawResultLocations:locations onImage:self.imageView.image];
+    [[self imageView] setImage:image];
 }
 
 - (void)cameraViewController:(UIViewController<PPScanningViewController> *)cameraViewController didMakeSuccessfulScanOnImage:(UIImage *)image {
@@ -435,6 +479,12 @@
     [simplifiedRawInfo appendString:@"}\n"];
     
     return simplifiedRawInfo;
+}
+
+- (IBAction)openImage:(id)sender {
+    PPImageViewController* imageVC = [[PPImageViewController alloc] initWithNibName:@"PPImageViewController" bundle:nil];
+    [imageVC setImage:self.imageView.image];
+    [[self navigationController] pushViewController:imageVC animated:YES];
 }
 
 @end

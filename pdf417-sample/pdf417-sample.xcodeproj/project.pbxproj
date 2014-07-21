@@ -34,6 +34,8 @@
 		18562B2718677EA200A0355B /* lighton.png in Resources */ = {isa = PBXBuildFile; fileRef = 18562B1F18677EA200A0355B /* lighton.png */; };
 		18562B2818677EA200A0355B /* lighton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18562B2018677EA200A0355B /* lighton@2x.png */; };
 		188175F217FC351F0077AC76 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 188175F117FC351F0077AC76 /* libc++.dylib */; };
+		188AA358197D05D5008A7526 /* PPImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188AA356197D05D5008A7526 /* PPImageViewController.m */; };
+		188AA359197D05D5008A7526 /* PPImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 188AA357197D05D5008A7526 /* PPImageViewController.xib */; };
 		188ABB6C18719BEC00A51D43 /* PPCameraOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188ABB6A18719BEC00A51D43 /* PPCameraOverlayViewController.m */; };
 		188ABB6D18719BEC00A51D43 /* PPCameraOverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 188ABB6B18719BEC00A51D43 /* PPCameraOverlayViewController.xib */; };
 		18C1114818345DF80004CFFD /* beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 18C1114718345DF80004CFFD /* beep.mp3 */; };
@@ -78,6 +80,9 @@
 		18562B1F18677EA200A0355B /* lighton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lighton.png; sourceTree = "<group>"; };
 		18562B2018677EA200A0355B /* lighton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lighton@2x.png"; sourceTree = "<group>"; };
 		188175F117FC351F0077AC76 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		188AA355197D05D5008A7526 /* PPImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPImageViewController.h; sourceTree = "<group>"; };
+		188AA356197D05D5008A7526 /* PPImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPImageViewController.m; sourceTree = "<group>"; };
+		188AA357197D05D5008A7526 /* PPImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPImageViewController.xib; sourceTree = "<group>"; };
 		188ABB6918719BEC00A51D43 /* PPCameraOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPCameraOverlayViewController.h; sourceTree = "<group>"; };
 		188ABB6A18719BEC00A51D43 /* PPCameraOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPCameraOverlayViewController.m; sourceTree = "<group>"; };
 		188ABB6B18719BEC00A51D43 /* PPCameraOverlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPCameraOverlayViewController.xib; sourceTree = "<group>"; };
@@ -164,6 +169,9 @@
 				1818D851174D14DB00136FD2 /* PPRootViewController.h */,
 				1818D852174D14DB00136FD2 /* PPRootViewController.m */,
 				1818D853174D14DB00136FD2 /* PPRootViewController.xib */,
+				188AA355197D05D5008A7526 /* PPImageViewController.h */,
+				188AA356197D05D5008A7526 /* PPImageViewController.m */,
+				188AA357197D05D5008A7526 /* PPImageViewController.xib */,
 				188ABB6618719BEC00A51D43 /* Overlays */,
 				1818D832174D146F00136FD2 /* Supporting Files */,
 			);
@@ -314,6 +322,7 @@
 				18C1114818345DF80004CFFD /* beep.mp3 in Resources */,
 				18562B2818677EA200A0355B /* lighton@2x.png in Resources */,
 				18562B2218677EA200A0355B /* de.strings in Resources */,
+				188AA359197D05D5008A7526 /* PPImageViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,6 +340,7 @@
 				1818D838174D146F00136FD2 /* main.m in Sources */,
 				1818D83C174D146F00136FD2 /* PPAppDelegate.m in Sources */,
 				1818D854174D14DB00136FD2 /* PPRootViewController.m in Sources */,
+				188AA358197D05D5008A7526 /* PPImageViewController.m in Sources */,
 				18FFFFAE195D85B20021FBC2 /* PPYBarcodeOverlayViewController.m in Sources */,
 				18FFFFAF195D85B20021FBC2 /* PPYBaseBarcodeOverlayViewController.m in Sources */,
 				18FFFFB2195D85B20021FBC2 /* PPYDotsOverlaySubview.m in Sources */,

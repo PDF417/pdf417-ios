@@ -23,4 +23,6 @@
 
 - (IBAction)startCustomUIScan:(id)sender;
 
+- (IBAction)openImage:(id)sender;
+
 @end

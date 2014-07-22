@@ -205,9 +205,7 @@
     UIViewController<PPScanningViewController>* cameraViewController =
         [coordinator cameraViewControllerWithDelegate:self];
     [self setCurrentCameraViewController:cameraViewController];
-    
-    // present it modally
-    cameraViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+
     [self presentCameraViewController:cameraViewController isModal:[self useModalCameraView]];
 }
 
@@ -230,10 +228,6 @@
         [coordinator cameraViewControllerWithDelegate:self overlayViewController:simpleOverlay];
     
     [self setCurrentCameraViewController:cameraViewController];
-    
-    // present it modally
-    cameraViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    cameraViewController.modalPresentationStyle = UIModalPresentationPageSheet;
     
     [self presentCameraViewController:cameraViewController
                               isModal:[self useModalCameraView]];

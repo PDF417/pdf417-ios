@@ -238,7 +238,7 @@ didFinishRecognitionWithResult:(id)result;
  Overlay View Controller also needs to notify CameraViewController on certain events. 
  Those are events specified by PPOverlayViewControllerDelegate protocol.
  */
-@protocol PPOverlayContainerViewController <NSObject>
+@protocol PPOverlayContainerViewController <PPScanningViewController>
 
 @required
 

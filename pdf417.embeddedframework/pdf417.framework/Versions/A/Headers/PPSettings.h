@@ -130,6 +130,9 @@ extern NSString* const kPPPresentModal;
 /** If YES, Front facing camera of the device will be used */
 extern NSString* const kPPUseFrontFacingCamera;
 
+/** Disable only near autofocus hint on iOS7+ */
+extern NSString* const kPPAutofocusFull;
+
 /** Work style */
 /** Determines if overlay view should autorotate */
 extern NSString* const kPPOverlayShouldAutorotate;

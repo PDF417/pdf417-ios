@@ -126,7 +126,7 @@
  Overlay View's delegate object. Responsible for sending messages to PhotoPay's 
  Camera View Controller
  */
-@property (nonatomic, assign) id<PPOverlayContainerViewController> containerViewController;
+@property (nonatomic, weak) UIViewController <PPOverlayContainerViewController> *containerViewController;
 
 /**
  Scanning region in which the scaning is performed.
@@ -279,5 +279,9 @@ didFinishRecognitionWithResult:(id)result;
  */
 - (AVCaptureVideoPreviewLayer*)getPreviewLayer;
 
+/**
+ Use from an overlay view controller implementation to notify the container view controller that the scanning region has changed
+ */
+- (void)updateScanningRegion;
 
 @end

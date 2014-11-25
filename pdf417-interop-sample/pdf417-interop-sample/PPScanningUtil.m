@@ -10,13 +10,20 @@
 
 @implementation PPScanningUtil
 
-+ (BOOL)scanBarcodeTypes:(NSArray *)types withCallback:(NSString *)callback andLanguage:(NSString *)language andBeep:(BOOL)beep
++ (BOOL)scanBarcodeTypes:(NSArray *)types
+            withCallback:(NSString *)callback
+                language:(NSString *)language
+                    beep:(BOOL)beep
+                   debug:(BOOL)debug
+             frontCamera:(BOOL)frontCamera
 {
-    NSString* url = [NSString stringWithFormat:@"pdf417://scan?type=%@&language=%@&callback=%@&beep=%@",
+    NSString* url = [NSString stringWithFormat:@"pdf417://scan?type=%@&language=%@&callback=%@&beep=%@&debug=%@&frontCamera=%@",
                      [[types componentsJoinedByString:@","] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
                      [language stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
                      [callback stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
-                     beep ? @"true" : @"false"];
+                     beep ? @"true" : @"false",
+                     debug ? @"true" : @"false",
+                     frontCamera ? @"true" : @"false"];
     
     NSLog(@"invoking url '%@'", url);
     return [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];

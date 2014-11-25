@@ -30,7 +30,7 @@ The above schema needs to be registered by your application to receive the resul
 
 Here are all of the supported actions and parameters recognized by the library. All parameter values need to be properly URL encoded to be parsed correctly.
 
-### Actons
+### Actions
 
 Supported actions by the url scheme:
 
@@ -52,6 +52,8 @@ Supported parameters by the url scheme:
     + UPCE
 + **callback** - an url which will be called by **pdf417** to return controll back to your application, must be specified
 + **beep** - optionally turns on or off the "beep" sound played when successfully scanning a barcode, can be set to `true` or `false` (default is `true`)
++ **frontCamera** - optionally uses front facing camera of the device for scanning (default is `false`)
++ **debug** - optionally raises the AlertView with debug data in pdf417-pro app, instead of invoking a callback. This is useful for debugging callbacks (default is `false`)
 + **text** - boolean value (default is `false`) that optionally allows requesting that the barcode data be interpreted as a UTF8 string and returned as a URL-Encoded UTF8 string instead of Hex-Encoded. To be used when the calling application cannot handle other types of data (like for example when integrating from **Filemaker Pro**)
 + **fmp** - boolean value (default is `false`) optionally telling the application to return result data in a parameter called `param` instead of the usual `data` parameter (to be used when integrating from **Filemaker Pro** which specifically expects the `param` parameter)
 

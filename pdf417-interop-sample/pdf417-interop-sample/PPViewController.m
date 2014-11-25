@@ -35,7 +35,11 @@
     // add all the barcode types that we want to support in the scan
     [types addObject:PPScanningResultPdf417Name];
     [types addObject:PPScanningResultQrCodeName];
-    
+
+//    [types addObject:@"front"];
+
+    [types addObject:@"debug"];
+
     if (![PPScanningUtil scanBarcodeTypes:types withCallback:@"pdf417sample://callback" andLanguage:@"en" andBeep:YES]) {
         [[[UIAlertView alloc] initWithTitle:@"Not installed."
                                     message:@"You need to install the pdf417 scanner application for this feature to work."

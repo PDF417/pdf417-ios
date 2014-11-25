@@ -74,12 +74,13 @@
 
 - (id)initWithString:(NSString*)urlDataString type:(PPScanningResultType)inType {
     self = [super init];
+
     if (self) {
         type = inType;
         
         NSMutableData* mutableData = [NSMutableData alloc];
    
-        for(unsigned int location = 0; location<[urlDataString length]-1; location += 2) {
+        for (int location = 0; location < (int)[urlDataString length] - 1; location += 2) {
             NSString *subString = [urlDataString substringWithRange:NSMakeRange(location, 2)];
             NSScanner *scanner = [NSScanner scannerWithString:subString];
             unsigned int buffer;

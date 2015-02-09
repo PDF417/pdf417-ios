@@ -25,19 +25,19 @@
 @interface PPBarcodeCoordinator : NSObject
 
 /** delegate object which will be control camera view related events */
-@property (nonatomic, weak) id<PPCameraViewDelegate> viewDelegate;
+@property (nonatomic, assign) id<PPCameraViewDelegate> viewDelegate;
 
 /** delegate object for notifying the caller on recognition results */
-@property (nonatomic, weak) id<PPBarcodeDelegate> barcodeDelegate;
+@property (nonatomic, assign) id<PPBarcodeDelegate> barcodeDelegate;
 
 /** flag indicating active recognizer */
 @property (nonatomic, assign, getter = isActive, readonly) BOOL active;
 
 /** Object which will take care of the camera */
-@property (nonatomic, strong) PPCameraManager *cameraManager;
+@property (nonatomic, retain) PPCameraManager *cameraManager;
 
 /** We need an acceleration manager object because we're interested in events regarding device movement */
-@property (nonatomic, strong) PPAccelerometerManager *accelerometerManager;
+@property (nonatomic, retain) PPAccelerometerManager *accelerometerManager;
 
 /** Orientation of toast messages */
 @property (nonatomic, assign) UIInterfaceOrientationMask hudOrientation;

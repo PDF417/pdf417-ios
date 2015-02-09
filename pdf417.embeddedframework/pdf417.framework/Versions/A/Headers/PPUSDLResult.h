@@ -942,7 +942,7 @@ extern const NSString* kPPCode39;
 /**
  USDL fields
  */
-@property (nonatomic, strong) NSDictionary* fields;
+@property (nonatomic, retain) NSDictionary* fields;
 
 /**
  Designated initializer

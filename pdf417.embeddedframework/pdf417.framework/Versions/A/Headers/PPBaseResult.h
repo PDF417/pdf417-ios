@@ -35,7 +35,7 @@ typedef NS_ENUM(NSInteger, PPBaseResultType) {
  4 corner points of detected result. Points are given in image coordinate system
  (0, 0) - top left point on the image, (width, height) bottom right point on the image
  */
-@property (nonatomic, strong) NSArray* locationOnImage;
+@property (nonatomic, retain) NSArray* locationOnImage;
 
 /**
  Designated initializer

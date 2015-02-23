@@ -1,5 +1,35 @@
 # Release notes
 
+## 3.2.0
+- Improvements in USDL parsing
+
+## 3.1.5
+- Workaround for random crashes when scanning uncertain barcodes
+
+## 3.1.4
+- Fixed a rare issue with decoding of pdf417 barcodes (when barcode last element was of type byte)
+
+## 3.1.3
+- Fixed issue with callback `cameraViewController:didMakeSuccessfulScanOnImage:` not being called 
+
+## 3.1.2
+- USDL License error message which was always displayed is now fixed
+
+## 3.1.1
+- Bugfixes
+- More internal header files are now part of the API. This makes creation of custom UI easier.
+
+## 3.1.0
+- Fixed crashing on some iOS8 devices caused by AVFoundation video callback change
+- Added scanning and data extracting of US Drivers licenses. To scan USDL, use the following initialization setting:
+
+	```objective-c
+	// Set YES/NO for scanning US drivers license barcode standards (default YES, if available by license)
+	[coordinatorSettings setValue:@(NO) forKey:kPPRecognizeUSDLKey];
+	```
+
+- USDL results are returned as PPUSDLResult object. See a separate document [DriversLicenses](DriversLicenses.md) for information how to obtain data from USDL barcodes.
+
 ## 3.0.1
 - Each `PPBaseResult` object now has attached information about it's location on processed video frame.
 - Demo app updated to draw result position on image which resulted with successful scan
@@ -12,6 +42,8 @@
 - Removed deprecated methods from `PPOverlayViewController`
 - Fixed crash when Overlay those orientations which are not supported by the app. Now overlay works in that situations.
 - Completely refactored "Complex Overlay" sample. Basically, it's open sourced implementation of internal pdf417 overlay.
+- Fix for M/F values in Sex field. Now that value is standardized to 1 (male) and 2 (female)
+- Workarounds for crash with nonstandard FullName data and in internal parseSubfile method
 
 ## 2.6.1
 - Added support for Photo camera preset
@@ -21,6 +53,7 @@
 - Added a callback for obtaining the image which resulted with successful scan:
 	`cameraViewController:didMakeSuccessfulScanOnImage:`
 - Changes to API method for retrieving scanning results:
+- USDL api modified so that all date fields are in format MMDDYYYY
 
 instead of using 
 

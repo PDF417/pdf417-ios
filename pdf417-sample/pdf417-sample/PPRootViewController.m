@@ -34,7 +34,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        [self setUseModalCameraView:YES];
+
     }
     return self;
 }
@@ -48,7 +48,9 @@
         [[self startButton] setBackgroundColor:[UIColor whiteColor]];
         [[self startCustomUIButtom] setBackgroundColor:[UIColor whiteColor]];
     }
-    
+
+    [self setUseModalCameraView:YES];
+
     self.title = @"Scanning demo";
     self.versionLabel.text = [NSString stringWithFormat:@"Version: %@",[PPBarcodeCoordinator getBuildVersionString]];
 }
@@ -96,11 +98,16 @@
     
     // Create object which stores pdf417 framework settings
     NSMutableDictionary* coordinatorSettings = [[NSMutableDictionary alloc] init];
+
+    // Set YES/NO for scanning US drivers license barcode standards (default YES, if available by license)
+    [coordinatorSettings setValue:@(NO) forKey:kPPRecognizeUSDLKey];
     
-    // Set YES/NO for scanning pdf417 barcode standard (default YES)
+    // Set YES/NO for scanning pdf417 barcode standard (default YES, if available by license)
     [coordinatorSettings setValue:@(YES) forKey:kPPRecognizePdf417Key];
+
     // Set YES/NO for scanning qr code barcode standard (default NO)
-    [coordinatorSettings setValue:@(YES) forKey:kPPRecognizeQrCodeKey];
+    [coordinatorSettings setValue:@(NO) forKey:kPPRecognizeQrCodeKey];
+
     // Set YES/NO for scanning all 1D barcode standards (default NO)
     [coordinatorSettings setValue:@(NO) forKey:kPPRecognize1DBarcodesKey];
     // Set YES/NO for scanning code 128 barcode standard (default NO)
@@ -133,7 +140,7 @@
     //      kPPUseVideoPresetHighest
     //      kPPUseVideoPresetPhoto
     // Set only one.
-    [coordinatorSettings setValue:@(YES) forKey:kPPUseVideoPresetHigh];
+    [coordinatorSettings setValue:@(YES) forKey:kPPUseVideoPresetHighest];
     
     // Set this to true to scan even barcode not compliant with standards
     // For example, malformed PDF417 barcodes which were incorrectly encoded
@@ -156,6 +163,9 @@
     
     // Set this if you want to use front facing camera
     // [coordinatorSettings setValue:@(YES) forKey:kPPUseFrontFacingCamera];
+    
+    // Set the scanning region, if necessary (usually it's not)
+    // [coordinatorSettings setValue:[NSValue valueWithCGRect:CGRectMake(0.05, 0.05, 0.9, 0.9)] forKey:kPPScanningRoi];
 
     // if for some reason overlay should not autorotate
     // for example, if Navigation View controller on which Camera is presented handles rotation by itself
@@ -164,21 +174,17 @@
     // Autorotation is YES by defalt
     [coordinatorSettings setValue:@(YES) forKey:kPPOverlayShouldAutorotate];
 
-    // Set the scanning region, if necessary
-    // If you use custom overlay view controller, it's reccommended that you set scanning roi there
-    [coordinatorSettings setValue:[NSValue valueWithCGRect:CGRectMake(0.05, 0.05, 0.9, 0.9)] forKey:kPPScanningRoi];
-    
     /**
      Set your license key here.
      This license key allows setting overlay views for this application ID: net.photopay.barcode.pdf417-sample
      To test your custom overlays, please use this demo app directly or visit our website www.pdf417.mobi for commercial license
      */
-    [coordinatorSettings setValue:@"YW3B-R6SF-6NPE-TIZM-LKAT-WHIM-XMPN-FIXD"
+    [coordinatorSettings setValue:@"ZU3N-72CM-J3PA-RLQR-ANPY-MZFZ-VVHO-YPUW"
                            forKey:kPPLicenseKey];
 
     /**
      If you use enterprise license, set the owner name of the licese.
-     If you use regular per app license, leave this line commented.
+     If you use regular per app license, be sure to leave this line commented!
      */
     // [coordinatorSettings setValue:@"Owner name" forKey:kPPLicenseOwner];
 
@@ -316,10 +322,12 @@
     PPBarcodeDetailedData* barcodeDetailedData = result.rawData;
     NSString *rawInfo = [self barcodeDetailedDataString:barcodeDetailedData]; // raw data
     NSString *simplifiedRawInfo = [self simplifiedDetailedDataString:barcodeDetailedData]; // simplified method for raw data
+    
     NSString *rawResult = [NSString stringWithFormat:@"%@\n\n%@\n", rawInfo, simplifiedRawInfo];
     
     // prepare and show alert view with result
     NSString* uiMessage = [NSString stringWithFormat:@"%@\n\nRaw data:\n\n%@", message, rawResult];
+
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:type
                                                         message:uiMessage
                                                        delegate:self
@@ -336,10 +344,34 @@
 
 - (void)processUSDLResult:(PPUSDLResult*)result
          cameraViewController:(id<PPScanningViewController>)cameraViewController {
+    // this pauses scanning without dismissing camera screen
+    [cameraViewController pauseScanning];
 
+    NSString* type = @"USDL";
+
+       // prepare and show alert view with result
+    NSString* uiMessage = [NSString stringWithFormat:@"%@", [result fields]];
+
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:type
+                                                        message:uiMessage
+                                                       delegate:self
+                                              cancelButtonTitle:@"Again"
+                                              otherButtonTitles:@"Done", nil];
+
+    // We must not forget to call either
+    //  [cameraViewController resumeScanning];
+    // or
+    //  [self dismissCameraViewControllerModal:[self useModalCameraView]];
+    // in Alert View's callback
+    [alertView show];
 }
 
 - (UIImage*)drawResultLocations:(NSArray*)points onImage:(UIImage*)image {
+
+    if (image == nil) {
+        return nil;
+    }
+
     // begin a graphics context of sufficient size
 	UIGraphicsBeginImageContext(image.size);
 
@@ -378,22 +410,19 @@
             didOutputResults:(NSArray *)results {
     NSMutableArray* locations = [[NSMutableArray alloc] init];
 
-    [results enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        if ([obj isKindOfClass:[PPBaseResult class]]) {
-            PPBaseResult* result = (PPBaseResult*)obj;
-            if ([result resultType] == PPBaseResultTypeBarcode && [result isKindOfClass:[PPScanningResult class]]) {
-                PPScanningResult* scanningResult = (PPScanningResult*)result;
-                [self processScanningResult:scanningResult cameraViewController:cameraViewController];
-            }
-
-            if ([result resultType] == PPBaseResultTypeUSDL && [result isKindOfClass:[PPUSDLResult class]]) {
-                PPUSDLResult* usdlResult = (PPUSDLResult*)result;
-                [self processUSDLResult:usdlResult cameraViewController:cameraViewController];
-            }
-
-            [locations addObjectsFromArray:[result locationOnImage]];
+    for (PPBaseResult* result in results) {
+        if ([result resultType] == PPBaseResultTypeBarcode && [result isKindOfClass:[PPScanningResult class]]) {
+            PPScanningResult* scanningResult = (PPScanningResult*)result;
+            [self processScanningResult:scanningResult cameraViewController:cameraViewController];
         }
-    }];
+
+        if ([result resultType] == PPBaseResultTypeUSDL && [result isKindOfClass:[PPUSDLResult class]]) {
+            PPUSDLResult* usdlResult = (PPUSDLResult*)result;
+            [self processUSDLResult:usdlResult cameraViewController:cameraViewController];
+        }
+
+        [locations addObjectsFromArray:[result locationOnImage]];
+    };
 
     UIImage* image = [self drawResultLocations:locations onImage:self.imageView.image];
     [[self imageView] setImage:image];

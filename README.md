@@ -36,7 +36,7 @@ This document is structured as follows:
 
 CocoaPods is the recommended way to add pdf417 SDK to your project.
 
-1. Add a pod entry for PPpdf417 to your Podfile `pod 'PPpdf417',  '~> 3.1.0'`
+1. Add a pod entry for PPpdf417 to your Podfile `pod 'PPpdf417',  '~> 3.2.0'`
 2. Install the pod(s) by running `pod install`.
 3. Go to classic integration step 3.
 

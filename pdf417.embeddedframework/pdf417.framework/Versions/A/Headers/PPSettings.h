@@ -130,6 +130,9 @@ extern NSString* const kPPPresentModal;
 /** If YES, Front facing camera of the device will be used */
 extern NSString* const kPPUseFrontFacingCamera;
 
+/** Disable only near autofocus hint on iOS7+ */
+extern NSString* const kPPAutofocusFull;
+
 /** Work style */
 /** Determines if overlay view should autorotate */
 extern NSString* const kPPOverlayShouldAutorotate;
@@ -141,9 +144,11 @@ extern NSString* const kPPViewfinderMoveable;
 /** Sound file which will be played on successful recognition */
 extern NSString* const kPPSoundFile;
 
-/** Saving of images */
-/** Debug image saving */
+/** Original image (currently processed) will be passed via API */
 extern NSString* const kPPSaveBgrImageKey;
+
+/** Image which resulted with successful scan will be passed via API */
+extern NSString* const kPPSaveSuccessImageKey;
 
 
 #endif

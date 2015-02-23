@@ -25,19 +25,19 @@
 @interface PPBarcodeCoordinator : NSObject
 
 /** delegate object which will be control camera view related events */
-@property (nonatomic, assign) id<PPCameraViewDelegate> viewDelegate;
+@property (nonatomic, weak) id<PPCameraViewDelegate> viewDelegate;
 
 /** delegate object for notifying the caller on recognition results */
-@property (nonatomic, assign) id<PPBarcodeDelegate> barcodeDelegate;
+@property (nonatomic, weak) id<PPBarcodeDelegate> barcodeDelegate;
 
 /** flag indicating active recognizer */
 @property (nonatomic, assign, getter = isActive, readonly) BOOL active;
 
 /** Object which will take care of the camera */
-@property (nonatomic, retain) PPCameraManager *cameraManager;
+@property (nonatomic, strong) PPCameraManager *cameraManager;
 
 /** We need an acceleration manager object because we're interested in events regarding device movement */
-@property (nonatomic, retain) PPAccelerometerManager *accelerometerManager;
+@property (nonatomic, strong) PPAccelerometerManager *accelerometerManager;
 
 /** Orientation of toast messages */
 @property (nonatomic, assign) UIInterfaceOrientationMask hudOrientation;
@@ -46,7 +46,7 @@
  * Initializes the object in proper state
  * Should always be used for initialization
  */
-- (id)initWithSettings:(NSMutableDictionary*)inSettings;
+- (instancetype)initWithSettings:(NSMutableDictionary*)inSettings;
 
 /**
  * Method creates and shows a camera view controller
@@ -96,11 +96,6 @@
 
 /** Plays sound which marks scan success */
 - (void)playScanSuccesSound;
-
-/** Obtains user-specified license key */
-- (id)getLicenseKey;
-/** Obtains license owner for key (in case of library mode license key */
-- (id)getLicenseOwner;
 
 /** Updates the aperture size to current camera view size */
 - (void)updateApertureSize;

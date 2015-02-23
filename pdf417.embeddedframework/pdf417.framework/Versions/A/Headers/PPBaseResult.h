@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class PPResultDataSourceAdapter;
+
 /**
  Enumeration of all result types
  */
@@ -16,7 +18,8 @@ typedef NS_ENUM(NSInteger, PPBaseResultType) {
     PPBaseResultTypeUSDL,
     PPBaseResultTypePhotoPay,
     PPBaseResultTypeOCR,
-    PPBaseResultTypePhotoMath
+    PPBaseResultTypePhotoMath,
+    PPBaseResultTypeIDCard
 };
 
 /**
@@ -35,7 +38,7 @@ typedef NS_ENUM(NSInteger, PPBaseResultType) {
  4 corner points of detected result. Points are given in image coordinate system
  (0, 0) - top left point on the image, (width, height) bottom right point on the image
  */
-@property (nonatomic, retain) NSArray* locationOnImage;
+@property (nonatomic, strong) NSArray* locationOnImage;
 
 /**
  Designated initializer
@@ -48,5 +51,15 @@ typedef NS_ENUM(NSInteger, PPBaseResultType) {
  Returns the xml representation of this result
  */
 - (NSString*)xml;
+
+/**
+ Returns the attributed version of description string
+ */
+- (NSAttributedString*)attributedDescription;
+
+/**
+ Convenience method for simple display of result inside UITableView
+ */
+- (PPResultDataSourceAdapter*)getAdapter;
 
 @end

@@ -3,7 +3,7 @@
 //  PhotoPayFramework
 //
 //  Created by Jurica Cerovec on 5/28/13.
-//  Copyright (c) 2013 Racuni.hr. All rights reserved.
+//  Copyright (c) 2013 MicroBlink Ltd. All rights reserved.
 //
 
 #import <AVFoundation/AVFoundation.h>
@@ -126,7 +126,7 @@
  Overlay View's delegate object. Responsible for sending messages to PhotoPay's 
  Camera View Controller
  */
-@property (nonatomic, assign) id<PPOverlayContainerViewController> containerViewController;
+@property (nonatomic, weak) UIViewController <PPOverlayContainerViewController> *containerViewController;
 
 /**
  Scanning region in which the scaning is performed.
@@ -212,6 +212,12 @@ didFinishRecognitionWithResult:(id)result;
             didOutputResults:(NSArray*)results;
 
 /**
+ Called when a manual focus (user tapped the screen for example) will be performed at specified point.
+ */
+- (void)cameraViewController:(id<PPScanningViewController>)cameraViewController
+          willFocusAtPoint:(CGPoint)point;
+
+/**
  UIViewController's method called when a rotation to a given 
  interface orientation is about to happen
  */
@@ -279,5 +285,9 @@ didFinishRecognitionWithResult:(id)result;
  */
 - (AVCaptureVideoPreviewLayer*)getPreviewLayer;
 
+/**
+ Use from an overlay view controller implementation to notify the container view controller that the scanning region has changed
+ */
+- (void)updateScanningRegion;
 
 @end

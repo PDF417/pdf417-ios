@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 PhotoPay. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "PPApp.h"
 #import "PPBarcodeCoordinator.h"
 #import "PPSettings.h"

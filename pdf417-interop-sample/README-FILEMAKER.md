@@ -66,6 +66,8 @@ An example invocation URL is given here:
 
     "pdf417://scan?type=PDF417&text=true&fmp=true&beep=true&callback=" & GetAsURLEncoded ("fmp://" & Get (HostName) & "/" & GetAsURLEncoded(Get(FileName)) & ".fmp12?script=insert_barcode")
 
+> Important: Notice that we double-encode the file name to make sure any http characters get properly encoded for the callback URL.
+
 > Note: This is an example **Filemaker Pro** URL string for **pdf417**, some parts of it can be customised. Read the full URL schema documentation to figure out how you can adopt it to your needs.
 
 Enter the URL string as shown in the following image:

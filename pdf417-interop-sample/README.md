@@ -2,7 +2,7 @@
 
 This is a sample IOS application that demonstrates how to interact with the **pdf417** scanner application from your own application to request scanning and retrieve barcode data.
 
-> The scanner application is not yet currently available on the app store, we will add a reference to the app here once the submission process is finished.
+> You can use SDK and build your own scanner app, or use PDF417.mobi PRO app found in App Store https://itunes.apple.com/us/app/pdf417-pro-barcode-scanner/id901413059?mt=8.
 
 By using this approach you do not need to integrate the **pdf417 SDK** into your application, you request scanning by invoking a scan URL recognized by the **pdf417** application and all the scanning and processing is handled for you. The results are passed back to your application via a similar URL schema that you have to implement to receive the data.
 

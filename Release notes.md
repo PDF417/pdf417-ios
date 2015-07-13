@@ -1,5 +1,8 @@
 # Release notes
 
+## 3.2.1
+- Fixes in ITF barcode scanning
+
 ## 3.2.0
 - Improvements in USDL parsing
 

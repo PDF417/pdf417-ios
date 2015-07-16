@@ -2,22 +2,20 @@ Pod::Spec.new do |s|
   
   s.name         = "PPpdf417"
   
-  s.version      = "3.2.0"
-  s.summary      = "A small and powerful PDF417 scanning library."
+  s.version      = "4.0.0"
+  s.summary      = "A delightful component for quick and easy scanning of PDF417, and many other types of 1D and 2D barcodes."
   
   s.description  = <<-DESC
-                   pdf417.mobi framework is your first choice for scanning barcodes in your iOS or Android apps. You can use it without restrictions in your development phase and in non commercial projects. For commercial license visit our website www.pdf417.mobi.
-                   Features:
-                   
-					1. Platforms: Android and iOS
-					2. Barcode types: PDF417 (2D Barcode), QR code
-					3. Flexibility: easy to integrate API
-					4. Fully customizable UI
-					5. Working conditions: low and poor light conditions
-					6. Camera quality: low quality and low resolution mobile cameras
-					7. Perspective: can shoot at an angle
-					8. Speed: 50-500 ms - depends on device and barcode size 
-					9. Full Unicode support
+                   PDF417.mobi SDK is a delightful component for quick and easy scanning of PDF417, and many other types of 1D and 2D barcodes.
+                   The SDK offers:
+
+                                        - world leading technology for scanning **PDF417 barcodes**
+                                        - fast, accurate and robust scanning for all other barcode formats
+                                        - integrated camera management
+                                        - layered API, allowing everything from simple integration to complex UX customizations.
+                                        - lightweight and no internet connection required
+                                        - enteprise-level security standards
+                                        - data parsing from **US Drivers licenses**
                   DESC
                   
   s.homepage     = "http://pdf417.mobi"
@@ -29,49 +27,41 @@ Pod::Spec.new do |s|
   s.license      = { 
   	:type => 'commercial',
   	:text => <<-LICENSE
-		© 2011-2013 PhotoPay Ltd. All rights reserved.
+		© 2013-2015 MicroBlink Ltd. All rights reserved.
 		For full license text, visit http://pdf417.mobi/doc/PDF417license.pdf
     LICENSE
   }
 
   s.authors       = {
-  	"PhotoPay Team" => "pdf417@photopay.net",
-  	"Boris Trubić" => "boris.trubic@gmail.com",
-  	"Nenad Mikša" => "nenad.miksa@racuni.hr",
-  	"Jurica Cerovec" => "jurica.cerovec@photopay.net"
+  	"MicroBlink" => "info@microblink.com",
+  	"Boris Trubić" => "boris.trubic@microblink.com",
+  	"Nenad Mikša" => "nenad.miksa@microblink.com",
+  	"Jurica Cerovec" => "jurica.cerovec@microblink.com"
   }
 
   s.source       = { 
   	:git => 'https://github.com/PDF417/pdf417-ios.git', 
-  	:tag => 'v3.2.0'
+  	:tag => 'v4.0.0'
   }
   
-  s.preserve_paths = 'pdf417.embeddedframework/*'
+  s.preserve_paths = 'MicroBlink.embeddedframework/*'
 
   s.platform     = :ios
 
   # ――― MULTI-PLATFORM VALUES ――――――――――――――――――――――――――――――――――――――――――――――――― #
 
-  s.ios.deployment_target = '5.1.1'
-  s.ios.source_files = 'pdf417.embeddedframework/pdf417.framework/Versions/A/Headers/*.{h,m}'
-  s.ios.header_dir = 'pdf417'
-  s.ios.public_header_files = "pdf417.embeddedframework/pdf417.framework/Versions/A/Headers/*.h"
-  s.ios.resources = "pdf417.embeddedframework/pdf417.framework/Versions/A/Resources/*.strings"
+  s.ios.deployment_target = '6.0.0'
+  s.ios.source_files = 'MicroBlink.embeddedframework/MicroBlink.framework/Versions/A/Headers/*.{h}'
+  s.ios.header_dir = 'MicroBlink'
+  s.ios.public_header_files = "MicroBlink.embeddedframework/MicroBlink.framework/Versions/A/Headers/*.h"
+  s.ios.resources = "MicroBlink.embeddedframework/MicroBlink.framework/Versions/A/Resources/*.{strings,wav,png}"
   s.ios.requires_arc = false
   
   s.ios.xcconfig = { 
-  	'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/PPpdf417/pdf417.embeddedframework"'
+  	'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/PPpdf417/MicroBlink.embeddedframework"'
   }
 
-  s.ios.frameworks = 'AVFoundation', 
-  				'AudioToolbox',
-  				'CoreMedia',
-  				'CoreVideo',
-  				'CoreGraphics',
-  				'OpenGLES',
-  				'QuartzCore',
-  				'pdf417'
-  				
-  s.ios.libraries = 'z', 'iconv', 'c++'
+  s.ios.frameworks = 'MicroBlink', 'AVFoundation', 'AudioToolbox', 'CoreMedia'
+  s.ios.libraries = 'iconv', 'c++'
 
 end

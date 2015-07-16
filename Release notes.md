@@ -1,7 +1,43 @@
 # Release notes
 
-## 3.2.1
-- Fixes in ITF barcode scanning
+## 4.0.0
+
+- Series of bugfixes, performance improvements and API consolidation.
+
+- API now compatible with [other MicroBlink products](https://github.com/microblink/about).
+
+- Naming changes in API (see Transition guide)
+
+    - `PPBaseResult` renamed to `PPRecognizerResult`
+    - `PPScanningResult` is now replaced with 4 different result classes, depending on where the result comes from
+    
+        - `PPUsdlRecognizerResult` for USDL scanning
+        - `PPPdf417RecognizerResult` for PDF417 scanning
+        - `PPBarDecoderRecognizerResult` for Code39 and Code128 scanning
+        - `PPZXingRecognizerResult` for other barcode formats
+        
+- `PPScanningViewController`'s methods `resumeScanning` and `resumeScanningWithoutStateReset` merged into one `resumeScanningAndResetState:`. 
+
+    - All calls to `resumeScanning` replace with `resumeScanningAndResetState:YES`.
+    - All calls to `resumeScanningWithoutStateReset` replace with `resumeScanningAndResetState:NO`
+
+- Added direct processing API which you can use to perform OCR on UIImage objects.
+
+- Added NoCamera-sample project which shows how to use direct processing API
+
+- Added didOutputMetadata: callback method to PPOverlayViewControllers
+
+- This version uses a new license key format. If you had a license key generated prior to v4.0.0, contact us so we can regenerate the license key for you.
+
+- Each `PPRecognizerResult` now has implemented `description` method for easier debugging
+
+- Fixed orientation handling for case when overlay autorotates.
+
+- Scanning region is now a property of Scanning view controller, and overlay view controller now delegates to this property.
+
+- PPBarcodeElementType changed names:
+        From PPTextElement to PPBarcodeElementTypeText
+        From PPByteElement to PPBarcodeElementTypeByte
 
 ## 3.2.0
 - Improvements in USDL parsing

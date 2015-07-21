@@ -21,14 +21,14 @@ PDF417.mobi is part of family of SDKs developed by [MicroBlink](http://www.micro
 ## How to get started
 
 - [Download PDF417.mobi SDK](https://github.com/PDF417/pdf417-ios/archive/master.zip) and try out the included iOS sample apps
-- Read the ["Getting Started" guide](https://github.com/PDF417/pdf417-ios/wiki/Getting-started-guide) to integrate the SDK in your app(s)
+- Read the ["Getting Started" guide](https://github.com/PDF417/pdf417-ios/wiki/Getting-started) to integrate the SDK in your app(s)
 - [Generate](https://microblink.com/login?url=/customer/generatedemolicence) a **free demo license key** to start using the SDK in your app (registration required)
 - Get information about pricing and licensing od [pdf417.mobi](http://pdf417.mobi/#pricing)
 - Check out the [comprehensive documentation](http://pdf417.github.io/pdf417-ios/) of all APIs available in PDF417.mobi SDK
 
 ### Installation with CocoaPods
 
-[CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like PDF417.mobi in your projects. See the ["Getting Started" guide for more information](https://github.com/PDF417/pdf417-ios/wiki/Getting-started-guide).
+[CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like PDF417.mobi in your projects. See the ["Getting Started" guide for more information](https://github.com/PDF417/pdf417-ios/wiki/Getting-started).
 
 #### Podfile
 

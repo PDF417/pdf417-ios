@@ -36,6 +36,15 @@ typedef struct RecognitionResultImpl RecognitionResultImpl;
 - (NSDictionary *)getAllElements;
 
 /**
+ * Method returns a dictionary with all string elements found as a recognizer results. Dictionary contains NSString objects.
+ *
+ * Basically, this method performs filtering of  all elements returned by getAllElements method. Just string elements are left in the dictionary.
+ *
+ *  @return eturns a dictionary with all string elements found as a recognizer results
+ */
+- (NSDictionary *)getAllStringElements;
+
+/**
  * Returns NSData* element from allElements dictionary.
  *
  * If element exists and it's a NSData, the method will return NSData* object
@@ -141,5 +150,14 @@ typedef struct RecognitionResultImpl RecognitionResultImpl;
  *  @return PPResultDataSourceAdapter object
  */
 - (PPResultDataSourceAdapter*)getAdapter;
+
+/**
+ * Returns string representation of NSData object for passing over URLs
+ *
+ *  @param data input NSData object
+ *
+ *  @return string representation of NSData object
+ */
++ (NSString *)urlStringFromData:(NSData *)data;
 
 @end

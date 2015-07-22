@@ -81,4 +81,13 @@ typedef NS_ENUM(NSUInteger, PPZXingBarcodeType){
  */
 - (PPBarcodeDetailedData *)rawData;
 
+/**
+ * Method which gives string representation for a given PPZXingBarcodeType enum value.
+ *
+ *  @param type PPZXingBarcodeType enum value
+ *
+ *  @return String representation of a given PPZXingBarcodeType enum value.
+ */
++ (NSString *)toTypeName:(PPZXingBarcodeType)type;
+
 @end

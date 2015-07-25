@@ -23,8 +23,8 @@ PDF417.mobi is part of family of SDKs developed by [MicroBlink](http://www.micro
 - [Download PDF417.mobi SDK](https://github.com/PDF417/pdf417-ios/archive/master.zip) and try out the included iOS sample apps
 - Read the ["Getting Started" guide](https://github.com/PDF417/pdf417-ios/wiki/Getting-started) to integrate the SDK in your app(s)
 - [Generate](https://microblink.com/login?url=/customer/generatedemolicence) a **free demo license key** to start using the SDK in your app (registration required)
-- Get information about pricing and licensing od [pdf417.mobi](http://pdf417.mobi/#pricing)
-- Check out the [comprehensive documentation](http://pdf417.github.io/pdf417-ios/) of all APIs available in PDF417.mobi SDK
+- Get information about pricing and licensing of [pdf417.mobi](http://pdf417.mobi/#pricing)
+- Check out the [comprehensive documentation](http://cocoadocs.org/docsets/PPpdf417/) of all APIs available in PDF417.mobi SDK
 
 ### Installation with CocoaPods
 

@@ -16,6 +16,9 @@
 		18509B6D1B57C38500C21ACF /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 18509B6C1B57C38500C21ACF /* libiconv.dylib */; };
 		18509B871B57D2C500C21ACF /* PPCameraOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18509B7F1B57D2C500C21ACF /* PPCameraOverlayViewController.m */; };
 		18509B881B57D2C500C21ACF /* PPCameraOverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18509B801B57D2C500C21ACF /* PPCameraOverlayViewController.xib */; };
+		18627AD51B6A5097006C14C0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18627AD41B6A5097006C14C0 /* AVFoundation.framework */; };
+		18627AD71B6A509C006C14C0 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18627AD61B6A509C006C14C0 /* CoreMedia.framework */; };
+		18627AD91B6A53AE006C14C0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18627AD81B6A53AE006C14C0 /* AudioToolbox.framework */; };
 		18F23F111B57F67E00417273 /* MicroBlink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F23F051B57F67E00417273 /* MicroBlink.framework */; };
 		18F23F121B57F67E00417273 /* en.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18F23F071B57F67E00417273 /* en.strings */; };
 		18F23F131B57F67E00417273 /* PPbeep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18F23F081B57F67E00417273 /* PPbeep.wav */; };
@@ -44,6 +47,9 @@
 		18509B7E1B57D2C500C21ACF /* PPCameraOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPCameraOverlayViewController.h; sourceTree = "<group>"; };
 		18509B7F1B57D2C500C21ACF /* PPCameraOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPCameraOverlayViewController.m; sourceTree = "<group>"; };
 		18509B801B57D2C500C21ACF /* PPCameraOverlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPCameraOverlayViewController.xib; sourceTree = "<group>"; };
+		18627AD41B6A5097006C14C0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		18627AD61B6A509C006C14C0 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		18627AD81B6A53AE006C14C0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		18F23F051B57F67E00417273 /* MicroBlink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MicroBlink.framework; sourceTree = "<group>"; };
 		18F23F071B57F67E00417273 /* en.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = en.strings; sourceTree = "<group>"; };
 		18F23F081B57F67E00417273 /* PPbeep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = PPbeep.wav; sourceTree = "<group>"; };
@@ -62,6 +68,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18627AD91B6A53AE006C14C0 /* AudioToolbox.framework in Frameworks */,
+				18627AD71B6A509C006C14C0 /* CoreMedia.framework in Frameworks */,
+				18627AD51B6A5097006C14C0 /* AVFoundation.framework in Frameworks */,
 				18F23F111B57F67E00417273 /* MicroBlink.framework in Frameworks */,
 				18509B6D1B57C38500C21ACF /* libiconv.dylib in Frameworks */,
 				18509B6B1B57C37D00C21ACF /* libc++.dylib in Frameworks */,
@@ -116,6 +125,9 @@
 			isa = PBXGroup;
 			children = (
 				18F23F041B57F67E00417273 /* MicroBlink.embeddedframework */,
+				18627AD81B6A53AE006C14C0 /* AudioToolbox.framework */,
+				18627AD41B6A5097006C14C0 /* AVFoundation.framework */,
+				18627AD61B6A509C006C14C0 /* CoreMedia.framework */,
 				18509B6C1B57C38500C21ACF /* libiconv.dylib */,
 				18509B6A1B57C37D00C21ACF /* libc++.dylib */,
 			);
@@ -355,6 +367,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					../../MicroBlink.embeddedframework,
@@ -372,6 +385,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					../../MicroBlink.embeddedframework,

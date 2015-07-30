@@ -122,16 +122,12 @@
     cameraUI.allowsEditing = NO;
 
     // Shows default camera control overlay over camera preview.
-    // TODO: set this to NO and provide custom overlay
     cameraUI.showsCameraControls = YES;
 
     // set delegate
     cameraUI.delegate = self;
 
     // Show view
-    // in iOS7 (as of DP6) this shows a bugged status bar (see https://devforums.apple.com/message/861462#861462)
-    // TODO: iOS 6 should be tested
-    // iOS5 works OK, just like Facebook app
     [self presentViewController:cameraUI animated:YES completion:nil];
 }
 
@@ -174,22 +170,25 @@
     // Here you process scanning results. Scanning results are given in the array of PPRecognizerResult objects.
     // Perform your logic here
 
+    NSString *title = @"No result";
+    NSString *message = nil;
+
     for (PPRecognizerResult *result in results) {
         if ([result isKindOfClass:[PPPdf417RecognizerResult class]]) {
             PPPdf417RecognizerResult* pdf417RecognizerResult = (PPPdf417RecognizerResult*)result;
 
-            NSLog(@"PDF417 result is:");
-            NSLog(@"%@", [pdf417RecognizerResult stringUsingGuessedEncoding]);
-
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"PDF417 result"
-                                                                message: [pdf417RecognizerResult stringUsingGuessedEncoding]
-                                                               delegate:nil
-                                                      cancelButtonTitle:@"OK"
-                                                      otherButtonTitles: nil];
-
-            [alertView show];
+            title = @"PDF417 result:";
+            message = [pdf417RecognizerResult stringUsingGuessedEncoding];
         }
     };
+
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
+                                                        message:message
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles: nil];
+
+    [alertView show];
 }
 
 @end

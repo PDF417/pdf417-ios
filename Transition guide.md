@@ -1,3 +1,7 @@
+## Transition to 4.0.1
+
+- No changes
+
 ## Transition to 4.0.0
 
 - This version uses a new license key format. If you had a license key generated prior to v4.0.0 contact us so we can regenerate the license key for you.

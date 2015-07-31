@@ -18,6 +18,8 @@
  * For example, malformed PDF417 barcodes which were incorrectly encoded
  *
  * Use only if necessary because it slows down the recognition process
+ *
+ * Default: NO
  */
 @property (nonatomic) BOOL scanUncertain;
 
@@ -25,6 +27,8 @@
  * Set this to YES to scan barcodes which don't have quiet zone (white area) around it
  *
  * Use only if necessary because it slows down the recognition process
+ *
+ * Default: NO
  */
 @property (nonatomic) BOOL allowNullQuietZone;
 
@@ -33,6 +37,8 @@
  * (i.e. white barcodes on black background)
  * 
  * NOTE: this options doubles the frame processing time
+ *
+ * Default: NO
  */
 @property (nonatomic) BOOL scanInverse;
 

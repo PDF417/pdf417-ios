@@ -1,5 +1,7 @@
 <p align="center" >
-  <img src="https://raw.githubusercontent.com/wiki/pdf417/pdf417-ios/Images/Logo.png" alt="pdf417 SDK for iOS" title="pdf417 SDK for iOS">
+  <a href="http://www.pdf417.mobi">
+    <img src="https://raw.githubusercontent.com/wiki/pdf417/pdf417-ios/Images/Logo.png" alt="pdf417 SDK for iOS" title="pdf417 SDK for iOS"/>
+  </a>
 </p>
 
 [![Build Status](https://travis-ci.org/PDF417/pdf417-ios.png)](https://travis-ci.org/PDF417/pdf417-ios)
@@ -40,7 +42,7 @@ pod try PPpdf417
 
 ```ruby
 platform :ios, '6.0'
-pod 'PPpdf417', '~> 4.0.1'
+pod 'PPpdf417', '~> 4.0.2'
 ```
 
 ## Requirements

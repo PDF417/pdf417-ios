@@ -1,3 +1,7 @@
+## Transition to 4.0.2
+
+- No changes
+
 ## Transition to 4.0.1
 
 - No changes

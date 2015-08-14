@@ -1,5 +1,9 @@
 # Release notes
 
+## 4.0.2
+
+- Added support for `PPCameraPresetPhoto` camera preset. Use this if you need the same zoom level as in iOS Camera app. The resolution for video feed when using this preset is the same as devices screen resolution.
+
 ## 4.0.1
 
 - Added support for several new special cases of US Driver Licenses in USDL recognizer. 

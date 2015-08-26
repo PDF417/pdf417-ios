@@ -169,6 +169,8 @@
             PPPdf417RecognizerResult *pdf417Result = (PPPdf417RecognizerResult *)result;
             title = @"Pdf417";
             message = [pdf417Result stringUsingGuessedEncoding];
+
+            NSLog(@"%@", [[pdf417Result locationOnImage] toPointsArray]);
         }
         if ([result isKindOfClass:[PPZXingRecognizerResult class]]) {
             PPZXingRecognizerResult *zxingResult = (PPZXingRecognizerResult *)result;

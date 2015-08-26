@@ -55,4 +55,18 @@
  */
 - (BOOL)isUncertain;
 
+/**
+ * Returns the location of the barcode on the original image. The location is a quadrangle, which is defined
+ * with upper left, upper right, lower left and lower right corner.
+ *
+ * Points are given in image coordinate system
+ * (0, 0) - top left point on the image, (width, height) 
+ * bottom right point on the image
+ *
+ *  @return location of the barcode on the original image.
+ *
+ *  @note - to get the points in NSArray use PPQuadrangle's toPointsArray method.
+ */
+- (PPQuadrangle *)locationOnImage;
+
 @end

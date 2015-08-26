@@ -1,5 +1,22 @@
 # Release notes
 
+## 4.1.0
+
+- Improved video frame quality detection: now only the sharpest and the most focused frames are being processed. This improves quality of the results, but at a slight expense of processing time
+
+- Frame quality estimation can now be enabled using `PPScanSettings frameQualityEstimationMode` property:
+    - when set to `PPFrameQualityEstimationModeOn`, frame quality estimation is always enabled
+    - when set to `PPFrameQualityEstimationModeOff`, frame quality estimation is always disabled
+    - when set to `PPFrameQualityEstimationModeDefault`, frame quality estimation is enabled internally, if the SDK determines it makes sense
+
+- iOS 9 introduced new app multitasking features Split View and Slide Over. When the scanner is on screen and one of those features are used, iOS automatically pauses the Camera (this behaviour is default as of iOS 9 beta 5). This SDK version introduces new setting in `PPUISettings` class, called `cameraPausedView`, where you can define the `UIView` which is presented centered on screen when this happens.
+
+- Known issue on iOS 9: if you use Autorotate overlay feature (`settings.uiSetttings.autorotateOverlay`), present `PPScanningViewController` as a modal view controller, and support Split View iOS 9 feature, then autorotation of camera overlays isn't correct. The best way is to opt-out of Split View feature, and wait for SDK fix when iOS 9 comes out of beta.
+
+- `PPScanningViewController` methods `pauseScanning`, `isScanningPaused`, and `resumeScanningAndResetState:` should now be called only from Main thread, and they are effective immediately. E.g., if `pauseScanning` is called and there is a video frame being processed, result of processing of that frame will be discarded, if `resumeScanningAndResetState:` isn't called in the meantime.
+
+- Re-introduced property `locationOnImage` for `PPPdf417RecognizerResult` objects, which existed prior to v4.0.0. It's now a `PPQuadrangle` object, with clear properties for obtaining corner points of the barcode on the image.
+
 ## 4.0.2
 
 - Added support for `PPCameraPresetPhoto` camera preset. Use this if you need the same zoom level as in iOS Camera app. The resolution for video feed when using this preset is the same as devices screen resolution.

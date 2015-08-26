@@ -1,10 +1,14 @@
+## Transition to 4.1.0
+
+- No backwards incompatible changes. See Release notes for new features.
+
 ## Transition to 4.0.2
 
-- No changes
+- No backwards incompatible changes.
 
 ## Transition to 4.0.1
 
-- No changes
+- No backwards incompatible changes.
 
 ## Transition to 4.0.0
 

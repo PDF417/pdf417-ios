@@ -1,5 +1,10 @@
 # Release notes
 
+## 4.1.1
+
+- Added special case for scanning some British Columbia DLs
+- Stability improvements in USDL scanning
+
 ## 4.1.0
 
 - Improved video frame quality detection: now only the sharpest and the most focused frames are being processed. This improves quality of the results, but at a slight expense of processing time

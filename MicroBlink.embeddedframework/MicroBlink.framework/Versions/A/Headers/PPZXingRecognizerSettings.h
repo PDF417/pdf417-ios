@@ -18,51 +18,71 @@
 
 /**
  * Set this to YES to scan Aztec 2D barcodes
+ *
+ * Default: NO
  */
 @property (nonatomic) BOOL scanAztec;
 
 /**
  * Set this to YES to scan Code 128 1D barcodes
+ *
+ * Default: NO
  */
 @property (nonatomic) BOOL scanCode128;
 
 /**
  * Set this to YES to scan Code 39 1D barcodes
+ *
+ * Default: NO
  */
 @property (nonatomic) BOOL scanCode39;
 
 /**
  * Set this to YES to scan DataMatrix 2D barcodes
+ *
+ * Default: NO
  */
 @property (nonatomic) BOOL scanDataMatrix;
 
 /**
  * Set this to YES to scan EAN 13 barcodes
+ *
+ * Default: NO
  */
 @property (nonatomic) BOOL scanEAN13;
 
 /**
  * Set this to YES to scan EAN8 barcodes
+ *
+ * Default: NO
  */
 @property (nonatomic) BOOL scanEAN8;
 
 /**
  * Set this to YES to scan ITF barcodes
+ *
+ * Default: NO
  */
 @property (nonatomic) BOOL scanITF;
 
 /**
  * Set this to YES to scan QR barcodes
+ *
+ * Default: NO
  */
 @property (nonatomic) BOOL scanQR;
 
 /**
  * Set this to YES to scan UPCA barcodes
+ *
+ * Default: NO
  */
 @property (nonatomic) BOOL scanUPCA;
 
 /**
  * Set this to YES to scan UPCE barcodes
+ *
+ * Default: NO
  */
 @property (nonatomic) BOOL scanUPCE;
 
@@ -70,7 +90,9 @@
  * Set this to YES to allow scanning barcodes with inverted intensities
  * (i.e. white barcodes on black background)
  *
- * NOTE: this options doubles the frame processing time
+ * Default: NO
+ *
+ * @Warning: this option doubles frame processing time
  */
 @property (nonatomic) BOOL scanInverse;
 

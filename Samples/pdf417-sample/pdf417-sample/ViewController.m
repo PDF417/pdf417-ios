@@ -75,11 +75,31 @@
     // Add ZXingRecognizer setting to a list of used recognizer settings
     [settings.scanSettings addRecognizerSettings:zxingRecognizerSettings];
 
+    // To specify we want to scan USDLs, initialize USDL rcognizer settings
+    PPUsdlRecognizerSettings *usdlRecognizerSettings = [[PPUsdlRecognizerSettings alloc] init];
+
+    // Add USDL Recognizer setting to a list of used recognizer settings
+    [settings.scanSettings addRecognizerSettings:usdlRecognizerSettings];
+
     /** 4. Initialize the Scanning Coordinator object */
     
     PPCoordinator *coordinator = [[PPCoordinator alloc] initWithSettings:settings];
 
     return coordinator;
+}
+
+- (void)showCoordinatorError:(NSError *)error {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Warning"
+                                                                         message:[error localizedDescription]
+                                                                  preferredStyle:UIAlertControllerStyleAlert];
+
+    UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"OK"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:nil];
+
+    [alertController addAction:okAction];
+
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 - (IBAction)didTapScan:(id)sender {
@@ -88,15 +108,9 @@
     NSError *error;
     PPCoordinator *coordinator = [self coordinatorWithError:&error];
 
-    /** If scanning isn't supported, present an error */
+    /** If scanning isn't supported, show an error */
     if (coordinator == nil) {
-        NSString *messageString = [error localizedDescription];
-        [[[UIAlertView alloc] initWithTitle:@"Warning"
-                                    message:messageString
-                                   delegate:nil
-                          cancelButtonTitle:@"OK"
-                          otherButtonTitles:nil, nil] show];
-
+        [self showCoordinatorError:error];
         return;
     }
 
@@ -113,15 +127,9 @@
     NSError *error;
     PPCoordinator *coordinator = [self coordinatorWithError:&error];
 
-    /** If scanning isn't supported, present an error */
+    /** If scanning isn't supported, show an error */
     if (coordinator == nil) {
-        NSString *messageString = [error localizedDescription];
-        [[[UIAlertView alloc] initWithTitle:@"Warning"
-                                    message:messageString
-                                   delegate:nil
-                          cancelButtonTitle:@"OK"
-                          otherButtonTitles:nil, nil] show];
-
+        [self showCoordinatorError:error];
         return;
     }
 
@@ -156,38 +164,72 @@
 
     // Here you process scanning results. Scanning results are given in the array of PPRecognizerResult objects.
 
+    // If results are empty, continue scanning without any actions
+    if (results == nil || [results count] == 0) {
+        return;
+    }
+
     // first, pause scanning until we process all the results
     [scanningViewController pauseScanning];
 
     NSString* message;
     NSString* title;
 
+    // we prefer finding USDL results
+
+    BOOL usdlFound = false;
+
     // Collect data from the result
     for (PPRecognizerResult* result in results) {
 
-        if ([result isKindOfClass:[PPPdf417RecognizerResult class]]) {
-            PPPdf417RecognizerResult *pdf417Result = (PPPdf417RecognizerResult *)result;
-            title = @"Pdf417";
-            message = [pdf417Result stringUsingGuessedEncoding];
+        if ([result isKindOfClass:[PPUsdlRecognizerResult class]]) {
+            PPUsdlRecognizerResult *usdlResult = (PPUsdlRecognizerResult *)result;
+            title = @"USDL";
+            message = [[usdlResult getAllElements] description];
 
-            NSLog(@"%@", [[pdf417Result locationOnImage] toPointsArray]);
+            usdlFound = YES;
+            break;
         }
-        if ([result isKindOfClass:[PPZXingRecognizerResult class]]) {
-            PPZXingRecognizerResult *zxingResult = (PPZXingRecognizerResult *)result;
-            title = @"QR code";
-            message = [zxingResult stringUsingGuessedEncoding];
-        }
-
     };
 
-    // present the alert view with scanned results
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alertView show];
-}
+    // Collect other results
 
-// dismiss the scanning view controller when user presses OK.
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    if (!usdlFound) {
+        for (PPRecognizerResult* result in results) {
+            if ([result isKindOfClass:[PPZXingRecognizerResult class]]) {
+                PPZXingRecognizerResult *zxingResult = (PPZXingRecognizerResult *)result;
+
+                title = @"QR code";
+                message = [zxingResult stringUsingGuessedEncoding];
+            }
+            if ([result isKindOfClass:[PPPdf417RecognizerResult class]]) {
+                PPPdf417RecognizerResult *pdf417Result = (PPPdf417RecognizerResult *)result;
+
+                title = @"PDF417";
+                message = [pdf417Result stringUsingGuessedEncoding];
+            }
+            if ([result isKindOfClass:[PPBarDecoderRecognizerResult class]]) {
+                PPBarDecoderRecognizerResult *barDecoderResult = (PPBarDecoderRecognizerResult *)result;
+
+                title = @"BarDecoder";
+                message = [barDecoderResult stringUsingGuessedEncoding];
+            }
+        };
+    }
+
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
+                                                                             message:message
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+
+    UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"OK"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:^(UIAlertAction * _Nonnull action) {
+                                                         [self dismissViewControllerAnimated:YES completion:nil];
+                                                     }];
+
+    [alertController addAction:okAction];
+
+    [scanningViewController presentViewController:alertController animated:YES completion:nil];
 }
 
 @end

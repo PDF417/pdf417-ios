@@ -2,8 +2,8 @@
 //  AppDelegate.m
 //  pdf417-sample
 //
-//  Created by Jura on 16/07/15.
-//  Copyright (c) 2015 MicroBlink. All rights reserved.
+//  Created by Jura on 14/10/15.
+//  Copyright © 2015 MicroBlink. All rights reserved.
 //
 
 #import "AppDelegate.h"

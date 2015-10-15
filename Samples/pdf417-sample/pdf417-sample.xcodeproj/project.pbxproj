@@ -7,188 +7,191 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		18509B161B57BEE100C21ACF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18509B151B57BEE100C21ACF /* main.m */; };
-		18509B191B57BEE100C21ACF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18509B181B57BEE100C21ACF /* AppDelegate.m */; };
-		18509B1C1B57BEE100C21ACF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18509B1B1B57BEE100C21ACF /* ViewController.m */; };
-		18509B1F1B57BEE100C21ACF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18509B1D1B57BEE100C21ACF /* Main.storyboard */; };
-		18509B211B57BEE100C21ACF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18509B201B57BEE100C21ACF /* Images.xcassets */; };
-		18509B6B1B57C37D00C21ACF /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 18509B6A1B57C37D00C21ACF /* libc++.dylib */; };
-		18509B6D1B57C38500C21ACF /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 18509B6C1B57C38500C21ACF /* libiconv.dylib */; };
-		18509B871B57D2C500C21ACF /* PPCameraOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18509B7F1B57D2C500C21ACF /* PPCameraOverlayViewController.m */; };
-		18509B881B57D2C500C21ACF /* PPCameraOverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18509B801B57D2C500C21ACF /* PPCameraOverlayViewController.xib */; };
-		18627AD51B6A5097006C14C0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18627AD41B6A5097006C14C0 /* AVFoundation.framework */; };
-		18627AD71B6A509C006C14C0 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18627AD61B6A509C006C14C0 /* CoreMedia.framework */; };
-		18627AD91B6A53AE006C14C0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18627AD81B6A53AE006C14C0 /* AudioToolbox.framework */; };
-		18F23F111B57F67E00417273 /* MicroBlink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F23F051B57F67E00417273 /* MicroBlink.framework */; };
-		18F23F121B57F67E00417273 /* en.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18F23F071B57F67E00417273 /* en.strings */; };
-		18F23F131B57F67E00417273 /* PPbeep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18F23F081B57F67E00417273 /* PPbeep.wav */; };
-		18F23F141B57F67E00417273 /* torchoff.png in Resources */ = {isa = PBXBuildFile; fileRef = 18F23F091B57F67E00417273 /* torchoff.png */; };
-		18F23F151B57F67E00417273 /* torchoff@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18F23F0A1B57F67E00417273 /* torchoff@2x.png */; };
-		18F23F161B57F67E00417273 /* torchoff_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 18F23F0B1B57F67E00417273 /* torchoff_pressed.png */; };
-		18F23F171B57F67E00417273 /* torchoff_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18F23F0C1B57F67E00417273 /* torchoff_pressed@2x.png */; };
-		18F23F181B57F67E00417273 /* torchon.png in Resources */ = {isa = PBXBuildFile; fileRef = 18F23F0D1B57F67E00417273 /* torchon.png */; };
-		18F23F191B57F67E00417273 /* torchon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18F23F0E1B57F67E00417273 /* torchon@2x.png */; };
-		18F23F1A1B57F67E00417273 /* torchon_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 18F23F0F1B57F67E00417273 /* torchon_pressed.png */; };
-		18F23F1B1B57F67E00417273 /* torchon_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18F23F101B57F67E00417273 /* torchon_pressed@2x.png */; };
+		18E265EE1BCE565E00FF4871 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E265ED1BCE565E00FF4871 /* main.m */; };
+		18E265F11BCE565E00FF4871 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E265F01BCE565E00FF4871 /* AppDelegate.m */; };
+		18E265F41BCE565E00FF4871 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E265F31BCE565E00FF4871 /* ViewController.m */; };
+		18E265F71BCE565E00FF4871 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18E265F51BCE565E00FF4871 /* Main.storyboard */; };
+		18E265F91BCE565E00FF4871 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18E265F81BCE565E00FF4871 /* Assets.xcassets */; };
+		18E265FC1BCE565E00FF4871 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18E265FA1BCE565E00FF4871 /* LaunchScreen.storyboard */; };
+		18E2662D1BCE56D000FF4871 /* MicroBlink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E266211BCE56D000FF4871 /* MicroBlink.framework */; settings = {ASSET_TAGS = (); }; };
+		18E2662E1BCE56D000FF4871 /* en.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18E266231BCE56D000FF4871 /* en.strings */; settings = {ASSET_TAGS = (); }; };
+		18E2662F1BCE56D000FF4871 /* PPbeep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18E266241BCE56D000FF4871 /* PPbeep.wav */; settings = {ASSET_TAGS = (); }; };
+		18E266301BCE56D000FF4871 /* torchoff.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E266251BCE56D000FF4871 /* torchoff.png */; settings = {ASSET_TAGS = (); }; };
+		18E266311BCE56D000FF4871 /* torchoff@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E266261BCE56D000FF4871 /* torchoff@2x.png */; settings = {ASSET_TAGS = (); }; };
+		18E266321BCE56D000FF4871 /* torchoff_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E266271BCE56D000FF4871 /* torchoff_pressed.png */; settings = {ASSET_TAGS = (); }; };
+		18E266331BCE56D000FF4871 /* torchoff_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E266281BCE56D000FF4871 /* torchoff_pressed@2x.png */; settings = {ASSET_TAGS = (); }; };
+		18E266341BCE56D000FF4871 /* torchon.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E266291BCE56D000FF4871 /* torchon.png */; settings = {ASSET_TAGS = (); }; };
+		18E266351BCE56D000FF4871 /* torchon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E2662A1BCE56D000FF4871 /* torchon@2x.png */; settings = {ASSET_TAGS = (); }; };
+		18E266361BCE56D000FF4871 /* torchon_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E2662B1BCE56D000FF4871 /* torchon_pressed.png */; settings = {ASSET_TAGS = (); }; };
+		18E266371BCE56D000FF4871 /* torchon_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18E2662C1BCE56D000FF4871 /* torchon_pressed@2x.png */; settings = {ASSET_TAGS = (); }; };
+		18E266391BCE5B9600FF4871 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E266381BCE5B9600FF4871 /* libc++.tbd */; };
+		18E2663B1BCE5BBB00FF4871 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E2663A1BCE5BBB00FF4871 /* AVFoundation.framework */; };
+		18E2663D1BCE5BE100FF4871 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E2663C1BCE5BE100FF4871 /* libiconv.tbd */; };
+		18E2663F1BCE5BE700FF4871 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E2663E1BCE5BE700FF4871 /* AudioToolbox.framework */; };
+		18E266411BCE5C0A00FF4871 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E266401BCE5C0A00FF4871 /* CoreMedia.framework */; };
+		18E266471BCE5C7500FF4871 /* PPCameraOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E266451BCE5C7500FF4871 /* PPCameraOverlayViewController.m */; settings = {ASSET_TAGS = (); }; };
+		18E266481BCE5C7500FF4871 /* PPCameraOverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E266461BCE5C7500FF4871 /* PPCameraOverlayViewController.xib */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		18509B101B57BEE100C21ACF /* pdf417-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pdf417-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		18509B141B57BEE100C21ACF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18509B151B57BEE100C21ACF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		18509B171B57BEE100C21ACF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		18509B181B57BEE100C21ACF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		18509B1A1B57BEE100C21ACF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		18509B1B1B57BEE100C21ACF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		18509B1E1B57BEE100C21ACF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		18509B201B57BEE100C21ACF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		18509B6A1B57C37D00C21ACF /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
-		18509B6C1B57C38500C21ACF /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
-		18509B7E1B57D2C500C21ACF /* PPCameraOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPCameraOverlayViewController.h; sourceTree = "<group>"; };
-		18509B7F1B57D2C500C21ACF /* PPCameraOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPCameraOverlayViewController.m; sourceTree = "<group>"; };
-		18509B801B57D2C500C21ACF /* PPCameraOverlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPCameraOverlayViewController.xib; sourceTree = "<group>"; };
-		18627AD41B6A5097006C14C0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		18627AD61B6A509C006C14C0 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		18627AD81B6A53AE006C14C0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		18F23F051B57F67E00417273 /* MicroBlink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MicroBlink.framework; sourceTree = "<group>"; };
-		18F23F071B57F67E00417273 /* en.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = en.strings; sourceTree = "<group>"; };
-		18F23F081B57F67E00417273 /* PPbeep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = PPbeep.wav; sourceTree = "<group>"; };
-		18F23F091B57F67E00417273 /* torchoff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = torchoff.png; sourceTree = "<group>"; };
-		18F23F0A1B57F67E00417273 /* torchoff@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torchoff@2x.png"; sourceTree = "<group>"; };
-		18F23F0B1B57F67E00417273 /* torchoff_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = torchoff_pressed.png; sourceTree = "<group>"; };
-		18F23F0C1B57F67E00417273 /* torchoff_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torchoff_pressed@2x.png"; sourceTree = "<group>"; };
-		18F23F0D1B57F67E00417273 /* torchon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = torchon.png; sourceTree = "<group>"; };
-		18F23F0E1B57F67E00417273 /* torchon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torchon@2x.png"; sourceTree = "<group>"; };
-		18F23F0F1B57F67E00417273 /* torchon_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = torchon_pressed.png; sourceTree = "<group>"; };
-		18F23F101B57F67E00417273 /* torchon_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torchon_pressed@2x.png"; sourceTree = "<group>"; };
+		18E265E91BCE565E00FF4871 /* pdf417-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pdf417-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		18E265ED1BCE565E00FF4871 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		18E265EF1BCE565E00FF4871 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		18E265F01BCE565E00FF4871 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		18E265F21BCE565E00FF4871 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		18E265F31BCE565E00FF4871 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		18E265F61BCE565E00FF4871 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		18E265F81BCE565E00FF4871 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		18E265FB1BCE565E00FF4871 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		18E265FD1BCE565E00FF4871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18E266211BCE56D000FF4871 /* MicroBlink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MicroBlink.framework; sourceTree = "<group>"; };
+		18E266231BCE56D000FF4871 /* en.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = en.strings; sourceTree = "<group>"; };
+		18E266241BCE56D000FF4871 /* PPbeep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = PPbeep.wav; sourceTree = "<group>"; };
+		18E266251BCE56D000FF4871 /* torchoff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = torchoff.png; sourceTree = "<group>"; };
+		18E266261BCE56D000FF4871 /* torchoff@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torchoff@2x.png"; sourceTree = "<group>"; };
+		18E266271BCE56D000FF4871 /* torchoff_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = torchoff_pressed.png; sourceTree = "<group>"; };
+		18E266281BCE56D000FF4871 /* torchoff_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torchoff_pressed@2x.png"; sourceTree = "<group>"; };
+		18E266291BCE56D000FF4871 /* torchon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = torchon.png; sourceTree = "<group>"; };
+		18E2662A1BCE56D000FF4871 /* torchon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torchon@2x.png"; sourceTree = "<group>"; };
+		18E2662B1BCE56D000FF4871 /* torchon_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = torchon_pressed.png; sourceTree = "<group>"; };
+		18E2662C1BCE56D000FF4871 /* torchon_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torchon_pressed@2x.png"; sourceTree = "<group>"; };
+		18E266381BCE5B9600FF4871 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		18E2663A1BCE5BBB00FF4871 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		18E2663C1BCE5BE100FF4871 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		18E2663E1BCE5BE700FF4871 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		18E266401BCE5C0A00FF4871 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		18E266441BCE5C7500FF4871 /* PPCameraOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPCameraOverlayViewController.h; sourceTree = "<group>"; };
+		18E266451BCE5C7500FF4871 /* PPCameraOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPCameraOverlayViewController.m; sourceTree = "<group>"; };
+		18E266461BCE5C7500FF4871 /* PPCameraOverlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPCameraOverlayViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		18509B0D1B57BEE100C21ACF /* Frameworks */ = {
+		18E265E61BCE565E00FF4871 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18627AD91B6A53AE006C14C0 /* AudioToolbox.framework in Frameworks */,
-				18627AD71B6A509C006C14C0 /* CoreMedia.framework in Frameworks */,
-				18627AD51B6A5097006C14C0 /* AVFoundation.framework in Frameworks */,
-				18F23F111B57F67E00417273 /* MicroBlink.framework in Frameworks */,
-				18509B6D1B57C38500C21ACF /* libiconv.dylib in Frameworks */,
-				18509B6B1B57C37D00C21ACF /* libc++.dylib in Frameworks */,
+				18E2662D1BCE56D000FF4871 /* MicroBlink.framework in Frameworks */,
+				18E2663F1BCE5BE700FF4871 /* AudioToolbox.framework in Frameworks */,
+				18E2663B1BCE5BBB00FF4871 /* AVFoundation.framework in Frameworks */,
+				18E266411BCE5C0A00FF4871 /* CoreMedia.framework in Frameworks */,
+				18E2663D1BCE5BE100FF4871 /* libiconv.tbd in Frameworks */,
+				18E266391BCE5B9600FF4871 /* libc++.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		18509B071B57BEE100C21ACF = {
+		18E265E01BCE565E00FF4871 = {
 			isa = PBXGroup;
 			children = (
-				18509B121B57BEE100C21ACF /* pdf417-sample */,
-				18509B391B57C0A300C21ACF /* Frameworks */,
-				18509B111B57BEE100C21ACF /* Products */,
+				18E265EB1BCE565E00FF4871 /* pdf417-sample */,
+				18E2661F1BCE56C300FF4871 /* Frameworks */,
+				18E265EA1BCE565E00FF4871 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		18509B111B57BEE100C21ACF /* Products */ = {
+		18E265EA1BCE565E00FF4871 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				18509B101B57BEE100C21ACF /* pdf417-sample.app */,
+				18E265E91BCE565E00FF4871 /* pdf417-sample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		18509B121B57BEE100C21ACF /* pdf417-sample */ = {
+		18E265EB1BCE565E00FF4871 /* pdf417-sample */ = {
 			isa = PBXGroup;
 			children = (
-				18509B201B57BEE100C21ACF /* Images.xcassets */,
-				18509B171B57BEE100C21ACF /* AppDelegate.h */,
-				18509B181B57BEE100C21ACF /* AppDelegate.m */,
-				18509B1A1B57BEE100C21ACF /* ViewController.h */,
-				18509B1B1B57BEE100C21ACF /* ViewController.m */,
-				18509B6E1B57D2C500C21ACF /* Camera Overlays */,
-				18509B131B57BEE100C21ACF /* Supporting Files */,
-				18509B1D1B57BEE100C21ACF /* Main.storyboard */,
+				18E265EF1BCE565E00FF4871 /* AppDelegate.h */,
+				18E265F01BCE565E00FF4871 /* AppDelegate.m */,
+				18E265F21BCE565E00FF4871 /* ViewController.h */,
+				18E265F31BCE565E00FF4871 /* ViewController.m */,
+				18E265F51BCE565E00FF4871 /* Main.storyboard */,
+				18E265F81BCE565E00FF4871 /* Assets.xcassets */,
+				18E265FA1BCE565E00FF4871 /* LaunchScreen.storyboard */,
+				18E265FD1BCE565E00FF4871 /* Info.plist */,
+				18E266421BCE5C7500FF4871 /* Camera Overlays */,
+				18E265EC1BCE565E00FF4871 /* Supporting Files */,
 			);
 			path = "pdf417-sample";
 			sourceTree = "<group>";
 		};
-		18509B131B57BEE100C21ACF /* Supporting Files */ = {
+		18E265EC1BCE565E00FF4871 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				18509B141B57BEE100C21ACF /* Info.plist */,
-				18509B151B57BEE100C21ACF /* main.m */,
+				18E265ED1BCE565E00FF4871 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		18509B391B57C0A300C21ACF /* Frameworks */ = {
+		18E2661F1BCE56C300FF4871 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				18F23F041B57F67E00417273 /* MicroBlink.embeddedframework */,
-				18627AD81B6A53AE006C14C0 /* AudioToolbox.framework */,
-				18627AD41B6A5097006C14C0 /* AVFoundation.framework */,
-				18627AD61B6A509C006C14C0 /* CoreMedia.framework */,
-				18509B6C1B57C38500C21ACF /* libiconv.dylib */,
-				18509B6A1B57C37D00C21ACF /* libc++.dylib */,
+				18E266201BCE56D000FF4871 /* MicroBlink.embeddedframework */,
+				18E2663E1BCE5BE700FF4871 /* AudioToolbox.framework */,
+				18E2663A1BCE5BBB00FF4871 /* AVFoundation.framework */,
+				18E266401BCE5C0A00FF4871 /* CoreMedia.framework */,
+				18E2663C1BCE5BE100FF4871 /* libiconv.tbd */,
+				18E266381BCE5B9600FF4871 /* libc++.tbd */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		18509B6E1B57D2C500C21ACF /* Camera Overlays */ = {
+		18E266201BCE56D000FF4871 /* MicroBlink.embeddedframework */ = {
 			isa = PBXGroup;
 			children = (
-				18509B7D1B57D2C500C21ACF /* Simple */,
-			);
-			path = "Camera Overlays";
-			sourceTree = "<group>";
-		};
-		18509B7D1B57D2C500C21ACF /* Simple */ = {
-			isa = PBXGroup;
-			children = (
-				18509B7E1B57D2C500C21ACF /* PPCameraOverlayViewController.h */,
-				18509B7F1B57D2C500C21ACF /* PPCameraOverlayViewController.m */,
-				18509B801B57D2C500C21ACF /* PPCameraOverlayViewController.xib */,
-			);
-			path = Simple;
-			sourceTree = "<group>";
-		};
-		18F23F041B57F67E00417273 /* MicroBlink.embeddedframework */ = {
-			isa = PBXGroup;
-			children = (
-				18F23F051B57F67E00417273 /* MicroBlink.framework */,
-				18F23F061B57F67E00417273 /* Resources */,
+				18E266211BCE56D000FF4871 /* MicroBlink.framework */,
+				18E266221BCE56D000FF4871 /* Resources */,
 			);
 			name = MicroBlink.embeddedframework;
 			path = ../../MicroBlink.embeddedframework;
 			sourceTree = "<group>";
 		};
-		18F23F061B57F67E00417273 /* Resources */ = {
+		18E266221BCE56D000FF4871 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				18F23F071B57F67E00417273 /* en.strings */,
-				18F23F081B57F67E00417273 /* PPbeep.wav */,
-				18F23F091B57F67E00417273 /* torchoff.png */,
-				18F23F0A1B57F67E00417273 /* torchoff@2x.png */,
-				18F23F0B1B57F67E00417273 /* torchoff_pressed.png */,
-				18F23F0C1B57F67E00417273 /* torchoff_pressed@2x.png */,
-				18F23F0D1B57F67E00417273 /* torchon.png */,
-				18F23F0E1B57F67E00417273 /* torchon@2x.png */,
-				18F23F0F1B57F67E00417273 /* torchon_pressed.png */,
-				18F23F101B57F67E00417273 /* torchon_pressed@2x.png */,
+				18E266231BCE56D000FF4871 /* en.strings */,
+				18E266241BCE56D000FF4871 /* PPbeep.wav */,
+				18E266251BCE56D000FF4871 /* torchoff.png */,
+				18E266261BCE56D000FF4871 /* torchoff@2x.png */,
+				18E266271BCE56D000FF4871 /* torchoff_pressed.png */,
+				18E266281BCE56D000FF4871 /* torchoff_pressed@2x.png */,
+				18E266291BCE56D000FF4871 /* torchon.png */,
+				18E2662A1BCE56D000FF4871 /* torchon@2x.png */,
+				18E2662B1BCE56D000FF4871 /* torchon_pressed.png */,
+				18E2662C1BCE56D000FF4871 /* torchon_pressed@2x.png */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		18E266421BCE5C7500FF4871 /* Camera Overlays */ = {
+			isa = PBXGroup;
+			children = (
+				18E266431BCE5C7500FF4871 /* Simple */,
+			);
+			path = "Camera Overlays";
+			sourceTree = "<group>";
+		};
+		18E266431BCE5C7500FF4871 /* Simple */ = {
+			isa = PBXGroup;
+			children = (
+				18E266441BCE5C7500FF4871 /* PPCameraOverlayViewController.h */,
+				18E266451BCE5C7500FF4871 /* PPCameraOverlayViewController.m */,
+				18E266461BCE5C7500FF4871 /* PPCameraOverlayViewController.xib */,
+			);
+			path = Simple;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		18509B0F1B57BEE100C21ACF /* pdf417-sample */ = {
+		18E265E81BCE565E00FF4871 /* pdf417-sample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 18509B331B57BEE100C21ACF /* Build configuration list for PBXNativeTarget "pdf417-sample" */;
+			buildConfigurationList = 18E266161BCE565F00FF4871 /* Build configuration list for PBXNativeTarget "pdf417-sample" */;
 			buildPhases = (
-				18509B0C1B57BEE100C21ACF /* Sources */,
-				18509B0D1B57BEE100C21ACF /* Frameworks */,
-				18509B0E1B57BEE100C21ACF /* Resources */,
+				18E265E51BCE565E00FF4871 /* Sources */,
+				18E265E61BCE565E00FF4871 /* Frameworks */,
+				18E265E71BCE565E00FF4871 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -196,24 +199,24 @@
 			);
 			name = "pdf417-sample";
 			productName = "pdf417-sample";
-			productReference = 18509B101B57BEE100C21ACF /* pdf417-sample.app */;
+			productReference = 18E265E91BCE565E00FF4871 /* pdf417-sample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		18509B081B57BEE100C21ACF /* Project object */ = {
+		18E265E11BCE565E00FF4871 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = MicroBlink;
 				TargetAttributes = {
-					18509B0F1B57BEE100C21ACF = {
-						CreatedOnToolsVersion = 6.4;
+					18E265E81BCE565E00FF4871 = {
+						CreatedOnToolsVersion = 7.0.1;
 					};
 				};
 			};
-			buildConfigurationList = 18509B0B1B57BEE100C21ACF /* Build configuration list for PBXProject "pdf417-sample" */;
+			buildConfigurationList = 18E265E41BCE565E00FF4871 /* Build configuration list for PBXProject "pdf417-sample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -221,66 +224,75 @@
 				en,
 				Base,
 			);
-			mainGroup = 18509B071B57BEE100C21ACF;
-			productRefGroup = 18509B111B57BEE100C21ACF /* Products */;
+			mainGroup = 18E265E01BCE565E00FF4871;
+			productRefGroup = 18E265EA1BCE565E00FF4871 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				18509B0F1B57BEE100C21ACF /* pdf417-sample */,
+				18E265E81BCE565E00FF4871 /* pdf417-sample */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		18509B0E1B57BEE100C21ACF /* Resources */ = {
+		18E265E71BCE565E00FF4871 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18F23F1A1B57F67E00417273 /* torchon_pressed.png in Resources */,
-				18F23F191B57F67E00417273 /* torchon@2x.png in Resources */,
-				18509B881B57D2C500C21ACF /* PPCameraOverlayViewController.xib in Resources */,
-				18509B1F1B57BEE100C21ACF /* Main.storyboard in Resources */,
-				18F23F141B57F67E00417273 /* torchoff.png in Resources */,
-				18509B211B57BEE100C21ACF /* Images.xcassets in Resources */,
-				18F23F131B57F67E00417273 /* PPbeep.wav in Resources */,
-				18F23F171B57F67E00417273 /* torchoff_pressed@2x.png in Resources */,
-				18F23F1B1B57F67E00417273 /* torchon_pressed@2x.png in Resources */,
-				18F23F121B57F67E00417273 /* en.strings in Resources */,
-				18F23F151B57F67E00417273 /* torchoff@2x.png in Resources */,
-				18F23F181B57F67E00417273 /* torchon.png in Resources */,
-				18F23F161B57F67E00417273 /* torchoff_pressed.png in Resources */,
+				18E266361BCE56D000FF4871 /* torchon_pressed.png in Resources */,
+				18E266351BCE56D000FF4871 /* torchon@2x.png in Resources */,
+				18E266481BCE5C7500FF4871 /* PPCameraOverlayViewController.xib in Resources */,
+				18E265FC1BCE565E00FF4871 /* LaunchScreen.storyboard in Resources */,
+				18E266371BCE56D000FF4871 /* torchon_pressed@2x.png in Resources */,
+				18E2662E1BCE56D000FF4871 /* en.strings in Resources */,
+				18E266331BCE56D000FF4871 /* torchoff_pressed@2x.png in Resources */,
+				18E266301BCE56D000FF4871 /* torchoff.png in Resources */,
+				18E2662F1BCE56D000FF4871 /* PPbeep.wav in Resources */,
+				18E265F91BCE565E00FF4871 /* Assets.xcassets in Resources */,
+				18E265F71BCE565E00FF4871 /* Main.storyboard in Resources */,
+				18E266311BCE56D000FF4871 /* torchoff@2x.png in Resources */,
+				18E266321BCE56D000FF4871 /* torchoff_pressed.png in Resources */,
+				18E266341BCE56D000FF4871 /* torchon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		18509B0C1B57BEE100C21ACF /* Sources */ = {
+		18E265E51BCE565E00FF4871 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18509B1C1B57BEE100C21ACF /* ViewController.m in Sources */,
-				18509B191B57BEE100C21ACF /* AppDelegate.m in Sources */,
-				18509B871B57D2C500C21ACF /* PPCameraOverlayViewController.m in Sources */,
-				18509B161B57BEE100C21ACF /* main.m in Sources */,
+				18E266471BCE5C7500FF4871 /* PPCameraOverlayViewController.m in Sources */,
+				18E265F41BCE565E00FF4871 /* ViewController.m in Sources */,
+				18E265F11BCE565E00FF4871 /* AppDelegate.m in Sources */,
+				18E265EE1BCE565E00FF4871 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		18509B1D1B57BEE100C21ACF /* Main.storyboard */ = {
+		18E265F51BCE565E00FF4871 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				18509B1E1B57BEE100C21ACF /* Base */,
+				18E265F61BCE565E00FF4871 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		18E265FA1BCE565E00FF4871 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18E265FB1BCE565E00FF4871 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		18509B311B57BEE100C21ACF /* Debug */ = {
+		18E266141BCE565F00FF4871 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -299,8 +311,10 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = ../../MicroBlink.embeddedframework;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -309,14 +323,13 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -324,7 +337,7 @@
 			};
 			name = Debug;
 		};
-		18509B321B57BEE100C21ACF /* Release */ = {
+		18E266151BCE565F00FF4871 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -343,9 +356,9 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = ../../MicroBlink.embeddedframework;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -354,7 +367,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -362,64 +375,50 @@
 			};
 			name = Release;
 		};
-		18509B341B57BEE100C21ACF /* Debug */ = {
+		18E266171BCE565F00FF4871 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					../../MicroBlink.embeddedframework,
-				);
 				INFOPLIST_FILE = "pdf417-sample/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.microblink.pdf417-sample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		18509B351B57BEE100C21ACF /* Release */ = {
+		18E266181BCE565F00FF4871 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					../../MicroBlink.embeddedframework,
-				);
 				INFOPLIST_FILE = "pdf417-sample/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.microblink.pdf417-sample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		18509B0B1B57BEE100C21ACF /* Build configuration list for PBXProject "pdf417-sample" */ = {
+		18E265E41BCE565E00FF4871 /* Build configuration list for PBXProject "pdf417-sample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				18509B311B57BEE100C21ACF /* Debug */,
-				18509B321B57BEE100C21ACF /* Release */,
+				18E266141BCE565F00FF4871 /* Debug */,
+				18E266151BCE565F00FF4871 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		18509B331B57BEE100C21ACF /* Build configuration list for PBXNativeTarget "pdf417-sample" */ = {
+		18E266161BCE565F00FF4871 /* Build configuration list for PBXNativeTarget "pdf417-sample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				18509B341B57BEE100C21ACF /* Debug */,
-				18509B351B57BEE100C21ACF /* Release */,
+				18E266171BCE565F00FF4871 /* Debug */,
+				18E266181BCE565F00FF4871 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 18509B081B57BEE100C21ACF /* Project object */;
+	rootObject = 18E265E11BCE565E00FF4871 /* Project object */;
 }

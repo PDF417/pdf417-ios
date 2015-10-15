@@ -1,5 +1,13 @@
 # Release notes
 
+## 4.2.0
+
+- Added bitcode support for Xcode 7
+
+- Updated USDL parsing. Added better handling of FullName, FullAddress, Height and Weight of cardholder. Added full support for Magnetic PDF417 standard. 
+
+- Small performance improvements in iOS camera management.
+
 ## 4.1.1
 
 - Added special case for scanning some British Columbia DLs

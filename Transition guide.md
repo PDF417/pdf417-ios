@@ -1,3 +1,12 @@
+## Transition to 4.2.0
+
+- If you're using Xcode 7, replace all .dylib libraries with .tbt libraries
+
+- In USDL keys:
+
+    - `kPPAamvaVersionNumber` key was renamed to `kPPStandardVersionNumber`
+    - `kPPDocumentType` was added to distinguish between AAMVA, compact and magnetic PDF417 standards.
+
 ## Transition to 4.1.1
 
 - No backwards incompatible changes.

@@ -11,8 +11,9 @@
 		1807C12F1AEF789700469E61 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1807C12E1AEF789700469E61 /* AppDelegate.m */; };
 		1807C1321AEF789700469E61 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1807C1311AEF789700469E61 /* ViewController.m */; };
 		1807C1371AEF789700469E61 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1807C1361AEF789700469E61 /* Images.xcassets */; };
-		1807C16B1AEF79A000469E61 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1807C16A1AEF79A000469E61 /* libc++.dylib */; };
 		1807C16C1AEF79BA00469E61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1807C1331AEF789700469E61 /* Main.storyboard */; };
+		185C08511BCFE68F00E49FF9 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 185C08501BCFE68F00E49FF9 /* libc++.tbd */; };
+		185C08531BCFE69300E49FF9 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 185C08521BCFE69300E49FF9 /* libiconv.tbd */; };
 		18627ADB1B6A5445006C14C0 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18627ADA1B6A5445006C14C0 /* CoreMedia.framework */; };
 		18627ADD1B6A544B006C14C0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18627ADC1B6A544B006C14C0 /* AVFoundation.framework */; };
 		18627ADF1B6A544F006C14C0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18627ADE1B6A544F006C14C0 /* AudioToolbox.framework */; };
@@ -27,7 +28,6 @@
 		18F23F3A1B59510E00417273 /* torchon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18F23F2F1B59510E00417273 /* torchon@2x.png */; };
 		18F23F3B1B59510E00417273 /* torchon_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 18F23F301B59510E00417273 /* torchon_pressed.png */; };
 		18F23F3C1B59510E00417273 /* torchon_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18F23F311B59510E00417273 /* torchon_pressed@2x.png */; };
-		18F23F3E1B59542D00417273 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F23F3D1B59542D00417273 /* libiconv.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +40,8 @@
 		1807C1311AEF789700469E61 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		1807C1341AEF789700469E61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1807C1361AEF789700469E61 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		1807C16A1AEF79A000469E61 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		185C08501BCFE68F00E49FF9 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		185C08521BCFE69300E49FF9 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		18627ADA1B6A5445006C14C0 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		18627ADC1B6A544B006C14C0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		18627ADE1B6A544F006C14C0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -55,7 +56,6 @@
 		18F23F2F1B59510E00417273 /* torchon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torchon@2x.png"; sourceTree = "<group>"; };
 		18F23F301B59510E00417273 /* torchon_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = torchon_pressed.png; sourceTree = "<group>"; };
 		18F23F311B59510E00417273 /* torchon_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "torchon_pressed@2x.png"; sourceTree = "<group>"; };
-		18F23F3D1B59542D00417273 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,12 +63,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				185C08531BCFE69300E49FF9 /* libiconv.tbd in Frameworks */,
+				185C08511BCFE68F00E49FF9 /* libc++.tbd in Frameworks */,
 				18627ADF1B6A544F006C14C0 /* AudioToolbox.framework in Frameworks */,
 				18627ADD1B6A544B006C14C0 /* AVFoundation.framework in Frameworks */,
 				18627ADB1B6A5445006C14C0 /* CoreMedia.framework in Frameworks */,
 				18F23F321B59510E00417273 /* MicroBlink.framework in Frameworks */,
-				18F23F3E1B59542D00417273 /* libiconv.dylib in Frameworks */,
-				1807C16B1AEF79A000469E61 /* libc++.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,8 +122,8 @@
 				18627ADE1B6A544F006C14C0 /* AudioToolbox.framework */,
 				18627ADC1B6A544B006C14C0 /* AVFoundation.framework */,
 				18627ADA1B6A5445006C14C0 /* CoreMedia.framework */,
-				1807C16A1AEF79A000469E61 /* libc++.dylib */,
-				18F23F3D1B59542D00417273 /* libiconv.dylib */,
+				185C08521BCFE69300E49FF9 /* libiconv.tbd */,
+				185C08501BCFE68F00E49FF9 /* libc++.tbd */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -341,7 +341,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					../../MicroBlink.embeddedframework,
@@ -358,7 +357,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					../../MicroBlink.embeddedframework,

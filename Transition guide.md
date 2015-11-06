@@ -1,3 +1,9 @@
+## Transition to 4.2.1
+
+- Added new callback method to `PPScanDelegate` which is called when license key is invalid: `scanningViewController:invalidLicenseKeyWithError:`
+
+- Previously, this error was returned in `scanningViewController:didFindError` (although not in all situations), so if you handled the error in that callback, switch to the new one.
+
 ## Transition to 4.2.0
 
 - If you're using Xcode 7, replace all .dylib libraries with .tbt libraries

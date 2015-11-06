@@ -1,5 +1,9 @@
 # Release notes
 
+## 4.2.1
+
+- Added new callback method to `PPScanDelegate` which is called when license key is invalid: `scanningViewController:invalidLicenseKeyWithError:`
+
 ## 4.2.0
 
 - Added bitcode support for Xcode 7

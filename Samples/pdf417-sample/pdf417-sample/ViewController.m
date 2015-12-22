@@ -57,7 +57,7 @@
     settings.licenseSettings.licenseKey = @"YXH25YNJ-CV7SNCDH-JWBG7IUV-6E5UYDUG-GQYAGQ2Z-EDEPPGKJ-O5KAQRDA-ID2NNNJI";
 
 
-    /** 
+    /**
      * 3. Set up what is being scanned. See detailed guides for specific use cases.
      * Here's an example for initializing PDF417 scanning
      */
@@ -116,6 +116,9 @@
 
     /** Allocate and present the scanning view controller */
     UIViewController<PPScanningViewController>* scanningViewController = [coordinator cameraViewControllerWithDelegate:self];
+
+    scanningViewController.autorotate = YES;
+    scanningViewController.supportedOrientations = UIInterfaceOrientationMaskAllButUpsideDown;
 
     /** You can use other presentation methods as well */
     [self presentViewController:scanningViewController animated:YES completion:nil];
@@ -185,7 +188,7 @@
         if ([result isKindOfClass:[PPUsdlRecognizerResult class]]) {
             PPUsdlRecognizerResult *usdlResult = (PPUsdlRecognizerResult *)result;
             title = @"USDL";
-            message = [[usdlResult getAllElements] description];
+            message = [[usdlResult getAllStringElements] description];
 
             usdlFound = YES;
             break;

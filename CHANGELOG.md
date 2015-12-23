@@ -1,5 +1,16 @@
 # Release notes
 
+## 4.2.2
+
+- Fixed several issues in USDL parsing
+        - implemented special cases for barcodes which don't have keys according to the AAMVA version written in the barcode
+        - implemented heuristics for extraction of firstName, middleName, lastName, address, and other fields, if they can be determined based on the other fields.
+
+- Bugfixes and tweaks in camera management code
+        - fixed potential deadlock when multiple instances of `PPCoordinator` objects are instantiated.
+        - exiting from the scanning when user presses "cancel" button is now faster
+        - fixed race condition which potentially crashed the scanner when user exited and entered camera screen consecutively very fast.
+
 ## 4.2.1
 
 - Added new callback method to `PPScanDelegate` which is called when license key is invalid: `scanningViewController:invalidLicenseKeyWithError:`

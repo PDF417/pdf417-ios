@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   
   s.name        = "PPpdf417"
-  s.version     = "4.2.1"
+  s.version     = "4.2.2"
   s.summary     = "A delightful component for barcode scanning"
   s.homepage    = "http://pdf417.mobi"
   
@@ -35,11 +35,11 @@ Pod::Spec.new do |s|
   s.authors     = {
         "MicroBlink" => "info@microblink.com",
         "Jurica Cerovec" => "jurica.cerovec@microblink.com"
-        }
+  }
 
   s.source      = { 
         :git => 'https://github.com/PDF417/pdf417-ios.git', 
-        :tag => 'v4.2.1'
+        :tag => 'v4.2.2'
   }
   
   s.preserve_paths = 'MicroBlink.embeddedframework/*'
@@ -59,7 +59,7 @@ Pod::Spec.new do |s|
         'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/PPpdf417/MicroBlink.embeddedframework"'
   }
 
-  s.ios.frameworks = 'MicroBlink', 'AVFoundation', 'AudioToolbox', 'CoreMedia'
-  s.ios.libraries = 'iconv', 'c++'
+  s.ios.frameworks = 'MicroBlink', 'AVFoundation', 'AudioToolbox', 'CoreMedia', 'AssetsLibrary', 'Accelerate'
+  s.ios.libraries = 'c++', 'iconv'
 
 end

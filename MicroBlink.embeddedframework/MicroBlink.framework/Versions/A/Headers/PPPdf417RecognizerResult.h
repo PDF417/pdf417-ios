@@ -33,7 +33,7 @@
  *
  *  @return created string, or nil if encoding couldn't be found.
  */
-- (NSString*)stringUsingGuessedEncoding;
+- (NSString *)stringUsingGuessedEncoding;
 
 /**
  * Retrieves string content of the scanned data using given encoding.
@@ -42,7 +42,7 @@
  *
  *  @return String created from data property, using given encoding
  */
-- (NSString*)stringUsingEncoding:(NSStringEncoding)encoding;
+- (NSString *)stringUsingEncoding:(NSStringEncoding)encoding;
 
 /**
  * Raw barcode detailed result

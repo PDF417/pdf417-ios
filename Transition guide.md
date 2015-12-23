@@ -1,3 +1,7 @@
+## Transition to 4.2.2
+
+- No backwards incompatible changes.
+
 ## Transition to 4.2.1
 
 - Added new callback method to `PPScanDelegate` which is called when license key is invalid: `scanningViewController:invalidLicenseKeyWithError:`

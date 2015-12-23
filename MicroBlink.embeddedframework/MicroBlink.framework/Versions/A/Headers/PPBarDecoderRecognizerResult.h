@@ -56,7 +56,7 @@ typedef NS_ENUM(NSUInteger, PPBarDecoderBarcodeType){
  *
  *  @return created string, or nil if encoding couldn't be found.
  */
-- (NSString*)stringUsingGuessedEncoding;
+- (NSString *)stringUsingGuessedEncoding;
 
 /**
  * Retrieves string content of the scanned data using given encoding.
@@ -65,7 +65,7 @@ typedef NS_ENUM(NSUInteger, PPBarDecoderBarcodeType){
  *
  *  @return String created from data property, using given encoding
  */
-- (NSString*)stringUsingEncoding:(NSStringEncoding)encoding;
+- (NSString *)stringUsingEncoding:(NSStringEncoding)encoding;
 
 /**
  * Raw barcode detailed result
@@ -89,7 +89,7 @@ typedef NS_ENUM(NSUInteger, PPBarDecoderBarcodeType){
  *
  *  @return created string, or nil if encoding couldn't be found.
  */
-- (NSString*)extendedStringUsingGuessedEncoding;
+- (NSString *)extendedStringUsingGuessedEncoding;
 
 /**
  * Retrieves string content of the extended scanned data using given encoding.
@@ -98,7 +98,7 @@ typedef NS_ENUM(NSUInteger, PPBarDecoderBarcodeType){
  *
  *  @return String created from extendedData property, using given encoding
  */
-- (NSString*)extendedStringUsingEncoding:(NSStringEncoding)encoding;
+- (NSString *)extendedStringUsingEncoding:(NSStringEncoding)encoding;
 
 /**
  * Extended Raw barcode detailed result

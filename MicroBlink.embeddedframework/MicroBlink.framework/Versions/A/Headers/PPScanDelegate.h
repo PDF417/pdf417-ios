@@ -96,12 +96,12 @@
     invalidLicenseKeyWithError:(NSError*)error;
 
 /**
- * Called when Scanning library wants to display help screens. This can happen when the user press
+ * Called when Scanning library will display help. This can happen when the user presses
  * help button on scanning UI, or on first run of the application
  *
  *  @param scanningViewController scanningViewController Scanning view controller responsible for scanning
  */
-- (void)scanningViewControllerShouldPresentHelp:(UIViewController<PPScanningViewController>*)scanningViewController;
+- (void)scanningViewControllerWillPresentHelp:(UIViewController<PPScanningViewController>*)scanningViewController;
 
 /**
  * Called when Scanning library requires the display of more info view

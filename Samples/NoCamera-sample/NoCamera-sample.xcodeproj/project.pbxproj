@@ -12,6 +12,9 @@
 		1807C1321AEF789700469E61 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1807C1311AEF789700469E61 /* ViewController.m */; };
 		1807C1371AEF789700469E61 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1807C1361AEF789700469E61 /* Images.xcassets */; };
 		1807C16C1AEF79BA00469E61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1807C1331AEF789700469E61 /* Main.storyboard */; };
+		181339051C2AF4FA00A8D56A /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181339041C2AF4FA00A8D56A /* Accelerate.framework */; };
+		181339071C2AF50600A8D56A /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181339061C2AF50600A8D56A /* AssetsLibrary.framework */; };
+		1813390A1C2AF57200A8D56A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181339081C2AF57200A8D56A /* LaunchScreen.xib */; };
 		185C08511BCFE68F00E49FF9 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 185C08501BCFE68F00E49FF9 /* libc++.tbd */; };
 		185C08531BCFE69300E49FF9 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 185C08521BCFE69300E49FF9 /* libiconv.tbd */; };
 		18627ADB1B6A5445006C14C0 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18627ADA1B6A5445006C14C0 /* CoreMedia.framework */; };
@@ -40,6 +43,9 @@
 		1807C1311AEF789700469E61 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		1807C1341AEF789700469E61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1807C1361AEF789700469E61 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		181339041C2AF4FA00A8D56A /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		181339061C2AF50600A8D56A /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		181339091C2AF57200A8D56A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		185C08501BCFE68F00E49FF9 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		185C08521BCFE69300E49FF9 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		18627ADA1B6A5445006C14C0 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
@@ -65,8 +71,10 @@
 			files = (
 				185C08531BCFE69300E49FF9 /* libiconv.tbd in Frameworks */,
 				185C08511BCFE68F00E49FF9 /* libc++.tbd in Frameworks */,
+				181339051C2AF4FA00A8D56A /* Accelerate.framework in Frameworks */,
 				18627ADF1B6A544F006C14C0 /* AudioToolbox.framework in Frameworks */,
 				18627ADD1B6A544B006C14C0 /* AVFoundation.framework in Frameworks */,
+				181339071C2AF50600A8D56A /* AssetsLibrary.framework in Frameworks */,
 				18627ADB1B6A5445006C14C0 /* CoreMedia.framework in Frameworks */,
 				18F23F321B59510E00417273 /* MicroBlink.framework in Frameworks */,
 			);
@@ -101,6 +109,7 @@
 				1807C1311AEF789700469E61 /* ViewController.m */,
 				1807C1331AEF789700469E61 /* Main.storyboard */,
 				1807C1361AEF789700469E61 /* Images.xcassets */,
+				181339081C2AF57200A8D56A /* LaunchScreen.xib */,
 				1807C1291AEF789700469E61 /* Supporting Files */,
 			);
 			path = "NoCamera-sample";
@@ -119,7 +128,9 @@
 			isa = PBXGroup;
 			children = (
 				18F23F251B59510E00417273 /* MicroBlink.embeddedframework */,
+				181339041C2AF4FA00A8D56A /* Accelerate.framework */,
 				18627ADE1B6A544F006C14C0 /* AudioToolbox.framework */,
+				181339061C2AF50600A8D56A /* AssetsLibrary.framework */,
 				18627ADC1B6A544B006C14C0 /* AVFoundation.framework */,
 				18627ADA1B6A5445006C14C0 /* CoreMedia.framework */,
 				185C08521BCFE69300E49FF9 /* libiconv.tbd */,
@@ -181,7 +192,7 @@
 		1807C11E1AEF789700469E61 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = MicroBlink;
 				TargetAttributes = {
 					1807C1251AEF789700469E61 = {
@@ -221,6 +232,7 @@
 				18F23F351B59510E00417273 /* torchoff.png in Resources */,
 				18F23F341B59510E00417273 /* PPbeep.wav in Resources */,
 				1807C1371AEF789700469E61 /* Images.xcassets in Resources */,
+				1813390A1C2AF57200A8D56A /* LaunchScreen.xib in Resources */,
 				18F23F361B59510E00417273 /* torchoff@2x.png in Resources */,
 				18F23F371B59510E00417273 /* torchoff_pressed.png in Resources */,
 				18F23F391B59510E00417273 /* torchon.png in Resources */,
@@ -251,6 +263,14 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
+		181339081C2AF57200A8D56A /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				181339091C2AF57200A8D56A /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -275,6 +295,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -340,14 +361,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					../../MicroBlink.embeddedframework,
 				);
 				INFOPLIST_FILE = "NoCamera-sample/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.microblink.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -356,14 +377,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					../../MicroBlink.embeddedframework,
 				);
 				INFOPLIST_FILE = "NoCamera-sample/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.microblink.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

@@ -59,7 +59,7 @@
         
         `PPZXingRecognizerResult` which holds the results of ZXing scanning
         
-    - `PPScanningResult` had getters for `data`, `rawData`, `uncertain` and `type` properties. Each new class has equivalent `data`, `rawData` and `uncertain` properties. New classes (except PDF417 and USDL) have `barcodeType` property with the same function. PDF417 and USDL classes don't have type since they are always obtained by scanning PFDF417 barcode.
+    - `PPScanningResult` had getters for `data`, `rawData`, `uncertain` and `type` properties. Each new class has equivalent `data`, `rawData` and `uncertain` properties. New classes (except PDF417 and USDL) have `barcodeType` property with the same function. PDF417 and USDL classes don't have type since they are always obtained by scanning PFDF417 barcode. To get data in `PPUsdlRecognizerResult`, you will need to do `NSString* message = [[result getAllStringElements] valueForKey:@"pdf417"];`, assuming that `result` is the `PPUsdlRecognizerResult` instance.
 
     - For easier integration new classes have new getters `stringUsingGuessedEncoding` which guesses the encoding string inside barcode data. Use this if you know data is textual, but you don't know the exact encoding of the string. 
     	

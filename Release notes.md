@@ -1,5 +1,29 @@
 # Release notes
 
+## 4.3.0
+
+- Added better integration for Swift
+
+        - Added Nullability Attributes
+        - Added modulemap file
+        - Added sample app in Swift
+
+- Refactored PPMetadataSettings
+
+        - Added debug metadata settings for debugging payslip detection and image processing
+        - `successfulScanFrame` renamed to `successfulFrame`
+        - `currentVideoFrame` renamed to `currentFrame`
+
+- Exposed `PPModernViewfinderOverlaySubview` overlay subview class in public headers. This enables you to more easily recreate default overlay UI in your custom Overlay view controllers.
+
+- in `PPCoordinator`, renamed method `isScanningUnsupported:` to `isScanningUnsupportedForCameraType:error:`. This was introduced to provide more granularity in checking if scanning is supported.
+
+- `PPOverlayViewController`changed the way Overlay Subviews are added to the view hierarchy. Instead of calling `addOverlaySubview:` (which automatically added a view to view hierarachy), you now need to call `registerOverlaySubview:` (which registers subview for scanning events), and manually add subview to view hierarchy using `addSubview`: method. This change gives you more flexibility for adding views and managing autolayout and autoresizing masks.
+
+- Localization Macros MB_LOCALIZED and MB_LOCALIZED_FORMAT can now be overriden in your app to provide completely custom localization mechanisms.
+
+- Increased speed of scanning cancellation when Cancel button is pressed.
+
 ## 4.2.2
 
 - Fixed several issues in USDL parsing

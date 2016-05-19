@@ -39,7 +39,7 @@ Pod::Spec.new do |s|
 
   s.source      = { 
         :git => 'https://github.com/PDF417/pdf417-ios.git', 
-        :tag => 'v4.2.2'
+        :tag => "v4.2.2"
   }
   
   s.preserve_paths = 'MicroBlink.embeddedframework/*'
@@ -48,18 +48,11 @@ Pod::Spec.new do |s|
 
   # ――― MULTI-PLATFORM VALUES ――――――――――――――――――――――――――――――――――――――――――――――――― #
 
-  s.ios.deployment_target = '6.0'
-  s.ios.source_files = 'MicroBlink.embeddedframework/MicroBlink.framework/Versions/A/Headers/*.{h}'
-  s.ios.header_dir = 'MicroBlink'
-  s.ios.public_header_files = "MicroBlink.embeddedframework/MicroBlink.framework/Versions/A/Headers/*.h"
-  s.ios.resources = "MicroBlink.embeddedframework/MicroBlink.framework/Versions/A/Resources/*.{strings,wav,png}"
+  s.ios.deployment_target = '6.0.0'
+  s.ios.resources = "MicroBlink.bundle"
   s.ios.requires_arc = false
-  
-  s.ios.xcconfig = { 
-        'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/PPpdf417/MicroBlink.embeddedframework"'
-  }
-
-  s.ios.frameworks = 'MicroBlink', 'AVFoundation', 'AudioToolbox', 'CoreMedia', 'AssetsLibrary', 'Accelerate'
+  s.ios.vendored_frameworks = 'MicroBlink.framework'
+  s.ios.frameworks = 'Accelerate', 'AVFoundation', 'AudioToolbox', 'AssetsLibrary', 'CoreMedia'
   s.ios.libraries = 'c++', 'iconv'
 
 end

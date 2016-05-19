@@ -1,3 +1,32 @@
+## Transition to 4.3.0.
+
+- If you implement custom camera UI and handle `cameraViewController:didFindLocation:withStatus`, this method was changed to `cameraViewController:didFinishDetectionWithResult:`. `PPDetectorResult` object now contains all information previosusly passed to this method. Simply update the code to use the new method signature. Verify the exact type of the passed detectorResult object, cast it to this class, and use provided getters to obtain all information.
+
+- PPOverlayViewController changed the way Overlay Subviews are added to the view hierarchy. Instead of calling `addOverlaySubview:` (which automatically added a view to view hierarachy), you now need to call `registerOverlaySubview:` (which registers subview for scanning events), and manually add subview to view hierarchy using `addSubview:` method. This change gives you more flexibility for adding views and managing autolayout and autoresizing masks. So, replace all calls to (assuming self is a `PPOverlayViewController` instance)
+
+```objective-c
+[self addOverlaySubview:subview];
+```
+
+with 
+```objective-c
+[self registerOverlaySubview:subview];
+[self.view addSubview:subview];
+```
+- If you use DetectorRecognizer, designated initializer of `PPDocumentDecodingInfoEntry` objects changed. Instead of `initWithLocation:dewarpedHeight:` use `initWithLocation:dewarpedHeight:uniqueId:`. As Unique ID pass any unique string which you'll use to identify the decoding info object.
+
+- Localization Macros MB_LOCALIZED and MB_LOCALIZED_FORMAT can now be overriden in your app to provide completely custom localization mechanisms.
+
+- Remove the old .embeddedframework package completely from your project
+
+- Add new .framework and .bundle package to your project. Verify that Framework search path really contains a path to the .framework folder.
+
+- replace all occurrences of `PPCoordinator`'s method `isScanningUnsupported:` to `isScanningUnsupportedForCameraType:error:`. If you use Back facing camera, use `PPCameraTypeBack`, otherwise `PPCameraTypeFront`.
+
+- Rename `PPMetadataSettings` properties 
+- `successfulScanFrame` rename to `successfulFrame`
+- `currentVideoFrame` rename to `currentFrame`
+
 ## Transition to 4.2.2
 
 - No backwards incompatible changes.
@@ -59,7 +88,7 @@
         
         `PPZXingRecognizerResult` which holds the results of ZXing scanning
         
-    - `PPScanningResult` had getters for `data`, `rawData`, `uncertain` and `type` properties. Each new class has equivalent `data`, `rawData` and `uncertain` properties. New classes (except PDF417 and USDL) have `barcodeType` property with the same function. PDF417 and USDL classes don't have type since they are always obtained by scanning PFDF417 barcode. To get data in `PPUsdlRecognizerResult`, you will need to do `NSString* message = [[result getAllStringElements] valueForKey:@"pdf417"];`, assuming that `result` is the `PPUsdlRecognizerResult` instance.
+    - `PPScanningResult` had getters for `data`, `rawData`, `uncertain` and `type` properties. Each new class has equivalent `data`, `rawData` and `uncertain` properties. New classes (except PDF417 and USDL) have `barcodeType` property with the same function. PDF417 and USDL classes don't have type since they are always obtained by scanning PFDF417 barcode.
 
     - For easier integration new classes have new getters `stringUsingGuessedEncoding` which guesses the encoding string inside barcode data. Use this if you know data is textual, but you don't know the exact encoding of the string. 
     	

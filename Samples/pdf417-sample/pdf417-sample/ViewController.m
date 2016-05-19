@@ -31,6 +31,7 @@
 /**
  * Method allocates and initializes the Scanning coordinator object.
  * Coordinator is initialized with settings for scanning
+ * Modify this method to include only those recognizer settings you need. This will give you optimal performance
  *
  *  @param error Error object, if scanning isn't supported
  *
@@ -40,7 +41,7 @@
 
     /** 0. Check if scanning is supported */
 
-    if ([PPCoordinator isScanningUnsupported:error]) {
+    if ([PPCoordinator isScanningUnsupportedForCameraType:PPCameraTypeBack error:error]) {
         return nil;
     }
 
@@ -54,32 +55,46 @@
     /** 2. Setup the license key */
 
     // Visit www.microblink.com to get the license key for your app
-    settings.licenseSettings.licenseKey = @"YXH25YNJ-CV7SNCDH-JWBG7IUV-6E5UYDUG-GQYAGQ2Z-EDEPPGKJ-O5KAQRDA-ID2NNNJI";
+    settings.licenseSettings.licenseKey = @"EYHF6IYK-QJTVVWMZ-JF7T2VWZ-3HM5TWOZ-3HM5TWOZ-3HM5TWOZ-3HM5TWOZ-3HMYQSLV";
 
 
     /**
      * 3. Set up what is being scanned. See detailed guides for specific use cases.
-     * Here's an example for initializing PDF417 scanning
+     * Remove undesired recognizers (added below) for optimal performance.
      */
 
-    // To specify we want to perform PDF417 recognition, initialize the PDF417 recognizer settings
-    PPPdf417RecognizerSettings *pdf417RecognizerSettings = [[PPPdf417RecognizerSettings alloc] init];
 
-    // Add PDF417 Recognizer setting to a list of used recognizer settings
-    [settings.scanSettings addRecognizerSettings:pdf417RecognizerSettings];
-
-    // To specify we want to perform recognition of other barcode formats, initialize the ZXing recognizer settings
-    PPZXingRecognizerSettings *zxingRecognizerSettings = [[PPZXingRecognizerSettings alloc] init];
-    zxingRecognizerSettings.scanQR = YES; // we use just QR code
-
-    // Add ZXingRecognizer setting to a list of used recognizer settings
-    [settings.scanSettings addRecognizerSettings:zxingRecognizerSettings];
-
-    // To specify we want to scan USDLs, initialize USDL rcognizer settings
-    PPUsdlRecognizerSettings *usdlRecognizerSettings = [[PPUsdlRecognizerSettings alloc] init];
-
-    // Add USDL Recognizer setting to a list of used recognizer settings
-    [settings.scanSettings addRecognizerSettings:usdlRecognizerSettings];
+    {// Remove this code if you don't need to scan Pdf417
+        // To specify we want to perform PDF417 recognition, initialize the PDF417 recognizer settings
+        PPPdf417RecognizerSettings *pdf417RecognizerSettings = [[PPPdf417RecognizerSettings alloc] init];
+        
+        /** You can modify the properties of pdf417RecognizerSettings to suit your use-case */
+        
+        // Add PDF417 Recognizer setting to a list of used recognizer settings
+        [settings.scanSettings addRecognizerSettings:pdf417RecognizerSettings];
+    }
+    
+    {// Remove this code if you don't need to scan QR codes
+        // To specify we want to perform recognition of other barcode formats, initialize the ZXing recognizer settings
+        PPZXingRecognizerSettings *zxingRecognizerSettings = [[PPZXingRecognizerSettings alloc] init];
+        
+        /** You can modify the properties of zxingRecognizerSettings to suit your use-case (i.e. add other types of barcodes like QR, Aztec or EAN)*/
+        zxingRecognizerSettings.scanQR = YES; // we use just QR code
+        
+        
+        // Add ZXingRecognizer setting to a list of used recognizer settings
+        [settings.scanSettings addRecognizerSettings:zxingRecognizerSettings];
+    }
+    
+    {// Remove this code if you don't need to scan US drivers licenses
+        // To specify we want to scan USDLs, initialize USDL rcognizer settings
+        PPUsdlRecognizerSettings *usdlRecognizerSettings = [[PPUsdlRecognizerSettings alloc] init];
+        
+        /** You can modify the properties of usdlRecognizerSettings to suit your use-case */
+        
+        // Add USDL Recognizer setting to a list of used recognizer settings
+        [settings.scanSettings addRecognizerSettings:usdlRecognizerSettings];
+    }
 
     /** 4. Initialize the Scanning Coordinator object */
     
@@ -114,13 +129,14 @@
         return;
     }
 
-    /** Allocate and present the scanning view controller */
+    /** Create new scanning view controller */
     UIViewController<PPScanningViewController>* scanningViewController = [coordinator cameraViewControllerWithDelegate:self];
-
+    
+    // Allow scanning view controller to autorotate
     scanningViewController.autorotate = YES;
     scanningViewController.supportedOrientations = UIInterfaceOrientationMaskAllButUpsideDown;
 
-    /** You can use other presentation methods as well */
+    /** Present the scanning view controller. You can use other presentation methods as well (instead of presentViewController) */
     [self presentViewController:scanningViewController animated:YES completion:nil];
 }
 
@@ -137,13 +153,15 @@
     }
 
     /** Present the scanning view controller */
-
+    
+    /** Init scanning view controller custom overlay */
     PPCameraOverlayViewController *overlayVC = [[PPCameraOverlayViewController alloc] init];
-
+    
+    /** Create new scanning view controller with desired custom overlay */
     UIViewController<PPScanningViewController>* scanningViewController = [coordinator cameraViewControllerWithDelegate:self
                                                                                                  overlayViewController:overlayVC];
-
-    // You can use other presentation methods as well
+    
+    /** Present the scanning view controller. You can use other presentation methods as well (instead of presentViewController) */
     [self presentViewController:scanningViewController animated:YES completion:nil];
 }
 
@@ -164,74 +182,95 @@
 
 - (void)scanningViewController:(UIViewController<PPScanningViewController> *)scanningViewController
               didOutputResults:(NSArray *)results {
-
-    // Here you process scanning results. Scanning results are given in the array of PPRecognizerResult objects.
-
+    
+    /**
+     * Here you process scanning results. Scanning results are given in the array of PPRecognizerResult objects.
+     * Each member of results array will represent one result for a single processed image
+     * Usually there will be only one result. Multiple results are possible when there are 2 or more detected objects on a single image (i.e. pdf417 and QR code side by side)
+     */
+    
     // If results are empty, continue scanning without any actions
     if (results == nil || [results count] == 0) {
         return;
     }
-
+    
     // first, pause scanning until we process all the results
     [scanningViewController pauseScanning];
-
+    
     NSString* message;
     NSString* title;
-
+    
     // we prefer finding USDL results
-
+    
     BOOL usdlFound = false;
-
+    
     // Collect data from the result
     for (PPRecognizerResult* result in results) {
-
+        
         if ([result isKindOfClass:[PPUsdlRecognizerResult class]]) {
+            /** US drivers license was detected */
+            
             PPUsdlRecognizerResult *usdlResult = (PPUsdlRecognizerResult *)result;
+            
             title = @"USDL";
+            
+            // Get all USDL data as NSDictionary and save it in NSString form
             message = [[usdlResult getAllStringElements] description];
-
+            
             usdlFound = YES;
             break;
         }
     };
-
+    
     // Collect other results
-
+    
     if (!usdlFound) {
         for (PPRecognizerResult* result in results) {
             if ([result isKindOfClass:[PPZXingRecognizerResult class]]) {
+                /** One of ZXing codes was detected */
+                
                 PPZXingRecognizerResult *zxingResult = (PPZXingRecognizerResult *)result;
-
+                
                 title = @"QR code";
+                
+                // Save the string representation of the code
                 message = [zxingResult stringUsingGuessedEncoding];
             }
             if ([result isKindOfClass:[PPPdf417RecognizerResult class]]) {
+                /** Pdf417 code was detected */
+                
                 PPPdf417RecognizerResult *pdf417Result = (PPPdf417RecognizerResult *)result;
-
+                
                 title = @"PDF417";
+                
+                // Save the string representation of the code
                 message = [pdf417Result stringUsingGuessedEncoding];
             }
             if ([result isKindOfClass:[PPBarDecoderRecognizerResult class]]) {
+                /** One of BarDecoder codes was detected */
+                
                 PPBarDecoderRecognizerResult *barDecoderResult = (PPBarDecoderRecognizerResult *)result;
-
+                
                 title = @"BarDecoder";
+                
+                // Save the string representation of the code
                 message = [barDecoderResult stringUsingGuessedEncoding];
             }
         };
     }
-
+    
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
                                                                              message:message
                                                                       preferredStyle:UIAlertControllerStyleAlert];
-
+    
     UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"OK"
                                                        style:UIAlertActionStyleDefault
                                                      handler:^(UIAlertAction * _Nonnull action) {
                                                          [self dismissViewControllerAnimated:YES completion:nil];
                                                      }];
-
+    
     [alertController addAction:okAction];
-
+    
     [scanningViewController presentViewController:alertController animated:YES completion:nil];
 }
 

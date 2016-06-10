@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   
   s.name        = "PPpdf417"
-  s.version     = "4.2.2"
+  s.version     = "4.3.0"
   s.summary     = "A delightful component for barcode scanning"
   s.homepage    = "http://pdf417.mobi"
   
@@ -39,7 +39,7 @@ Pod::Spec.new do |s|
 
   s.source      = { 
         :git => 'https://github.com/PDF417/pdf417-ios.git', 
-        :tag => "v4.2.2"
+        :tag => "v4.3.0"
   }
   
   s.preserve_paths = 'MicroBlink.embeddedframework/*'
@@ -48,7 +48,7 @@ Pod::Spec.new do |s|
 
   # ――― MULTI-PLATFORM VALUES ――――――――――――――――――――――――――――――――――――――――――――――――― #
 
-  s.ios.deployment_target = '6.0.0'
+  s.ios.deployment_target = '7.0.0'
   s.ios.resources = "MicroBlink.bundle"
   s.ios.requires_arc = false
   s.ios.vendored_frameworks = 'MicroBlink.framework'

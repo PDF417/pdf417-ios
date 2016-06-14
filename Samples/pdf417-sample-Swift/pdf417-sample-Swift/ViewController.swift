@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MicroBlink
 
 class ViewController: UIViewController, PPScanDelegate {
 

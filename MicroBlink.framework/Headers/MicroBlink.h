@@ -9,12 +9,12 @@
 #ifndef PhotoPayFramework_MicroBlink_h
 #define PhotoPayFramework_MicroBlink_h
 
-#import "PPScanDelegate.h"
+#import "PPScanningDelegate.h"
 
 #import "PPSettings.h"
-#import "PPDetectorSettings.h"
 
-#import "PPCoordinator.h"
+#import "PPViewControllerFactory.h"
+#import "PPCameraCoordinator.h"
 #import "PPDetectionStatus.h"
 
 // UI

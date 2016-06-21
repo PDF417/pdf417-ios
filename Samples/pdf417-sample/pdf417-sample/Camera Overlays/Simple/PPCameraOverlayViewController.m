@@ -56,15 +56,18 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    // on devices which don't support torch, torch button should be disabled
-    if (![[self containerViewController] overlayViewControllerShouldDisplayTorch:self]) {
-        [[self torchButton] setHidden:YES];
-    }
-    
     [self setScanningRegion:CGRectMake(0.15, 0.4, 0.7, 0.2)];
     
     // add drawing layer to view
     [self initDrawingLayerWithBounds:[self view].bounds];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    // on devices which don't support torch, torch button should be disabled
+    if (![[self containerViewController] overlayViewControllerShouldDisplayTorch:self]) {
+        [[self torchButton] setHidden:YES];
+    }
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -102,10 +105,6 @@
 
 - (void)cameraViewControllerDidStopScanning:(id<PPScanningViewController>)cameraViewController {
     NSLog(@"Barcode scanning process terminated");
-}
-
-- (void)cameraViewController:(id<PPScanningViewController>)cameraViewController didPublishProgress:(float)progress {
-    NSLog(@"Barcode scanning don't have progress reporting implemented yet");
 }
 
 - (void)cameraViewControllerDidStartRecognition:(id<PPScanningViewController>)cameraViewController {

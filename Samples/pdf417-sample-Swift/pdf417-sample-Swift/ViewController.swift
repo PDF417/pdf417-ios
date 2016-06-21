@@ -9,7 +9,7 @@
 import UIKit
 import MicroBlink
 
-class ViewController: UIViewController, PPScanDelegate {
+class ViewController: UIViewController, PPScanningDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +25,11 @@ class ViewController: UIViewController, PPScanDelegate {
      *
      *  @return initialized coordinator
      */
-    private func coordinatorWithError(error: NSErrorPointer) -> PPCoordinator? {
+    private func coordinatorWithError(error: NSErrorPointer) -> PPCameraCoordinator? {
         
         /** 0. Check if scanning is supported */
         
-        if PPCoordinator.isScanningUnsupportedForCameraType(PPCameraType.Back, error:error) {
+        if PPCameraCoordinator.isScanningUnsupportedForCameraType(PPCameraType.Back, error:error) {
             return nil
         }
         
@@ -43,7 +43,7 @@ class ViewController: UIViewController, PPScanDelegate {
         /** 2. Setup the license key */
         
         // Visit www.microblink.com to get the license key for your app
-        settings.licenseSettings.licenseKey = "WVXF7KR3-X3JEIGNA-OYMGNEOJ-GCI4SMER-ZEYJDSJQ-SHETBEOJ-GCI4SMER-ZEYMBVPC"
+        settings.licenseSettings.licenseKey = "5O7UATTB-DHS6EL6Z-VZZR4NWA-44ATDO5G-3CMHIMER-ZEYJDSJQ-SHETBEOJ-GCIZRZPX"
         
         
         /**
@@ -89,7 +89,7 @@ class ViewController: UIViewController, PPScanDelegate {
         
         /** 4. Initialize the Scanning Coordinator object */
         
-        let coordinator: PPCoordinator = PPCoordinator(settings: settings)
+        let coordinator: PPCameraCoordinator = PPCameraCoordinator(settings: settings)
         
         return coordinator
     }
@@ -97,8 +97,8 @@ class ViewController: UIViewController, PPScanDelegate {
     @IBAction func didTapScan(sender: AnyObject) {
         
         /** Instantiate the scanning coordinator */
-        let error: NSErrorPointer = nil
-        let coordinator:PPCoordinator? = self.coordinatorWithError(error)
+        let error : NSErrorPointer = nil
+        let coordinator : PPCameraCoordinator? = self.coordinatorWithError(error)
         
         /** If scanning isn't supported, present an error */
         if coordinator == nil {
@@ -108,7 +108,7 @@ class ViewController: UIViewController, PPScanDelegate {
         }
         
         /** Create new scanning view controller */
-        let scanningViewController: UIViewController = coordinator!.cameraViewControllerWithDelegate(self)
+        let scanningViewController: UIViewController = PPViewControllerFactory.cameraViewControllerWithDelegate(self, coordinator: coordinator!, error: nil)
         
         /** Present the scanning view controller. You can use other presentation methods as well (instead of presentViewController) */
         self.presentViewController(scanningViewController, animated: true, completion: nil)
@@ -116,7 +116,7 @@ class ViewController: UIViewController, PPScanDelegate {
 
     @IBAction func didTapScanCustomUI(sender: AnyObject) {
         let error : NSErrorPointer = nil
-        let coordinator : PPCoordinator? = self.coordinatorWithError(error)
+        let coordinator : PPCameraCoordinator? = self.coordinatorWithError(error)
         
         if(coordinator == nil) {
             let messageString: String = (error.memory?.localizedDescription)!
@@ -127,7 +127,7 @@ class ViewController: UIViewController, PPScanDelegate {
         /** Init scanning view controller custom overlay */
         let overlay: PPCameraOverlayViewController = PPCameraOverlayViewController(nibName: "PPCameraOverlayViewController",bundle: nil)
         /** Create new scanning view controller with desired custom overlay */
-        let scanningViewController: UIViewController = coordinator!.cameraViewControllerWithDelegate(self,overlayViewController: overlay)
+        let scanningViewController: UIViewController = PPViewControllerFactory.cameraViewControllerWithDelegate(self, overlayViewController: overlay, coordinator: coordinator!, error: nil)
         
         /** Present the scanning view controller. You can use other presentation methods as well (instead of presentViewController) */
         self.presentViewController(scanningViewController, animated: true, completion: nil)

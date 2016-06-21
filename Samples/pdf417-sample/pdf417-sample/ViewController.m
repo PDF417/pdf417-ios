@@ -12,7 +12,7 @@
 
 #import "PPCameraOverlayViewController.h"
 
-@interface ViewController () <PPScanDelegate, UIAlertViewDelegate>
+@interface ViewController () <PPScanningDelegate, UIAlertViewDelegate>
 
 @end
 
@@ -37,11 +37,11 @@
  *
  *  @return initialized coordinator
  */
-- (PPCoordinator *)coordinatorWithError:(NSError**)error {
+- (PPCameraCoordinator *)coordinatorWithError:(NSError**)error {
 
     /** 0. Check if scanning is supported */
 
-    if ([PPCoordinator isScanningUnsupportedForCameraType:PPCameraTypeBack error:error]) {
+    if ([PPCameraCoordinator isScanningUnsupportedForCameraType:PPCameraTypeBack error:error]) {
         return nil;
     }
 
@@ -55,7 +55,7 @@
     /** 2. Setup the license key */
 
     // Visit www.microblink.com to get the license key for your app
-    settings.licenseSettings.licenseKey = @"EYHF6IYK-QJTVVWMZ-JF7T2VWZ-3HM5TWOZ-3HM5TWOZ-3HM5TWOZ-3HM5TWOZ-3HMYQSLV";
+    settings.licenseSettings.licenseKey = @"H7JAQZ6G-U4AVZDKK-CVZ3EV3U-YRVBN4YL-EJXKOBFQ-2EEEIYCA-6SD3KKM2-66MRQA2B";
 
 
     /**
@@ -64,41 +64,17 @@
      */
 
 
-    {// Remove this code if you don't need to scan Pdf417
-        // To specify we want to perform PDF417 recognition, initialize the PDF417 recognizer settings
-        PPPdf417RecognizerSettings *pdf417RecognizerSettings = [[PPPdf417RecognizerSettings alloc] init];
-        
-        /** You can modify the properties of pdf417RecognizerSettings to suit your use-case */
-        
-        // Add PDF417 Recognizer setting to a list of used recognizer settings
-        [settings.scanSettings addRecognizerSettings:pdf417RecognizerSettings];
-    }
+    // To specify we want to perform PDF417 recognition, initialize the PDF417 recognizer settings
+    PPPdf417RecognizerSettings *pdf417RecognizerSettings = [[PPPdf417RecognizerSettings alloc] init];
     
-    {// Remove this code if you don't need to scan QR codes
-        // To specify we want to perform recognition of other barcode formats, initialize the ZXing recognizer settings
-        PPZXingRecognizerSettings *zxingRecognizerSettings = [[PPZXingRecognizerSettings alloc] init];
-        
-        /** You can modify the properties of zxingRecognizerSettings to suit your use-case (i.e. add other types of barcodes like QR, Aztec or EAN)*/
-        zxingRecognizerSettings.scanQR = YES; // we use just QR code
-        
-        
-        // Add ZXingRecognizer setting to a list of used recognizer settings
-        [settings.scanSettings addRecognizerSettings:zxingRecognizerSettings];
-    }
+    /** You can modify the properties of pdf417RecognizerSettings to suit your use-case */
     
-    {// Remove this code if you don't need to scan US drivers licenses
-        // To specify we want to scan USDLs, initialize USDL rcognizer settings
-        PPUsdlRecognizerSettings *usdlRecognizerSettings = [[PPUsdlRecognizerSettings alloc] init];
-        
-        /** You can modify the properties of usdlRecognizerSettings to suit your use-case */
-        
-        // Add USDL Recognizer setting to a list of used recognizer settings
-        [settings.scanSettings addRecognizerSettings:usdlRecognizerSettings];
-    }
+    // Add PDF417 Recognizer setting to a list of used recognizer settings
+    [settings.scanSettings addRecognizerSettings:pdf417RecognizerSettings];
 
     /** 4. Initialize the Scanning Coordinator object */
     
-    PPCoordinator *coordinator = [[PPCoordinator alloc] initWithSettings:settings];
+    PPCameraCoordinator *coordinator = [[PPCameraCoordinator alloc] initWithSettings:settings];
 
     return coordinator;
 }
@@ -121,7 +97,7 @@
 
     /** Instantiate the scanning coordinator */
     NSError *error;
-    PPCoordinator *coordinator = [self coordinatorWithError:&error];
+    PPCameraCoordinator *coordinator = [self coordinatorWithError:&error];
 
     /** If scanning isn't supported, show an error */
     if (coordinator == nil) {
@@ -130,7 +106,7 @@
     }
 
     /** Create new scanning view controller */
-    UIViewController<PPScanningViewController>* scanningViewController = [coordinator cameraViewControllerWithDelegate:self];
+    UIViewController<PPScanningViewController>* scanningViewController = [PPViewControllerFactory cameraViewControllerWithDelegate:self coordinator:coordinator error:nil];
     
     // Allow scanning view controller to autorotate
     scanningViewController.autorotate = YES;
@@ -144,7 +120,7 @@
     /** Instantiate the scanning coordinator */
 
     NSError *error;
-    PPCoordinator *coordinator = [self coordinatorWithError:&error];
+    PPCameraCoordinator *coordinator = [self coordinatorWithError:&error];
 
     /** If scanning isn't supported, show an error */
     if (coordinator == nil) {
@@ -158,8 +134,7 @@
     PPCameraOverlayViewController *overlayVC = [[PPCameraOverlayViewController alloc] init];
     
     /** Create new scanning view controller with desired custom overlay */
-    UIViewController<PPScanningViewController>* scanningViewController = [coordinator cameraViewControllerWithDelegate:self
-                                                                                                 overlayViewController:overlayVC];
+    UIViewController<PPScanningViewController>* scanningViewController = [PPViewControllerFactory cameraViewControllerWithDelegate:self overlayViewController:overlayVC coordinator:coordinator error:nil];
     
     /** Present the scanning view controller. You can use other presentation methods as well (instead of presentViewController) */
     [self presentViewController:scanningViewController animated:YES completion:nil];
@@ -181,7 +156,7 @@
 }
 
 - (void)scanningViewController:(UIViewController<PPScanningViewController> *)scanningViewController
-              didOutputResults:(NSArray *)results {
+              didOutputResults:(NSArray<PPRecognizerResult*> *)results {
     
     /**
      * Here you process scanning results. Scanning results are given in the array of PPRecognizerResult objects.

@@ -42,7 +42,7 @@ pod try PPpdf417
 
 ```ruby
 platform :ios, '7.0'
-pod 'PPpdf417', '~> 4.3.0'
+pod 'PPpdf417', '~> 4.2.2'
 ```
 
 ## Requirements

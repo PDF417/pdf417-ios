@@ -1,5 +1,21 @@
 # Release notes
 
+## 5.0.0
+
+- iOS updates:
+
+	- Implemented `PPCameraCoordinator`. `PPCameraCoordinator` assumes the role of `PPCoordinator` from previous versions while new `PPCoordinator` is used for Direct API (image processing without camera out management).
+	- Increased speed of scanning for barcode type recognizers.
+	- Implemented `PPImage`. When using Direct API you can wrap `UIImage` and `CMSampleBufferRef` into `PPImage` to ensure optimal performance.
+	- Improved performance of Direct API. In addition, you can now use Direct API with your own camera management without any performance drawbacks.
+	- Added method `isCameraPaused` to `PPScanningViewController`.
+	- Added option to fllip input images upside down for processing with `cameraFlipped` property of `PPCameraSettings`.
+	- Implemented `PPViewControllerFactory` for managing creation of `PPScanningViewController` objects.
+	- `PPImageMetadata` now contains `PPImageMetadataType` property, which describes which image type was outputted.
+	
+- iOS bugfixes:
+	- New Direct API fixed possible deadlocks when sending large amounts of data
+
 ## 4.3.0
 
 - Added better integration for Swift

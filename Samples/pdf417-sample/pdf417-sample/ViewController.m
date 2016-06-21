@@ -67,10 +67,22 @@
     // To specify we want to perform PDF417 recognition, initialize the PDF417 recognizer settings
     PPPdf417RecognizerSettings *pdf417RecognizerSettings = [[PPPdf417RecognizerSettings alloc] init];
     
-    /** You can modify the properties of pdf417RecognizerSettings to suit your use-case */
-    
     // Add PDF417 Recognizer setting to a list of used recognizer settings
     [settings.scanSettings addRecognizerSettings:pdf417RecognizerSettings];
+    
+    // To specify we want to perform recognition of other barcode formats, initialize the ZXing recognizer settings
+    PPZXingRecognizerSettings *zxingRecognizerSettings = [[PPZXingRecognizerSettings alloc] init];
+    zxingRecognizerSettings.scanQR = YES; // we use just QR code
+    
+    // Add ZXingRecognizer setting to a list of used recognizer settings
+    [settings.scanSettings addRecognizerSettings:zxingRecognizerSettings];
+    
+    // To specify we want to scan USDLs, initialize USDL rcognizer settings
+    PPUsdlRecognizerSettings *usdlRecognizerSettings = [[PPUsdlRecognizerSettings alloc] init];
+    
+    // Add USDL Recognizer setting to a list of used recognizer settings
+    [settings.scanSettings addRecognizerSettings:usdlRecognizerSettings];
+    
 
     /** 4. Initialize the Scanning Coordinator object */
     
@@ -220,16 +232,6 @@
                 
                 // Save the string representation of the code
                 message = [pdf417Result stringUsingGuessedEncoding];
-            }
-            if ([result isKindOfClass:[PPBarDecoderRecognizerResult class]]) {
-                /** One of BarDecoder codes was detected */
-                
-                PPBarDecoderRecognizerResult *barDecoderResult = (PPBarDecoderRecognizerResult *)result;
-                
-                title = @"BarDecoder";
-                
-                // Save the string representation of the code
-                message = [barDecoderResult stringUsingGuessedEncoding];
             }
         };
     }

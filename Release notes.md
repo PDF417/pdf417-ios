@@ -1,5 +1,15 @@
 # Release notes
 
+## 5.0.1
+
+- iOS updates:
+
+	- Added option to mirror input images to PPCameraSettings
+	
+- iOS bugfixes:
+
+	- ITF reader now accepts barcode sizes ranging between [6,50]
+
 ## 5.0.0
 
 - iOS updates:

@@ -10,8 +10,6 @@
 
 @interface CameraViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UILabel *cameraPausedLabel;
-
 - (IBAction)closeCamera:(id)sender;
 
 @end

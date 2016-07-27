@@ -19,7 +19,7 @@
 
 @property (nonatomic, strong) PPCoordinator *coordinator;
 
-@property (nonatomic) BOOL pauseRecognition;
+@property (nonatomic) BOOL recognitionPaused;
 
 @end
 
@@ -51,100 +51,10 @@ static NSString *rawOcrParserId = @"Raw ocr";
     [self startCaptureSession];
 };
 
-- (void)addNotificationObserver {
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(appplicationWillResignActive:)
-                                                 name:UIApplicationWillResignActiveNotification
-                                               object:nil];
-
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(appplicationWillEnterForeground:)
-                                                 name:UIApplicationWillEnterForegroundNotification
-                                               object:nil];
-
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(applicationDidEnterBackgroundNotification:)
-                                                 name:UIApplicationDidEnterBackgroundNotification
-                                               object:nil];
-
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(applicationWillTerminateNotification:)
-                                                 name:UIApplicationWillTerminateNotification
-                                               object:nil];
-
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(captureSessionDidStartRunningNotification:)
-                                                 name:AVCaptureSessionDidStartRunningNotification
-                                               object:nil];
-
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(captureSessionDidStopRunningNotification:)
-                                                 name:AVCaptureSessionDidStopRunningNotification
-                                               object:nil];
-
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(captureSessionRuntimeErrorNotification:)
-                                                 name:AVCaptureSessionRuntimeErrorNotification
-                                               object:nil];
-}
-
-- (void)removeNotificationObserver {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self addNotificationObserver];
-}
-
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self stopCaptureSession];
 }
-
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-    [self removeNotificationObserver];
-}
-
-- (void)appplicationWillResignActive:(NSNotification*)note {
-    NSLog(@"Will resign active!");
-}
-
-- (void)appplicationWillEnterForeground:(NSNotification*)note {
-    NSLog(@"appplicationWillEnterForeground!");
-    [self startCaptureSession];
-}
-
-- (void)applicationDidEnterBackgroundNotification:(NSNotification*)note {
-    NSLog(@"applicationDidEnterBackgroundNotification!");
-    [self stopCaptureSession];
-}
-
-- (void)applicationWillTerminateNotification:(NSNotification*)note {
-    NSLog(@"applicationWillTerminateNotification!");
-}
-
-- (void)captureSessionDidStartRunningNotification:(NSNotification*)note {
-    NSLog(@"captureSessionDidStartRunningNotification!");
-
-    [UIView animateWithDuration:0.3 animations:^{
-        self.cameraPausedLabel.alpha = 0.0;
-    }];
-}
-
-- (void)captureSessionDidStopRunningNotification:(NSNotification*)note {
-    NSLog(@"captureSessionDidStopRunningNotification!");
-
-    [UIView animateWithDuration:0.3 animations:^{
-        self.cameraPausedLabel.alpha = 1.0;
-    }];
-}
-
-- (void)captureSessionRuntimeErrorNotification:(NSNotification*)note {
-    NSLog(@"captureSessionRuntimeErrorNotification!");
-}
-
 
 - (void)startCaptureSession {
 
@@ -190,9 +100,11 @@ static NSString *rawOcrParserId = @"Raw ocr";
 }
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
+
     PPImage *image = [PPImage imageWithCmSampleBuffer:sampleBuffer];
     image.orientation = PPProcessingOrientationLeft;
-    if (!self.pauseRecognition) {
+
+    if (!self.recognitionPaused) {
         [self.coordinator processImage:image];
     }
 }
@@ -236,7 +148,7 @@ static NSString *rawOcrParserId = @"Raw ocr";
 - (void)coordinator:(PPCoordinator *)coordinator didOutputResults:(NSArray<PPRecognizerResult *> *)results {
     // Here you process scanning results. Scanning results are given in the array of PPRecognizerResult objects.
     
-    self.pauseRecognition = YES;    
+    self.recognitionPaused = YES;    
     
     // Collect data from the result
     for (PPRecognizerResult* result in results) {

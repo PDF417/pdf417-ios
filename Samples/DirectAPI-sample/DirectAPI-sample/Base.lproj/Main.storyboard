@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -73,19 +73,11 @@
                                     <action selector="closeCamera:" destination="CMc-Yo-0Wv" eventType="touchUpInside" id="utM-rS-ZEA"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Camera Paused" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="poJ-gp-dP4">
-                                <rect key="frame" x="206" y="284" width="189" height="33"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="xUR-Z0-lPx" firstAttribute="centerY" secondItem="9SF-tW-9QK" secondAttribute="centerY" id="3qN-vH-o8t"/>
                             <constraint firstItem="xUR-Z0-lPx" firstAttribute="height" secondItem="9SF-tW-9QK" secondAttribute="height" id="4pt-1Y-S3Y"/>
-                            <constraint firstItem="poJ-gp-dP4" firstAttribute="centerX" secondItem="9SF-tW-9QK" secondAttribute="centerX" id="E87-dh-akM"/>
-                            <constraint firstItem="poJ-gp-dP4" firstAttribute="centerY" secondItem="9SF-tW-9QK" secondAttribute="centerY" id="Lfy-Re-rTu"/>
                             <constraint firstAttribute="leadingMargin" secondItem="6XW-GI-8hu" secondAttribute="leading" id="Nue-Ry-6v4"/>
                             <constraint firstItem="6XW-GI-8hu" firstAttribute="top" secondItem="ECi-as-kxg" secondAttribute="bottom" id="RVP-Yl-tpl"/>
                             <constraint firstItem="xUR-Z0-lPx" firstAttribute="centerX" secondItem="9SF-tW-9QK" secondAttribute="centerX" id="Swr-uE-WJn"/>
@@ -93,7 +85,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="cameraPausedLabel" destination="poJ-gp-dP4" id="ssi-C1-qT8"/>
                         <outlet property="cameraView" destination="xUR-Z0-lPx" id="BHB-CN-Vjv"/>
                     </connections>
                 </viewController>

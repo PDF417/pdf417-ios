@@ -1,5 +1,10 @@
 # Release notes
 
+## 5.0.3
+
+- iOS fixes:
+	- Fixed problems with string localizations
+
 ## 5.0.2
 
 - iOS fixes:

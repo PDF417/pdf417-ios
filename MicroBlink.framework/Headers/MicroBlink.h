@@ -21,21 +21,7 @@
 #import "PPModernOverlayViewController.h"
 #import "PPOverlaySubview.h"
 
-// Pdf417
-#import "PPPdf417RecognizerSettings.h"
-#import "PPPdf417RecognizerResult.h"
-
-// USDL
-#import "PPUsdlRecognizerSettings.h"
-#import "PPUsdlRecognizerResult.h"
-
-// ZXing
-#import "PPZXingRecognizerSettings.h"
-#import "PPZXingRecognizerResult.h"
-
-// BarDecoder
-#import "PPBarDecoderRecognizerSettings.h"
-#import "PPBarDecoderRecognizerResult.h"
+#import "PPBlinkBarcodeRecognizers.h"
 
 // Detectors
 #import "PPPointsDetectorResult.h"

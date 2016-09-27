@@ -177,6 +177,7 @@
 				TargetAttributes = {
 					18E265E81BCE565E00FF4871 = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = 7B3464NEDQ;
 					};
 				};
 			};
@@ -334,6 +335,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7B3464NEDQ;
 				FRAMEWORK_SEARCH_PATHS = ../../;
 				INFOPLIST_FILE = "pdf417-sample/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -347,6 +349,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7B3464NEDQ;
 				FRAMEWORK_SEARCH_PATHS = ../../;
 				INFOPLIST_FILE = "pdf417-sample/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

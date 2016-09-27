@@ -13,10 +13,10 @@ class PPCameraOverlayViewController : PPOverlayViewController {
     var torchOn: Bool = false;
 
     override func viewDidLoad() {
-        self.scanningRegion = CGRectMake(0.15, 0.4, 0.7, 0.2)
+        self.scanningRegion = CGRect(origin: CGPoint(x: 0.15, y: 0.4), size: CGSize(width: 0.7, height: 0.2))
     }
 
-    @IBAction func didTapClose(sender: AnyObject) {
+    @IBAction func didTapClose(_ sender: AnyObject) {
         (self.containerViewController as! PPOverlayContainerViewController).overlayViewControllerWillCloseCamera(self)
     }
 

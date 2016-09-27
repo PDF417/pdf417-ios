@@ -56,6 +56,7 @@
 
     // Visit www.microblink.com to get the license key for your app
     settings.licenseSettings.licenseKey = @"6LG4AVRT-QTJZSSJX-QJV6DDYB-JN664XOY-3HM5TWOZ-3HM5TWOZ-3HM5TWOZ-3HMYRH2F";
+    
 
 
     /**
@@ -121,8 +122,8 @@
     UIViewController<PPScanningViewController>* scanningViewController = [PPViewControllerFactory cameraViewControllerWithDelegate:self coordinator:coordinator error:nil];
     
     // Allow scanning view controller to autorotate
-    scanningViewController.autorotate = YES;
-    scanningViewController.supportedOrientations = UIInterfaceOrientationMaskAllButUpsideDown;
+    scanningViewController.autorotate = NO;
+    scanningViewController.supportedOrientations = UIInterfaceOrientationMaskPortrait;
 
     /** Present the scanning view controller. You can use other presentation methods as well (instead of presentViewController) */
     [self presentViewController:scanningViewController animated:YES completion:nil];

@@ -1,5 +1,10 @@
 # Release notes
 
+## 5.0.4
+
+- iOS fixes:
+	- Fixed some issues related to internal camera management
+
 ## 5.0.3
 
 - iOS fixes:

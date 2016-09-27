@@ -159,10 +159,11 @@
 				TargetAttributes = {
 					1819B6EF1B7745150002325E = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = CQTJWP89J7;
 					};
 				};
 			};
-			buildConfigurationList = 1819B6EB1B7745150002325E /* Build configuration list for PBXProject "DirectAPI-Sample" */;
+			buildConfigurationList = 1819B6EB1B7745150002325E /* Build configuration list for PBXProject "DirectAPI-sample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -317,6 +318,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CQTJWP89J7;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SCROOT)DirectAPI-Sample/Info.plist";
@@ -330,6 +332,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CQTJWP89J7;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SCROOT)DirectAPI-Sample/Info.plist";
@@ -342,7 +345,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1819B6EB1B7745150002325E /* Build configuration list for PBXProject "DirectAPI-Sample" */ = {
+		1819B6EB1B7745150002325E /* Build configuration list for PBXProject "DirectAPI-sample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1819B71B1B7745150002325E /* Debug */,

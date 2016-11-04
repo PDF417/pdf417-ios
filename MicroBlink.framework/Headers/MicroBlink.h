@@ -9,24 +9,17 @@
 #ifndef PhotoPayFramework_MicroBlink_h
 #define PhotoPayFramework_MicroBlink_h
 
-#import "PPScanningDelegate.h"
-
-#import "PPSettings.h"
-
+// Common API
 #import "PPViewControllerFactory.h"
-#import "PPCameraCoordinator.h"
-#import "PPDetectionStatus.h"
 
 // UI
 #import "PPModernOverlayViewController.h"
 #import "PPOverlaySubview.h"
 
-#import "PPBlinkBarcodeRecognizers.h"
-
 // Detectors
 #import "PPPointsDetectorResult.h"
 #import "PPQuadDetectorResult.h"
 
-#import "PPBarcodeDetailedData.h"
+#import "PPBlinkBarcodeRecognizers.h"
 
 #endif

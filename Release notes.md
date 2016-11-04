@@ -1,5 +1,12 @@
 # Release notes
 
+## 5.0.5
+
+- US Driver's Licence:
+    - fixed parsing of Virgin Islands DL
+    - added support for Arkansas DL
+    - added support for new South Carolina DL
+
 ## 5.0.4
 
 - iOS fixes:

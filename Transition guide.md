@@ -1,3 +1,6 @@
+## Transition to 5.0.5
+- No backwards incompatible changes. See Release notes for bugfixes.
+
 ## Transition to 5.0.4
 
 - No backwards incompatible changes. See Release notes for new features.

@@ -212,8 +212,15 @@ class ViewController: UIViewController, PPScanningDelegate {
             }
         }
         // present the alert view with scanned results
-        let alertView: UIAlertView = UIAlertView.init(title: title, message: message, delegate: self, cancelButtonTitle: "OK")
-        alertView.show()
+        
+        let alertController: UIAlertController = UIAlertController.init(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        let okAction: UIAlertAction = UIAlertAction.init(title: "OK", style: UIAlertActionStyle.default,
+                                                         handler: { (action) -> Void in
+                                                                        self.dismiss(animated: true, completion: nil)
+        })
+        alertController.addAction(okAction)
+        scanningViewController?.present(alertController, animated: true, completion: nil)
     }
 
     func scanningViewControllerUnauthorizedCamera(_ scanningViewController: UIViewController) {

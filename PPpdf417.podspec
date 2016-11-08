@@ -19,9 +19,8 @@ Pod::Spec.new do |s|
         DESC
                   
   s.screenshots = [ 
-        "http://a2.mzstatic.com/us/r1000/041/Purple6/v4/72/86/bd/7286bde4-911d-0561-4934-7e7fbb5d2033/mzl.zajzkcwv.320x480-75.jpg",
-        "http://a4.mzstatic.com/us/r1000/010/Purple4/v4/a7/0f/90/a70f90ae-8c70-4709-9292-9ce0299fd712/mzl.jjhpudai.320x480-75.jpg",
-        "http://a4.mzstatic.com/us/r1000/055/Purple6/v4/f1/ce/f5/f1cef57c-ad99-886a-f3b8-643428136ef7/mzl.mjottsci.320x480-75.jpg"
+        "https://s2.mzstatic.com/us/r30/Purple4/v4/62/7f/68/627f688f-d786-820b-d507-33b488d5565a/screen322x572.jpeg",
+        "https://s3.mzstatic.com/us/r30/Purple4/v4/10/40/ed/1040eddb-1b9f-dc0a-4499-2453e174173d/screen322x572.jpeg"
         ]
   
   s.license     = { 

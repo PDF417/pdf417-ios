@@ -55,15 +55,14 @@
     /** 2. Setup the license key */
 
     // Visit www.microblink.com to get the license key for your app
-    settings.licenseSettings.licenseKey = @"6LG4AVRT-QTJZSSJX-QJV6DDYB-JN664XOY-3HM5TWOZ-3HM5TWOZ-3HM5TWOZ-3HMYRH2F";
-    
+    settings.licenseSettings.licenseKey = @"P4UMNYU7-I7AC2H6L-TSNPWJMK-F6TQJMGR-BBCGAQHU-Q62STGXX-TFEXOVAI-IRQBD5QE";
+    // License key valid temporarily until 2017-05-28
 
 
     /**
      * 3. Set up what is being scanned. See detailed guides for specific use cases.
      * Remove undesired recognizers (added below) for optimal performance.
      */
-
 
     // To specify we want to perform PDF417 recognition, initialize the PDF417 recognizer settings
     PPPdf417RecognizerSettings *pdf417RecognizerSettings = [[PPPdf417RecognizerSettings alloc] init];

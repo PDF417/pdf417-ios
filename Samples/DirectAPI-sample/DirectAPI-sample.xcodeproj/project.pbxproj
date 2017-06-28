@@ -22,8 +22,24 @@
 		3170EA031CC0EF680017ABF0 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3170EA021CC0EF680017ABF0 /* libc++.tbd */; };
 		3170EA051CC0EF6F0017ABF0 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3170EA041CC0EF6F0017ABF0 /* libiconv.tbd */; };
 		319649BD1D0AE282000561C5 /* MicroBlink.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 319649BB1D0AE282000561C5 /* MicroBlink.bundle */; };
-		319649BE1D0AE282000561C5 /* MicroBlink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319649BC1D0AE282000561C5 /* MicroBlink.framework */; };
+		A2FA9D2E1EF18B41004C0691 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A2FA9D2D1EF18B41004C0691 /* libz.tbd */; };
+		A2FA9D2F1EF18B4C004C0691 /* MicroBlink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319649BC1D0AE282000561C5 /* MicroBlink.framework */; };
+		A2FA9D301EF18B4C004C0691 /* MicroBlink.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 319649BC1D0AE282000561C5 /* MicroBlink.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A2FA9D311EF18B4C004C0691 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A2FA9D301EF18B4C004C0691 /* MicroBlink.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1819B6F01B7745150002325E /* DirectAPI-Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DirectAPI-Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,6 +64,7 @@
 		3170EA041CC0EF6F0017ABF0 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		319649BB1D0AE282000561C5 /* MicroBlink.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MicroBlink.bundle; path = ../../MicroBlink.bundle; sourceTree = "<group>"; };
 		319649BC1D0AE282000561C5 /* MicroBlink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MicroBlink.framework; path = ../../MicroBlink.framework; sourceTree = "<group>"; };
+		A2FA9D2D1EF18B41004C0691 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +72,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3170EA051CC0EF6F0017ABF0 /* libiconv.tbd in Frameworks */,
-				3170EA031CC0EF680017ABF0 /* libc++.tbd in Frameworks */,
+				A2FA9D2F1EF18B4C004C0691 /* MicroBlink.framework in Frameworks */,
 				3170E9FE1CC0EEE60017ABF0 /* Accelerate.framework in Frameworks */,
-				319649BE1D0AE282000561C5 /* MicroBlink.framework in Frameworks */,
 				3170E9FF1CC0EEE60017ABF0 /* AudioToolbox.framework in Frameworks */,
 				3170EA001CC0EEE60017ABF0 /* AVFoundation.framework in Frameworks */,
 				3170EA011CC0EEE60017ABF0 /* CoreMedia.framework in Frameworks */,
+				A2FA9D2E1EF18B41004C0691 /* libz.tbd in Frameworks */,
+				3170EA051CC0EF6F0017ABF0 /* libiconv.tbd in Frameworks */,
+				3170EA031CC0EF680017ABF0 /* libc++.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +134,7 @@
 		3170E9F91CC0EECF0017ABF0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A2FA9D2D1EF18B41004C0691 /* libz.tbd */,
 				319649BB1D0AE282000561C5 /* MicroBlink.bundle */,
 				319649BC1D0AE282000561C5 /* MicroBlink.framework */,
 				3170EA041CC0EF6F0017ABF0 /* libiconv.tbd */,
@@ -138,6 +157,8 @@
 				1819B6EC1B7745150002325E /* Sources */,
 				1819B6ED1B7745150002325E /* Frameworks */,
 				1819B6EE1B7745150002325E /* Resources */,
+				A2FA9D311EF18B4C004C0691 /* Embed Frameworks */,
+				A230C02F1F03A4D800B5C829 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -194,6 +215,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A230C02F1F03A4D800B5C829 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "APP_PATH=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}\"\n\n# This script loops through the frameworks embedded in the application and\n# removes unused architectures.\nfind \"$APP_PATH\" -name '*.framework' -type d | while read -r FRAMEWORK\ndo\nFRAMEWORK_EXECUTABLE_NAME=$(defaults read \"$FRAMEWORK/Info.plist\" CFBundleExecutable)\nFRAMEWORK_EXECUTABLE_PATH=\"$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME\"\necho \"Executable is $FRAMEWORK_EXECUTABLE_PATH\"\n\nEXTRACTED_ARCHS=()\n\nfor ARCH in $ARCHS\ndo\necho \"Extracting $ARCH from $FRAMEWORK_EXECUTABLE_NAME\"\nlipo -extract \"$ARCH\" \"$FRAMEWORK_EXECUTABLE_PATH\" -o \"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\"\nEXTRACTED_ARCHS+=(\"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\")\ndone\n\necho \"Merging extracted architectures: ${ARCHS}\"\nlipo -o \"$FRAMEWORK_EXECUTABLE_PATH-merged\" -create \"${EXTRACTED_ARCHS[@]}\"\nrm \"${EXTRACTED_ARCHS[@]}\"\n\necho \"Replacing original executable with thinned version\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_EXECUTABLE_PATH-merged\" \"$FRAMEWORK_EXECUTABLE_PATH\"\n\ndone";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1819B6EC1B7745150002325E /* Sources */ = {

@@ -33,6 +33,8 @@ typedef NS_ENUM(NSUInteger, PPBarcodeType) {
     PPBarcodeTypeUPCA,
     /** UPCE */
     PPBarcodeTypeUPCE,
+    /** NONDE */
+    PPBarcodeNone
 };
 
 

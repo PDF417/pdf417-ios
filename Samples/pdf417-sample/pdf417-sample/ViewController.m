@@ -55,15 +55,15 @@
     /** 2. Setup the license key */
 
     // Visit www.microblink.com to get the license key for your app
-    settings.licenseSettings.licenseKey = @"P4UMNYU7-I7AC2H6L-TSNPWJMK-F6TQJMGR-BBCGAQHU-Q62STGXX-TFEXOVAI-IRQBD5QE";
-    // License key valid temporarily until 2017-05-28
+    settings.licenseSettings.licenseKey = @"DLBEP3UR-RIUY2CWK-GAFS4NFQ-4GHQCS35-5ZO5RWOZ-3HM5TWOZ-3HM5TWOZ-3HMYRQBZ";
+    // Valid until 2017-09-26
 
 
     /**
      * 3. Set up what is being scanned. See detailed guides for specific use cases.
      * Remove undesired recognizers (added below) for optimal performance.
      */
-
+    
     // To specify we want to perform PDF417 recognition, initialize the PDF417 recognizer settings
     PPPdf417RecognizerSettings *pdf417RecognizerSettings = [[PPPdf417RecognizerSettings alloc] init];
     
@@ -71,11 +71,11 @@
     [settings.scanSettings addRecognizerSettings:pdf417RecognizerSettings];
     
     // To specify we want to perform recognition of other barcode formats, initialize the ZXing recognizer settings
-    PPZXingRecognizerSettings *zxingRecognizerSettings = [[PPZXingRecognizerSettings alloc] init];
-    zxingRecognizerSettings.scanQR = YES; // we use just QR code
+    PPBarcodeRecognizerSettings *barcodeRecognizerSettings = [[PPBarcodeRecognizerSettings alloc] init];
+    barcodeRecognizerSettings.scanQR = YES; // we use just QR code
     
     // Add ZXingRecognizer setting to a list of used recognizer settings
-    [settings.scanSettings addRecognizerSettings:zxingRecognizerSettings];
+    [settings.scanSettings addRecognizerSettings:barcodeRecognizerSettings];
     
     // To specify we want to scan USDLs, initialize USDL rcognizer settings
     PPUsdlRecognizerSettings *usdlRecognizerSettings = [[PPUsdlRecognizerSettings alloc] init];
@@ -213,15 +213,15 @@
     
     if (!usdlFound) {
         for (PPRecognizerResult* result in results) {
-            if ([result isKindOfClass:[PPZXingRecognizerResult class]]) {
+            if ([result isKindOfClass:[PPBarcodeRecognizerResult class]]) {
                 /** One of ZXing codes was detected */
                 
-                PPZXingRecognizerResult *zxingResult = (PPZXingRecognizerResult *)result;
+                PPBarcodeRecognizerResult *barcodeResult = (PPBarcodeRecognizerResult *)result;
                 
                 title = @"QR code";
                 
                 // Save the string representation of the code
-                message = [zxingResult stringUsingGuessedEncoding];
+                message = [barcodeResult stringUsingGuessedEncoding];
             }
             if ([result isKindOfClass:[PPPdf417RecognizerResult class]]) {
                 /** Pdf417 code was detected */

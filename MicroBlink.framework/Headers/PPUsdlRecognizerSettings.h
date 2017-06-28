@@ -16,7 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
  * Usdl Recognizer recognizer is used for scanning and parsing of PDF417
  * on the back sides of the US drivers license
  */
-PP_CLASS_AVAILABLE_IOS(6.0) @interface PPUsdlRecognizerSettings : PPRecognizerSettings
+PP_CLASS_AVAILABLE_IOS(6.0)
+@interface PPUsdlRecognizerSettings : PPRecognizerSettings
 
 /**
  * Set this to YES to scan even barcode not compliant with standards
@@ -24,7 +25,7 @@ PP_CLASS_AVAILABLE_IOS(6.0) @interface PPUsdlRecognizerSettings : PPRecognizerSe
  *
  * Use only if necessary because it slows down the recognition process
  *
- * Default: NO
+ * Default: YES
  */
 @property (nonatomic) BOOL scanUncertain;
 

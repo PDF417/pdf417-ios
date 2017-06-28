@@ -23,8 +23,24 @@
 		18E266471BCE5C7500FF4871 /* PPCameraOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E266451BCE5C7500FF4871 /* PPCameraOverlayViewController.m */; };
 		18E266481BCE5C7500FF4871 /* PPCameraOverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E266461BCE5C7500FF4871 /* PPCameraOverlayViewController.xib */; };
 		318AA94D1CEB44AF0082C189 /* MicroBlink.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 318AA94B1CEB44AF0082C189 /* MicroBlink.bundle */; };
-		318AA94E1CEB44AF0082C189 /* MicroBlink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 318AA94C1CEB44AF0082C189 /* MicroBlink.framework */; };
+		A2B4C69B1EF1863D0088C51B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A2B4C69A1EF1863D0088C51B /* libz.tbd */; };
+		A2B4C69C1EF186440088C51B /* MicroBlink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 318AA94C1CEB44AF0082C189 /* MicroBlink.framework */; };
+		A2B4C69D1EF186440088C51B /* MicroBlink.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 318AA94C1CEB44AF0082C189 /* MicroBlink.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A2B4C69E1EF186440088C51B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A2B4C69D1EF186440088C51B /* MicroBlink.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1804599C1C2AF6360063367B /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -49,6 +65,7 @@
 		18E266461BCE5C7500FF4871 /* PPCameraOverlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPCameraOverlayViewController.xib; sourceTree = "<group>"; };
 		318AA94B1CEB44AF0082C189 /* MicroBlink.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MicroBlink.bundle; path = ../../MicroBlink.bundle; sourceTree = "<group>"; };
 		318AA94C1CEB44AF0082C189 /* MicroBlink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MicroBlink.framework; path = ../../MicroBlink.framework; sourceTree = "<group>"; };
+		A2B4C69A1EF1863D0088C51B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,13 +73,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2B4C69C1EF186440088C51B /* MicroBlink.framework in Frameworks */,
 				1804599F1C2AF63A0063367B /* AssetsLibrary.framework in Frameworks */,
 				1804599D1C2AF6360063367B /* Accelerate.framework in Frameworks */,
-				318AA94E1CEB44AF0082C189 /* MicroBlink.framework in Frameworks */,
 				18E2663F1BCE5BE700FF4871 /* AudioToolbox.framework in Frameworks */,
 				18E2663B1BCE5BBB00FF4871 /* AVFoundation.framework in Frameworks */,
 				18E266411BCE5C0A00FF4871 /* CoreMedia.framework in Frameworks */,
 				18E2663D1BCE5BE100FF4871 /* libiconv.tbd in Frameworks */,
+				A2B4C69B1EF1863D0088C51B /* libz.tbd in Frameworks */,
 				18E266391BCE5B9600FF4871 /* libc++.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -115,8 +133,8 @@
 		18E2661F1BCE56C300FF4871 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				318AA94B1CEB44AF0082C189 /* MicroBlink.bundle */,
 				318AA94C1CEB44AF0082C189 /* MicroBlink.framework */,
+				318AA94B1CEB44AF0082C189 /* MicroBlink.bundle */,
 				1804599C1C2AF6360063367B /* Accelerate.framework */,
 				18E2663E1BCE5BE700FF4871 /* AudioToolbox.framework */,
 				18E2663A1BCE5BBB00FF4871 /* AVFoundation.framework */,
@@ -124,6 +142,7 @@
 				18E266401BCE5C0A00FF4871 /* CoreMedia.framework */,
 				18E2663C1BCE5BE100FF4871 /* libiconv.tbd */,
 				18E266381BCE5B9600FF4871 /* libc++.tbd */,
+				A2B4C69A1EF1863D0088C51B /* libz.tbd */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -156,6 +175,8 @@
 				18E265E51BCE565E00FF4871 /* Sources */,
 				18E265E61BCE565E00FF4871 /* Frameworks */,
 				18E265E71BCE565E00FF4871 /* Resources */,
+				A2B4C69E1EF186440088C51B /* Embed Frameworks */,
+				A230C0301F03A4F200B5C829 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -213,6 +234,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A230C0301F03A4F200B5C829 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "APP_PATH=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}\"\n\n# This script loops through the frameworks embedded in the application and\n# removes unused architectures.\nfind \"$APP_PATH\" -name '*.framework' -type d | while read -r FRAMEWORK\ndo\nFRAMEWORK_EXECUTABLE_NAME=$(defaults read \"$FRAMEWORK/Info.plist\" CFBundleExecutable)\nFRAMEWORK_EXECUTABLE_PATH=\"$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME\"\necho \"Executable is $FRAMEWORK_EXECUTABLE_PATH\"\n\nEXTRACTED_ARCHS=()\n\nfor ARCH in $ARCHS\ndo\necho \"Extracting $ARCH from $FRAMEWORK_EXECUTABLE_NAME\"\nlipo -extract \"$ARCH\" \"$FRAMEWORK_EXECUTABLE_PATH\" -o \"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\"\nEXTRACTED_ARCHS+=(\"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\")\ndone\n\necho \"Merging extracted architectures: ${ARCHS}\"\nlipo -o \"$FRAMEWORK_EXECUTABLE_PATH-merged\" -create \"${EXTRACTED_ARCHS[@]}\"\nrm \"${EXTRACTED_ARCHS[@]}\"\n\necho \"Replacing original executable with thinned version\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_EXECUTABLE_PATH-merged\" \"$FRAMEWORK_EXECUTABLE_PATH\"\n\ndone";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		18E265E51BCE565E00FF4871 /* Sources */ = {
@@ -340,6 +377,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CQTJWP89J7;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = ../../;
 				INFOPLIST_FILE = "pdf417-sample/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -354,6 +392,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CQTJWP89J7;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = ../../;
 				INFOPLIST_FILE = "pdf417-sample/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

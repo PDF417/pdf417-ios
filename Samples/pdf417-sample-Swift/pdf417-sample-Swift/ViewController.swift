@@ -45,7 +45,8 @@ class ViewController: UIViewController, PPScanningDelegate {
         /** 2. Setup the license key */
         
         // Visit www.microblink.com to get the license key for your app
-        settings.licenseSettings.licenseKey = "EZ5DQOQ2-W3VLXJUY-OQ4FUOIE-O5AG3AOQ-6ZOVNPGI-EXNJDSJQ-SHETBEOJ-GCIZRTDB"
+		// Valid until 2017-09-26
+        settings.licenseSettings.licenseKey = "ZZWGCM2D-CYET463I-X7LIKLYZ-2D3F2VV4-ZAS5VEOJ-GCI4SMER-ZEYJDSJQ-SHEWD7C5"
         
         
         /**
@@ -67,14 +68,14 @@ class ViewController: UIViewController, PPScanningDelegate {
         // Remove this code if you don't need to scan QR codes
         do {
             // To specify we want to perform recognition of other barcode formats, initialize the ZXing recognizer settings
-            let zxingRecognizerSettings: PPZXingRecognizerSettings = PPZXingRecognizerSettings()
+            let barcodeRecognizerSettings: PPBarcodeRecognizerSettings = PPBarcodeRecognizerSettings()
             
             
             /** You can modify the properties of zxingRecognizerSettings to suit your use-case (i.e. add other types of barcodes like QR, Aztec or EAN)*/
-            zxingRecognizerSettings.scanQR=true // we use just QR code
+            barcodeRecognizerSettings.scanQR=true // we use just QR code
             
             // Add ZXingRecognizer setting to a list of used recognizer settings
-            settings.scanSettings.add(zxingRecognizerSettings)
+            settings.scanSettings.add(barcodeRecognizerSettings)
         }
         
         // Remove this code if you don't need to scan US drivers licenses
@@ -179,15 +180,15 @@ class ViewController: UIViewController, PPScanningDelegate {
         
         if (!usdlFound) {
             for result in results {
-                if(result is PPZXingRecognizerResult) {
+                if(result is PPBarcodeRecognizerResult) {
                     /** One of ZXing codes was detected */
                     
-                    let zxingResult = result as! PPZXingRecognizerResult
+                    let barcodeResult = result as! PPBarcodeRecognizerResult
                     
                     title = "QR code"
                     
                     // Save the string representation of the code
-                    message = zxingResult.stringUsingGuessedEncoding()
+                    message = barcodeResult.stringUsingGuessedEncoding()!
                 }
                 if(result is PPPdf417RecognizerResult) {
                     /** Pdf417 code was detected */
@@ -197,17 +198,17 @@ class ViewController: UIViewController, PPScanningDelegate {
                     title = "PDF417"
                     
                     // Save the string representation of the code
-                    message = pdf417Result.stringUsingGuessedEncoding()
+                    message = pdf417Result.stringUsingGuessedEncoding()!
                 }
-                if(result is PPBarDecoderRecognizerResult) {
+                if(result is PPBarcodeRecognizerResult) {
                     /** One of BarDecoder codes was detected */
                     
-                    let barDecoderResult = result as! PPBarDecoderRecognizerResult
+                    let barcodeResult = result as! PPBarcodeRecognizerResult
                     
-                    title = "BarDecoder"
+                    title = "Barcode"
                     
                     // Save the string representation of the code
-                    message = barDecoderResult.stringUsingGuessedEncoding()
+                    message = barcodeResult.stringUsingGuessedEncoding()!
                 }
             }
         }

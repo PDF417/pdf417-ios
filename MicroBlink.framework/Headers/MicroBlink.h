@@ -16,6 +16,9 @@
 #import "PPModernOverlayViewController.h"
 #import "PPOverlaySubview.h"
 
+// Permission denied view controller
+#import "PPPermissionDeniedViewController.h"
+
 // Detectors
 #import "PPPointsDetectorResult.h"
 #import "PPQuadDetectorResult.h"

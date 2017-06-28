@@ -1,5 +1,61 @@
 # Release notes
 
+## 5.1.0
+
+- Updates and additions:
+    - Microblink.framework is now a dynamic framework. The change is introduced because of the following reasons:
+        - isolation of code
+        - better interop with third party libraries
+    - Improved Screen shown when Camera permission is not granted:
+        - fixed crash which happened on tap anywhere on screen
+        - close button can now be removed (for example, if the scanning screen is inside `UINavigationController` instance)
+        - Header is now public so you can instantiate that class if needed
+    - Updated PPUiSettings with new features:
+        - flag `showStatusBar` which you can use to show or hide status bar on camera screen 
+        - flag `showCloseButton` which you can use to show or hide close button on camera screen. By default it's presented, but when inside `UINavigationController` it should be hidden
+        - flat `showTorchButton` which you can use to show or hide torch button on camera screen.
+    - Renamed internal extension method with namespace so that they don't interfere with third party libraries
+    - Added standard tap to focus overlay subview in all default OverlayViewControllers. Also added it as a public header.
+    - PPScanningViewController now has a simple method to turn on torch
+    - added play success sound method to `PPScanningViewController` protocol
+
+    - Added feature to enable frame quality estimation when using Direct API (by exposing property estimateFrameQuality)
+    - Internal switch to new build system using cmake. This allows faster deployments and easier updates in the future
+
+    - Deprecated `PPHelpDisplayMode`. It still works, but ideally, you should replace it with a custom logic for presenting help inside the application using the SDK.
+    - `PPAztecRecognizerResult` and `PPAztecRecognizerSettings` are now deprecated. Use `PPBarcodeRecognizerResult` and `PPBarcodeRecognizerSettings`
+    - `PPBarDecoderRecognizerResult` and `PPBarDecoderRecognizerSettings` are now deprecated. Use `PPBarcodeRecognizerResult` and `PPBarcodeRecognizerSettings`
+    - `PPZXingRecognizerResult` and `PPZXingRecognizerSettings` are now deprecated. Use `PPBarcodeRecognizerResult` and `PPBarcodeRecognizerSettings`
+
+- Bugfixes:
+    - Fixed bug which caused didOutputResults: not to get called in DirectAPI
+      Fixed case sensitivity in class & file naming
+    - Fixed issue which sometimes caused scanning not to be started when the user is asked for camera permission (first run of the app)
+    - Fixed rare crash which Camera paused label UI being updated on background thread
+    - Fixed incorrect handling of camera mirror when using front facing camera
+    - Fixed crash which sometimes happened when presenting help screens (if `PPHelpDisplayModeAlways` or `PPHelpDisplayModeFirstRun` were used)
+    - Fixed issue with blurred camera display when `PPCoordinator` instance was reused between consecutive scanning sessions
+    - Fixed crashed which happened when multiple instances of `PPCoordinator` were used simultaneously (one being terminated and one starting recognition). This most commonly happened when after scanning session, a new view controller was pushed to a Navigation View Controller, when the user repeated the procedure a number of times (five or more).
+    - Fixed nullability annotations in result classes. Now, wherever the `nil`value is allowed, it means no data exists on the scanned document. If an empty string `@""` is returned, this means the field exist, but it's empty. 
+    - Fixed an issue which caused camera settings to be reset each time PPCoordinator's applySettings method was called.
+    - Fixed crash on start in swift if custom UI was used to handle detector results
+    - Fixed crash when the user tapped anywhere on the view controller presented when camera permission wasn't allowed
+    - Fixed Torch button on default camera overlays. Previously it never changed state after it was turned on.
+    - Fixed crash when Single dispatch queue was used for processing
+    - Fixed issue with Direct API which disabled processing
+    - Fixed internal bug which caused crashes if `PPCoordinator applySettings` was called with the same Recognizer settings (this is a very rare use case)
+    - Fixed Czech translation
+    - Fixed Czech QR Code amount scanning - improved parsing of amounts with less than 2 decimals
+
+- Improvements in PhotoPay scanning:
+    - Improved reading of pdf417 barcodes having width:height bar aspect ratio less than 2:1    
+
+- Changes in Samples:
+     - Added libz to all samples to prevent linker errors (caused by slimming down the SDK)
+     - Samples updated to use new dynamic framework
+     - Added a build phase in each sample which removes unused architectures from the dynamic framework    
+
+
 ## 5.0.5
 
 - US Driver's Licence:

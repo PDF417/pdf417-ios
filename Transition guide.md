@@ -1,3 +1,6 @@
+## Transition to 5.1.1
+- No backwards incompatible changes. See Release notes for bugfixes.
+
 ## Transition to 5.1.0
 - Since Microblink.framework is a dynamic framework, you also need to **add it to embedded binaries section in General settings of your target.**
 

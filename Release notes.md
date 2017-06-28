@@ -1,5 +1,10 @@
 # Release notes
 
+## 5.1.1
+
+- Bugfixes:
+    - Fixed `PPBarcodeRecognizerResult`'s `barcodeType` property
+
 ## 5.1.0
 
 - Updates and additions:

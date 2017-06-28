@@ -8,12 +8,15 @@
 
 #import "PPModernBaseOverlayViewController.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @class PPPhotoPayUiSettings;
 
 /**
  * Default version of overlay view controller with modern design.
  */
-PP_CLASS_AVAILABLE_IOS(6.0) @interface PPModernOverlayViewController : PPModernBaseOverlayViewController
+PP_CLASS_AVAILABLE_IOS(6.0)
+@interface PPModernOverlayViewController : PPModernBaseOverlayViewController
 
 /**
  * Supported orientations mask
@@ -23,7 +26,7 @@ PP_CLASS_AVAILABLE_IOS(6.0) @interface PPModernOverlayViewController : PPModernB
 /**
  * Common photopay UI settings
  */
-@property (nonatomic, strong, readonly) PPPhotoPayUiSettings* uiSettings;
+@property (nonatomic, strong, readonly) PPPhotoPayUiSettings *uiSettings;
 
 /**
  * Designated intializer.
@@ -35,3 +38,5 @@ PP_CLASS_AVAILABLE_IOS(6.0) @interface PPModernOverlayViewController : PPModernB
 - (instancetype)initWithUiSettings:(PPPhotoPayUiSettings *)uiSettings;
 
 @end
+
+NS_ASSUME_NONNULL_END

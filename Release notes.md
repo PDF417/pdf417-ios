@@ -1,5 +1,25 @@
 # Release notes
 
+## 5.1.2
+
+- Updates and additions
+    - Added Barcode Recognizer `PPBarcodeRecognizerResult` and `PPBarcodeRecognizerSettings`
+    - Deprecated `PPBarDecoderRecognizerResult` and `PPBarDecoderRecognizerSettings`. Use Barcode Recognizer
+    - Deprecated `PPZXingRecognizerResult` and `PPZXingRecognizerSettings`. Use Barcode Recognize
+
+- Bug fixes
+    - fixed crash in QR code which happened periodically in all recognizers
+    - fixed crash in Aztec reader
+    - MicroBlink executable is removed in Resources bundle
+    - fixed scanning when using PDF417 and USDL at the same time 
+
+- Minor API changes
+    - removed option to scan 1D Code39 and Code128 barcodes on US Driver's licenses that contain those barcodes alongside PDF417 barcode
+
+- Improvements for existing features
+    - improved USDLRecognizer - added support for new USDL standard
+    - CFBundleShortVersionString is now updated with each release
+
 ## 5.1.1
 
 - Bugfixes:

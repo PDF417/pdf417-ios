@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/MicroBlink.h</key>
 		<data>
-		HsSZ0T9OlEX+WfolWVX8gP7ND8s=
+		9gz/Uh1WZBHX5Rj1CMG7RiMiVGI=
 		</data>
 		<key>Headers/PPApp.h</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>Headers/PPBarcodeRecognizerResult.h</key>
 		<data>
-		ZK1KgaFioDLjrOfdppDBKyOM7EU=
+		ZhJQ1YSpAVfSmBjGXL4IonAR510=
 		</data>
 		<key>Headers/PPBarcodeRecognizerSettings.h</key>
 		<data>
@@ -92,17 +92,9 @@
 		<data>
 		jL2x471C2gdLVlNj/2jPMGXYGp8=
 		</data>
-		<key>Headers/PPDocumentDetectorResult.h</key>
-		<data>
-		oc4TLgLJyyVci6VnoW72tS7cueo=
-		</data>
 		<key>Headers/PPDotsOverlaySubview.h</key>
 		<data>
 		J17/lEyC/2sOjJzh8e6f26jCUJY=
-		</data>
-		<key>Headers/PPFaceDetectorResult.h</key>
-		<data>
-		V9NfANQkYP+C42bp8EcD47NcB4E=
 		</data>
 		<key>Headers/PPFieldOfViewOverlaySubview.h</key>
 		<data>
@@ -176,10 +168,6 @@
 		<data>
 		mM5bvwh1zDStHh8Lau2ybLs7oRk=
 		</data>
-		<key>Headers/PPMrtdDetectorResult.h</key>
-		<data>
-		RZIlLDSQlJYRhLsMUswpswcXUTk=
-		</data>
 		<key>Headers/PPMultiDetectorResult.h</key>
 		<data>
 		s7/naCSEK7gu/WSaPzBneHbqj5U=
@@ -187,14 +175,6 @@
 		<key>Headers/PPNativeResult.h</key>
 		<data>
 		HSdWRhCGqykM28actPnOfF2MbzA=
-		</data>
-		<key>Headers/PPOcrFont.h</key>
-		<data>
-		UTzYvIbh4FcuUe1PVSee23SIm1A=
-		</data>
-		<key>Headers/PPOcrLayout.h</key>
-		<data>
-		7ylq08Z2SPWBtjlznL+q7JxmIbM=
 		</data>
 		<key>Headers/PPOcrLineOverlaySubview.h</key>
 		<data>
@@ -239,6 +219,10 @@
 		<key>Headers/PPQuadDetectorResult.h</key>
 		<data>
 		iQqMTyvKwLZtMyyZcL27N0UYFNE=
+		</data>
+		<key>Headers/PPQuadDetectorResultWithSize.h</key>
+		<data>
+		d7AEAkHjFz71xRqxtW7xBj9xets=
 		</data>
 		<key>Headers/PPQuadDetectorSettings.h</key>
 		<data>
@@ -314,11 +298,11 @@
 		</data>
 		<key>Headers/PPUsdlRecognizerResult.h</key>
 		<data>
-		qJ4FATEGNLDB/dIsKZ0jSpNA3Pw=
+		Uth+7B74uclp1DlBNNFv5pdUYFM=
 		</data>
 		<key>Headers/PPUsdlRecognizerSettings.h</key>
 		<data>
-		U4evJ1MKchd+pEzxLdESLAOD+84=
+		jpwdhZzzSM2SkF0aPdU+pKqxdpc=
 		</data>
 		<key>Headers/PPViewControllerFactory.h</key>
 		<data>
@@ -338,7 +322,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		mfllgnGnaNt/VdZgC3WDALnrMkg=
+		5NGKOmXtXgG2Xcu8KKfmjoF4NXo=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -351,11 +335,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			HsSZ0T9OlEX+WfolWVX8gP7ND8s=
+			9gz/Uh1WZBHX5Rj1CMG7RiMiVGI=
 			</data>
 			<key>hash2</key>
 			<data>
-			q5t3boET23HGUZ7+7JPxxmVHGSX1ZVIDaMbFk2pTiSY=
+			DqRgpShRD57X5HPxaHjLqz9SyxWyh2qUN+EOT/I27/0=
 			</data>
 		</dict>
 		<key>Headers/PPApp.h</key>
@@ -417,11 +401,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ZK1KgaFioDLjrOfdppDBKyOM7EU=
+			ZhJQ1YSpAVfSmBjGXL4IonAR510=
 			</data>
 			<key>hash2</key>
 			<data>
-			da1H7SaPRAObaxHQXDT7UZw/2RHm0PGu6TcXDdE1aiA=
+			rMeReyZ4KleDdCJSj+FQqmBqk51TxvkqZcaA2MqtN90=
 			</data>
 		</dict>
 		<key>Headers/PPBarcodeRecognizerSettings.h</key>
@@ -589,17 +573,6 @@
 			m3hzeAsuPFz4ixMd8VdSwdQf33uZ1Gvcq3sitaU7gi8=
 			</data>
 		</dict>
-		<key>Headers/PPDocumentDetectorResult.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			oc4TLgLJyyVci6VnoW72tS7cueo=
-			</data>
-			<key>hash2</key>
-			<data>
-			1YsBPmClEghuD7nnYU39etgoIp4j/UYHoIUDTwnXGZ0=
-			</data>
-		</dict>
 		<key>Headers/PPDotsOverlaySubview.h</key>
 		<dict>
 			<key>hash</key>
@@ -609,17 +582,6 @@
 			<key>hash2</key>
 			<data>
 			4Z3goSBv8o9SsVdTXxQOdJLPHSatnpZBdECAZ7MJH1M=
-			</data>
-		</dict>
-		<key>Headers/PPFaceDetectorResult.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			V9NfANQkYP+C42bp8EcD47NcB4E=
-			</data>
-			<key>hash2</key>
-			<data>
-			lmkFUMjN8/5S3iNvj4DI4LoHnIyx6VeqEPCmknzRpS0=
 			</data>
 		</dict>
 		<key>Headers/PPFieldOfViewOverlaySubview.h</key>
@@ -820,17 +782,6 @@
 			a264Djo78GVd+jXtkLzzY2HMqX7IbLIAU4RBwNuEE58=
 			</data>
 		</dict>
-		<key>Headers/PPMrtdDetectorResult.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			RZIlLDSQlJYRhLsMUswpswcXUTk=
-			</data>
-			<key>hash2</key>
-			<data>
-			Y1X+Skbb4if0c5vz0Tzi67pHI2NtU6p8EsEY/1kO/c8=
-			</data>
-		</dict>
 		<key>Headers/PPMultiDetectorResult.h</key>
 		<dict>
 			<key>hash</key>
@@ -851,28 +802,6 @@
 			<key>hash2</key>
 			<data>
 			a8nDvOfJi8QY2y5mD+Or3fhiP7AxiT2hsFVpqkhUwGk=
-			</data>
-		</dict>
-		<key>Headers/PPOcrFont.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			UTzYvIbh4FcuUe1PVSee23SIm1A=
-			</data>
-			<key>hash2</key>
-			<data>
-			bA8Jo6z8n/gDLjx04E3JZQdqE5/iN7hx9wQeLKvEMEI=
-			</data>
-		</dict>
-		<key>Headers/PPOcrLayout.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			7ylq08Z2SPWBtjlznL+q7JxmIbM=
-			</data>
-			<key>hash2</key>
-			<data>
-			icWefukfRVnIQleUdKtLyu5FfEZizrP0Lk1i4PbOdSI=
 			</data>
 		</dict>
 		<key>Headers/PPOcrLineOverlaySubview.h</key>
@@ -994,6 +923,17 @@
 			<key>hash2</key>
 			<data>
 			gTWrHwI4mRhaeH//M9KqvORW5myL7Ir4KP5ormoBTVU=
+			</data>
+		</dict>
+		<key>Headers/PPQuadDetectorResultWithSize.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			d7AEAkHjFz71xRqxtW7xBj9xets=
+			</data>
+			<key>hash2</key>
+			<data>
+			ijC5w7rmM1abOckiPXgPpGALAmyFar1JS4DLC9bkcDo=
 			</data>
 		</dict>
 		<key>Headers/PPQuadDetectorSettings.h</key>
@@ -1198,22 +1138,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			qJ4FATEGNLDB/dIsKZ0jSpNA3Pw=
+			Uth+7B74uclp1DlBNNFv5pdUYFM=
 			</data>
 			<key>hash2</key>
 			<data>
-			XyPU8trndvQvPtjOwKBuvJ7Ljqh+RqVCJTCcBO0Em7A=
+			k6uEarCieu/ZvfHDjJdIluzEl3gW8AGu4gEVM/4hvE4=
 			</data>
 		</dict>
 		<key>Headers/PPUsdlRecognizerSettings.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			U4evJ1MKchd+pEzxLdESLAOD+84=
+			jpwdhZzzSM2SkF0aPdU+pKqxdpc=
 			</data>
 			<key>hash2</key>
 			<data>
-			UP+KlgBEmKBNnDrXjfAkyV6/Fxs4bX+LM3BYCHY3RH4=
+			ETGSHKZyr6nte70jQ6Gd3LX6qEW+xPZlM0gYr0ACpT4=
 			</data>
 		</dict>
 		<key>Headers/PPViewControllerFactory.h</key>

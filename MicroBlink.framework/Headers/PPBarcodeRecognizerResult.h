@@ -13,28 +13,27 @@
  * Type of the barcode which BarDecoderRecognizer returnes
  */
 typedef NS_ENUM(NSUInteger, PPBarcodeType) {
-    /** Code 39 */
-    PPBarcodeTypeAztec,
+    PPBarcodeNone = 0,
+    /** QR code */
+    PPBarcodeTypeQR,
+    /** Data Matrix */
+    PPBarcodeTypeDataMatrix,
+    /** UPCE */
+    PPBarcodeTypeUPCE,
+    /** UPCA */
+    PPBarcodeTypeUPCA,
+    /** EAN 8 */
+    PPBarcodeTypeEAN8,
+    /** EAN 13 */
+    PPBarcodeTypeEAN13,
     /** Code 128 */
     PPBarcodeTypeCode128,
     /** Code 39 */
     PPBarcodeTypeCode39,
-    /** Data Matrix */
-    PPBarcodeTypeDataMatrix,
-    /** EAN 13 */
-    PPBarcodeTypeEAN13,
-    /** EAN 8 */
-    PPBarcodeTypeEAN8,
     /** ITF */
     PPBarcodeTypeITF,
-    /** QR code */
-    PPBarcodeTypeQR,
-    /** UPCA */
-    PPBarcodeTypeUPCA,
-    /** UPCE */
-    PPBarcodeTypeUPCE,
-    /** NONDE */
-    PPBarcodeNone
+    /** Code 39 */
+    PPBarcodeTypeAztec
 };
 
 

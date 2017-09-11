@@ -1,3 +1,9 @@
+## Transition to 5.1.2
+
+- `PPBarDecoderRecognizerResult` and `PPBarDecoderRecognizerSettings` are now deprecated. Use `PPBarcodeRecognizerResult` and `PPBarcodeRecognizerSettings`
+- `PPZXingRecognizerResult` and `PPZXingRecognizerSettings` are now deprecated. Use `PPBarcodeRecognizerResult` and `PPBarcodeRecognizerSettings`
+- There is no more option in PPUsdlRecognizerSettings to scan 1D barcodes. Previously this setting did nothing - it's OK to just delete the setter call if you use it.
+
 ## Transition to 5.1.1
 - No backwards incompatible changes. See Release notes for bugfixes.
 

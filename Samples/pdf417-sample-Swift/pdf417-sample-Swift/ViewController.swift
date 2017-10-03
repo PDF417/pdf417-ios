@@ -11,12 +11,9 @@ import MicroBlink
 
 class ViewController: UIViewController, PPScanningDelegate {
 
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
     
     /**
      * Method allocates and initializes the Scanning coordinator object.
@@ -136,9 +133,9 @@ class ViewController: UIViewController, PPScanningDelegate {
         self.present(scanningViewController, animated: true, completion: nil)
     }
 
-    func scanningViewController(_ scanningViewController: UIViewController?, didOutputResults results: [PPRecognizerResult]) {
-        
-        let scanConroller: PPScanningViewController = scanningViewController as! PPScanningViewController
+    func scanningViewController(_ scanningViewController: (UIViewController & PPScanningViewController)?, didOutputResults results: [PPRecognizerResult]) {
+
+        let scanConroller: PPScanningViewController = scanningViewController!
         
         /**
          * Here you process scanning results. Scanning results are given in the array of PPRecognizerResult objects.
@@ -224,15 +221,15 @@ class ViewController: UIViewController, PPScanningDelegate {
         scanningViewController?.present(alertController, animated: true, completion: nil)
     }
 
-    func scanningViewControllerUnauthorizedCamera(_ scanningViewController: UIViewController) {
+    func scanningViewControllerUnauthorizedCamera(_ scanningViewController: UIViewController & PPScanningViewController) {
         // Add any logic which handles UI when app user doesn't allow usage of the phone's camera
     }
 
-    func scanningViewController(scanningViewController: UIViewController, didFindError error: NSError) {
+    func scanningViewController(_ scanningViewController: UIViewController & PPScanningViewController, didFindError error: Error) {
         // Can be ignored. See description of the method
     }
 
-    func scanningViewControllerDidClose(_ scanningViewController: UIViewController) {
+    func scanningViewControllerDidClose(_ scanningViewController: UIViewController & PPScanningViewController) {
 
         // As scanning view controller is presented full screen and modally, dismiss it
         self.dismiss(animated: true, completion: nil)
@@ -242,11 +239,7 @@ class ViewController: UIViewController, PPScanningDelegate {
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
         self.dismiss(animated: true, completion: nil)
     }
-    
 
-    public func scanningViewController(_ scanningViewController: UIViewController, didFindError error: Error) {
-        
-    }
 }
 
 

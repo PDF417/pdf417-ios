@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "PPRecognizerSettings.h"
+#import "MBRecognizer.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -56,6 +57,8 @@ PP_CLASS_AVAILABLE_IOS(6.0)
  * @see PPRecognizerSettings.
  */
 @property (nonatomic, readonly) NSArray<PPRecognizerSettings *> *recognizerSettingsList;
+@property (nonatomic, readonly) NSArray<MBRecognizer *> *recognizerList;
+
 
 /**
  * If NO, recognizer chain will stop when finds first valid scan results and will return just it.
@@ -111,6 +114,8 @@ PP_CLASS_AVAILABLE_IOS(6.0)
  * @param setting Concerete recognizer setting.
  */
 - (void)addRecognizerSettings:(PPRecognizerSettings *)setting;
+
+- (void)addRecognizer:(MBRecognizer *)recognizer;
 
 /**
  * Removes recognizer setting to the list of all recognizer.

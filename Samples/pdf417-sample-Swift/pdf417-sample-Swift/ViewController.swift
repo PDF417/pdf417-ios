@@ -19,9 +19,18 @@ class ViewController: UIViewController {
         
         do {
             // Valid until: 2018-04-29
-            try  MBMicroblinkSDK.sharedInstance().setLicenseKey("sRwAAAEiY29tLm1pY3JvYmxpbmsucGRmNDE3LXNhbXBsZS1Td2lmdPJBcW5ST+Vh8XZIRAEE6zotdWPv/srBgsQWPiWLnegemVQbRiLXaviYVcQZCI6MwEM70MRh845oCHfIZ5uX3J1FxeWDxVcF5pYGwOvRHw0c4UDE6RjAiXxPmBR5GmmVuHhURCQ=")
+            try MBMicroblinkSDK.sharedInstance().setLicenseResource("license-pdf-swift", withExtension: "txt", inSubdirectory: "License", for: Bundle.main)
         } catch {
-            NSLog("%@", "Error")
+            // present the alert view with scanned results
+            
+            let alertController: UIAlertController = UIAlertController.init(title: "Error", message: error.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+            
+            let okAction: UIAlertAction = UIAlertAction.init(title: "OK", style: UIAlertActionStyle.default,
+                                                             handler: { (action) -> Void in
+                                                                self.dismiss(animated: true, completion: nil)
+            })
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
         }
     }
     
@@ -33,29 +42,38 @@ class ViewController: UIViewController {
             self.barcodeRecognizer?.scanQR = true
             
             self.pdf417Recognizer = try MBPdf417Recognizer()
+            
+            /** Create barcode settings */
+            let barcodeSettings : MBBarcodeOverlaySettings = MBBarcodeOverlaySettings()
+            
+            /** Crate recognizer collection */
+            let recognizerList : Array = [self.barcodeRecognizer!, self.pdf417Recognizer!] as! [MBRecognizer]
+            let recognizerCollection : MBRecognizerCollection = MBRecognizerCollection(recognizers: recognizerList)
+            
+            /** Add recognizer collection to barcode settings */
+            barcodeSettings.uiSettings.recognizerCollection = recognizerCollection
+            
+            /** Create your overlay view controller */
+            let barcodeOverlayViewController : MBBarcodeOverlayViewController = MBBarcodeOverlayViewController(settings: barcodeSettings, andDelegate: self)
+            
+            /** Create recognizer view controller with wanted overlay view controller */
+            let recognizerRunneViewController : UIViewController = try MBViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: barcodeOverlayViewController)
+            
+            /** Present the recognizer runner view controller. You can use other presentation methods as well (instead of presentViewController) */
+            self.present(recognizerRunneViewController, animated: true, completion: nil)
+            
         } catch {
-            NSLog("%@", "Error")
+            // present the alert view with scanned results
+            
+            let alertController: UIAlertController = UIAlertController.init(title: "Error", message: error.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+            
+            let okAction: UIAlertAction = UIAlertAction.init(title: "OK", style: UIAlertActionStyle.default,
+                                                             handler: { (action) -> Void in
+                                                                self.dismiss(animated: true, completion: nil)
+            })
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
         }
-        
-        /** Create barcode settings */
-        let barcodeSettings : MBBarcodeOverlaySettings = MBBarcodeOverlaySettings()
-        
-        /** Crate recognizer collection */
-        let recognizerList : Array = [self.barcodeRecognizer!, self.pdf417Recognizer!] as! [MBRecognizer]
-        let recognizerCollection : MBRecognizerCollection = MBRecognizerCollection(recognizers: recognizerList)
-        
-        /** Add recognizer collection to barcode settings */
-        barcodeSettings.uiSettings.recognizerCollection = recognizerCollection
-        
-        /** Create your overlay view controller */
-        let barcodeOverlayViewController : MBBarcodeOverlayViewController = MBBarcodeOverlayViewController(settings: barcodeSettings, andDelegate: self)
-        
-        /** Create recognizer view controller with wanted overlay view controller */
-        var error : NSError? = nil
-        let recognizerRunneViewController : UIViewController = MBViewControllerFactory.recognizerRunnerViewController(with: barcodeOverlayViewController, error: &error)
-        
-        /** Present the recognizer runner view controller. You can use other presentation methods as well (instead of presentViewController) */
-        self.present(recognizerRunneViewController, animated: true, completion: nil)
     }
 }
 

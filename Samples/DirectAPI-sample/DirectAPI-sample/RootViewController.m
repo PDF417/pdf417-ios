@@ -26,10 +26,12 @@ static NSString* rawOcrParserId = @"RawOcrParser";
     [super viewDidLoad];
     
     NSError *unlockLicenseKeyError;
-    NSString *license = @"sRwAAAEfY29tLm1pY3JvYmxpbmsuRGlyZWN0QVBJLVNhbXBsZbXR6VHQtZcAWafAn0eW0dZdQUzccGhjJLa98DUETJdqeAMoIf7LgTDXa9is20IXkUE5ESWDOaLHM3Z2kQN4klpTQ8sbrSf169SjunbWnUTM6iICt7bh970VgLmzxPgnfv4q0tQ="; // Valid until: 2018-04-29
-    BOOL success = [[MBMicroblinkSDK sharedInstance] setLicenseKey:license error:&unlockLicenseKeyError];
+    BOOL success = [[MBMicroblinkSDK sharedInstance] setLicenseResource:@"license" withExtension:@"txt" inSubdirectory:@"License" forBundle:[NSBundle mainBundle] error:&unlockLicenseKeyError];
     if (!success) {
         NSLog(@"%@",[unlockLicenseKeyError userInfo]);
+    }
+    else {
+        [self setupRecognizerRunner];
     }
 }
 
@@ -52,19 +54,6 @@ static NSString* rawOcrParserId = @"RawOcrParser";
     // set delegate
     imagePicker.delegate = self;
     
-    NSMutableArray<MBRecognizer *> *recognizers = [[NSMutableArray alloc] init];
-    
-    NSError *error;
-    self.pdf417Recognizer = [[MBPdf417Recognizer alloc] initWithError:&error];
-    
-    [recognizers addObject:self.pdf417Recognizer];
-    
-    MBSettings* settings = [[MBSettings alloc] init];
-    settings.uiSettings.recognizerCollection = [[MBRecognizerCollection alloc] initWithRecognizers:recognizers];
-    
-    self.recognizerRunner = [[MBRecognizerRunner alloc] initWithSettings:settings];
-    self.recognizerRunner.scanningRecognizerRunnerDelegate = self;
-
     [self presentViewController:imagePicker animated:YES completion:nil];
 }
 
@@ -74,14 +63,7 @@ static NSString* rawOcrParserId = @"RawOcrParser";
     // Handle a still image capture
     if (CFStringCompare((CFStringRef) mediaType, kUTTypeImage, 0) == kCFCompareEqualTo) {
         UIImage *originalImage = (UIImage *)[info objectForKey: UIImagePickerControllerOriginalImage];
-        
-        MBImage *image = [MBImage imageWithUIImage:originalImage];
-        image.cameraFrame = YES;
-        image.orientation = PPProcessingOrientationLeft;
-        dispatch_queue_t _serialQueue = dispatch_queue_create("com.microblink.DirectAPI-sample", DISPATCH_QUEUE_SERIAL);
-        dispatch_async(_serialQueue, ^{
-            [self.recognizerRunner processImage:image];
-        });
+        [self processImageRunner: originalImage];
     }
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
@@ -109,6 +91,31 @@ static NSString* rawOcrParserId = @"RawOcrParser";
             [self presentViewController:alertController animated:YES completion:nil];
         });
     }
+}
+
+- (void)setupRecognizerRunner {
+    NSMutableArray<MBRecognizer *> *recognizers = [[NSMutableArray alloc] init];
+    
+    NSError *error;
+    self.pdf417Recognizer = [[MBPdf417Recognizer alloc] initWithError:&error];
+    
+    [recognizers addObject:self.pdf417Recognizer];
+    
+    MBSettings* settings = [[MBSettings alloc] init];
+    settings.uiSettings.recognizerCollection = [[MBRecognizerCollection alloc] initWithRecognizers:recognizers];
+    
+    self.recognizerRunner = [[MBRecognizerRunner alloc] initWithSettings:settings];
+    self.recognizerRunner.scanningRecognizerRunnerDelegate = self;
+}
+
+- (void)processImageRunner:(UIImage *)originalImage {
+    MBImage *image = [MBImage imageWithUIImage:originalImage];
+    image.cameraFrame = YES;
+    image.orientation = PPProcessingOrientationLeft;
+    dispatch_queue_t _serialQueue = dispatch_queue_create("com.microblink.DirectAPI-sample", DISPATCH_QUEUE_SERIAL);
+    dispatch_async(_serialQueue, ^{
+        [self.recognizerRunner processImage:image];
+    });
 }
 
 @end

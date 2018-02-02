@@ -32,8 +32,8 @@ static NSString *rawOcrParserId = @"Raw ocr";
     [super viewDidLoad];
     
     NSError *unlockLicenseKeyError;
-    NSString *license = @"sRwAAAEfY29tLm1pY3JvYmxpbmsuRGlyZWN0QVBJLVNhbXBsZbXR6VHQtZcAWafAn0eW0dZdQUzccGhjJLa98DUETJdqeAMoIf7LgTDXa9is20IXkUE5ESWDOaLHM3Z2kQN4klpTQ8sbrSf169SjunbWnUTM6iICt7bh970VgLmzxPgnfv4q0tQ="; // Valid until: 2018-04-29
-    BOOL success = [[MBMicroblinkSDK sharedInstance] setLicenseKey:license error:&unlockLicenseKeyError];
+    // Valid until: 2018-04-29
+    BOOL success = [[MBMicroblinkSDK sharedInstance] setLicenseResource:@"license" withExtension:@"txt" inSubdirectory:@"License" forBundle:[NSBundle mainBundle] error:&unlockLicenseKeyError];
     if (!success) {
         NSLog(@"%@",[unlockLicenseKeyError userInfo]);
     }

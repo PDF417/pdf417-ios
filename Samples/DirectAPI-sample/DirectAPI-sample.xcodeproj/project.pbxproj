@@ -25,6 +25,7 @@
 		A2FA9D2E1EF18B41004C0691 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A2FA9D2D1EF18B41004C0691 /* libz.tbd */; };
 		A2FA9D2F1EF18B4C004C0691 /* MicroBlink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319649BC1D0AE282000561C5 /* MicroBlink.framework */; };
 		A2FA9D301EF18B4C004C0691 /* MicroBlink.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 319649BC1D0AE282000561C5 /* MicroBlink.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A2FF097E2024C5A200B14D0C /* License in Resources */ = {isa = PBXBuildFile; fileRef = A2FF097D2024C5A100B14D0C /* License */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -65,6 +66,7 @@
 		319649BB1D0AE282000561C5 /* MicroBlink.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MicroBlink.bundle; path = ../../MicroBlink.bundle; sourceTree = "<group>"; };
 		319649BC1D0AE282000561C5 /* MicroBlink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MicroBlink.framework; path = ../../MicroBlink.framework; sourceTree = "<group>"; };
 		A2FA9D2D1EF18B41004C0691 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		A2FF097D2024C5A100B14D0C /* License */ = {isa = PBXFileReference; lastKnownFileType = folder; name = License; path = "DirectAPI-sample/License"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 		1819B6F21B7745150002325E /* DirectAPI-Sample */ = {
 			isa = PBXGroup;
 			children = (
+				A2FF097D2024C5A100B14D0C /* License */,
 				1819B6F61B7745150002325E /* AppDelegate.h */,
 				1819B6F71B7745150002325E /* AppDelegate.m */,
 				1819B6F91B7745150002325E /* CameraViewController.h */,
@@ -210,6 +213,7 @@
 				1819B7031B7745150002325E /* LaunchScreen.storyboard in Resources */,
 				1819B7001B7745150002325E /* Assets.xcassets in Resources */,
 				1819B6FE1B7745150002325E /* Main.storyboard in Resources */,
+				A2FF097E2024C5A200B14D0C /* License in Resources */,
 				319649BD1D0AE282000561C5 /* MicroBlink.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

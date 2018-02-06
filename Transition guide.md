@@ -1,3 +1,7 @@
+## Transition to 7.0.0
+
+- New API, which is not backward compatible. Please check [README](README.md) and updated demo applications for more information.
+
 ## Transition to 5.1.2
 
 - `PPBarDecoderRecognizerResult` and `PPBarDecoderRecognizerSettings` are now deprecated. Use `PPBarcodeRecognizerResult` and `PPBarcodeRecognizerSettings`

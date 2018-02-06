@@ -1,3 +1,9 @@
+<p align="center" >
+  <a href="http://www.pdf417.mobi">
+    <img src="https://raw.githubusercontent.com/wiki/pdf417/pdf417-ios/Images/Logo.png" alt="pdf417 SDK for iOS" title="pdf417 SDK for iOS"/>
+  </a>
+</p>
+
 # _PDF417.mobi_ SDK for iOS
 
 [![Build Status](https://travis-ci.org/PDF417/pdf417-ios.png)](https://travis-ci.org/PDF417/pdf417-ios)
@@ -21,7 +27,32 @@ Using _PDF417.mobi_ in your app requires a valid license key. You can obtain a d
 
 For more information on how to integrate _PDF417.mobi_ SDK into your app read the instructions below. Make sure you read the latest [Release notes](https://github.com/PDF417/pdf417-ios/blob/master/Release%20notes.md) for the most recent changes and improvements.
 
-# Requirements
+# Table of contents
+
+* [Requirements](#requirements)
+* [Quick Start](#quickStart)
+* [Advanced PDF417.mobi integration instructions](#advancedIntegration)
+    * [UI customizations of built-in `MBOverlayViewControllers` and `MBOverlaySubviews`](#uiCustomizations)
+        * [Built-in overlay view controllers and overlay subviews](#builtInUIComponents)
+    * [Using `MBBarcodeOverlayViewController`](#mbBarcodeOverlayViewcontroller)
+    * [Custom overlay view controller](#recognizerRunnerViewController)
+    * [Direct processing API](#directAPI)
+* [`MBRecognizer` and available recognizers](#availableRecognizers)
+    * [The `MBRecognizer` concept](#recognizerConcept)
+    * [`MBRecognizerCollection` concept](#recognizerBCollection)
+    * [List of available recognizers](#recognizerList)
+        * [Frame Grabber Recognizer](#frameGrabberRecognizer)
+        * [Success Frame Grabber Recognizer](#successFrameGrabberRecognizer)
+    * [List of available recognizers within PDF417.mobi SDK](#recognizerList)
+        * [PDF417 recognizer](#pdf417Recognizer)
+        * [Barcode recognizer](#barcodeRecognizer)
+* [Troubleshooting](#troubleshoot)
+    * [Integration problems](#integrationTroubleshoot)
+    * [SDK problems](#sdkTroubleshoot)
+    * [Frequently asked questions and known problems](#faq)
+* [Additional info](#info)
+
+# <a name="requirements"></a> Requirements
 
 SDK package contains Microblink framework and one or more sample apps which demonstrate framework integration. The framework can be deployed in iOS 8.0 or later, iPhone 4S or newer and iPad 2 or newer.
 
@@ -57,7 +88,7 @@ git lfs install
 
 ```ruby
 platform :ios, '8.0'
-pod 'MBpdf417', '~> 7.0.0'
+    pod 'PPBlinkID', '~> 7.0.0'
 ```
 
 - Install the dependencies in your project:
@@ -125,22 +156,13 @@ Objective-C
     Swift
     ```swift
     /** First, set license key as soon as possible */
-    do {
-        try MBMicroblinkSDK.sharedInstance().setLicenseResource("<license_name>", withExtension: "<extension>", inSubdirectory: "<subdirectory-name>", for: <bundle>)
-    } catch {
-        // Error handling
-    }
+    MBMicroblinkSDK.sharedInstance().setLicenseResource("<license_name>", withExtension: "<extension>", inSubdirectory: "<subdirectory-name>", for: <bundle>)
     ```
 
     Objective-C
     ```objective-c
     /** First, set license key as soon as possible */
-    NSError *unlockLicenseKeyError;
-    NSString *license = @"base64 license key";
-    BOOL success = [[MBMicroblinkSDK sharedInstance] setLicenseResource:@"<license_name>" withExtension:@"t<extension>" inSubdirectory:@"<subdirectory-name>" forBundle:<bundle> error:&unlockLicenseKeyError];
-    if (!success) {
-        // Error handling
-    }
+    [[MBMicroblinkSDK sharedInstance] setLicenseResource:@"<license_name>" withExtension:@"t<extension>" inSubdirectory:@"<subdirectory-name>" forBundle:<bundle>];
     ```
 
 2. To initiate the scanning process, first decide where in your app you want to add scanning functionality. Usually, users of the scanning library have a button which, when tapped, starts the scanning process. Initialization code is then placed in touch handler for that button. Here we're listing the initialization code as it looks in a touch handler method. It is important to hold reference of recognizer which you want to use.
@@ -148,31 +170,28 @@ Objective-C
     Swift
     ```swift
     @IBAction func didTapScan(_ sender: AnyObject) {
+
+         /** Create barcode recognizer */
+        self.barcodeRecognizer = MBBarcodeRecognizer()
+        self.barcodeRecognizer?.scanQR = true
+
+        /** Create barcode settings */
+        let barcodeSettings : MBBarcodeOverlaySettings = MBBarcodeOverlaySettings()
+    
+        /** Crate recognizer collection */
+        let recognizerList : Array = [self.barcodeRecognizer!] as! [MBRecognizer]
+        let recognizerCollection : MBRecognizerCollection = MBRecognizerCollection(recognizers: recognizerList)
+    
+        /** Add recognizer collection to barcode settings */
+        barcodeSettings.uiSettings.recognizerCollection = recognizerCollection
+    
+        /** Create your overlay view controller */
+        let barcodeOverlayViewController : MBBarcodeOverlayViewController = MBBarcodeOverlayViewController(settings: barcodeSettings, andDelegate: self
+        /** Create recognizer view controller with wanted overlay view controller */
+        let recognizerRunnerViewController : UIViewController = MBViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: barcodeOverlayViewController)
         
-        do {
-             /** Create barcode recognizer */
-            self.barcodeRecognizer = try MBBarcodeRecognizer()
-            self.barcodeRecognizer?.scanQR = true
-            /** Create barcode settings */
-            let barcodeSettings : MBBarcodeOverlaySettings = MBBarcodeOverlaySettings()
-        
-            /** Crate recognizer collection */
-            let recognizerList : Array = [self.barcodeRecognizer!] as! [MBRecognizer]
-            let recognizerCollection : MBRecognizerCollection = MBRecognizerCollection(recognizers: recognizerList)
-        
-            /** Add recognizer collection to barcode settings */
-            barcodeSettings.uiSettings.recognizerCollection = recognizerCollection
-        
-            /** Create your overlay view controller */
-            let barcodeOverlayViewController : MBBarcodeOverlayViewController = MBBarcodeOverlayViewController(settings: barcodeSettings, andDelegate: self
-            /** Create recognizer view controller with wanted overlay view controller */
-            let recognizerRunnerViewController : UIViewController = try MBViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: barcodeOverlayViewController)
-            
-            /** Present the recognizer runner view controller. You can use other presentation methods as well (instead of presentViewController) */
-            self.present(recognizerRunnerViewController, animated: true, completion: nil)
-        } catch {
-            // Error handling
-        }
+        /** Present the recognizer runner view controller. You can use other presentation methods as well (instead of presentViewController) */
+        self.present(recognizerRunnerViewController, animated: true, completion: nil)
     }
     ```
 
@@ -181,8 +200,7 @@ Objective-C
     - (IBAction)didTapScan:(id)sender {
         
          /** Create recognizers */
-        NSError *error;
-        self.barcodeRecognizer = [[MBBarcodeRecognizer alloc] initWithError:&error];
+        self.barcodeRecognizer = [[MBBarcodeRecognizer alloc] init];
         self.barcodeRecognizer.scanQR = YES;
                 
         MBBarcodeOverlaySettings* settings = [[MBBarcodeOverlaySettings alloc] init];
@@ -194,7 +212,7 @@ Objective-C
         settings.uiSettings.recognizerCollection = [[MBRecognizerCollection alloc] initWithRecognizers:recognizers];
 
         MBBarcodeOverlayViewController *overlayVC = [[MBBarcodeOverlayViewController alloc] initWithSettings:settings andDelegate:self];
-        UIViewController<MBRecognizerRunnerViewController>* recognizerRunnerViewController = [MBViewControllerFactory recognizerRunnerViewControllerWithOverlayViewController:overlayVC error:nil];
+        UIViewController<MBRecognizerRunnerViewController>* recognizerRunnerViewController = [MBViewControllerFactory recognizerRunnerViewControllerWithOverlayViewController:overlayVC];
 
         /** Present the recognizer runner view controller. You can use other presentation methods as well (instead of presentViewController) */
         [self presentViewController:recognizerRunnerViewController animated:YES completion:nil];
@@ -269,7 +287,7 @@ Within PDF417.mobi SDK there are several built-in overlay view controllers and s
 
 [`MBBarcodeOverlayViewController`](http://pdf417.github.io/pdf417-ios/docs/Classes/MBBarcodeOverlayViewController.html) is overlay view controller best suited for performing scanning of various barcodes. It has [`MBBarcodeOverlayViewControllerDelegate`](http://pdf417.github.io/pdf417-ios/docs/Protocols/MBBarcodeOverlayViewControllerDelegate.html) delegate which can be used out of the box to perform scanning using the default UI.
 
-## <a name="mbBarcodeOverlayViewcontroller"></a> Using [`MBBarcodeOverlayViewController`](http://pdf417.github.io/pdf417-ios/docs/Classes/MBBarcodeOverlayViewController.html)
+## <a name="mbBarcodeOverlayViewcontroller"></a> Using `MBBarcodeOverlayViewController`
 
 [`MBBarcodeOverlayViewController`](http://pdf417.github.io/pdf417-ios/docs/Classes/MBBarcodeOverlayViewController.html) is built-in overlay view controller which is best suiteed to use while scanning various barcodes. As you have seen in [Quick Start](#quickStart), [`MBBarcodeOverlayViewController`](http://pdf417.github.io/pdf417-ios/docs/Classes/MBBarcodeOverlayViewController.html) has [`MBBarcodeOverlaySettings`](http://pdf417.github.io/pdf417-ios/docs/Classes/MBBarcodeOverlaySettings.html). Here is an example how to use and initialize [`MBBarcodeOverlayViewController`](http://pdf417.github.io/pdf417-ios/docs/Classes/MBBarcodeOverlayViewController.html):
 
@@ -279,20 +297,16 @@ Swift
 let barcodeOverlayViewController : MBBarcodeOverlayViewController = MBBarcodeOverlayViewController(settings: barcodeSettings, andDelegate: self)
 
 /** Create recognizer view controller with wanted overlay view controller */
-do {
-    let recognizerRunneViewController : UIViewController = try MBViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: barcodeOverlayViewController)
-    
-    /** Present the recognizer runner view controller. You can use other presentation methods as well (instead of presentViewController) */
-    self.present(recognizerRunneViewController, animated: true, completion: nil)
-} catch {
-    NSLog("%@", "Error")
-}
+let recognizerRunneViewController : UIViewController = MBViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: barcodeOverlayViewController)
+
+/** Present the recognizer runner view controller. You can use other presentation methods as well (instead of presentViewController) */
+self.present(recognizerRunneViewController, animated: true, completion: nil)
 ```
 
 Objective-C
 ```objective-c
 MBBarcodeOverlayViewController *overlayVC = [[MBBarcodeOverlayViewController alloc] initWithSettings:settings andDelegate:self];
-UIViewController<MBRecognizerRunnerViewController>* recognizerRunnerViewController = [MBViewControllerFactory recognizerRunnerViewControllerWithOverlayViewController:overlayVC error:nil];
+UIViewController<MBRecognizerRunnerViewController>* recognizerRunnerViewController = [MBViewControllerFactory recognizerRunnerViewControllerWithOverlayViewController:overlayVC];
 
 /** Present the recognizer runner view controller. You can use other presentation methods as well (instead of presentViewController) */
 [self presentViewController:recognizerRunnerViewController animated:YES completion:nil];
@@ -370,12 +384,12 @@ In [Quick Start](#quickStart) guide it is shown how to use [`MBBarcodeOverlayVie
 
 Swift
 ```swift
-let recognizerRunnerViewController : UIViewController = try MBViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: CustomOverlayViewController)
+let recognizerRunnerViewController : UIViewController = MBViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: CustomOverlayViewController)
 ```
 
 Objective-C
 ```objective-c
-UIViewController<MBRecognizerRunnerViewController>* recognizerRunnerViewController = [MBViewControllerFactory recognizerRunnerViewControllerWithOverlayViewController:CustomOverlayViewController error:nil];
+UIViewController<MBRecognizerRunnerViewController>* recognizerRunnerViewController = [MBViewControllerFactory recognizerRunnerViewControllerWithOverlayViewController:CustomOverlayViewController];
 ```
 
 
@@ -406,8 +420,7 @@ Swift
 ```swift
 func setupRecognizerRunner() {
     var recognizers = [AnyHashable]() as? [MBRecognizer]
-    var error: Error?
-    pdf417Recognizer = try? MBPdf417Recognizer()
+    pdf417Recognizer = MBPdf417Recognizer()
     recognizers.append(pdf417Recognizer)
     let settings = MBSettings()
     settings.uiSettings.recognizerCollection = MBRecognizerCollection(recognizers: recognizers)
@@ -438,7 +451,7 @@ Objective-C
     NSMutableArray<MBRecognizer *> *recognizers = [[NSMutableArray alloc] init];
     
     NSError *error;
-    self.pdf417Recognizer = [[MBPdf417Recognizer alloc] initWithError:&error];
+    self.pdf417Recognizer = [[MBPdf417Recognizer alloc] init];
     
     [recognizers addObject:self.pdf417Recognizer];
     
@@ -475,9 +488,9 @@ In essence, this API consists of two steps:
 - Call of processImage: method for each UIImage or CMSampleBufferRef you have.
 
 
-# <a name="availableRecognizers"></a> [`MBRecognizer`](http://pdf417.github.io/pdf417-ios/docs/Classes/MBRecognizer.html) and available recognizers
+# <a name="availableRecognizers"></a> `MBRecognizer` and available recognizers
 
-## <a name="recognizerConcept"></a> The [`MBRecognizer`](http://pdf417.github.io/pdf417-ios/docs/Classes/MBRecognizer.html) concept
+## <a name="recognizerConcept"></a> The `MBRecognizer` concept
 
 The [`MBRecognizer`](http://pdf417.github.io/pdf417-ios/docs/Classes/MBRecognizer.html) is the basic unit of processing within the SDK. Its main purpose is to process the image and extract meaningful information from it. As you will see [later](#recognizerList), the SDK has lots of different [`MBRecognizer`](http://pdf417.github.io/pdf417-ios/docs/Classes/MBRecognizer.html) objects that have various purposes.
 
@@ -489,7 +502,7 @@ As soon as one [`MBRecognizer`](http://pdf417.github.io/pdf417-ios/docs/Classes/
 
 As soon as `onScanningFinished` method ends, the `MBRecognizerRunnerViewController` will continue processing new camera frames with same [`MBRecognizer`](http://pdf417.github.io/pdf417-ios/docs/Classes/MBRecognizer.html) objects, unless `paused`. Continuation of processing or `reset` recognition will modify or reset all [`MBRecognizer`](http://pdf417.github.io/pdf417-ios/docs/Classes/MBRecognizer.html) objects's [`MBRecognizerResult`](http://pdf417.github.io/pdf417-ios/docs/Classes/MBRecognizerResult.html). When using built-in activities, as soon as `onScanningFinished` is invoked, built-in activity pauses the `MBRecognizerRunnerViewController` and starts finishing the activity, while saving the [`MBRecognizerCollection`](http://pdf417.github.io/pdf417-ios/docs/Classes/MBRecognizerCollection.html) with active [`MBRecognizer`](http://pdf417.github.io/pdf417-ios/docs/Classes/MBRecognizer.html).
 
-## <a name="recognizerBCollection"></a> [`MBRecognizerCollection`](http://pdf417.github.io/pdf417-ios/docs/Classes/MBRecognizerCollection.html) concept
+## <a name="recognizerBCollection"></a> `MBRecognizerCollection` concept
 
 The [`MBRecognizerCollection`](http://pdf417.github.io/pdf417-ios/docs/Classes/MBRecognizerCollection.html) is is wrapper around [`MBRecognizer`](http://pdf417.github.io/pdf417-ios/docs/Classes/MBRecognizer.html) objects that has array of [`MBRecognizer`](http://pdf417.github.io/pdf417-ios/docs/Classes/MBRecognizer.html) objects that can be used to give [`MBRecognizer`](http://pdf417.github.io/pdf417-ios/docs/Classes/MBRecognizer.html) objects to `MBRecognizerRunner` or `MBRecognizerRunnerViewController` for processing.
 
@@ -629,6 +642,6 @@ done
 
 # <a name="info"></a> Additional info
 
-Complete API reference can be found in [here](http://pdf417.github.io/pdf417-ios/docs/index.html). 
+Complete API reference can be found [here](http://pdf417.github.io/pdf417-ios/docs/index.html). 
 
 For any other questions, feel free to contact us at [help.microblink.com](http://help.microblink.com).

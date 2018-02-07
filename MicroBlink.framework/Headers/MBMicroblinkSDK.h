@@ -21,9 +21,8 @@ PP_CLASS_AVAILABLE_IOS(8.0)
 /**
  * Set license buffer and unlock the SDK. Application package will be used to validate the license.
  * @param licenseBuffer Byte array containing the license.
- * @param error Out with invalid license key error.
  */
-- (BOOL)setLicenseBuffer:(NSData * _Nonnull)licenseBuffer error:(NSError * _Nullable * _Nonnull)error;
+- (void)setLicenseBuffer:(NSData * _Nonnull)licenseBuffer;
 
 /**
  * Set license buffer and unlock the SDK. Also define licensee that will be used to validate the license.
@@ -32,16 +31,14 @@ PP_CLASS_AVAILABLE_IOS(8.0)
  * single license within multiple application packages.
  * @param licenseBuffer Byte array containing the license.
  * @param licensee Licensee to which license is given to.
- * @param error Out with invalid license key error.
  */
-- (BOOL)setLicenseBuffer:(NSData * _Nonnull)licenseBuffer andLicensee:(NSString * _Nonnull)licensee error:(NSError * _Nullable * _Nonnull)error;
+- (void)setLicenseBuffer:(NSData * _Nonnull)licenseBuffer andLicensee:(NSString * _Nonnull)licensee;
 
 /**
  * Set license key and unlock the SDK. Application package will be used to validate the license.
  * @param base64LicenseKey License file encoded as base64 string.
- * @param error Out with invalid license key error.
  */
-- (BOOL)setLicenseKey:(NSString * _Nonnull)base64LicenseKey error:(NSError * _Nullable * _Nonnull)error;
+- (void)setLicenseKey:(NSString * _Nonnull)base64LicenseKey;
 
 /**
  * Set license key and unlock the SDK. Also define licensee that will be used to validate the license.
@@ -50,9 +47,8 @@ PP_CLASS_AVAILABLE_IOS(8.0)
  * single license within multiple application packages.
  * @param base64LicenseKey Byte array containing the license.
  * @param licensee Licensee to which license is given to.
- * @param error Out with invalid license key error.
  */
-- (BOOL)setLicenseKey:(NSString * _Nonnull)base64LicenseKey andLicensee:(NSString * _Nonnull)licensee error:(NSError * _Nullable * _Nonnull)error;
+- (void)setLicenseKey:(NSString * _Nonnull)base64LicenseKey andLicensee:(NSString * _Nonnull)licensee;
 
 /**
  * Set the license file and unlock the SDK. Application package will be used to validate the license.
@@ -60,9 +56,8 @@ PP_CLASS_AVAILABLE_IOS(8.0)
  * @param extension The filename extension of the file (etc. txt). If you specify an empty string or nil, the extension is assumed not to exist and the file URL is the first file encountered that exactly matches name.
  * @param subdirectory The valid path of top-level directory in which file is located inside bundle (etc. licenseFiles/). If you specify an empty string or nil, root direcotry of bundle will be searched.
  * @param bundle NSBundle bundle required to access file.
- * @param error Out with invalid license key error.
  */
-- (BOOL)setLicenseResource:(NSString * _Nonnull)fileName withExtension:(NSString * _Nullable)extension inSubdirectory:(NSString * _Nullable)subdirectory forBundle:(NSBundle * _Nonnull)bundle error:(NSError * _Nullable * _Nonnull)error;
+- (void)setLicenseResource:(NSString * _Nonnull)fileName withExtension:(NSString * _Nullable)extension inSubdirectory:(NSString * _Nullable)subdirectory forBundle:(NSBundle * _Nonnull)bundle;
 
 /**
  * Set the license file and unlock the SDK. Also define licensee that will be used to validate the license.
@@ -74,9 +69,8 @@ PP_CLASS_AVAILABLE_IOS(8.0)
  * @param subdirectory The valid path of top-level directory in which file is located inside bundle (etc. licenseFiles/). If you specify an empty string or nil, root direcotry of bundle will be searched.
  * @param bundle NSBundle bundle required to access file.
  * @param licensee Licensee to which license is given to.
- * @param error Out with invalid license key error.
  */
-- (BOOL)setLicenseResource:(NSString * _Nonnull)fileName withExtension:(NSString * _Nullable)extension inSubdirectory:(NSString * _Nullable)subdirectory forBundle:(NSBundle * _Nonnull)bundle andLicensee:(NSString *)licensee error:(NSError * _Nullable * _Nonnull)error;
+- (void)setLicenseResource:(NSString * _Nonnull)fileName withExtension:(NSString * _Nullable)extension inSubdirectory:(NSString * _Nullable)subdirectory forBundle:(NSBundle * _Nonnull)bundle andLicensee:(NSString *)licensee;
 
 @end
 

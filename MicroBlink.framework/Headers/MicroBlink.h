@@ -68,6 +68,9 @@
 // Settings
 #import "MBBarcodeOverlaySettings.h"
 
+// Exception
+#import "MBException.h"
+
 // Detectors
 #import "MBQuadrangle.h"
 #import "MBDisplayableQuadDetection.h"

@@ -22,7 +22,7 @@ PP_CLASS_AVAILABLE_IOS(8.0)
 @interface MBFrameGrabberRecognizer : MBRecognizer<NSCopying>
 
 - (instancetype)init NS_UNAVAILABLE;
-- (instancetype)initWithFrameGrabberDelegate:(id<MBFrameGrabberRecognizerDelegate>)frameGrabberDelegate error:(NSError * _Nullable * _Nonnull)error __attribute__((swift_error(nonnull_error))) NS_SWIFT_NAME(init(frameGrabberDelegate:));
+- (instancetype)initWithFrameGrabberDelegate:(id<MBFrameGrabberRecognizerDelegate>)frameGrabberDelegate NS_SWIFT_NAME(init(frameGrabberDelegate:));
 
 /**
  * Allow sending focused camera frames to MBFrameGrabberRecognizerDelegate.

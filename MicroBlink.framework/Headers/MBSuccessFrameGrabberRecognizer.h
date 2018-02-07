@@ -19,7 +19,7 @@ PP_CLASS_AVAILABLE_IOS(8.0)
 @interface MBSuccessFrameGrabberRecognizer : MBRecognizer<NSCopying>
 
 - (instancetype)init NS_UNAVAILABLE;
-- (instancetype)initWithRecognizer:(MBRecognizer *)recognizer error:(NSError * _Nullable * _Nonnull)error __attribute__((swift_error(nonnull_error))) NS_SWIFT_NAME(init(recognizer:)) NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithRecognizer:(MBRecognizer *)recognizer NS_SWIFT_NAME(init(recognizer:)) NS_DESIGNATED_INITIALIZER;
 
 /**
  * SuccessFrameGrabber recognizer results

@@ -34,7 +34,7 @@ PP_CLASS_AVAILABLE_IOS(6.0)
  *
  *  @return Scanning view controller fully initialized for presenting on screen.
  */
-+ (UIViewController<MBRecognizerRunnerViewController> *)recognizerRunnerViewControllerWithOverlayViewController:(MBOverlayViewController *)overlayViewController error:(NSError **)error __attribute__((swift_error(nonnull_error))) NS_SWIFT_NAME(recognizerRunnerViewController(withOverlayViewController:));
++ (UIViewController<MBRecognizerRunnerViewController> *)recognizerRunnerViewControllerWithOverlayViewController:(MBOverlayViewController *)overlayViewController NS_SWIFT_NAME(recognizerRunnerViewController(withOverlayViewController:));
 
 @end
 

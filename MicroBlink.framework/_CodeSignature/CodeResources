@@ -84,9 +84,13 @@
 		<data>
 		0Gw2Cqe1mXgLhPbf9ipGpsrnSnM=
 		</data>
+		<key>Headers/MBException.h</key>
+		<data>
+		GE2w2FGq4uGpzIdklhFi0gBzcHw=
+		</data>
 		<key>Headers/MBFrameGrabberRecognizer.h</key>
 		<data>
-		+zqfTxHKO6jAc+Rx2ek7NgE4P6Q=
+		tAq++R25n251xE0aQyTJ+/0QBzc=
 		</data>
 		<key>Headers/MBGlareStatusOverlaySubview.h</key>
 		<data>
@@ -102,11 +106,11 @@
 		</data>
 		<key>Headers/MBMicroBlinkInitialization.h</key>
 		<data>
-		sLw1aqe7tJy8gDlLXQe52CGmKKo=
+		sgABlDoGH26XdB1GZ1a7ItMweLg=
 		</data>
 		<key>Headers/MBMicroblinkSDK.h</key>
 		<data>
-		nfMdE1LVECQRZY208k3xCT643a4=
+		wufGPbif1mBbQFMeFcAWML9gd50=
 		</data>
 		<key>Headers/MBModernBaseOverlayViewController.h</key>
 		<data>
@@ -206,7 +210,7 @@
 		</data>
 		<key>Headers/MBSuccessFrameGrabberRecognizer.h</key>
 		<data>
-		z3fYsf1a7c+mIwwudHu/kHwlTTM=
+		hU3Vl9dB6RlE0MepQ5YjH5OdV3I=
 		</data>
 		<key>Headers/MBSuccessFrameGrabberRecognizerResult.h</key>
 		<data>
@@ -234,7 +238,7 @@
 		</data>
 		<key>Headers/MBViewControllerFactory.h</key>
 		<data>
-		QQxRjY4fbTFqgwRhP3JpDmEl+pA=
+		AAZiZWeRfrX0Y3EKmR6f23Cl8wA=
 		</data>
 		<key>Headers/MBViewFinderOverlaySubview.h</key>
 		<data>
@@ -242,7 +246,7 @@
 		</data>
 		<key>Headers/MicroBlink.h</key>
 		<data>
-		k6QrZAu5nFbUEgF43yKy3bP/cdU=
+		/EtYLO/ooG4tzC78J5Jt+SS1JQY=
 		</data>
 		<key>Headers/PPApp.h</key>
 		<data>
@@ -567,15 +571,26 @@
 			t4UfMJ0PvqlCMWyThaDqY9T8TUjr2VBMuM8nmpanBIE=
 			</data>
 		</dict>
+		<key>Headers/MBException.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			GE2w2FGq4uGpzIdklhFi0gBzcHw=
+			</data>
+			<key>hash2</key>
+			<data>
+			VlKY4CEhCQ480jhU+tgpCktVXVutctVoBBUmM+DFPbs=
+			</data>
+		</dict>
 		<key>Headers/MBFrameGrabberRecognizer.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			+zqfTxHKO6jAc+Rx2ek7NgE4P6Q=
+			tAq++R25n251xE0aQyTJ+/0QBzc=
 			</data>
 			<key>hash2</key>
 			<data>
-			GdfiFRhKpGJZxjgv/zJjc5m8KF13f8G4HpFy+PhS5+Q=
+			A9P/z37gLo7OEhS8Q1WUovIITA8lkuq/u3yJiXmQON4=
 			</data>
 		</dict>
 		<key>Headers/MBGlareStatusOverlaySubview.h</key>
@@ -615,22 +630,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			sLw1aqe7tJy8gDlLXQe52CGmKKo=
+			sgABlDoGH26XdB1GZ1a7ItMweLg=
 			</data>
 			<key>hash2</key>
 			<data>
-			uijfUJ0QL9OPfw62lcuAG5H6RC26vxxDjSVo9vCoC2Y=
+			9efDheUTLW+Gba3+ysJkS3kt8dDnhWxTgUDB06ZeEww=
 			</data>
 		</dict>
 		<key>Headers/MBMicroblinkSDK.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			nfMdE1LVECQRZY208k3xCT643a4=
+			wufGPbif1mBbQFMeFcAWML9gd50=
 			</data>
 			<key>hash2</key>
 			<data>
-			saXVXiSuwpu7X2YKUIxFZFbisPG3ESUIO0rQnQos5iE=
+			SsZJb0Kh0QV55ifuZipAXp4xM/rOleBgpnyBwrI7x5Q=
 			</data>
 		</dict>
 		<key>Headers/MBModernBaseOverlayViewController.h</key>
@@ -901,11 +916,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			z3fYsf1a7c+mIwwudHu/kHwlTTM=
+			hU3Vl9dB6RlE0MepQ5YjH5OdV3I=
 			</data>
 			<key>hash2</key>
 			<data>
-			xPxlbTPJ3I05n2er7YxnXnclnazpIwzBKOF/JhaN/Fk=
+			GohreXh5yy2T9kir5Kp5u/Wms7gGzUK6jmQbFsJrny0=
 			</data>
 		</dict>
 		<key>Headers/MBSuccessFrameGrabberRecognizerResult.h</key>
@@ -978,11 +993,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			QQxRjY4fbTFqgwRhP3JpDmEl+pA=
+			AAZiZWeRfrX0Y3EKmR6f23Cl8wA=
 			</data>
 			<key>hash2</key>
 			<data>
-			BhYSk9KquDt7riSaULZu7T4eWJEgKId2bU79DbfN6Uw=
+			Q57SqAvO4tsWGsFoP/NIkm5ji3tYr8cHRA41NrvuAmI=
 			</data>
 		</dict>
 		<key>Headers/MBViewFinderOverlaySubview.h</key>
@@ -1000,11 +1015,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			k6QrZAu5nFbUEgF43yKy3bP/cdU=
+			/EtYLO/ooG4tzC78J5Jt+SS1JQY=
 			</data>
 			<key>hash2</key>
 			<data>
-			tqMci8qUITzYsMa0rz+hX2PFJd2VH3m98vm/9GQF94g=
+			AGEkSszo9bajI2KB0YON40JTkwcsw9RjJQZw9gystCY=
 			</data>
 		</dict>
 		<key>Headers/PPApp.h</key>

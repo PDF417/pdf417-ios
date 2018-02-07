@@ -25,14 +25,8 @@ static NSString* rawOcrParserId = @"RawOcrParser";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSError *unlockLicenseKeyError;
-    BOOL success = [[MBMicroblinkSDK sharedInstance] setLicenseResource:@"license" withExtension:@"txt" inSubdirectory:@"License" forBundle:[NSBundle mainBundle] error:&unlockLicenseKeyError];
-    if (!success) {
-        NSLog(@"%@",[unlockLicenseKeyError userInfo]);
-    }
-    else {
-        [self setupRecognizerRunner];
-    }
+    [[MBMicroblinkSDK sharedInstance] setLicenseResource:@"license" withExtension:@"txt" inSubdirectory:@"License" forBundle:[NSBundle mainBundle]];
+    [self setupRecognizerRunner];
 }
 
 - (IBAction)openImagePicker:(id)sender {
@@ -96,8 +90,7 @@ static NSString* rawOcrParserId = @"RawOcrParser";
 - (void)setupRecognizerRunner {
     NSMutableArray<MBRecognizer *> *recognizers = [[NSMutableArray alloc] init];
     
-    NSError *error;
-    self.pdf417Recognizer = [[MBPdf417Recognizer alloc] initWithError:&error];
+    self.pdf417Recognizer = [[MBPdf417Recognizer alloc] init];
     
     [recognizers addObject:self.pdf417Recognizer];
     

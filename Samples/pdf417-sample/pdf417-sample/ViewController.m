@@ -23,23 +23,7 @@
     [super viewDidLoad];
     
     /** First, set license key as soon as possible */
-    NSError *unlockLicenseKeyError;
-    BOOL success = [[MBMicroblinkSDK sharedInstance] setLicenseResource:@"license-pdf" withExtension:@"txt" inSubdirectory:@"License" forBundle:[NSBundle mainBundle] error:&unlockLicenseKeyError];
-    if (!success) {
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Error"
-                                                                                 message:unlockLicenseKeyError.localizedDescription
-                                                                          preferredStyle:UIAlertControllerStyleAlert];
-        
-        UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"OK"
-                                                           style:UIAlertActionStyleDefault
-                                                         handler:^(UIAlertAction * _Nonnull action) {
-                                                             [self dismissViewControllerAnimated:YES completion:nil];
-                                                         }];
-        
-        [alertController addAction:okAction];
-        
-        [self presentViewController:alertController animated:YES completion:nil];
-    }
+    [[MBMicroblinkSDK sharedInstance] setLicenseResource:@"license-pdf" withExtension:@"txt" inSubdirectory:@"License" forBundle:[NSBundle mainBundle]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,30 +35,26 @@
 - (IBAction)didTapScan:(id)sender {
     
      /** Create recognizers */
-    NSError *error;
-    self.barcodeRecognizer = [[MBBarcodeRecognizer alloc] initWithError:&error];
-    if (!error) {
-        self.barcodeRecognizer.scanQR = YES;
-    }
+    self.barcodeRecognizer = [[MBBarcodeRecognizer alloc] init];
+    self.barcodeRecognizer.scanQR = YES;
     
-    self.pdf417Recognizer = [[MBPdf417Recognizer alloc] initWithError:&error];
+    self.pdf417Recognizer = [[MBPdf417Recognizer alloc] init];
     
     MBBarcodeOverlaySettings* settings = [[MBBarcodeOverlaySettings alloc] init];
     
     NSMutableArray<MBRecognizer *> *recognizers = [[NSMutableArray alloc] init];
-    if (!error) {
-        [recognizers addObject:self.barcodeRecognizer];
-        [recognizers addObject:self.pdf417Recognizer];
-        
-        /** Create recognizer collection */
-        settings.uiSettings.recognizerCollection = [[MBRecognizerCollection alloc] initWithRecognizers:recognizers];
-        
-        MBBarcodeOverlayViewController *overlayVC = [[MBBarcodeOverlayViewController alloc] initWithSettings:settings andDelegate:self];
-        UIViewController<MBRecognizerRunnerViewController>* recognizerRunnerViewController = [MBViewControllerFactory recognizerRunnerViewControllerWithOverlayViewController:overlayVC error:nil];
-        
-        /** Present the recognizer runner view controller. You can use other presentation methods as well (instead of presentViewController) */
-        [self presentViewController:recognizerRunnerViewController animated:YES completion:nil];
-    }
+
+    [recognizers addObject:self.barcodeRecognizer];
+    [recognizers addObject:self.pdf417Recognizer];
+    
+    /** Create recognizer collection */
+    settings.uiSettings.recognizerCollection = [[MBRecognizerCollection alloc] initWithRecognizers:recognizers];
+    
+    MBBarcodeOverlayViewController *overlayVC = [[MBBarcodeOverlayViewController alloc] initWithSettings:settings andDelegate:self];
+    UIViewController<MBRecognizerRunnerViewController>* recognizerRunnerViewController = [MBViewControllerFactory recognizerRunnerViewControllerWithOverlayViewController:overlayVC error:nil];
+    
+    /** Present the recognizer runner view controller. You can use other presentation methods as well (instead of presentViewController) */
+    [self presentViewController:recognizerRunnerViewController animated:YES completion:nil];
 }
 
 #pragma mark - MBBarcodeOverlayViewControllerDelegate

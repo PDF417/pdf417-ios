@@ -31,12 +31,8 @@ static NSString *rawOcrParserId = @"Raw ocr";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSError *unlockLicenseKeyError;
     // Valid until: 2018-04-29
-    BOOL success = [[MBMicroblinkSDK sharedInstance] setLicenseResource:@"license" withExtension:@"txt" inSubdirectory:@"License" forBundle:[NSBundle mainBundle] error:&unlockLicenseKeyError];
-    if (!success) {
-        NSLog(@"%@",[unlockLicenseKeyError userInfo]);
-    }
+    [[MBMicroblinkSDK sharedInstance] setLicenseResource:@"license" withExtension:@"txt" inSubdirectory:@"License" forBundle:[NSBundle mainBundle]];
 }
 
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
@@ -178,8 +174,7 @@ static NSString *rawOcrParserId = @"Raw ocr";
     
     NSMutableArray<MBRecognizer *> *recognizers = [[NSMutableArray alloc] init];
     
-    NSError *error;
-    self.pdf417Recognizer = [[MBPdf417Recognizer alloc] initWithError:&error];
+    self.pdf417Recognizer = [[MBPdf417Recognizer alloc] init];
     
     [recognizers addObject:self.pdf417Recognizer];
     

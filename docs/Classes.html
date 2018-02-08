@@ -104,6 +104,12 @@
                 <a class="nav-group-task-link" href="Classes/MBImage.html">MBImage</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBMetadata.html">MBMetadata</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBMetadataSettings.html">MBMetadataSettings</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/MBMicroblinkSDK.html">MBMicroblinkSDK</a>
               </li>
               <li class="nav-group-task">
@@ -141,6 +147,12 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/MBRecognizerRunner.html">MBRecognizerRunner</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBRecognizerRunnerMetadataDelegates.html">MBRecognizerRunnerMetadataDelegates</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBRecognizerRunnerViewMetadataDelegates.html">MBRecognizerRunnerViewMetadataDelegates</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/MBSettings.html">MBSettings</a>
@@ -191,12 +203,6 @@
                 <a class="nav-group-task-link" href="Classes/PPImageMetadata.html">PPImageMetadata</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Classes/PPMetadata.html">PPMetadata</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Classes/PPMetadataSettings.html">PPMetadataSettings</a>
-              </li>
-              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/PPModernOcrResultOverlaySubview.html">PPModernOcrResultOverlaySubview</a>
               </li>
               <li class="nav-group-task">
@@ -240,6 +246,9 @@
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Constants.html#/c:@MBInvalidLicenseeKeyException">MBInvalidLicenseeKeyException</a>
               </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Constants.html#/c:@MBMissingSettingsException">MBMissingSettingsException</a>
+              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -253,6 +262,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Enums/MBFrameQualityEstimationMode.html">MBFrameQualityEstimationMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Enums/MBProcessingOrientation.html">MBProcessingOrientation</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Enums/MBRecognitionMode.html">MBRecognitionMode</a>
@@ -288,9 +300,6 @@
                 <a class="nav-group-task-link" href="Enums/PPLivenessError.html">PPLivenessError</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Enums/PPProcessingOrientation.html">PPProcessingOrientation</a>
-              </li>
-              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Enums/PPRecognitionStatus.html">PPRecognitionStatus</a>
               </li>
               <li class="nav-group-task">
@@ -318,12 +327,6 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Protocols/MBFrameGrabberRecognizerDelegate.html">MBFrameGrabberRecognizerDelegate</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Protocols/MBOcrRecognizerRunnerDelegate.html">MBOcrRecognizerRunnerDelegate</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Protocols/MBOcrRecognizerRunnerViewDelegate.html">MBOcrRecognizerRunnerViewDelegate</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Protocols/MBOverlayContainerViewController.html">MBOverlayContainerViewController</a>
@@ -1140,6 +1143,116 @@ The subview is presented as translucent view with detection status label in the 
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/c:objc(cs)MBMetadata"></a>
+                    <a name="//apple_ref/objc/Class/MBMetadata" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MBMetadata">MBMetadata</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Base class for outputting various data via &lsquo;didOutputMetadata:&rsquo; method</p>
+
+                        <a href="Classes/MBMetadata.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code>
+<span class="k">@interface</span> <span class="nc">MBMetadata</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">MBMetadata</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MBMetadataSettings"></a>
+                    <a name="//apple_ref/objc/Class/MBMetadataSettings" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MBMetadataSettings">MBMetadataSettings</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Settings class containing information which metadata is captured in the scanning process</p>
+
+                        <a href="Classes/MBMetadataSettings.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code>
+<span class="k">@interface</span> <span class="nc">MBMetadataSettings</span> <span class="p">:</span> <span class="nc">NSObject</span> <span class="o">&lt;</span><span class="n">NSCopying</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">MBMetadataSettings</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">NSCopying</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)PPDebugMetadata"></a>
+                    <a name="//apple_ref/objc/Class/PPDebugMetadata" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)PPDebugMetadata">PPDebugMetadata</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Settings for debuging various data.
+These settings can help you understand why something isn&rsquo;t working as expected.</p>
+
+                        <a href="Classes/PPDebugMetadata.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">PPDebugMetadata</span> <span class="p">:</span> <span class="nc">NSObject</span> <span class="o">&lt;</span><span class="n">NSCopying</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">PPDebugMetadata</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">NSCopying</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/c:objc(cs)MBMicroblinkSDK"></a>
                     <a name="//apple_ref/objc/Class/MBMicroblinkSDK" class="dashAnchor"></a>
                     <a class="token" href="#/c:objc(cs)MBMicroblinkSDK">MBMicroblinkSDK</a>
@@ -1266,7 +1379,7 @@ The subview is presented as green corners located on edges of detection points.<
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Overlay View Controller is an abstract class for all overlay views placed on top PhotoPay&rsquo;s Camera View Controller.</p>
+                        <p>Overlay View Controller is an abstract class for all overlay views placed on top View Controller.</p>
 
 <p>It&rsquo;s responsibility is to provide meaningful and useful interface for the user to interact with.</p>
 
@@ -1278,97 +1391,6 @@ The subview is presented as green corners located on edges of detection points.<
 <li>a way to cancel the scanining, typically with a <q>cancel</q> or <q>back</q> button</li>
 <li>a way to power on and off the light (i.e. <q>torch</q>) button</li>
 </ul>
-
-<p>PhotoPay always provides it&rsquo;s own default implementation of the Overlay View Controller for every specific use.
-Your implementation should closely mimic the default implementation as it&rsquo;s the result of thorough testing with
-end users. Also, it closely matches the underlying scanning technology.</p>
-
-<p>For example, the scanning technology usually gives results very fast after the user places the device&rsquo;s camera in the
-expected way above the scanned object. This means a progress bar for the scan is not particularly useful to the user.
-The majority of time the user spends on positioning the device&rsquo;s camera correctly. That&rsquo;s just an example which
-demonstrates careful decision making behind default camera overlay view.</p>
-
-<p>PhotoPay demo project in your development package contain <code>PPCameraOverlayViewController</code> class, an example of
-custom overlay view implementation.</p>
-<h1 id='initialization' class='heading'>Initialization</h1>
-
-<p>To use your custom overlay with PhotoPay&rsquo;s camera view, you must subclass MBOverlayViewController and
-specify it when initializing CameraViewController:</p>
-
-<p>PPCameraOverlayViewController *overlayViewController =
-       [[PPCameraOverlayViewController alloc] initWithNibName:@<q>PPCameraOverlayViewController</q> bundle:nil];</p>
-
-<p>// Create camera view controller
-   UIViewController *cameraViewController =
-       [coordinator cameraViewControllerWithDelegate:self overlayViewController:overlayViewController];</p>
-
-<p>Note: if you create camera view controller without specifying overlay view, the default overlay implementation will be used:</p>
-
-<p>// Create camera view controller
-   UIViewController *cameraViewController =
-       [coordinator cameraViewControllerWithDelegate:self];</p>
-
-<p>As with any view controller, you are responsible for specifying UI elements and handling their actions.
-Besides that, there are some requirements for interaction with Camera View Controller.</p>
-<h1 id='interaction-with-cameraviewcontroller' class='heading'>Interaction with CameraViewController</h1>
-
-<p>CameraViewController is a Container view controller to the MBOverlayViewController instances.
-For more about Container View Controllers, read official Apple [View Controller Programming Guide].</p>
-
-<p>Also, each instance of MBOverlayViewController and it&rsquo;s subclasses has access to the Container View Controller.</p>
-
-<p>// Overlay View&rsquo;s delegate object. Responsible for sending messages
-   // to PhotoPay&rsquo;s Camera View Controller
-   @property (nonatomic, assign) id<MBOverlayContainerViewController> containerViewController;</p>
-<h1 id='handling-orientation-changes' class='heading'>Handling orientation changes</h1>
-
-<p>Camera view controller is always presented in Portrait mode, but nevertheless, your overlay view be presented in the
-current device orientation. There are two ways to handle orientation changes.</p>
-
-<p>The first, built in way is a simple way to achieve autorotation. Your Overlay View Controller only needs to implement
-standard UIViewController methods which specify which orientations are supported. For example, to support only landscape
-orientations, you need to add the following methods to your Overlay View Controller implementation.</p>
-
-<ul>
-<li><p>(NSUInteger)supportedInterfaceOrientations {
-   return UIInterfaceOrientationMaskLandscape;
-}</p></li>
-<li><p>(UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
-   return UIInterfaceOrientationLandscapeRight;
-}</p></li>
-<li><p>(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-   return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft || interfaceOrientation ==
-UIInterfaceOrientationLandscapeRight);
-}</p></li>
-</ul>
-
-<p>Your Overlay View Controller will automatically rotate to support all orientations returned by <code>supportedInterfaceOrientations</code>
-method. You are responsible for standard iOS techniques (auto-layout or autoresizing masks) to adjust the UI to new
-device orientation.</p>
-
-<p>You can manually disable autorotation by initializing <code>PPCoordinator</code> object with the following setting:</p>
-
-<p>[coordinatorSettings setValue:@(NO) forKey:kPPOverlayShouldAutorotate];</p>
-<h1 id='steps-for-providing-custom-camera-overlay-view' class='heading'>Steps for providing custom Camera Overlay View</h1>
-<li><p>Create a subclass of <code>MBOverlayViewController</code>. You can use XIB for user interface, or create UI from code.</p></li>
-<div class="aside aside-see">
-    <p class="aside-title">See</p>
-    <p>See if there are any events received from <code>CameraViewController</code> which you need to handle for your UI hierarchy</p>
-
-</div>
-<li><p>Implement your view hierarchy.</p></li>
-
-<p>If you have a Cancel button in your view, don&rsquo;t forget to call <code>overlayViewControllerWillCloseCamera:</code>
-   method on overlay&rsquo;s delegate object when cancel is pressed.</p>
-
-<p>If you have Torch button, dont forget to check if Torch should be displayed by using
-   <code>overlayViewControllerShouldDisplayTorch:</code> method, and to report new torch state with
-   <code>overlayViewController:willSetTorch:</code> method.</p>
-
-<ol>
-<li>Handle orientation changes, either by implementing standard UIViewController autorotation metods,
-or by custom rotation management on rotation events.</li>
-</ol>
 
                         <a href="Classes/MBOverlayViewController.html" class="slightly-smaller">See more</a>
                       </div>
@@ -1744,6 +1766,82 @@ Camera view controllers created this way will be managed internally by the SDK, 
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/c:objc(cs)MBRecognizerRunnerMetadataDelegates"></a>
+                    <a name="//apple_ref/objc/Class/MBRecognizerRunnerMetadataDelegates" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MBRecognizerRunnerMetadataDelegates">MBRecognizerRunnerMetadataDelegates</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Class containing all metadata delegates</p>
+
+                        <a href="Classes/MBRecognizerRunnerMetadataDelegates.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code>
+<span class="k">@interface</span> <span class="nc">MBRecognizerRunnerMetadataDelegates</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">MBRecognizerRunnerMetadataDelegates</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MBRecognizerRunnerViewMetadataDelegates"></a>
+                    <a name="//apple_ref/objc/Class/MBRecognizerRunnerViewMetadataDelegates" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MBRecognizerRunnerViewMetadataDelegates">MBRecognizerRunnerViewMetadataDelegates</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Class containing all metadata delegates</p>
+
+                        <a href="Classes/MBRecognizerRunnerViewMetadataDelegates.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code>
+<span class="k">@interface</span> <span class="nc">MBRecognizerRunnerViewMetadataDelegates</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">MBRecognizerRunnerViewMetadataDelegates</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/c:objc(cs)MBSettings"></a>
                     <a name="//apple_ref/objc/Class/MBSettings" class="dashAnchor"></a>
                     <a class="token" href="#/c:objc(cs)MBSettings">MBSettings</a>
@@ -1811,11 +1909,6 @@ Camera view controllers created this way will be managed internally by the SDK, 
 <span class="k">@interface</span> <span class="nc">MBSimNumberRecognizer</span> <span class="p">:</span> <span class="nc"><a href="Classes/MBRecognizer.html">MBRecognizer</a></span> <span class="o">&lt;</span><span class="n">NSCopying</span><span class="o">&gt;</span></code></pre>
 
                         </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">MBSimNumberRecognizer</span> <span class="p">:</span> <span class="kt"><a href="Classes/MBRecognizer.html">MBRecognizer</a></span><span class="p">,</span> <span class="kt">NSCopying</span></code></pre>
-
-                        </div>
                       </div>
                     </section>
                   </div>
@@ -1847,11 +1940,6 @@ Camera view controllers created this way will be managed internally by the SDK, 
                           <p class="aside-title">Objective-C</p>
                           <pre class="highlight objective_c"><code>
 <span class="k">@interface</span> <span class="nc">MBSimNumberRecognizerResult</span> <span class="p">:</span> <span class="nc"><a href="Classes/MBRecognizerResult.html">MBRecognizerResult</a></span> <span class="o">&lt;</span><span class="n">NSCopying</span><span class="o">&gt;</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">MBSimNumberRecognizerResult</span> <span class="p">:</span> <span class="kt"><a href="Classes/MBRecognizerResult.html">MBRecognizerResult</a></span><span class="p">,</span> <span class="kt">NSCopying</span></code></pre>
 
                         </div>
                       </div>
@@ -2040,11 +2128,6 @@ Camera view controllers created this way will be managed internally by the SDK, 
 <span class="k">@interface</span> <span class="nc">MBUsdlRecognizer</span> <span class="p">:</span> <span class="nc"><a href="Classes/MBRecognizer.html">MBRecognizer</a></span> <span class="o">&lt;</span><span class="n">NSCopying</span><span class="o">&gt;</span></code></pre>
 
                         </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">MBUsdlRecognizer</span> <span class="p">:</span> <span class="kt"><a href="Classes/MBRecognizer.html">MBRecognizer</a></span><span class="p">,</span> <span class="kt">NSCopying</span></code></pre>
-
-                        </div>
                       </div>
                     </section>
                   </div>
@@ -2076,11 +2159,6 @@ Camera view controllers created this way will be managed internally by the SDK, 
                           <p class="aside-title">Objective-C</p>
                           <pre class="highlight objective_c"><code>
 <span class="k">@interface</span> <span class="nc">MBUsdlRecognizerResult</span> <span class="p">:</span> <span class="nc"><a href="Classes/MBRecognizerResult.html">MBRecognizerResult</a></span> <span class="o">&lt;</span><span class="n">NSCopying</span><span class="o">&gt;</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">MBUsdlRecognizerResult</span> <span class="p">:</span> <span class="kt"><a href="Classes/MBRecognizerResult.html">MBRecognizerResult</a></span><span class="p">,</span> <span class="kt">NSCopying</span></code></pre>
 
                         </div>
                       </div>
@@ -2350,122 +2428,12 @@ The subview is presented as untinted view on tinted background, where untinted l
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
                           <pre class="highlight objective_c"><code>
-<span class="k">@interface</span> <span class="nc">PPImageMetadata</span> <span class="p">:</span> <span class="nc"><a href="Classes/PPMetadata.html">PPMetadata</a></span></code></pre>
+<span class="k">@interface</span> <span class="nc">PPImageMetadata</span> <span class="p">:</span> <span class="nc"><a href="Classes/MBMetadata.html">MBMetadata</a></span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">PPImageMetadata</span> <span class="p">:</span> <span class="kt"><a href="Classes/PPMetadata.html">PPMetadata</a></span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul class="item-container">
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:objc(cs)PPMetadata"></a>
-                    <a name="//apple_ref/objc/Class/PPMetadata" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)PPMetadata">PPMetadata</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Base class for outputting various data via &lsquo;didOutputMetadata:&rsquo; method</p>
-
-                        <a href="Classes/PPMetadata.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code>
-<span class="k">@interface</span> <span class="nc">PPMetadata</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">PPMetadata</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul class="item-container">
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:objc(cs)PPMetadataSettings"></a>
-                    <a name="//apple_ref/objc/Class/PPMetadataSettings" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)PPMetadataSettings">PPMetadataSettings</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Settings class containing information which metadata is captured in the scanning process</p>
-
-                        <a href="Classes/PPMetadataSettings.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code>
-<span class="k">@interface</span> <span class="nc">PPMetadataSettings</span> <span class="p">:</span> <span class="nc">NSObject</span> <span class="o">&lt;</span><span class="n">NSCopying</span><span class="o">&gt;</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">PPMetadataSettings</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">NSCopying</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:objc(cs)PPDebugMetadata"></a>
-                    <a name="//apple_ref/objc/Class/PPDebugMetadata" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)PPDebugMetadata">PPDebugMetadata</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Settings for debuging various data.
-These settings can help you understand why something isn&rsquo;t working as expected.</p>
-
-                        <a href="Classes/PPDebugMetadata.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">PPDebugMetadata</span> <span class="p">:</span> <span class="nc">NSObject</span> <span class="o">&lt;</span><span class="n">NSCopying</span><span class="o">&gt;</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">PPDebugMetadata</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">NSCopying</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">PPImageMetadata</span> <span class="p">:</span> <span class="kt"><a href="Classes/MBMetadata.html">MBMetadata</a></span></code></pre>
 
                         </div>
                       </div>
@@ -2690,12 +2658,12 @@ These settings can help you understand why something isn&rsquo;t working as expe
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
                           <pre class="highlight objective_c"><code>
-<span class="k">@interface</span> <span class="nc">PPRecognitionStatusMetadata</span> <span class="p">:</span> <span class="nc"><a href="Classes/PPMetadata.html">PPMetadata</a></span></code></pre>
+<span class="k">@interface</span> <span class="nc">PPRecognitionStatusMetadata</span> <span class="p">:</span> <span class="nc"><a href="Classes/MBMetadata.html">MBMetadata</a></span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">PPRecognitionStatusMetadata</span> <span class="p">:</span> <span class="kt"><a href="Classes/PPMetadata.html">PPMetadata</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">PPRecognitionStatusMetadata</span> <span class="p">:</span> <span class="kt"><a href="Classes/MBMetadata.html">MBMetadata</a></span></code></pre>
 
                         </div>
                       </div>
@@ -2728,12 +2696,12 @@ These settings can help you understand why something isn&rsquo;t working as expe
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
                           <pre class="highlight objective_c"><code>
-<span class="k">@interface</span> <span class="nc">PPTextMetadata</span> <span class="p">:</span> <span class="nc"><a href="Classes/PPMetadata.html">PPMetadata</a></span></code></pre>
+<span class="k">@interface</span> <span class="nc">PPTextMetadata</span> <span class="p">:</span> <span class="nc"><a href="Classes/MBMetadata.html">MBMetadata</a></span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">PPTextMetadata</span> <span class="p">:</span> <span class="kt"><a href="Classes/PPMetadata.html">PPMetadata</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">PPTextMetadata</span> <span class="p">:</span> <span class="kt"><a href="Classes/MBMetadata.html">MBMetadata</a></span></code></pre>
 
                         </div>
                       </div>
@@ -2786,7 +2754,7 @@ These settings can help you understand why something isn&rsquo;t working as expe
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2018 <a class="link" href="http://microblink.com" target="_blank" rel="external">Microblink</a>. All rights reserved. (Last updated: 2018-02-07)</p>
+      <p>&copy; 2018 <a class="link" href="http://microblink.com" target="_blank" rel="external">Microblink</a>. All rights reserved. (Last updated: 2018-03-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

@@ -99,6 +99,13 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/juraskrlec/Documents/Workspace/Pdf417Mobi/pdf417-ios-demo/pdf417-ios-framework/pdf417-ios/MicroBlink.framework/Headers/MBException.h",
+      "line": 18,
+      "symbol": "MBMissingSettingsException",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/juraskrlec/Documents/Workspace/Pdf417Mobi/pdf417-ios-demo/pdf417-ios-framework/pdf417-ios/MicroBlink.framework/Headers/MBFrameGrabberRecognizer.h",
       "line": 24,
       "symbol": "MBFrameGrabberRecognizer.-init",
@@ -155,31 +162,24 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/juraskrlec/Documents/Workspace/Pdf417Mobi/pdf417-ios-demo/pdf417-ios-framework/pdf417-ios/MicroBlink.framework/Headers/MBMetadata.h",
+      "line": 25,
+      "symbol": "MBMetadata.-init",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/Pdf417Mobi/pdf417-ios-demo/pdf417-ios-framework/pdf417-ios/MicroBlink.framework/Headers/MBMetadata.h",
+      "line": 27,
+      "symbol": "MBMetadata.-initWithName:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/juraskrlec/Documents/Workspace/Pdf417Mobi/pdf417-ios-demo/pdf417-ios-framework/pdf417-ios/MicroBlink.framework/Headers/MBMicroblinkSDK.h",
       "line": 19,
       "symbol": "MBMicroblinkSDK.+sharedInstance",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/Pdf417Mobi/pdf417-ios-demo/pdf417-ios-framework/pdf417-ios/MicroBlink.framework/Headers/MBOcrRecognizerRunnerDelegate.h",
-      "line": 19,
-      "symbol": "MBOcrRecognizerRunnerDelegate.-recognizerRunner:didObtainOcrResult:withResultName:",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/Pdf417Mobi/pdf417-ios-demo/pdf417-ios-framework/pdf417-ios/MicroBlink.framework/Headers/MBOcrRecognizerRunnerViewDelegate.h",
-      "line": 21,
-      "symbol": "MBOcrRecognizerRunnerViewDelegate.-recognizerRunnerViewController:didObtainOcrResult:withResultName:",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/Pdf417Mobi/pdf417-ios-demo/pdf417-ios-framework/pdf417-ios/MicroBlink.framework/Headers/MBOverlayViewController.h",
-      "line": 152,
-      "symbol": "MBOverlayViewController.overlayViewControllerInterfaceDelegate",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
@@ -241,13 +241,6 @@
     {
       "file": "/Users/juraskrlec/Documents/Workspace/Pdf417Mobi/pdf417-ios-demo/pdf417-ios-framework/pdf417-ios/MicroBlink.framework/Headers/MBRecognizer.h",
       "line": 28,
-      "symbol": "MBRecognizer.-getIdealOverlayViewControllerClass",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/Pdf417Mobi/pdf417-ios-demo/pdf417-ios-framework/pdf417-ios/MicroBlink.framework/Headers/MBRecognizer.h",
-      "line": 30,
       "symbol": "MBRecognizer.-getOptimalHudOrientation",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
@@ -275,15 +268,8 @@
     },
     {
       "file": "/Users/juraskrlec/Documents/Workspace/Pdf417Mobi/pdf417-ios-demo/pdf417-ios-framework/pdf417-ios/MicroBlink.framework/Headers/MBRecognizerRunner.h",
-      "line": 30,
-      "symbol": "MBRecognizerRunner.detectionRecognizerRunnerDelegate",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/Pdf417Mobi/pdf417-ios-demo/pdf417-ios-framework/pdf417-ios/MicroBlink.framework/Headers/MBRecognizerRunner.h",
       "line": 31,
-      "symbol": "MBRecognizerRunner.ocrRecognizerRunnerDelegate",
+      "symbol": "MBRecognizerRunner.metadataDelegates",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
@@ -296,57 +282,71 @@
     },
     {
       "file": "/Users/juraskrlec/Documents/Workspace/Pdf417Mobi/pdf417-ios-demo/pdf417-ios-framework/pdf417-ios/MicroBlink.framework/Headers/MBRecognizerRunner.h",
-      "line": 33,
-      "symbol": "MBRecognizerRunner.debugRecognizerRunnerDelegate",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/Pdf417Mobi/pdf417-ios-demo/pdf417-ios-framework/pdf417-ios/MicroBlink.framework/Headers/MBRecognizerRunner.h",
-      "line": 35,
+      "line": 34,
       "symbol": "MBRecognizerRunner.coordinator",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
       "file": "/Users/juraskrlec/Documents/Workspace/Pdf417Mobi/pdf417-ios-demo/pdf417-ios-framework/pdf417-ios/MicroBlink.framework/Headers/MBRecognizerRunner.h",
-      "line": 37,
+      "line": 36,
       "symbol": "MBRecognizerRunner.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/juraskrlec/Documents/Workspace/Pdf417Mobi/pdf417-ios-demo/pdf417-ios-framework/pdf417-ios/MicroBlink.framework/Headers/MBRecognizerRunner.h",
-      "line": 42,
+      "line": 41,
       "symbol": "MBRecognizerRunner.-resetState",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/juraskrlec/Documents/Workspace/Pdf417Mobi/pdf417-ios-demo/pdf417-ios-framework/pdf417-ios/MicroBlink.framework/Headers/MBRecognizerRunner.h",
-      "line": 44,
+      "line": 43,
       "symbol": "MBRecognizerRunner.-resetState:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/juraskrlec/Documents/Workspace/Pdf417Mobi/pdf417-ios-demo/pdf417-ios-framework/pdf417-ios/MicroBlink.framework/Headers/MBRecognizerRunner.h",
-      "line": 64,
+      "line": 63,
       "symbol": "MBRecognizerRunner.-getSettings",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/juraskrlec/Documents/Workspace/Pdf417Mobi/pdf417-ios-demo/pdf417-ios-framework/pdf417-ios/MicroBlink.framework/Headers/MBScanningRecognizerRunnerViewController.h",
-      "line": 27,
-      "symbol": "MBRecognizerRunnerViewController.ocrRecognizerRunnerViewDelegate",
+      "file": "/Users/juraskrlec/Documents/Workspace/Pdf417Mobi/pdf417-ios-demo/pdf417-ios-framework/pdf417-ios/MicroBlink.framework/Headers/MBRecognizerRunnerMetadataDelegates.h",
+      "line": 23,
+      "symbol": "MBRecognizerRunnerMetadataDelegates.debugRecognizerRunnerDelegate",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/Pdf417Mobi/pdf417-ios-demo/pdf417-ios-framework/pdf417-ios/MicroBlink.framework/Headers/MBRecognizerRunnerMetadataDelegates.h",
+      "line": 24,
+      "symbol": "MBRecognizerRunnerMetadataDelegates.detectionRecognizerRunnerDelegate",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/Pdf417Mobi/pdf417-ios-demo/pdf417-ios-framework/pdf417-ios/MicroBlink.framework/Headers/MBRecognizerRunnerViewMetadataDelegates.h",
+      "line": 17,
+      "symbol": "MBRecognizerRunnerViewMetadataDelegates.detectionRecognizerRunnerViewDelegate",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juraskrlec/Documents/Workspace/Pdf417Mobi/pdf417-ios-demo/pdf417-ios-framework/pdf417-ios/MicroBlink.framework/Headers/MBRecognizerRunnerViewMetadataDelegates.h",
+      "line": 18,
+      "symbol": "MBRecognizerRunnerViewMetadataDelegates.debugRecognizerRunnerViewDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
       "file": "/Users/juraskrlec/Documents/Workspace/Pdf417Mobi/pdf417-ios-demo/pdf417-ios-framework/pdf417-ios/MicroBlink.framework/Headers/MBScanningRecognizerRunnerViewController.h",
       "line": 28,
-      "symbol": "MBRecognizerRunnerViewController.detectionRecognizerRunnerViewDelegate",
+      "symbol": "MBRecognizerRunnerViewController.metadataDelegates",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
@@ -361,13 +361,6 @@
       "file": "/Users/juraskrlec/Documents/Workspace/Pdf417Mobi/pdf417-ios-demo/pdf417-ios-framework/pdf417-ios/MicroBlink.framework/Headers/MBScanningRecognizerRunnerViewController.h",
       "line": 30,
       "symbol": "MBRecognizerRunnerViewController.recognizerRunnerViewControllerDelegate",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/Pdf417Mobi/pdf417-ios-demo/pdf417-ios-framework/pdf417-ios/MicroBlink.framework/Headers/MBScanningRecognizerRunnerViewController.h",
-      "line": 31,
-      "symbol": "MBRecognizerRunnerViewController.debugRecognizerRunnerViewDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
@@ -761,20 +754,6 @@
       "line": 135,
       "symbol": "scanningRegionForFrameInBounds",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/Pdf417Mobi/pdf417-ios-demo/pdf417-ios-framework/pdf417-ios/MicroBlink.framework/Headers/PPMetadata.h",
-      "line": 25,
-      "symbol": "PPMetadata.-init",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/juraskrlec/Documents/Workspace/Pdf417Mobi/pdf417-ios-demo/pdf417-ios-framework/pdf417-ios/MicroBlink.framework/Headers/PPMetadata.h",
-      "line": 27,
-      "symbol": "PPMetadata.-initWithName:",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {

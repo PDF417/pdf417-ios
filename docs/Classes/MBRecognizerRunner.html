@@ -105,6 +105,12 @@
                 <a class="nav-group-task-link" href="../Classes/MBImage.html">MBImage</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBMetadata.html">MBMetadata</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBMetadataSettings.html">MBMetadataSettings</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/MBMicroblinkSDK.html">MBMicroblinkSDK</a>
               </li>
               <li class="nav-group-task">
@@ -142,6 +148,12 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/MBRecognizerRunner.html">MBRecognizerRunner</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBRecognizerRunnerMetadataDelegates.html">MBRecognizerRunnerMetadataDelegates</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBRecognizerRunnerViewMetadataDelegates.html">MBRecognizerRunnerViewMetadataDelegates</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/MBSettings.html">MBSettings</a>
@@ -192,12 +204,6 @@
                 <a class="nav-group-task-link" href="../Classes/PPImageMetadata.html">PPImageMetadata</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes/PPMetadata.html">PPMetadata</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes/PPMetadataSettings.html">PPMetadataSettings</a>
-              </li>
-              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/PPModernOcrResultOverlaySubview.html">PPModernOcrResultOverlaySubview</a>
               </li>
               <li class="nav-group-task">
@@ -241,6 +247,9 @@
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Constants.html#/c:@MBInvalidLicenseeKeyException">MBInvalidLicenseeKeyException</a>
               </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@MBMissingSettingsException">MBMissingSettingsException</a>
+              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -254,6 +263,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Enums/MBFrameQualityEstimationMode.html">MBFrameQualityEstimationMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MBProcessingOrientation.html">MBProcessingOrientation</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Enums/MBRecognitionMode.html">MBRecognitionMode</a>
@@ -289,9 +301,6 @@
                 <a class="nav-group-task-link" href="../Enums/PPLivenessError.html">PPLivenessError</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Enums/PPProcessingOrientation.html">PPProcessingOrientation</a>
-              </li>
-              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Enums/PPRecognitionStatus.html">PPRecognitionStatus</a>
               </li>
               <li class="nav-group-task">
@@ -319,12 +328,6 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Protocols/MBFrameGrabberRecognizerDelegate.html">MBFrameGrabberRecognizerDelegate</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Protocols/MBOcrRecognizerRunnerDelegate.html">MBOcrRecognizerRunnerDelegate</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Protocols/MBOcrRecognizerRunnerViewDelegate.html">MBOcrRecognizerRunnerViewDelegate</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Protocols/MBOverlayContainerViewController.html">MBOverlayContainerViewController</a>
@@ -491,9 +494,9 @@ Camera view controllers created this way will be managed internally by the SDK, 
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)MBRecognizerRunner(py)detectionRecognizerRunnerDelegate"></a>
-                    <a name="//apple_ref/objc/Property/detectionRecognizerRunnerDelegate" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)MBRecognizerRunner(py)detectionRecognizerRunnerDelegate">detectionRecognizerRunnerDelegate</a>
+                    <a name="/c:objc(cs)MBRecognizerRunner(py)metadataDelegates"></a>
+                    <a name="//apple_ref/objc/Property/metadataDelegates" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MBRecognizerRunner(py)metadataDelegates">metadataDelegates</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -508,34 +511,12 @@ Camera view controllers created this way will be managed internally by the SDK, 
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">weak</span><span class="p">)</span> <span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/MBDetectionRecognizerRunnerDelegate.html">MBDetectionRecognizerRunnerDelegate</a></span><span class="o">&gt;</span> <span class="n">detectionRecognizerRunnerDelegate</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">strong</span><span class="p">)</span> <span class="n"><a href="../Classes/MBRecognizerRunnerMetadataDelegates.html">MBRecognizerRunnerMetadataDelegates</a></span> <span class="o">*</span><span class="n">metadataDelegates</span></code></pre>
 
                         </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:objc(cs)MBRecognizerRunner(py)ocrRecognizerRunnerDelegate"></a>
-                    <a name="//apple_ref/objc/Property/ocrRecognizerRunnerDelegate" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)MBRecognizerRunner(py)ocrRecognizerRunnerDelegate">ocrRecognizerRunnerDelegate</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
                         <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">weak</span><span class="p">)</span> <span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/MBOcrRecognizerRunnerDelegate.html">MBOcrRecognizerRunnerDelegate</a></span><span class="o">&gt;</span> <span class="n">ocrRecognizerRunnerDelegate</span></code></pre>
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">metadataDelegates</span><span class="p">:</span> <span class="kt"><a href="../Classes/MBRecognizerRunnerMetadataDelegates.html">MBRecognizerRunnerMetadataDelegates</a></span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -563,33 +544,6 @@ Camera view controllers created this way will be managed internally by the SDK, 
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
                           <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">weak</span><span class="p">)</span> <span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/MBScanningRecognizerRunnerDelegate.html">MBScanningRecognizerRunnerDelegate</a></span><span class="o">&gt;</span> <span class="n">scanningRecognizerRunnerDelegate</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:objc(cs)MBRecognizerRunner(py)debugRecognizerRunnerDelegate"></a>
-                    <a name="//apple_ref/objc/Property/debugRecognizerRunnerDelegate" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)MBRecognizerRunner(py)debugRecognizerRunnerDelegate">debugRecognizerRunnerDelegate</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">weak</span><span class="p">)</span> <span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/MBDebugRecognizerRunnerDelegate.html">MBDebugRecognizerRunnerDelegate</a></span><span class="o">&gt;</span> <span class="n">debugRecognizerRunnerDelegate</span></code></pre>
 
                         </div>
                       </div>
@@ -880,7 +834,7 @@ Camera view controllers created this way will be managed internally by the SDK, 
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2018 <a class="link" href="http://microblink.com" target="_blank" rel="external">Microblink</a>. All rights reserved. (Last updated: 2018-02-07)</p>
+      <p>&copy; 2018 <a class="link" href="http://microblink.com" target="_blank" rel="external">Microblink</a>. All rights reserved. (Last updated: 2018-03-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

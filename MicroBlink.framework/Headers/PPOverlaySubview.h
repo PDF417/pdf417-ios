@@ -21,8 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol PPOverlaySubviewDelegate;
 
-@class PPOcrLayout;
-@class PPMetadata;
+@class MBOcrLayout;
+@class MBMetadata;
 @class MBOverlayViewController;
 @class PPRecognizerResult;
 
@@ -84,7 +84,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Besides the ocr layout itself, we get the ID of the layout so we can
  * distinguish consecutive layouts of the same area on the image
  */
-- (void)overlayDidObtainOcrLayout:(PPOcrLayout *)ocrLayout withIdentifier:(NSString *)identifier;
+- (void)overlayDidObtainOcrLayout:(MBOcrLayout *)ocrLayout withIdentifier:(NSString *)identifier;
 
 /**
  * Overlay ended with recognition metadata.
@@ -92,7 +92,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @param metadata             returned metadata
  */
-- (void)overlayDidOutputMetadata:(PPMetadata *)metadata;
+- (void)overlayDidOutputMetadata:(MBMetadata *)metadata;
 
 /**
  NOTE: This is called on processing thread

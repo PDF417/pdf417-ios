@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "MBScanningRecognizerRunnerViewController.h"
 
-@class PPMetadata;
+@class MBMetadata;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Scanning library did output debug metadata
  */
 
-- (void)recognizerRunnerViewControllerDidOutputDebugMetadata:(nonnull UIViewController<MBRecognizerRunnerViewController> *)recognizerRunnerViewController metadata:(PPMetadata *)metadata;
+- (void)recognizerRunnerViewControllerDidOutputDebugMetadata:(nonnull UIViewController<MBRecognizerRunnerViewController> *)recognizerRunnerViewController metadata:(MBMetadata *)metadata;
 
 @end
 

@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * A recognizer that can scan PDF417 2D barcodes.
  */
-PP_CLASS_AVAILABLE_IOS(8.0)
+PP_CLASS_DEPRECATED_IOS(1.0, 7.0, "MBUsdlRecognizerResult is deprecated in PDF417 SDK 7.0.0")
 @interface MBUsdlRecognizerResult : MBRecognizerResult<NSCopying>
 
 - (instancetype)init NS_UNAVAILABLE;

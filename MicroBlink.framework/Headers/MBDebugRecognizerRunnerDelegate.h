@@ -6,7 +6,7 @@
 //
 
 @class MBRecognizerRunner;
-@class PPMetadata;
+@class MBMetadata;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Scanning library did output debug metadata
  */
-- (void)recognizerRunnerDidOutputDebugMetadata:(nonnull MBRecognizerRunner *)recognizerRunner metadata:(PPMetadata *)metadata;
+- (void)recognizerRunnerDidOutputDebugMetadata:(nonnull MBRecognizerRunner *)recognizerRunner metadata:(MBMetadata *)metadata;
 
 @end
 

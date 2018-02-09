@@ -10,7 +10,7 @@
 
 #import "MBCameraSettings.h"
 #import "MBUiSettings.h"
-#import "PPMetadataSettings.h"
+#import "MBMetadataSettings.h"
 
 #import "PPMicroBlinkDefines.h"
 
@@ -58,7 +58,7 @@ PP_CLASS_AVAILABLE_IOS(6.0)
 /**
  * Settings for obtaining metadata in the scanning process.
  */
-@property (nonatomic) PPMetadataSettings *metadataSettings;
+@property (nonatomic) MBMetadataSettings *metadataSettings;
 
 /**
  * Bundle in which the resources for the scanning process should be found. Usually, by default, this

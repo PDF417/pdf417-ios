@@ -35,14 +35,14 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *
  */
-- (void)overlayViewControllerDidFinishScanning:(nonnull MBBarcodeOverlayViewController *)barcodeOverlayViewController state:(MBRecognizerResultState)state;
+- (void)barcodeOverlayViewControllerDidFinishScanning:(nonnull MBBarcodeOverlayViewController *)barcodeOverlayViewController state:(MBRecognizerResultState)state;
 
 /**
  * Scanning library was closed, usually by the user pressing close button and cancelling the scan
  *
  *  @param barcodeOverlayViewController Scanning view controller responsible for scanning
  */
-- (void)overlayViewControllerDidTapClose:(nonnull MBBarcodeOverlayViewController *)barcodeOverlayViewController;
+- (void)barcodeOverlayViewControllerDidTapClose:(nonnull MBBarcodeOverlayViewController *)barcodeOverlayViewController;
 
 @end
 

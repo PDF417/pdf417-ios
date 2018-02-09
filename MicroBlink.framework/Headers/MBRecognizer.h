@@ -25,8 +25,6 @@ PP_CLASS_AVAILABLE_IOS(6.0)
  */
 @property (nonatomic, getter=isEnabled) BOOL enabled;
 
-- (Class) getIdealOverlayViewControllerClass;
-
 - (UIInterfaceOrientationMask)getOptimalHudOrientation;
 
 @end

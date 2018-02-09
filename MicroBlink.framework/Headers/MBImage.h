@@ -15,15 +15,15 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Enum which describes text orientation on an image.
  */
-typedef NS_ENUM(NSUInteger, PPProcessingOrientation) {
+typedef NS_ENUM(NSUInteger, MBProcessingOrientation) {
     /** Text oriented same as picture */
-    PPProcessingOrientationUp,
+    MBProcessingOrientationUp,
     /** Text is rotated 90 degrees clockwise */
-    PPProcessingOrientationRight,
+    MBProcessingOrientationRight,
     /** Text is upside down */
-    PPProcessingOrientationDown,
+    MBProcessingOrientationDown,
     /** Text is rotated 90 degrees counterclockwise */
-    PPProcessingOrientationLeft,
+    MBProcessingOrientationLeft,
 };
 
 /**
@@ -46,9 +46,9 @@ PP_CLASS_AVAILABLE_IOS(6.0)
 /**
  * Processing orientation of image. This is used in OCR where you can specify character orientation.
  *
- * Default: PPProcessingOrientationUp
+ * Default: MBProcessingOrientationUp
  */
-@property (nonatomic) PPProcessingOrientation orientation;
+@property (nonatomic) MBProcessingOrientation orientation;
 
 /**
  * Tells whether camera input images should be mirrored horizontally before processing

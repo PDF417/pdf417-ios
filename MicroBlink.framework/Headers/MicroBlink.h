@@ -22,7 +22,6 @@
 #import "MBModernBaseOverlayViewController.h"
 #import "MBBarcodeOverlayViewController.h"
 #import "MBBaseBarcodeOverlayViewController.h"
-#import "MBTapToFocusOverlaySubview.h"
 #import "MBScanningRecognizerRunnerViewController.h"
 #import "MBBasePhotoPayOverlayViewController.h"
 #import "MBPhotopayOverlayViewController.h"
@@ -43,18 +42,20 @@
 #import "MBViewFinderOverlaySubview.h"
 #import "MBIdDocumentOverlaySubview.h"
 #import "MBGlareStatusOverlaySubview.h"
+#import "MBTapToFocusOverlaySubview.h"
 
 // Delegates
+#import "MBRecognizerRunnerMetadataDelegates.h"
+#import "MBRecognizerRunnerViewMetadataDelegates.h"
+
 #import "MBBarcodeOverlayViewControllerDelegate.h"
 #import "MBRecognizerRunnerViewControllerDelegate.h"
-#import "MBOcrRecognizerRunnerViewDelegate.h"
 #import "MBDetectionRecognizerRunnerViewDelegate.h"
 #import "MBDebugRecognizerRunnerViewDelegate.h"
 #import "MBScanningRecognizerRunnerViewDelegate.h"
 
 #import "MBDebugRecognizerRunnerDelegate.h"
 #import "MBDetectionRecognizerRunnerDelegate.h"
-#import "MBOcrRecognizerRunnerDelegate.h"
 #import "MBScanningRecognizerRunnerDelegate.h"
 
 #import "MBOverlayViewControllerInterface.h"

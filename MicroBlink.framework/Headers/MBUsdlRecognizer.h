@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * A recognizer that can scan USDL.
  */
-PP_CLASS_AVAILABLE_IOS(8.0)
+PP_CLASS_DEPRECATED_IOS(1.0, 7.0, "MBUsdlRecognizer is deprecated in PDF417 SDK 7.0.0")
 @interface MBUsdlRecognizer : MBRecognizer<NSCopying>
 
 MB_INIT

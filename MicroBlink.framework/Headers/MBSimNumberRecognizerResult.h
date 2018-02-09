@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Recognizer that can perform recognition of barcodes on SIM packaging.
  */
-PP_CLASS_AVAILABLE_IOS(6.0)
+PP_CLASS_DEPRECATED_IOS(1.0, 7.0, "MBSimNumberRecognizerResult is deprecated in PDF417 SDK 7.0.0")
 @interface MBSimNumberRecognizerResult : MBRecognizerResult<NSCopying>
 
 - (instancetype)init NS_UNAVAILABLE;

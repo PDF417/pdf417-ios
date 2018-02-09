@@ -29,13 +29,13 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol MBRecognizerRunnerViewControllerDelegate;
 @protocol MBDebugRecognizerRunnerViewDelegate;
 
-@class PPOcrLayout;
-@class PPMetadata;
+@class MBOcrLayout;
+@class MBMetadata;
 @class PPRecognizerResult;
 
 
 /**
- Overlay View Controller is an abstract class for all overlay views placed on top PhotoPay's Camera View Controller.
+ Overlay View Controller is an abstract class for all overlay views placed on top View Controller.
 
  It's responsibility is to provide meaningful and useful interface for the user to interact with.
 
@@ -45,100 +45,6 @@ NS_ASSUME_NONNULL_BEGIN
     "viewfinder" in which the user need to place the scanned object
  - a way to cancel the scanining, typically with a "cancel" or "back" button
  - a way to power on and off the light (i.e. "torch") button
-
- PhotoPay always provides it's own default implementation of the Overlay View Controller for every specific use.
- Your implementation should closely mimic the default implementation as it's the result of thorough testing with
- end users. Also, it closely matches the underlying scanning technology.
-
- For example, the scanning technology usually gives results very fast after the user places the device's camera in the
- expected way above the scanned object. This means a progress bar for the scan is not particularly useful to the user.
- The majority of time the user spends on positioning the device's camera correctly. That's just an example which
- demonstrates careful decision making behind default camera overlay view.
-
- PhotoPay demo project in your development package contain `PPCameraOverlayViewController` class, an example of
- custom overlay view implementation.
-
- # Initialization
-
- To use your custom overlay with PhotoPay's camera view, you must subclass MBOverlayViewController and
- specify it when initializing CameraViewController:
-
-    PPCameraOverlayViewController *overlayViewController =
-        [[PPCameraOverlayViewController alloc] initWithNibName:@"PPCameraOverlayViewController" bundle:nil];
-
-    // Create camera view controller
-    UIViewController *cameraViewController =
-        [coordinator cameraViewControllerWithDelegate:self overlayViewController:overlayViewController];
-
- Note: if you create camera view controller without specifying overlay view, the default overlay implementation will be used:
-
-    // Create camera view controller
-    UIViewController *cameraViewController =
-        [coordinator cameraViewControllerWithDelegate:self];
-
- As with any view controller, you are responsible for specifying UI elements and handling their actions.
- Besides that, there are some requirements for interaction with Camera View Controller.
-
- # Interaction with CameraViewController
-
- CameraViewController is a Container view controller to the MBOverlayViewController instances.
- For more about Container View Controllers, read official Apple [View Controller Programming Guide].
-
- Also, each instance of MBOverlayViewController and it's subclasses has access to the Container View Controller.
-
-    // Overlay View's delegate object. Responsible for sending messages
-    // to PhotoPay's Camera View Controller
-    @property (nonatomic, assign) id<MBOverlayContainerViewController> containerViewController;
-
- # Handling orientation changes
-
- Camera view controller is always presented in Portrait mode, but nevertheless, your overlay view be presented in the
- current device orientation. There are two ways to handle orientation changes.
-
- The first, built in way is a simple way to achieve autorotation. Your Overlay View Controller only needs to implement
- standard UIViewController methods which specify which orientations are supported. For example, to support only landscape
- orientations, you need to add the following methods to your Overlay View Controller implementation.
-
-    - (NSUInteger)supportedInterfaceOrientations {
-        return UIInterfaceOrientationMaskLandscape;
-    }
-
-    - (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
-        return UIInterfaceOrientationLandscapeRight;
-    }
-
-    - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-        return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft || interfaceOrientation ==
- UIInterfaceOrientationLandscapeRight);
-    }
-
- Your Overlay View Controller will automatically rotate to support all orientations returned by `supportedInterfaceOrientations`
- method. You are responsible for standard iOS techniques (auto-layout or autoresizing masks) to adjust the UI to new
- device orientation.
-
- You can manually disable autorotation by initializing `PPCoordinator` object with the following setting:
-
-    [coordinatorSettings setValue:@(NO) forKey:kPPOverlayShouldAutorotate];
-
-
- # Steps for providing custom Camera Overlay View
-
- 1. Create a subclass of `MBOverlayViewController`. You can use XIB for user interface, or create UI from code.
-
- 2. See if there are any events received from `CameraViewController` which you need to handle for your UI hierarchy
-
- 3. Implement your view hierarchy.
-
-    If you have a Cancel button in your view, don't forget to call `overlayViewControllerWillCloseCamera:`
-    method on overlay's delegate object when cancel is pressed.
-
-    If you have Torch button, dont forget to check if Torch should be displayed by using
-    `overlayViewControllerShouldDisplayTorch:` method, and to report new torch state with
-    `overlayViewController:willSetTorch:` method.
-
- 4. Handle orientation changes, either by implementing standard UIViewController autorotation metods,
-    or by custom rotation management on rotation events.
-
  */
 PP_CLASS_AVAILABLE_IOS(8.0)
 @interface MBOverlayViewController : UIViewController
@@ -149,6 +55,9 @@ PP_CLASS_AVAILABLE_IOS(8.0)
  */
 @property (nonatomic, weak) UIViewController<MBOverlayContainerViewController> *containerViewController;
 
+/**
+ * Delegate for Overlay View controllers which returns required MBSettings
+ */
 @property (nonatomic, weak) id<MBOverlayViewControllerInterface> overlayViewControllerInterfaceDelegate;
 
 /**

@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "MBRecognizerRunnerViewMetadataDelegates.h"
 
 @protocol MBOcrRecognizerRunnerViewDelegate;
 @protocol MBDetectionRecognizerRunnerViewDelegate;
@@ -24,11 +25,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @protocol MBRecognizerRunnerViewController <NSObject>
 
-@property (nonatomic, weak) MBOverlayViewController<MBOcrRecognizerRunnerViewDelegate> * ocrRecognizerRunnerViewDelegate;
-@property (nonatomic, weak) MBOverlayViewController<MBDetectionRecognizerRunnerViewDelegate> *detectionRecognizerRunnerViewDelegate;
+@property (nonatomic, strong) MBRecognizerRunnerViewMetadataDelegates *metadataDelegates;
 @property (nonatomic, weak) MBOverlayViewController<MBScanningRecognizerRunnerViewDelegate> *scanningRecognizerRunnerViewDelegate;
 @property (nonatomic, weak) MBOverlayViewController<MBRecognizerRunnerViewControllerDelegate> *recognizerRunnerViewControllerDelegate;
-@property (nonatomic, weak) MBOverlayViewController<MBDebugRecognizerRunnerViewDelegate> *debugRecognizerRunnerViewDelegate;
 
 /**
  * Scanning region

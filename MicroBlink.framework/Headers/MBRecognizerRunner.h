@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 
 #import "PPMicroBlinkDefines.h"
+#import "MBRecognizerRunnerMetadataDelegates.h"
 
 @protocol MBDetectionRecognizerRunnerDelegate;
 @protocol MBOcrRecognizerRunnerDelegate;
@@ -27,10 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
 PP_CLASS_AVAILABLE_IOS(8.0)
 @interface MBRecognizerRunner : NSObject
 
-@property (nonatomic, weak) id<MBDetectionRecognizerRunnerDelegate> detectionRecognizerRunnerDelegate;
-@property (nonatomic, weak) id<MBOcrRecognizerRunnerDelegate> ocrRecognizerRunnerDelegate;
+@property (nonatomic, strong) MBRecognizerRunnerMetadataDelegates *metadataDelegates;
 @property (nonatomic, weak) id<MBScanningRecognizerRunnerDelegate> scanningRecognizerRunnerDelegate;
-@property (nonatomic, weak) id<MBDebugRecognizerRunnerDelegate> debugRecognizerRunnerDelegate;
 
 @property (nonatomic, nullable) MBCoordinator *coordinator;
 

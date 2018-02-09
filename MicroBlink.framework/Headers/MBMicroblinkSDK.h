@@ -72,6 +72,13 @@ PP_CLASS_AVAILABLE_IOS(8.0)
  */
 - (void)setLicenseResource:(NSString * _Nonnull)fileName withExtension:(NSString * _Nullable)extension inSubdirectory:(NSString * _Nullable)subdirectory forBundle:(NSBundle * _Nonnull)bundle andLicensee:(NSString *)licensee;
 
+/**
+ * Returns the string that contains the library build version
+ *
+ *  @return string that contains the library build version
+ */
++ (NSString *)buildVersionString;
+
 @end
 
 NS_ASSUME_NONNULL_END

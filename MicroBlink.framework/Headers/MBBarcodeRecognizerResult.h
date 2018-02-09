@@ -28,26 +28,9 @@ PP_CLASS_AVAILABLE_IOS(6.0)
 - (NSData *_Nullable)data;
 
 /**
- * Retrieves string content of the scanned data using guessed encoding.
- *
- * If you're 100% sure you know the exact encoding in the barcode, use stringUsingEncoding: method.
- * Otherwise stringUsingDefaultEncoding.
- *
- * This method uses NSString stringEncodingForData:encodingOptions:convertedString:usedLossyConversion: method for
- * guessing the encoding.
- *
- *  @return created string, or nil if encoding couldn't be found.
+ * Retrieves string content of scanned data
  */
-- (NSString *_Nullable)stringUsingGuessedEncoding;
-
-/**
- * Retrieves string content of the scanned data using given encoding.
- *
- *  @param encoding The encoding for the returned string.
- *
- *  @return String created from data property, using given encoding
- */
-- (NSString *_Nullable)stringUsingEncoding:(NSStringEncoding)encoding;
+- (NSString *)stringData;
 
 /**
  * Flag indicating uncertain scanning data

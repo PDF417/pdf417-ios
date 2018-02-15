@@ -43,7 +43,6 @@ For more information on how to integrate _PDF417.mobi_ SDK into your app read th
     * [List of available recognizers](#recognizerList)
         * [Frame Grabber Recognizer](#frameGrabberRecognizer)
         * [Success Frame Grabber Recognizer](#successFrameGrabberRecognizer)
-    * [List of available recognizers within PDF417.mobi SDK](#recognizerList)
         * [PDF417 recognizer](#pdf417Recognizer)
         * [Barcode recognizer](#barcodeRecognizer)
 * [Troubleshooting](#troubleshoot)
@@ -358,7 +357,7 @@ In `viewDidLoad`, other protocol conformation can be done and it's done on `reco
 Swift and Objective-C
 ```swift
 self.recognizerRunnerViewController.scanningRecognizerRunnerViewDelegate = self;
-self.recognizerRunnerViewController.detectionRecognizerRunnerViewDelegate = self;
+self.recognizerRunnerViewController.metadataDelegates.detectionRecognizerRunnerViewDelegate = self;
 self.recognizerRunnerViewController.recognizerRunnerViewControllerDelegate = self;
 ```
 
@@ -529,10 +528,6 @@ The [`MBSuccessFrameGrabberRecognizer`](http://pdf417.github.io/pdf417-ios/docs/
 Since [`MBSuccessFrameGrabberRecognizer`](http://pdf417.github.io/pdf417-ios/docs/Classes/MBSuccessFrameGrabberRecognizer.html)  impersonates its slave [`MBRecognizer`](http://pdf417.github.io/pdf417-ios/docs/Classes/MBRecognizer.html) object, it is not possible to give both concrete [`MBRecognizer`](http://pdf417.github.io/pdf417-ios/docs/Classes/MBRecognizer.html) object and `MBSuccessFrameGrabberRecognizer` that wraps it to same `MBRecognizerCollection` - doing so will have the same result as if you have given two instances of same [`MBRecognizer`](http://pdf417.github.io/pdf417-ios/docs/Classes/MBRecognizer.html) type to the [`MBRecognizerCollection`](http://pdf417.github.io/pdf417-ios/docs/Classes/MBRecognizerCollection.html) - it will crash your application.
 
 This recognizer is best for use cases when you need to capture the exact image that was being processed by some other [`MBRecognizer`](http://pdf417.github.io/pdf417-ios/docs/Classes/MBRecognizer.html) object at the time its [`MBRecognizerResult`](http://pdf417.github.io/pdf417-ios/docs/Classes/MBRecognizerResult.html) became `Valid`. When that happens, `MBSuccessFrameGrabberRecognizer's` `MBSuccessFrameGrabberRecognizerResult` will also become `Valid` and will contain described image.
-
-## <a name="recognizerList"></a> List of available recognizers within PDF417.mobi SDK
-
-This section will give a list of all [`MBRecognizer`](http://pdf417.github.io/pdf417-ios/docs/Classes/MBRecognizer.html) objects that are available within PDF417.mobi SDK, their purpose and recommendations how they should be used to get best performance and user experience.
 
 ### <a name="pdf417Recognizer"></a> PDF417 recognizer
 

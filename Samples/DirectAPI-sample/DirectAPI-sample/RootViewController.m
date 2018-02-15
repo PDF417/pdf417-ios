@@ -104,7 +104,7 @@ static NSString* rawOcrParserId = @"RawOcrParser";
 - (void)processImageRunner:(UIImage *)originalImage {
     MBImage *image = [MBImage imageWithUIImage:originalImage];
     image.cameraFrame = YES;
-    image.orientation = PPProcessingOrientationLeft;
+    image.orientation = MBProcessingOrientationLeft;
     dispatch_queue_t _serialQueue = dispatch_queue_create("com.microblink.DirectAPI-sample", DISPATCH_QUEUE_SERIAL);
     dispatch_async(_serialQueue, ^{
         [self.recognizerRunner processImage:image];

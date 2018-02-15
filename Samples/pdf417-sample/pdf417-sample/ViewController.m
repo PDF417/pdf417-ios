@@ -59,7 +59,7 @@
 
 #pragma mark - MBBarcodeOverlayViewControllerDelegate
 
-- (void)overlayViewControllerDidFinishScanning:(MBBarcodeOverlayViewController *)barcodeOverlayViewController state:(MBRecognizerResultState)state {
+- (void)barcodeOverlayViewControllerDidFinishScanning:(MBBarcodeOverlayViewController *)barcodeOverlayViewController state:(MBRecognizerResultState)state {
     /** This is done on background thread*/
     [barcodeOverlayViewController.recognizerRunnerViewController pauseScanning];
     
@@ -98,7 +98,7 @@
     
 }
 
-- (void)overlayViewControllerDidTapClose:(MBBarcodeOverlayViewController *)barcodeOverlayViewController {
+- (void)barcodeOverlayViewControllerDidTapClose:(MBBarcodeOverlayViewController *)barcodeOverlayViewController {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

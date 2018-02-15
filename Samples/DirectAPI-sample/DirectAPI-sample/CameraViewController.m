@@ -205,7 +205,7 @@ static NSString *rawOcrParserId = @"Raw ocr";
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
     MBImage *image = [MBImage imageWithCmSampleBuffer:sampleBuffer];
-    image.orientation = PPProcessingOrientationLeft;
+    image.orientation = MBProcessingOrientationLeft;
     if (!self.pauseRecognition) {
         [self.recognizerRunner processImage:image];
     }

@@ -51,7 +51,7 @@ class ViewController: UIViewController {
 // MARK: MBBarcodeOverlayViewControllerDelegate
 extension ViewController : MBBarcodeOverlayViewControllerDelegate {
     
-    func overlayViewControllerDidFinishScanning(_ barcodeOverlayViewController: MBBarcodeOverlayViewController, state: MBRecognizerResultState) {
+    func barcodeOverlayViewControllerDidFinishScanning(_ barcodeOverlayViewController: MBBarcodeOverlayViewController, state: MBRecognizerResultState) {
         
         let recognizerRunnerViewController = barcodeOverlayViewController.recognizerRunnerViewController as MBRecognizerRunnerViewController
         /** This is done on background thread */
@@ -88,7 +88,7 @@ extension ViewController : MBBarcodeOverlayViewControllerDelegate {
         }
     }
     
-    func overlayViewControllerDidTapClose(_ barcodeOverlayViewController: MBBarcodeOverlayViewController) {
+    func barcodeOverlayViewControllerDidTapClose(_ barcodeOverlayViewController: MBBarcodeOverlayViewController) {
         self.dismiss(animated: true, completion: nil)
     }
     

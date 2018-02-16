@@ -212,7 +212,7 @@ static NSString *rawOcrParserId = @"Raw ocr";
 }
 
 - (void)recognizerRunnerDidFinish:(MBRecognizerRunner *)recognizerRunner state:(MBRecognizerResultState)state {
-     self.pauseRecognition = YES;
+    self.pauseRecognition = YES;
     if (self.pdf417Recognizer.result.resultState == MBRecognizerResultStateValid) {
         dispatch_async(dispatch_get_main_queue(), ^{
             NSString *title = @"PDF417";
@@ -234,6 +234,8 @@ static NSString *rawOcrParserId = @"Raw ocr";
             
             [self presentViewController:alertController animated:YES completion:nil];
         });
+    } else {
+        self.pauseRecognition = NO;
     }
 }
 

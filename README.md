@@ -517,7 +517,7 @@ This section will give a list of all [`MBRecognizer`](http://pdf417.github.io/pd
 
 ### <a name="frameGrabberRecognizer"></a> Frame Grabber Recognizer
 
-The [`MBRecognizeMBFrameGrabberRecognizerrCollection`](http://pdf417.github.io/pdf417-ios/docs/Classes/MBFrameGrabberRecognizer.html) is the simplest recognizer in SDK, as it does not perform any processing on the given image, instead it just returns that image back to its `onFrameAvailable`. Its result never changes state from empty.
+The [`MBFrameGrabberRecognizer`](http://pdf417.github.io/pdf417-ios/docs/Classes/MBFrameGrabberRecognizer.html) is the simplest recognizer in SDK, as it does not perform any processing on the given image, instead it just returns that image back to its `onFrameAvailable`. Its result never changes state from empty.
 
 This recognizer is best for easy capturing of camera frames with `MBRecognizerRunnerViewController`. Note that [`MBImage`](http://pdf417.github.io/pdf417-ios/docs/Classes/MBFrameGrabberReMBImagecognizer.html) sent to `onFrameAvailable` are temporary and their internal buffers all valid only until the `onFrameAvailable` method is executing - as soon as method ends, all internal buffers of [`MBImage`](http://pdf417.github.io/pdf417-ios/docs/Classes/MBFrameGrabberReMBImagecognizer.html) object are disposed. If you need to store [`MBImage`](http://pdf417.github.io/pdf417-ios/docs/Classes/MBFrameGrabberReMBImagecognizer.html) object for later use, you must create a copy of it by calling `copy`.
 

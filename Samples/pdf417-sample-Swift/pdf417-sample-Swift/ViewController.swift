@@ -64,7 +64,7 @@ extension ViewController : MBBarcodeOverlayViewControllerDelegate {
             title = "QR code"
             
             // Save the string representation of the code
-            message = self.barcodeRecognizer!.result.stringUsingGuessedEncoding()!
+            message = self.barcodeRecognizer!.result.stringData()
         }
         else if (self.pdf417Recognizer!.result.resultState == MBRecognizerResultState.valid) {
             title = "PDF417"

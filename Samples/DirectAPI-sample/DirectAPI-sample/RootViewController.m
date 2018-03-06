@@ -68,7 +68,7 @@ static NSString* rawOcrParserId = @"RawOcrParser";
             NSString *title = @"PDF417";
             
             // Save the string representation of the code
-            NSString *message = [self.pdf417Recognizer.result stringUsingGuessedEncoding];
+            NSString *message = [self.pdf417Recognizer.result stringData];
             
             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
                                                                                      message:message

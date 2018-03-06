@@ -113,7 +113,7 @@ class ViewController: UIViewController, MBCustomOverlayViewControllerDelegate, M
             title = "PDF417"
             
             // Save the string representation of the code
-            message = self.pdf417Recognizer!.result.stringUsingGuessedEncoding()!
+            message = self.pdf417Recognizer!.result.stringData()
         }
         
         /** Needs to be called on main thread beacuse everything prior is on background thread */

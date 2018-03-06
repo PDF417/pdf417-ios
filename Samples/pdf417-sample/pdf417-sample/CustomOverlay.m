@@ -18,16 +18,6 @@
 
 @implementation CustomOverlay
 
-- (instancetype)initWithSettings:(MBSettings *)settings andDelegate:(nonnull id<MBCustomOverlayViewControllerDelegate>)delegate {
-    self = [super init];
-    if (self) {
-        _settings = settings;
-        _delegate = delegate;
-        self.overlayViewControllerInterfaceDelegate = self;
-    }
-    return self;
-}
-
 + (instancetype)initFromStoryboardWithSettings:(MBSettings *)settings andDelegate:(nonnull id<MBCustomOverlayViewControllerDelegate>)delegate {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     CustomOverlay *customOverlay = [storyboard instantiateViewControllerWithIdentifier:@"CustomOverlay"];

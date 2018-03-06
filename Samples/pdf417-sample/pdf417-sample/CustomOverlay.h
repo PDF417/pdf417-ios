@@ -8,7 +8,11 @@
 
 #import <MicroBlink/MicroBlink.h>
 
+@protocol MBCustomOverlayViewControllerDelegate;
+
 @interface CustomOverlay : MBOverlayViewController <MBOverlayViewControllerInterface>
+
++ (instancetype)initFromStoryboardWithSettings:(MBSettings *)settings andDelegate:(nonnull id<MBCustomOverlayViewControllerDelegate>)delegate;
 
 @end
 

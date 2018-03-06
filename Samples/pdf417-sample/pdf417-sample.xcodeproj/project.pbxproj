@@ -25,6 +25,7 @@
 		A2B4C69C1EF186440088C51B /* MicroBlink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 318AA94C1CEB44AF0082C189 /* MicroBlink.framework */; };
 		A2B4C69D1EF186440088C51B /* MicroBlink.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 318AA94C1CEB44AF0082C189 /* MicroBlink.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A2FF097C2024C3DD00B14D0C /* License in Resources */ = {isa = PBXBuildFile; fileRef = A2FF097B2024C3DD00B14D0C /* License */; };
+		CC2DD49D204DA4F9008DFD39 /* CustomOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2DD49C204DA4F9008DFD39 /* CustomOverlay.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -63,6 +64,8 @@
 		318AA94C1CEB44AF0082C189 /* MicroBlink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MicroBlink.framework; path = ../../MicroBlink.framework; sourceTree = "<group>"; };
 		A2B4C69A1EF1863D0088C51B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		A2FF097B2024C3DD00B14D0C /* License */ = {isa = PBXFileReference; lastKnownFileType = folder; path = License; sourceTree = "<group>"; };
+		CC2DD49B204DA4E4008DFD39 /* CustomOverlay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomOverlay.h; sourceTree = "<group>"; };
+		CC2DD49C204DA4F9008DFD39 /* CustomOverlay.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomOverlay.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,7 @@
 		18E265EB1BCE565E00FF4871 /* pdf417-sample */ = {
 			isa = PBXGroup;
 			children = (
+				CC22DCFE204DAA5C0099F31F /* CustomOverlay */,
 				A2FF097B2024C3DD00B14D0C /* License */,
 				18E265EF1BCE565E00FF4871 /* AppDelegate.h */,
 				18E265F01BCE565E00FF4871 /* AppDelegate.m */,
@@ -142,6 +146,15 @@
 				A2B4C69A1EF1863D0088C51B /* libz.tbd */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CC22DCFE204DAA5C0099F31F /* CustomOverlay */ = {
+			isa = PBXGroup;
+			children = (
+				CC2DD49B204DA4E4008DFD39 /* CustomOverlay.h */,
+				CC2DD49C204DA4F9008DFD39 /* CustomOverlay.m */,
+			);
+			name = CustomOverlay;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +251,7 @@
 				18E265F41BCE565E00FF4871 /* ViewController.m in Sources */,
 				18E265F11BCE565E00FF4871 /* AppDelegate.m in Sources */,
 				18E265EE1BCE565E00FF4871 /* main.m in Sources */,
+				CC2DD49D204DA4F9008DFD39 /* CustomOverlay.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

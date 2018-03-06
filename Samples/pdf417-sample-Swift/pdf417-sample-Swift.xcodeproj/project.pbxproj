@@ -355,7 +355,7 @@
 				INFOPLIST_FILE = "pdf417-sample-Swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.microblink.pdf417-sample-Swift";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.microblink.pdf417-LibraryPermission-sample-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -372,7 +372,7 @@
 				INFOPLIST_FILE = "pdf417-sample-Swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.microblink.pdf417-sample-Swift";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.microblink.pdf417-LibraryPermission-sample-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;

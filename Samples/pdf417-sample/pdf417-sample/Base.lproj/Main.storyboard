@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEa-nz-Y55">
-                                <rect key="frame" x="165.5" y="315.5" width="44" height="36"/>
+                                <rect key="frame" x="165.5" y="249" width="44" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Scan">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -31,16 +32,91 @@
                                     <action selector="didTapScan:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pqR-WR-lsj"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IO0-rA-Jsw">
+                                <rect key="frame" x="141.5" y="382" width="92" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Custom UI"/>
+                                <connections>
+                                    <action selector="didTapCustomUI:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M5j-vP-mJn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="MEa-nz-Y55" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="CAA-u3-pmD"/>
+                            <constraint firstItem="MEa-nz-Y55" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.8" id="CAA-u3-pmD"/>
                             <constraint firstItem="MEa-nz-Y55" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="E2k-aM-aGk"/>
+                            <constraint firstItem="IO0-rA-Jsw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GK3-bf-gME"/>
+                            <constraint firstItem="IO0-rA-Jsw" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.2" id="hcb-PX-rLL"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="156" y="-99"/>
+        </scene>
+        <!--Custom Overlay-->
+        <scene sceneID="Bm2-GI-FcH">
+            <objects>
+                <viewController restorationIdentifier="CustomOverlay" storyboardIdentifier="CustomOverlay" id="o70-EB-7vb" customClass="CustomOverlay" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0XP-fL-W1j"/>
+                        <viewControllerLayoutGuide type="bottom" id="F7f-IY-i6Q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ghf-mN-ycc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b57-qQ-Ckb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5H1-To-CqG">
+                                <rect key="frame" x="0.0" y="367" width="375" height="300"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eQP-lz-yeP">
+                                <rect key="frame" x="337.5" y="200" width="37.5" height="167"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ND-GD-b8l">
+                                <rect key="frame" x="0.0" y="200" width="37.5" height="167"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4o-M3-LNP" userLabel="Close">
+                                <rect key="frame" x="14" y="30" width="46" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="didTapClose:" destination="o70-EB-7vb" eventType="touchUpInside" id="7TG-h5-SQ5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5H1-To-CqG" firstAttribute="height" secondItem="ghf-mN-ycc" secondAttribute="height" multiplier="0.45" id="03j-88-7E3"/>
+                            <constraint firstAttribute="trailing" secondItem="5H1-To-CqG" secondAttribute="trailing" id="6Fq-P1-fCS"/>
+                            <constraint firstAttribute="trailing" secondItem="b57-qQ-Ckb" secondAttribute="trailing" id="8HR-xn-Cb1"/>
+                            <constraint firstItem="H4o-M3-LNP" firstAttribute="leading" secondItem="ghf-mN-ycc" secondAttribute="leading" constant="14" id="B4v-q8-4aj"/>
+                            <constraint firstItem="0ND-GD-b8l" firstAttribute="top" secondItem="b57-qQ-Ckb" secondAttribute="bottom" id="Cb9-by-Ejk"/>
+                            <constraint firstItem="b57-qQ-Ckb" firstAttribute="leading" secondItem="ghf-mN-ycc" secondAttribute="leading" id="Cwc-sE-6ll"/>
+                            <constraint firstItem="eQP-lz-yeP" firstAttribute="top" secondItem="b57-qQ-Ckb" secondAttribute="bottom" id="EGC-M6-jUS"/>
+                            <constraint firstItem="b57-qQ-Ckb" firstAttribute="top" secondItem="ghf-mN-ycc" secondAttribute="top" id="ERI-Hc-4TH"/>
+                            <constraint firstItem="H4o-M3-LNP" firstAttribute="top" secondItem="0XP-fL-W1j" secondAttribute="bottom" constant="10" id="IsG-sy-ray"/>
+                            <constraint firstItem="0ND-GD-b8l" firstAttribute="leading" secondItem="ghf-mN-ycc" secondAttribute="leading" id="JkO-Ho-Q6h"/>
+                            <constraint firstItem="5H1-To-CqG" firstAttribute="leading" secondItem="ghf-mN-ycc" secondAttribute="leading" id="KLf-Ne-ZEH"/>
+                            <constraint firstItem="0ND-GD-b8l" firstAttribute="width" secondItem="ghf-mN-ycc" secondAttribute="width" multiplier="0.1" id="NHZ-j6-RVu"/>
+                            <constraint firstItem="eQP-lz-yeP" firstAttribute="width" secondItem="ghf-mN-ycc" secondAttribute="width" multiplier="0.1" id="QgK-g1-Z8x"/>
+                            <constraint firstItem="5H1-To-CqG" firstAttribute="top" secondItem="eQP-lz-yeP" secondAttribute="bottom" id="Sp5-ii-VeM"/>
+                            <constraint firstAttribute="trailing" secondItem="eQP-lz-yeP" secondAttribute="trailing" id="XbB-T6-gN7"/>
+                            <constraint firstItem="b57-qQ-Ckb" firstAttribute="height" secondItem="ghf-mN-ycc" secondAttribute="height" multiplier="0.3" id="hbn-nT-LUo"/>
+                            <constraint firstAttribute="bottom" secondItem="5H1-To-CqG" secondAttribute="bottom" id="j4y-LX-P5d"/>
+                            <constraint firstItem="5H1-To-CqG" firstAttribute="top" secondItem="0ND-GD-b8l" secondAttribute="bottom" id="rht-6I-9Wn"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tc9-nd-rIv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="860" y="-150"/>
         </scene>
     </scenes>
 </document>

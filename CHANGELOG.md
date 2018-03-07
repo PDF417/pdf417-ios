@@ -1,5 +1,14 @@
 # Release notes
 
+## 7.0.0
+
+- new API, which is not backward compatible. Please check [README](README.md) and updated demo applications for more information, but the gist of it is:
+    - `PPScanningViewController` has been renamed to `MBRecognizerRunnerViewController` and `MBCoordinator` to `MBRecognizerRunner`
+    - `PPBarcodeOverlayViewController` has been renamed to `MBBarcodeOverlayViewController`
+    - previously internal `MBRecognizer` objects are not internal anymore - instead of having opaque `MBRecognizerSettings` and `MBRecognizerResult` objects, you now have stateful `MBRecognizer` object that contains its `MBResult` within and mutates it while performing recognition. For more information, see [README](README.md) and updated demo applications
+- new licence format, which is not backward compatible. Full details are given in [README](README.md) and in updated applications, but the gist of it is:
+    - licence can now be provided with either file, byte array or base64-encoded bytes
+
 ## 5.1.2
 
 - Updates and additions

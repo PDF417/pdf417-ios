@@ -7,12 +7,14 @@
 //
 
 #import "ViewController.h"
+#import "CustomOverlay.h"
 
 #import <MicroBlink/MicroBlink.h>
 
-#import "PPCameraOverlayViewController.h"
+@interface ViewController () <MBBarcodeOverlayViewControllerDelegate, MBCustomOverlayViewControllerDelegate, UIAlertViewDelegate>
 
-@interface ViewController () <PPScanningDelegate, UIAlertViewDelegate>
+@property (nonatomic, strong) MBBarcodeRecognizer *barcodeRecognizer;
+@property (nonatomic, strong) MBPdf417Recognizer *pdf417Recognizer;
 
 @end
 
@@ -20,7 +22,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    /** First, set license key as soon as possible */
+    [[MBMicroblinkSDK sharedInstance] setLicenseResource:@"license-pdf" withExtension:@"txt" inSubdirectory:@"License" forBundle:[NSBundle mainBundle]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,227 +32,114 @@
     // Dispose of any resources that can be recreated.
 }
 
-/**
- * Method allocates and initializes the Scanning coordinator object.
- * Coordinator is initialized with settings for scanning
- * Modify this method to include only those recognizer settings you need. This will give you optimal performance
- *
- *  @param error Error object, if scanning isn't supported
- *
- *  @return initialized coordinator
- */
-- (PPCameraCoordinator *)coordinatorWithError:(NSError**)error {
-
-    /** 0. Check if scanning is supported */
-
-    if ([PPCameraCoordinator isScanningUnsupportedForCameraType:PPCameraTypeBack error:error]) {
-        return nil;
-    }
-
-
-    /** 1. Initialize the Scanning settings */
-
-    // Initialize the scanner settings object. This initialize settings with all default values.
-    PPSettings *settings = [[PPSettings alloc] init];
-
-
-    /** 2. Setup the license key */
-
-    // Visit www.microblink.com to get the license key for your app
-    settings.licenseSettings.licenseKey = @"ZBI4Y7M5-CGPKH3HG-XDVHB5NJ-FQCZV54Z-JF3VICCE-MBAPJB5V-FGNPPGKJ-O5KFSD5R";
-    // Valid until 2017-12-07
-
-
-    /**
-     * 3. Set up what is being scanned. See detailed guides for specific use cases.
-     * Remove undesired recognizers (added below) for optimal performance.
-     */
-    
-    // To specify we want to perform PDF417 recognition, initialize the PDF417 recognizer settings
-    PPPdf417RecognizerSettings *pdf417RecognizerSettings = [[PPPdf417RecognizerSettings alloc] init];
-    
-    // Add PDF417 Recognizer setting to a list of used recognizer settings
-    [settings.scanSettings addRecognizerSettings:pdf417RecognizerSettings];
-    
-    // To specify we want to perform recognition of other barcode formats, initialize the ZXing recognizer settings
-    PPBarcodeRecognizerSettings *barcodeRecognizerSettings = [[PPBarcodeRecognizerSettings alloc] init];
-    barcodeRecognizerSettings.scanQR = YES; // we use just QR code
-    
-    // Add ZXingRecognizer setting to a list of used recognizer settings
-    [settings.scanSettings addRecognizerSettings:barcodeRecognizerSettings];
-    
-    // To specify we want to scan USDLs, initialize USDL rcognizer settings
-    PPUsdlRecognizerSettings *usdlRecognizerSettings = [[PPUsdlRecognizerSettings alloc] init];
-    
-    // Add USDL Recognizer setting to a list of used recognizer settings
-    [settings.scanSettings addRecognizerSettings:usdlRecognizerSettings];
-    
-
-    /** 4. Initialize the Scanning Coordinator object */
-    
-    PPCameraCoordinator *coordinator = [[PPCameraCoordinator alloc] initWithSettings:settings];
-
-    return coordinator;
-}
-
-- (void)showCoordinatorError:(NSError *)error {
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Warning"
-                                                                         message:[error localizedDescription]
-                                                                  preferredStyle:UIAlertControllerStyleAlert];
-
-    UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"OK"
-                                                       style:UIAlertActionStyleDefault
-                                                     handler:nil];
-
-    [alertController addAction:okAction];
-
-    [self presentViewController:alertController animated:YES completion:nil];
-}
 
 - (IBAction)didTapScan:(id)sender {
-
-    /** Instantiate the scanning coordinator */
-    NSError *error;
-    PPCameraCoordinator *coordinator = [self coordinatorWithError:&error];
-
-    /** If scanning isn't supported, show an error */
-    if (coordinator == nil) {
-        [self showCoordinatorError:error];
-        return;
-    }
-
-    /** Create new scanning view controller */
-    UIViewController<PPScanningViewController>* scanningViewController = [PPViewControllerFactory cameraViewControllerWithDelegate:self coordinator:coordinator error:nil];
     
-    // Allow scanning view controller to autorotate
-    scanningViewController.autorotate = NO;
-    scanningViewController.supportedOrientations = UIInterfaceOrientationMaskPortrait;
+     /** Create recognizers */
+    self.barcodeRecognizer = [[MBBarcodeRecognizer alloc] init];
+    self.barcodeRecognizer.scanQR = YES;
+    
+    self.pdf417Recognizer = [[MBPdf417Recognizer alloc] init];
+    
+    MBBarcodeOverlaySettings* settings = [[MBBarcodeOverlaySettings alloc] init];
+    
+    NSMutableArray<MBRecognizer *> *recognizers = [[NSMutableArray alloc] init];
 
-    /** Present the scanning view controller. You can use other presentation methods as well (instead of presentViewController) */
-    [self presentViewController:scanningViewController animated:YES completion:nil];
+    [recognizers addObject:self.barcodeRecognizer];
+    [recognizers addObject:self.pdf417Recognizer];
+    
+    /** Create recognizer collection */
+    settings.uiSettings.recognizerCollection = [[MBRecognizerCollection alloc] initWithRecognizers:recognizers];
+    
+    MBBarcodeOverlayViewController *overlayVC = [[MBBarcodeOverlayViewController alloc] initWithSettings:settings andDelegate:self];
+    UIViewController<MBRecognizerRunnerViewController>* recognizerRunnerViewController = [MBViewControllerFactory recognizerRunnerViewControllerWithOverlayViewController:overlayVC];
+    
+    /** Present the recognizer runner view controller. You can use other presentation methods as well (instead of presentViewController) */
+    [self presentViewController:recognizerRunnerViewController animated:YES completion:nil];
 }
 
-- (IBAction)didTapScanCustomUI:(id)sender {
-    /** Instantiate the scanning coordinator */
-
-    NSError *error;
-    PPCameraCoordinator *coordinator = [self coordinatorWithError:&error];
-
-    /** If scanning isn't supported, show an error */
-    if (coordinator == nil) {
-        [self showCoordinatorError:error];
-        return;
-    }
-
-    /** Present the scanning view controller */
+- (IBAction)didTapCustomUI:(id)sender {
+    /** Create recognizers */
+    self.barcodeRecognizer = [[MBBarcodeRecognizer alloc] init];
+    self.barcodeRecognizer.scanQR = YES;
     
-    /** Init scanning view controller custom overlay */
-    PPCameraOverlayViewController *overlayVC = [[PPCameraOverlayViewController alloc] init];
+    self.pdf417Recognizer = [[MBPdf417Recognizer alloc] init];
     
-    /** Create new scanning view controller with desired custom overlay */
-    UIViewController<PPScanningViewController>* scanningViewController = [PPViewControllerFactory cameraViewControllerWithDelegate:self overlayViewController:overlayVC coordinator:coordinator error:nil];
+    MBSettings* settings = [[MBSettings alloc] init];
     
-    /** Present the scanning view controller. You can use other presentation methods as well (instead of presentViewController) */
-    [self presentViewController:scanningViewController animated:YES completion:nil];
+    NSMutableArray<MBRecognizer *> *recognizers = [[NSMutableArray alloc] init];
+    
+    [recognizers addObject:self.barcodeRecognizer];
+    [recognizers addObject:self.pdf417Recognizer];
+    
+    /** Create recognizer collection */
+    settings.uiSettings.recognizerCollection = [[MBRecognizerCollection alloc] initWithRecognizers:recognizers];
+    
+    CustomOverlay *overlayVC = [CustomOverlay  initFromStoryboardWithSettings:settings andDelegate:self];
+    UIViewController<MBRecognizerRunnerViewController>* recognizerRunnerViewController = [MBViewControllerFactory recognizerRunnerViewControllerWithOverlayViewController:overlayVC];
+    
+    /** Present the recognizer runner view controller. You can use other presentation methods as well (instead of presentViewController) */
+    [self presentViewController:recognizerRunnerViewController animated:YES completion:nil];
 }
 
-- (void)scanningViewControllerUnauthorizedCamera:(UIViewController<PPScanningViewController> *)scanningViewController {
-    // Add any logic which handles UI when app user doesn't allow usage of the phone's camera
-}
+#pragma mark - MBBarcodeOverlayViewControllerDelegate
 
-- (void)scanningViewController:(UIViewController<PPScanningViewController> *)scanningViewController
-                  didFindError:(NSError *)error {
-    // Can be ignored. See description of the method
-}
-
-- (void)scanningViewControllerDidClose:(UIViewController<PPScanningViewController> *)scanningViewController {
-
-    // As scanning view controller is presented full screen and modally, dismiss it
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)scanningViewController:(UIViewController<PPScanningViewController> *)scanningViewController
-              didOutputResults:(NSArray<PPRecognizerResult*> *)results {
-    
-    /**
-     * Here you process scanning results. Scanning results are given in the array of PPRecognizerResult objects.
-     * Each member of results array will represent one result for a single processed image
-     * Usually there will be only one result. Multiple results are possible when there are 2 or more detected objects on a single image (i.e. pdf417 and QR code side by side)
-     */
-    
-    // If results are empty, continue scanning without any actions
-    if (results == nil || [results count] == 0) {
-        return;
-    }
-    
-    // first, pause scanning until we process all the results
-    [scanningViewController pauseScanning];
+- (void)overlayViewControllerDidFinishScanning:(MBOverlayViewController *)overlayViewController state:(MBRecognizerResultState)state {
+    /** This is done on background thread*/
+    [overlayViewController.recognizerRunnerViewController pauseScanning];
     
     NSString* message;
     NSString* title;
     
-    // we prefer finding USDL results
-    
-    BOOL usdlFound = false;
-    
-    // Collect data from the result
-    for (PPRecognizerResult* result in results) {
+    if (self.barcodeRecognizer.result.resultState == MBRecognizerResultStateValid) {
+        title = @"QR code";
         
-        if ([result isKindOfClass:[PPUsdlRecognizerResult class]]) {
-            /** US drivers license was detected */
-            
-            PPUsdlRecognizerResult *usdlResult = (PPUsdlRecognizerResult *)result;
-            
-            title = @"USDL";
-            
-            // Get all USDL data as NSDictionary and save it in NSString form
-            message = [[usdlResult getAllStringElements] description];
-            
-            usdlFound = YES;
-            break;
-        }
-    };
-    
-    // Collect other results
-    
-    if (!usdlFound) {
-        for (PPRecognizerResult* result in results) {
-            if ([result isKindOfClass:[PPBarcodeRecognizerResult class]]) {
-                /** One of ZXing codes was detected */
-                
-                PPBarcodeRecognizerResult *barcodeResult = (PPBarcodeRecognizerResult *)result;
-                
-                title = @"QR code";
-                
-                // Save the string representation of the code
-                message = [barcodeResult stringUsingGuessedEncoding];
-            }
-            if ([result isKindOfClass:[PPPdf417RecognizerResult class]]) {
-                /** Pdf417 code was detected */
-                
-                PPPdf417RecognizerResult *pdf417Result = (PPPdf417RecognizerResult *)result;
-                
-                title = @"PDF417";
-                
-                // Save the string representation of the code
-                message = [pdf417Result stringUsingGuessedEncoding];
-            }
-        };
+        // Save the string representation of the code
+        message = [self.barcodeRecognizer.result stringData];
+    }
+    else if (self.pdf417Recognizer.result.resultState == MBRecognizerResultStateValid) {
+        title = @"PDF417";
+        
+        // Save the string representation of the code
+        message = [self.pdf417Recognizer.result stringData];
     }
     
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
-                                                                             message:message
-                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    /** Needs to be called on main thread beacuse everything prior is on background thread */
+    dispatch_async(dispatch_get_main_queue(), ^{
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
+                                                                                 message:message
+                                                                          preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"OK"
+                                                           style:UIAlertActionStyleDefault
+                                                         handler:^(UIAlertAction * _Nonnull action) {
+                                                             [self dismissViewControllerAnimated:YES completion:nil];
+                                                         }];
+        
+        [alertController addAction:okAction];
+        
+        [overlayViewController presentViewController:alertController animated:YES completion:nil];
+    });
     
-    UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"OK"
-                                                       style:UIAlertActionStyleDefault
-                                                     handler:^(UIAlertAction * _Nonnull action) {
-                                                         [self dismissViewControllerAnimated:YES completion:nil];
-                                                     }];
-    
-    [alertController addAction:okAction];
-    
-    [scanningViewController presentViewController:alertController animated:YES completion:nil];
+}
+
+- (void)overlayViewControllerDidTapClose:(MBOverlayViewController *)overlayViewController {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (void)barcodeOverlayViewControllerDidFinishScanning:(nonnull MBBarcodeOverlayViewController *)barcodeOverlayViewController state:(MBRecognizerResultState)state {
+    [self overlayViewControllerDidFinishScanning:barcodeOverlayViewController state:state];
+}
+
+- (void)barcodeOverlayViewControllerDidTapClose:(nonnull MBBarcodeOverlayViewController *)barcodeOverlayViewController {
+    [self overlayViewControllerDidTapClose:barcodeOverlayViewController];
+}
+
+- (void)customOverlayViewControllerDidFinishScanning:(nonnull CustomOverlay *)overlayViewController state:(MBRecognizerResultState)state {
+    [self overlayViewControllerDidFinishScanning:overlayViewController state:state];
+}
+
+- (void)customOverlayViewControllerDidTapClose:(nonnull CustomOverlay *)overlayViewController {
+    [self overlayViewControllerDidTapClose:overlayViewController];
 }
 
 @end

@@ -11,13 +11,14 @@
 #import <AVFoundation/AVFoundation.h>
 #import <MicroBlink/MicroBlink.h>
 
-@interface CameraViewController () <AVCaptureAudioDataOutputSampleBufferDelegate, AVCaptureVideoDataOutputSampleBufferDelegate, PPCoordinatorDelegate>
+@interface CameraViewController () <AVCaptureAudioDataOutputSampleBufferDelegate, AVCaptureVideoDataOutputSampleBufferDelegate, MBScanningRecognizerRunnerDelegate>
 
 @property (weak, nonatomic) IBOutlet CameraView *cameraView;
 
 @property (nonatomic, strong) AVCaptureSession *captureSession;
 
-@property (nonatomic, strong) PPCoordinator *coordinator;
+@property (nonatomic, strong) MBRecognizerRunner *recognizerRunner;
+@property (nonatomic, strong) MBPdf417Recognizer *pdf417Recognizer;
 
 @property (nonatomic) BOOL pauseRecognition;
 
@@ -29,6 +30,9 @@ static NSString *rawOcrParserId = @"Raw ocr";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // Valid until: 2018-04-29
+    [[MBMicroblinkSDK sharedInstance] setLicenseResource:@"license" withExtension:@"txt" inSubdirectory:@"License" forBundle:[NSBundle mainBundle]];
 }
 
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
@@ -168,7 +172,17 @@ static NSString *rawOcrParserId = @"Raw ocr";
     // Setup the preview view.
     self.cameraView.session = self.captureSession;
     
-    [self createCoordinator];
+    NSMutableArray<MBRecognizer *> *recognizers = [[NSMutableArray alloc] init];
+    
+    self.pdf417Recognizer = [[MBPdf417Recognizer alloc] init];
+    
+    [recognizers addObject:self.pdf417Recognizer];
+    
+    MBSettings* settings = [[MBSettings alloc] init];
+    settings.uiSettings.recognizerCollection = [[MBRecognizerCollection alloc] initWithRecognizers:recognizers];
+    
+    self.recognizerRunner = [[MBRecognizerRunner alloc] initWithSettings:settings];
+    self.recognizerRunner.scanningRecognizerRunnerDelegate = self;
 
     [self.captureSession startRunning];
 }
@@ -190,66 +204,21 @@ static NSString *rawOcrParserId = @"Raw ocr";
 }
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
-    PPImage *image = [PPImage imageWithCmSampleBuffer:sampleBuffer];
-    image.orientation = PPProcessingOrientationLeft;
+    MBImage *image = [MBImage imageWithCmSampleBuffer:sampleBuffer];
+    image.orientation = MBProcessingOrientationLeft;
     if (!self.pauseRecognition) {
-        [self.coordinator processImage:image];
+        [self.recognizerRunner processImage:image];
     }
 }
 
-- (void)createCoordinator {
-    
-    
-    
-    /** 1. Initialize the Scanning settings */
-    
-    // Initialize the scanner settings object. This initialize settings with all default values.
-    PPSettings *settings = [[PPSettings alloc] init];
-    
-    
-    /** 2. Setup the license key */
-    
-    // Visit www.microblink.com to get the license key for your app
-    settings.licenseSettings.licenseKey = @"6537LXHK-VXAF2N7N-FPZLQ6SK-75GY7QRL-7KEZVMHU-VXCVGSF3-6HSZ5LUP-YIV2XRKR";
-    
-    
-    /**
-     * 3. Set up what is being scanned. See detailed guides for specific use cases.
-     * Here's an example for initializing raw OCR scanning.
-     */
-    
-    // To specify we want to perform PDF417 recognition, initialize the PDF417 recognizer settings
-    PPPdf417RecognizerSettings *pdf417RecognizerSettings = [[PPPdf417RecognizerSettings alloc] init];
-    
-    /** You can modify the properties of pdf417RecognizerSettings to suit your use-case */
-    
-    // Add PDF417 Recognizer setting to a list of used recognizer settings
-    [settings.scanSettings addRecognizerSettings:pdf417RecognizerSettings];
-    
-    /** 4. Initialize the Scanning Coordinator object */
-    
-    PPCoordinator *coordinator = [[PPCoordinator alloc] initWithSettings:settings delegate:self];
-    
-    self.coordinator = coordinator;
-}
-
-- (void)coordinator:(PPCoordinator *)coordinator didOutputResults:(NSArray<PPRecognizerResult *> *)results {
-    // Here you process scanning results. Scanning results are given in the array of PPRecognizerResult objects.
-    
-    self.pauseRecognition = YES;    
-    
-    // Collect data from the result
-    for (PPRecognizerResult* result in results) {
-        
-        if ([result isKindOfClass:[PPPdf417RecognizerResult class]]) {
-            /** Pdf417 code was detected */
-            
-            PPPdf417RecognizerResult *pdf417Result = (PPPdf417RecognizerResult *)result;
-            
+- (void)recognizerRunnerDidFinish:(MBRecognizerRunner *)recognizerRunner state:(MBRecognizerResultState)state {
+    self.pauseRecognition = YES;
+    if (self.pdf417Recognizer.result.resultState == MBRecognizerResultStateValid) {
+        dispatch_async(dispatch_get_main_queue(), ^{
             NSString *title = @"PDF417";
             
             // Save the string representation of the code
-            NSString *message = [pdf417Result stringUsingGuessedEncoding];
+            NSString *message = [self.pdf417Recognizer.result stringData];
             
             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
                                                                                      message:message
@@ -264,8 +233,10 @@ static NSString *rawOcrParserId = @"Raw ocr";
             [alertController addAction:okAction];
             
             [self presentViewController:alertController animated:YES completion:nil];
-        }
-    };
+        });
+    } else {
+        self.pauseRecognition = NO;
+    }
 }
 
 @end

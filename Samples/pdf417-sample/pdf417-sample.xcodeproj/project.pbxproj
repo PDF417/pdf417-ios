@@ -20,12 +20,12 @@
 		18E2663D1BCE5BE100FF4871 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E2663C1BCE5BE100FF4871 /* libiconv.tbd */; };
 		18E2663F1BCE5BE700FF4871 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E2663E1BCE5BE700FF4871 /* AudioToolbox.framework */; };
 		18E266411BCE5C0A00FF4871 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E266401BCE5C0A00FF4871 /* CoreMedia.framework */; };
-		18E266471BCE5C7500FF4871 /* PPCameraOverlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E266451BCE5C7500FF4871 /* PPCameraOverlayViewController.m */; };
-		18E266481BCE5C7500FF4871 /* PPCameraOverlayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E266461BCE5C7500FF4871 /* PPCameraOverlayViewController.xib */; };
 		318AA94D1CEB44AF0082C189 /* MicroBlink.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 318AA94B1CEB44AF0082C189 /* MicroBlink.bundle */; };
 		A2B4C69B1EF1863D0088C51B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A2B4C69A1EF1863D0088C51B /* libz.tbd */; };
 		A2B4C69C1EF186440088C51B /* MicroBlink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 318AA94C1CEB44AF0082C189 /* MicroBlink.framework */; };
 		A2B4C69D1EF186440088C51B /* MicroBlink.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 318AA94C1CEB44AF0082C189 /* MicroBlink.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A2FF097C2024C3DD00B14D0C /* License in Resources */ = {isa = PBXBuildFile; fileRef = A2FF097B2024C3DD00B14D0C /* License */; };
+		CC2DD49D204DA4F9008DFD39 /* CustomOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2DD49C204DA4F9008DFD39 /* CustomOverlay.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -60,12 +60,12 @@
 		18E2663C1BCE5BE100FF4871 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		18E2663E1BCE5BE700FF4871 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		18E266401BCE5C0A00FF4871 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		18E266441BCE5C7500FF4871 /* PPCameraOverlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPCameraOverlayViewController.h; sourceTree = "<group>"; };
-		18E266451BCE5C7500FF4871 /* PPCameraOverlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPCameraOverlayViewController.m; sourceTree = "<group>"; };
-		18E266461BCE5C7500FF4871 /* PPCameraOverlayViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPCameraOverlayViewController.xib; sourceTree = "<group>"; };
 		318AA94B1CEB44AF0082C189 /* MicroBlink.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MicroBlink.bundle; path = ../../MicroBlink.bundle; sourceTree = "<group>"; };
 		318AA94C1CEB44AF0082C189 /* MicroBlink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MicroBlink.framework; path = ../../MicroBlink.framework; sourceTree = "<group>"; };
 		A2B4C69A1EF1863D0088C51B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		A2FF097B2024C3DD00B14D0C /* License */ = {isa = PBXFileReference; lastKnownFileType = folder; path = License; sourceTree = "<group>"; };
+		CC2DD49B204DA4E4008DFD39 /* CustomOverlay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomOverlay.h; sourceTree = "<group>"; };
+		CC2DD49C204DA4F9008DFD39 /* CustomOverlay.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomOverlay.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +108,8 @@
 		18E265EB1BCE565E00FF4871 /* pdf417-sample */ = {
 			isa = PBXGroup;
 			children = (
+				CC22DCFE204DAA5C0099F31F /* CustomOverlay */,
+				A2FF097B2024C3DD00B14D0C /* License */,
 				18E265EF1BCE565E00FF4871 /* AppDelegate.h */,
 				18E265F01BCE565E00FF4871 /* AppDelegate.m */,
 				18E265F21BCE565E00FF4871 /* ViewController.h */,
@@ -116,7 +118,6 @@
 				18E265F81BCE565E00FF4871 /* Assets.xcassets */,
 				18E265FA1BCE565E00FF4871 /* LaunchScreen.storyboard */,
 				18E265FD1BCE565E00FF4871 /* Info.plist */,
-				18E266421BCE5C7500FF4871 /* Camera Overlays */,
 				18E265EC1BCE565E00FF4871 /* Supporting Files */,
 			);
 			path = "pdf417-sample";
@@ -147,22 +148,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		18E266421BCE5C7500FF4871 /* Camera Overlays */ = {
+		CC22DCFE204DAA5C0099F31F /* CustomOverlay */ = {
 			isa = PBXGroup;
 			children = (
-				18E266431BCE5C7500FF4871 /* Simple */,
+				CC2DD49B204DA4E4008DFD39 /* CustomOverlay.h */,
+				CC2DD49C204DA4F9008DFD39 /* CustomOverlay.m */,
 			);
-			path = "Camera Overlays";
-			sourceTree = "<group>";
-		};
-		18E266431BCE5C7500FF4871 /* Simple */ = {
-			isa = PBXGroup;
-			children = (
-				18E266441BCE5C7500FF4871 /* PPCameraOverlayViewController.h */,
-				18E266451BCE5C7500FF4871 /* PPCameraOverlayViewController.m */,
-				18E266461BCE5C7500FF4871 /* PPCameraOverlayViewController.xib */,
-			);
-			path = Simple;
+			name = CustomOverlay;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,7 +185,7 @@
 		18E265E11BCE565E00FF4871 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = MicroBlink;
 				TargetAttributes = {
 					18E265E81BCE565E00FF4871 = {
@@ -226,9 +218,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				318AA94D1CEB44AF0082C189 /* MicroBlink.bundle in Resources */,
-				18E266481BCE5C7500FF4871 /* PPCameraOverlayViewController.xib in Resources */,
 				18E265FC1BCE565E00FF4871 /* LaunchScreen.storyboard in Resources */,
 				18E265F91BCE565E00FF4871 /* Assets.xcassets in Resources */,
+				A2FF097C2024C3DD00B14D0C /* License in Resources */,
 				18E265F71BCE565E00FF4871 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,10 +248,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18E266471BCE5C7500FF4871 /* PPCameraOverlayViewController.m in Sources */,
 				18E265F41BCE565E00FF4871 /* ViewController.m in Sources */,
 				18E265F11BCE565E00FF4871 /* AppDelegate.m in Sources */,
 				18E265EE1BCE565E00FF4871 /* main.m in Sources */,
+				CC2DD49D204DA4F9008DFD39 /* CustomOverlay.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,14 +285,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -340,14 +338,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

@@ -8,11 +8,13 @@
 
 #import <MicroBlink/MicroBlink.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @protocol MBCustomOverlayViewControllerDelegate;
 
 @interface CustomOverlay : MBOverlayViewController <MBOverlayViewControllerInterface>
 
-+ (instancetype)initFromStoryboardWithSettings:(MBSettings *)settings andDelegate:(nonnull id<MBCustomOverlayViewControllerDelegate>)delegate;
++ (instancetype)initFromStoryboardWithSettings:(MBSettings *)settings andDelegate:(id<MBCustomOverlayViewControllerDelegate>)delegate;
 
 @end
 
@@ -23,3 +25,5 @@
 - (void)customOverlayViewControllerDidTapClose:(nonnull CustomOverlay *)overlayViewController;
 
 @end
+
+NS_ASSUME_NONNULL_END

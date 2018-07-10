@@ -31,7 +31,7 @@ static NSString *rawOcrParserId = @"Raw ocr";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Valid until: 2018-04-29
+    // Valid until: 2019-07-10
     [[MBMicroblinkSDK sharedInstance] setLicenseResource:@"license" withExtension:@"txt" inSubdirectory:@"" forBundle:[NSBundle mainBundle]];
 }
 

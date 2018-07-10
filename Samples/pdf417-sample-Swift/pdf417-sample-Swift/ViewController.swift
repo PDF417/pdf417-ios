@@ -16,7 +16,7 @@ class ViewController: UIViewController, MBCustomOverlayViewControllerDelegate, M
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Valid until: 2018-04-29
+        // Valid until: 2019-07-10
         MBMicroblinkSDK.sharedInstance().setLicenseResource("license-pdf-swift", withExtension: "txt", inSubdirectory: "", for: Bundle.main)
     }
     

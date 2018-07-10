@@ -24,7 +24,7 @@
     [super viewDidLoad];
     
     /** First, set license key as soon as possible */
-    [[MBMicroblinkSDK sharedInstance] setLicenseResource:@"license-pdf" withExtension:@"txt" inSubdirectory:@"License" forBundle:[NSBundle mainBundle]];
+    [[MBMicroblinkSDK sharedInstance] setLicenseResource:@"license-pdf" withExtension:@"txt" inSubdirectory:@"" forBundle:[NSBundle mainBundle]];
 }
 
 - (void)didReceiveMemoryWarning {

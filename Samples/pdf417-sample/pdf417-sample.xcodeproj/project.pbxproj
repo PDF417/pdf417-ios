@@ -24,7 +24,7 @@
 		A2B4C69B1EF1863D0088C51B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A2B4C69A1EF1863D0088C51B /* libz.tbd */; };
 		A2B4C69C1EF186440088C51B /* MicroBlink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 318AA94C1CEB44AF0082C189 /* MicroBlink.framework */; };
 		A2B4C69D1EF186440088C51B /* MicroBlink.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 318AA94C1CEB44AF0082C189 /* MicroBlink.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A2FF097C2024C3DD00B14D0C /* License in Resources */ = {isa = PBXBuildFile; fileRef = A2FF097B2024C3DD00B14D0C /* License */; };
+		B403EE7220F4BDB300EE5235 /* license-pdf.txt in Resources */ = {isa = PBXBuildFile; fileRef = B403EE7120F4BDB300EE5235 /* license-pdf.txt */; };
 		CC2DD49D204DA4F9008DFD39 /* CustomOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2DD49C204DA4F9008DFD39 /* CustomOverlay.m */; };
 /* End PBXBuildFile section */
 
@@ -63,7 +63,7 @@
 		318AA94B1CEB44AF0082C189 /* MicroBlink.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MicroBlink.bundle; path = ../../MicroBlink.bundle; sourceTree = "<group>"; };
 		318AA94C1CEB44AF0082C189 /* MicroBlink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MicroBlink.framework; path = ../../MicroBlink.framework; sourceTree = "<group>"; };
 		A2B4C69A1EF1863D0088C51B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		A2FF097B2024C3DD00B14D0C /* License */ = {isa = PBXFileReference; lastKnownFileType = folder; path = License; sourceTree = "<group>"; };
+		B403EE7120F4BDB300EE5235 /* license-pdf.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "license-pdf.txt"; sourceTree = "<group>"; };
 		CC2DD49B204DA4E4008DFD39 /* CustomOverlay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomOverlay.h; sourceTree = "<group>"; };
 		CC2DD49C204DA4F9008DFD39 /* CustomOverlay.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomOverlay.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,8 +108,8 @@
 		18E265EB1BCE565E00FF4871 /* pdf417-sample */ = {
 			isa = PBXGroup;
 			children = (
+				B403EE7020F4BDB300EE5235 /* License */,
 				CC22DCFE204DAA5C0099F31F /* CustomOverlay */,
-				A2FF097B2024C3DD00B14D0C /* License */,
 				18E265EF1BCE565E00FF4871 /* AppDelegate.h */,
 				18E265F01BCE565E00FF4871 /* AppDelegate.m */,
 				18E265F21BCE565E00FF4871 /* ViewController.h */,
@@ -146,6 +146,14 @@
 				A2B4C69A1EF1863D0088C51B /* libz.tbd */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B403EE7020F4BDB300EE5235 /* License */ = {
+			isa = PBXGroup;
+			children = (
+				B403EE7120F4BDB300EE5235 /* license-pdf.txt */,
+			);
+			path = License;
 			sourceTree = "<group>";
 		};
 		CC22DCFE204DAA5C0099F31F /* CustomOverlay */ = {
@@ -220,8 +228,8 @@
 				318AA94D1CEB44AF0082C189 /* MicroBlink.bundle in Resources */,
 				18E265FC1BCE565E00FF4871 /* LaunchScreen.storyboard in Resources */,
 				18E265F91BCE565E00FF4871 /* Assets.xcassets in Resources */,
-				A2FF097C2024C3DD00B14D0C /* License in Resources */,
 				18E265F71BCE565E00FF4871 /* Main.storyboard in Resources */,
+				B403EE7220F4BDB300EE5235 /* license-pdf.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,7 +398,7 @@
 				INFOPLIST_FILE = "pdf417-sample/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.microblink.pdf417-sample";
+				PRODUCT_BUNDLE_IDENTIFIER = com.microblink.pdf417.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -405,7 +413,7 @@
 				INFOPLIST_FILE = "pdf417-sample/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.microblink.pdf417-sample";
+				PRODUCT_BUNDLE_IDENTIFIER = com.microblink.pdf417.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

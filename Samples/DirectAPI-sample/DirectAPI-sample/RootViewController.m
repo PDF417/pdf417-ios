@@ -25,7 +25,7 @@ static NSString* rawOcrParserId = @"RawOcrParser";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [[MBMicroblinkSDK sharedInstance] setLicenseResource:@"license" withExtension:@"txt" inSubdirectory:@"License" forBundle:[NSBundle mainBundle]];
+    [[MBMicroblinkSDK sharedInstance] setLicenseResource:@"license" withExtension:@"txt" inSubdirectory:@"" forBundle:[NSBundle mainBundle]];
     [self setupRecognizerRunner];
 }
 

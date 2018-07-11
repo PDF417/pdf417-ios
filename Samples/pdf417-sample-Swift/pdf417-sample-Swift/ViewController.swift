@@ -16,8 +16,8 @@ class ViewController: UIViewController, MBCustomOverlayViewControllerDelegate, M
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Valid until: 2018-04-29
-        MBMicroblinkSDK.sharedInstance().setLicenseResource("license-pdf-swift", withExtension: "txt", inSubdirectory: "License", for: Bundle.main)
+        // Valid until: 2019-07-10
+        MBMicroblinkSDK.sharedInstance().setLicenseResource("license", withExtension: "txt", inSubdirectory: "", for: Bundle.main)
     }
     
     func createScanSettings() -> MBSettings {

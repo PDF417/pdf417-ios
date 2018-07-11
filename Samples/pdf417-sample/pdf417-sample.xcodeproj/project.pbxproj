@@ -24,7 +24,7 @@
 		A2B4C69B1EF1863D0088C51B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A2B4C69A1EF1863D0088C51B /* libz.tbd */; };
 		A2B4C69C1EF186440088C51B /* MicroBlink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 318AA94C1CEB44AF0082C189 /* MicroBlink.framework */; };
 		A2B4C69D1EF186440088C51B /* MicroBlink.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 318AA94C1CEB44AF0082C189 /* MicroBlink.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B403EE7220F4BDB300EE5235 /* license-pdf.txt in Resources */ = {isa = PBXBuildFile; fileRef = B403EE7120F4BDB300EE5235 /* license-pdf.txt */; };
+		B403EE7220F4BDB300EE5235 /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = B403EE7120F4BDB300EE5235 /* license.txt */; };
 		CC2DD49D204DA4F9008DFD39 /* CustomOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2DD49C204DA4F9008DFD39 /* CustomOverlay.m */; };
 /* End PBXBuildFile section */
 
@@ -63,7 +63,7 @@
 		318AA94B1CEB44AF0082C189 /* MicroBlink.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MicroBlink.bundle; path = ../../MicroBlink.bundle; sourceTree = "<group>"; };
 		318AA94C1CEB44AF0082C189 /* MicroBlink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MicroBlink.framework; path = ../../MicroBlink.framework; sourceTree = "<group>"; };
 		A2B4C69A1EF1863D0088C51B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		B403EE7120F4BDB300EE5235 /* license-pdf.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "license-pdf.txt"; sourceTree = "<group>"; };
+		B403EE7120F4BDB300EE5235 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
 		CC2DD49B204DA4E4008DFD39 /* CustomOverlay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomOverlay.h; sourceTree = "<group>"; };
 		CC2DD49C204DA4F9008DFD39 /* CustomOverlay.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomOverlay.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -151,7 +151,7 @@
 		B403EE7020F4BDB300EE5235 /* License */ = {
 			isa = PBXGroup;
 			children = (
-				B403EE7120F4BDB300EE5235 /* license-pdf.txt */,
+				B403EE7120F4BDB300EE5235 /* license.txt */,
 			);
 			path = License;
 			sourceTree = "<group>";
@@ -229,7 +229,7 @@
 				18E265FC1BCE565E00FF4871 /* LaunchScreen.storyboard in Resources */,
 				18E265F91BCE565E00FF4871 /* Assets.xcassets in Resources */,
 				18E265F71BCE565E00FF4871 /* Main.storyboard in Resources */,
-				B403EE7220F4BDB300EE5235 /* license-pdf.txt in Resources */,
+				B403EE7220F4BDB300EE5235 /* license.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

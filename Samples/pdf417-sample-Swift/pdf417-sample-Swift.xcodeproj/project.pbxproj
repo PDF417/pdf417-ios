@@ -22,7 +22,7 @@
 		A2FA9D291EF18A79004C0691 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A2FA9D281EF18A79004C0691 /* libz.tbd */; };
 		A2FA9D2A1EF18A7F004C0691 /* MicroBlink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 318AA9501CEB45390082C189 /* MicroBlink.framework */; };
 		A2FA9D2B1EF18A7F004C0691 /* MicroBlink.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 318AA9501CEB45390082C189 /* MicroBlink.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B403EE6F20F4BD1E00EE5235 /* license-pdf-swift.txt in Resources */ = {isa = PBXBuildFile; fileRef = B403EE6E20F4BD1E00EE5235 /* license-pdf-swift.txt */; };
+		B403EE6F20F4BD1E00EE5235 /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = B403EE6E20F4BD1E00EE5235 /* license.txt */; };
 		CC22DD05204ED9E10099F31F /* CustomOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC22DD04204ED9E10099F31F /* CustomOverlay.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,7 +57,7 @@
 		318AA94F1CEB45390082C189 /* MicroBlink.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MicroBlink.bundle; path = ../../MicroBlink.bundle; sourceTree = "<group>"; };
 		318AA9501CEB45390082C189 /* MicroBlink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MicroBlink.framework; path = ../../MicroBlink.framework; sourceTree = "<group>"; };
 		A2FA9D281EF18A79004C0691 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		B403EE6E20F4BD1E00EE5235 /* license-pdf-swift.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "license-pdf-swift.txt"; sourceTree = "<group>"; };
+		B403EE6E20F4BD1E00EE5235 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
 		CC22DD04204ED9E10099F31F /* CustomOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomOverlay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,7 +131,7 @@
 		B403EE6D20F4BD1E00EE5235 /* License */ = {
 			isa = PBXGroup;
 			children = (
-				B403EE6E20F4BD1E00EE5235 /* license-pdf-swift.txt */,
+				B403EE6E20F4BD1E00EE5235 /* license.txt */,
 			);
 			path = License;
 			sourceTree = "<group>";
@@ -202,7 +202,7 @@
 				3139C8221C22B2AC005AC32C /* Assets.xcassets in Resources */,
 				318AA9511CEB45390082C189 /* MicroBlink.bundle in Resources */,
 				3139C8201C22B2AC005AC32C /* Main.storyboard in Resources */,
-				B403EE6F20F4BD1E00EE5235 /* license-pdf-swift.txt in Resources */,
+				B403EE6F20F4BD1E00EE5235 /* license.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

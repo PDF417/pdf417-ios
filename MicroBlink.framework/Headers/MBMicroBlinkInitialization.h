@@ -11,4 +11,7 @@
 #define MB_INIT \
 - (instancetype)init NS_DESIGNATED_INITIALIZER; \
 
+#define MB_INIT_UNAVAILABLE \
+- (instancetype)init NS_UNAVAILABLE; \
+
 #endif /* MBMicroBlinkInitialization_h */

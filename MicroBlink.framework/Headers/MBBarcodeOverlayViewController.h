@@ -6,22 +6,18 @@
 //  Copyright (c) 2015 MicroBlink Ltd. All rights reserved.
 //
 
-#import "MBModernBaseOverlayViewController.h"
+#import "MBBaseOverlayViewController.h"
+#import "MBBarcodeOverlaySettings.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol MBBarcodeOverlayViewControllerDelegate;
 
-@class MBSettings;
 @class MBBarcodeOverlaySettings;
+@class MBRecognizerCollection;
 
-PP_CLASS_AVAILABLE_IOS(8.0)
-@interface MBBarcodeOverlayViewController : MBModernBaseOverlayViewController
-
-/**
- * Supported orientations mask
- */
-@property (nonatomic, assign) UIInterfaceOrientationMask hudMask;
+MB_CLASS_AVAILABLE_IOS(8.0) MB_FINAL
+@interface MBBarcodeOverlayViewController : MBBaseOverlayViewController
 
 /**
  * Common settings
@@ -36,11 +32,13 @@ PP_CLASS_AVAILABLE_IOS(8.0)
 /**
  * Designated intializer.
  *
- *  @param settings MBSettings object
+ *  @param settings MBBarcodeOverlaySettings object
+ *
+ *  @param recognizerCollection MBRecognizerCollection object
  *
  *  @return initialized overlayViewController
  */
-- (instancetype)initWithSettings:(MBBarcodeOverlaySettings *)settings andDelegate:(id<MBBarcodeOverlayViewControllerDelegate>)delegate;
+- (instancetype)initWithSettings:(MBBarcodeOverlaySettings *)settings recognizerCollection:(MBRecognizerCollection *)recognizerCollection delegate:(nonnull id<MBBarcodeOverlayViewControllerDelegate>)delegate;
 
 @end
 

@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "PPMicroBlinkDefines.h"
+#import "MBMicroBlinkDefines.h"
 #import "MBRecognizerResult.h"
 #import "MBUsdlKeys.h"
 
@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 PP_CLASS_DEPRECATED_IOS(1.0, 7.0, "MBUsdlRecognizerResult is deprecated in PDF417 SDK 7.0.0")
 @interface MBUsdlRecognizerResult : MBRecognizerResult<NSCopying>
 
-- (instancetype)init NS_UNAVAILABLE;
+MB_INIT_UNAVAILABLE
 
 /**
  * Byte array with result of the scan

@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PPMicroBlinkDefines.h"
+#import "MBMicroBlinkDefines.h"
 #import "MBRecognizerResult.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 PP_CLASS_DEPRECATED_IOS(1.0, 7.0, "MBSimNumberRecognizerResult is deprecated in PDF417 SDK 7.0.0")
 @interface MBSimNumberRecognizerResult : MBRecognizerResult<NSCopying>
 
-- (instancetype)init NS_UNAVAILABLE;
+MB_INIT_UNAVAILABLE
 
 /**
  * Returns the recognized SIM number from barcode or empty string if recognition failed.

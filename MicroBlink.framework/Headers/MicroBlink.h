@@ -2,88 +2,35 @@
 //  MicroBlink.h
 //  MicroBlinkFramework
 //
-//  Created by Jurica Cerovec on 3/29/12.
-//  Copyright (c) 2015 MicroBlink Ltd. All rights reserved.
+//  Created by Dino Gustin on 06/06/18.
+//  Copyright (c) 2012 MicroBlink Ltd. All rights reserved.
 //
 
-#ifndef PhotoPayFramework_MicroBlink_h
-#define PhotoPayFramework_MicroBlink_h
-
-// Common API
-#import "MBMicroblinkSDK.h"
+// Include Common API
+#import "MBMicroblinkApp.h"
 #import "MBViewControllerFactory.h"
-#import "PPApp.h"
-#import "MBSettings.h"
+#import "MBMicroblinkSDK.h"
+#import "MBException.h"
 #import "MBImage.h"
-#import "MBMicroBlinkInitialization.h"
-
-/*  UI  */
-// Overlays
-#import "MBModernBaseOverlayViewController.h"
-#import "MBBarcodeOverlayViewController.h"
-#import "MBBaseBarcodeOverlayViewController.h"
-#import "MBScanningRecognizerRunnerViewController.h"
-#import "MBBasePhotoPayOverlayViewController.h"
-#import "MBPhotopayOverlayViewController.h"
-
-// Permission denied view controller
-#import "MBPermissionDeniedViewController.h"
-
-// Overlay subviews
-#import "PPModernOcrResultOverlaySubview.h"
-#import "MBModernViewfinderOverlaySubview.h"
-#import "PPOcrResultOverlaySubview.h"
-#import "PPBlurredFieldOfViewOverlaySubview.h"
-#import "MBDotsOverlaySubview.h"
-#import "PPFieldOfViewOverlaySubview.h"
-#import "PPModernToastOverlaySubview.h"
-#import "PPOcrLineOverlaySubview.h"
-#import "PPToastOverlaySubview.h"
-#import "MBViewFinderOverlaySubview.h"
-#import "MBIdDocumentOverlaySubview.h"
-#import "MBGlareStatusOverlaySubview.h"
-#import "MBTapToFocusOverlaySubview.h"
-
-// Delegates
-#import "MBRecognizerRunnerMetadataDelegates.h"
-#import "MBRecognizerRunnerViewMetadataDelegates.h"
-
-#import "MBBarcodeOverlayViewControllerDelegate.h"
-#import "MBRecognizerRunnerViewControllerDelegate.h"
-#import "MBDetectionRecognizerRunnerViewDelegate.h"
-#import "MBDebugRecognizerRunnerViewDelegate.h"
-#import "MBScanningRecognizerRunnerViewDelegate.h"
-
-#import "MBDebugRecognizerRunnerDelegate.h"
-#import "MBDetectionRecognizerRunnerDelegate.h"
-#import "MBScanningRecognizerRunnerDelegate.h"
-
-#import "MBOverlayViewControllerInterface.h"
-
-// Runners
-#import "MBRecognizerRunner.h"
-
-// Collection
-#import "MBRecognizerCollection.h"
+#import "MBDateResult.h"
 
 // Settings
-#import "MBBarcodeOverlaySettings.h"
+#import "MBCameraSettings.h"
 
-// Exception
-#import "MBException.h"
+// Delegates
+#import "MBRecognizerRunnerViewControllerMetadataDelegates.h"
+#import "MBRecognizerRunnerViewControllerDelegate.h"
+#import "MBScanningRecognizerRunnerViewControllerDelegate.h"
 
-// Detectors
-#import "MBQuadrangle.h"
-#import "MBDisplayableQuadDetection.h"
-#import "MBDisplayablePointsDetection.h"
+#import "MBRecognizerRunner.h"
+#import "MBRecognizerRunnerMetadataDelegates.h"
+#import "MBScanningRecognizerRunnerDelegate.h"
 
-#import "PPBlinkBarcodeRecognizers.h"
-#import "MBUsdlKeys.h"
-#import "MBUsdlRecognizer.h"
-#import "MBUsdlRecognizerResult.h"
-#import "MBSuccessFrameGrabberRecognizer.h"
+// Frame Grabbers
 #import "MBFrameGrabberRecognizer.h"
+#import "MBSuccessFrameGrabberRecognizer.h"
+#import "MBSuccessFrameGrabberRecognizerResult.h"
 
-#import "MBScanningRecognizerRunnerViewDelegate.h"
+#import "MBEntities.h"
+#import "MBUIComponents.h"
 
-#endif

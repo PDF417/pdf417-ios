@@ -1,5 +1,5 @@
 <p align="center" >
-  <a href="www.pdf417.mobi">
+  <a href="http://www.pdf417.mobi">
     <img src="https://raw.githubusercontent.com/wiki/pdf417/pdf417-ios/Images/Logo.png" alt="pdf417 SDK for iOS" title="pdf417 SDK for iOS"/>
   </a>
 </p>
@@ -7,7 +7,7 @@
 # _PDF417.mobi_ SDK for iOS
 
 [![Build Status](https://travis-ci.org/PDF417/pdf417-ios.png)](https://travis-ci.org/PDF417/pdf417-ios)
-[![Pod Version](img.shields.io/cocoapods/v/PPpdf417.svg?style=flat)](cocoadocs.org/docsets/PPpdf417/)
+[![Pod Version](http://img.shields.io/cocoapods/v/PPpdf417.svg?style=flat)](http://cocoadocs.org/docsets/PPpdf417/)
 
 _PDF417.mobi_ SDK for iOS enables you to perform scans of various barcodes in your app. You can integrate the SDK into your app simply by following the instructions below and your app will be able to scan and process data from the following barcode standards:
 
@@ -55,7 +55,7 @@ For more information on how to integrate _PDF417.mobi_ SDK into your app read th
 
 SDK package contains Microblink framework and one or more sample apps which demonstrate framework integration. The framework can be deployed in iOS 8.0 or later, iPhone 4S or newer and iPad 2 or newer.
 
-SDK performs significantly better when the images obtained from the camera are focused. Because of that, the SDK can have lower performance on iPad 2 and iPod Touch 4th gen devices, which [don't have camera with autofocus](www.adweek.com/socialtimes/ipad-2-rear-camera-has-tap-for-auto-exposure-not-auto-focus/12536). 
+SDK performs significantly better when the images obtained from the camera are focused. Because of that, the SDK can have lower performance on iPad 2 and iPod Touch 4th gen devices, which [don't have camera with autofocus](http://www.adweek.com/socialtimes/ipad-2-rear-camera-has-tap-for-auto-exposure-not-auto-focus/12536). 
 
 # <a name="quickStart"></a> Quick Start
 
@@ -71,7 +71,7 @@ The source code of the sample app can be used as the reference during the integr
 
 #### Using CocoaPods
 
-- [CocoaPods](cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries.
+- [CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries.
 
 - If you wish to use version v1.4.0 or above, you need to install [Git Large File Storage](https://git-lfs.github.com) by running these commands:
 ```shell
@@ -86,8 +86,8 @@ git lfs install
 - Copy and paste the following lines into the TextEdit window:  
 
 ```ruby
-platform :ios, '8.0'
-    pod 'PPBlinkID', '~> 7.0.0'
+platform :ios, '9.0'
+    pod 'PPpdf417', '~> 7.1.0'
 ```
 
 - Install the dependencies in your project:
@@ -170,27 +170,27 @@ Objective-C
     ```swift
     @IBAction func didTapScan(_ sender: AnyObject) {
 
-         /** Create barcode recognizer */
+        /** Create barcode recognizer */
         self.barcodeRecognizer = MBBarcodeRecognizer()
-        self.barcodeRecognizer?.scanQR = true
-
+        self.barcodeRecognizer?.scanQrCode = true
+        
+        self.pdf417Recognizer = MBPdf417Recognizer()
+        
         /** Create barcode settings */
-        let barcodeSettings : MBBarcodeOverlaySettings = MBBarcodeOverlaySettings()
-    
+        let settings : MBBarcodeOverlaySettings = MBBarcodeOverlaySettings()
+        
         /** Crate recognizer collection */
-        let recognizerList : Array = [self.barcodeRecognizer!] as! [MBRecognizer]
+        let recognizerList = [self.barcodeRecognizer!, self.pdf417Recognizer!]
         let recognizerCollection : MBRecognizerCollection = MBRecognizerCollection(recognizers: recognizerList)
-    
-        /** Add recognizer collection to barcode settings */
-        barcodeSettings.uiSettings.recognizerCollection = recognizerCollection
-    
+        
         /** Create your overlay view controller */
-        let barcodeOverlayViewController : MBBarcodeOverlayViewController = MBBarcodeOverlayViewController(settings: barcodeSettings, andDelegate: self
+        let barcodeOverlayViewController : MBBarcodeOverlayViewController = MBBarcodeOverlayViewController(settings: settings, recognizerCollection: recognizerCollection, delegate: self)
+        
         /** Create recognizer view controller with wanted overlay view controller */
-        let recognizerRunnerViewController : UIViewController = MBViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: barcodeOverlayViewController)
+        let recognizerRunneViewController : UIViewController = MBViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: barcodeOverlayViewController)
         
         /** Present the recognizer runner view controller. You can use other presentation methods as well (instead of presentViewController) */
-        self.present(recognizerRunnerViewController, animated: true, completion: nil)
+        self.present(recognizerRunneViewController, animated: true, completion: nil)
     }
     ```
 
@@ -201,16 +201,19 @@ Objective-C
          /** Create recognizers */
         self.barcodeRecognizer = [[MBBarcodeRecognizer alloc] init];
         self.barcodeRecognizer.scanQR = YES;
+
+        self.pdf417Recognizer = [[MBPdf417Recognizer alloc] init];
                 
         MBBarcodeOverlaySettings* settings = [[MBBarcodeOverlaySettings alloc] init];
         
         NSMutableArray<MBRecognizer *> *recognizers = [[NSMutableArray alloc] init];
         [recognizers addObject:self.barcodeRecognizer];
+        [recognizers addObject:self.pdf417Recognizer];
         
         /** Create recognizer collection */
-        settings.uiSettings.recognizerCollection = [[MBRecognizerCollection alloc] initWithRecognizers:recognizers];
+        MBRecognizerCollection *recognizerCollection = [[MBRecognizerCollection alloc] initWithRecognizers:recognizers];
 
-        MBBarcodeOverlayViewController *overlayVC = [[MBBarcodeOverlayViewController alloc] initWithSettings:settings andDelegate:self];
+        MBBarcodeOverlayViewController *overlayVC = [[MBBarcodeOverlayViewController alloc] initWithSettings:settings recognizerCollection:recognizerCollection delegate:self];
         UIViewController<MBRecognizerRunnerViewController>* recognizerRunnerViewController = [MBViewControllerFactory recognizerRunnerViewControllerWithOverlayViewController:overlayVC];
 
         /** Present the recognizer runner view controller. You can use other presentation methods as well (instead of presentViewController) */
@@ -225,7 +228,7 @@ Objective-C
     // MARK: MBBarcodeOverlayViewControllerDelegate
     extension ViewController : MBBarcodeOverlayViewControllerDelegate {
         
-        func overlayViewControllerDidFinishScanning(_ barcodeOverlayViewController: MBBarcodeOverlayViewController, state: MBRecognizerResultState) {
+        func barcodeOverlayViewControllerDidFinishScanning(_ barcodeOverlayViewController: MBBarcodeOverlayViewController, state: MBRecognizerResultState) {
             
             let recognizerRunnerViewController = barcodeOverlayViewController.recognizerRunnerViewController as MBRecognizerRunnerViewController
             /** This callback is done on background thread and you need to be careful to not do any UI operations on it */
@@ -243,7 +246,7 @@ Objective-C
             }
         }
         
-        func overlayViewControllerDidTapClose(_ barcodeOverlayViewController: MBBarcodeOverlayViewController) {
+        func barcodeOverlayViewControllerDidTapClose(_ barcodeOverlayViewController: MBBarcodeOverlayViewController) {
             // Close button tapped on overlay view controller
         }
         
@@ -253,7 +256,7 @@ Objective-C
     Objective-C
     ```objective-c
     #pragma mark - MBBarcodeOverlayViewControllerDelegate
-    - (void)overlayViewControllerDidFinishScanning:(MBBarcodeOverlayViewController *)barcodeOverlayViewController state:(MBRecognizerResultState)state {
+    - (void)barcodeOverlayViewControllerDidFinishScanning:(MBBarcodeOverlayViewController *)barcodeOverlayViewController state:(MBRecognizerResultState)state {
         /** This callback is done on background thread and you need to be careful to not do any UI operations on it */
         [barcodeOverlayViewController.recognizerRunnerViewController pauseScanning];
         if (self.barcodeRecognizer.result.resultState == MBRecognizerResultStateValid) {
@@ -263,7 +266,7 @@ Objective-C
             // UI actions
         });
     }
-     - (void)overlayViewControllerDidTapClose:(MBBarcodeOverlayViewController *)barcodeOverlayViewController {
+     - (void)barcodeOverlayViewControllerDidFinishScanning:(MBBarcodeOverlayViewController *)barcodeOverlayViewController {
         // Close button tapped on overlay view controller
     }
     ```
@@ -336,7 +339,7 @@ To use your custom overlay with MicroBlink's camera view, you must first subclas
 
 ### 2. Protocols
 
-There are five [`MBRecognizerRunnerViewController`](http://pdf417.github.io/pdf417-ios/Protocols/MBRecognizerRunnerViewController.html) protocols and one overlay protocol [`MBOverlayViewControllerInterface`](http://pdf417.github.io/pdf417-ios/Protocols/MBOverlayViewControllerInterface.html).
+There are five [`MBRecognizerRunnerViewController`](http://pdf417.github.io/pdf417-ios/Protocols/MBRecognizerRunnerViewController.html) protocols.
 
 Five `RecognizerRunnerView` protocols are:
 - [`MBScanningRecognizerRunnerViewDelegate`](http://pdf417.github.io/pdf417-ios/Protocols/MBScanningRecognizerRunnerViewDelegate.html)
@@ -345,20 +348,13 @@ Five `RecognizerRunnerView` protocols are:
 - [`MBDebugRecognizerRunnerViewDelegate`](http://pdf417.github.io/pdf417-ios/Protocols/MBDebugRecognizerRunnerViewDelegate.html)
 - [`MBRecognizerRunnerViewControllerDelegate`](http://pdf417.github.io/pdf417-ios/Protocols/MBRecognizerRunnerViewControllerDelegate.html)
 
-Conforming protocol `MBOverlayViewControllerInterface`[`MBOverlayViewControllerInterface`](http://pdf417.github.io/pdf417-ios/Protocols/MBOverlayViewControllerInterface.html) is necessary beacuse user needs to return implementation of [`MBSettings`](http://pdf417.github.io/pdf417-ios/Classes/MBSettings.html) and protocol conform needs to be done in custom `init` method of overlay view controller:
+`MBCustomOverlayViewController`[`MBCustomOverlayViewController`](http://pdf417.github.io/pdf417-ios/Classes/MBCustomOverlayViewController.html) class needs to be inherited by custom view controller and it needs to conform `MBScanningRecognizerRunnerViewControllerDelegate`. It contains all the properties needed for your custom view controller.
+
+In `viewDidLoad`, `scanningRecognizerRunnerViewControllerDelegate` has to be set on `super` property: 
 
 Swift and Objective-C
 ```swift
-self.overlayViewControllerInterfaceDelegate = self
-```
-
-In `viewDidLoad`, other protocol conformation can be done and it's done on `recognizerRunnerViewController` property of [`MBOverlayViewController`](http://pdf417.github.io/pdf417-ios/Classes/MBOverlayViewController.html), for example:
-
-Swift and Objective-C
-```swift
-self.recognizerRunnerViewController.scanningRecognizerRunnerViewDelegate = self;
-self.recognizerRunnerViewController.metadataDelegates.detectionRecognizerRunnerViewDelegate = self;
-self.recognizerRunnerViewController.recognizerRunnerViewControllerDelegate = self;
+super.scanningRecognizerRunnerViewControllerDelegate = self;
 ```
 
 ### 3. Overlay subviews
@@ -403,7 +399,7 @@ With this feature you can solve various use cases like:
 
 DirectAPI-sample demo app here will present UIImagePickerController for taking full resolution photos, and then process it with MicroBlink SDK to get scanning results using Direct processing API.
 
-Direct processing API is handled with [`MBRecognizerRunner`](http://pdf417.github.io/pdf417-ios/Classes/MBRecognizerRunner.html). That is a class that handles processing of images. It also has protocols as [`MBRecognizerRunnerViewController`](http://pdf417.github.io/pdf417-ios/Protocols/MBRecognizerRunnerViewController.html).
+Direct processing API is handled with [`MBRecognizerRunner`](http://pdf417.github.io/pdf417-ios/Classes/MBRecognizerRunner.html). That is a class that handles processing of images. It also has protocols as [`MBRecognizerRunnerViewController`](http://pdf417.github.io/pdf417-ios/Classes/MBRecognizerRunnerViewController.html).
 Developer can choose which protocol to conform:
 
 - [`MBScanningRecognizerRunnerDelegate`](http://pdf417.github.io/pdf417-ios/Protocols/MBScanningRecognizerRunnerDelegate.html)
@@ -549,7 +545,7 @@ This recognizer can be used in any overlay view controller, but it works best wi
 
 In case of problems with integration of the SDK, first make sure that you have tried integrating it into XCode by following [integration instructions](#quickStart).
 
-If you have followed [XCode integration instructions](#quickStart) and are still having integration problems, please contact us at [help.microblink.com](help.microblink.com).
+If you have followed [XCode integration instructions](#quickStart) and are still having integration problems, please contact us at [help.microblink.com](http://help.microblink.com).
 
 ## <a name="sdkTroubleshoot"></a> SDK problems
 
@@ -559,7 +555,7 @@ In case of problems with using the SDK, you should do as follows:
 
 If you are getting "invalid licence key" error or having other licence-related problems (e.g. some feature is not enabled that should be or there is a watermark on top of camera), first check the console. All licence-related problems are logged to error log so it is easy to determine what went wrong.
 
-When you have determine what is the licence-relate problem or you simply do not understand the log, you should contact us [help.microblink.com](help.microblink.com). When contacting us, please make sure you provide following information:
+When you have determine what is the licence-relate problem or you simply do not understand the log, you should contact us [help.microblink.com](http://help.microblink.com). When contacting us, please make sure you provide following information:
 
 * exact Bundle ID of your app (from your `info.plist` file)
 * licence that is causing problems
@@ -570,7 +566,7 @@ When you have determine what is the licence-relate problem or you simply do not 
 
 If you are having problems with scanning certain items, undesired behaviour on specific device(s), crashes inside PDF417.mobi SDK or anything unmentioned, please do as follows:
 	
-* Contact us at [help.microblink.com](help.microblink.com) describing your problem and provide following information:
+* Contact us at [help.microblink.com](http://help.microblink.com) describing your problem and provide following information:
 	* log file obtained in previous step
 	* high resolution scan/photo of the item that you are trying to scan
 	* information about device that you are using
@@ -579,13 +575,13 @@ If you are having problems with scanning certain items, undesired behaviour on s
 ## <a name="faq"></a> Frequently asked questions and known problems
 Here is a list of frequently asked questions and solutions for them and also a list of known problems in the SDK and how to work around them.
 
-#### <a name="featureNotSupportedByLicenseKey"></a> In demo everything worked, but after switching to production license I get `NSError` with `MBMicroblinkSDKRecognizerErrorDomain` and `MBRecognizerFailedToInitalize` code as soon as I construct specific [`MBRecognizer`](http://pdf417.github.io/pdf417-ios/Classes/MBRecognizer.html) object
+#### <a name="featureNotSupportedByLicenseKey"></a> In demo everything worked, but after switching to production license I get `NSError` with `MBMicroblinkSDKRecognizerErrorDomain` and `MBRecognizerFailedToInitalize` code as soon as I construct specific [`MBRecognizer`](http://pdf417.github.io/pdf417-ios/docs/Classes/MBRecognizer.html) object
 
-Each license key contains information about which features are allowed to use and which are not. This `NSError` indicates that your production license does not allow using of specific `MBRecognizer` object. You should contact [support](help.microblink.com) to check if provided licence is OK and that it really contains all features that you have purchased.
+Each license key contains information about which features are allowed to use and which are not. This `NSError` indicates that your production license does not allow using of specific `MBRecognizer` object. You should contact [support](http://help.microblink.com) to check if provided licence is OK and that it really contains all features that you have purchased.
 
 #### <a name="invalidLicenseKey"></a> I get `NSError` with `MBMicroblinkSDKRecognizerErrorDomain` and `MBRecognizerFailedToInitalize` code with trial license key
 
-Whenever you construct any [`MBRecognizer`](http://pdf417.github.io/pdf417-ios/Classes/MBRecognizer.html) object or, a check whether license allows using that object will be performed. If license is not set prior constructing that object, you will get `NSError` with `MBMicroblinkSDKRecognizerErrorDomain` and `MBRecognizerFailedToInitalize` code. We recommend setting license as early as possible in your app.
+Whenever you construct any [`MBRecognizer`](http://pdf417.github.io/pdf417-ios/docs/Classes/MBRecognizer.html) object or, a check whether license allows using that object will be performed. If license is not set prior constructing that object, you will get `NSError` with `MBMicroblinkSDKRecognizerErrorDomain` and `MBRecognizerFailedToInitalize` code. We recommend setting license as early as possible in your app.
 
 #### <a name="undefinedSymbols"></a> Undefined Symbols on Architecture armv7
 
@@ -594,7 +590,7 @@ If you are using Cocoapods, please be sure that you've installed `git-lfs` prior
 
 #### <a name="statefulRecognizer"></a> In my `didFinish` callback I have the result inside my `MBRecognizer`, but when scanning activity finishes, the result is gone
 
-This usually happens when using [`MBRecognizerRunnerViewController`](http://pdf417.github.io/pdf417-ios/Protocols/MBRecognizerRunnerViewController.html) and forgetting to pause the [`MBRecognizerRunnerViewController`](http://pdf417.github.io/pdf417-ios/Protocols/MBRecognizerRunnerViewController.html) in your `didFinish` callback. Then, as soon as `didFinish` happens, the result is mutated or reset by additional processing that `MBRecognizer` performs in the time between end of your `didFinish` callback and actual finishing of the scanning activity. For more information about statefulness of the `MBRecognizer` objects, check [this section](#recognizerConcept).
+This usually happens when using [`MBRecognizerRunnerViewController`](http://pdf417.github.io/pdf417-ios/docs/Classes/MBRecognizerRunnerViewController.html) and forgetting to pause the [`MBRecognizerRunnerViewController`](http://pdf417.github.io/pdf417-ios/docs/Classes/MBRecognizerRunnerViewController.html) in your `didFinish` callback. Then, as soon as `didFinish` happens, the result is mutated or reset by additional processing that `MBRecognizer` performs in the time between end of your `didFinish` callback and actual finishing of the scanning activity. For more information about statefulness of the `MBRecognizer` objects, check [this section](#recognizerConcept).
 
 #### <a name="unsupportedArchitecture"></a> Unsupported architectures when submitting app to App Store
 
@@ -602,7 +598,7 @@ Microblink.framework is a dynamic framework which contains slices for all archit
 
 Ideal solution is to add a build phase after embed frameworks build phase, which strips unused slices from embedded frameworks.
 
-Build step is based on the one provided here: ikennd.ac/blog/2015/02/stripping-unwanted-architectures-from-dynamic-libraries-in-xcode/
+Build step is based on the one provided here: http://ikennd.ac/blog/2015/02/stripping-unwanted-architectures-from-dynamic-libraries-in-xcode/
 
 ```shell
 APP_PATH="${TARGET_BUILD_DIR}/${WRAPPER_NAME}"
@@ -637,6 +633,6 @@ done
 
 # <a name="info"></a> Additional info
 
-Complete API reference can be found [here](http://pdf417.github.io/pdf417-ios/index.html). 
+Complete API reference can be found [here](http://pdf417.github.io/pdf417-ios/docs/index.html). 
 
-For any other questions, feel free to contact us at [help.microblink.com](help.microblink.com).
+For any other questions, feel free to contact us at [help.microblink.com](http://help.microblink.com).

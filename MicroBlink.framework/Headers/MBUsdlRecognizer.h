@@ -5,7 +5,7 @@
 //  Created by Jura Skrlec on 03/01/2018.
 //
 
-#import "PPMicroBlinkDefines.h"
+#import "MBMicroBlinkDefines.h"
 #import "MBRecognizer.h"
 #import "MBUsdlRecognizerResult.h"
 #import "MBMicroBlinkInitialization.h"
@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * A recognizer that can scan USDL.
  */
-PP_CLASS_DEPRECATED_IOS(1.0, 7.0, "MBUsdlRecognizer is deprecated in PDF417 SDK 7.0.0")
+PP_CLASS_DEPRECATED_IOS(1.0, 7.0, "MBUsdlRecognizer is deprecated in PDF417 SDK 7.0.0") MB_FINAL
 @interface MBUsdlRecognizer : MBRecognizer<NSCopying>
 
 MB_INIT

@@ -1,33 +1,33 @@
 //
-//  MBBarcodeOverlaySettings.h
-//  MicroBlinkDev
+//  MBBarcodeUISettings.h
+//  MicroBlink
 //
-//  Created by Jura Skrlec on 16/01/2018.
+//  Created by Dino Gustin on 04/05/2018.
 //
 
-#import "MBSettings.h"
+#import "MBBaseOverlaySettings.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- * Settings class containing parameters for Barcode UI
+ * Settings class containing UI information
  */
-PP_CLASS_AVAILABLE_IOS(8.0)
-@interface MBBarcodeOverlaySettings : MBSettings
+MB_CLASS_AVAILABLE_IOS(8.0)
+@interface MBBarcodeOverlaySettings : MBBaseOverlaySettings
 
 /**
  * If YES, viewfinder (4 corner markers) will move when payslip is detected
  *
  * Default: YES
  */
-@property (nonatomic, assign) BOOL viewfinderMoveable;
+@property (nonatomic, assign) BOOL displayBarcodeDots;
 
 /**
- * If YES; barcode dots will be displayed if detected.
+ * If YES; view finder will be displayed
  *
  * Default: YES
  */
-@property (nonatomic, assign) BOOL displayBarcodeDots;
+@property (nonatomic, assign) BOOL displayViewfinder;
 
 @end
 

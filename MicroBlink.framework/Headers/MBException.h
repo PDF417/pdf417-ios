@@ -16,5 +16,6 @@ FOUNDATION_EXPORT MBExceptionName const MBInvalidLicenseeKeyException;
 FOUNDATION_EXPORT MBExceptionName const MBInvalidLicenseResourceException;
 FOUNDATION_EXPORT MBExceptionName const MBInvalidBundleException;
 FOUNDATION_EXPORT MBExceptionName const MBMissingSettingsException;
+FOUNDATION_EXPORT MBExceptionName const MBInvalidArgumentException;
 
 #endif /* MBException_h */

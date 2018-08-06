@@ -86,8 +86,8 @@ git lfs install
 - Copy and paste the following lines into the TextEdit window:  
 
 ```ruby
-platform :ios, '8.0'
-    pod 'PPpdf417', '~> ((VERSION))'
+platform :ios, '9.0'
+    pod 'PPpdf417', '~> 7.1.0'
 ```
 
 - Install the dependencies in your project:

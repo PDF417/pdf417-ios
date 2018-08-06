@@ -87,7 +87,7 @@ git lfs install
 
 ```ruby
 platform :ios, '8.0'
-    pod 'PPBlinkID', '~> ((VERSION))'
+    pod 'PPpdf417', '~> ((VERSION))'
 ```
 
 - Install the dependencies in your project:
@@ -170,27 +170,27 @@ Objective-C
     ```swift
     @IBAction func didTapScan(_ sender: AnyObject) {
 
-         /** Create barcode recognizer */
+        /** Create barcode recognizer */
         self.barcodeRecognizer = MBBarcodeRecognizer()
-        self.barcodeRecognizer?.scanQR = true
-
+        self.barcodeRecognizer?.scanQrCode = true
+        
+        self.pdf417Recognizer = MBPdf417Recognizer()
+        
         /** Create barcode settings */
-        let barcodeSettings : MBBarcodeOverlaySettings = MBBarcodeOverlaySettings()
-    
+        let settings : MBBarcodeOverlaySettings = MBBarcodeOverlaySettings()
+        
         /** Crate recognizer collection */
-        let recognizerList : Array = [self.barcodeRecognizer!] as! [MBRecognizer]
+        let recognizerList = [self.barcodeRecognizer!, self.pdf417Recognizer!]
         let recognizerCollection : MBRecognizerCollection = MBRecognizerCollection(recognizers: recognizerList)
-    
-        /** Add recognizer collection to barcode settings */
-        barcodeSettings.uiSettings.recognizerCollection = recognizerCollection
-    
+        
         /** Create your overlay view controller */
-        let barcodeOverlayViewController : MBBarcodeOverlayViewController = MBBarcodeOverlayViewController(settings: barcodeSettings, andDelegate: self
+        let barcodeOverlayViewController : MBBarcodeOverlayViewController = MBBarcodeOverlayViewController(settings: settings, recognizerCollection: recognizerCollection, delegate: self)
+        
         /** Create recognizer view controller with wanted overlay view controller */
-        let recognizerRunnerViewController : UIViewController = MBViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: barcodeOverlayViewController)
+        let recognizerRunneViewController : UIViewController = MBViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: barcodeOverlayViewController)
         
         /** Present the recognizer runner view controller. You can use other presentation methods as well (instead of presentViewController) */
-        self.present(recognizerRunnerViewController, animated: true, completion: nil)
+        self.present(recognizerRunneViewController, animated: true, completion: nil)
     }
     ```
 
@@ -201,16 +201,19 @@ Objective-C
          /** Create recognizers */
         self.barcodeRecognizer = [[MBBarcodeRecognizer alloc] init];
         self.barcodeRecognizer.scanQR = YES;
+
+        self.pdf417Recognizer = [[MBPdf417Recognizer alloc] init];
                 
         MBBarcodeOverlaySettings* settings = [[MBBarcodeOverlaySettings alloc] init];
         
         NSMutableArray<MBRecognizer *> *recognizers = [[NSMutableArray alloc] init];
         [recognizers addObject:self.barcodeRecognizer];
+        [recognizers addObject:self.pdf417Recognizer];
         
         /** Create recognizer collection */
-        settings.uiSettings.recognizerCollection = [[MBRecognizerCollection alloc] initWithRecognizers:recognizers];
+        MBRecognizerCollection *recognizerCollection = [[MBRecognizerCollection alloc] initWithRecognizers:recognizers];
 
-        MBBarcodeOverlayViewController *overlayVC = [[MBBarcodeOverlayViewController alloc] initWithSettings:settings andDelegate:self];
+        MBBarcodeOverlayViewController *overlayVC = [[MBBarcodeOverlayViewController alloc] initWithSettings:settings recognizerCollection:recognizerCollection delegate:self];
         UIViewController<MBRecognizerRunnerViewController>* recognizerRunnerViewController = [MBViewControllerFactory recognizerRunnerViewControllerWithOverlayViewController:overlayVC];
 
         /** Present the recognizer runner view controller. You can use other presentation methods as well (instead of presentViewController) */
@@ -225,7 +228,7 @@ Objective-C
     // MARK: MBBarcodeOverlayViewControllerDelegate
     extension ViewController : MBBarcodeOverlayViewControllerDelegate {
         
-        func overlayViewControllerDidFinishScanning(_ barcodeOverlayViewController: MBBarcodeOverlayViewController, state: MBRecognizerResultState) {
+        func barcodeOverlayViewControllerDidFinishScanning(_ barcodeOverlayViewController: MBBarcodeOverlayViewController, state: MBRecognizerResultState) {
             
             let recognizerRunnerViewController = barcodeOverlayViewController.recognizerRunnerViewController as MBRecognizerRunnerViewController
             /** This callback is done on background thread and you need to be careful to not do any UI operations on it */
@@ -243,7 +246,7 @@ Objective-C
             }
         }
         
-        func overlayViewControllerDidTapClose(_ barcodeOverlayViewController: MBBarcodeOverlayViewController) {
+        func barcodeOverlayViewControllerDidTapClose(_ barcodeOverlayViewController: MBBarcodeOverlayViewController) {
             // Close button tapped on overlay view controller
         }
         
@@ -253,7 +256,7 @@ Objective-C
     Objective-C
     ```objective-c
     #pragma mark - MBBarcodeOverlayViewControllerDelegate
-    - (void)overlayViewControllerDidFinishScanning:(MBBarcodeOverlayViewController *)barcodeOverlayViewController state:(MBRecognizerResultState)state {
+    - (void)barcodeOverlayViewControllerDidFinishScanning:(MBBarcodeOverlayViewController *)barcodeOverlayViewController state:(MBRecognizerResultState)state {
         /** This callback is done on background thread and you need to be careful to not do any UI operations on it */
         [barcodeOverlayViewController.recognizerRunnerViewController pauseScanning];
         if (self.barcodeRecognizer.result.resultState == MBRecognizerResultStateValid) {
@@ -263,7 +266,7 @@ Objective-C
             // UI actions
         });
     }
-     - (void)overlayViewControllerDidTapClose:(MBBarcodeOverlayViewController *)barcodeOverlayViewController {
+     - (void)barcodeOverlayViewControllerDidFinishScanning:(MBBarcodeOverlayViewController *)barcodeOverlayViewController {
         // Close button tapped on overlay view controller
     }
     ```
@@ -336,7 +339,7 @@ To use your custom overlay with MicroBlink's camera view, you must first subclas
 
 ### 2. Protocols
 
-There are five [`MBRecognizerRunnerViewController`](http://pdf417.github.io/pdf417-ios/Protocols/MBRecognizerRunnerViewController.html) protocols and one overlay protocol [`MBOverlayViewControllerInterface`](http://pdf417.github.io/pdf417-ios/Protocols/MBOverlayViewControllerInterface.html).
+There are five [`MBRecognizerRunnerViewController`](http://pdf417.github.io/pdf417-ios/Protocols/MBRecognizerRunnerViewController.html) protocols.
 
 Five `RecognizerRunnerView` protocols are:
 - [`MBScanningRecognizerRunnerViewDelegate`](http://pdf417.github.io/pdf417-ios/Protocols/MBScanningRecognizerRunnerViewDelegate.html)
@@ -345,20 +348,13 @@ Five `RecognizerRunnerView` protocols are:
 - [`MBDebugRecognizerRunnerViewDelegate`](http://pdf417.github.io/pdf417-ios/Protocols/MBDebugRecognizerRunnerViewDelegate.html)
 - [`MBRecognizerRunnerViewControllerDelegate`](http://pdf417.github.io/pdf417-ios/Protocols/MBRecognizerRunnerViewControllerDelegate.html)
 
-Conforming protocol `MBOverlayViewControllerInterface`[`MBOverlayViewControllerInterface`](http://pdf417.github.io/pdf417-ios/Protocols/MBOverlayViewControllerInterface.html) is necessary beacuse user needs to return implementation of [`MBSettings`](http://pdf417.github.io/pdf417-ios/Classes/MBSettings.html) and protocol conform needs to be done in custom `init` method of overlay view controller:
+`MBCustomOverlayViewController`[`MBCustomOverlayViewController`](http://pdf417.github.io/pdf417-ios/Classes/MBCustomOverlayViewController.html) class needs to be inherited by custom view controller and it needs to conform `MBScanningRecognizerRunnerViewControllerDelegate`. It contains all the properties needed for your custom view controller.
+
+In `viewDidLoad`, `scanningRecognizerRunnerViewControllerDelegate` has to be set on `super` property: 
 
 Swift and Objective-C
 ```swift
-self.overlayViewControllerInterfaceDelegate = self
-```
-
-In `viewDidLoad`, other protocol conformation can be done and it's done on `recognizerRunnerViewController` property of [`MBOverlayViewController`](http://pdf417.github.io/pdf417-ios/Classes/MBOverlayViewController.html), for example:
-
-Swift and Objective-C
-```swift
-self.recognizerRunnerViewController.scanningRecognizerRunnerViewDelegate = self;
-self.recognizerRunnerViewController.metadataDelegates.detectionRecognizerRunnerViewDelegate = self;
-self.recognizerRunnerViewController.recognizerRunnerViewControllerDelegate = self;
+super.scanningRecognizerRunnerViewControllerDelegate = self;
 ```
 
 ### 3. Overlay subviews

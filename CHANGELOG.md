@@ -1,5 +1,17 @@
 # Release notes
 
+## 7.1.0
+
+- Bug fixes
+    - fixed crash when changing recognizers on the fly
+
+- Minor API changes
+    - removed `uiSettings` property from `MBBarcodeOverlaySettings` and it no longer has `recognizerCollection` property
+    - `MBBarcodeOverlayViewController` has new `init` which has `(MBRecognizerCollection *)recognizerCollection` as parameter and `andDelegate` parameter has been renamed to `delegate`
+    - `MBOverlayViewControllerInterface` has been removed; when creating custom overlay view controller, `MBCustomOverlayViewController` has to be inherited
+        - please check our updated Samples
+    - `MBBarcodeOverlayViewControllerDelegate` methods has been renamed to `barcodeOverlayViewControllerDidFinishScanning` and `barcodeOverlayViewControllerDidTapClose`
+
 ## 7.0.0
 
 - new API, which is not backward compatible. Please check [README](README.md) and updated demo applications for more information, but the gist of it is:

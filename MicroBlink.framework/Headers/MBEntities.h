@@ -6,3 +6,7 @@
 //
 
 #import "MBBarcodeEntities.h"
+
+#import "MBUsdlRecognizer.h"
+#import "MBUsdlRecognizerResult.h"
+#import "MBUsdlKeys.h"

@@ -92,10 +92,6 @@
 		<data>
 		lDU1rIuq47c6xG64Ofxx1G3piU4=
 		</data>
-		<key>Headers/MBDocumentSubview.h</key>
-		<data>
-		cGnJFR+U1QiV/VQnrLZPQkfXDiE=
-		</data>
 		<key>Headers/MBDotsResultSubview.h</key>
 		<data>
 		H0nSrt141sr8NInmUUd/kaPx79g=
@@ -106,7 +102,7 @@
 		</data>
 		<key>Headers/MBEntities.h</key>
 		<data>
-		ggR6rXmrkEQt/1RelaKq3m/C3Ps=
+		Lqn1aNjGLyyqHE/xH/mMY4KwjFo=
 		</data>
 		<key>Headers/MBEntity.h</key>
 		<data>
@@ -159,10 +155,6 @@
 		<key>Headers/MBNativeResult.h</key>
 		<data>
 		rXCTf5MOs1iy31txh5izI8FF7Xc=
-		</data>
-		<key>Headers/MBOcrResultSubview.h</key>
-		<data>
-		1CX3lnKdkBZOaGYqgSAqZJ8FLz4=
 		</data>
 		<key>Headers/MBOverlayContainerViewController.h</key>
 		<data>
@@ -549,17 +541,6 @@
 			7IvZ8/TbNNZUb6QOJam/OyimMvK4T2lerszdXwozL8o=
 			</data>
 		</dict>
-		<key>Headers/MBDocumentSubview.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			cGnJFR+U1QiV/VQnrLZPQkfXDiE=
-			</data>
-			<key>hash2</key>
-			<data>
-			mkYaGfTdwtKhUwya1g7s/TuFv58FO/rIoy79sABVCNg=
-			</data>
-		</dict>
 		<key>Headers/MBDotsResultSubview.h</key>
 		<dict>
 			<key>hash</key>
@@ -586,11 +567,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ggR6rXmrkEQt/1RelaKq3m/C3Ps=
+			Lqn1aNjGLyyqHE/xH/mMY4KwjFo=
 			</data>
 			<key>hash2</key>
 			<data>
-			kooXcM2AutdwMn2CKE8GHuvAnxCaoVFjbwN5eSekgPU=
+			gF5EmryCSKc/3ntu/f8GyInZqZMfEvEWiDTg9nG7JAs=
 			</data>
 		</dict>
 		<key>Headers/MBEntity.h</key>
@@ -734,17 +715,6 @@
 			<key>hash2</key>
 			<data>
 			Ej/LvneL0jvBtVEMc9ApCEcywMH9RIGAI7QT+jC6Iyw=
-			</data>
-		</dict>
-		<key>Headers/MBOcrResultSubview.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			1CX3lnKdkBZOaGYqgSAqZJ8FLz4=
-			</data>
-			<key>hash2</key>
-			<data>
-			dwxlXjO//YvPhL+zvyXIad6LqV/0OHOOhkwiZfqwD1w=
 			</data>
 		</dict>
 		<key>Headers/MBOverlayContainerViewController.h</key>

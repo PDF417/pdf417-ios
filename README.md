@@ -29,27 +29,27 @@ For more information on how to integrate _PDF417.mobi_ SDK into your app read th
 
 # Table of contents
 
-* [Requirements](#requirements)
-* [Quick Start](#quickStart)
-* [Advanced PDF417.mobi integration instructions](#advancedIntegration)
-    * [UI customizations of built-in `MBOverlayViewControllers` and `MBOverlaySubviews`](#uiCustomizations)
-        * [Built-in overlay view controllers and overlay subviews](#builtInUIComponents)
-    * [Using `MBBarcodeOverlayViewController`](#mbBarcodeOverlayViewcontroller)
-    * [Custom overlay view controller](#recognizerRunnerViewController)
-    * [Direct processing API](#directAPI)
-* [`MBRecognizer` and available recognizers](#availableRecognizers)
-    * [The `MBRecognizer` concept](#recognizerConcept)
-    * [`MBRecognizerCollection` concept](#recognizerBCollection)
-    * [List of available recognizers](#recognizerList)
-        * [Frame Grabber Recognizer](#frameGrabberRecognizer)
-        * [Success Frame Grabber Recognizer](#successFrameGrabberRecognizer)
-        * [PDF417 recognizer](#pdf417Recognizer)
-        * [Barcode recognizer](#barcodeRecognizer)
-* [Troubleshooting](#troubleshoot)
-    * [Integration problems](#integrationTroubleshoot)
-    * [SDK problems](#sdkTroubleshoot)
-    * [Frequently asked questions and known problems](#faq)
-* [Additional info](#info)
+* [Requirements](#user-content-requirements)
+* [Quick Start](#user-content-quickStart)
+* [Advanced PDF417.mobi integration instructions](#user-content-advancedIntegration)
+    * [UI customizations of built-in `MBOverlayViewControllers` and `MBOverlaySubviews`](#user-content-uiCustomizations)
+        * [Built-in overlay view controllers and overlay subviews](#user-content-builtInUIComponents)
+    * [Using `MBBarcodeOverlayViewController`](#user-content-mbBarcodeOverlayViewcontroller)
+    * [Custom overlay view controller](#user-content-recognizerRunnerViewController)
+    * [Direct processing API](#user-content-directAPI)
+* [`MBRecognizer` and available recognizers](#user-content-availableRecognizers)
+    * [The `MBRecognizer` concept](#user-content-recognizerConcept)
+    * [`MBRecognizerCollection` concept](#user-content-recognizerBCollection)
+    * [List of available recognizers](#user-content-recognizerList)
+        * [Frame Grabber Recognizer](#user-content-frameGrabberRecognizer)
+        * [Success Frame Grabber Recognizer](#user-content-successFrameGrabberRecognizer)
+        * [PDF417 recognizer](#user-content-pdf417Recognizer)
+        * [Barcode recognizer](#user-content-barcodeRecognizer)
+* [Troubleshooting](#user-content-troubleshoot)
+    * [Integration problems](#user-content-integrationTroubleshoot)
+    * [SDK problems](#user-content-sdkTroubleshoot)
+    * [Frequently asked questions and known problems](#user-content-faq)
+* [Additional info](#user-content-info)
 
 # <a name="requirements"></a> Requirements
 
@@ -86,8 +86,8 @@ git lfs install
 - Copy and paste the following lines into the TextEdit window:  
 
 ```ruby
-platform :ios, '9.0'
-    pod 'PPpdf417', '~> 7.1.0'
+platform :ios, '8.0'
+    pod 'PPpdf417', '~> ((VERSION))'
 ```
 
 - Install the dependencies in your project:

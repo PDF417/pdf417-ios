@@ -6,99 +6,99 @@
 	<dict>
 		<key>Headers/MBBarcodeEntities.h</key>
 		<data>
-		curN52i0bG2JWKy+oGIGfVjGqbQ=
+		xnovkJ9NfdF5aRdT8NRWhyc5Cq0=
 		</data>
 		<key>Headers/MBBarcodeOverlaySettings.h</key>
 		<data>
-		UMYN30bejIsBy5SsEZPohb6w97M=
+		H1vvYtxbJxjwmOMwQ4b5e7LvAL8=
 		</data>
 		<key>Headers/MBBarcodeOverlayViewController.h</key>
 		<data>
-		VtXw687EeXh7BWEj71wP8dhPxPk=
+		wCqiGrKvuGaYFAwRD8NYZheSEBc=
 		</data>
 		<key>Headers/MBBarcodeOverlayViewControllerDelegate.h</key>
 		<data>
-		qVVtiDAUkHrTixcmrwOkVB+u/O8=
+		y2N2U/cpHBb/01UqvRXiGcv+UC0=
 		</data>
 		<key>Headers/MBBarcodeRecognizer.h</key>
 		<data>
-		KrfJI0KAhWWy6lWFhiKlzlKnQkg=
+		dqIct+0QgUzVWVGoVaaVg2o0occ=
 		</data>
 		<key>Headers/MBBarcodeRecognizerResult.h</key>
 		<data>
-		wLAxXLFaCl1BHFWeZikXa0+L9hs=
+		xViLtcsdHlghH43qeZHY6dONtL0=
 		</data>
 		<key>Headers/MBBarcodeResult.h</key>
 		<data>
-		be420q2unpVXwQE1oGDOW8RzrlA=
+		xhZnJwyh7r2k3CpZlAHfKvfQ7V4=
 		</data>
 		<key>Headers/MBBarcodeUIComponents.h</key>
 		<data>
-		56YR4ILaftzyAo9zvILUaAU5BYY=
+		4snfrwY1/m2wXfV+ZkmibIOoaUg=
 		</data>
 		<key>Headers/MBBaseOverlaySettings.h</key>
 		<data>
-		WdytmHWrdISiASbJrQVV30k3imM=
+		z6bhcymTekf4+80S48yx8+WLBuo=
 		</data>
 		<key>Headers/MBBaseOverlayViewController.h</key>
 		<data>
-		dQJiU8ZZIm4S+TsVdFB31Fjz81k=
+		otfzYXKPVH5ABzmn28HSSw30IkY=
 		</data>
 		<key>Headers/MBCameraSettings.h</key>
 		<data>
-		OFGQXZBG5qnGeqnDtKv3aHCTTGY=
+		OlzBDAFkjC8+DVEUEIAMarJoD7o=
 		</data>
 		<key>Headers/MBCustomOverlayViewController.h</key>
 		<data>
-		II5Qw8o7D/VAIsLP+g11VLo26fI=
+		lwRr3fdKY+fRliel+acpGFp1ZZE=
 		</data>
 		<key>Headers/MBDateResult.h</key>
 		<data>
-		oGdqRHHpE3LkS1Rqye6fwdv8mFk=
+		9/LfBx2SmF1fRbkAazp+Re1tC1w=
 		</data>
 		<key>Headers/MBDebugRecognizerRunnerDelegate.h</key>
 		<data>
-		pHSLJ8Am5IvnY4viCuZ2RqmFS9Q=
+		RRZle2wowgH7HbKb+Op/AKcelF8=
 		</data>
 		<key>Headers/MBDebugRecognizerRunnerViewControllerDelegate.h</key>
 		<data>
-		sHI0VC9Fv+BtqhjcmolF5fCqVIQ=
+		GY3TqBNqwapwuL3WnUSen4IOKJ4=
 		</data>
 		<key>Headers/MBDetectionRecognizerRunnerDelegate.h</key>
 		<data>
-		XB+1/kszRsI5+d7eXbHUamD5kUY=
+		wkKjAMZ78kl2GBRIJbjDsHClHN8=
 		</data>
 		<key>Headers/MBDetectionRecognizerRunnerViewControllerDelegate.h</key>
 		<data>
-		T3g0E+sChdvTm/cDzAe3F13+lk8=
+		6AHSk5QLGP2i5cbh6vv5KYDHtNk=
 		</data>
 		<key>Headers/MBDetectionStatus.h</key>
 		<data>
-		AcwS9vf42O0IXlAJMGZS+5ZJY7Q=
+		2rX7M7wtxD4mM93wckjv2GTR1/w=
 		</data>
 		<key>Headers/MBDisplayableDetection.h</key>
 		<data>
-		dumeBJcirKT1SziDr7QM+thTB3A=
+		ovoqRoBuj6ktOK8CZQkOEA/c8YU=
 		</data>
 		<key>Headers/MBDisplayableObject.h</key>
 		<data>
-		nEUBylsXu/1oDDGqcOx8ZIQR+Rc=
+		gAT3SvDzR4ue/SZslzmdlA+G2io=
 		</data>
 		<key>Headers/MBDisplayablePointsDetection.h</key>
 		<data>
-		PFiBpWn7kRSbAsAV62bBTzQYPFY=
+		nC6Tt7/I68HiQCpnt9SqAOyZ4O8=
 		</data>
 		<key>Headers/MBDisplayableQuadDetection.h</key>
 		<data>
-		lDU1rIuq47c6xG64Ofxx1G3piU4=
+		BHva4NitqfysG/O67Z4PWGC0Ebw=
 		</data>
 		<key>Headers/MBDotsResultSubview.h</key>
 		<data>
-		H0nSrt141sr8NInmUUd/kaPx79g=
+		AHblUO+FK2YUIDQUHoeYaRKenW8=
 		</data>
 		<key>Headers/MBDotsSubview.h</key>
 		<data>
-		7HW8UkHmwW4OwfYCtZyUpNNMKU8=
+		x1atFdwmXPBh/BgFOTlllCddUWM=
 		</data>
 		<key>Headers/MBEntities.h</key>
 		<data>
@@ -106,7 +106,7 @@
 		</data>
 		<key>Headers/MBEntity.h</key>
 		<data>
-		EwJkUDWGZP2Ub/oShHDBZ+pryh8=
+		okDIKhb4ne4uFq8ITR1UfNAEoMo=
 		</data>
 		<key>Headers/MBException.h</key>
 		<data>
@@ -114,151 +114,151 @@
 		</data>
 		<key>Headers/MBFrameGrabberRecognizer.h</key>
 		<data>
-		TJOvNAIdNPWVLsHM5o8Ln4egmSw=
+		xezzd7Lriw05h26Jhl/FL67oU2Y=
 		</data>
 		<key>Headers/MBGeometry.h</key>
 		<data>
-		+85eFGmWyzwnYOkHYrTr4MWXXH0=
+		Vf6asKFXdlZr5uhOEHFEGya3oMg=
 		</data>
 		<key>Headers/MBGlareStatusSubview.h</key>
 		<data>
-		cqTptqT0kXmPU4IqFYM5WOGRvmI=
+		58Paw0tggRozFZHkFxxqHluUV64=
 		</data>
 		<key>Headers/MBImage.h</key>
 		<data>
-		9KUg9w0SglfiFNcBHg2xO22+Qrk=
+		VlYNyu4ivL5y89TA+5Ful1MwSnQ=
 		</data>
 		<key>Headers/MBImageProcessingRecognizerRunnerDelegate.h</key>
 		<data>
-		vuQwGeF3UuPClA8hZFnkyYYE6Ps=
-		</data>
-		<key>Headers/MBMicroBlinkDefines.h</key>
-		<data>
-		O/HBCk52leRQ1YV8XDCUpkN1NFw=
-		</data>
-		<key>Headers/MBMicroBlinkInitialization.h</key>
-		<data>
-		5YdAZlRjQmSc048/LXHrqt/gGmw=
+		O3NVRv7e6nsyS2p2Jsz1yv2Ngo4=
 		</data>
 		<key>Headers/MBMicroblinkApp.h</key>
 		<data>
-		uRPi91+BMFWgrF+8ws0aXrKPVpU=
+		TdX2P/Damv+2RViHn9Ih7qL60C8=
+		</data>
+		<key>Headers/MBMicroblinkDefines.h</key>
+		<data>
+		rMxtxzm2Y4yJD3g2BzxdipAbVFA=
+		</data>
+		<key>Headers/MBMicroblinkInitialization.h</key>
+		<data>
+		QSpirY+gUS9A5KVIisHMsA1yfik=
 		</data>
 		<key>Headers/MBMicroblinkSDK.h</key>
 		<data>
-		QINMlP5qEMbUx9uNvHAnuAJuOnQ=
+		5+B1PzDl4C74yfqoLAPkpN1ySzk=
 		</data>
 		<key>Headers/MBModernViewfinderSubview.h</key>
 		<data>
-		5XSFVvhxw4LVFDUJqT8MXtCUuGI=
+		g9vyv1iWGhrGQFha5+l78ZnBF4k=
 		</data>
 		<key>Headers/MBNativeResult.h</key>
 		<data>
-		rXCTf5MOs1iy31txh5izI8FF7Xc=
+		GCEyCCwbLge32bVB61h+h+eYHKA=
 		</data>
 		<key>Headers/MBOverlayContainerViewController.h</key>
 		<data>
-		J+KkQ/5lO0amWlfTMDefg5gJfa8=
+		rwiRS3zDLiUjcXPggVVCizvuOlY=
 		</data>
 		<key>Headers/MBOverlaySettings.h</key>
 		<data>
-		8ayTgyDdyjH3MAZLckbHfKIHChc=
+		aVkClUCvZiCM6fIAPXbIHr0FSKw=
 		</data>
 		<key>Headers/MBOverlayViewController.h</key>
 		<data>
-		PK4Y1SJDzTMUwh6ksy6lIzPCp9o=
+		UzqoT2+ZASYqVM60c4eN4KOeGUs=
 		</data>
 		<key>Headers/MBPdf417Recognizer.h</key>
 		<data>
-		BJeuZ02lDJKQYdkAdKrJSSw1+4s=
+		IdFvoMhzbc57CMGsOo1p6ufMqeg=
 		</data>
 		<key>Headers/MBPdf417RecognizerResult.h</key>
 		<data>
-		lKBuDu8NsjG03nfLb6JHNCFNCM8=
+		aX12egQZvl33mgVHhoM73I/Armc=
 		</data>
 		<key>Headers/MBPointDetectorSubview.h</key>
 		<data>
-		ZJVSrjDkz9UIEWb1O69JzfolsDg=
+		zolUrbNidtvitCVJ+EbKBvPbfVQ=
 		</data>
 		<key>Headers/MBQuadDetectorSubview.h</key>
 		<data>
-		VVtfF6XDvZu8VotaNFinaEhFUW8=
+		fHQpHrIyw3RO2NlXtVUrl296nNs=
 		</data>
 		<key>Headers/MBQuadrangle.h</key>
 		<data>
-		w2x0GSIT+FxE4fNQF1EnM4cNwtU=
+		Td0bw+EvmD2NCQNlro63eD0wa7Q=
 		</data>
 		<key>Headers/MBRecognizer.h</key>
 		<data>
-		hT6xNu4n9cnCT2WVyNJXIRM/Xzg=
+		b/ZrocozvdVfv0Gba1TNb0kbmek=
 		</data>
 		<key>Headers/MBRecognizerCollection.h</key>
 		<data>
-		TIlSH/lOK85O5YiQz4DYRyxnPDw=
+		6ILx2hstxB7QHXsurNAmcyIGZ4o=
 		</data>
 		<key>Headers/MBRecognizerResult.h</key>
 		<data>
-		jEKJ0h3bM9F0HTTWR7IQ+AMUCIk=
+		FXhnC4R0FBSkmks7nIT5A/mkjlE=
 		</data>
 		<key>Headers/MBRecognizerRunner.h</key>
 		<data>
-		kAJ1PtfwS7D7RQwC2vwnUYxX9yg=
+		66ls/DMLs+32immpxueR9AkKHuk=
 		</data>
 		<key>Headers/MBRecognizerRunnerMetadataDelegates.h</key>
 		<data>
-		tlqWYjFmDryvQORzf+uI/Lx7Rfo=
+		tcpv9m3bAdxowXiRZKu2ntEJpYs=
 		</data>
 		<key>Headers/MBRecognizerRunnerViewController.h</key>
 		<data>
-		/Ct/h2wowTH0hlJn1x3HckC8ddg=
+		0wMD+YY1DaqbdYaAkw2vu0g/cAQ=
 		</data>
 		<key>Headers/MBRecognizerRunnerViewControllerDelegate.h</key>
 		<data>
-		kp7UHE4tBGp6CN6h5ssici3xPHQ=
+		BhLVTlhMG8DQHhpzsjQHhILnVeE=
 		</data>
 		<key>Headers/MBRecognizerRunnerViewControllerMetadataDelegates.h</key>
 		<data>
-		r2Y0IpL9/aQZjx+/0C8A7SMm6JY=
+		29EiXimvWnsCPsdzVkk+isFR3ew=
 		</data>
 		<key>Headers/MBResultSubview.h</key>
 		<data>
-		jVIKXBcAOClu6Icw3hnusiqCxg8=
+		Wxpu6oTG78Nchj1gwzKbVmuncxY=
 		</data>
 		<key>Headers/MBScanningRecognizerRunnerDelegate.h</key>
 		<data>
-		WMbeMTAUYtnWcOC6VRywzq1yVE0=
+		eyGnu6s7zR8mOT0oJY7up8im7DA=
 		</data>
 		<key>Headers/MBScanningRecognizerRunnerViewControllerDelegate.h</key>
 		<data>
-		zhKckxTEeC55E86ASWrhuXN8FM0=
+		YA95F4HUsGH5gIElWApN5ngvWxo=
 		</data>
 		<key>Headers/MBSimNumberRecognizer.h</key>
 		<data>
-		pMuH47XrYNfOQ59Kku2fDXHjzBc=
+		UsIh9si5lWzp4lqGBLXr8IPFcaI=
 		</data>
 		<key>Headers/MBSimNumberRecognizerResult.h</key>
 		<data>
-		Z1L0tuN+MwybpYDp40vHSsBjeK8=
+		GxXEEVtgikPlJ/o9YTw5WqFRJp4=
 		</data>
 		<key>Headers/MBStringProcessingRecognizerRunnerDelegate.h</key>
 		<data>
-		tegiaUyc95N2FArrtR6nuOuASYw=
+		c2v+SqYtbVxHFjshOAc4iUl3NX8=
 		</data>
 		<key>Headers/MBSubview.h</key>
 		<data>
-		Pa2YxepPtbRNeiKB+g9DdwVqxAI=
+		Ow7aEX7k3rkSbdYeClXl3NMGo9M=
 		</data>
 		<key>Headers/MBSuccessFrameGrabberRecognizer.h</key>
 		<data>
-		kxb6DEVyLowXSGB4emor0WCm4pQ=
+		LQpdx6ZPyDUvIMDvdmfiRgo5HF8=
 		</data>
 		<key>Headers/MBSuccessFrameGrabberRecognizerResult.h</key>
 		<data>
-		P5y8tnZESOLMjNFROHmT3MWMHt0=
+		JOLsnDNyVUSzStAZVJjN0vIVKeY=
 		</data>
 		<key>Headers/MBTapToFocusSubview.h</key>
 		<data>
-		eFDmWXFbOxJeolPx5dm9b0sjnkc=
+		ig8kZV0h4OAurOVt4mH+ASUi2mk=
 		</data>
 		<key>Headers/MBUIComponents.h</key>
 		<data>
@@ -266,35 +266,35 @@
 		</data>
 		<key>Headers/MBUsdlKeys.h</key>
 		<data>
-		SyMHEY8pX0hh5iEm3gNZkwp3MoI=
+		01b7z1ZUagBdBarGjfI8flGGPrQ=
 		</data>
 		<key>Headers/MBUsdlRecognizer.h</key>
 		<data>
-		UmnMv3tgVKAVUwdm71owMd+j9go=
+		rGG2oIpTufwoePtiAUnuHxTdW/U=
 		</data>
 		<key>Headers/MBUsdlRecognizerResult.h</key>
 		<data>
-		AXVmNMJUB0xwi84z2V5nbRfYC6g=
+		rQwx00zkS1D/iqT2nOeWl+8bqz0=
 		</data>
 		<key>Headers/MBViewControllerFactory.h</key>
 		<data>
-		peoKcbrsRZrBAbBqihSbsoGzQLE=
+		AN27TCnGNIsbi0wCtjj3SJjkxow=
 		</data>
-		<key>Headers/MicroBlink.h</key>
+		<key>Headers/Microblink.h</key>
 		<data>
-		uN5ztTPN0ifAI79O7fBqKkZGp+I=
+		krbCl/D8oTkmR/MZil7tIC+y7W0=
 		</data>
-		<key>Headers/PPMicroBlinkDefines.h</key>
+		<key>Headers/PPMicroblinkDefines.h</key>
 		<data>
-		iLU8D8oejxsZXnWup4B/TVJm2Eo=
+		TOOJnk5dJ8DCF0SbYDw3abd72w8=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		fb9cLl7vHOjVd4XVwAngiJsBOCA=
+		ZCvXphxv2XS9qAB9TWOXGVJ0t1U=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		r1IMnO5oqrKTdbYvy5j7J0DRUQ4=
+		V9XnUWJ3v7ZTIggf5MD31++YiQ8=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -303,264 +303,264 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			curN52i0bG2JWKy+oGIGfVjGqbQ=
+			xnovkJ9NfdF5aRdT8NRWhyc5Cq0=
 			</data>
 			<key>hash2</key>
 			<data>
-			EJG/HtJHAdqOhfUXCPbgBnPTdQDQI1IRUmzSR+3VneA=
+			8PiQq3cwDnGKxyfl/ba2VZZEezdthljOTJkT85Bbmgc=
 			</data>
 		</dict>
 		<key>Headers/MBBarcodeOverlaySettings.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			UMYN30bejIsBy5SsEZPohb6w97M=
+			H1vvYtxbJxjwmOMwQ4b5e7LvAL8=
 			</data>
 			<key>hash2</key>
 			<data>
-			E+Awksld+RGOmXBxTHLVFyLIFPWN4wYeTP6swROXKhg=
+			S2pb8TAm1ffpMV21x1R7VbxY8oX9N/iS7EIv127csyg=
 			</data>
 		</dict>
 		<key>Headers/MBBarcodeOverlayViewController.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			VtXw687EeXh7BWEj71wP8dhPxPk=
+			wCqiGrKvuGaYFAwRD8NYZheSEBc=
 			</data>
 			<key>hash2</key>
 			<data>
-			vL78V0vfiA7xghnr+Bj0fpJxKo9r8L9CcgF1jT68cXQ=
+			DEw+bN1WLlAxxMldCRjgqa4qNtWKSzeFdQhFmXAN6pg=
 			</data>
 		</dict>
 		<key>Headers/MBBarcodeOverlayViewControllerDelegate.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			qVVtiDAUkHrTixcmrwOkVB+u/O8=
+			y2N2U/cpHBb/01UqvRXiGcv+UC0=
 			</data>
 			<key>hash2</key>
 			<data>
-			n9GQrdMU8GsR3tPbeFbutjNGDdH/uNVwo+Z/xBOE+Mc=
+			es1lT4nNKuO6GVh7eERPt1tMAU0HcGRbKduktuQ+kjs=
 			</data>
 		</dict>
 		<key>Headers/MBBarcodeRecognizer.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			KrfJI0KAhWWy6lWFhiKlzlKnQkg=
+			dqIct+0QgUzVWVGoVaaVg2o0occ=
 			</data>
 			<key>hash2</key>
 			<data>
-			76wuTBFcdmvpiZG0qZoSAth1KBNxfJY0i8NHdq+V0gM=
+			7BLlHGhQvWmQeUbyABr1N4HyosTUM6DzeBfauCH5Sg8=
 			</data>
 		</dict>
 		<key>Headers/MBBarcodeRecognizerResult.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			wLAxXLFaCl1BHFWeZikXa0+L9hs=
+			xViLtcsdHlghH43qeZHY6dONtL0=
 			</data>
 			<key>hash2</key>
 			<data>
-			EptqMkqSZpuRRen8zNnuhjckEWQNoPzYxO6Hg9IVbvA=
+			P53Dlspn07xG3C2XbP3XluptI6rpTmHvyMkp+Ib9OZw=
 			</data>
 		</dict>
 		<key>Headers/MBBarcodeResult.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			be420q2unpVXwQE1oGDOW8RzrlA=
+			xhZnJwyh7r2k3CpZlAHfKvfQ7V4=
 			</data>
 			<key>hash2</key>
 			<data>
-			fcs89KTO4IuYkXCJQoCA+kcqytdzIDRclWTBmTbFtcU=
+			dIwc5xwHL+TmZCq2hgRFQtFE6/jkf1BOgSn0aeM5X1A=
 			</data>
 		</dict>
 		<key>Headers/MBBarcodeUIComponents.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			56YR4ILaftzyAo9zvILUaAU5BYY=
+			4snfrwY1/m2wXfV+ZkmibIOoaUg=
 			</data>
 			<key>hash2</key>
 			<data>
-			qpPQBdMlyEyj31Ier5hhJBy0AH8i7dBQ7YlXXbINnws=
+			YdWjRQ+aTLlrUA4kb/1MzjbNxZx8GdTM75PxKB+P5jk=
 			</data>
 		</dict>
 		<key>Headers/MBBaseOverlaySettings.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			WdytmHWrdISiASbJrQVV30k3imM=
+			z6bhcymTekf4+80S48yx8+WLBuo=
 			</data>
 			<key>hash2</key>
 			<data>
-			2EnLHr1C1krv7eHq9g/xAqSt6qaMOFAA9SuQNWpbZus=
+			0r8vAu77X/fkWNklM+Sa7EHOSmpWfA36BqXPqhkcQ3U=
 			</data>
 		</dict>
 		<key>Headers/MBBaseOverlayViewController.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			dQJiU8ZZIm4S+TsVdFB31Fjz81k=
+			otfzYXKPVH5ABzmn28HSSw30IkY=
 			</data>
 			<key>hash2</key>
 			<data>
-			r0VbZHjkTb9kJjVAy2dbrIMHZk3nzz1EBcn0tWVQFGA=
+			vx6bqXrd3LON7cGbL//BPX1/79sVYOdnISMU5znMgng=
 			</data>
 		</dict>
 		<key>Headers/MBCameraSettings.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			OFGQXZBG5qnGeqnDtKv3aHCTTGY=
+			OlzBDAFkjC8+DVEUEIAMarJoD7o=
 			</data>
 			<key>hash2</key>
 			<data>
-			6K4V11EtZiScnqVVjgIMBGXaz07ClnkjY3CMURZpXSs=
+			hfumFjJy2XR9KbhQdgtRoA3J/u3sn4pkcU0gtV3YwQM=
 			</data>
 		</dict>
 		<key>Headers/MBCustomOverlayViewController.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			II5Qw8o7D/VAIsLP+g11VLo26fI=
+			lwRr3fdKY+fRliel+acpGFp1ZZE=
 			</data>
 			<key>hash2</key>
 			<data>
-			yhv07axUUrdL0QKkVSBp90Td17yEm1XylFt/Me5ARq8=
+			hvWa3EhImigzV8klI2TsSJQO8lpcUMunjiw8djWZGPY=
 			</data>
 		</dict>
 		<key>Headers/MBDateResult.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			oGdqRHHpE3LkS1Rqye6fwdv8mFk=
+			9/LfBx2SmF1fRbkAazp+Re1tC1w=
 			</data>
 			<key>hash2</key>
 			<data>
-			u5drogytjleJMHSDjWNBI5VHydYiYHYvIa70ZoSBMR0=
+			YxnNNJO+slx7SYnMS5inEg4Ov3FihOQNwVrENaaYKTg=
 			</data>
 		</dict>
 		<key>Headers/MBDebugRecognizerRunnerDelegate.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			pHSLJ8Am5IvnY4viCuZ2RqmFS9Q=
+			RRZle2wowgH7HbKb+Op/AKcelF8=
 			</data>
 			<key>hash2</key>
 			<data>
-			hNdl5083Nu+7VAM7UVx327EJKV+xkyNLdRPmOTeQZ34=
+			/fq8vldngI4nNJ78Zq3EN369tl7K8JfCFYPFGpERhu4=
 			</data>
 		</dict>
 		<key>Headers/MBDebugRecognizerRunnerViewControllerDelegate.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			sHI0VC9Fv+BtqhjcmolF5fCqVIQ=
+			GY3TqBNqwapwuL3WnUSen4IOKJ4=
 			</data>
 			<key>hash2</key>
 			<data>
-			A6kwphOFKSao4ZKgTmA8nsF6uQBsInrAOU00zWcyrJM=
+			vLAp+Ywbi+TMV1GjinbkjalCqYB29J+M8mUw64vULyo=
 			</data>
 		</dict>
 		<key>Headers/MBDetectionRecognizerRunnerDelegate.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			XB+1/kszRsI5+d7eXbHUamD5kUY=
+			wkKjAMZ78kl2GBRIJbjDsHClHN8=
 			</data>
 			<key>hash2</key>
 			<data>
-			lSDmzYkEcDscCBDxP6aA7gnxjdgPoWNVF0asHL4SkHk=
+			XpsDke7S6n/xgK/OsdAuTmSRkiDRbEEtqnMOInfGwKs=
 			</data>
 		</dict>
 		<key>Headers/MBDetectionRecognizerRunnerViewControllerDelegate.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			T3g0E+sChdvTm/cDzAe3F13+lk8=
+			6AHSk5QLGP2i5cbh6vv5KYDHtNk=
 			</data>
 			<key>hash2</key>
 			<data>
-			kX08/zDZmgC4VGeFgw620z0y0J+dR/BVbpiDAwUHoeA=
+			SrjMaTCnIohR7nvXOEjdOtOt12zUt755t2ezbOukIi4=
 			</data>
 		</dict>
 		<key>Headers/MBDetectionStatus.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			AcwS9vf42O0IXlAJMGZS+5ZJY7Q=
+			2rX7M7wtxD4mM93wckjv2GTR1/w=
 			</data>
 			<key>hash2</key>
 			<data>
-			iYwV3NQKBqF8Da12KzBC7wBgn0FXljbTe9vW7+aoevY=
+			V0NdaaTUMPCtqVI2BDUqCtmmgFGWZGtFepWTgz9pEXs=
 			</data>
 		</dict>
 		<key>Headers/MBDisplayableDetection.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			dumeBJcirKT1SziDr7QM+thTB3A=
+			ovoqRoBuj6ktOK8CZQkOEA/c8YU=
 			</data>
 			<key>hash2</key>
 			<data>
-			dvaO0C9R2ucZjLXaOLhy3zAUsMVzwOi+Lx6vPBNv64s=
+			yrv0XId18vfdVZ+1ScCi+rYPJFiZ81lNaR20vShkHUo=
 			</data>
 		</dict>
 		<key>Headers/MBDisplayableObject.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			nEUBylsXu/1oDDGqcOx8ZIQR+Rc=
+			gAT3SvDzR4ue/SZslzmdlA+G2io=
 			</data>
 			<key>hash2</key>
 			<data>
-			qVJP1hhwjMxYI1anUpNcmSEjYB+lUROOZkXtfIncDdg=
+			6bTFZ+d4e2c6vJ3Cv2eqHJkJYSneBoKeBDX3I2nOYLw=
 			</data>
 		</dict>
 		<key>Headers/MBDisplayablePointsDetection.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			PFiBpWn7kRSbAsAV62bBTzQYPFY=
+			nC6Tt7/I68HiQCpnt9SqAOyZ4O8=
 			</data>
 			<key>hash2</key>
 			<data>
-			WGwAKHBKnOg1pFShWQhisNLhKp5eypioEt5lk4SkVWk=
+			zu5sBg6YmLBZpah/OqbXHupPVim6ckhNlnzueI3keDY=
 			</data>
 		</dict>
 		<key>Headers/MBDisplayableQuadDetection.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			lDU1rIuq47c6xG64Ofxx1G3piU4=
+			BHva4NitqfysG/O67Z4PWGC0Ebw=
 			</data>
 			<key>hash2</key>
 			<data>
-			7IvZ8/TbNNZUb6QOJam/OyimMvK4T2lerszdXwozL8o=
+			DOQEpvsMbU9/tR6LKUgfBc/1lcZIS+6bsEOEriyO+6Y=
 			</data>
 		</dict>
 		<key>Headers/MBDotsResultSubview.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			H0nSrt141sr8NInmUUd/kaPx79g=
+			AHblUO+FK2YUIDQUHoeYaRKenW8=
 			</data>
 			<key>hash2</key>
 			<data>
-			f0JMTSvZzgk0ulsoiiRUeGoknkGO1pLvDnFKIagZYGc=
+			eYSQmmiG0teOHLxSZZyZmQj52aqiSux7OicPjTWUJbA=
 			</data>
 		</dict>
 		<key>Headers/MBDotsSubview.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			7HW8UkHmwW4OwfYCtZyUpNNMKU8=
+			x1atFdwmXPBh/BgFOTlllCddUWM=
 			</data>
 			<key>hash2</key>
 			<data>
-			cF4F2UV8Nya3YnYVE4xMjCX5EmKJTMogHwj2xjT+nCY=
+			aTTTaLt7i8jXN9vONscDwJ9bhO96ghJQd3oooe/Hm1U=
 			</data>
 		</dict>
 		<key>Headers/MBEntities.h</key>
@@ -578,11 +578,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			EwJkUDWGZP2Ub/oShHDBZ+pryh8=
+			okDIKhb4ne4uFq8ITR1UfNAEoMo=
 			</data>
 			<key>hash2</key>
 			<data>
-			8Ytn8eMeYT1ZRQJlqGwjoUbFbszsB1gRETkk0MO8u7Y=
+			SIl/YG1vGs6LOS6DM+b2+N0twuVB0sfkdfiDBrMfX0U=
 			</data>
 		</dict>
 		<key>Headers/MBException.h</key>
@@ -600,407 +600,407 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			TJOvNAIdNPWVLsHM5o8Ln4egmSw=
+			xezzd7Lriw05h26Jhl/FL67oU2Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			YNkcP8SGd+JLi+HkTj9YsJIu0I2Nnpa1C13I934G8tg=
+			O4D78tBkiuB+A76miZTdGcRYGjdyLGNSuDH3HiC33OI=
 			</data>
 		</dict>
 		<key>Headers/MBGeometry.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			+85eFGmWyzwnYOkHYrTr4MWXXH0=
+			Vf6asKFXdlZr5uhOEHFEGya3oMg=
 			</data>
 			<key>hash2</key>
 			<data>
-			Ht+U3pWNYtHTjWOBpzzATtKnjZTKs9kuG9d3xcULY5M=
+			NtJ7+N3ezgHWvagAxksYpMJ1K2r/Yo46loZwWKvrjes=
 			</data>
 		</dict>
 		<key>Headers/MBGlareStatusSubview.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			cqTptqT0kXmPU4IqFYM5WOGRvmI=
+			58Paw0tggRozFZHkFxxqHluUV64=
 			</data>
 			<key>hash2</key>
 			<data>
-			QDWfb3Bxv1olg+v0fCETjjbNNT0+HgijOQzbXi3PFVI=
+			Ut/KyI1FEogE63WiiUdykl4kuz7HI+ixY+gyTBJJqWk=
 			</data>
 		</dict>
 		<key>Headers/MBImage.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			9KUg9w0SglfiFNcBHg2xO22+Qrk=
+			VlYNyu4ivL5y89TA+5Ful1MwSnQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			nmtFBpzibc3G7RntEWhudZs+SNpEkJXhUazSfmMmkWg=
+			6c94/J6y2BM/RrNRykxJ3OKbdJMmnENrSA0FGPg6JCI=
 			</data>
 		</dict>
 		<key>Headers/MBImageProcessingRecognizerRunnerDelegate.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			vuQwGeF3UuPClA8hZFnkyYYE6Ps=
+			O3NVRv7e6nsyS2p2Jsz1yv2Ngo4=
 			</data>
 			<key>hash2</key>
 			<data>
-			dgd+sRh5e0il2orjVYkZ10NHjpX5lrFOr8EBmmPIYvU=
-			</data>
-		</dict>
-		<key>Headers/MBMicroBlinkDefines.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			O/HBCk52leRQ1YV8XDCUpkN1NFw=
-			</data>
-			<key>hash2</key>
-			<data>
-			3kWNnUVoSBM+NluR0k1s4d6/gyBNn/hcM3r1DBWPwGQ=
-			</data>
-		</dict>
-		<key>Headers/MBMicroBlinkInitialization.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			5YdAZlRjQmSc048/LXHrqt/gGmw=
-			</data>
-			<key>hash2</key>
-			<data>
-			ezI4y3nKGJTi6M2JunEtwJSo2JMsBo3lG+LQEPDaAjA=
+			n2Lc8T0QLmV9D3yNze9MAJgEB5pUqP0iLhrJUNguxt4=
 			</data>
 		</dict>
 		<key>Headers/MBMicroblinkApp.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			uRPi91+BMFWgrF+8ws0aXrKPVpU=
+			TdX2P/Damv+2RViHn9Ih7qL60C8=
 			</data>
 			<key>hash2</key>
 			<data>
-			YlxPyvenJqcJW0/9TAJI0wag1L/qJGw2lTQh/NiKiPk=
+			y3Cuk4BPt4Ed7VPmqXWseQXo3OhgOSeCiN+L0dLq5ps=
+			</data>
+		</dict>
+		<key>Headers/MBMicroblinkDefines.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			rMxtxzm2Y4yJD3g2BzxdipAbVFA=
+			</data>
+			<key>hash2</key>
+			<data>
+			1mpbyVbXHxPJIqXOrP0vcy7kN23vy61T7TlpdIvcbS0=
+			</data>
+		</dict>
+		<key>Headers/MBMicroblinkInitialization.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			QSpirY+gUS9A5KVIisHMsA1yfik=
+			</data>
+			<key>hash2</key>
+			<data>
+			S1L1NRQMNZWdG1A2ey6VsKjiMLYOXgsnwyDuX8BGssc=
 			</data>
 		</dict>
 		<key>Headers/MBMicroblinkSDK.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			QINMlP5qEMbUx9uNvHAnuAJuOnQ=
+			5+B1PzDl4C74yfqoLAPkpN1ySzk=
 			</data>
 			<key>hash2</key>
 			<data>
-			8+V5E9xDxTfnaX0bIf87OoBLH25vBFlvzh+0yQTpKhI=
+			P8RCtAEHvrf06Fw2GdVXNJjcoShW0cqT8DncwDdn5Q8=
 			</data>
 		</dict>
 		<key>Headers/MBModernViewfinderSubview.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			5XSFVvhxw4LVFDUJqT8MXtCUuGI=
+			g9vyv1iWGhrGQFha5+l78ZnBF4k=
 			</data>
 			<key>hash2</key>
 			<data>
-			xpKOYqn8YCxq8BBo2BOplYKw4Dk93Vtk7XVxfOvWN5M=
+			/syjUI0NhLe9lhpiE1/qsvhNwK0kzNl587J8G5rD0Jo=
 			</data>
 		</dict>
 		<key>Headers/MBNativeResult.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			rXCTf5MOs1iy31txh5izI8FF7Xc=
+			GCEyCCwbLge32bVB61h+h+eYHKA=
 			</data>
 			<key>hash2</key>
 			<data>
-			Ej/LvneL0jvBtVEMc9ApCEcywMH9RIGAI7QT+jC6Iyw=
+			z/I44iYjSDPc7t/rBUlc6NTazsUMBy7V6TXzD/Q0JXo=
 			</data>
 		</dict>
 		<key>Headers/MBOverlayContainerViewController.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			J+KkQ/5lO0amWlfTMDefg5gJfa8=
+			rwiRS3zDLiUjcXPggVVCizvuOlY=
 			</data>
 			<key>hash2</key>
 			<data>
-			8VpwGPSvevI9adNxZyfP/dH/V55cdlCp9/gbLQ4MZps=
+			3cHK4xczxq8/VhXxYb4TJMKsv2g+IUZwGfLuHHbxBwY=
 			</data>
 		</dict>
 		<key>Headers/MBOverlaySettings.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			8ayTgyDdyjH3MAZLckbHfKIHChc=
+			aVkClUCvZiCM6fIAPXbIHr0FSKw=
 			</data>
 			<key>hash2</key>
 			<data>
-			ykqB+foR1H0tak6SnLQScFHl9wkTiedY19fVIPbq6Z8=
+			7xtiFODZNoUbYTs6l3EVNYhbznLoX7oa4PKXW+OkZAU=
 			</data>
 		</dict>
 		<key>Headers/MBOverlayViewController.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			PK4Y1SJDzTMUwh6ksy6lIzPCp9o=
+			UzqoT2+ZASYqVM60c4eN4KOeGUs=
 			</data>
 			<key>hash2</key>
 			<data>
-			KHKoPeIjk1i5F+LrzxeFJbGlBM/4jG5evhstUAj1Ai4=
+			S8DA3YN8zJj9id258fuiSKddsnL315w6m+ri7RVb06g=
 			</data>
 		</dict>
 		<key>Headers/MBPdf417Recognizer.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			BJeuZ02lDJKQYdkAdKrJSSw1+4s=
+			IdFvoMhzbc57CMGsOo1p6ufMqeg=
 			</data>
 			<key>hash2</key>
 			<data>
-			RblxvTV+xugh9qt5TttbvJmTSQ5F9NE/xyXu3BXciCQ=
+			QmJwpqpy1EgmhFgHh3doK0xzf4h9xLh/6aC8XfhsbN4=
 			</data>
 		</dict>
 		<key>Headers/MBPdf417RecognizerResult.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			lKBuDu8NsjG03nfLb6JHNCFNCM8=
+			aX12egQZvl33mgVHhoM73I/Armc=
 			</data>
 			<key>hash2</key>
 			<data>
-			52ltA5sqLYC0vY2ZOF//6SlqAWfP+X7xHtHeNt/IFk8=
+			Z7x6dXDsMVvWXK048npjhclk4E/QoyedeOd+vETaSsI=
 			</data>
 		</dict>
 		<key>Headers/MBPointDetectorSubview.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ZJVSrjDkz9UIEWb1O69JzfolsDg=
+			zolUrbNidtvitCVJ+EbKBvPbfVQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			/nhVVGWOPhXgH0zuu5sSTJ6ejpfHooqRFtylL6yx/Xw=
+			aeIdLxXa9pL0yk41OscSb53s4FmQckgLfJVlkNu3r54=
 			</data>
 		</dict>
 		<key>Headers/MBQuadDetectorSubview.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			VVtfF6XDvZu8VotaNFinaEhFUW8=
+			fHQpHrIyw3RO2NlXtVUrl296nNs=
 			</data>
 			<key>hash2</key>
 			<data>
-			F78O+Dh4VX8zA4SR8xHRsy/qNNu+LcBbRmpXGHY+yeQ=
+			JRuF+vXQ8MDykafv82rZ71QsCAYehIY4tIM1rzQ1650=
 			</data>
 		</dict>
 		<key>Headers/MBQuadrangle.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			w2x0GSIT+FxE4fNQF1EnM4cNwtU=
+			Td0bw+EvmD2NCQNlro63eD0wa7Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			wjepEoxD+w4fvwFC3G5HmzuqU4Vu9jEmPbdpADrmEHg=
+			yHqRiUaVplup6Hn/gCenGf17UoqJMo367IS0w+LXLKk=
 			</data>
 		</dict>
 		<key>Headers/MBRecognizer.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			hT6xNu4n9cnCT2WVyNJXIRM/Xzg=
+			b/ZrocozvdVfv0Gba1TNb0kbmek=
 			</data>
 			<key>hash2</key>
 			<data>
-			y4ROsoGNX7YP6N+kGqoIoukfVEEMBBumtSCz4he0NRc=
+			Pu+RamT1NGa/6at3e3QCSr2izta5aSxdw62BSMNXC2k=
 			</data>
 		</dict>
 		<key>Headers/MBRecognizerCollection.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			TIlSH/lOK85O5YiQz4DYRyxnPDw=
+			6ILx2hstxB7QHXsurNAmcyIGZ4o=
 			</data>
 			<key>hash2</key>
 			<data>
-			cMLx7/Feq8lzMRXg5hPHknuXFVUxNGc05UEjDGEVv0A=
+			oyhgSxjeIVg1kB3xaach5Az2lEz+X1LorkaEz3Hd8QM=
 			</data>
 		</dict>
 		<key>Headers/MBRecognizerResult.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			jEKJ0h3bM9F0HTTWR7IQ+AMUCIk=
+			FXhnC4R0FBSkmks7nIT5A/mkjlE=
 			</data>
 			<key>hash2</key>
 			<data>
-			RiBG5M513MfrGDOJ0sCcf2Nj9HZSauqbku8K70JE5NM=
+			y6VdRHOcIrRtObxJbm2OJyRBWv/cbWX8FFgWmRKDK5k=
 			</data>
 		</dict>
 		<key>Headers/MBRecognizerRunner.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			kAJ1PtfwS7D7RQwC2vwnUYxX9yg=
+			66ls/DMLs+32immpxueR9AkKHuk=
 			</data>
 			<key>hash2</key>
 			<data>
-			R6f4euXI/fwYP+IwxKLeJ97ggtsjL4x60yaSwkC6nQs=
+			OewlbcoaHym7esQa2QmKCgtjW/E4ubP65FCknjP/oJo=
 			</data>
 		</dict>
 		<key>Headers/MBRecognizerRunnerMetadataDelegates.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			tlqWYjFmDryvQORzf+uI/Lx7Rfo=
+			tcpv9m3bAdxowXiRZKu2ntEJpYs=
 			</data>
 			<key>hash2</key>
 			<data>
-			DVjbRkdz8BHdlXoFaVOyKLiWHiCZM/kSxjlcbz2QUT4=
+			4sQiTJVb666qlH2X4DcODLZbkahLzZhs2fyCTiZqHVg=
 			</data>
 		</dict>
 		<key>Headers/MBRecognizerRunnerViewController.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			/Ct/h2wowTH0hlJn1x3HckC8ddg=
+			0wMD+YY1DaqbdYaAkw2vu0g/cAQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			qFc2aepNILT3pr9X7RhpCqqDEGbycnWRkPe5Ow7tA1E=
+			DP+uWLQldXHEE8Id9cKjSm7vh7bCemPp2merj8vtkDY=
 			</data>
 		</dict>
 		<key>Headers/MBRecognizerRunnerViewControllerDelegate.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			kp7UHE4tBGp6CN6h5ssici3xPHQ=
+			BhLVTlhMG8DQHhpzsjQHhILnVeE=
 			</data>
 			<key>hash2</key>
 			<data>
-			5tmnE6RYEX+II/c7Yy9qNojPqhINGnKxg1yoxj/I0N4=
+			k8540TAfUNlIma3cOAsxU6c8sOOCwjo4EK9KbCBvbNQ=
 			</data>
 		</dict>
 		<key>Headers/MBRecognizerRunnerViewControllerMetadataDelegates.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			r2Y0IpL9/aQZjx+/0C8A7SMm6JY=
+			29EiXimvWnsCPsdzVkk+isFR3ew=
 			</data>
 			<key>hash2</key>
 			<data>
-			KGOAV8ExKIe20y4WekeXlSlzhdM+ESxgTgVN8zRZrtE=
+			KqNRF9Tffb3glsE2NxhAIVsV2TUzzNPYQc5L2FCt8Zw=
 			</data>
 		</dict>
 		<key>Headers/MBResultSubview.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			jVIKXBcAOClu6Icw3hnusiqCxg8=
+			Wxpu6oTG78Nchj1gwzKbVmuncxY=
 			</data>
 			<key>hash2</key>
 			<data>
-			ZDQ9j9R9Jblb9fJDfjVBWevHBWkFwb5dXAzHSvBcEhI=
+			Do8Lk/80aY7LF1dO+68n+9ewSwqDQFcx7PC7PJOGZ/w=
 			</data>
 		</dict>
 		<key>Headers/MBScanningRecognizerRunnerDelegate.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			WMbeMTAUYtnWcOC6VRywzq1yVE0=
+			eyGnu6s7zR8mOT0oJY7up8im7DA=
 			</data>
 			<key>hash2</key>
 			<data>
-			JpmN+Bx/7XETXC37bfTpBtO3jN23MCIWJZc2sxkD12c=
+			1j3dsALonjzgzmnf1dUIQhSE+Vx5xqsY3l3zMXzHOjo=
 			</data>
 		</dict>
 		<key>Headers/MBScanningRecognizerRunnerViewControllerDelegate.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			zhKckxTEeC55E86ASWrhuXN8FM0=
+			YA95F4HUsGH5gIElWApN5ngvWxo=
 			</data>
 			<key>hash2</key>
 			<data>
-			1ijRGOY1U2v/uqDDTR37SmPGA2zduLifBXihjvyYj4k=
+			ee2tv51wKNZQuSu/x54yKSzv3hefs8MRt4BgGlRdQCs=
 			</data>
 		</dict>
 		<key>Headers/MBSimNumberRecognizer.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			pMuH47XrYNfOQ59Kku2fDXHjzBc=
+			UsIh9si5lWzp4lqGBLXr8IPFcaI=
 			</data>
 			<key>hash2</key>
 			<data>
-			x82ipQdCxSrx+O37L7zU6cpM7pQsGRZNZQHSwn3ZP50=
+			AYA7q4p1oisW6u6SKexfpxh+s6HNxA3wDyTWsXo+qTM=
 			</data>
 		</dict>
 		<key>Headers/MBSimNumberRecognizerResult.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Z1L0tuN+MwybpYDp40vHSsBjeK8=
+			GxXEEVtgikPlJ/o9YTw5WqFRJp4=
 			</data>
 			<key>hash2</key>
 			<data>
-			fSXLypcqiTPFgLhqB/wm8hqCTNWk+TohvFy/wQ7XnDk=
+			33VtqrdrA1ds2ESB57WDcJcEg1m5/ZxsykmW813vNiI=
 			</data>
 		</dict>
 		<key>Headers/MBStringProcessingRecognizerRunnerDelegate.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			tegiaUyc95N2FArrtR6nuOuASYw=
+			c2v+SqYtbVxHFjshOAc4iUl3NX8=
 			</data>
 			<key>hash2</key>
 			<data>
-			mPZg7R+LS7JM08Q5lH1xQFjA4qrGwfDt6YwBuXhhXRI=
+			j4K6oPOS5mqxuC54JHsqSarA3uS1lVCpRAjDiMz6nyQ=
 			</data>
 		</dict>
 		<key>Headers/MBSubview.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Pa2YxepPtbRNeiKB+g9DdwVqxAI=
+			Ow7aEX7k3rkSbdYeClXl3NMGo9M=
 			</data>
 			<key>hash2</key>
 			<data>
-			oWyYlYJ/wsdGDtaS0AXhTHbuYHZCrTYWUkG/opMBuHs=
+			von7+kHNiZRwSBf8uDcQEbKdm+gBHpe7cJMBm0+46xM=
 			</data>
 		</dict>
 		<key>Headers/MBSuccessFrameGrabberRecognizer.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			kxb6DEVyLowXSGB4emor0WCm4pQ=
+			LQpdx6ZPyDUvIMDvdmfiRgo5HF8=
 			</data>
 			<key>hash2</key>
 			<data>
-			dQGPxSG8bBetHotEqxNv/J/HHlNOZkZGvu556fTELSc=
+			9ypXObIMHf3NexXiK1lzhHs5CIrhChXwCdPtyrEeeY0=
 			</data>
 		</dict>
 		<key>Headers/MBSuccessFrameGrabberRecognizerResult.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			P5y8tnZESOLMjNFROHmT3MWMHt0=
+			JOLsnDNyVUSzStAZVJjN0vIVKeY=
 			</data>
 			<key>hash2</key>
 			<data>
-			4U3pKXj6vHSshgHOGt7auXaEo2JfP+l92hbiqEfiLKQ=
+			8GiJPNGn87PhPLWgOaBdbZvehpfGK+MuSeEJozUGAAw=
 			</data>
 		</dict>
 		<key>Headers/MBTapToFocusSubview.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			eFDmWXFbOxJeolPx5dm9b0sjnkc=
+			ig8kZV0h4OAurOVt4mH+ASUi2mk=
 			</data>
 			<key>hash2</key>
 			<data>
-			uJTn3G58Re0PwIJvENUnL8ScQTs08/KtmEp4lAwC8cQ=
+			/VxrT8y1dnz6G0AsHp546qXICsHrcI/c3R5kRgVC1sE=
 			</data>
 		</dict>
 		<key>Headers/MBUIComponents.h</key>
@@ -1018,83 +1018,83 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			SyMHEY8pX0hh5iEm3gNZkwp3MoI=
+			01b7z1ZUagBdBarGjfI8flGGPrQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			M6x2l40lkoZL1dvzQBuVYltpxYvwBlU2MbqvTjPDpKg=
+			+DoLYC5AiAH/YzkA8M7woa5PFsri7MwmAk6tM2d0ylI=
 			</data>
 		</dict>
 		<key>Headers/MBUsdlRecognizer.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			UmnMv3tgVKAVUwdm71owMd+j9go=
+			rGG2oIpTufwoePtiAUnuHxTdW/U=
 			</data>
 			<key>hash2</key>
 			<data>
-			Br/LAePeXeiwNSMlILB/3Um3+7UJf5horTu4uw2+DGc=
+			8rXNzS4x4YPuLbDadeRUE9NOeWRwwUdvuv4pLOoe2BA=
 			</data>
 		</dict>
 		<key>Headers/MBUsdlRecognizerResult.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			AXVmNMJUB0xwi84z2V5nbRfYC6g=
+			rQwx00zkS1D/iqT2nOeWl+8bqz0=
 			</data>
 			<key>hash2</key>
 			<data>
-			uhG8wP2XxtTGv4qoEMtoOrACeay3+QxkLh5du1Ps+oQ=
+			ArOSV1MxpimtP2pBJegAa6Orbws0mI957BR8iN9Nvl8=
 			</data>
 		</dict>
 		<key>Headers/MBViewControllerFactory.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			peoKcbrsRZrBAbBqihSbsoGzQLE=
+			AN27TCnGNIsbi0wCtjj3SJjkxow=
 			</data>
 			<key>hash2</key>
 			<data>
-			YIFbK8TXvNl6XUGEF9Mnvy0PnyPgq88CW3X22f5zYAM=
+			L4DIxo1htKfBQQVUnUQxZnEfeHPKfcAl4QkQbp3ZWeI=
 			</data>
 		</dict>
-		<key>Headers/MicroBlink.h</key>
+		<key>Headers/Microblink.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			uN5ztTPN0ifAI79O7fBqKkZGp+I=
+			krbCl/D8oTkmR/MZil7tIC+y7W0=
 			</data>
 			<key>hash2</key>
 			<data>
-			K1+Hx8v9rKy+NnSIV9P1nzduENa9CAHn6LjDKo9kv6k=
+			9/wY58CcnhEAhsLYDxEA0ts3tjxaRmkgwXPgdvuSzxk=
 			</data>
 		</dict>
-		<key>Headers/PPMicroBlinkDefines.h</key>
+		<key>Headers/PPMicroblinkDefines.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			iLU8D8oejxsZXnWup4B/TVJm2Eo=
+			TOOJnk5dJ8DCF0SbYDw3abd72w8=
 			</data>
 			<key>hash2</key>
 			<data>
-			1RcExkAASufAzz9NQBHClG43MZ9jLDVePsH0N2p+yp8=
+			9puAh03a6vlOVCNHv5W/gNDzu3AAtW/9tc/lFWOIOA0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			r1IMnO5oqrKTdbYvy5j7J0DRUQ4=
+			V9XnUWJ3v7ZTIggf5MD31++YiQ8=
 			</data>
 			<key>hash2</key>
 			<data>
-			2I0X72jAndG+LYGriRMKJ3sr3K9zm6SVTTq/mDJ8m6o=
+			2hCCzTpMwzdAmcBO7BIC8QY8YXR0Uc832E+CFRDFfEA=
 			</data>
 		</dict>
 	</dict>
 	<key>rules</key>
 	<dict>
-		<key>^</key>
+		<key>^.*</key>
 		<true/>
 		<key>^.*\.lproj/</key>
 		<dict>
@@ -1125,24 +1125,12 @@
 			<key>weight</key>
 			<real>11</real>
 		</dict>
-		<key>^</key>
-		<dict>
-			<key>weight</key>
-			<real>20</real>
-		</dict>
 		<key>^(.*/)?\.DS_Store$</key>
 		<dict>
 			<key>omit</key>
 			<true/>
 			<key>weight</key>
 			<real>2000</real>
-		</dict>
-		<key>^(Frameworks|SharedFrameworks|PlugIns|Plug-ins|XPCServices|Helpers|MacOS|Library/(Automator|Spotlight|LoginItems))/</key>
-		<dict>
-			<key>nested</key>
-			<true/>
-			<key>weight</key>
-			<real>10</real>
 		</dict>
 		<key>^.*</key>
 		<true/>
@@ -1178,13 +1166,6 @@
 			<true/>
 			<key>weight</key>
 			<real>20</real>
-		</dict>
-		<key>^[^/]+$</key>
-		<dict>
-			<key>nested</key>
-			<true/>
-			<key>weight</key>
-			<real>10</real>
 		</dict>
 		<key>^embedded\.provisionprofile$</key>
 		<dict>

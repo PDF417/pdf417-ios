@@ -1,5 +1,24 @@
 # Release notes
 
+## 7.2.0
+
+- Updates and additions
+    - enabled capturing high resolution camera frames:
+    When custom UI integration is performed, use - (void)captureHighResImage:(MBCaptureHighResImage)highResoulutionImageCaptured on MBRecognizerRunnerViewController
+    When using provided scan overlay view controllers, high resolution full camera frames taken at the moment of successful scan are returned if this option is enabled through MBOverlaySettings.
+    - switched to using HTTPS in podspec for Cocoapods
+
+- Bug fixes
+    - fixed bug where SDK crashed with exception when the user wanted to use custom resource bundle
+    - updated overlay view controllers for iPhone X Series
+    - fix memory issue while using current frame grabber
+    - fixed a crash which happened when scanning region was set before overlay view controller loaded, but after it was initialized
+    - fixed missing init in MBDotsResultSubview for Swift
+
+- Minor API changes
+    - isScanningUnsupportedForCameraType: is now class method of MBMicroblinkSDK
+    - partialRecognitionTimeout in MBRecognizerCollection default value has been changed to 0 which means no timeout will be reported in which partial scanning results will be returned to the user
+    
 ## 7.1.0
 
 - Bug fixes

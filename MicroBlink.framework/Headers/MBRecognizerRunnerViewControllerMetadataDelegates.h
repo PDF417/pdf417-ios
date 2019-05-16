@@ -7,7 +7,7 @@
 #import "MBDebugRecognizerRunnerViewControllerDelegate.h"
 #import "MBDetectionRecognizerRunnerViewControllerDelegate.h"
  
-#import "MBMicroBlinkDefines.h"
+#import "MBMicroblinkDefines.h"
 #import <Foundation/Foundation.h>
  
 /**

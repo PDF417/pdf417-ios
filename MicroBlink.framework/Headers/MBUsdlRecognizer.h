@@ -5,10 +5,10 @@
 //  Created by Jura Skrlec on 03/01/2018.
 //
 
-#import "MBMicroBlinkDefines.h"
+#import "MBMicroblinkDefines.h"
 #import "MBRecognizer.h"
 #import "MBUsdlRecognizerResult.h"
-#import "MBMicroBlinkInitialization.h"
+#import "MBMicroblinkInitialization.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

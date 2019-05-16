@@ -6,10 +6,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MBMicroBlinkDefines.h"
+#import "MBMicroblinkDefines.h"
 #import "MBRecognizer.h"
 #import "MBSimNumberRecognizerResult.h"
-#import "MBMicroBlinkInitialization.h"
+#import "MBMicroblinkInitialization.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

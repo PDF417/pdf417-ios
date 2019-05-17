@@ -23,7 +23,7 @@
         <a class="header-link" href="index.html">
           PPpdf417 Docs
         </a>
-         (76% documented)
+         (80% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -171,6 +171,12 @@
                 <a class="nav-group-task-link" href="Classes/MBTapToFocusSubview.html">MBTapToFocusSubview</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBUsdlRecognizer.html">MBUsdlRecognizer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBUsdlRecognizerResult.html">MBUsdlRecognizerResult</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/MBViewControllerFactory.html">MBViewControllerFactory</a>
               </li>
             </ul>
@@ -208,6 +214,15 @@
                 <a class="nav-group-task-link" href="Enums/MBBarcodeType.html">MBBarcodeType</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Enums/MBCameraAutofocusRestriction.html">MBCameraAutofocusRestriction</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Enums/MBCameraPreset.html">MBCameraPreset</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Enums/MBCameraType.html">MBCameraType</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Enums/MBDetectionStatus.html">MBDetectionStatus</a>
               </li>
               <li class="nav-group-task">
@@ -223,13 +238,7 @@
                 <a class="nav-group-task-link" href="Enums/MBRecognizerResultState.html">MBRecognizerResultState</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Enums/PPCameraAutofocusRestriction.html">PPCameraAutofocusRestriction</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Enums/PPCameraPreset.html">PPCameraPreset</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Enums/PPCameraType.html">PPCameraType</a>
+                <a class="nav-group-task-link" href="Enums/MBUsdlKeys.html">MBUsdlKeys</a>
               </li>
             </ul>
           </li>
@@ -300,6 +309,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Type Definitions/CGLine.html">CGLine</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Type Definitions.html#/c:MBRecognizerRunnerViewController.h@T@MBCaptureHighResImage">MBCaptureHighResImage</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Type Definitions.html#/c:MBException.h@T@MBExceptionName">MBExceptionName</a>
@@ -1202,11 +1214,10 @@ The subview is presented as translucent view with detection status label in the 
 <span class="cm">/** Returns true if the help was already shown */</span>
 <span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="n">isHelpShown</span><span class="p">;</span>
 
-<span class="cm">/** 
- * This method check existance of the default resources bundle Microblink.bundle,
- * and throws an exception if it's missing
+<span class="cm">/**
+ * Returns the default resources bundle. If it doesn't exist, it will be nil.
  */</span>
-<span class="k">+</span> <span class="p">(</span><span class="n">NSBundle</span> <span class="o">*</span><span class="p">)</span><span class="n">verifyAndGetDefaultResourcesBundle</span><span class="p">;</span>
+<span class="k">+</span> <span class="p">(</span><span class="n">NSBundle</span> <span class="o">*</span><span class="p">)</span><span class="n">getDefaultResourcesBundle</span><span class="p">;</span>
 
 <span class="k">@end</span></code></pre>
 
@@ -1954,6 +1965,72 @@ Camera view controllers created this way will be managed internally by the SDK, 
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/c:objc(cs)MBUsdlRecognizer"></a>
+                    <a name="//apple_ref/objc/Class/MBUsdlRecognizer" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MBUsdlRecognizer">MBUsdlRecognizer</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A recognizer that can scan USDL.</p>
+
+                        <a href="Classes/MBUsdlRecognizer.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code>
+<span class="k">@interface</span> <span class="nc">MBUsdlRecognizer</span> <span class="p">:</span> <span class="nc"><a href="Classes/MBRecognizer.html">MBRecognizer</a></span> <span class="o">&lt;</span><span class="n">NSCopying</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MBUsdlRecognizerResult"></a>
+                    <a name="//apple_ref/objc/Class/MBUsdlRecognizerResult" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MBUsdlRecognizerResult">MBUsdlRecognizerResult</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A recognizer that can scan PDF417 2D barcodes.</p>
+
+                        <a href="Classes/MBUsdlRecognizerResult.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code>
+<span class="k">@interface</span> <span class="nc">MBUsdlRecognizerResult</span> <span class="p">:</span> <span class="nc"><a href="Classes/MBRecognizerResult.html">MBRecognizerResult</a></span> <span class="o">&lt;</span><span class="n">NSCopying</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/c:objc(cs)MBViewControllerFactory"></a>
                     <a name="//apple_ref/objc/Class/MBViewControllerFactory" class="dashAnchor"></a>
                     <a class="token" href="#/c:objc(cs)MBViewControllerFactory">MBViewControllerFactory</a>
@@ -1994,7 +2071,7 @@ Camera view controllers created this way will be managed internally by the SDK, 
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2018 <a class="link" href="http://microblink.com" target="_blank" rel="external">Microblink</a>. All rights reserved. (Last updated: 2018-08-06)</p>
+      <p>&copy; 2019 <a class="link" href="http://microblink.com" target="_blank" rel="external">Microblink</a>. All rights reserved. (Last updated: 2019-05-16)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

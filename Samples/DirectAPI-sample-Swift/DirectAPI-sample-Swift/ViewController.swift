@@ -42,14 +42,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        let mediaType = info[UIImagePickerControllerMediaType] as? String
-        // Handle a still image capture
-        if CFStringCompare(mediaType as CFString?, kUTTypeImage, CFStringCompareFlags(rawValue: 0)) == .compareEqualTo {
-            let originalImage = info[UIImagePickerControllerOriginalImage] as? UIImage
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let mediaType = info[UIImagePickerController.InfoKey.mediaType] as? String
+        
+        if CFStringCompare(mediaType as CFString?, kUTTypeImage, CFStringCompareFlags(rawValue: 9)) == .compareEqualTo {
+            let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
             processImageRunner(originalImage)
         }
-        picker.dismiss(animated: true) {() -> Void in }
+        
+        picker.dismiss(animated: true, completion: nil)
     }
     
     func setupRecognizerRunner() {
@@ -88,4 +89,3 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         })
     }
 }
-

@@ -1,3 +1,8 @@
+## Transition to 7.2.0
+
+- isScanningUnsupportedForCameraType: is now class method of MBMicroblinkSDK
+- partialRecognitionTimeout in MBRecognizerCollection default value has been changed to 0 which means no timeout will be reported in which partial scanning results will be returned to the user
+
 ## Transition to 7.1.0
 
 - removed `uiSettings` property from `MBBarcodeOverlaySettings` and it no longer has `recognizerCollection` property

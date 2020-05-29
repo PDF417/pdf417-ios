@@ -21,7 +21,7 @@ _PDF417.mobi_ SDK for iOS enables you to perform scans of various barcodes in yo
 * [UPC E](https://en.wikipedia.org/wiki/Universal_Product_Code)
 * [ITF](https://en.wikipedia.org/wiki/Interleaved_2_of_5)
 
-Using _PDF417.mobi_ in your app requires a valid license key. You can obtain a demo license key by registering to [Microblink dashboard](https://microblink.com/login). After registering, you will be able to generate a license key for your app. The license key is bound to [bundle identifier](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/ConfiguringYourApp/ConfiguringYourApp.html) of your app, so please make sure you enter the correct bundle identifier when asked.
+Using _PDF417.mobi_ in your app requires a valid license key. You can obtain a free trial license key by registering to [Microblink dashboard](https://microblink.com/login). After registering, you will be able to generate a license key for your app. The license key is bound to [bundle identifier](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/ConfiguringYourApp/ConfiguringYourApp.html) of your app, so please make sure you enter the correct bundle identifier when asked.
 
 For more information on how to integrate _PDF417.mobi_ SDK into your app read the instructions below. Make sure you read the latest [Release notes](https://github.com/PDF417/pdf417-ios/blob/master/Release%20notes.md) for the most recent changes and improvements.
 
@@ -249,7 +249,7 @@ Objective-C
     
 ### 4. License key
 
-A valid license key is required to initalize scanning. You can generate a free demo license key, after you register, at [Microblink developer dashboard](https://microblink.com/login).
+A valid license key is required to initalize scanning. You can generate a free trial license key, after you register, at [Microblink developer dashboard](https://microblink.com/login).
 
 You can include the license key in your app by passing a string or a file with license key. 
 **Note** that you need to set the license key before intializing scanning. Ideally in `AppDelegate` or `viewDidLoad` before initializing any recognizers.

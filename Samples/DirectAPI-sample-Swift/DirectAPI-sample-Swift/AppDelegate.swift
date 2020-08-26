@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        // Valid until: 2018-09-27
+        // Valid until: 2021-01-23
         MBMicroblinkSDK.sharedInstance().setLicenseResource("pdf417-license", withExtension: "txt", inSubdirectory: "License", for: Bundle.main)
         return true
     }

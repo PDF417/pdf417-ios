@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Valid until: 2018-09-27
+        // Valid until: 2021-01-23
         MBMicroblinkSDK.sharedInstance().setLicenseResource("pdf417-license", withExtension: "txt", inSubdirectory: "License", for: Bundle.main)
     }
     

@@ -1,5 +1,46 @@
 # Release notes
 
+## 7.3.0
+
+### New features:
+
+- Introducing support for new framework format - XCFramework:
+	- it contains all the necessary device and simulator architecture slices
+	- no neeed to remove simulator slices before distributing your app to the App Store as described [here](https://github.com/PDF417/pdf417-ios#unsupported-architectures-when-submitting-app-to-app-store)
+	- for now, only available from this repo, **not available on Cocoapods**
+- We have translated complete SDK to following languages: **Croatian**, **Czech**, **English**, **French**, **German**, **Italian**, **Portuguese**, **Slovak**, **Spanish**, **Malay**, **Dutch**, **Hungarian**, **Indonesian**, **Arabic(UAE)**, **Romanian**, **Chinese traditional**, **Chinese simplified**, **Thai**, **Hewbrew** and **Vietnamese**
+- We added `disableMicroblinkLogging` method to `MBLogger` for easier implementation
+	- This also enables disabling Microblink logging in Swift
+
+### iOS version support change:
+
+- From now on, we are not supporting **iOS 8** version.
+
+### Major API change:
+
+- We added `errorCallback` on `MBMicroblinkSDK` methods which needs to be implemented for properly setting up the license key.
+
+### Minor API changes:
+
+- Methods `pauseScanning` and `resumeScanningAndResetState` in `MBRecognizerRunnerViewController` do not return anymore `BOOL`
+	- use `isScanningPaused` to check if scanning is paused
+- We renamed `MBRecogitionMode` to `MBRecognitionDebugMode` in `MBRecognizerCollection`
+- Swift:
+	- We renamed all `sharedInstance` to `shared`
+	- All enums are now `Int`
+	- All `unsigned integers` are now `Int`
+
+### Bugfixes:
+
+- Fixed issue where recognizer's result state would not be the same as recognizer's runner state after finished scanning
+- Fixed issue when pressing immediately close button on overlay view controllers would freeze for couple of seconds SDK
+- Fixed memory leaks that could cause crashes in some cases
+- Fixed `Torch` activation for all iOS versions
+- We removed OpenGL entirely which was causing unexpected crashes
+- Large memory consumption introduced is due to 4K video session on all 4K eligible iPhones; we introduced new camera presets 1080p and 4K, so to reduce your app memory consumption set camera preset on 1080p or 720p
+- We added a `nullable` attribute to the `recognizerRunnerViewControllerWithOverlayViewController` to fix a force unwrapping issue in Swift that could occur if the camera is broken or not working
+- We fixed race conditions and camera asserts that could sometimes cause crashes
+
 ## 7.2.0
 
 - Updates and additions

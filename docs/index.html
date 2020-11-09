@@ -20,9 +20,9 @@
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="index.html">
-          PPpdf417 Docs
+          PPpdf417 v7.3.0 Docs
         </a>
-         (80% documented)
+         (76% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -108,6 +108,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/MBImage.html">MBImage</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBLogger.html">MBLogger</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/MBMicroblinkApp.html">MBMicroblinkApp</a>
@@ -202,6 +205,9 @@
                 <a class="nav-group-task-link" href="Constants.html#/c:@MBInvalidLicenseeKeyException">MBInvalidLicenseeKeyException</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Constants.html#/c:@MBLicenseErrorNotification">MBLicenseErrorNotification</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Constants.html#/c:@MBMissingSettingsException">MBMissingSettingsException</a>
               </li>
             </ul>
@@ -228,10 +234,16 @@
                 <a class="nav-group-task-link" href="Enums/MBFrameQualityEstimationMode.html">MBFrameQualityEstimationMode</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Enums/MBLicenseError.html">MBLicenseError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Enums/MBLogLevel.html">MBLogLevel</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Enums/MBProcessingOrientation.html">MBProcessingOrientation</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Enums/MBRecognitionMode.html">MBRecognitionMode</a>
+                <a class="nav-group-task-link" href="Enums/MBRecognitionDebugMode.html">MBRecognitionDebugMode</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Enums/MBRecognizerResultState.html">MBRecognizerResultState</a>
@@ -264,6 +276,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Protocols/MBImageProcessingRecognizerRunnerDelegate.html">MBImageProcessingRecognizerRunnerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/MBLoggerDelegate.html">MBLoggerDelegate</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Protocols/MBNativeResult.html">MBNativeResult</a>
@@ -301,19 +316,25 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a class="nav-group-name-link" href="Type Definitions.html">Type Definitions</a>
+            <a class="nav-group-name-link" href="Type%20Definitions.html">Type Definitions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Type Definitions.html#/c:MBGeometry.h@T@CGDelta">CGDelta</a>
+                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:MBGeometry.h@T@CGDelta">CGDelta</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Type Definitions/CGLine.html">CGLine</a>
+                <a class="nav-group-task-link" href="Type%20Definitions/CGLine.html">CGLine</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Type Definitions.html#/c:MBRecognizerRunnerViewController.h@T@MBCaptureHighResImage">MBCaptureHighResImage</a>
+                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:MBMicroblinkDefines.h@T@MBBlock">MBBlock</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Type Definitions.html#/c:MBException.h@T@MBExceptionName">MBExceptionName</a>
+                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:MBRecognizerRunnerViewController.h@T@MBCaptureHighResImage">MBCaptureHighResImage</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:MBException.h@T@MBExceptionName">MBExceptionName</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:MBLicenseError.h@T@MBLicenseErrorBlock">MBLicenseErrorBlock</a>
               </li>
             </ul>
           </li>
@@ -405,7 +426,13 @@
                 <a class="nav-group-task-link" href="Functions.html#/c:@F@CGRectTopRightPoint">CGRectTopRightPoint</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Functions.html#/c:@F@scanningRegionForFrameInBounds">scanningRegionForFrameInBounds</a>
+                <a class="nav-group-task-link" href="Functions.html#/c:MBMicroblinkApp.h@F@MB_LOCALIZED">MB_LOCALIZED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Functions.html#/c:MBMicroblinkApp.h@F@MB_LOCALIZED_DEFAULT_STRING">MB_LOCALIZED_DEFAULT_STRING</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Functions.html#/c:@F@MBscanningRegionForFrameInBounds">MBscanningRegionForFrameInBounds</a>
               </li>
             </ul>
           </li>
@@ -414,7 +441,7 @@
       <article class="main-content">
 
         <section class="section">
-          <div class="section-content">
+          <div class="section-content top-matter">
             
             <p align="center" >
   <a href="http://www.pdf417.mobi">
@@ -438,11 +465,9 @@
 <li><a href="https://en.wikipedia.org/wiki/Universal_Product_Code">UPC A</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Universal_Product_Code">UPC E</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Interleaved_2_of_5">ITF</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Data_Matrix">Data Matrix</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Aztec_Code">Aztec</a></li>
 </ul>
 
-<p>Using <em>PDF417.mobi</em> in your app requires a valid license key. You can obtain a demo license key by registering to <a href="https://microblink.com/login">Microblink dashboard</a>. After registering, you will be able to generate a license key for your app. The license key is bound to <a href="https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/ConfiguringYourApp/ConfiguringYourApp.html">bundle identifier</a> of your app, so please make sure you enter the correct bundle identifier when asked.</p>
+<p>Using <em>PDF417.mobi</em> in your app requires a valid license key. You can obtain a free trial license key by registering to <a href="https://microblink.com/login">Microblink dashboard</a>. After registering, you will be able to generate a license key for your app. The license key is bound to <a href="https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/ConfiguringYourApp/ConfiguringYourApp.html">bundle identifier</a> of your app, so please make sure you enter the correct bundle identifier when asked.</p>
 
 <p>For more information on how to integrate <em>PDF417.mobi</em> SDK into your app read the instructions below. Make sure you read the latest <a href="https://github.com/PDF417/pdf417-ios/blob/master/Release%20notes.md">Release notes</a> for the most recent changes and improvements.</p>
 <h1 id='table-of-contents' class='heading'>Table of contents</h1>
@@ -474,6 +499,7 @@
 <li><a href="#pdf417-recognizer">PDF417 recognizer</a></li>
 <li><a href="#barcode-recognizer">Barcode recognizer</a></li>
 </ul></li>
+<li><a href="#localization">Localization</a></li>
 <li><a href="#troubleshooting">Troubleshooting</a>
 
 <ul>
@@ -490,7 +516,7 @@
 </ul>
 <h1 id='a-name-requirements-a-requirements' class='heading'><a name="requirements"></a> Requirements</h1>
 
-<p>SDK package contains Microblink framework and one or more sample apps which demonstrate framework integration. The framework can be deployed in iOS 8.0 or later, iPhone 4S or newer and iPad 2 or newer.</p>
+<p>SDK package contains Microblink framework and one or more sample apps which demonstrate framework integration. The framework can be deployed in <strong>iOS 9.0 or later</strong>.</p>
 
 <p>SDK performs significantly better when the images obtained from the camera are focused. Because of that, the SDK can have lower performance on iPad 2 and iPod Touch 4th gen devices, which <a href="http://www.adweek.com/socialtimes/ipad-2-rear-camera-has-tap-for-auto-exposure-not-auto-focus/12536">don&rsquo;t have camera with autofocus</a>. </p>
 <h1 id='a-name-quick-start-a-quick-start' class='heading'><a name="quick-start"></a> Quick Start</h1>
@@ -498,28 +524,30 @@
 
 <p>This Quick Start guide will get you up and performing OCR scanning as quickly as possible. All steps described in this guide are required for the integration.</p>
 
-<p>This guide sets up basic Raw OCR parsing and price parsing at the same time. It closely follows the BlinkOCR-sample app. We highly recommend you try to run the sample app. The sample app should compile and run on your device, and in the iOS Simulator. </p>
+<p>This guide closely follows the pdf417-sample app in the Samples folder of this repository. We highly recommend you try to run the sample app. The sample app should compile and run on your device, and in the iOS Simulator.</p>
 
 <p>The source code of the sample app can be used as the reference during the integration.</p>
 <h3 id='1-initial-integration-steps' class='heading'>1. Initial integration steps</h3>
 <h4 id='using-cocoapods' class='heading'>Using CocoaPods</h4>
-
-<ul>
-<li><p>If you wish to use version v1.2.0 or above, you need to install <a href="https://git-lfs.github.com">Git Large File Storage</a> by running these comamnds:</p>
+<div class="aside aside-since">
+    <p class="aside-title">Since</p>
+    <p>Since the libraries are stored on <a href="https://git-lfs.github.com">Git Large File Storage</a>, you need to install git-lfs by running these commands:</p>
 <pre class="highlight shell"><code>brew install git-lfs
 git lfs install
-</code></pre></li>
+</code></pre>
+
+</div><ul>
 <li><p><strong>Be sure to restart your console after installing Git LFS</strong></p></li>
 <li><p><strong>Note:</strong> if you already did try adding SDK using cocoapods and it&rsquo;s not working, first install the git-lfs and then clear you cocoapods cache. This should be sufficient to force cocoapods to clone PDF417.mobi SDK, if it still doesn&rsquo;t work, try deinitializing your pods and installing them again.</p></li>
 <li><p>Project dependencies to be managed by CocoaPods are specified in a file called <code>Podfile</code>. Create this file in the same directory as your Xcode project (<code>.xcodeproj</code>) file.</p></li>
 <li><p>If you don&rsquo;t have podfile initialized run the following in your project directory.</p>
 <pre class="highlight plaintext"><code>pod init
 </code></pre></li>
-<li><p>Copy and paste the following lines into the TextEdit window:  </p></li>
+<li><p>Copy and paste the following lines into the TextEdit window:</p></li>
 </ul>
 <pre class="highlight ruby"><code><span class="n">platform</span> <span class="ss">:ios</span><span class="p">,</span> <span class="s1">'9.0'</span>
 <span class="n">target</span> <span class="s1">'Your-App-Name'</span> <span class="k">do</span>
-    <span class="n">pod</span> <span class="s1">'PPpdf417'</span><span class="p">,</span> <span class="s1">'~&gt; 7.2.0'</span>
+    <span class="n">pod</span> <span class="s1">'PPpdf417'</span><span class="p">,</span> <span class="s1">'~&gt; 7.3.0'</span>
 <span class="k">end</span>
 </code></pre>
 
@@ -536,17 +564,19 @@ git lfs install
 </code></pre>
 <h4 id='integration-without-cocoapods' class='heading'>Integration without CocoaPods</h4>
 
-<p>-<a href="https://github.com/PDF417.mobi/pdf417-ios/releases">Download</a> latest release (Download .zip or .tar.gz file starting with BlinkID. DO NOT download Source Code as GitHub does not fully support Git LFS)</p>
+<p>-<a href="https://github.com/Pdf417/pdf417-ios/releases">Download</a> latest release (Download .zip or .tar.gz file starting with PDF417.mobi. DO NOT download Source Code as GitHub does not fully support Git LFS)</p>
 
 <p>OR</p>
 
 <p>Clone this git repository:</p>
-
-<ul>
-<li><p>If you wish to clone version v1.4.0 or above, you need to install <a href="https://git-lfs.github.com">Git Large File Storage</a> by running these comamnds:</p>
+<div class="aside aside-since">
+    <p class="aside-title">Since</p>
+    <p>Since the libraries are stored on <a href="https://git-lfs.github.com">Git Large File Storage</a>, you need to install git-lfs by running these commands:</p>
 <pre class="highlight shell"><code>brew install git-lfs
 git lfs install
-</code></pre></li>
+</code></pre>
+
+</div><ul>
 <li><p><strong>Be sure to restart your console after installing Git LFS</strong></p></li>
 <li><p>To clone, run the following shell command:</p></li>
 </ul>
@@ -554,79 +584,79 @@ git lfs install
 </code></pre>
 
 <ul>
-<li><p>Copy Microblink.framework and Microblink.bundle to your project folder.</p></li>
-<li><p>In your Xcode project, open the Project navigator. Drag the Microblink.framework and Microblink.bundle files to your project, ideally in the Frameworks group, together with other frameworks you&rsquo;re using. When asked, choose <q>Create groups</q>, instead of the <q>Create folder references</q> option.</p></li>
+<li><p>Copy Microblink.xcframework to your project folder.</p></li>
+<li><p>In your Xcode project, open the Project navigator. Drag the Microblink.xcframework file to your project, ideally in the Frameworks group, together with other frameworks you&rsquo;re using. When asked, choose &ldquo;Create groups&rdquo;, instead of the &ldquo;Create folder references&rdquo; option.</p></li>
 </ul>
 
-<p><img src="https://raw.githubusercontent.com/wiki/blinkocr/blinkocr-ios/Images/01%20-%20Add%20Framework.jpg" alt="Adding Microblink.embedded framework to your project"></p>
+<p><img src="https://user-images.githubusercontent.com/1635933/89505694-535a1680-d7ca-11ea-8c65-678f158acae9.png" alt="Adding Microblink.xcframework to your project"></p>
 <div class="aside aside-since">
     <p class="aside-title">Since</p>
-    Since Microblink.framework is a dynamic framework, you also need to add it to embedded binaries section in General settings of your target.
+    Since Microblink.xcframework is a dynamic framework, you also need to add it to embedded binaries section in General settings of your target.
 
 </div>
 
-<p><img src="https://raw.githubusercontent.com/wiki/blinkocr/blinkocr-ios/Images/03%20-%20Embed%20Binaries.png" alt="Adding Microblink.framework to embedded binaries"></p>
+<p><img src="https://user-images.githubusercontent.com/1635933/89793425-238e7400-db26-11ea-9556-6eedeb6dcc95.png" alt="Adding Microblink.xcframework to embedded binaries"></p>
 
 <ul>
-<li><p>Include the additional frameworks and libraries into your project in the <q>Linked frameworks and libraries</q> section of your target settings. </p>
+<li><p>Include the additional frameworks and libraries into your project in the &ldquo;Linked frameworks and libraries&rdquo; section of your target settings.</p>
 
 <ul>
-<li>AudioToolbox.framework</li>
-<li>AVFoundation.framework</li>
-<li>CoreMedia.framework</li>
 <li>libc++.tbd</li>
 <li>libiconv.tbd</li>
 <li>libz.tbd</li>
 </ul></li>
 </ul>
 
-<p><img src="https://raw.githubusercontent.com/wiki/blinkocr/blinkocr-ios/Images/02%20-%20Add%20Libraries.jpg" alt="Adding Apple frameworks to your project"></p>
+<p><img src="https://raw.githubusercontent.com/wiki/blinkocr/blinkocr-ios/Images/02%20-%20Add%20Libraries.png" alt="Adding Apple frameworks to your project"></p>
 <h3 id='2-referencing-header-file' class='heading'>2. Referencing header file</h3>
 
 <p>In files in which you want to use scanning functionality place import directive.</p>
 
 <p>Swift</p>
-<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">MicroBlink</span>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">Microblink</span>
 </code></pre>
 
 <p>Objective-C</p>
-<pre class="highlight plaintext"><code>#import &lt;MicroBlink/MicroBlink.h&gt;
+<pre class="highlight plaintext"><code>#import &lt;Microblink/Microblink.h&gt;
 </code></pre>
 <h3 id='3-initiating-the-scanning-process' class='heading'>3. Initiating the scanning process</h3>
 
 <p>To initiate the scanning process, first decide where in your app you want to add scanning functionality. Usually, users of the scanning library have a button which, when tapped, starts the scanning process. Initialization code is then placed in touch handler for that button. Here we&rsquo;re listing the initialization code as it looks in a touch handler method.</p>
 
-<p>Also, for initialization purposes, the ViewController which initiates the scan have private properties for <a href="http://pdf417.github.io/pdf417-ios/Classes/MBRawParser.html"><code>MBRawParser</code></a>, <a href="http://pdf417.github.io/pdf417-ios//Classes/MBParserGroupProcessor.html"><code>MBParserGroupProcessor</code></a> and <a href="http://pdf417.github.io/pdf417-ios//Classes/MBBlinkInputRecognizer.html"><code>MBBlinkInputRecognizer</code></a>, so we know how to obtain result.</p>
-
 <p>Swift</p>
 <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt">MBDocumentOverlayViewControllerDelegate</span>  <span class="p">{</span>
 
-    <span class="k">var</span> <span class="nv">rawParser</span><span class="p">:</span> <span class="kt">MBRawParser</span><span class="p">?</span>
-    <span class="k">var</span> <span class="nv">parserGroupProcessor</span><span class="p">:</span> <span class="kt">MBParserGroupProcessor</span><span class="p">?</span>
-    <span class="k">var</span> <span class="nv">blinkInputRecognizer</span><span class="p">:</span> <span class="kt">MBBlinkInputRecognizer</span><span class="p">?</span>
+    <span class="k">var</span> <span class="nv">pdf417Recognizer</span><span class="p">:</span> <span class="kt">MBPdf417Recognizer</span><span class="p">?</span>
+    <span class="k">var</span> <span class="nv">barcodeRecognizer</span><span class="p">:</span> <span class="kt">MBBarcodeRecognizer</span><span class="p">?</span>
 
     <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
         <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+        <span class="kt">MBMicroblinkSDK</span><span class="o">.</span><span class="nf">share</span><span class="p">()</span><span class="o">.</span><span class="nf">setLicenseResource</span><span class="p">(</span><span class="s">"license"</span><span class="p">,</span> <span class="nv">withExtension</span><span class="p">:</span> <span class="s">"txt"</span><span class="p">,</span> <span class="nv">inSubdirectory</span><span class="p">:</span> <span class="s">""</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="kt">Bundle</span><span class="o">.</span><span class="n">main</span><span class="p">,</span> <span class="nv">errorCallback</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
     <span class="p">}</span>
 
     <span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">didTapScan</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">)</span> <span class="p">{</span>
 
-        <span class="k">let</span> <span class="nv">settings</span> <span class="o">=</span> <span class="kt">MBDocumentOverlaySettings</span><span class="p">()</span>
-        <span class="n">rawParser</span> <span class="o">=</span> <span class="kt">MBRawParser</span><span class="p">()</span>
-        <span class="n">parserGroupProcessor</span> <span class="o">=</span> <span class="kt">MBParserGroupProcessor</span><span class="p">(</span><span class="nv">parsers</span><span class="p">:</span> <span class="p">[</span><span class="n">rawParser</span><span class="o">!</span><span class="p">])</span>
-        <span class="n">blinkInputRecognizer</span> <span class="o">=</span> <span class="kt">MBBlinkInputRecognizer</span><span class="p">(</span><span class="nv">processors</span><span class="p">:</span> <span class="p">[</span><span class="n">parserGroupProcessor</span><span class="o">!</span><span class="p">])</span>
+        <span class="cm">/** Create barcode recognizer */</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">barcodeRecognizer</span> <span class="o">=</span> <span class="kt">MBBarcodeRecognizer</span><span class="p">()</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">barcodeRecognizer</span><span class="p">?</span><span class="o">.</span><span class="n">scanQrCode</span> <span class="o">=</span> <span class="kc">true</span>
 
-        <span class="k">let</span> <span class="nv">recognizerList</span> <span class="o">=</span> <span class="p">[</span><span class="k">self</span><span class="o">.</span><span class="n">blinkInputRecognizer</span><span class="o">!</span><span class="p">]</span>
-        <span class="k">let</span> <span class="nv">recognizerCollection</span> <span class="o">=</span> <span class="kt">MBRecognizerCollection</span><span class="p">(</span><span class="nv">recognizers</span><span class="p">:</span> <span class="n">recognizerList</span><span class="p">)</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">pdf417Recognizer</span> <span class="o">=</span> <span class="kt">MBPdf417Recognizer</span><span class="p">()</span>
+
+        <span class="cm">/** Create barcode settings */</span>
+        <span class="k">let</span> <span class="nv">settings</span> <span class="p">:</span> <span class="kt">MBBarcodeOverlaySettings</span> <span class="o">=</span> <span class="kt">MBBarcodeOverlaySettings</span><span class="p">()</span>
+
+        <span class="cm">/** Crate recognizer collection */</span>
+        <span class="k">let</span> <span class="nv">recognizerList</span> <span class="o">=</span> <span class="p">[</span><span class="k">self</span><span class="o">.</span><span class="n">barcodeRecognizer</span><span class="o">!</span><span class="p">,</span> <span class="k">self</span><span class="o">.</span><span class="n">pdf417Recognizer</span><span class="o">!</span><span class="p">]</span>
+        <span class="k">let</span> <span class="nv">recognizerCollection</span> <span class="p">:</span> <span class="kt">MBRecognizerCollection</span> <span class="o">=</span> <span class="kt">MBRecognizerCollection</span><span class="p">(</span><span class="nv">recognizers</span><span class="p">:</span> <span class="n">recognizerList</span><span class="p">)</span>
 
         <span class="cm">/** Create your overlay view controller */</span>
-        <span class="k">let</span> <span class="nv">documentOverlayViewController</span> <span class="o">=</span> <span class="kt">MBDocumentOverlayViewController</span><span class="p">(</span><span class="nv">settings</span><span class="p">:</span> <span class="n">settings</span><span class="p">,</span> <span class="nv">recognizerCollection</span><span class="p">:</span> <span class="n">recognizerCollection</span><span class="p">,</span> <span class="nv">delegate</span><span class="p">:</span> <span class="k">self</span><span class="p">)</span>
+        <span class="k">let</span> <span class="nv">barcodeOverlayViewController</span> <span class="p">:</span> <span class="kt">MBBarcodeOverlayViewController</span> <span class="o">=</span> <span class="kt">MBBarcodeOverlayViewController</span><span class="p">(</span><span class="nv">settings</span><span class="p">:</span> <span class="n">settings</span><span class="p">,</span> <span class="nv">recognizerCollection</span><span class="p">:</span> <span class="n">recognizerCollection</span><span class="p">,</span> <span class="nv">delegate</span><span class="p">:</span> <span class="k">self</span><span class="p">)</span>
 
         <span class="cm">/** Create recognizer view controller with wanted overlay view controller */</span>
-        <span class="k">let</span> <span class="nv">recognizerRunnerViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="o">=</span> <span class="kt">MBViewControllerFactory</span><span class="o">.</span><span class="nf">recognizerRunnerViewController</span><span class="p">(</span><span class="nv">withOverlayViewController</span><span class="p">:</span> <span class="n">documentOverlayViewController</span><span class="p">)</span>
+        <span class="k">let</span> <span class="nv">recognizerRunneViewController</span> <span class="p">:</span> <span class="kt">UIViewController</span> <span class="o">=</span> <span class="kt">MBViewControllerFactory</span><span class="o">.</span><span class="nf">recognizerRunnerViewController</span><span class="p">(</span><span class="nv">withOverlayViewController</span><span class="p">:</span> <span class="n">barcodeOverlayViewController</span><span class="p">)</span>
 
         <span class="cm">/** Present the recognizer runner view controller. You can use other presentation methods as well (instead of presentViewController) */</span>
-        <span class="nf">present</span><span class="p">(</span><span class="n">recognizerRunnerViewController</span><span class="o">!</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+        <span class="k">self</span><span class="o">.</span><span class="nf">present</span><span class="p">(</span><span class="n">recognizerRunneViewController</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
@@ -634,9 +664,8 @@ git lfs install
 <p>Objective-C</p>
 <pre class="highlight plaintext"><code>@interface ViewController () &lt;MBDocumentOverlayViewControllerDelegate&gt;
 
-@property (nonatomic, strong) MBRawParser *rawParser;
-@property (nonatomic, strong) MBParserGroupProcessor *parserGroupProcessor;
-@property (nonatomic, strong) MBBlinkInputRecognizer *blinkInputRecognizer;
+@property (nonatomic, strong) MBPdf417Recognizer *pdf417Recognizer;
+@property (nonatomic, strong) MBBarcodeRecognizer *barcodeRecognizer;
 
 @end
 
@@ -644,42 +673,49 @@ git lfs install
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [MBMicroblinkSDK.sharedInstance setLicenseResource:@"blinkid-license" withExtension:@"txt" inSubdirectory:@"" for:Bundle.main errorCallback: nil];
 }
 
 
 - (IBAction)didTapScan:(id)sender {
 
-    MBDocumentOverlaySettings* settings = [[MBDocumentOverlaySettings alloc] init];
+    /** Create barcode recognizer */
+    self.barcodeRecognizer = [MBBarcodeRecognizer new];
+    self.barcodeRecognizer.scanQrCode = true;
 
-    self.rawParser = [[MBRawParser alloc] init];
-    self.parserGroupProcessor = [[MBParserGroupProcessor alloc] initWithParsers:@[self.rawParser]];
-    self.blinkInputRecognizer = [[MBBlinkInputRecognizer alloc] initWithProcessors:@[self.parserGroupProcessor]];
+    self.pdf417Recognizer = [MBPdf417Recognizer new];
 
-    /** Create recognizer collection */
-    MBRecognizerCollection *recognizerCollection = [[MBRecognizerCollection alloc] initWithRecognizers:@[self.blinkInputRecognizer]];
+    /** Create barcode settings */
+    MBBarcodeOverlaySettings *settings = [MBBarcodeOverlaySettings new];
 
-    MBDocumentOverlayViewController *overlayVC = [[MBDocumentOverlayViewController alloc] initWithSettings:settings recognizerCollection:recognizerCollection delegate:self];
-    UIViewController&lt;MBRecognizerRunnerViewController&gt;* recognizerRunnerViewController = [MBViewControllerFactory recognizerRunnerViewControllerWithOverlayViewController:overlayVC];
+    /** Crate recognizer collection */
+    NSArray *recognizerList = @[self.barcodeRecognizer!, self.pdf417Recognizer!];
+    MBRecognizerCollection *recognizerCollection = [[MBRecognizerCollection alloc] initWithRecognizers:recognizerList];
+
+    /** Create your overlay view controller */
+    MBBarcodeOverlayViewController *barcodeOverlayViewController = [[MBBarcodeOverlayViewController alloc] initWithSettings:settings recognizerCollection:recognizerCollection delegate:self];
+
+    /** Create recognizer view controller with wanted overlay view controller */
+    UIViewController *recognizerRunneViewController = [MBViewControllerFactory recognizerRunnerViewControllerWithOverlayViewController:barcodeOverlayViewController];
 
     /** Present the recognizer runner view controller. You can use other presentation methods as well (instead of presentViewController) */
-    [self presentViewController:recognizerRunnerViewController animated:YES completion:nil];
-
+    [self. present:recognizerRunneViewController animated:true completion:nil];
 }
 
 @end
 </code></pre>
 <h3 id='4-license-key' class='heading'>4. License key</h3>
 
-<p>A valid license key is required to initalize scanning. You can generate a free demo license key, after you register, at <a href="https://microblink.com/login">Microblink developer dashboard</a>.</p>
+<p>A valid license key is required to initalize scanning. You can generate a free trial license key, after you register, at <a href="https://microblink.com/login">Microblink developer dashboard</a>.</p>
 
-<p>You can include the license key in your app by passing a string or a file with license key. 
+<p>You can include the license key in your app by passing a string or a file with license key.
 <strong>Note</strong> that you need to set the license key before intializing scanning. Ideally in <code>AppDelegate</code> or <code>viewDidLoad</code> before initializing any recognizers.</p>
 <h4 id='license-key-as-string' class='heading'>License key as string</h4>
 
 <p>You can pass the license key as a string, the following way:</p>
 
 <p>Swift</p>
-<pre class="highlight swift"><code><span class="kt">MBMicroblinkSDK</span><span class="o">.</span><span class="nf">sharedInstance</span><span class="p">()</span><span class="o">.</span><span class="nf">setLicenseKey</span><span class="p">(</span><span class="s">"LICENSE-KEY"</span><span class="p">)</span>
+<pre class="highlight swift"><code><span class="kt">MBMicroblinkSDK</span><span class="o">.</span><span class="nf">shared</span><span class="p">()</span><span class="o">.</span><span class="nf">setLicenseKey</span><span class="p">(</span><span class="s">"LICENSE-KEY"</span><span class="p">)</span>
 </code></pre>
 
 <p>Objective-C</p>
@@ -690,15 +726,17 @@ git lfs install
 <p>Or you can include the license key, with the code below. Please make sure that the file that contains the license key is included in your project and is copied during <strong>Copy Bundle Resources</strong> build phase.</p>
 
 <p>Swift</p>
-<pre class="highlight swift"><code><span class="kt">MBMicroblinkSDK</span><span class="o">.</span><span class="nf">sharedInstance</span><span class="p">()</span><span class="o">.</span><span class="nf">setLicenseResource</span><span class="p">(</span><span class="s">"license-key-file"</span><span class="p">,</span> <span class="nv">withExtension</span><span class="p">:</span> <span class="s">"txt"</span><span class="p">,</span> <span class="nv">inSubdirectory</span><span class="p">:</span> <span class="s">"directory-to-license-key"</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="kt">Bundle</span><span class="o">.</span><span class="n">main</span><span class="p">)</span>
+<pre class="highlight swift"><code><span class="kt">MBMicroblinkSDK</span><span class="o">.</span><span class="nf">shared</span><span class="p">()</span><span class="o">.</span><span class="nf">setLicenseResource</span><span class="p">(</span><span class="s">"license-key-file"</span><span class="p">,</span> <span class="nv">withExtension</span><span class="p">:</span> <span class="s">"txt"</span><span class="p">,</span> <span class="nv">inSubdirectory</span><span class="p">:</span> <span class="s">"directory-to-license-key"</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="kt">Bundle</span><span class="o">.</span><span class="n">main</span><span class="p">,</span> <span class="nv">errorCallback</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
 </code></pre>
 
 <p>Objective-C</p>
-<pre class="highlight plaintext"><code>[[MBMicroblinkSDK sharedInstance] setLicenseResource:@"license-key-file" withExtension:@"txt" inSubdirectory:@"" forBundle:[NSBundle mainBundle]];
+<pre class="highlight plaintext"><code>[[MBMicroblinkSDK sharedInstance] setLicenseResource:@"license-key-file" withExtension:@"txt" inSubdirectory:@"" forBundle:[NSBundle mainBundle, errorCallback: nil]];
 </code></pre>
+
+<p>If the licence is invalid or expired then the methods above will throw an <strong>exception</strong>.</p>
 <h3 id='5-registering-for-scanning-events' class='heading'>5. Registering for scanning events</h3>
 
-<p>In the previous step, you instantiated <a href="http://pdf417.github.io/pdf417-ios//Classes/MBDocumentOverlayViewController.html"><code>MBDocumentOverlayViewController</code></a> object with a delegate object. This object gets notified on certain events in scanning lifecycle. In this example we set it to <code>self</code>. The protocol which the delegate has to implement is <a href="http://pdf417.github.io/pdf417-ios//Protocols/MBDocumentOverlayViewControllerDelegate.html"><code>MBDocumentOverlayViewControllerDelegate</code></a> protocol. It is necessary to conform to that protocol. We will discuss more about protocols in <a href="#advanced-integration">Advanced integration section</a>. You can use the following default implementation of the protocol to get you started.</p>
+<p>In the previous step, you instantiated <a href="http://pdf417.github.io/pdf417-ios//Classes/MBBarcodeOverlayViewController.html"><code><a href="Classes/MBBarcodeOverlayViewController.html">MBBarcodeOverlayViewController</a></code></a> object with a delegate object. This object gets notified on certain events in scanning lifecycle. In this example we set it to <code>self</code>. The protocol which the delegate has to implement is <a href="http://pdf417.github.io/pdf417-ios//Protocols/MBBarcodeOverlayViewControllerDelegate.html"><code><a href="Protocols/MBBarcodeOverlayViewControllerDelegate.html">MBBarcodeOverlayViewControllerDelegate</a></code></a> protocol. It is necessary to conform to that protocol. We will discuss more about protocols in <a href="#advanced-integration">Advanced integration section</a>. You can use the following default implementation of the protocol to get you started.</p>
 
 <p>Swift</p>
 <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">documentOverlayViewControllerDidFinishScanning</span><span class="p">(</span><span class="n">_</span> <span class="nv">documentOverlayViewController</span><span class="p">:</span> <span class="kt">MBDocumentOverlayViewController</span><span class="p">,</span> <span class="nv">state</span><span class="p">:</span> <span class="kt">MBRecognizerResultState</span><span class="p">)</span> <span class="p">{</span>
@@ -717,7 +755,7 @@ git lfs install
 <span class="p">}</span>
 
 <span class="kd">func</span> <span class="nf">documentOverlayViewControllerDidTapClose</span><span class="p">(</span><span class="n">_</span> <span class="nv">documentOverlayViewController</span><span class="p">:</span> <span class="kt">MBDocumentOverlayViewController</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// Your action on cancel </span>
+    <span class="c1">// Your action on cancel</span>
 <span class="p">}</span>
 </code></pre>
 
@@ -738,17 +776,17 @@ git lfs install
 }
 
 - (void)documentOverlayViewControllerDidTapClose:(MBDocumentOverlayViewController *)documentOverlayViewController {
-    // Your action on cancel 
+    // Your action on cancel
 }
 </code></pre>
 <h1 id='a-name-advanced-integration-a-advanced-pdf417-mobi-integration-instructions' class='heading'><a name="advanced-integration"></a> Advanced PDF417.mobi integration instructions</h1>
 
-<p>This section covers more advanced details of BlinkInput integration.</p>
+<p>This section covers more advanced details of PDF417.mobi integration.</p>
 
 <ol>
 <li><a href="#ui-customizations">First part</a> will cover the possible customizations when using UI provided by the SDK.</li>
-<li><a href="#custom-overyal-view-controller">Second part</a> will describe how to embed <a href="http://pdf417.github.io/pdf417-ios/Protocols.html"><code>MBRecognizerRunnerViewController&#39;s delegates</code></a> into your <code>UIViewController</code> with the goal of creating a custom UI for scanning, while still using camera management capabilites of the SDK.</li>
-<li><a href="#direct-processing-api">Third part</a> will describe how to use the <a href="http://pdf417.github.io/pdf417-ios/Classes/MBRecognizerRunner.html"><code><a href="Classes/MBRecognizerRunner.html">MBRecognizerRunner</a></code></a> (Direct API) for recognition directly from <code>UIImage</code> without the need of camera or to recognize camera frames that are obtained by custom camera management.</li>
+<li><a href="#using-document-overlay-viewcontroller">Second part</a> will describe how to embed <a href="http://pdf417.github.io/pdf417-ios/Protocols.html"><code>MBRecognizerRunnerViewController&#39;s delegates</code></a> into your <code>UIViewController</code> with the goal of creating a custom UI for scanning, while still using camera management capabilites of the SDK.</li>
+<li><a href="#direct-api-processing">Third part</a> will describe how to use the <a href="http://pdf417.github.io/pdf417-ios/Classes/MBRecognizerRunner.html"><code><a href="Classes/MBRecognizerRunner.html">MBRecognizerRunner</a></code></a> (Direct API) for recognition directly from <code>UIImage</code> without the need of camera or to recognize camera frames that are obtained by custom camera management.</li>
 <li><a href="#recognizer">Fourth part</a> will describe recognizer concept and available recognizers.</li>
 </ol>
 <h2 id='a-name-ui-customizations-a-built-in-overlay-view-controllers-and-overlay-subviews' class='heading'><a name="ui-customizations"></a> Built-in overlay view controllers and overlay subviews</h2>
@@ -780,7 +818,7 @@ UIViewController&lt;MBRecognizerRunnerViewController&gt;* recognizerRunnerViewCo
 <p>As you can see, when initializing <a href="http://pdf417.github.io/pdf417-ios/Classes/MBBarcodeOverlayViewController.html"><code><a href="Classes/MBBarcodeOverlayViewController.html">MBBarcodeOverlayViewController</a></code></a>, we are sending delegate property as <code>self</code>. To get results, we need to conform to <a href="http://pdf417.github.io/pdf417-ios/Protocols/MBBarcodeOverlayViewControllerDelegate.html"><code><a href="Protocols/MBBarcodeOverlayViewControllerDelegate.html">MBBarcodeOverlayViewControllerDelegate</a></code></a> protocol.</p>
 <h3 id='a-name-using-custom-overlay-viewcontroller-a-custom-overlay-view-controller' class='heading'><a name="using-custom-overlay-viewcontroller"></a> Custom overlay view controller</h3>
 
-<p>Please check our pdf417-sample-Swift for custom implementation of overlay view controller.</p>
+<p>Please check our Samples for custom implementation of overlay view controller.</p>
 
 <p>Overlay View Controller is an abstract class for all overlay views.</p>
 
@@ -789,15 +827,15 @@ UIViewController&lt;MBRecognizerRunnerViewController&gt;* recognizerRunnerViewCo
 <p>Typical actions which need to be allowed to the user are:</p>
 
 <ul>
-<li>intuitive and meaniningful way to guide the user through scanning process. This is usually done by presenting a <q>viewfinder</q> in which the user need to place the scanned object</li>
-<li>a way to cancel the scanning, typically with a <q>cancel</q> or <q>back</q> button</li>
-<li>a way to power on and off the light (i.e. <q>torch</q>) button</li>
+<li>intuitive and meaniningful way to guide the user through scanning process. This is usually done by presenting a &ldquo;viewfinder&rdquo; in which the user need to place the scanned object</li>
+<li>a way to cancel the scanning, typically with a &ldquo;cancel&rdquo; or &ldquo;back&rdquo; button</li>
+<li>a way to power on and off the light (i.e. &ldquo;torch&rdquo;) button</li>
 </ul>
 
-<p>BlinkID SDK always provides it&rsquo;s own default implementation of the Overlay View Controller for every specific use. Your implementation should closely mimic the default implementation as it&rsquo;s the result of thorough testing with end users. Also, it closely matches the underlying scanning technology. </p>
+<p>PDF417.mobi SDK always provides it&rsquo;s own default implementation of the Overlay View Controller for every specific use. Your implementation should closely mimic the default implementation as it&rsquo;s the result of thorough testing with end users. Also, it closely matches the underlying scanning technology.</p>
 
 <p>For example, the scanning technology usually gives results very fast after the user places the device&rsquo;s camera in the expected way above the scanned object. This means a progress bar for the scan is not particularly useful to the user. The majority of time the user spends on positioning the device&rsquo;s camera correctly. That&rsquo;s just an example which demonstrates careful decision making behind default camera overlay view.</p>
-<h3 id='1-initialization' class='heading'>1. Initialization</h3>
+<h3 id='1-subclassing' class='heading'>1. Subclassing</h3>
 
 <p>To use your custom overlay with Microblink&rsquo;s camera view, you must first subclass <a href="http://pdf417.github.io/pdf417-ios/Classes/MBCustomOverlayViewController.html"><code><a href="Classes/MBCustomOverlayViewController.html">MBCustomOverlayViewController</a></code></a> and implement the overlay behaviour conforming wanted protocols.</p>
 <h3 id='2-protocols' class='heading'>2. Protocols</h3>
@@ -819,39 +857,7 @@ UIViewController&lt;MBRecognizerRunnerViewController&gt;* recognizerRunnerViewCo
 <p>Swift and Objective-C</p>
 <pre class="highlight swift"><code><span class="k">self</span><span class="o">.</span><span class="n">scanningRecognizerRunnerViewControllerDelegate</span> <span class="o">=</span> <span class="k">self</span><span class="p">;</span>
 </code></pre>
-<h3 id='3-overlay-subviews' class='heading'>3. Overlay subviews</h3>
-
-<p>The SDK contains various subviews you can use to notify users of the state of scanning. If you want to use built-in implementation we recommend to use <a href="http://pdf417.github.io/pdf417-ios/Classes/MBModernViewfinderSubview.html"><code><a href="Classes/MBModernViewfinderSubview.html">MBModernViewfinderSubview</a></code></a>. In can be initialized in <code>viewDidLoad</code> method:</p>
-
-<p>Swift</p>
-<pre class="highlight swift"><code><span class="n">viewfinderSubview</span> <span class="o">=</span> <span class="kt">MBModernViewfinderSubview</span><span class="p">()</span>
-<span class="n">viewfinderSubview</span><span class="o">.</span><span class="n">frame</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">frame</span>
-<span class="n">viewfinderSubview</span><span class="o">.</span><span class="n">moveable</span> <span class="o">=</span> <span class="kc">true</span>
-<span class="n">view</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">viewfinderSubview</span><span class="p">)</span>
-</code></pre>
-
-<p>Objective-C</p>
-<pre class="highlight plaintext"><code>self.viewfinderSubview = [[MBModernViewfinderSubview alloc] init];
-self.viewfinderSubview.frame = self.view.frame;
-self.viewfinderSubview.delegate = self.overlaySubviewsDelegate;
-self.viewfinderSubview.moveable = YES;
-[self.view addSubview:self.viewfinderSubview];
-</code></pre>
-
-<p>To use this subview you&rsquo;ll need to implement <code><a href="Protocols/MBDetectionRecognizerRunnerViewControllerDelegate.html">MBDetectionRecognizerRunnerViewControllerDelegate</a></code>(<a href="http://pdf417.github.io/pdf417-ios/Protocols/MBDetectionRecognizerRunnerViewControllerDelegate.html">http://pdf417.github.io/pdf417-ios/Protocols/MBDetectionRecognizerRunnerViewControllerDelegate.html</a>) then in the <code>-recognizerRunnerViewController:didFinishDetectionWithDisplayableQuad:</code> notify subview of detection changes.</p>
-
-<p>Swift</p>
-<pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">recognizerRunnerViewController</span><span class="p">(</span><span class="n">_</span> <span class="nv">recognizerRunnerViewController</span><span class="p">:</span> <span class="kt">Any</span><span class="o">!</span><span class="p">,</span> <span class="n">didFinishDetectionWithDisplayableQuad</span> <span class="nv">displayableQuad</span><span class="p">:</span> <span class="kt">MBDisplayableQuadDetection</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">viewfinderSubview</span><span class="o">.</span><span class="nf">detectionFinished</span><span class="p">(</span><span class="nv">withDisplayableQuad</span><span class="p">:</span> <span class="n">displayableQuad</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre>
-
-<p>Objective-C</p>
-<pre class="highlight plaintext"><code>- (void)recognizerRunnerViewController: (nonnull UIViewController&lt;MBRecognizerRunnerViewController&gt; *) recognizerRunnerViewController didFinishDetectionWithDisplayableQuad: (nonnull MBDisplayableQuadDetection *)displayableQuad {
-    [self.viewfinderSubview detectionFinishedWithDisplayableQuad:displayableQuad];
-}
-</code></pre>
-<h3 id='4-initialization' class='heading'>4. Initialization</h3>
+<h3 id='3-initialization' class='heading'>3. Initialization</h3>
 
 <p>In <a href="#quick-start">Quick Start</a> guide it is shown how to use a default overlay view controller. You can now swap default view controller with your implementation of <code>CustomOverlayViewController</code></p>
 
@@ -871,7 +877,7 @@ self.viewfinderSubview.moveable = YES;
     - taking full resolution photo and sending it to processing
     - scanning barcodes on images in e-mail etc.</p>
 
-<p>DirectAPI-sample demo app here will present UIImagePickerController for taking full resolution photos, and then process it with Microblink SDK to get scanning results using Direct processing API.</p>
+<p>DirectAPI-sample demo app here will present UIImagePickerController for taking full resolution photos, and then process it with PDF417.mobi SDK to get scanning results using Direct processing API.</p>
 
 <p>Direct processing API is handled with <a href="http://pdf417.github.io/pdf417-ios/Classes/MBRecognizerRunner.html"><code><a href="Classes/MBRecognizerRunner.html">MBRecognizerRunner</a></code></a>. That is a class that handles processing of images. It also has protocols as <a href="http://pdf417.github.io/pdf417-ios/Classes/MBRecognizerRunnerViewController.html"><code><a href="Protocols/MBRecognizerRunnerViewController.html">MBRecognizerRunnerViewController</a></code></a>.
 Developer can choose which protocol to conform:</p>
@@ -921,9 +927,9 @@ Developer can choose which protocol to conform:</p>
 <pre class="highlight plaintext"><code>- (void)setupRecognizerRunner {
     NSMutableArray&lt;MBRecognizer *&gt; *recognizers = [[NSMutableArray alloc] init];
 
-    self.blinkInputRecognizer = [[MBBlinkInputRecognizer alloc] init];
+    self.pdf417Recognizer = [[MBPdf417Recognizer alloc] init];
 
-    [recognizers addObject:self.blinkInputRecognizer];
+    [recognizers addObject: self.pdf417Recognizer];
 
     MBRecognizerCollection *recognizerCollection = [[MBRecognizerCollection alloc] initWithRecognizers:recognizers];
 
@@ -941,7 +947,6 @@ Developer can choose which protocol to conform:</p>
     });
 }
 
-#pragma mark - MBScanningRecognizerRunnerDelegate
 - (void)recognizerRunner:(nonnull MBRecognizerRunner *)recognizerRunner didFinishScanningWithState:(MBRecognizerResultState)state {
     if (self.blinkInputRecognizer.result.resultState == MBRecognizerResultStateValid) {
         // Handle result
@@ -959,15 +964,15 @@ Developer can choose which protocol to conform:</p>
 </ul>
 <h3 id='a-name-direct-api-string-processing-a-using-direct-api-for-code-nsstring-code-recognition-parsing' class='heading'><a name="direct-api-string-processing"></a> Using Direct API for <code>NSString</code> recognition (parsing)</h3>
 
-<p>Some recognizers support recognition from <code>NSString</code>. They can be used through Direct API to parse given <code>NSString</code> and return data just like when they are used on an input image. When recognition is performed on <code>NSString</code>, there is no need for the OCR. Input <code>NSString</code> is used in the same way as the OCR output is used when image is being recognized. 
-Recognition from <code>String</code> can be performed in the same way as recognition from image. 
+<p>Some recognizers support recognition from <code>NSString</code>. They can be used through Direct API to parse given <code>NSString</code> and return data just like when they are used on an input image. When recognition is performed on <code>NSString</code>, there is no need for the OCR. Input <code>NSString</code> is used in the same way as the OCR output is used when image is being recognized.
+Recognition from <code>String</code> can be performed in the same way as recognition from image.
 The only difference is that user should call <code>- (void)processString:(NSString *)string;</code> on <a href="http://pdf417.github.io/pdf417-ios/Classes/MBRecognizerRunner.html"><code><a href="Classes/MBRecognizerRunner.html">MBRecognizerRunner</a></code></a>.</p>
 <h1 id='a-name-recognizer-a-code-mbrecognizer-code-and-available-recognizers' class='heading'><a name="recognizer"></a> <code><a href="Classes/MBRecognizer.html">MBRecognizer</a></code> and available recognizers</h1>
 <h2 id='the-code-mbrecognizer-code-concept' class='heading'>The <code><a href="Classes/MBRecognizer.html">MBRecognizer</a></code> concept</h2>
 
 <p>The <a href="http://pdf417.github.io/pdf417-ios/Classes/MBRecognizer.html"><code><a href="Classes/MBRecognizer.html">MBRecognizer</a></code></a> is the basic unit of processing within the SDK. Its main purpose is to process the image and extract meaningful information from it. As you will see <a href="#available-recognizers">later</a>, the SDK has lots of different <a href="http://pdf417.github.io/pdf417-ios/Classes/MBRecognizer.html"><code><a href="Classes/MBRecognizer.html">MBRecognizer</a></code></a> objects that have various purposes.</p>
 
-<p>Each <a href="http://pdf417.github.io/pdf417-ios/Classes/MBRecognizer.html"><code><a href="Classes/MBRecognizer.html">MBRecognizer</a></code></a> has a <a href="http://pdf417.github.io/pdf417-ios/Classes/MBRecognizerResult.html"><code><a href="Classes/MBRecognizerResult.html">MBRecognizerResult</a></code></a> object, which contains the data that was extracted from the image. The <a href="http://pdf417.github.io/pdf417-ios/Classes/MBRecognizerResult.html"><code><a href="Classes/MBRecognizerResult.html">MBRecognizerResult</a></code></a> object is a member of corresponding <a href="http://pdf417.github.io/pdf417-ios/Classes/MBRecognizer.html"><code><a href="Classes/MBRecognizer.html">MBRecognizer</a></code></a> object its lifetime is bound to the lifetime of its parent <a href="http://pdf417.github.io/pdf417-ios/Classes/MBRecognizer.html"><code><a href="Classes/MBRecognizer.html">MBRecognizer</a></code></a> object. If you need your <code>MBRecognizerRecognizer</code> object to outlive its parent <a href="http://pdf417.github.io/pdf417-ios/Classes/MBRecognizer.html"><code><a href="Classes/MBRecognizer.html">MBRecognizer</a></code></a> object, you must make a copy of it by calling its method <code>copy</code>.</p>
+<p>Each <a href="http://pdf417.github.io/pdf417-ios/Classes/MBRecognizer.html"><code><a href="Classes/MBRecognizer.html">MBRecognizer</a></code></a> has a <a href="http://pdf417.github.io/pdf417-ios/Classes/MBRecognizerResult.html"><code><a href="Classes/MBRecognizerResult.html">MBRecognizerResult</a></code></a> object, which contains the data that was extracted from the image. The <a href="http://pdf417.github.io/pdf417-ios/Classes/MBRecognizerResult.html"><code><a href="Classes/MBRecognizerResult.html">MBRecognizerResult</a></code></a> object is a member of corresponding <a href="http://pdf417.github.io/pdf417-ios/Classes/MBRecognizer.html"><code><a href="Classes/MBRecognizer.html">MBRecognizer</a></code></a> object its lifetime is bound to the lifetime of its parent <a href="http://pdf417.github.io/pdf417-ios/Classes/MBRecognizer.html"><code><a href="Classes/MBRecognizer.html">MBRecognizer</a></code></a> object. If you need your <code><a href="Classes/MBRecognizerResult.html">MBRecognizerResult</a></code> object to outlive its parent <a href="http://pdf417.github.io/pdf417-ios/Classes/MBRecognizer.html"><code><a href="Classes/MBRecognizer.html">MBRecognizer</a></code></a> object, you must make a copy of it by calling its method <code>copy</code>.</p>
 
 <p>While <a href="http://pdf417.github.io/pdf417-ios/Classes/MBRecognizer.html"><code><a href="Classes/MBRecognizer.html">MBRecognizer</a></code></a> object works, it changes its internal state and its result. The <a href="http://pdf417.github.io/pdf417-ios/Classes/MBRecognizer.html"><code><a href="Classes/MBRecognizer.html">MBRecognizer</a></code></a> object&rsquo;s <a href="http://pdf417.github.io/pdf417-ios/Classes/MBRecognizerResult.html"><code><a href="Classes/MBRecognizerResult.html">MBRecognizerResult</a></code></a> always starts in <code>Empty</code> state. When corresponding <a href="http://pdf417.github.io/pdf417-ios/Classes/MBRecognizer.html"><code><a href="Classes/MBRecognizer.html">MBRecognizer</a></code></a> object performs the recognition of given image, its <a href="http://pdf417.github.io/pdf417-ios/Classes/MBRecognizerResult.html"><code><a href="Classes/MBRecognizerResult.html">MBRecognizerResult</a></code></a> can either stay in <code>Empty</code> state (in case <a href="http://pdf417.github.io/pdf417-ios/Classes/MBRecognizer.html"><code><a href="Classes/MBRecognizer.html">MBRecognizer</a></code></a>failed to perform recognition), move to <code>Uncertain</code> state (in case <a href="http://pdf417.github.io/pdf417-ios/Classes/MBRecognizer.html"><code><a href="Classes/MBRecognizer.html">MBRecognizer</a></code></a> performed the recognition, but not all mandatory information was extracted) or move to <code>Valid</code> state (in case <a href="http://pdf417.github.io/pdf417-ios/Classes/MBRecognizer.html"><code><a href="Classes/MBRecognizer.html">MBRecognizer</a></code></a> performed recognition and all mandatory information was successfully extracted from the image).</p>
 
@@ -978,7 +983,7 @@ The only difference is that user should call <code>- (void)processString:(NSStri
 
 <p>The <a href="http://pdf417.github.io/pdf417-ios/Classes/MBRecognizerCollection.html"><code><a href="Classes/MBRecognizerCollection.html">MBRecognizerCollection</a></code></a> is is wrapper around <a href="http://pdf417.github.io/pdf417-ios/Classes/MBRecognizer.html"><code><a href="Classes/MBRecognizer.html">MBRecognizer</a></code></a> objects that has array of <a href="http://pdf417.github.io/pdf417-ios/Classes/MBRecognizer.html"><code><a href="Classes/MBRecognizer.html">MBRecognizer</a></code></a> objects that can be used to give <a href="http://pdf417.github.io/pdf417-ios/Classes/MBRecognizer.html"><code><a href="Classes/MBRecognizer.html">MBRecognizer</a></code></a> objects to <code><a href="Classes/MBRecognizerRunner.html">MBRecognizerRunner</a></code> or <code><a href="Protocols/MBRecognizerRunnerViewController.html">MBRecognizerRunnerViewController</a></code> for processing.</p>
 
-<p>The <a href="http://pdf417.github.io/pdf417-ios/Classes/MBRecognizerCollection.html"><code><a href="Classes/MBRecognizerCollection.html">MBRecognizerCollection</a></code></a> is always constructed with array <code>[[MBRecognizerCollection alloc] initWithRecognizers:recognizers]</code> of <a href="http://pdf417.github.io/pdf417-ios/Classes/MBRecognizer.html"><code><a href="Classes/MBRecognizer.html">MBRecognizer</a></code></a> objects that need to be prepared for recognition (i.e. their properties must be tweaked already). </p>
+<p>The <a href="http://pdf417.github.io/pdf417-ios/Classes/MBRecognizerCollection.html"><code><a href="Classes/MBRecognizerCollection.html">MBRecognizerCollection</a></code></a> is always constructed with array <code>[[MBRecognizerCollection alloc] initWithRecognizers:recognizers]</code> of <a href="http://pdf417.github.io/pdf417-ios/Classes/MBRecognizer.html"><code><a href="Classes/MBRecognizer.html">MBRecognizer</a></code></a> objects that need to be prepared for recognition (i.e. their properties must be tweaked already).</p>
 
 <p>The <a href="http://pdf417.github.io/pdf417-ios/Classes/MBRecognizerCollection.html"><code><a href="Classes/MBRecognizerCollection.html">MBRecognizerCollection</a></code></a> manages a chain of <a href="http://pdf417.github.io/pdf417-ios/Classes/MBRecognizer.html"><code><a href="Classes/MBRecognizer.html">MBRecognizer</a></code></a> objects within the recognition process. When a new image arrives, it is processed by the first <a href="http://pdf417.github.io/pdf417-ios/Classes/MBRecognizer.html"><code><a href="Classes/MBRecognizer.html">MBRecognizer</a></code></a> in chain, then by the second and so on, iterating until a <a href="http://pdf417.github.io/pdf417-ios/Classes/MBRecognizer.html"><code><a href="Classes/MBRecognizer.html">MBRecognizer</a></code></a> object&rsquo;s <a href="http://pdf417.github.io/pdf417-ios/Classes/MBRecognizerResult.html"><code><a href="Classes/MBRecognizerResult.html">MBRecognizerResult</a></code></a> changes its state to <code>Valid</code> or all of the <a href="http://pdf417.github.io/pdf417-ios/Classes/MBRecognizer.html"><code><a href="Classes/MBRecognizer.html">MBRecognizer</a></code></a> objects in chain were invoked (none getting a <code>Valid</code> result state).</p>
 
@@ -1010,90 +1015,22 @@ The only difference is that user should call <code>- (void)processString:(NSStri
 <p>You can enable multiple barcode symbologies within this recognizer, however keep in mind that enabling more barcode symbologies affect scanning performance - the more barcode symbologies are enabled, the slower the overall recognition performance. Also, keep in mind that some simple barcode symbologies that lack proper redundancy, such as <a href="https://en.wikipedia.org/wiki/Code_39">Code 39</a>, can be recognized within more complex barcodes, especially 2D barcodes, like <a href="https://en.wikipedia.org/wiki/PDF417">PDF417</a>.</p>
 
 <p>This recognizer can be used in any overlay view controller, but it works best with the <a href="http://pdf417.github.io/pdf417-ios/Classes/MBBarcodeOverlayViewController.html"><code><a href="Classes/MBBarcodeOverlayViewController.html">MBBarcodeOverlayViewController</a></code></a>, which has UI best suited for barcode scanning.</p>
-<h1 id='creating-customized-build-of-blinkid-sdk' class='heading'>Creating customized build of BlinkID SDK</h1>
+<h1 id='a-name-localization-a-localization' class='heading'><a name="localization"></a> Localization</h1>
 
-<p>If your final app size is too large, you can create a customised build of <em>MicroBlink.framework</em> and <em>MicroBlink.bundle</em> which will contain only features and resources that you really need.</p>
+<p>The SDK is localized on following languages: Arabic, Chinese simplified, Chinese traditional, Croatian, Czech, Dutch, Filipino, French, German, Hebrew, Hungarian, Indonesian, Italian, Malay, Portuguese, Romanian, Slovak, Slovenian, Spanish, Thai, Vietnamese.</p>
 
-<p>In order to create customised build of BlinkID SDK, you first need to download the static distribution of BlinkID SDK. A valid production licence key is required in order to gain access to the download link of BlinkID SDK static distribution. Once you have a valid production licence key, please contact our <a href="http://help.microblink.com">support team</a> and ask them to provide you with the download link. After they give you access to the static distribution of BlinkID SDK, you will be able to download it from you account at <a href="https://www.microblink.com/login">MicroBlink Developer Dashboard</a>.</p>
+<p>If you would like us to support additional languages or report incorrect translation, please contact us at <a href="http://help.microblink.com">help.microblink.com</a>.</p>
 
-<p>The static distribution of BlinkID SDK is a large zip file (several hundred megabytes) which contains static libraries of BlinkID SDK&rsquo;s native code, all assets and resources and a script which will create the customised build for you.</p>
-<h3 id='prerequisites-for-creating-customised-build' class='heading'>Prerequisites for creating customised build</h3>
+<p>If you want to add additional languages yourself or change existing translations, you need to set <code>customLocalizationFileName</code> property on <a href="http://pdf417.github.io/pdf417-ios/Classes/MBMicroblinkApp.html"><code><a href="Classes/MBMicroblinkApp.html">MBMicroblinkApp</a></code></a> object to your strings file name.</p>
 
-<p>In order to create customised build of PDF417.mobi SDK, you will need following tools:</p>
-
-<ul>
-<li>XCode and latest iOS SDK</li>
-<li>CMake - you can install it from Homebrew with <code>brew install cmake</code>, or you can download it from <a href="https://cmake.org/download/">official page</a>
+<p>For example, let&rsquo;s say that we want to change text &ldquo;Scan the front side of a document&rdquo; to &ldquo;Scan the front side&rdquo; in BlinkID sample project. This would be the steps:</p>
 
 <ul>
-<li>please note that command-line version of CMake is required, so if you have downloaded CMake from official page, make sure you install command-line support as well</li>
-</ul></li>
-</ul>
-<h3 id='steps-for-creating-customised-build' class='heading'>Steps for creating customised build</h3>
-
-<ol>
-<li>Obtain the static distribution of BlinkID SDK by <a href="http://help.microblink.com">contacting us</a></li>
-<li>Download the zip from link that you will be provided</li>
-<li>Unzip the file into an empty folder</li>
-<li>Edit the file <code>enabled-features.cmake</code>
-
-<ul>
-<li>you should enable only features that you need to use by setting appropriate variables to <code>ON</code>.</li>
-<li>the list of all possible feature variables can be found in <code>features.cmake</code> 
-
-<ul>
-<li>for each <code>feature_option</code> command, first parameter defines the feature variable, and the second is the description of the feature, i.e. what it provides. Other parameters are information for script to work correctly.</li>
-</ul></li>
-<li>you should not edit any file except <code>enabled-features.cmake</code> (except if instructed so by our support team) to ensure creation of customised build works well</li>
-</ul></li>
-<li>Open terminal and navigate to folder with zip&rsquo;s contents.</li>
-<li>Execute command <code>./create-custom-build.sh</code> and select whether you want static or dynamic frameowk.
-
-<ul>
-<li>when asked, enter <code>s</code> to build static framework or <code>d</code> to build dynamic framework</li>
-</ul></li>
-<li>After several minutes (depedending of CPU speed of your computer), customised build will appear in the <code>Release</code> folder. Use that bundle and framework in your app instead of default one.</li>
-</ol>
-<h4 id='warning' class='heading'>Warning:</h4>
-
-<p>Attempt to use feature within your app which was not enabled in customised build will cause a linker error when linking against the customised framework.</p>
-<h3 id='troubleshooting' class='heading'>Troubleshooting:</h3>
-<h4 id='getting-code-unrecognized-selector-sent-to-instance-code-when-using-customised-static-framework-while-everything-works-ok-with-dynamic-framework' class='heading'>Getting <code>unrecognized selector sent to instance</code> when using customised static framework, while everything works OK with dynamic framework</h4>
-
-<p>This happens when your app has not been linked with <code>-ObjC</code> flag against static framework. The problem is related to using Objective C categories within static library which are thrown away by linker. You can see more information in <a href="https://developer.apple.com/library/content/qa/qa1490/_index.html">official Apple documentation</a>.</p>
-<h4 id='app-crashing-when-scanning-starts-with-log-message-em-failed-to-load-resource-xx-the-program-will-now-crash-em' class='heading'>App crashing when scanning starts with log message <em>Failed to load resource XX. The program will now crash.</em></h4>
-
-<p>This means that a required resource was not packaged into final app. This usually indicates a bug in our script that makes the customised build. Please <a href="http://help.microblink.com">contact us</a> and send your version of <code>enabled-features.cmake</code> and crash log.</p>
-<h4 id='cmake-error-while-running-script' class='heading'>CMake error while running script.</h4>
-
-<p>You probably have a typo in <code>enabled-features.cmake</code>. CMake is very sensitive language and will throw an non-understandable error if you have a typo or invoke any of its commands with wrong number of parameters.</p>
-<h4 id='linker-error-while-running-the-script' class='heading'>Linker error while running the script.</h4>
-
-<p>This sometimes happens when XCode&rsquo;s link time optimizer runs out of memory. Usually running the script again solves the problem. Please reboot your Mac if this keeps happening.</p>
-<h4 id='keeping-only-code-feature_mrtd-code-creates-rather-large-code-microblink-bundle-code' class='heading'>Keeping only <code>FEATURE_MRTD</code> creates rather large <code>MicroBlink.bundle</code></h4>
-
-<p><code>FEATURE_MRTD</code> marks the <em>MRTD recognizer</em>. However, <em>MRTD recognizer</em> can also be used in <em>Templating API</em> mode where non-MRZ data can be scanned. To perform OCR of non-MRZ data, a rather large OCR model must be used, which supports all fonts. If you only plan to scan MRZ part of the document, you can edit the <code>features.cmake</code> in following way:</p>
-
-<ul>
-<li>find the following line:</li>
-</ul>
-<pre class="highlight plaintext"><code>feature_resources( FEATURE_MRTD model_mrtd model_general_blink_ocr model_micr model_arabic )
-</code></pre>
-
-<ul>
-<li>keep only <code>model_mrtd</code> in the list, i.e. modify the line so that it will be like this:</li>
-</ul>
-<pre class="highlight plaintext"><code>feature_resources( FEATURE_MRTD model_mrtd )
-</code></pre>
-
-<p>This will keep only support for reading MRZ zone in OCR - you will not be able to scan non-MRZ data with such configuration using <em>MRTD recognizer</em>, however you will reduce the <code>MicroBlink.bundle</code> and then final app size by more than 4MB.</p>
-<h5 id='more-information-about-ocr-models-in-code-feature_mrtd-code' class='heading'>More information about OCR models in <code>FEATURE_MRTD</code></h5>
-
-<ul>
-<li><code>model_mrtd</code> is OCR model for performing OCR of MRZ zone</li>
-<li><code>model_arabic</code> is OCR model for performing OCR of digits used in arabic languages - text scanning is not supported</li>
-<li><code>model_micr</code> is OCR model for performing OCR of <a href="https://en.wikipedia.org/wiki/Magnetic_ink_character_recognition">Magnetic Ink Characters</a></li>
-<li><code>model_general_blink_ocr</code> is OCR model for performing general-purpose OCR. This model is usually required for performing OCR of non-MRZ text on documents.</li>
+<li>Find the translation key in en.strings file inside Microblink.framework</li>
+<li>Add a new file MyTranslations.strings to the project by using &ldquo;Strings File&rdquo; template</li>
+<li>With MyTranslations.string open, in File inspector tap &ldquo;Localize&hellip;&rdquo; button and select English</li>
+<li>Add the translation key &ldquo;blinkid_generic_message&rdquo; and the value &ldquo;Scan the front side&rdquo; to MyTranslations.strings</li>
+<li>Finally in AppDelegate.swift in method <code>application(_:, didFinishLaunchingWithOptions:)</code> add <code>MBMicroblinkApp.instance()?.customLocalizationFileName = &quot;MyTranslations&quot;</code></li>
 </ul>
 <h1 id='a-name-troubleshooting-a-troubleshooting' class='heading'><a name="troubleshooting"></a> Troubleshooting</h1>
 <h2 id='a-name-troubleshooting-integration-problems-a-integration-problems' class='heading'><a name="troubleshooting-integration-problems"></a> Integration problems</h2>
@@ -1106,7 +1043,7 @@ The only difference is that user should call <code>- (void)processString:(NSStri
 <p>In case of problems with using the SDK, you should do as follows:</p>
 <h3 id='a-name-troubleshooting-licensing-problems-a-licencing-problems' class='heading'><a name="troubleshooting-licensing-problems"></a> Licencing problems</h3>
 
-<p>If you are getting <q>invalid licence key</q> error or having other licence-related problems (e.g. some feature is not enabled that should be or there is a watermark on top of camera), first check the console. All licence-related problems are logged to error log so it is easy to determine what went wrong.</p>
+<p>If you are getting &ldquo;invalid licence key&rdquo; error or having other licence-related problems (e.g. some feature is not enabled that should be or there is a watermark on top of camera), first check the console. All licence-related problems are logged to error log so it is easy to determine what went wrong.</p>
 
 <p>When you have determine what is the licence-relate problem or you simply do not understand the log, you should contact us <a href="http://help.microblink.com">help.microblink.com</a>. When contacting us, please make sure you provide following information:</p>
 
@@ -1141,14 +1078,14 @@ The only difference is that user should call <code>- (void)processString:(NSStri
 <p>Whenever you construct any <a href="http://pdf417.github.io/pdf417-ios/docs/Classes/MBRecognizer.html"><code><a href="Classes/MBRecognizer.html">MBRecognizer</a></code></a> object or, a check whether license allows using that object will be performed. If license is not set prior constructing that object, you will get <code>NSError</code> with <code>MBMicroblinkSDKRecognizerErrorDomain</code> and <code>MBRecognizerFailedToInitalize</code> code. We recommend setting license as early as possible in your app.</p>
 <h4 id='undefined-symbols-on-architecture-armv7' class='heading'>Undefined Symbols on Architecture armv7</h4>
 
-<p>Make sure you link your app with iconv and Accelerate frameworks as shown in <a href="#quick-start">Quick start</a>. 
+<p>Make sure you link your app with iconv and Accelerate frameworks as shown in <a href="#quick-start">Quick start</a>.
 If you are using Cocoapods, please be sure that you&rsquo;ve installed <code>git-lfs</code> prior to installing pods. If you are still getting this error, go to project folder and execute command <code>git-lfs pull</code>.</p>
 <h4 id='in-my-code-didfinish-code-callback-i-have-the-result-inside-my-code-mbrecognizer-code-but-when-scanning-activity-finishes-the-result-is-gone' class='heading'>In my <code>didFinish</code> callback I have the result inside my <code><a href="Classes/MBRecognizer.html">MBRecognizer</a></code>, but when scanning activity finishes, the result is gone</h4>
 
 <p>This usually happens when using <a href="http://pdf417.github.io/pdf417-ios/docs/Classes/MBRecognizerRunnerViewController.html"><code><a href="Protocols/MBRecognizerRunnerViewController.html">MBRecognizerRunnerViewController</a></code></a> and forgetting to pause the <a href="http://pdf417.github.io/pdf417-ios/docs/Classes/MBRecognizerRunnerViewController.html"><code><a href="Protocols/MBRecognizerRunnerViewController.html">MBRecognizerRunnerViewController</a></code></a> in your <code>didFinish</code> callback. Then, as soon as <code>didFinish</code> happens, the result is mutated or reset by additional processing that <code><a href="Classes/MBRecognizer.html">MBRecognizer</a></code> performs in the time between end of your <code>didFinish</code> callback and actual finishing of the scanning activity. For more information about statefulness of the <code><a href="Classes/MBRecognizer.html">MBRecognizer</a></code> objects, check <a href="#recognizer-concept">this section</a>.</p>
 <h4 id='unsupported-architectures-when-submitting-app-to-app-store' class='heading'>Unsupported architectures when submitting app to App Store</h4>
 
-<p>Microblink.framework is a dynamic framework which contains slices for all architectures - device and simulator. If you intend to extract .ipa file for ad hoc distribution, you&rsquo;ll need to preprocess the framework to remove simulator architectures. </p>
+<p>Microblink.framework is a dynamic framework which contains slices for all architectures - device and simulator. If you intend to extract .ipa file for ad hoc distribution, you&rsquo;ll need to preprocess the framework to remove simulator architectures.</p>
 
 <p>Ideal solution is to add a build phase after embed frameworks build phase, which strips unused slices from embedded frameworks.</p>
 
@@ -1182,6 +1119,9 @@ mv <span class="s2">"</span><span class="nv">$FRAMEWORK_EXECUTABLE_PATH</span><s
 
 <span class="k">done</span>
 </code></pre>
+<h3 id='disable-logging' class='heading'>Disable logging</h3>
+
+<p>Logging can be disabled by calling <code>disableMicroblinkLogging</code> method on <a href="http://pdf417.github.io/pdf417-ios/docs/Classes/MBLogger.html"><code><a href="Classes/MBLogger.html">MBLogger</a></code></a> instance.</p>
 <h1 id='a-name-info-a-additional-info' class='heading'><a name="info"></a> Additional info</h1>
 
 <p>Complete API reference can be found <a href="http://pdf417.github.io/pdf417-ios/index.html">here</a>. </p>
@@ -1195,8 +1135,8 @@ mv <span class="s2">"</span><span class="nv">$FRAMEWORK_EXECUTABLE_PATH</span><s
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="http://microblink.com" target="_blank" rel="external">Microblink</a>. All rights reserved. (Last updated: 2019-05-16)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2020 <a class="link" href="http://microblink.com" target="_blank" rel="external">Microblink</a>. All rights reserved. (Last updated: 2020-11-09)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>

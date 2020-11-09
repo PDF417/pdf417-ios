@@ -6,7 +6,7 @@
 //  Copyright © 2018 Dino. All rights reserved.
 //
 
-import MicroBlink
+import Microblink
 
 class CustomOverlay: MBCustomOverlayViewController, MBScanningRecognizerRunnerViewControllerDelegate {
     
@@ -20,7 +20,7 @@ class CustomOverlay: MBCustomOverlayViewController, MBScanningRecognizerRunnerVi
         super.scanningRecognizerRunnerViewControllerDelegate = self;
     }
     
-    func recognizerRunnerViewController(_ recognizerRunnerViewController: UIViewController & MBRecognizerRunnerViewController, didFinishScanningWith state: MBRecognizerResultState) {
+    func recognizerRunnerViewControllerDidFinishScanning(_ recognizerRunnerViewController: UIViewController & MBRecognizerRunnerViewController, state: MBRecognizerResultState) {
         /** This is done on background thread */
         if state == MBRecognizerResultState.valid {
             recognizerRunnerViewController.pauseScanning();

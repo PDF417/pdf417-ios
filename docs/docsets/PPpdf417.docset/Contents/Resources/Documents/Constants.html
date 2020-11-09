@@ -21,9 +21,9 @@
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="index.html">
-          PPpdf417 Docs
+          PPpdf417 v7.3.0 Docs
         </a>
-         (80% documented)
+         (76% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -109,6 +109,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/MBImage.html">MBImage</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBLogger.html">MBLogger</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/MBMicroblinkApp.html">MBMicroblinkApp</a>
@@ -203,6 +206,9 @@
                 <a class="nav-group-task-link" href="Constants.html#/c:@MBInvalidLicenseeKeyException">MBInvalidLicenseeKeyException</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Constants.html#/c:@MBLicenseErrorNotification">MBLicenseErrorNotification</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Constants.html#/c:@MBMissingSettingsException">MBMissingSettingsException</a>
               </li>
             </ul>
@@ -229,10 +235,16 @@
                 <a class="nav-group-task-link" href="Enums/MBFrameQualityEstimationMode.html">MBFrameQualityEstimationMode</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Enums/MBLicenseError.html">MBLicenseError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Enums/MBLogLevel.html">MBLogLevel</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Enums/MBProcessingOrientation.html">MBProcessingOrientation</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Enums/MBRecognitionMode.html">MBRecognitionMode</a>
+                <a class="nav-group-task-link" href="Enums/MBRecognitionDebugMode.html">MBRecognitionDebugMode</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Enums/MBRecognizerResultState.html">MBRecognizerResultState</a>
@@ -265,6 +277,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Protocols/MBImageProcessingRecognizerRunnerDelegate.html">MBImageProcessingRecognizerRunnerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/MBLoggerDelegate.html">MBLoggerDelegate</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Protocols/MBNativeResult.html">MBNativeResult</a>
@@ -302,19 +317,25 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a class="nav-group-name-link" href="Type Definitions.html">Type Definitions</a>
+            <a class="nav-group-name-link" href="Type%20Definitions.html">Type Definitions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Type Definitions.html#/c:MBGeometry.h@T@CGDelta">CGDelta</a>
+                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:MBGeometry.h@T@CGDelta">CGDelta</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Type Definitions/CGLine.html">CGLine</a>
+                <a class="nav-group-task-link" href="Type%20Definitions/CGLine.html">CGLine</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Type Definitions.html#/c:MBRecognizerRunnerViewController.h@T@MBCaptureHighResImage">MBCaptureHighResImage</a>
+                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:MBMicroblinkDefines.h@T@MBBlock">MBBlock</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Type Definitions.html#/c:MBException.h@T@MBExceptionName">MBExceptionName</a>
+                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:MBRecognizerRunnerViewController.h@T@MBCaptureHighResImage">MBCaptureHighResImage</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:MBException.h@T@MBExceptionName">MBExceptionName</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:MBLicenseError.h@T@MBLicenseErrorBlock">MBLicenseErrorBlock</a>
               </li>
             </ul>
           </li>
@@ -406,7 +427,13 @@
                 <a class="nav-group-task-link" href="Functions.html#/c:@F@CGRectTopRightPoint">CGRectTopRightPoint</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Functions.html#/c:@F@scanningRegionForFrameInBounds">scanningRegionForFrameInBounds</a>
+                <a class="nav-group-task-link" href="Functions.html#/c:MBMicroblinkApp.h@F@MB_LOCALIZED">MB_LOCALIZED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Functions.html#/c:MBMicroblinkApp.h@F@MB_LOCALIZED_DEFAULT_STRING">MB_LOCALIZED_DEFAULT_STRING</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Functions.html#/c:@F@MBscanningRegionForFrameInBounds">MBscanningRegionForFrameInBounds</a>
               </li>
             </ul>
           </li>
@@ -415,7 +442,7 @@
       <article class="main-content">
 
         <section class="section">
-          <div class="section-content">
+          <div class="section-content top-matter">
             <h1>Constants</h1>
             <p>The following constants are available globally.</p>
 
@@ -446,7 +473,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="n">FOUNDATION_EXPORT</span> <span class="n"><a href="Type Definitions.html#/c:MBException.h@T@MBExceptionName">MBExceptionName</a></span> <span class="k">const</span> <span class="n">MBIllegalModificationException</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="n">FOUNDATION_EXPORT</span> <span class="n"><a href="Type%20Definitions.html#/c:MBException.h@T@MBExceptionName">MBExceptionName</a></span> <span class="k">const</span> <span class="n">MBIllegalModificationException</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -478,7 +505,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="n">FOUNDATION_EXPORT</span> <span class="n"><a href="Type Definitions.html#/c:MBException.h@T@MBExceptionName">MBExceptionName</a></span> <span class="k">const</span> <span class="n">MBInvalidLicenseKeyException</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="n">FOUNDATION_EXPORT</span> <span class="n"><a href="Type%20Definitions.html#/c:MBException.h@T@MBExceptionName">MBExceptionName</a></span> <span class="k">const</span> <span class="n">MBInvalidLicenseKeyException</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -510,7 +537,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="n">FOUNDATION_EXPORT</span> <span class="n"><a href="Type Definitions.html#/c:MBException.h@T@MBExceptionName">MBExceptionName</a></span> <span class="k">const</span> <span class="n">MBInvalidLicenseeKeyException</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="n">FOUNDATION_EXPORT</span> <span class="n"><a href="Type%20Definitions.html#/c:MBException.h@T@MBExceptionName">MBExceptionName</a></span> <span class="k">const</span> <span class="n">MBInvalidLicenseeKeyException</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -542,7 +569,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="n">FOUNDATION_EXPORT</span> <span class="n"><a href="Type Definitions.html#/c:MBException.h@T@MBExceptionName">MBExceptionName</a></span> <span class="k">const</span> <span class="n">MBInvalidLicenseResourceException</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="n">FOUNDATION_EXPORT</span> <span class="n"><a href="Type%20Definitions.html#/c:MBException.h@T@MBExceptionName">MBExceptionName</a></span> <span class="k">const</span> <span class="n">MBInvalidLicenseResourceException</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -574,7 +601,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="n">FOUNDATION_EXPORT</span> <span class="n"><a href="Type Definitions.html#/c:MBException.h@T@MBExceptionName">MBExceptionName</a></span> <span class="k">const</span> <span class="n">MBInvalidBundleException</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="n">FOUNDATION_EXPORT</span> <span class="n"><a href="Type%20Definitions.html#/c:MBException.h@T@MBExceptionName">MBExceptionName</a></span> <span class="k">const</span> <span class="n">MBInvalidBundleException</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -606,7 +633,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="n">FOUNDATION_EXPORT</span> <span class="n"><a href="Type Definitions.html#/c:MBException.h@T@MBExceptionName">MBExceptionName</a></span> <span class="k">const</span> <span class="n">MBMissingSettingsException</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="n">FOUNDATION_EXPORT</span> <span class="n"><a href="Type%20Definitions.html#/c:MBException.h@T@MBExceptionName">MBExceptionName</a></span> <span class="k">const</span> <span class="n">MBMissingSettingsException</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -638,12 +665,44 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="n">FOUNDATION_EXPORT</span> <span class="n"><a href="Type Definitions.html#/c:MBException.h@T@MBExceptionName">MBExceptionName</a></span> <span class="k">const</span> <span class="n">MBInvalidArgumentException</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="n">FOUNDATION_EXPORT</span> <span class="n"><a href="Type%20Definitions.html#/c:MBException.h@T@MBExceptionName">MBExceptionName</a></span> <span class="k">const</span> <span class="n">MBInvalidArgumentException</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">MBInvalidArgumentException</span><span class="p">:</span> <span class="kt">Int32</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@MBLicenseErrorNotification"></a>
+                    <a name="//apple_ref/objc/Constant/MBLicenseErrorNotification" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@MBLicenseErrorNotification">MBLicenseErrorNotification</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">extern</span> <span class="n">NSString</span> <span class="o">*</span> <span class="k">const</span> <span class="n">MBLicenseErrorNotification</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">static</span> <span class="k">let</span> <span class="nv">MBLicenseError</span><span class="p">:</span> <span class="kt">NSNotification</span><span class="o">.</span><span class="kt">Name</span></code></pre>
 
                         </div>
                       </div>
@@ -658,8 +717,8 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="http://microblink.com" target="_blank" rel="external">Microblink</a>. All rights reserved. (Last updated: 2019-05-16)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2020 <a class="link" href="http://microblink.com" target="_blank" rel="external">Microblink</a>. All rights reserved. (Last updated: 2020-11-09)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>

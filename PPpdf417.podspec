@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   
   s.name        = "PPpdf417"
-  s.version     = "7.2.0"
+  s.version     = "7.3.0"
   s.summary     = "A delightful component for barcode scanning"
   s.homepage    = "http://pdf417.mobi"
   
@@ -39,7 +39,7 @@ Pod::Spec.new do |s|
   }
 
   s.source      = { 
-        :http => 'https://github.com/PDF417/pdf417-ios/releases/download/v7.2.0/pdf417-ios_v7.2.0.tar.gz', 
+        :http => 'https://github.com/PDF417/pdf417-ios/releases/download/v7.3.0/pdf417-ios_v7.3.0.tar.gz', 
   }
 
   s.platform     = :ios
@@ -47,7 +47,6 @@ Pod::Spec.new do |s|
   # ――― MULTI-PLATFORM VALUES ――――――――――――――――――――――――――――――――――――――――――――――――― #
 
   s.ios.deployment_target = '8.0.0'
-  s.ios.resources = "Microblink.bundle"
   s.ios.requires_arc = false
   s.ios.vendored_frameworks = 'Microblink.framework'
   s.ios.frameworks = 'Accelerate', 'AVFoundation', 'AudioToolbox', 'AssetsLibrary', 'CoreMedia'

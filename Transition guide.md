@@ -1,3 +1,23 @@
+## 7.3.0
+
+### iOS version support change:
+
+- From now on, we are not supporting **iOS 8** version.
+
+### Major API change:
+
+- We added `errorCallback` on `MBMicroblinkSDK` methods which needs to be implemented for properly setting up the license key.
+
+### Minor API changes:
+
+- Methods `pauseScanning` and `resumeScanningAndResetState` in `MBRecognizerRunnerViewController` do not return anymore `BOOL`
+	- use `isScanningPaused` to check if scanning is paused
+- We renamed `MBRecogitionMode` to `MBRecognitionDebugMode` in `MBRecognizerCollection`
+- Swift:
+	- We renamed all `sharedInstance` to `shared`
+	- All enums are now `Int`
+	- All `unsigned integers` are now `Int`
+
 ## Transition to 7.2.0
 
 - isScanningUnsupportedForCameraType: is now class method of MBMicroblinkSDK

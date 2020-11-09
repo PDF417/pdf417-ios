@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import MicroBlink
+import Microblink
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,8 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        // Valid until: 2021-01-23
-        MBMicroblinkSDK.sharedInstance().setLicenseResource("pdf417-license", withExtension: "txt", inSubdirectory: "License", for: Bundle.main)
+        // Valid until: 2021-04-08
+        MBMicroblinkSDK.shared().setLicenseResource("pdf417-license", withExtension: "txt", inSubdirectory: "", for: .main, errorCallback: nil)
         return true
     }
 

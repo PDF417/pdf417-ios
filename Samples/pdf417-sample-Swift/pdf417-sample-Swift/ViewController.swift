@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import MicroBlink
+import Microblink
 
 class ViewController: UIViewController {
     
@@ -17,8 +17,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Valid until: 2021-01-23
-        MBMicroblinkSDK.sharedInstance().setLicenseResource("pdf417-license", withExtension: "txt", inSubdirectory: "License", for: Bundle.main)
+        // Valid until: 2021-04-08
+        MBMicroblinkSDK.shared().setLicenseResource("pdf417-license", withExtension: "txt", inSubdirectory: "", for: .main, errorCallback: nil)
     }
     
     @IBAction func didTapCustomUI(_ sender: Any) {
@@ -40,7 +40,7 @@ class ViewController: UIViewController {
         customOverlayViewController.reconfigureRecognizers(recognizerCollection)
         
         /** Create recognizer view controller with wanted overlay view controller */
-        let recognizerRunneViewController : UIViewController = MBViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: customOverlayViewController)
+        let recognizerRunneViewController : UIViewController = MBViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: customOverlayViewController)!
         
         /** Present the recognizer runner view controller. You can use other presentation methods as well (instead of presentViewController) */
         self.present(recognizerRunneViewController, animated: true, completion: nil)
@@ -64,8 +64,8 @@ class ViewController: UIViewController {
         let barcodeOverlayViewController : MBBarcodeOverlayViewController = MBBarcodeOverlayViewController(settings: settings, recognizerCollection: recognizerCollection, delegate: self)
         
         /** Create recognizer view controller with wanted overlay view controller */
-        let recognizerRunneViewController : UIViewController = MBViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: barcodeOverlayViewController)
-        
+        let recognizerRunneViewController : UIViewController = MBViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: barcodeOverlayViewController)!
+                
         /** Present the recognizer runner view controller. You can use other presentation methods as well (instead of presentViewController) */
         self.present(recognizerRunneViewController, animated: true, completion: nil)
     }

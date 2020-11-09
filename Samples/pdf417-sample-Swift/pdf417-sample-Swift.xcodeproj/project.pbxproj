@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,11 +19,10 @@
 		3139C8361C22B338005AC32C /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3139C8351C22B338005AC32C /* libc++.tbd */; };
 		3139C8381C22B33E005AC32C /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3139C8371C22B33E005AC32C /* libiconv.tbd */; };
 		A288D47B2073B5F20042A45F /* CustomOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A288D47A2073B5F20042A45F /* CustomOverlay.swift */; };
-		A288D47D2073B69C0042A45F /* License in Resources */ = {isa = PBXBuildFile; fileRef = A288D47C2073B69C0042A45F /* License */; };
+		A28E86EA25595ECA008B04E3 /* Microblink.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A28E86E825595EB6008B04E3 /* Microblink.xcframework */; };
+		A28E86EB25595ECA008B04E3 /* Microblink.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A28E86E825595EB6008B04E3 /* Microblink.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A28E86EE25595F55008B04E3 /* pdf417-license.txt in Resources */ = {isa = PBXBuildFile; fileRef = A28E86ED25595F55008B04E3 /* pdf417-license.txt */; };
 		A2FE137F1F75106F00C6F1EA /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A2FE137E1F75106F00C6F1EA /* libz.tbd */; };
-		B47214A2228EACB6002824AC /* Microblink.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B47214A0228EACB6002824AC /* Microblink.bundle */; };
-		B47214A3228EACBE002824AC /* Microblink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B472149F228EACB6002824AC /* Microblink.framework */; };
-		B47214A4228EACBE002824AC /* Microblink.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B472149F228EACB6002824AC /* Microblink.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,7 +32,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B47214A4228EACBE002824AC /* Microblink.framework in Embed Frameworks */,
+				A28E86EB25595ECA008B04E3 /* Microblink.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -55,10 +54,9 @@
 		3139C8351C22B338005AC32C /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		3139C8371C22B33E005AC32C /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		A288D47A2073B5F20042A45F /* CustomOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOverlay.swift; sourceTree = "<group>"; };
-		A288D47C2073B69C0042A45F /* License */ = {isa = PBXFileReference; lastKnownFileType = folder; path = License; sourceTree = "<group>"; };
+		A28E86E825595EB6008B04E3 /* Microblink.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Microblink.xcframework; path = ../../Microblink.xcframework; sourceTree = "<group>"; };
+		A28E86ED25595F55008B04E3 /* pdf417-license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "pdf417-license.txt"; sourceTree = "<group>"; };
 		A2FE137E1F75106F00C6F1EA /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		B472149F228EACB6002824AC /* Microblink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Microblink.framework; path = ../../Microblink.framework; sourceTree = "<group>"; };
-		B47214A0228EACB6002824AC /* Microblink.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Microblink.bundle; path = ../../Microblink.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +71,7 @@
 				3139C8321C22B324005AC32C /* CoreMedia.framework in Frameworks */,
 				3139C8301C22B31D005AC32C /* AVFoundation.framework in Frameworks */,
 				3139C82E1C22B319005AC32C /* Accelerate.framework in Frameworks */,
-				B47214A3228EACBE002824AC /* Microblink.framework in Frameworks */,
+				A28E86EA25595ECA008B04E3 /* Microblink.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,7 +98,7 @@
 		3139C8191C22B2AC005AC32C /* pdf417-sample-Swift */ = {
 			isa = PBXGroup;
 			children = (
-				A288D47C2073B69C0042A45F /* License */,
+				A28E86EC25595F55008B04E3 /* License */,
 				A288D47A2073B5F20042A45F /* CustomOverlay.swift */,
 				3139C81A1C22B2AC005AC32C /* AppDelegate.swift */,
 				3139C81C1C22B2AC005AC32C /* ViewController.swift */,
@@ -115,17 +113,25 @@
 		3139C82C1C22B30C005AC32C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A28E86E825595EB6008B04E3 /* Microblink.xcframework */,
 				A2FE137E1F75106F00C6F1EA /* libz.tbd */,
 				3139C8371C22B33E005AC32C /* libiconv.tbd */,
 				3139C8351C22B338005AC32C /* libc++.tbd */,
-				B47214A0228EACB6002824AC /* Microblink.bundle */,
-				B472149F228EACB6002824AC /* Microblink.framework */,
 				3139C8331C22B333005AC32C /* AudioToolbox.framework */,
 				3139C8311C22B324005AC32C /* CoreMedia.framework */,
 				3139C82F1C22B31D005AC32C /* AVFoundation.framework */,
 				3139C82D1C22B319005AC32C /* Accelerate.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A28E86EC25595F55008B04E3 /* License */ = {
+			isa = PBXGroup;
+			children = (
+				A28E86ED25595F55008B04E3 /* pdf417-license.txt */,
+			);
+			name = License;
+			path = ../../License;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,7 +163,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1210;
 				ORGANIZATIONNAME = Dino;
 				TargetAttributes = {
 					3139C8161C22B2AC005AC32C = {
@@ -169,10 +175,9 @@
 			};
 			buildConfigurationList = 3139C8121C22B2AC005AC32C /* Build configuration list for PBXProject "pdf417-sample-Swift" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
@@ -193,8 +198,7 @@
 			files = (
 				3139C8251C22B2AC005AC32C /* LaunchScreen.storyboard in Resources */,
 				3139C8221C22B2AC005AC32C /* Assets.xcassets in Resources */,
-				A288D47D2073B69C0042A45F /* License in Resources */,
-				B47214A2228EACB6002824AC /* Microblink.bundle in Resources */,
+				A28E86EE25595F55008B04E3 /* pdf417-license.txt in Resources */,
 				3139C8201C22B2AC005AC32C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -213,7 +217,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "APP_PATH=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}\"\n\n# This script loops through the frameworks embedded in the application and\n# removes unused architectures.\nfind \"$APP_PATH\" -name '*.framework' -type d | while read -r FRAMEWORK\ndo\nFRAMEWORK_EXECUTABLE_NAME=$(defaults read \"$FRAMEWORK/Info.plist\" CFBundleExecutable)\nFRAMEWORK_EXECUTABLE_PATH=\"$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME\"\necho \"Executable is $FRAMEWORK_EXECUTABLE_PATH\"\n\nEXTRACTED_ARCHS=()\n\nfor ARCH in $ARCHS\ndo\necho \"Extracting $ARCH from $FRAMEWORK_EXECUTABLE_NAME\"\nlipo -extract \"$ARCH\" \"$FRAMEWORK_EXECUTABLE_PATH\" -o \"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\"\nEXTRACTED_ARCHS+=(\"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\")\ndone\n\necho \"Merging extracted architectures: ${ARCHS}\"\nlipo -o \"$FRAMEWORK_EXECUTABLE_PATH-merged\" -create \"${EXTRACTED_ARCHS[@]}\"\nrm \"${EXTRACTED_ARCHS[@]}\"\n\necho \"Replacing original executable with thinned version\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_EXECUTABLE_PATH-merged\" \"$FRAMEWORK_EXECUTABLE_PATH\"\n\ndone\n";
+			shellScript = "
+";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -272,6 +277,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -297,7 +303,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -328,6 +334,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -347,10 +354,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -363,8 +371,11 @@
 				DEVELOPMENT_TEAM = CQTJWP89J7;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "pdf417-sample-Swift/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.microblink.pdf417-sample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -378,8 +389,11 @@
 				DEVELOPMENT_TEAM = CQTJWP89J7;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "pdf417-sample-Swift/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.microblink.pdf417-sample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

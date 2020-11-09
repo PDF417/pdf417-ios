@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,11 +19,10 @@
 		A207A4BE20A4862D002AEDB0 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A207A4BD20A4862D002AEDB0 /* libiconv.tbd */; };
 		A207A4C020A48633002AEDB0 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A207A4BF20A48633002AEDB0 /* libc++.tbd */; };
 		A207A4C220A4863E002AEDB0 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A207A4C120A4863E002AEDB0 /* libz.tbd */; };
-		A207A4CB20A4866D002AEDB0 /* License in Resources */ = {isa = PBXBuildFile; fileRef = A207A4CA20A4866D002AEDB0 /* License */; };
 		A207A4CF20A49237002AEDB0 /* MBCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A207A4CE20A49237002AEDB0 /* MBCameraViewController.swift */; };
-		B472149B228EAAE2002824AC /* Microblink.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B4721499228EAAE2002824AC /* Microblink.bundle */; };
-		B472149C228EAAEA002824AC /* Microblink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4721498228EAAE2002824AC /* Microblink.framework */; };
-		B472149D228EAAEA002824AC /* Microblink.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4721498228EAAE2002824AC /* Microblink.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A28E86E325595DD0008B04E3 /* pdf417-license.txt in Resources */ = {isa = PBXBuildFile; fileRef = A28E86E225595DD0008B04E3 /* pdf417-license.txt */; };
+		A28E86E625595E11008B04E3 /* Microblink.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A28E86E425595DF5008B04E3 /* Microblink.xcframework */; };
+		A28E86E725595E11008B04E3 /* Microblink.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A28E86E425595DF5008B04E3 /* Microblink.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,7 +32,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B472149D228EAAEA002824AC /* Microblink.framework in Embed Frameworks */,
+				A28E86E725595E11008B04E3 /* Microblink.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -55,10 +54,9 @@
 		A207A4BD20A4862D002AEDB0 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		A207A4BF20A48633002AEDB0 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		A207A4C120A4863E002AEDB0 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		A207A4CA20A4866D002AEDB0 /* License */ = {isa = PBXFileReference; lastKnownFileType = folder; path = License; sourceTree = "<group>"; };
 		A207A4CE20A49237002AEDB0 /* MBCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBCameraViewController.swift; sourceTree = "<group>"; };
-		B4721498228EAAE2002824AC /* Microblink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Microblink.framework; path = ../../Microblink.framework; sourceTree = "<group>"; };
-		B4721499228EAAE2002824AC /* Microblink.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Microblink.bundle; path = ../../Microblink.bundle; sourceTree = "<group>"; };
+		A28E86E225595DD0008B04E3 /* pdf417-license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "pdf417-license.txt"; sourceTree = "<group>"; };
+		A28E86E425595DF5008B04E3 /* Microblink.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Microblink.xcframework; path = ../../Microblink.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,12 +66,12 @@
 			files = (
 				A207A4BC20A4861D002AEDB0 /* CoreMedia.framework in Frameworks */,
 				A207A4BA20A48616002AEDB0 /* AudioToolbox.framework in Frameworks */,
-				B472149C228EAAEA002824AC /* Microblink.framework in Frameworks */,
 				A207A4B820A4860F002AEDB0 /* AVFoundation.framework in Frameworks */,
 				A207A4B620A4860A002AEDB0 /* Accelerate.framework in Frameworks */,
 				A207A4C220A4863E002AEDB0 /* libz.tbd in Frameworks */,
 				A207A4C020A48633002AEDB0 /* libc++.tbd in Frameworks */,
 				A207A4BE20A4862D002AEDB0 /* libiconv.tbd in Frameworks */,
+				A28E86E625595E11008B04E3 /* Microblink.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,7 +98,7 @@
 		A207A4A120A485DF002AEDB0 /* DirectAPI-sample-Swift */ = {
 			isa = PBXGroup;
 			children = (
-				A207A4CA20A4866D002AEDB0 /* License */,
+				A28E86E125595DD0008B04E3 /* License */,
 				A207A4A220A485DF002AEDB0 /* AppDelegate.swift */,
 				A207A4A420A485DF002AEDB0 /* ViewController.swift */,
 				A207A4CE20A49237002AEDB0 /* MBCameraViewController.swift */,
@@ -115,8 +113,7 @@
 		A207A4B420A4860A002AEDB0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B4721499228EAAE2002824AC /* Microblink.bundle */,
-				B4721498228EAAE2002824AC /* Microblink.framework */,
+				A28E86E425595DF5008B04E3 /* Microblink.xcframework */,
 				A207A4BB20A4861C002AEDB0 /* CoreMedia.framework */,
 				A207A4B920A48616002AEDB0 /* AudioToolbox.framework */,
 				A207A4B720A4860F002AEDB0 /* AVFoundation.framework */,
@@ -126,6 +123,15 @@
 				A207A4BD20A4862D002AEDB0 /* libiconv.tbd */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A28E86E125595DD0008B04E3 /* License */ = {
+			isa = PBXGroup;
+			children = (
+				A28E86E225595DD0008B04E3 /* pdf417-license.txt */,
+			);
+			name = License;
+			path = ../../License;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,7 +162,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1210;
 				ORGANIZATIONNAME = Microblink;
 				TargetAttributes = {
 					A207A49E20A485DF002AEDB0 = {
@@ -189,10 +195,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A207A4AD20A485E0002AEDB0 /* LaunchScreen.storyboard in Resources */,
+				A28E86E325595DD0008B04E3 /* pdf417-license.txt in Resources */,
 				A207A4AA20A485E0002AEDB0 /* Assets.xcassets in Resources */,
 				A207A4A820A485DF002AEDB0 /* Main.storyboard in Resources */,
-				B472149B228EAAE2002824AC /* Microblink.bundle in Resources */,
-				A207A4CB20A4866D002AEDB0 /* License in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +262,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -282,7 +288,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -317,6 +323,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -336,7 +343,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;

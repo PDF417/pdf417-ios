@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MBBDebugRecognizerRunnerDelegate Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+    <a name="//apple_ref/objc/Protocol/MBBDebugRecognizerRunnerDelegate" class="dashAnchor"></a>
+
+    <a title="MBBDebugRecognizerRunnerDelegate Protocol Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          PPpdf417 v8.0.0 Docs
+        </a>
+         (76% documented)
+      </p>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="../search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/pdf417/pdf417-ios">
+            <img class="header-icon" src="../img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">PPpdf417 Reference</a>
+      <img class="carat" src="../img/carat.png" />
+      MBBDebugRecognizerRunnerDelegate Protocol Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBBBarcodeOverlaySettings.html">MBBBarcodeOverlaySettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBBBarcodeOverlayViewController.html">MBBBarcodeOverlayViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBBBarcodeRecognizer.html">MBBBarcodeRecognizer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBBBarcodeRecognizerResult.html">MBBBarcodeRecognizerResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBBBaseOverlaySettings.html">MBBBaseOverlaySettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBBBaseOverlayViewController.html">MBBBaseOverlayViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBBCameraSettings.html">MBBCameraSettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBBCustomOverlayViewController.html">MBBCustomOverlayViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBBDateResult.html">MBBDateResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBBDisplayableDetection.html">MBBDisplayableDetection</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBBDisplayableObject.html">MBBDisplayableObject</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBBDisplayablePointsDetection.html">MBBDisplayablePointsDetection</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBBDisplayableQuadDetection.html">MBBDisplayableQuadDetection</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBBDotsResultSubview.html">MBBDotsResultSubview</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBBDotsSubview.html">MBBDotsSubview</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes.html#/c:objc(cs)MBBEntity">MBBEntity</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBBFrameGrabberRecognizer.html">MBBFrameGrabberRecognizer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBBGlareStatusSubview.html">MBBGlareStatusSubview</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBBImage.html">MBBImage</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBBLogger.html">MBBLogger</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBBMicroblinkApp.html">MBBMicroblinkApp</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBBMicroblinkSDK.html">MBBMicroblinkSDK</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBBModernViewfinderSubview.html">MBBModernViewfinderSubview</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBBOverlaySettings.html">MBBOverlaySettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBBOverlayViewController.html">MBBOverlayViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBBPdf417Recognizer.html">MBBPdf417Recognizer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBBPdf417RecognizerResult.html">MBBPdf417RecognizerResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBBQuadrangle.html">MBBQuadrangle</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBBRecognizer.html">MBBRecognizer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBBRecognizerCollection.html">MBBRecognizerCollection</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBBRecognizerResult.html">MBBRecognizerResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBBRecognizerRunner.html">MBBRecognizerRunner</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBBRecognizerRunnerMetadataDelegates.html">MBBRecognizerRunnerMetadataDelegates</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBBRecognizerRunnerViewControllerMetadataDelegates.html">MBBRecognizerRunnerViewControllerMetadataDelegates</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBBSimNumberRecognizer.html">MBBSimNumberRecognizer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBBSimNumberRecognizerResult.html">MBBSimNumberRecognizerResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBBSubview.html">MBBSubview</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBBSuccessFrameGrabberRecognizer.html">MBBSuccessFrameGrabberRecognizer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBBSuccessFrameGrabberRecognizerResult.html">MBBSuccessFrameGrabberRecognizerResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBBTapToFocusSubview.html">MBBTapToFocusSubview</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBBUsdlRecognizer.html">MBBUsdlRecognizer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBBUsdlRecognizerResult.html">MBBUsdlRecognizerResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBBViewControllerFactory.html">MBBViewControllerFactory</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Constants.html">Constants</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@MBBIllegalModificationException">MBBIllegalModificationException</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@MBBInvalidArgumentException">MBBInvalidArgumentException</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@MBBInvalidBundleException">MBBInvalidBundleException</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@MBBInvalidLicenseKeyException">MBBInvalidLicenseKeyException</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@MBBInvalidLicenseResourceException">MBBInvalidLicenseResourceException</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@MBBInvalidLicenseeKeyException">MBBInvalidLicenseeKeyException</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@MBBLicenseErrorNotification">MBBLicenseErrorNotification</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@MBBMissingSettingsException">MBBMissingSettingsException</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MBBBarcodeType.html">MBBBarcodeType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MBBCameraAutofocusRestriction.html">MBBCameraAutofocusRestriction</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MBBCameraPreset.html">MBBCameraPreset</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MBBCameraType.html">MBBCameraType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MBBDetectionStatus.html">MBBDetectionStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MBBFrameQualityEstimationMode.html">MBBFrameQualityEstimationMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MBBLicenseError.html">MBBLicenseError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MBBLogLevel.html">MBBLogLevel</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MBBProcessingOrientation.html">MBBProcessingOrientation</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MBBRecognitionDebugMode.html">MBBRecognitionDebugMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MBBRecognizerResultState.html">MBBRecognizerResultState</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/MBBUsdlKeys.html">MBBUsdlKeys</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MBBBarcodeOverlayViewControllerDelegate.html">MBBBarcodeOverlayViewControllerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MBBDebugRecognizerRunnerDelegate.html">MBBDebugRecognizerRunnerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MBBDebugRecognizerRunnerViewControllerDelegate.html">MBBDebugRecognizerRunnerViewControllerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MBBDetectionRecognizerRunnerDelegate.html">MBBDetectionRecognizerRunnerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MBBDetectionRecognizerRunnerViewControllerDelegate.html">MBBDetectionRecognizerRunnerViewControllerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MBBFrameGrabberRecognizerDelegate.html">MBBFrameGrabberRecognizerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MBBFrameRecognitionRecognizerRunnerViewControllerDelegate.html">MBBFrameRecognitionRecognizerRunnerViewControllerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MBBImageProcessingRecognizerRunnerDelegate.html">MBBImageProcessingRecognizerRunnerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MBBLoggerDelegate.html">MBBLoggerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MBBNativeResult.html">MBBNativeResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MBBOverlayContainerViewController.html">MBBOverlayContainerViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MBBPointDetectorSubview.html">MBBPointDetectorSubview</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MBBQuadDetectorSubview.html">MBBQuadDetectorSubview</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MBBRecognizerRunnerViewController.html">MBBRecognizerRunnerViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MBBRecognizerRunnerViewControllerDelegate.html">MBBRecognizerRunnerViewControllerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MBBResultSubview.html">MBBResultSubview</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MBBScanningRecognizerRunnerDelegate.html">MBBScanningRecognizerRunnerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MBBScanningRecognizerRunnerViewControllerDelegate.html">MBBScanningRecognizerRunnerViewControllerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MBBStringProcessingRecognizerRunnerDelegate.html">MBBStringProcessingRecognizerRunnerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MBBSubviewDelegate.html">MBBSubviewDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Type%20Definitions.html">Type Definitions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:MBGeometry.h@T@CGDelta">CGDelta</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions/CGLine.html">CGLine</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:MBRecognizerRunnerViewController.h@T@MBBCaptureHighResImage">MBBCaptureHighResImage</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:MBException.h@T@MBBExceptionName">MBBExceptionName</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:MBLicenseError.h@T@MBBLicenseErrorBlock">MBBLicenseErrorBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:MBMicroblinkDefines.h@T@MBBlock">MBBlock</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/c:@F@CGControlPointsForArcBetweenPointsWithRadius">CGControlPointsForArcBetweenPointsWithRadius</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/c:@F@CGDeltaMake">CGDeltaMake</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/c:@F@CGLineDelta">CGLineDelta</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/c:@F@CGLineDirection">CGLineDirection</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/c:@F@CGLineEqualToLine">CGLineEqualToLine</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/c:@F@CGLineIntersectsRectAtPoint">CGLineIntersectsRectAtPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/c:@F@CGLineLength">CGLineLength</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/c:@F@CGLineMake">CGLineMake</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/c:@F@CGLineMidPoint">CGLineMidPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/c:@F@CGLineScale">CGLineScale</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/c:@F@CGLineScaleOnMidPoint">CGLineScaleOnMidPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/c:@F@CGLineTranslate">CGLineTranslate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/c:@F@CGLinesAngle">CGLinesAngle</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/c:@F@CGLinesAreParallel">CGLinesAreParallel</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/c:@F@CGLinesIntersectAtPoint">CGLinesIntersectAtPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/c:@F@CGPointAlongLine">CGPointAlongLine</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/c:@F@CGPointDistance">CGPointDistance</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/c:@F@CGPointRotatedAroundPoint">CGPointRotatedAroundPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/c:@F@CGPointWithDelta">CGPointWithDelta</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/c:@F@CGRectBottomLeftPoint">CGRectBottomLeftPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/c:@F@CGRectBottomRightPoint">CGRectBottomRightPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/c:@F@CGRectCenterPoint">CGRectCenterPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/c:@F@CGRectClosestTwoCornerPoints">CGRectClosestTwoCornerPoints</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/c:@F@CGRectInsetEdge">CGRectInsetEdge</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/c:@F@CGRectResize">CGRectResize</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/c:@F@CGRectStackedWithinRectFromEdge">CGRectStackedWithinRectFromEdge</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/c:@F@CGRectTopLeftPoint">CGRectTopLeftPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/c:@F@CGRectTopRightPoint">CGRectTopRightPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/c:MBMicroblinkApp.h@F@MBB_LOCALIZED">MBB_LOCALIZED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/c:MBMicroblinkApp.h@F@MBB_LOCALIZED_DEFAULT_STRING">MBB_LOCALIZED_DEFAULT_STRING</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/c:MBMicroblinkApp.h@F@MBB_LOCALIZED_FOR_LANGUAGE">MBB_LOCALIZED_FOR_LANGUAGE</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/c:@F@MBBscanningRegionForFrameInBounds">MBBscanningRegionForFrameInBounds</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content top-matter">
+            <h1>MBBDebugRecognizerRunnerDelegate</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight objective_c"><code><span class="k">@protocol</span> <span class="nc">MBBDebugRecognizerRunnerDelegate</span> <span class="o">&lt;</span><span class="n">NSObject</span><span class="o">&gt;</span></code></pre>
+
+                </div>
+              </div>
+            <p>Protocol for obtaining debug metadata</p>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)MBBDebugRecognizerRunnerDelegate(im)recognizerRunner:didOutputDebugImage:"></a>
+                    <a name="//apple_ref/objc/Method/-recognizerRunner:didOutputDebugImage:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)MBBDebugRecognizerRunnerDelegate(im)recognizerRunner:didOutputDebugImage:">-recognizerRunner:didOutputDebugImage:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Scanning library did output debug image
+NOTE: This method is called on background processing thread. Make sure that you dispatch all your UI API calls to main thread.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">recognizerRunner</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/MBBRecognizerRunner.html">MBBRecognizerRunner</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">recognizerRunner</span>
+     <span class="nf">didOutputDebugImage</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/MBBImage.html">MBBImage</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">image</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">optional</span> <span class="kd">func</span> <span class="nf">recognizerRunner</span><span class="p">(</span><span class="n">_</span> <span class="nv">recognizerRunner</span><span class="p">:</span> <span class="kt"><a href="../Classes/MBBRecognizerRunner.html">MBBRecognizerRunner</a></span><span class="p">,</span> <span class="n">didOutputDebugImage</span> <span class="nv">image</span><span class="p">:</span> <span class="kt"><a href="../Classes/MBBImage.html">MBBImage</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/pdf417/pdf417-ios/releases/tag/v8.0.0/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBDebugRecognizerRunnerDelegate.h#L21">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)MBBDebugRecognizerRunnerDelegate(im)recognizerRunner:didOutputDebugText:"></a>
+                    <a name="//apple_ref/objc/Method/-recognizerRunner:didOutputDebugText:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)MBBDebugRecognizerRunnerDelegate(im)recognizerRunner:didOutputDebugText:">-recognizerRunner:didOutputDebugText:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Scanning library did output debug text
+NOTE: This method is called on background processing thread. Make sure that you dispatch all your UI API calls to main thread.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">recognizerRunner</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/MBBRecognizerRunner.html">MBBRecognizerRunner</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">recognizerRunner</span>
+      <span class="nf">didOutputDebugText</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">text</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">optional</span> <span class="kd">func</span> <span class="nf">recognizerRunner</span><span class="p">(</span><span class="n">_</span> <span class="nv">recognizerRunner</span><span class="p">:</span> <span class="kt"><a href="../Classes/MBBRecognizerRunner.html">MBBRecognizerRunner</a></span><span class="p">,</span> <span class="n">didOutputDebugText</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">Any</span><span class="o">!</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/pdf417/pdf417-ios/releases/tag/v8.0.0/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBDebugRecognizerRunnerDelegate.h#L27">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2021 <a class="link" href="http://microblink.com" target="_blank" rel="external">Microblink</a>. All rights reserved. (Last updated: 2021-04-09)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>

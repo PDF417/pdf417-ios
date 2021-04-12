@@ -1,3 +1,27 @@
+## 8.0.0
+
+### **Pdf417Mobi v8 Release Announcement**
+
+As of this version, Pdf417Mobi SDK is fully compatible with other Microblink SDKs, which means that you can use it with other Microblink SDKs in the same application.
+
+### New features:
+
+- We have full support for Apple Silicon!
+
+### Cocapods support change:
+
+- We are updating our Cocoapods with `.xcframework` format from now on. Please download [Cocoapods 1.10.0](https://github.com/CocoaPods/CocoaPods/releases/tag/1.10.0) or newer to use our SDK.
+
+### Major API changes:
+
+- To ensure compatibilty with other Microblink SDKs, we have reprefixed all classes. All classes have `MBB` prefix instead of `MB`
+- We have renamed framework from `Microblink` to `Pdf417Mobi`
+
+### Minor API changes:
+
+- We've replaced `Using time-limited license!` warning with `Using trial license!` warning. The warning message is displayed when using a trial license key.
+- We've deprecated `MBPdf417Recognizer` — use `MBBBarcodeRecognizer` instead.
+
 ## 7.3.0
 
 ### iOS version support change:

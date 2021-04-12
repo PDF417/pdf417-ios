@@ -19,10 +19,10 @@
 		A207A4BE20A4862D002AEDB0 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A207A4BD20A4862D002AEDB0 /* libiconv.tbd */; };
 		A207A4C020A48633002AEDB0 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A207A4BF20A48633002AEDB0 /* libc++.tbd */; };
 		A207A4C220A4863E002AEDB0 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A207A4C120A4863E002AEDB0 /* libz.tbd */; };
-		A207A4CF20A49237002AEDB0 /* MBCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A207A4CE20A49237002AEDB0 /* MBCameraViewController.swift */; };
+		A207A4CF20A49237002AEDB0 /* MBBCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A207A4CE20A49237002AEDB0 /* MBBCameraViewController.swift */; };
+		A261AE972624515D00B6BF9F /* Pdf417Mobi.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A261AE952624515600B6BF9F /* Pdf417Mobi.xcframework */; };
+		A261AE982624515D00B6BF9F /* Pdf417Mobi.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A261AE952624515600B6BF9F /* Pdf417Mobi.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A28E86E325595DD0008B04E3 /* pdf417-license.txt in Resources */ = {isa = PBXBuildFile; fileRef = A28E86E225595DD0008B04E3 /* pdf417-license.txt */; };
-		A28E86E625595E11008B04E3 /* Microblink.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A28E86E425595DF5008B04E3 /* Microblink.xcframework */; };
-		A28E86E725595E11008B04E3 /* Microblink.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A28E86E425595DF5008B04E3 /* Microblink.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,7 +32,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A28E86E725595E11008B04E3 /* Microblink.xcframework in Embed Frameworks */,
+				A261AE982624515D00B6BF9F /* Pdf417Mobi.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -54,9 +54,9 @@
 		A207A4BD20A4862D002AEDB0 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		A207A4BF20A48633002AEDB0 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		A207A4C120A4863E002AEDB0 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		A207A4CE20A49237002AEDB0 /* MBCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBCameraViewController.swift; sourceTree = "<group>"; };
+		A207A4CE20A49237002AEDB0 /* MBBCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBBCameraViewController.swift; sourceTree = "<group>"; };
+		A261AE952624515600B6BF9F /* Pdf417Mobi.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Pdf417Mobi.xcframework; path = ../../Pdf417Mobi.xcframework; sourceTree = "<group>"; };
 		A28E86E225595DD0008B04E3 /* pdf417-license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "pdf417-license.txt"; sourceTree = "<group>"; };
-		A28E86E425595DF5008B04E3 /* Microblink.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Microblink.xcframework; path = ../../Microblink.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,12 +66,12 @@
 			files = (
 				A207A4BC20A4861D002AEDB0 /* CoreMedia.framework in Frameworks */,
 				A207A4BA20A48616002AEDB0 /* AudioToolbox.framework in Frameworks */,
+				A261AE972624515D00B6BF9F /* Pdf417Mobi.xcframework in Frameworks */,
 				A207A4B820A4860F002AEDB0 /* AVFoundation.framework in Frameworks */,
 				A207A4B620A4860A002AEDB0 /* Accelerate.framework in Frameworks */,
 				A207A4C220A4863E002AEDB0 /* libz.tbd in Frameworks */,
 				A207A4C020A48633002AEDB0 /* libc++.tbd in Frameworks */,
 				A207A4BE20A4862D002AEDB0 /* libiconv.tbd in Frameworks */,
-				A28E86E625595E11008B04E3 /* Microblink.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,7 +101,7 @@
 				A28E86E125595DD0008B04E3 /* License */,
 				A207A4A220A485DF002AEDB0 /* AppDelegate.swift */,
 				A207A4A420A485DF002AEDB0 /* ViewController.swift */,
-				A207A4CE20A49237002AEDB0 /* MBCameraViewController.swift */,
+				A207A4CE20A49237002AEDB0 /* MBBCameraViewController.swift */,
 				A207A4A620A485DF002AEDB0 /* Main.storyboard */,
 				A207A4A920A485E0002AEDB0 /* Assets.xcassets */,
 				A207A4AB20A485E0002AEDB0 /* LaunchScreen.storyboard */,
@@ -113,7 +113,7 @@
 		A207A4B420A4860A002AEDB0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A28E86E425595DF5008B04E3 /* Microblink.xcframework */,
+				A261AE952624515600B6BF9F /* Pdf417Mobi.xcframework */,
 				A207A4BB20A4861C002AEDB0 /* CoreMedia.framework */,
 				A207A4B920A48616002AEDB0 /* AudioToolbox.framework */,
 				A207A4B720A4860F002AEDB0 /* AVFoundation.framework */,
@@ -210,7 +210,7 @@
 			files = (
 				A207A4A520A485DF002AEDB0 /* ViewController.swift in Sources */,
 				A207A4A320A485DF002AEDB0 /* AppDelegate.swift in Sources */,
-				A207A4CF20A49237002AEDB0 /* MBCameraViewController.swift in Sources */,
+				A207A4CF20A49237002AEDB0 /* MBBCameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,7 +364,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.microblink.pdf417-sample";
+				PRODUCT_BUNDLE_IDENTIFIER = com.microblink.pdf417.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -384,7 +384,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.microblink.pdf417-sample";
+				PRODUCT_BUNDLE_IDENTIFIER = com.microblink.pdf417.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

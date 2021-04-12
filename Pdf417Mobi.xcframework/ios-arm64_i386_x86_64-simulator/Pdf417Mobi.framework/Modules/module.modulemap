@@ -1,0 +1,6 @@
+framework module Pdf417Mobi {
+    umbrella header "Pdf417Mobi.h"
+
+    export *
+    module * { export * }
+}

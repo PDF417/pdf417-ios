@@ -19,9 +19,9 @@
 		3139C8361C22B338005AC32C /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3139C8351C22B338005AC32C /* libc++.tbd */; };
 		3139C8381C22B33E005AC32C /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3139C8371C22B33E005AC32C /* libiconv.tbd */; };
 		A288D47B2073B5F20042A45F /* CustomOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A288D47A2073B5F20042A45F /* CustomOverlay.swift */; };
-		A28E86EA25595ECA008B04E3 /* Microblink.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A28E86E825595EB6008B04E3 /* Microblink.xcframework */; };
-		A28E86EB25595ECA008B04E3 /* Microblink.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A28E86E825595EB6008B04E3 /* Microblink.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A28E86EE25595F55008B04E3 /* pdf417-license.txt in Resources */ = {isa = PBXBuildFile; fileRef = A28E86ED25595F55008B04E3 /* pdf417-license.txt */; };
+		A2B0E2C526244E7100AA12FC /* Pdf417Mobi.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2B0E2C326244E6800AA12FC /* Pdf417Mobi.xcframework */; };
+		A2B0E2C626244E7100AA12FC /* Pdf417Mobi.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A2B0E2C326244E6800AA12FC /* Pdf417Mobi.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A2FE137F1F75106F00C6F1EA /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A2FE137E1F75106F00C6F1EA /* libz.tbd */; };
 /* End PBXBuildFile section */
 
@@ -32,7 +32,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A28E86EB25595ECA008B04E3 /* Microblink.xcframework in Embed Frameworks */,
+				A2B0E2C626244E7100AA12FC /* Pdf417Mobi.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -54,8 +54,8 @@
 		3139C8351C22B338005AC32C /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		3139C8371C22B33E005AC32C /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		A288D47A2073B5F20042A45F /* CustomOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOverlay.swift; sourceTree = "<group>"; };
-		A28E86E825595EB6008B04E3 /* Microblink.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Microblink.xcframework; path = ../../Microblink.xcframework; sourceTree = "<group>"; };
 		A28E86ED25595F55008B04E3 /* pdf417-license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "pdf417-license.txt"; sourceTree = "<group>"; };
+		A2B0E2C326244E6800AA12FC /* Pdf417Mobi.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Pdf417Mobi.xcframework; path = ../../Pdf417Mobi.xcframework; sourceTree = "<group>"; };
 		A2FE137E1F75106F00C6F1EA /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -66,12 +66,12 @@
 			files = (
 				A2FE137F1F75106F00C6F1EA /* libz.tbd in Frameworks */,
 				3139C8381C22B33E005AC32C /* libiconv.tbd in Frameworks */,
+				A2B0E2C526244E7100AA12FC /* Pdf417Mobi.xcframework in Frameworks */,
 				3139C8361C22B338005AC32C /* libc++.tbd in Frameworks */,
 				3139C8341C22B333005AC32C /* AudioToolbox.framework in Frameworks */,
 				3139C8321C22B324005AC32C /* CoreMedia.framework in Frameworks */,
 				3139C8301C22B31D005AC32C /* AVFoundation.framework in Frameworks */,
 				3139C82E1C22B319005AC32C /* Accelerate.framework in Frameworks */,
-				A28E86EA25595ECA008B04E3 /* Microblink.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,7 +113,7 @@
 		3139C82C1C22B30C005AC32C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A28E86E825595EB6008B04E3 /* Microblink.xcframework */,
+				A2B0E2C326244E6800AA12FC /* Pdf417Mobi.xcframework */,
 				A2FE137E1F75106F00C6F1EA /* libz.tbd */,
 				3139C8371C22B33E005AC32C /* libiconv.tbd */,
 				3139C8351C22B338005AC32C /* libc++.tbd */,
@@ -376,7 +376,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.microblink.pdf417-sample";
+				PRODUCT_BUNDLE_IDENTIFIER = com.microblink.pdf417.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -394,7 +394,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.microblink.pdf417-sample";
+				PRODUCT_BUNDLE_IDENTIFIER = com.microblink.pdf417.sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};

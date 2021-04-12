@@ -7,13 +7,13 @@
 //
 
 import UIKit
-import Microblink
+import Pdf417Mobi
 import MobileCoreServices
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MBScanningRecognizerRunnerDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MBBScanningRecognizerRunnerDelegate {
     
-    var recognizerRunner: MBRecognizerRunner?
-    var pdf417Recognizer: MBPdf417Recognizer?
+    var recognizerRunner: MBBRecognizerRunner?
+    var barcodeRecognizer: MBBBarcodeRecognizer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,32 +54,33 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func setupRecognizerRunner() {
-        var recognizers = [MBRecognizer]()
-        pdf417Recognizer = MBPdf417Recognizer()
-        recognizers.append(pdf417Recognizer!)
-        let recognizerCollection = MBRecognizerCollection(recognizers: recognizers)
-        recognizerRunner = MBRecognizerRunner(recognizerCollection: recognizerCollection)
+        var recognizers = [MBBRecognizer]()
+        barcodeRecognizer = MBBBarcodeRecognizer()
+        barcodeRecognizer?.scanPdf417 = true
+        recognizers.append(barcodeRecognizer!)
+        let recognizerCollection = MBBRecognizerCollection(recognizers: recognizers)
+        recognizerRunner = MBBRecognizerRunner(recognizerCollection: recognizerCollection)
         recognizerRunner?.scanningRecognizerRunnerDelegate = self
     }
     
     func processImageRunner(_ originalImage: UIImage?) {
-        var image: MBImage? = nil
+        var image: MBBImage? = nil
         if let anImage = originalImage {
-            image = MBImage(uiImage: anImage)
+            image = MBBImage(uiImage: anImage)
         }
         image?.cameraFrame = true
-        image?.orientation = MBProcessingOrientation.left
+        image?.orientation = .left
         let _serialQueue = DispatchQueue(label: "com.microblink.DirectAPI-sample-swift")
         _serialQueue.async(execute: {() -> Void in
             self.recognizerRunner?.processImage(image!)
         })
     }
     
-    func recognizerRunner(_ recognizerRunner: MBRecognizerRunner, didFinishScanningWith state: MBRecognizerResultState) {
+    func recognizerRunner(_ recognizerRunner: MBBRecognizerRunner, didFinishScanningWith state: MBBRecognizerResultState) {
         DispatchQueue.main.async(execute: {() -> Void in
             let title = "PDF417"
             // Save the string representation of the code
-            let message = self.pdf417Recognizer?.result.stringData!
+            let message = self.barcodeRecognizer?.result.stringData!
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default, handler: {(_ action: UIAlertAction) -> Void in
                 self.dismiss(animated: true) {() -> Void in }

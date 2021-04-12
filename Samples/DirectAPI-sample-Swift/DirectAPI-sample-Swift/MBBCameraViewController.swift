@@ -8,15 +8,15 @@
 
 import UIKit
 import AVFoundation
-import Microblink
+import Pdf417Mobi
 
-class MBCameraViewController: UIViewController, AVCaptureAudioDataOutputSampleBufferDelegate, AVCaptureVideoDataOutputSampleBufferDelegate, MBScanningRecognizerRunnerDelegate {
+class MBBCameraViewController: UIViewController, AVCaptureAudioDataOutputSampleBufferDelegate, AVCaptureVideoDataOutputSampleBufferDelegate, MBBScanningRecognizerRunnerDelegate {
     
     @IBOutlet var cameraPausedLabel: UILabel!
     
     var captureSession: AVCaptureSession?
-    var recognizerRunner: MBRecognizerRunner?
-    var pdf417Recognizer: MBPdf417Recognizer?
+    var recognizerRunner: MBBRecognizerRunner?
+    var barcodeRecognizer: MBBBarcodeRecognizer?
     var isPauseRecognition = false
     
     @IBOutlet weak var myView: UIView!
@@ -56,13 +56,13 @@ class MBCameraViewController: UIViewController, AVCaptureAudioDataOutputSampleBu
     }
     
     func addNotificationObserver() {
-        NotificationCenter.default.addObserver(self, selector: #selector(MBCameraViewController.appplicationWillResignActive(_:)), name: UIApplication.willResignActiveNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(MBCameraViewController.appplicationWillEnterForeground(_:)), name: UIApplication.willEnterForegroundNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(MBCameraViewController.applicationDidEnterBackgroundNotification(_:)), name: UIApplication.didEnterBackgroundNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(MBCameraViewController.applicationWillTerminateNotification(_:)), name: UIApplication.willTerminateNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(MBCameraViewController.captureSessionDidStartRunning(_:)), name: .AVCaptureSessionDidStartRunning, object: nil)
-        NotificationCenter.default.addObserver(self, selector :#selector(MBCameraViewController.captureSessionDidStopRunning(_:)), name: .AVCaptureSessionDidStopRunning, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(MBCameraViewController.captureSessionRuntimeErrorNotification(_:)), name: .AVCaptureSessionRuntimeError, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(MBBCameraViewController.appplicationWillResignActive(_:)), name: UIApplication.willResignActiveNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(MBBCameraViewController.appplicationWillEnterForeground(_:)), name: UIApplication.willEnterForegroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(MBBCameraViewController.applicationDidEnterBackgroundNotification(_:)), name: UIApplication.didEnterBackgroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(MBBCameraViewController.applicationWillTerminateNotification(_:)), name: UIApplication.willTerminateNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(MBBCameraViewController.captureSessionDidStartRunning(_:)), name: .AVCaptureSessionDidStartRunning, object: nil)
+        NotificationCenter.default.addObserver(self, selector :#selector(MBBCameraViewController.captureSessionDidStopRunning(_:)), name: .AVCaptureSessionDidStopRunning, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(MBBCameraViewController.captureSessionRuntimeErrorNotification(_:)), name: .AVCaptureSessionRuntimeError, object: nil)
     }
     
     func removeNotificationObserver() {
@@ -144,12 +144,12 @@ class MBCameraViewController: UIViewController, AVCaptureAudioDataOutputSampleBu
         
         myView.layer.addSublayer(prevLayer!)
         
-        var recognizers = [MBRecognizer]()
-        pdf417Recognizer = MBPdf417Recognizer()
-        recognizers.append(pdf417Recognizer!)
+        var recognizers = [MBBRecognizer]()
+        barcodeRecognizer = MBBBarcodeRecognizer()
+        recognizers.append(barcodeRecognizer!)
         
-        let recognizerCollection = MBRecognizerCollection(recognizers: recognizers)
-        recognizerRunner = MBRecognizerRunner(recognizerCollection: recognizerCollection)
+        let recognizerCollection = MBBRecognizerCollection(recognizers: recognizers)
+        recognizerRunner = MBBRecognizerRunner(recognizerCollection: recognizerCollection)
         recognizerRunner?.scanningRecognizerRunnerDelegate = self
         
         captureSession?.startRunning()
@@ -175,20 +175,20 @@ class MBCameraViewController: UIViewController, AVCaptureAudioDataOutputSampleBu
     }
     
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        let image = MBImage(cmSampleBuffer: sampleBuffer)
-        image.orientation = MBProcessingOrientation.left
+        let image = MBBImage(cmSampleBuffer: sampleBuffer)
+        image.orientation = .left
         if !isPauseRecognition {
             recognizerRunner?.processImage(image)
         }
     }
     
-    func recognizerRunner(_ recognizerRunner: MBRecognizerRunner, didFinishScanningWith state: MBRecognizerResultState) {
+    func recognizerRunner(_ recognizerRunner: MBBRecognizerRunner, didFinishScanningWith state: MBBRecognizerResultState) {
         isPauseRecognition = true
-        if state == MBRecognizerResultState.valid {
+        if state == .valid {
             DispatchQueue.main.async(execute: {() -> Void in
                 let title = "PDF417"
                 // Save the string representation of the code
-                let message = self.pdf417Recognizer?.result.stringData!
+                let message = self.barcodeRecognizer?.result.stringData!
                 let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "OK", style: .default, handler: {(_ action: UIAlertAction) -> Void in
                     self.dismiss(animated: true) {() -> Void in }

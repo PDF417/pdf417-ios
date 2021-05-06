@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   
   s.name        = "PPpdf417"
-  s.version     = "8.0.0"
+  s.version     = "8.0.1"
   s.summary     = "A delightful component for barcode scanning"
   s.homepage    = "http://pdf417.mobi"
   
@@ -39,7 +39,7 @@ Pod::Spec.new do |s|
   }
 
   s.source      = { 
-        :http => 'https://github.com/PDF417/pdf417-ios/releases/download/v8.0.0/pdf417-ios_v8.0.0.tar.gz', 
+        :http => 'https://github.com/PDF417/pdf417-ios/releases/download/v8.0.1/pdf417-ios_v8.0.1.tar.gz', 
   }
 
   s.platform     = :ios

@@ -1,8 +1,12 @@
+## 8.0.1
+
+- No changes
+
 ## 8.0.0
 
 ### **Pdf417Mobi v8 Release Announcement**
 
-As of this version, Pdf417Mobi SDK is fully compatible with other Microblink SDKs, which means that you can use it with other Microblink SDKs in the same application.
+As of this version, BlinkInput SDK is fully compatible with other Microblink SDKs, which means that you can use it with other Microblink SDKs in the same application.
 
 ### New features:
 

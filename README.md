@@ -90,7 +90,7 @@ pod init
 ```ruby
 platform :ios, '9.0'
 target 'Your-App-Name' do
-    pod 'PPpdf417', '~> 8.0.0'
+    pod 'PPpdf417', '~> 8.0.1'
 end
 ```
 

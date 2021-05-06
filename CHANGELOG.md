@@ -1,5 +1,12 @@
 # Release notes
 
+## 8.0.1
+
+### Bugfixes:
+
+- Fixed localization
+- Removed unused hash functions
+
 ## 8.0.0
 
 ### **Pdf417Mobi v8 Release Announcement**

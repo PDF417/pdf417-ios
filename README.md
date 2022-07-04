@@ -53,7 +53,7 @@ For more information on how to integrate _PDF417.mobi_ SDK into your app read th
 
 # <a name="requirements"></a> Requirements
 
-SDK package contains Pdf417Mobi framework and one or more sample apps which demonstrate framework integration. The framework can be deployed in **iOS 9.0 or later**.
+SDK package contains Pdf417Mobi framework and one or more sample apps which demonstrate framework integration. The framework can be deployed in **iOS 11.0 or later**.
 
 SDK performs significantly better when the images obtained from the camera are focused. Because of that, the SDK can have lower performance on iPad 2 and iPod Touch 4th gen devices, which [don't have camera with autofocus](http://www.adweek.com/socialtimes/ipad-2-rear-camera-has-tap-for-auto-exposure-not-auto-focus/12536). 
 # <a name="quick-start"></a> Quick Start
@@ -88,7 +88,7 @@ pod init
 - Copy and paste the following lines into the TextEdit window:
 
 ```ruby
-platform :ios, '9.0'
+platform :ios, '11.0'
 target 'Your-App-Name' do
     pod 'PPpdf417', '~> 8.0.1'
 end
@@ -266,13 +266,13 @@ You can pass the license key as a string, the following way:
 Swift
 
 ```swift
-MBBMicroblinkSDK.shared().setLicenseKey("LICENSE-KEY")
+MBBMicroblinkSDK.shared().setLicenseKey("LICENSE-KEY", errorCallback: block)
 ```
 
 Objective-C
 
 ```objective-c
-[[MBBMicroblinkSDK sharedInstance] setLicenseKey:@"LICENSE-KEY"];
+[[MBBMicroblinkSDK sharedInstance] setLicenseKey:@"LICENSE-KEY" errorCallback:block];
 ```
 
 #### License key as file
@@ -404,12 +404,11 @@ To use your custom overlay with Microblink's camera view, you must first subclas
 
 ### 2. Protocols
 
-There are five [`MBBRecognizerRunnerViewController`](http://pdf417.github.io/pdf417-ios/Protocols/MBBRecognizerRunnerViewController.html) protocols and one overlay protocol [`MBBOverlayViewControllerInterface`](http://pdf417.github.io/pdf417-ios/Protocols/MBBOverlayViewControllerInterface.html).
+There are four [`MBBRecognizerRunnerViewController`](http://pdf417.github.io/pdf417-ios/Protocols/MBBRecognizerRunnerViewController.html) protocols.
 
-Five `RecognizerRunnerView` protocols are:
+Four `RecognizerRunnerViewController` protocols are:
 - [`MBBScanningRecognizerRunnerViewControllerDelegate`](http://pdf417.github.io/pdf417-ios/Protocols/MBBScanningRecognizerRunnerViewControllerDelegate.html)
 - [`MBBDetectionRecognizerRunnerViewControllerDelegate`](http://pdf417.github.io/pdf417-ios/Protocols/MBBDetectionRecognizerRunnerViewControllerDelegate.html)
-- [`MBBOcrRecognizerRunnerViewControllerDelegate`](http://pdf417.github.io/pdf417-ios/Protocols/MBBOcrRecognizerRunnerViewControllerDelegate.html)
 - [`MBBDebugRecognizerRunnerViewControllerDelegate`](http://pdf417.github.io/pdf417-ios/Protocols/MBBDebugRecognizerRunnerViewControllerDelegate.html)
 - [`MBBRecognizerRunnerViewControllerDelegate`](http://pdf417.github.io/pdf417-ios/Protocols/MBBRecognizerRunnerViewControllerDelegate.html)
 
@@ -444,13 +443,12 @@ With this feature you can solve various use cases like:
 
 DirectAPI-sample demo app here will present UIImagePickerController for taking full resolution photos, and then process it with PDF417.mobi SDK to get scanning results using Direct processing API.
 
-Direct processing API is handled with [`MBBRecognizerRunner`](http://pdf417.github.io/pdf417-ios/Classes/MBBRecognizerRunner.html). That is a class that handles processing of images. It also has protocols as [`MBBRecognizerRunnerViewController`](http://pdf417.github.io/pdf417-ios/Classes/MBBRecognizerRunnerViewController.html).
+Direct processing API is handled with [`MBBRecognizerRunner`](http://pdf417.github.io/pdf417-ios/Classes/MBBRecognizerRunner.html). That is a class that handles processing of images. It also has protocols as [`MBBRecognizerRunnerViewController`](http://pdf417.github.io/pdf417-ios/Protocols/MBBRecognizerRunnerViewController.html).
 Developer can choose which protocol to conform:
 
 - [`MBBScanningRecognizerRunnerDelegate`](http://pdf417.github.io/pdf417-ios/Protocols/MBBScanningRecognizerRunnerDelegate.html)
 - [`MBBDetectionRecognizerRunnerDelegate`](http://pdf417.github.io/pdf417-ios/Protocols/MBBDetectionRecognizerRunnerDelegate.html)
 - [`MBBDebugRecognizerRunnerDelegate`](http://pdf417.github.io/pdf417-ios/Protocols/MBBDebugRecognizerRunnerDelegate.html)
-- [`MBBOcrRecognizerRunnerDelegate`](http://pdf417.github.io/pdf417-ios/Protocols/MBBOcrRecognizerRunnerDelegate.html)
 
 In example, we are conforming to [`MBBScanningRecognizerRunnerDelegate`](http://pdf417.github.io/pdf417-ios/Protocols/MBBScanningRecognizerRunnerDelegate.html) protocol.
 
@@ -607,9 +605,9 @@ For example, let's say that we want to change text "Scan the front side of a doc
 
 ## <a name="troubleshooting-integration-problems"></a> Integration problems
 
-In case of problems with integration of the SDK, first make sure that you have tried integrating it into XCode by following [integration instructions](#quick-start).
+In case of problems with integration of the SDK, first make sure that you have tried integrating it into Xcode by following [integration instructions](#quick-start).
 
-If you have followed [XCode integration instructions](#quick-start) and are still having integration problems, please contact us at [help.microblink.com](http://help.microblink.com).
+If you have followed [Xcode integration instructions](#quick-start) and are still having integration problems, please contact us at [help.microblink.com](http://help.microblink.com).
 
 ## <a name="troubleshooting-sdk-problems"></a> SDK problems
 
@@ -639,18 +637,13 @@ If you are having problems with scanning certain items, undesired behaviour on s
 ## <a name="troubleshooting-faq"></a> Frequently asked questions and known problems
 Here is a list of frequently asked questions and solutions for them and also a list of known problems in the SDK and how to work around them.
 
-#### Note on ARM Macs
-
-We are supporting `ARM64 Device` slice through our `.xcframework` format.
-We are still in development supporting `ARM64 Simulator` slice for newly released ARM Macs and we will update our SDK with `ARM64 Simulator` support as soon as development is done.
-
-#### In demo everything worked, but after switching to production license I get `NSError` with `MBBMicroblinkSDKRecognizerErrorDomain` and `MBBRecognizerFailedToInitalize` code as soon as I construct specific [`MBBRecognizer`](http://pdf417.github.io/pdf417-ios/docs/Classes/MBBRecognizer.html) object
+#### In demo everything worked, but after switching to production license I get `NSError` with `MBBMicroblinkSDKRecognizerErrorDomain` and `MBBRecognizerFailedToInitalize` code as soon as I construct specific [`MBBRecognizer`](http://pdf417.github.io/pdf417-ios/Classes/MBBRecognizer.html) object
 
 Each license key contains information about which features are allowed to use and which are not. This `NSError` indicates that your production license does not allow using of specific `MBBRecognizer` object. You should contact [support](http://help.microblink.com) to check if provided licence is OK and that it really contains all features that you have purchased.
 
 #### I get `NSError` with `MBBMicroblinkSDKRecognizerErrorDomain` and `MBBRecognizerFailedToInitalize` code with trial license key
 
-Whenever you construct any [`MBBRecognizer`](http://pdf417.github.io/pdf417-ios/docs/Classes/MBBRecognizer.html) object or, a check whether license allows using that object will be performed. If license is not set prior constructing that object, you will get `NSError` with `MBBMicroblinkSDKRecognizerErrorDomain` and `MBBRecognizerFailedToInitalize` code. We recommend setting license as early as possible in your app.
+Whenever you construct any [`MBBRecognizer`](http://pdf417.github.io/pdf417-ios/Classes/MBBRecognizer.html) object or, a check whether license allows using that object will be performed. If license is not set prior constructing that object, you will get `NSError` with `MBBMicroblinkSDKRecognizerErrorDomain` and `MBBRecognizerFailedToInitalize` code. We recommend setting license as early as possible in your app.
 
 #### Undefined Symbols on Architecture armv7
 
@@ -663,7 +656,7 @@ SDK crashes on armv7 devices if bitcode is enabled. We are working on it.
 
 #### In my `didFinish` callback I have the result inside my `MBBRecognizer`, but when scanning activity finishes, the result is gone
 
-This usually happens when using [`MBBRecognizerRunnerViewController`](http://pdf417.github.io/pdf417-ios/docs/Classes/MBBRecognizerRunnerViewController.html) and forgetting to pause the [`MBBRecognizerRunnerViewController`](http://pdf417.github.io/pdf417-ios/docs/Classes/MBBRecognizerRunnerViewController.html) in your `didFinish` callback. Then, as soon as `didFinish` happens, the result is mutated or reset by additional processing that `MBBRecognizer` performs in the time between end of your `didFinish` callback and actual finishing of the scanning activity. For more information about statefulness of the `MBBRecognizer` objects, check [this section](#recognizer-concept).
+This usually happens when using [`MBBRecognizerRunnerViewController`](http://pdf417.github.io/pdf417-ios/Protocols/MBBRecognizerRunnerViewController.html) and forgetting to pause the [`MBBRecognizerRunnerViewController`](http://pdf417.github.io/pdf417-ios/Protocols/MBBRecognizerRunnerViewController.html) in your `didFinish` callback. Then, as soon as `didFinish` happens, the result is mutated or reset by additional processing that `MBBRecognizer` performs in the time between end of your `didFinish` callback and actual finishing of the scanning activity. For more information about statefulness of the `MBBRecognizer` objects, check [this section](#recognizer-concept).
 
 #### Unsupported architectures when submitting app to App Store
 
@@ -706,7 +699,7 @@ done
 
 ### Disable logging
 
-Logging can be disabled by calling `disableMicroblinkLogging` method on [`MBBLogger`](http://pdf417.github.io/pdf417-ios/docs/Classes/MBBLogger.html) instance.
+Logging can be disabled by calling `disableMicroblinkLogging` method on [`MBBLogger`](http://pdf417.github.io/pdf417-ios/Classes/MBBLogger.html) instance.
 # <a name="info"></a> Additional info
 
 Complete API reference can be found [here](http://pdf417.github.io/pdf417-ios/index.html). 

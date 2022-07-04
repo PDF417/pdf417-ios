@@ -1,908 +1,782 @@
 {
   "warnings": [
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBBarcodeOverlayViewController.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBBarcodeOverlayViewController.h",
       "line": 20,
       "symbol": "MBBBarcodeOverlayViewController",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBBarcodeRecognizer.h",
-      "line": 24,
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBBarcodeRecognizer.h",
+      "line": 23,
       "symbol": "MBBBarcodeRecognizer.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBBarcodeRecognizerResult.h",
-      "line": 23,
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBBarcodeRecognizerResult.h",
+      "line": 22,
       "symbol": "MBBBarcodeRecognizerResult.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBBarcodeType.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBBarcodeType.h",
       "line": 12,
       "symbol": "MBBBarcodeType.MBBBarcodeNone",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBCustomOverlayViewController.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBCustomOverlayViewController.h",
       "line": 28,
       "symbol": "MBBCustomOverlayViewController.recognizerCollection",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBCustomOverlayViewController.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBCustomOverlayViewController.h",
       "line": 29,
       "symbol": "MBBCustomOverlayViewController.cameraSettings",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBCustomOverlayViewController.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBCustomOverlayViewController.h",
       "line": 30,
       "symbol": "MBBCustomOverlayViewController.metadataDelegates",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBCustomOverlayViewController.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBCustomOverlayViewController.h",
       "line": 31,
       "symbol": "MBBCustomOverlayViewController.scanningRecognizerRunnerViewControllerDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBCustomOverlayViewController.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBCustomOverlayViewController.h",
       "line": 32,
       "symbol": "MBBCustomOverlayViewController.recognizerRunnerViewControllerDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBCustomOverlayViewController.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBCustomOverlayViewController.h",
       "line": 41,
       "symbol": "MBBCustomOverlayViewController.-initWithRecognizerCollection:cameraSettings:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBDateResult.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBDateResult.h",
       "line": 23,
       "symbol": "MBBDateResult.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBDotsSubview.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBDotsSubview.h",
       "line": 23,
       "symbol": "MBBDotsSubview.dotsLayer",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBDotsSubview.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBDotsSubview.h",
       "line": 42,
       "symbol": "MBBDotsSubview.-initWithCoder:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBDotsSubview.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBDotsSubview.h",
       "line": 44,
       "symbol": "MBBDotsSubview.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBException.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBException.h",
       "line": 11,
       "symbol": "MBBExceptionName",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBException.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBException.h",
       "line": 13,
       "symbol": "MBBIllegalModificationException",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBException.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBException.h",
       "line": 14,
       "symbol": "MBBInvalidLicenseKeyException",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBException.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBException.h",
       "line": 15,
       "symbol": "MBBInvalidLicenseeKeyException",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBException.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBException.h",
       "line": 16,
       "symbol": "MBBInvalidLicenseResourceException",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBException.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBException.h",
       "line": 17,
       "symbol": "MBBInvalidBundleException",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBException.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBException.h",
       "line": 18,
       "symbol": "MBBMissingSettingsException",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBException.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBException.h",
       "line": 19,
       "symbol": "MBBInvalidArgumentException",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBFrameGrabberRecognizer.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBFrameGrabberRecognizer.h",
       "line": 24,
       "symbol": "MBBFrameGrabberRecognizer.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBFrameGrabberRecognizer.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBFrameGrabberRecognizer.h",
       "line": 25,
       "symbol": "MBBFrameGrabberRecognizer.-initWithFrameGrabberDelegate:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBFrameGrabberRecognizer.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBFrameGrabberRecognizer.h",
       "line": 43,
       "symbol": "MBBFrameGrabberRecognizerDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
       "line": 27,
       "symbol": "CGDelta",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
       "line": 30,
       "symbol": "",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.struct",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
       "line": 30,
       "symbol": "CGLine",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
-      "line": 30,
-      "symbol": "CGLine.",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.struct",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
-      "line": 31,
-      "symbol": ".point1",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.field",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
-      "line": 31,
-      "symbol": "CGLine..point1",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.field",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
-      "line": 32,
-      "symbol": ".point2",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.field",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
-      "line": 32,
-      "symbol": "CGLine..point2",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.field",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
       "line": 38,
       "symbol": "CGDeltaMake",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
       "line": 41,
       "symbol": "CGPointWithDelta",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
       "line": 44,
       "symbol": "CGPointDistance",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
       "line": 47,
       "symbol": "CGPointAlongLine",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
       "line": 50,
       "symbol": "CGPointRotatedAroundPoint",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
       "line": 55,
       "symbol": "CGLineMake",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
       "line": 58,
       "symbol": "CGLineEqualToLine",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
       "line": 61,
       "symbol": "CGLineMidPoint",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
       "line": 64,
       "symbol": "CGLineDirection",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
       "line": 67,
       "symbol": "CGLinesAngle",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
       "line": 70,
       "symbol": "CGLinesIntersectAtPoint",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
       "line": 73,
       "symbol": "CGLineLength",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
       "line": 76,
       "symbol": "CGLineScale",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
       "line": 79,
       "symbol": "CGLineTranslate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
       "line": 82,
       "symbol": "CGLineScaleOnMidPoint",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
       "line": 85,
       "symbol": "CGLineDelta",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
       "line": 88,
       "symbol": "CGLinesAreParallel",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
       "line": 93,
       "symbol": "CGRectTopLeftPoint",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
       "line": 94,
       "symbol": "CGRectTopRightPoint",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
       "line": 95,
       "symbol": "CGRectBottomLeftPoint",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
       "line": 96,
       "symbol": "CGRectBottomRightPoint",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
       "line": 99,
       "symbol": "CGRectResize",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
       "line": 102,
       "symbol": "CGRectInsetEdge",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
       "line": 113,
       "symbol": "CGRectCenterPoint",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
       "line": 116,
       "symbol": "CGRectClosestTwoCornerPoints",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
       "line": 120,
       "symbol": "CGLineIntersectsRectAtPoint",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
-      "line": 129,
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
+      "line": 123,
+      "symbol": "CGTransformedPointToDestination",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
+      "line": 131,
       "symbol": "CGControlPointsForArcBetweenPointsWithRadius",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
-      "line": 135,
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGeometry.h",
+      "line": 137,
       "symbol": "MBBscanningRegionForFrameInBounds",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGlareStatusSubview.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGlareStatusSubview.h",
       "line": 20,
       "symbol": "MBBGlareStatusSubview.label",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGlareStatusSubview.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGlareStatusSubview.h",
       "line": 22,
       "symbol": "MBBGlareStatusSubview.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGlareStatusSubview.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGlareStatusSubview.h",
       "line": 24,
       "symbol": "MBBGlareStatusSubview.-initWithCoder:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGlareStatusSubview.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGlareStatusSubview.h",
       "line": 26,
       "symbol": "MBBGlareStatusSubview.-initWithFrame:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGlareStatusSubview.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBGlareStatusSubview.h",
       "line": 28,
       "symbol": "MBBGlareStatusSubview.-glareDetectionFinishedWithResult:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBImageProcessingRecognizerRunnerDelegate.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBImageProcessingRecognizerRunnerDelegate.h",
       "line": 11,
       "symbol": "MBBImageProcessingRecognizerRunnerDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBLicenseError.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBLicenseError.h",
       "line": 13,
       "symbol": "MBBLicenseErrorNotification",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBLicenseError.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBLicenseError.h",
       "line": 15,
       "symbol": "MBBLicenseError",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBLicenseError.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBLicenseError.h",
       "line": 15,
       "symbol": "MBBLicenseError",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBLicenseError.h",
-      "line": 16,
-      "symbol": "MBBLicenseError.MBBLicenseErrorNetworkRequired",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBLicenseError.h",
-      "line": 17,
-      "symbol": "MBBLicenseError.MBBLicenseErrorUnableToDoRemoteLicenceCheck",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBLicenseError.h",
-      "line": 18,
-      "symbol": "MBBLicenseError.MBBLicenseErrorLicenseIsLocked",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBLicenseError.h",
-      "line": 19,
-      "symbol": "MBBLicenseError.MBBLicenseErrorLicenseCheckFailed",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBLicenseError.h",
-      "line": 20,
-      "symbol": "MBBLicenseError.MBBLicenseErrorInvalidLicense",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBLicenseError.h",
-      "line": 23,
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBLicenseError.h",
+      "line": 27,
       "symbol": "MBBLicenseErrorBlock",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBLogger.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBLogger.h",
       "line": 13,
       "symbol": "MBBLogLevel",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBLogger.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBLogger.h",
       "line": 13,
       "symbol": "MBBLogLevel",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBLogger.h",
-      "line": 14,
-      "symbol": "MBBLogLevel.MBBLogLevelError",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBLogger.h",
-      "line": 15,
-      "symbol": "MBBLogLevel.MBBLogLevelWarning",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBLogger.h",
-      "line": 16,
-      "symbol": "MBBLogLevel.MBBLogLevelInfo",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBLogger.h",
-      "line": 17,
-      "symbol": "MBBLogLevel.MBBLogLevelDebug",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBLogger.h",
-      "line": 18,
-      "symbol": "MBBLogLevel.MBBLogLevelVerbose",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBLogger.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBLogger.h",
       "line": 21,
       "symbol": "MBBLoggerDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBLogger.h",
-      "line": 25,
-      "symbol": "MBBLoggerDelegate.-log:message:",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBLogger.h",
-      "line": 26,
-      "symbol": "MBBLoggerDelegate.-log:format:arguments:",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBLogger.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBLogger.h",
       "line": 30,
       "symbol": "MBBLogger",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBLogger.h",
-      "line": 32,
-      "symbol": "MBBLogger.delegate",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBLogger.h",
-      "line": 34,
-      "symbol": "MBBLogger.+sharedInstance",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBLogger.h",
-      "line": 36,
-      "symbol": "MBBLogger.-disableMicroblinkLogging",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBMicroblinkApp.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBMicroblinkApp.h",
       "line": 37,
       "symbol": "MBBMicroblinkApp",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBMicroblinkApp.h",
-      "line": 39,
-      "symbol": "MBBMicroblinkApp.language",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBMicroblinkApp.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBMicroblinkApp.h",
       "line": 87,
       "symbol": "MBB_LOCALIZED_DEFAULT_STRING",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBMicroblinkApp.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBMicroblinkApp.h",
       "line": 91,
       "symbol": "MBB_LOCALIZED_FOR_LANGUAGE",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBMicroblinkApp.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBMicroblinkApp.h",
       "line": 109,
       "symbol": "MBB_LOCALIZED",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.function",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBMicroblinkDefines.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBMicroblinkDefines.h",
       "line": 34,
       "symbol": "MBBlock",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBMicroblinkSDK.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBMicroblinkSDK.h",
       "line": 21,
       "symbol": "MBBMicroblinkSDK.+sharedInstance",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBNativeResult.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBNativeResult.h",
       "line": 14,
       "symbol": "MBBNativeResult",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBOverlayViewController.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBOverlayViewController.h",
       "line": 33,
       "symbol": "MBBOverlayViewController.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBPdf417Recognizer.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBPdf417Recognizer.h",
       "line": 23,
       "symbol": "MBBPdf417Recognizer.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBPdf417RecognizerResult.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBPdf417RecognizerResult.h",
       "line": 22,
       "symbol": "MBBPdf417RecognizerResult.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBRecognizer.h",
-      "line": 27,
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBProductIntegrationInfo.h",
+      "line": 17,
+      "symbol": "MBBProductIntegrationInfo",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBRecognizer.h",
+      "line": 31,
       "symbol": "MBBRecognizer.-getOptimalHudOrientation",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBRecognizerCollection.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBRecognizerCollection.h",
       "line": 51,
       "symbol": "MBBRecognizerCollection.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBRecognizerCollection.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBRecognizerCollection.h",
       "line": 53,
       "symbol": "MBBRecognizerCollection.-initWithRecognizers:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBRecognizerResult.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBRecognizerResult.h",
       "line": 46,
       "symbol": "MBBRecognizerResult.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBRecognizerResult.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBRecognizerResult.h",
       "line": 48,
       "symbol": "MBBRecognizerResult.resultState",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBRecognizerResult.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBRecognizerResult.h",
       "line": 49,
       "symbol": "MBBRecognizerResult.resultStateString",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBRecognizerRunner.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBRecognizerRunner.h",
       "line": 29,
       "symbol": "MBBRecognizerRunner.metadataDelegates",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBRecognizerRunner.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBRecognizerRunner.h",
       "line": 30,
       "symbol": "MBBRecognizerRunner.scanningRecognizerRunnerDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBRecognizerRunner.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBRecognizerRunner.h",
       "line": 31,
       "symbol": "MBBRecognizerRunner.imageProcessingRecognizerRunnerDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBRecognizerRunner.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBRecognizerRunner.h",
       "line": 32,
       "symbol": "MBBRecognizerRunner.stringProcessingRecognizerRunnerDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBRecognizerRunner.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBRecognizerRunner.h",
       "line": 34,
       "symbol": "MBBRecognizerRunner.coordinator",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBRecognizerRunner.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBRecognizerRunner.h",
       "line": 36,
       "symbol": "MBBRecognizerRunner.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBRecognizerRunner.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBRecognizerRunner.h",
       "line": 41,
       "symbol": "MBBRecognizerRunner.-resetState",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBRecognizerRunner.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBRecognizerRunner.h",
       "line": 43,
       "symbol": "MBBRecognizerRunner.-resetState:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBRecognizerRunnerMetadataDelegates.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBRecognizerRunnerMetadataDelegates.h",
       "line": 19,
       "symbol": "MBBRecognizerRunnerMetadataDelegates.debugRecognizerRunnerDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBRecognizerRunnerMetadataDelegates.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBRecognizerRunnerMetadataDelegates.h",
       "line": 20,
       "symbol": "MBBRecognizerRunnerMetadataDelegates.detectionRecognizerRunnerDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBRecognizerRunnerViewControllerMetadataDelegates.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBRecognizerRunnerViewControllerMetadataDelegates.h",
       "line": 19,
       "symbol": "MBBRecognizerRunnerViewControllerMetadataDelegates.debugRecognizerRunnerViewControllerDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBRecognizerRunnerViewControllerMetadataDelegates.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBRecognizerRunnerViewControllerMetadataDelegates.h",
       "line": 20,
       "symbol": "MBBRecognizerRunnerViewControllerMetadataDelegates.detectionRecognizerRunnerViewControllerDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBSimNumberRecognizer.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBSignedPayload.h",
+      "line": 16,
+      "symbol": "MBBSignedPayload",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBSimNumberRecognizer.h",
       "line": 22,
       "symbol": "MBBSimNumberRecognizer.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBSimNumberRecognizerResult.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBSimNumberRecognizerResult.h",
       "line": 20,
       "symbol": "MBBSimNumberRecognizerResult.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBStringProcessingRecognizerRunnerDelegate.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBStringProcessingRecognizerRunnerDelegate.h",
       "line": 10,
       "symbol": "MBBStringProcessingRecognizerRunnerDelegate",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBSuccessFrameGrabberRecognizer.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBSuccessFrameGrabberRecognizer.h",
       "line": 21,
       "symbol": "MBBSuccessFrameGrabberRecognizer.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBSuccessFrameGrabberRecognizer.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBSuccessFrameGrabberRecognizer.h",
       "line": 22,
       "symbol": "MBBSuccessFrameGrabberRecognizer.-initWithRecognizer:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBSuccessFrameGrabberRecognizerResult.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBSuccessFrameGrabberRecognizerResult.h",
       "line": 23,
       "symbol": "MBBSuccessFrameGrabberRecognizerResult.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBTapToFocusSubview.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBTapToFocusSubview.h",
       "line": 25,
       "symbol": "MBBTapToFocusSubview.-initWithCoder:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBTapToFocusSubview.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBTapToFocusSubview.h",
       "line": 27,
       "symbol": "MBBTapToFocusSubview.-willFocusAtPoint:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBUsdlRecognizer.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBUsdlRecognizer.h",
       "line": 21,
       "symbol": "MBBUsdlRecognizer.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_i386_x86_64-simulator/Pdf417Mobi.framework/Headers/MBUsdlRecognizerResult.h",
+      "file": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios/pdf417-ios/Pdf417Mobi.xcframework/ios-arm64_x86_64-simulator/Pdf417Mobi.framework/Headers/MBUsdlRecognizerResult.h",
       "line": 22,
       "symbol": "MBBUsdlRecognizerResult.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     }
   ],
-  "source_directory": "/opt/jenkins-macpro/E0/core-ios/SDKs/Pdf417"
+  "source_directory": "/opt/jenkins-ios-macpro2/E0/sdk-pdf417-ios"
 }

@@ -4,6 +4,20 @@
   </a>
 </p>
 
+# ⚠️ Project Status: Maintenance Mode
+
+This product is currently in maintenance mode. It is no longer receiving new features or major enhancements.
+
+What this means:
+
+- *Support*: Essential support and critical bug fixes will continue with a yearly product updates.
+
+- *Security*: Security patches will be applied as needed to ensure the product remains safe and functional.
+
+- *Development*: No new feature requests or non-critical enhancements will be considered at this time.
+
+Our goal is to provide a stable, reliable experience for our existing customers while focusing our development efforts on other initiatives.
+
 # _PDF417.mobi_ SDK for iOS
 
 [![Build Status](https://travis-ci.org/PDF417/pdf417-ios.png)](https://travis-ci.org/PDF417/pdf417-ios)
